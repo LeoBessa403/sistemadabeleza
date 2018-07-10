@@ -1,0 +1,271 @@
+<!--CADASTRAR CLIENTE - ORIGEM BALCÃO / Como nos conheceu:-->
+<select data-val="true" data-val-number="The field IdComoNosConheceu must be a number."
+        data-val-required="The IdComoNosConheceu field is required." id="IdComoNosConheceu" name="IdComoNosConheceu"
+        style="margin-top:6px" aria-required="true" aria-invalid="false" aria-describedby="IdComoNosConheceu-error"
+        class="valid">
+    <option selected="selected" value="0">-</option>
+    <option value="941">Aplicativo</option>
+    <option value="2">Busdoor</option>
+    <option value="3">Carro de Som</option>
+    <option value="4">Cinema</option>
+    <option value="5">Facebook</option>
+    <option value="23">Feira de Beleza</option>
+    <option value="6">Flyers / Folhetos / Folders / Panfletagem</option>
+    <option value="18">Indicação amigo</option>
+    <option value="19">Indicação familiar</option>
+    <option value="20">Indicação vizinho</option>
+    <option value="22">Instagram</option>
+    <option value="7">Internet</option>
+    <option value="8">Jornaleiro</option>
+    <option value="9">Outdoor</option>
+    <option value="10">Outra Unidade</option>
+    <option value="15">Outras Redes Sociais</option>
+    <option value="11">Panfleto Portaria</option>
+    <option value="12">Parceria</option>
+    <option value="13">Passou em frente</option>
+    <option value="24">Quiosque</option>
+    <option value="14">Rádio</option>
+    <option value="16">Revista e Jornal</option>
+    <option value="17">SMS (Mensagem de Texto)</option>
+    <option value="21">Trinks.com</option>
+    <option value="1">TV</option>
+    <option value="945">WhatsApp</option>
+</select>
+
+
+<!--EDITAR SERVIÇO / Serviço Padrão-->
+<select id="combo-servico-padrao" style="width: 380px"
+        data-bind="options: servico.listaServicosPadrao, value: servico.codigoServicoPai, optionsText: 'Descricao', optionsValue: 'Codigo', optionsCaption: '[sem vínculo]'">
+    <option value="">[sem vínculo]</option>
+    <option value="1">Barba</option>
+    <option value="170">Barba com máquina</option>
+    <option value="171">Barba Modelada</option>
+    <option value="341">Barba Tradicional</option>
+    <option value="175">Bigode com Máquina</option>
+    <option value="176">Bigode Modelado</option>
+    <option value="174">Bigode Tradicional</option>
+    <option value="172">Contorno de Barba</option>
+    <option value="173">Ecobarba</option>
+    <option value="177">Toalha quente</option>
+</select>
+
+
+<!--EDITAR SERVIÇO / Preço -->
+<select id="TipoPreco" name="TipoPreco" aria-required="true"
+        aria-invalid="false" aria-describedby="TipoPreco-error" class="valid">
+    <option value="2">A partir de</option>
+    <option selected="selected" value="1">Preço fixo</option>
+    <option value="4">Gratuito</option>
+</select>
+
+<!--ADICIONAR CATEGORIA / Categoria-->
+<select data-val="true">
+    <option selected="selected" value="0"></option>
+    <option value="10">Banhos - Ofurô</option>
+    <option value="17">Cabelo - Penteados</option>
+    <option value="3">Depilação</option>
+    <option value="12">Depilação a Laser - Definitiva</option>
+    <option value="13">Depilação a Luz Pulsada</option>
+    <option value="28">Emagrecimento</option>
+    <option value="16">Estética Facial</option>
+    <option value="5">Fisioterapia</option>
+    <option value="30">Lifting de glúteo</option>
+    <option value="29">Lifting sublime</option>
+    <option value="20">Manicure</option>
+    <option value="15">Mãos e Pés - Unhas Artificiais</option>
+    <option value="7">Maquiagem</option>
+    <option value="8">Massagem</option>
+    <option value="21">Pedicure</option>
+    <option value="22">Podologia</option>
+    <option value="18">Sobrancelha</option>
+    <option value="14">Terapia Holística</option>
+    <option value="23">Tratamentos para Celulite</option>
+    <option value="24">Tratamentos para Estrias</option>
+    <option value="26">Tratamentos para Flacidez tissular (pele)</option>
+    <option value="25">Tratamentos para Gordura Localizada</option>
+    <option value="27">Tratamentos para Tonificação Muscular</option>
+</select>
+
+
+<!--CADASTRAR PROFISSIONAL  / Acesso do Profissional ao Sistema:-->
+<select data-disabled="False" class="valid">
+    <option value="-1"></option>
+    <option selected="selected" value="0">Sem acesso ao sistema através de login (e-mail)</option>
+    <option value="1">Acesso via login apenas para visualizar a sua própria agenda</option>
+    <option value="2">Acesso à própria agenda e Painel de Atendimento para lançamento de seus serviços</option>
+    <option value="3">Acesso para a agenda do estabelecimento e fechamento de conta (recomendado para recepção)</option>
+    <option value="4">Acesso total ao sistema (recomendado para gerentes/sócios)</option>
+</select>
+
+<!--CADASTRAR PROFISSIONAL / Função-->
+<select>
+    <option value="0"></option>
+    <option value="314749">Auxiliar Administrativo</option>
+    <option value="314745">Auxiliar de cabeleireiro(a)</option>
+    <option value="314746">Barbeiro(a)</option>
+    <option value="314738">Cabeleireiro(a)</option>
+    <option value="314748">Caixa</option>
+    <option value="314743">Copeiro(a)</option>
+    <option value="314741">Depilador(a)</option>
+    <option value="314740">Esteticista</option>
+    <option value="314737">Estoquista</option>
+    <option value="314736">Gerente</option>
+    <option value="314739">Manicure</option>
+    <option value="314744">Maquiador(a)</option>
+    <option value="314742">Massagista</option>
+    <option value="314735">Recepção</option>
+    <option value="314747">Terapeuta</option>
+</select>
+
+<!-- Ausência de Profissionais / Tipos de Ausência-->
+<select class="valid">
+    <option value="1">Almoço</option>
+    <option value="5">Ausência Médica</option>
+    <option value="7">Falta</option>
+    <option value="4">Férias</option>
+    <option value="3">Folga</option>
+    <option value="2">Lanche</option>
+    <option value="6">Outros</option>
+</select>
+
+<!--Características e Facilidades / Tipo de Estabelecimento-->
+<select data-val="true">
+    <option value="2">Barbearia</option>
+    <option value="3">Clínica de Estética</option>
+    <option value="5">Outro</option>
+    <option value="1">Salão de Beleza</option>
+    <option value="4">SPA</option>
+</select>
+
+<!--Características e Facilidades / Estacionamento-->
+<select data-val="true">
+    <option value="1">Estacionamento - Grátis</option>
+    <option value="2">Estacionamento - Pago</option>
+    <option value="3">Não Possui Estacionamento</option>
+</select>
+
+<!--Características e Facilidades / Tipo de Franquia-->
+<select>
+    <option value="1">Estabelecimento Único</option>
+    <option value="3">Filial</option>
+    <option value="2">Franquia</option>
+    <option value="4">Outro</option>
+</select>
+
+<!--Características e Facilidades / Crianças-->
+<select>
+    <option value="1">Atendemos adultos e crianças</option>
+    <option value="2">Atendemos somente crianças</option>
+    <option value="3">Não atendemos crianças</option>
+</select>
+
+<!--Configurações do Agendamento pelo Site-->
+<select>
+    <option value="3">Aguardando Confirmação do Estabelecimento</option>
+    <option value="4">Confirmado</option>
+</select>
+
+<!--Antecedência máxima para agendamento-->
+<select>
+    <option value="0">Sem restrição</option>
+    <option value="3">3 dias</option>
+    <option value="7">1 semana</option>
+    <option value="14">2 semanas</option>
+    <option value="30">1 mês</option>
+    <option value="90">3 meses</option>
+    <option value="180">6 meses</option>
+    <option value="365">1 ano</option>
+</select>
+
+<!--Profissionais podem ver agenda de dias anteriores e posteriores-->
+<select>
+    <option value="1">Somente o dia de hoje</option>
+    <option value="2">Hoje e dias futuros</option>
+    <option value="3">Hoje e dias passados</option>
+    <option value="4">Todos os dias</option>
+</select>
+
+<!--Tempo de antecedência para envio de SMS/Notificação Push-->
+<select>
+    <option value="120">2 horas</option>
+    <option value="180">3 horas</option>
+    <option value="240">4 horas</option>
+    <option value="1440">24 horas</option>
+</select>
+
+<!--Dia para fechamento de mês-->
+<select>
+    <option value="1">Primeiro dia do mês</option>
+    <option value="2">Todo dia 2</option>
+    <option value="3">Todo dia 3</option>
+    <option value="4">Todo dia 4</option>
+    <option value="5">Todo dia 5</option>
+    <option value="6">Todo dia 6</option>
+    <option value="7">Todo dia 7</option>
+    <option value="8">Todo dia 8</option>
+    <option value="9">Todo dia 9</option>
+    <option value="10">Todo dia 10</option>
+    <option value="11">Todo dia 11</option>
+    <option value="12">Todo dia 12</option>
+    <option value="13">Todo dia 13</option>
+    <option value="14">Todo dia 14</option>
+    <option value="15">Todo dia 15</option>
+    <option value="16">Todo dia 16</option>
+    <option value="17">Todo dia 17</option>
+    <option value="18">Todo dia 18</option>
+    <option value="19">Todo dia 19</option>
+    <option value="20">Todo dia 20</option>
+    <option value="21">Todo dia 21</option>
+    <option value="22">Todo dia 22</option>
+    <option value="23">Todo dia 23</option>
+    <option value="24">Todo dia 24</option>
+    <option value="25">Todo dia 25</option>
+    <option value="26">Todo dia 26</option>
+    <option value="27">Todo dia 27</option>
+    <option value="28">Todo dia 28</option>
+</select>
+
+<!--Liberação da Comissão dos Profissionais-->
+<select>
+    <option value="1">Data Prevista de Recebimento do Estabelecimento</option>
+    <option value="0">Data de Fechamento da Conta</option>
+</select>
+
+<!--INCLUIR TIPO DE DESPESA / Categoria-->
+<select>
+    <option value="">Selecione a categoria</option>
+    <option value="107552">Despesas Fixas</option>
+    <option value="107553">Despesas Variáveis</option>
+    <option value="107554">Pessoal</option>
+    <option value="107555">Impostos</option>
+    <option value="107556">Outros</option>
+</select>
+
+
+<!--entrada e saída / Entrada-->
+<select>
+    <option value="">Selecione...</option>
+    <option value="7">Ajuste</option>
+    <option value="3">Compra do Fornecedor</option>
+    <option value="5">Cortesia</option>
+    <option value="19">Devolução de Empréstimo</option>
+    <option value="17">Empréstimo</option>
+    <option value="21">Troca</option>
+</select>
+
+
+<!--entrada e saída / Saída-->
+<select>
+    <option value="">Selecione...</option>
+    <option value="13">Ajuste</option>
+    <option value="12">Cortesia</option>
+    <option value="10">Devolução ao Fornecedor</option>
+    <option value="20">Devolução de Empréstimo</option>
+    <option value="18">Empréstimo</option>
+    <option value="11">Perda/Roubo</option>
+    <option value="24">Transferência</option>
+    <option value="22">Troca</option>
+    <option value="8">Uso Interno</option>
+    <option value="16">Uso Interno com Registro de Cliente</option>
+</select>
+
