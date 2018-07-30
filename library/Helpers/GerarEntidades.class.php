@@ -41,67 +41,69 @@ class GerarEntidades
                 $this->tabelas = [];
                 if ($result) {
                     while ($row = mysqli_fetch_row($result)) {
-                        if(!in_array($row[0], static::$CLASS_PADRAO))
-                        $this->tabelas[] = $row[0];
+                        if (!in_array($row[0], static::$CLASS_PADRAO))
+                            $this->tabelas[] = $row[0];
                     }
                 }
             }
 
-            // Gera a Classe de Relacionamentos
-            foreach ($this->tabelas as $table) {
-                $table = strtolower($table);
-                $row2 = mysqli_query($this->conn, 'SHOW COLUMNS FROM ' . $table);
-                $colunas = array();
-                $relacionamentosTabela = array();
-                if (mysqli_num_rows($row2) > 0) {
-                    while ($row = mysqli_fetch_assoc($row2)) {
-                        $colunas[] = $row['Field'];
-                        $constantes[strtoupper($row['Field'])] = $row['Field'];
-                        if ($row['Extra'] == '' && $row['Key'] != '')
-                            $relacionamentosTabela[] = $row['Field'];
+            if (!empty($this->tabelas)) {
+                // Gera a Classe de Relacionamentos
+                foreach ($this->tabelas as $table) {
+                    $table = strtolower($table);
+                    $row2 = mysqli_query($this->conn, 'SHOW COLUMNS FROM ' . $table);
+                    $colunas = array();
+                    $relacionamentosTabela = array();
+                    if (mysqli_num_rows($row2) > 0) {
+                        while ($row = mysqli_fetch_assoc($row2)) {
+                            $colunas[] = $row['Field'];
+                            $constantes[strtoupper($row['Field'])] = $row['Field'];
+                            if ($row['Extra'] == '' && $row['Key'] != '')
+                                $relacionamentosTabela[] = $row['Field'];
 
+                        }
+                    }
+                    foreach ($relacionamentosTabela as $rel) {
+                        $this->relacionamentos[$table][$rel] = [
+                            $rel,
+                            $this->getEntidade($rel)
+                        ];
+                        $this->relacionamentos[str_replace('co_', 'tb_', $rel)][str_replace(array('TB_', 'tb_'), 'co_', $table)] = [
+                            $rel,
+                            $this->getEntidade($table)
+                        ];
                     }
                 }
-                foreach ($relacionamentosTabela as $rel) {
-                    $this->relacionamentos[$table][$rel] = [
-                        $rel,
-                        $this->getEntidade($rel)
-                    ];
-                    $this->relacionamentos[str_replace('co_', 'tb_', $rel)][str_replace(array('TB_', 'tb_'), 'co_', $table)] = [
-                        $rel,
-                        $this->getEntidade($table)
-                    ];
-                }
-            }
-            $this->geraClassRelacionamento($this->relacionamentos);
+                $this->geraClassRelacionamento($this->relacionamentos);
 
-            /**
-             * Iterate tables
-             */
-            foreach ($this->tabelas as $table) {
-                $table = strtolower($table);
-                $row2 = mysqli_query($this->conn, 'SHOW COLUMNS FROM ' . $table);
-                $colunas = array();
-                $chave_primaria = '';
-                $relacionamentosTabela = array();
-                if (mysqli_num_rows($row2) > 0) {
-                    while ($row = mysqli_fetch_assoc($row2)) {
-                        $colunas[] = $row['Field'];
-                        $constantes[strtoupper($row['Field'])] = $row['Field'];
-                        if ($row['Extra'] != '')
-                            $chave_primaria = $row['Field'];
-                        if ($row['Extra'] == '' && $row['Key'] != '')
-                            $relacionamentosTabela[] = $row['Field'];
+                /**
+                 * Iterate tables
+                 */
+                foreach ($this->tabelas as $table) {
+                    $table = strtolower($table);
+                    $row2 = mysqli_query($this->conn, 'SHOW COLUMNS FROM ' . $table);
+                    $colunas = array();
+                    $chave_primaria = '';
+                    $relacionamentosTabela = array();
+                    if (mysqli_num_rows($row2) > 0) {
+                        while ($row = mysqli_fetch_assoc($row2)) {
+                            $colunas[] = $row['Field'];
+                            $constantes[strtoupper($row['Field'])] = $row['Field'];
+                            if ($row['Extra'] != '')
+                                $chave_primaria = $row['Field'];
+                            if ($row['Extra'] == '' && $row['Key'] != '')
+                                $relacionamentosTabela[] = $row['Field'];
 
+                        }
                     }
-                }
-                $Entidade = $this->getEntidade($table);
-                $constantes = $this->geraConstantesService($constantes, $table);
-                $this->geraEntidade($Entidade, $table, $chave_primaria, $colunas, $this->relacionamentos[$table]);
-                $this->geraModel($Entidade);
-                $this->geraConstantes($constantes);
-                $this->geraService($Entidade);
+                    $Entidade = $this->getEntidade($table);
+                    $constantes = $this->geraConstantesService($constantes, $table);
+                    $this->geraEntidade($Entidade, $table, $chave_primaria, $colunas, $this->relacionamentos[$table]);
+                    $this->geraModel($Entidade);
+                    $this->geraConstantes($constantes);
+                    $this->geraService($Entidade);
 
+                }
             }
         } catch (Exception $e) {
             debug($e->getMessage());
@@ -286,7 +288,7 @@ class {$Entidade}Entidade extends AbstractEntidade
         if (!$ArquivoEntidade) return false;
         try {
             $arquivo = PASTA_ENTIDADES . $Entidade . 'Entidade.class.php';
-            if(!file_exists($arquivo)){
+            if (!file_exists($arquivo)) {
                 $handle = fopen($arquivo, 'w+');
                 fwrite($handle, $ArquivoEntidade);
                 fclose($handle);
@@ -321,7 +323,7 @@ class  {$Entidade}Model extends AbstractModel
         if (!$ArquivoModel) return false;
         try {
             $arquivo = PASTA_MODEL . $Entidade . 'Model.class.php';
-            if(!file_exists($arquivo)) {
+            if (!file_exists($arquivo)) {
                 $handle = fopen($arquivo, 'w+');
                 fwrite($handle, $ArquivoModel);
                 fclose($handle);
@@ -375,7 +377,7 @@ class  {$Entidade}Model extends AbstractModel
 
     private function geraService($Entidade)
     {
-            $ArquivoService = "<?php\n
+        $ArquivoService = "<?php\n
 /**
  * {$Entidade}Service.class [ SEVICE ]
  * @copyright (c) " . date('Y') . ", Leo Bessa
@@ -389,7 +391,7 @@ class  {$Entidade}Service extends AbstractService
         \$this->ObjetoModel = New {$Entidade}Model();
     }\n\n
 }";
-            $this->saveService($ArquivoService, $Entidade);
+        $this->saveService($ArquivoService, $Entidade);
     }
 
     protected function saveService($ArquivoService, $Entidade)
@@ -397,7 +399,7 @@ class  {$Entidade}Service extends AbstractService
         if (!$ArquivoService) return false;
         try {
             $arquivo = PASTA_SEVICE . $Entidade . 'Service.class.php';
-            if(!file_exists($arquivo)) {
+            if (!file_exists($arquivo)) {
                 $handle = fopen($arquivo, 'w+');
                 fwrite($handle, $ArquivoService);
                 fclose($handle);

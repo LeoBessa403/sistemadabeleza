@@ -33,7 +33,7 @@
 	define('NU_TEL1', 'nu_tel1');
 	define('NU_TEL2', 'nu_tel2');
 	define('NU_TEL3', 'nu_tel3');
-	define('NU_TEL4', 'nu_tel4');
+	define('NU_TEL_0800', 'nu_tel_0800');
 	define('DS_EMAIL', 'ds_email');
 	define('DS_SITE', 'ds_site');
 	define('DT_CADASTRO', 'dt_cadastro');

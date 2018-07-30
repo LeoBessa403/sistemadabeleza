@@ -7,121 +7,142 @@
 
 class ContatoEntidade extends ContatoEntidadeExtends
 {
-	const TABELA = 'TB_CONTATO';
-	const ENTIDADE = 'ContatoEntidade';
-	const CHAVE = CO_CONTATO;
+    const TABELA = 'TB_CONTATO';
+    const ENTIDADE = 'ContatoEntidade';
+    const CHAVE = CO_CONTATO;
 
-	private $co_contato;
-	private $nu_tel1;
-	private $nu_tel2;
-	private $nu_tel3;
-	private $ds_email;
+    private $co_contato;
+    private $nu_tel1;
+    private $nu_tel2;
+    private $nu_tel3;
+    private $nu_tel_0800;
+    private $ds_email;
     private $ds_site;
-	private $co_pessoa;
+    private $co_pessoa;
 
-	/**
+    /**
      * @return array
      */
-	public static function getCampos() {
-    	return [
-			CO_CONTATO,
-			NU_TEL1,
-			NU_TEL2,
-			NU_TEL3,
-			DS_EMAIL,
-		];
+    public static function getCampos()
+    {
+        return [
+            CO_CONTATO,
+            NU_TEL1,
+            NU_TEL2,
+            NU_TEL3,
+            NU_TEL_0800,
+            DS_EMAIL,
+            DS_SITE,
+        ];
     }
 
-	/**
-	* @return array $relacionamentos
+    /**
+     * @return array $relacionamentos
      */
-	public static function getRelacionamentos() {
-    	$relacionamentos = Relacionamentos::getRelacionamentos();
-		return $relacionamentos[static::TABELA];
-	}
+    public static function getRelacionamentos()
+    {
+        $relacionamentos = Relacionamentos::getRelacionamentos();
+        return $relacionamentos[static::TABELA];
+    }
 
 
-	/**
-	* @return int $co_contato
+    /**
+     * @return int $co_contato
      */
-	public function getCoContato()
+    public function getCoContato()
     {
         return $this->co_contato;
     }
 
-	/**
-	* @param $co_contato
+    /**
+     * @param $co_contato
      * @return mixed
      */
-	public function setCoContato($co_contato)
+    public function setCoContato($co_contato)
     {
         return $this->co_contato = $co_contato;
     }
 
-	/**
-	* @return mixed $nu_tel1
+    /**
+     * @return mixed $nu_tel1
      */
-	public function getNuTel1()
+    public function getNuTel1()
     {
         return $this->nu_tel1;
     }
 
-	/**
-	* @param $nu_tel1
+    /**
+     * @param $nu_tel1
      * @return mixed
      */
-	public function setNuTel1($nu_tel1)
+    public function setNuTel1($nu_tel1)
     {
         return $this->nu_tel1 = $nu_tel1;
     }
 
-	/**
-	* @return mixed $nu_tel2
+    /**
+     * @return mixed $nu_tel2
      */
-	public function getNuTel2()
+    public function getNuTel2()
     {
         return $this->nu_tel2;
     }
 
-	/**
-	* @param $nu_tel2
+    /**
+     * @param $nu_tel2
      * @return mixed
      */
-	public function setNuTel2($nu_tel2)
+    public function setNuTel2($nu_tel2)
     {
         return $this->nu_tel2 = $nu_tel2;
     }
 
-	/**
-	* @return mixed $nu_tel3
+    /**
+     * @return mixed $nu_tel3
      */
-	public function getNuTel3()
+    public function getNuTel3()
     {
         return $this->nu_tel3;
     }
 
-	/**
-	* @param $nu_tel3
+    /**
+     * @param $nu_tel3
      * @return mixed
      */
-	public function setNuTel3($nu_tel3)
+    public function setNuTel3($nu_tel3)
     {
         return $this->nu_tel3 = $nu_tel3;
     }
 
-	/**
-	* @return mixed $ds_email
+    /**
+     * @return mixed
      */
-	public function getDsEmail()
+    public function getNuTel0800()
+    {
+        return $this->nu_tel_0800;
+    }
+
+    /**
+     * @param mixed $nu_tel_0800
+     */
+    public function setNuTel0800($nu_tel_0800)
+    {
+        $this->nu_tel_0800 = $nu_tel_0800;
+    }
+
+    /**
+     * @return mixed $ds_email
+     */
+    public function getDsEmail()
     {
         return $this->ds_email;
     }
 
-	/**
-	* @param $ds_email
+    /**
+     * @param $ds_email
      * @return mixed
      */
-	public function setDsEmail($ds_email)
+    public function setDsEmail($ds_email)
     {
         return $this->ds_email = $ds_email;
     }
@@ -143,19 +164,19 @@ class ContatoEntidade extends ContatoEntidadeExtends
         return $this->ds_site = $ds_site;
     }
 
-	/**
-	* @return PessoaEntidade $co_pessoa
+    /**
+     * @return PessoaEntidade $co_pessoa
      */
-	public function getCoPessoa()
+    public function getCoPessoa()
     {
         return $this->co_pessoa;
     }
 
-	/**
+    /**
      * @param $co_pessoa
      * @return mixed
      */
-	public function setCoPessoa($co_pessoa)
+    public function setCoPessoa($co_pessoa)
     {
         return $this->co_pessoa = $co_pessoa;
     }

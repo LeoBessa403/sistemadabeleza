@@ -4,9 +4,9 @@
     $url = (isset($link) && $link != "" ? $link : SITE);
     $url = explode("/", $url);
 
-    if($url[0] == ADMIN):
+//    if($url[0] == ADMIN):
         include './'.ADMIN.'/sistema.php';
-    else:
-        include './'.SITE.'/web.php';
-    endif;
+//    else:
+//        include './'.SITE.'/web.php';
+//    endif;
 ?>
