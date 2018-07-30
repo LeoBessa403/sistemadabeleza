@@ -2,7 +2,9 @@
 ob_start();
 $url = new UrlAmigavel();
 $back = new Backup();
-//$entidade = new GerarEntidades();
+$entidade = new GerarEntidades([
+//        'TB_MODULO', 'TB_PLANO_MODULO', 'TB_PLANO', 'TB_PLANO_ASSINANTE'
+]);
 if (in_array(UrlAmigavel::$action, UrlAmigavel::$ACESSO_PERMITIDO)):
     $url->pegaControllerAction();
     exit;

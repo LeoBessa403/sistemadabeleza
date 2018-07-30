@@ -32,7 +32,7 @@ class AuditoriaForm
 
         $formulario
             ->setId(CO_REGISTRO)
-            ->setTamanhoInput(6)
+            ->setTamanhoInput(4)
             ->setClasses("numero")
             ->setLabel("Código do Registro")
             ->CriaInpunt();
@@ -40,7 +40,7 @@ class AuditoriaForm
         $formulario
             ->setId('dt1')
             ->setIcon("clip-calendar-3")
-            ->setTamanhoInput(3)
+            ->setTamanhoInput(4)
             ->setClasses("data dt1 ob")
             ->setValor(date('d/m/Y'))
             ->setLabel("Período Inicío")
@@ -49,7 +49,7 @@ class AuditoriaForm
         $formulario
             ->setId('dt2')
             ->setIcon("clip-calendar-3")
-            ->setTamanhoInput(3)
+            ->setTamanhoInput(4)
             ->setValor(date('d/m/Y'))
             ->setClasses("data dt2 ob")
             ->setLabel("Fim")
