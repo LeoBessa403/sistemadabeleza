@@ -18,7 +18,7 @@ body {
 }
 
 body.bg_style_1 {
-    background: url("../images/bg.png") rgba(0, 0, 0, 0) !important;
+    background: url("../images/team-bg.jpg") rgba(0, 0, 0, 0) !important;
 }
 
 body.bg_style_2 {
@@ -3426,7 +3426,7 @@ body.login {
 }
 
 body.login.example1 {
-    background-image: url("../images/bg.png");
+    background-image: url("../images/team-bg.jpg");
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -4431,7 +4431,7 @@ div.timeline_element.purple div.timeline_title {
 }
 
 .timer-area {
-    background-image: url("../images/bg.png");
+    background-image: url("../images/team-bg.jpg");
     background-color: rgba(0, 0, 0, 0);
     margin-bottom: 4em;
     padding-top: 2em;

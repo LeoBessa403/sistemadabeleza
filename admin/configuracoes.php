@@ -4,21 +4,21 @@ function servidor_inicial()
 {
     if ($_SERVER['HTTP_HOST'] == 'localhost') {
         $config = array(
-            'HOME' => 'http://localhost/bicalho/',
+            'HOME' => 'http://localhost/sistemadabeleza/',
             'HOST' => 'localhost',
             'USER' => 'root',
             'PASS' => '',
-            'DBSA' => 'bicalhor_bd',
+            'DBSA' => 'sistem25_dabelez',
             'DEBUG' => true,
             'PROD' => false
         );
     } else {
         $config = array(
-            'HOME' => 'https://bicalhorefrigeracao.com/',
+            'HOME' => 'https://sistemadabeleza.com.br/',
             'HOST' => 'localhost',
-            'USER' => 'bicalhor_bd',
+            'USER' => 'sistem25_dabelez',
             'PASS' => 'Admin101*',
-            'DBSA' => 'bicalhor_bd',
+            'DBSA' => 'sistem25_dabelez',
             'DEBUG' => false,
             'PROD' => true
         );
@@ -37,9 +37,9 @@ function servidor_inicial()
     //////////////////////////////////////////////
 
     // Título do Site
-    define('DESC', 'Bicalho Refrigeração');
+    define('DESC', 'Sistema da Beleza');
     // Título do Sistema
-    define('DESC_SIS', 'Sistema Bicalho');
+    define('DESC_SIS', 'Sistema da Beleza');
     // Tabela de pesquisa de usuário para validação
     define('TABLE_USER', 'tb_usuario');
     // Campo de login na Tabela de pesquisa de usuário para validação
@@ -54,11 +54,11 @@ function servidor_inicial()
     // (Ex.: cadastrante, administrador, pesquisador) Sepmre separados por (, )
     define('CAMPO_PERFIL', 'ds_perfil');
     // Atribui o nome da Sessão do usuario Logado no sitema
-    define('SESSION_USER', 'user_bicalho');
+    define('SESSION_USER', 'user_sistema_beleza');
     // Tempo de Inativadade Máximo em Minutos, aceito para deslogar do Sistema.
-    define('INATIVO', 20);
+    define('INATIVO', 30);
     // A frequencia em dias para realizar o BACKUP NO BANCO DE DADOS
-    define('BACKUP', 15);
+    define('BACKUP', 1);
     // TAMANHO PADRÃO DO WIDTH DAS IAMGENS A SEREM CARREGADAS
     define('TAMANHO', 800);
     // PASTA DE ARMAZENAMENTO DE UPLOADS
@@ -68,11 +68,11 @@ function servidor_inicial()
     // NÚMERO PADRÃO DE ENVIO DO WHATSAPP
     define('WHATSAPP', '5561993704240');
     // DESCRIÇÃO PADRÃO DO SITE
-    define('DESC_SITE', 'Equipamentos para Lanchonetes, Padarias, Açougues, Ambulantes. Automação e Refrigeração Comercial, Ar Condicionados e Muito Mais!');
+    define('DESC_SITE', 'Sistema de gestão do ramo de beleza');
     // TÍTULO PADRÃO DO SITE
-    define('TITULO_SITE', 'Equipamentos de Automação e Refrigeração Comercial para o seu negócio!');
+    define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
     // CONTROLLERS PARA GERAR O SEO DIFERENCIADO
-    define('CONTROLLER_SEO', 'Produtos, Segmentos, Fabricantes, Categorias');
+    define('CONTROLLER_SEO', '');
 
     //////////////////////////////////////////////
     // ******* CONFIGURAÇÕES DE EMAIL ********** //

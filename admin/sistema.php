@@ -2,7 +2,7 @@
 ob_start();
 $url = new UrlAmigavel();
 $back = new Backup();
-//$entidade = new GerarEntidades();
+$entidade = new GerarEntidades();
 if (in_array(UrlAmigavel::$action, UrlAmigavel::$ACESSO_PERMITIDO)):
     $url->pegaControllerAction();
     exit;
@@ -175,12 +175,7 @@ endif;
                 <!-- start: MAIN NAVIGATION MENU -->
                 <?php
                 $menu = array(
-                    "Produto" => array("fa fa-group", "CadastroProduto", "ListarProduto"),
-                    "Fabricante" => array("fa fa-cogs", "CadastroFabricante", "ListarFabricante"),
-                    "Categoria" => array("clip-list-6", "CadastroCategoria", "ListarCategoria"),
-                    "Segmento" => array("clip-tree", "CadastroSegmento", "ListarSegmento"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
-                    "Marketing" => array("fa-envelope fa", "Email"),
                     "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario"),
                     "Perfil" => array("clip-stack-empty", "CadastroPerfil", "ListarPerfil"),
                     "Funcionalidade" => array("fa fa-outdent", "CadastroFuncionalidade", "ListarFuncionalidade"),
