@@ -109,6 +109,11 @@ class Relacionamentos
                     ('Entidade') => 'UsuarioEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (ContatoEntidade::TABELA) => Array(
                 (CO_PESSOA) => Array(
@@ -228,6 +233,47 @@ class Relacionamentos
                 (CO_PLANO) => Array(
                     ('Campo') => CO_PLANO,
                     ('Entidade') => 'PlanoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PLANO_ASSINANTE_ASSINATURA) => Array(
+                    ('Campo') => CO_PLANO_ASSINANTE,
+                    ('Entidade') => 'PlanoAssinanteAssinaturaEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (PlanoAssinanteAssinaturaEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PLANO_ASSINANTE) => Array(
+                    ('Campo') => CO_PLANO_ASSINANTE,
+                    ('Entidade') => 'PlanoAssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (AssinanteEntidade::TABELA) => Array(
+                (CO_PLANO_ASSINANTE_ASSINATURA) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'PlanoAssinanteAssinaturaEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_EMPRESA) => Array(
+                    ('Campo') => CO_EMPRESA,
+                    ('Entidade') => 'EmpresaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PESSOA) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'PessoaEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (EmpresaEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_EMPRESA,
+                    ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
                 ),
             ),

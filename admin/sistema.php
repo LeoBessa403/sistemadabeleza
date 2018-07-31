@@ -3,7 +3,7 @@ ob_start();
 $url = new UrlAmigavel();
 $back = new Backup();
 //$entidade = new GerarEntidades([
-////        'TB_MODULO', 'TB_PLANO_MODULO', 'TB_PLANO', 'TB_PLANO_ASSINANTE'
+//        'TB_PLANO_ASSINANTE_ASSINATURA', 'TB_ASSINANTE'
 //]);
 if (in_array(UrlAmigavel::$action, UrlAmigavel::$ACESSO_PERMITIDO)):
     $url->pegaControllerAction();
@@ -177,7 +177,8 @@ endif;
                 <!-- start: MAIN NAVIGATION MENU -->
                 <?php
                 $menu = array(
-                    "Plano" => array("clip-file-2", "ListarPlano", "CadastroPlano"),
+                    "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante"),
+                    "Plano" => array("clip-banknote", "ListarPlano", "CadastroPlano"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
                     "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario"),
                     "Perfil" => array("clip-stack-empty", "CadastroPerfil", "ListarPerfil"),
