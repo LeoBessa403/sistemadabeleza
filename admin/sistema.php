@@ -177,6 +177,7 @@ endif;
                 <!-- start: MAIN NAVIGATION MENU -->
                 <?php
                 $menu = array(
+                    "Plano" => array("clip-file-2", "ListarPlano", "CadastroPlano"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
                     "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario"),
                     "Perfil" => array("clip-stack-empty", "CadastroPerfil", "ListarPerfil"),
