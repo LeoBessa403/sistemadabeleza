@@ -26,23 +26,23 @@ class Assinante extends AbstractController
         endif;
 
         $coAssinante = UrlAmigavel::PegaParametro(CO_ASSINANTE);
-        $res[ST_STATUS] = "checked";
+        $res = [];
         if ($coAssinante) {
-            /** @var AssinanteEntidade $assinante */
-            $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
-            $res[NO_ASSINANTE] = $assinante->getNoAssinante();
-            $res[NU_MES_ATIVO] = $assinante->getNuMesAtivo();
-            $res[DS_OBSERVACAO] = $assinante->getCoUltimoAssinanteAssinante()->getDsObservacao();
-            $res[NU_VALOR] = Valida::FormataMoeda($assinante->getCoUltimoAssinanteAssinante()->getNuValor());
-            $modulos = [];
-            /** @var AssinanteModuloEntidade $ModuloEntidade */
-            foreach ($assinante->getCoAssinanteModulo() as $ModuloEntidade) {
-                $modulos[] = $ModuloEntidade->getCoModulo()->getCoModulo();
-            }
-            $res[CO_MODULO] = $modulos;
-            $res[CO_ASSINANTE] = $assinante->getCoAssinante();
-            $res[ST_STATUS] = ($assinante->getStStatus() == 'A')
-                ? 'checked' : '';
+//            /** @var AssinanteEntidade $assinante */
+//            $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
+//            $res[NO_ASSINANTE] = $assinante->getNoAssinante();
+//            $res[NU_MES_ATIVO] = $assinante->getNuMesAtivo();
+//            $res[DS_OBSERVACAO] = $assinante->getCoUltimoAssinanteAssinante()->getDsObservacao();
+//            $res[NU_VALOR] = Valida::FormataMoeda($assinante->getCoUltimoAssinanteAssinante()->getNuValor());
+//            $modulos = [];
+//            /** @var AssinanteModuloEntidade $ModuloEntidade */
+//            foreach ($assinante->getCoAssinanteModulo() as $ModuloEntidade) {
+//                $modulos[] = $ModuloEntidade->getCoModulo()->getCoModulo();
+//            }
+//            $res[CO_MODULO] = $modulos;
+//            $res[CO_ASSINANTE] = $assinante->getCoAssinante();
+//            $res[ST_STATUS] = ($assinante->getStStatus() == 'A')
+//                ? 'checked' : '';
         }
         $this->form = AssinanteForm::Cadastrar($res);
     }

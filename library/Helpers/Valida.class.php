@@ -263,16 +263,41 @@ class Valida
      * @param STRING $data = Data em (d/m/Y)
      * @param INT $diferenca = Diferença de dias entre as Datas
      * @param STRING $operacao = Operação de Soma (+) ou Subtração (-)
-     * @return Date
+     * @param STRING $periodo = Período para a operação d = Dias, m = Mês e a = Ano
+     * @return STRING $dataFinal
      */
-    public static function CalculaData($data, $diferenca, $operacao)
+    public static function CalculaData($data, $diferenca, $operacao, $periodo = 'd')
     {
         self::$Data = explode('/', $data);
-        if ($operacao == "+"):
-            return date("d/m/Y", mktime(0, 0, 0, self::$Data[1], self::$Data[0] + $diferenca, self::$Data[2]));
-        else:
-            return date("d/m/Y", mktime(0, 0, 0, self::$Data[1], self::$Data[0] - $diferenca, self::$Data[2]));
-        endif;
+        $dataFinal = '';
+        switch ($periodo) {
+            case "d":
+                if ($operacao == "+"):
+                    $dataFinal = date("d/m/Y", mktime(0, 0, 0, self::$Data[1], self::$Data[0] + $diferenca, self::$Data[2]));
+                else:
+                    $dataFinal = date("d/m/Y", mktime(0, 0, 0, self::$Data[1], self::$Data[0] - $diferenca, self::$Data[2]));
+                endif;
+                break;
+            case "m":
+                if ($operacao == "+"):
+                    $dataFinal = date("d/m/Y", mktime(0, 0, 0, self::$Data[1] + $diferenca, self::$Data[0], self::$Data[2]));
+                else:
+                    $dataFinal = date("d/m/Y", mktime(0, 0, 0, self::$Data[1] - $diferenca, self::$Data[0], self::$Data[2]));
+                endif;
+                break;
+            case "a":
+                if ($operacao == "+"):
+                    $dataFinal = date("d/m/Y", mktime(0, 0, 0, self::$Data[1], self::$Data[0], self::$Data[2] + $diferenca));
+                else:
+                    $dataFinal = date("d/m/Y", mktime(0, 0, 0, self::$Data[1], self::$Data[0], self::$Data[2] - $diferenca));
+                endif;
+                break;
+            default:
+                $dataFinal = null;
+                break;
+        }
+        return $dataFinal;
+
     }
 
     /**
@@ -330,7 +355,7 @@ class Valida
     {
 
         $classAdd = 'center-block';
-        if(UrlAmigavel::$modulo == ADMIN)
+        if (UrlAmigavel::$modulo == ADMIN)
             $classAdd = '';
 
         self::$Data = 'uploads/' . $ImageUrl;
@@ -590,8 +615,8 @@ class Valida
     public static function geraBtnNovo()
     {
         echo '<a href="' . PASTAADMIN . UrlAmigavel::$controller . '/Cadastro' . UrlAmigavel::$controller . '"
-               class="btn btn-green tooltips" data-original-title="Criar '.UrlAmigavel::$controller .'" data-placement="top">
-               <i class="fa fa-plus"></i> Criar '.UrlAmigavel::$controller .'
+               class="btn btn-green tooltips" data-original-title="Criar ' . UrlAmigavel::$controller . '" data-placement="top">
+               <i class="fa fa-plus"></i> Criar ' . UrlAmigavel::$controller . '
             </a>';
     }
 

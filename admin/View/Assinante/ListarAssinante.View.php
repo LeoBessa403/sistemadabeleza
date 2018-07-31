@@ -7,7 +7,7 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Plano
+                            Assinante
                         </a>
                     </li>
                     <li class="active">
@@ -15,8 +15,8 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Plano
-                        <small>Listar Plano</small>
+                    <h1>Assinante
+                        <small>Listar Assinante</small>
                         <?php Valida::geraBtnNovo(); ?>
                     </h1>
                 </div>
@@ -28,41 +28,31 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Planos
+                        Assinantes
                     </div>
                     <div class="panel-body">
                         <?php
                         Modal::load();
-                        Modal::confirmacao("confirma_Plano");
-                        $arrColunas = array('Plano', 'Meses Ativo', 'Valor R$', 'Módulos', 'Ações');
+                        Modal::confirmacao("confirma_Assinante");
+                        $arrColunas = array('Assinante', 'Responsável', 'E-mail', 'Expiração', 'Status', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var PlanoEntidade $res */
+                        /** @var AssinanteEntidade $res */
                         foreach ($result as $res):
-                            $acao = '<a href="' . PASTAADMIN . 'Plano/CadastroPlano/' .
-                                Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" class="btn btn-primary tooltips" 
+                            $acao = '<a href="' . PASTAADMIN . 'Assinante/CadastroAssinante/' .
+                                Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            $acao .= ' <a href="' . PASTAADMIN . 'Plano/HistoricoPlano/' .
-                                Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" 
-                                class="btn btn-med-grey tooltips" 
-                                    data-original-title="Historico do Plano" data-placement="top">
-                                     <i class="clip-folder-open"></i>
-                                 </a>';
-                            $modulos = [];
-                            /** @var PlanoModuloEntidade $planoModulo */
-                            foreach ($res->getCoPlanoModulo() as $planoModulo) {
-                                $modulos[] = $planoModulo->getCoModulo()->getNoModulo();
-                            }
 
-                            $grid->setColunas($res->getNoPlano());
-                            $grid->setColunas($res->getNuMesAtivo(), 2);
-                            $grid->setColunas(Valida::FormataMoeda($res->getCoUltimoPlanoAssinante()->getNuValor()), 2);
-                            $grid->setColunas(implode(', ', $modulos));
+                            $grid->setColunas($res->getCoPessoa()->getNoPessoa());
+                            $grid->setColunas($res->getCoPessoa()->getNoPessoa());
+                            $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
+                            $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
+                            $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
                             $grid->setColunas($acao, 2);
-                            $grid->criaLinha($res->getCoPlano());
+                            $grid->criaLinha($res->getCoAssinante());
                         endforeach;
                         $grid->finalizaGrid();
                         ?>

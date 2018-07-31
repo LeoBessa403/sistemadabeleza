@@ -8,71 +8,54 @@ class AssinanteForm
 {
     public static function Cadastrar($res = false)
     {
-        $id = "cadastroPlano";
+        $id = "cadastroAssinante";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Cadastrar", 6);
         $formulario->setValor($res);
 
-        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Plano Ativo")
-            ->setClasses($res[ST_STATUS])
-            ->setId(ST_STATUS)
-            ->setType("checkbox")
+            ->setId(NO_PESSOA)
+            ->setClasses("ob nome")
+            ->setLabel("Nome Completo")
             ->setTamanhoInput(12)
-            ->setOptions($label_options2)
             ->CriaInpunt();
 
         $formulario
-            ->setId(NO_PLANO)
-            ->setLabel("Plano")
-            ->setClasses("ob")
-            ->CriaInpunt();
-
-        $label_options = PlanoService::montaComboMesesAtivos();
-        $formulario
-            ->setLabel("Meses Ativo")
-            ->setId(NU_MES_ATIVO)
-            ->setType("select")
-            ->setClasses("ob")
-            ->setTamanhoInput(8)
-            ->setOptions($label_options)
-            ->setInfo("Número de meses que o plano ficarar ativo")
-            ->CriaInpunt();
-
-
-        $formulario
-            ->setId(NU_VALOR)
-            ->setClasses("moeda ob")
-            ->setLabel("Valor R$")
+            ->setId(NU_TEL1)
             ->setTamanhoInput(4)
+            ->setIcon("fa fa-mobile-phone")
+            ->setLabel("Telefone Celular")
+            ->setInfo("Com <i class=\"fa fa-whatsapp\" style='color: green;' '></i> WhatSapp")
+            ->setClasses("tel ob")
             ->CriaInpunt();
 
         $formulario
-            ->setId(CO_MODULO)
-            ->setAutocomplete(
-                ModuloEntidade::TABELA,
-                NO_MODULO,
-                ModuloEntidade::CHAVE
-            )
-            ->setType("select")
-            ->setLabel("Módulos do plano")
-            ->setClasses("ob multipla")
+            ->setId(DS_EMAIL)
+            ->setIcon("fa-envelope fa")
+            ->setClasses("email ob")
+            ->setLabel("Email")
+            ->setTamanhoInput(8)
             ->CriaInpunt();
 
-        $formulario
-            ->setType("textarea")
-            ->setId(DS_OBSERVACAO)
-            ->setLabel("Observação")
-            ->CriaInpunt();
+//        $formulario
+//            ->setId(CO_MODULO)
+//            ->setAutocomplete(
+//                ModuloEntidade::TABELA,
+//                NO_MODULO,
+//                ModuloEntidade::CHAVE
+//            )
+//            ->setType("select")
+//            ->setLabel("Módulos do plano")
+//            ->setClasses("ob multipla")
+//            ->CriaInpunt();
 
 
-        if (!empty($res[CO_PLANO])):
+        if (!empty($res[CO_ASSINANTE])):
             $formulario
                 ->setType("hidden")
-                ->setId(CO_PLANO)
-                ->setValues($res[CO_PLANO])
+                ->setId(CO_ASSINANTE)
+                ->setValues($res[CO_ASSINANTE])
                 ->CriaInpunt();
         endif;
 

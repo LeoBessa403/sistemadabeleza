@@ -228,14 +228,14 @@ class FuncoesSistema
         return $op;
     }
 
-    public static function ProdutoEstoqueLabel($estoque)
+    public static function StatusLabel($status)
     {
-        switch ($estoque) {
-            case 1:
-                $op = '<span class="label label-success">Com Estoque</span>';
+        switch ($status) {
+            case "A":
+                $op = '<span class="label label-success">Ativo</span>';
                 break;
             default:
-                $op = '<span class="label label-danger">Sem Estoque</span>';
+                $op = '<span class="label label-danger">Inativo</span>';
                 break;
         }
 
