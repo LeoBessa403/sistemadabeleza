@@ -8,11 +8,11 @@ class PlanoForm
 {
     public static function Cadastrar($res = false)
     {
-        $id = "cadastroProduto";
+        $id = "cadastroPlano";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Cadastrar", 6);
-
+        $formulario->setValor($res);
 
         $formulario
             ->setId(NO_PLANO)
@@ -26,7 +26,7 @@ class PlanoForm
             ->setId(NU_MES_ATIVO)
             ->setType("select")
             ->setClasses("ob")
-            ->setTamanhoInput(6)
+            ->setTamanhoInput(8)
             ->setOptions($label_options)
             ->setInfo("Número de meses que o plano ficarar ativo")
             ->CriaInpunt();
@@ -35,8 +35,8 @@ class PlanoForm
         $formulario
             ->setId(NU_VALOR)
             ->setClasses("moeda ob")
-            ->setLabel("Valor r$")
-            ->setTamanhoInput(6)
+            ->setLabel("Valor R$")
+            ->setTamanhoInput(4)
             ->CriaInpunt();
 
         $formulario
@@ -53,7 +53,6 @@ class PlanoForm
 
         $formulario
             ->setType("textarea")
-            ->setClasses("ob")
             ->setId(DS_OBSERVACAO)
             ->setLabel("Observação")
             ->CriaInpunt();

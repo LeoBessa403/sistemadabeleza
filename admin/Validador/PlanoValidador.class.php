@@ -12,28 +12,19 @@ class  PlanoValidador extends AbstractValidador
         DADOS => []
     ];
 
-    public function validarProduto($dados, $files)
+    public function validarPlano($dados)
     {
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
-            $dados[NO_PRODUTO], 6, 'Produto'
-        );
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
-            $dados[NU_CODIGO_INTERNO], 1, 'Código do Produto'
+            $dados[NO_PLANO], 1, 'Plano'
         );
         $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
-            $dados[CO_FABRICANTE], 'Fabricante do Produto'
+            $dados[NU_MES_ATIVO], 'Meses Ativo'
         );
         $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
-            $dados[CO_CATEGORIA], 'Categoria do Produto'
-        );
-        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
-            $dados[CO_UNIDADE_VENDA], 'Unidade de Venda'
+            $dados[CO_MODULO], 'Módulos do plano'
         );
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NU_PRECO_VENDA], AbstractValidador::VALIDACAO_MOEDA, 'Valor de Venda'
-        );
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
-            $dados[DS_DESCRICAO], 5, 'Descrição do Produto'
+            $dados[NU_VALOR], AbstractValidador::VALIDACAO_MOEDA, 'Valor R$'
         );
 
         return $this->MontaRetorno($this->retorno);

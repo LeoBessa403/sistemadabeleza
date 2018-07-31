@@ -5,15 +5,14 @@ class Plano extends AbstractController
     public $result;
     public $plano;
 
-    function ListarPlano()
+    public function ListarPlano()
     {
         /** @var PlanoService $planoService */
         $planoService = $this->getService(PLANO_SERVICE);
-
         $this->result = $planoService->PesquisaTodos();
     }
 
-    function CadastroPlano()
+    public function CadastroPlano()
     {
         /** @var PlanoService $planoService */
         $planoService = $this->getService(PLANO_SERVICE);
@@ -31,9 +30,33 @@ class Plano extends AbstractController
         if ($coPlano) {
             /** @var PlanoEntidade $plano */
             $plano = $planoService->PesquisaUmRegistro($coPlano);
-//            $res = $planoService->getArrayDadosPlano($plano, $res);
+            $res[NO_PLANO] = $plano->getNoPlano();
+            $res[NU_MES_ATIVO] = $plano->getNuMesAtivo();
+            $res[DS_OBSERVACAO] = $plano->getCoUltimoPlanoAssinante()->getDsObservacao();
+            $res[NU_VALOR] = Valida::FormataMoeda($plano->getCoUltimoPlanoAssinante()->getNuValor());
+            $modulos = [];
+            /** @var PlanoModuloEntidade $ModuloEntidade */
+            foreach ($plano->getCoPlanoModulo() as $ModuloEntidade) {
+                $modulos[] = $ModuloEntidade->getCoModulo()->getCoModulo();
+            }
+            $res[CO_MODULO] = $modulos;
+            $res[CO_PLANO] = $plano->getCoPlano();
         }
         $this->form = PlanoForm::Cadastrar($res);
+    }
+
+    public function HistoricoPlano()
+    {
+        /** @var PlanoService $planoService */
+        $planoService = $this->getService(PLANO_SERVICE);
+
+        $coPlano = UrlAmigavel::PegaParametro(CO_PLANO);
+        if ($coPlano) {
+            /** @var PlanoEntidade $plano */
+            $this->plano = $planoService->PesquisaUmRegistro($coPlano);
+        } else {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PlanoNaoEncontrado/');
+        }
     }
 
 }

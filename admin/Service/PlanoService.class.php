@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 /**
  * PlanoService.class [ SEVICE ]
@@ -18,24 +18,44 @@ class  PlanoService extends AbstractService
 
     public function salvaPlano($dados)
     {
+        /** @var PlanoModuloService $PlanoModuloService */
+        $PlanoModuloService = $this->getService(PLANO_MODULO_SERVICE);
+        /** @var PlanoAssinanteService $PlanoAssinanteService */
+        $PlanoAssinanteService = $this->getService(PLANO_ASSINANTE_SERVICE);
         $retorno = [
             SUCESSO => false,
             MSG => null
         ];
-
         $planoValidador = new PlanoValidador();
         /** @var PlanoValidador $validador */
         $validador = $planoValidador->validarPlano($dados);
         if ($validador[SUCESSO]) {
-            $plano[DS_SEGMENTO] = trim($dados[DS_SEGMENTO]);
-            $plano[NO_SEGMENTO_URL_AMIGAVEL] = Valida::ValNome(trim($dados[DS_SEGMENTO]));
+            $plano[NO_PLANO] = trim($dados[NO_PLANO]);
+            $plano[NU_MES_ATIVO] = $dados[NU_MES_ATIVO][0];
+            $planoAssinante[DS_OBSERVACAO] = trim($dados[DS_OBSERVACAO]);
+            $planoAssinante[NU_VALOR] = Valida::FormataMoedaBanco($_POST[NU_VALOR]);
+            $planoAssinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
 
-            if (!empty($_POST[CO_SEGMENTO])):
-                $coPlano = $dados[CO_SEGMENTO];
-                $retorno[SUCESSO] = $this->Salva($plano, $coPlano);
+            if (!empty($_POST[CO_PLANO])):
+                $coPlano = $dados[CO_PLANO];
+                $this->Salva($plano, $coPlano);
             else:
-                $retorno[SUCESSO] = $this->Salva($plano);
+                $plano[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $coPlano = $this->Salva($plano);
             endif;
+
+            $planoModulo[CO_PLANO] = $coPlano;
+            $planoAssinante[CO_PLANO] = $coPlano;
+            $ok = $PlanoModuloService->DeletaQuando($planoModulo);
+            if ($ok) {
+                if (!empty($dados[CO_MODULO])) {
+                    foreach ($dados[CO_MODULO] as $modulo) {
+                        $planoModulo[CO_MODULO] = $modulo;
+                        $PlanoModuloService->Salva($planoModulo);
+                    }
+                }
+            }
+            $retorno[SUCESSO] = $PlanoAssinanteService->Salva($planoAssinante);
         } else {
             $session = new Session();
             $session->setSession(MENSAGEM, $validador[MSG]);

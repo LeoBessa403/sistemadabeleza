@@ -320,4 +320,31 @@ class FuncoesSistema
         return $campo;
     }
 
+    public static function getCoresHistorico()
+    {
+        $cores = array('green', 'teal', 'bricky', 'purple', '');
+
+        return $cores;
+    }
+
+    public static function getMesesHistorico()
+    {
+        $mes_extenso = array(
+            'Jan' => 'Janeiro',
+            'Feb' => 'Fevereiro',
+            'Mar' => 'Março',
+            'Apr' => 'Abril',
+            'May' => 'Maio',
+            'Jun' => 'Junho',
+            'Jul' => 'Julho',
+            'Aug' => 'Agosto',
+            'Nov' => 'Novembro',
+            'Sep' => 'Setembro',
+            'Oct' => 'Outubro',
+            'Dec' => 'Dezembro'
+        );
+
+        return $mes_extenso;
+    }
+
 }

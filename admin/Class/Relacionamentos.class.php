@@ -209,19 +209,19 @@ class Relacionamentos
                 (CO_PLANO_MODULO) => Array(
                     ('Campo') => CO_PLANO,
                     ('Entidade') => 'PlanoModuloEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
                 (CO_PLANO_ASSINANTE) => Array(
                     ('Campo') => CO_PLANO,
                     ('Entidade') => 'PlanoAssinanteEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
             ),
             (ModuloEntidade::TABELA) => Array(
                 (CO_PLANO_MODULO) => Array(
                     ('Campo') => CO_MODULO,
                     ('Entidade') => 'PlanoModuloEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
             ),
             (PlanoAssinanteEntidade::TABELA) => Array(

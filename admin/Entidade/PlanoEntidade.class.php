@@ -163,4 +163,12 @@ class PlanoEntidade extends AbstractEntidade
         return $this->co_plano_assinante = $co_plano_assinante;
     }
 
+    /**
+     * @return PlanoAssinanteEntidade $co_plano_assinante
+     */
+    public function getCoUltimoPlanoAssinante()
+    {
+        return $this->ultimo($this->getCoPlanoAssinante());
+    }
+
 }
