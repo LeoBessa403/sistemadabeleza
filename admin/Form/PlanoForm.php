@@ -14,6 +14,16 @@ class PlanoForm
             "Cadastrar", 6);
         $formulario->setValor($res);
 
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Plano Ativo")
+            ->setClasses($res[ST_STATUS])
+            ->setId(ST_STATUS)
+            ->setType("checkbox")
+            ->setTamanhoInput(12)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
         $formulario
             ->setId(NO_PLANO)
             ->setLabel("Plano")

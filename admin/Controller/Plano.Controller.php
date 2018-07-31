@@ -26,7 +26,7 @@ class Plano extends AbstractController
         endif;
 
         $coPlano = UrlAmigavel::PegaParametro(CO_PLANO);
-        $res = [];
+        $res[ST_STATUS] = "checked";
         if ($coPlano) {
             /** @var PlanoEntidade $plano */
             $plano = $planoService->PesquisaUmRegistro($coPlano);
@@ -41,6 +41,8 @@ class Plano extends AbstractController
             }
             $res[CO_MODULO] = $modulos;
             $res[CO_PLANO] = $plano->getCoPlano();
+            $res[ST_STATUS] = ($plano->getStStatus() == 'A')
+                ? 'checked' : '';
         }
         $this->form = PlanoForm::Cadastrar($res);
     }

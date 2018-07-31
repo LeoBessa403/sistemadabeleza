@@ -32,9 +32,11 @@ class  PlanoService extends AbstractService
         if ($validador[SUCESSO]) {
             $plano[NO_PLANO] = trim($dados[NO_PLANO]);
             $plano[NU_MES_ATIVO] = $dados[NU_MES_ATIVO][0];
+            $plano[ST_STATUS] = (!empty($dados[ST_STATUS])) ? "A" : "I";
             $planoAssinante[DS_OBSERVACAO] = trim($dados[DS_OBSERVACAO]);
             $planoAssinante[NU_VALOR] = Valida::FormataMoedaBanco($_POST[NU_VALOR]);
             $planoAssinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+
 
             if (!empty($_POST[CO_PLANO])):
                 $coPlano = $dados[CO_PLANO];
