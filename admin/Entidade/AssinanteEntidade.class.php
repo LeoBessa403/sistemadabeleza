@@ -18,6 +18,7 @@ class AssinanteEntidade extends AbstractEntidade
 	private $co_empresa;
 	private $co_pessoa;
 	private $co_plano_assinante_assinatura;
+	private $co_assinante_matriz;
 
 
 	/**
@@ -32,6 +33,7 @@ class AssinanteEntidade extends AbstractEntidade
 			ST_STATUS,
 			CO_EMPRESA,
 			CO_PESSOA,
+			CO_ASSINANTE_MATRIZ,
 		];
     }
 
@@ -163,5 +165,23 @@ class AssinanteEntidade extends AbstractEntidade
     {
         return $this->co_plano_assinante_assinatura = $co_plano_assinante_assinatura;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCoAssinanteMatriz()
+    {
+        return $this->co_assinante_matriz;
+    }
+
+    /**
+     * @param AssinanteEntidade $co_assinante_matriz
+     */
+    public function setCoAssinanteMatriz($co_assinante_matriz)
+    {
+        $this->co_assinante_matriz = $co_assinante_matriz;
+    }
+
+
 
 }

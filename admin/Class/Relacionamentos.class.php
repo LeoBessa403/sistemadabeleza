@@ -269,6 +269,11 @@ class Relacionamentos
                     ('Entidade') => 'PessoaEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_ASSINANTE_MATRIZ) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (EmpresaEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(

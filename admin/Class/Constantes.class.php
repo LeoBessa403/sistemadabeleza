@@ -28,6 +28,7 @@
     define('NU_VALOR_ASSINATURA', 'nu_valor_assinatura');
     define('NU_PROFISSIONAIS', 'nu_profissionais');
     define('CO_ASSINANTE', 'co_assinante');
+    define('CO_ASSINANTE_MATRIZ', 'co_assinante_matriz');
 
 	// SERVICES
 	define('EMPRESA_SERVICE', 'EmpresaService');

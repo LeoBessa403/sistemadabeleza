@@ -15,9 +15,16 @@ class AssinanteForm
         $formulario->setValor($res);
 
         $formulario
+            ->setId(NO_FANTASIA)
+            ->setClasses("ob")
+            ->setLabel("Nome do Estabelecimento")
+            ->setTamanhoInput(12)
+            ->CriaInpunt();
+
+        $formulario
             ->setId(NO_PESSOA)
             ->setClasses("ob")
-            ->setLabel("Nome Completo")
+            ->setLabel("Nome do Responsável")
             ->setTamanhoInput(12)
             ->CriaInpunt();
 
@@ -38,16 +45,12 @@ class AssinanteForm
             ->setTamanhoInput(8)
             ->CriaInpunt();
 
+//        $options = AssinanteService::montaComboMatriz();
 //        $formulario
-//            ->setId(CO_MODULO)
-//            ->setAutocomplete(
-//                ModuloEntidade::TABELA,
-//                NO_MODULO,
-//                ModuloEntidade::CHAVE
-//            )
+//            ->setId(CO_ASSINANTE_MATRIZ)
 //            ->setType("select")
-//            ->setLabel("Módulos do plano")
-//            ->setClasses("ob multipla")
+//            ->setLabel("Matriz")
+//            ->setOptions($options)
 //            ->CriaInpunt();
 
 
@@ -62,78 +65,4 @@ class AssinanteForm
         return $formulario->finalizaForm();
     }
 
-    public static function Pesquisar()
-    {
-        $id = "pesquisaProduto";
-
-        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
-            "Pesquisa", 12);
-
-        $formulario
-            ->setId(NO_PRODUTO)
-            ->setLabel("Produto")
-            ->setInfo("Título do Produto")
-            ->CriaInpunt();
-
-        $checked = "checked";
-        $label_options2 = array("Sim", "Não", "verde", "vermelho");
-        $formulario
-            ->setLabel("Produto com Estoque?")
-            ->setClasses($checked)
-            ->setId(NU_ESTOQUE)
-            ->setType("checkbox")
-            ->setTamanhoInput(6)
-            ->setOptions($label_options2)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_CODIGO_INTERNO)
-            ->setLabel("Código do Produto")
-            ->setTamanhoInput(6)
-            ->setClasses("numero")
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(CO_FABRICANTE)
-            ->setAutocomplete(
-                FabricanteEntidade::TABELA,
-                NO_FABRICANTE,
-                FabricanteEntidade::CHAVE
-            )
-            ->setType("select")
-            ->setLabel("Fabricante do Produto")
-            ->setTamanhoInput(6)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(CO_CATEGORIA)
-            ->setAutocomplete(
-                CategoriaEntidade::TABELA,
-                NO_CATEGORIA,
-                CategoriaEntidade::CHAVE
-            )
-            ->setType("select")
-            ->setLabel("Categoria do Produto")
-            ->setTamanhoInput(6)
-            ->CriaInpunt();
-
-//        $formulario
-//            ->setId(NU_PRECO_VENDA)
-//            ->setLabel("Valor de Venda")
-//            ->setTamanhoInput(6)
-//            ->setClasses("moeda")
-//            ->CriaInpunt();
-//
-//        $formulario
-//            ->setId(NU_PRECO_VENDA.'2')
-//            ->setLabel("Valor de Venda")
-//            ->setTamanhoInput(6)
-//            ->setClasses("moeda")
-//            ->CriaInpunt();
-
-        return $formulario->finalizaFormPesquisaAvancada();
-    }
 }
-
-?>
-   
