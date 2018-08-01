@@ -16,7 +16,7 @@ class AssinanteForm
 
         $formulario
             ->setId(NO_PESSOA)
-            ->setClasses("ob nome")
+            ->setClasses("ob")
             ->setLabel("Nome Completo")
             ->setTamanhoInput(12)
             ->CriaInpunt();

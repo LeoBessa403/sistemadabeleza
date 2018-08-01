@@ -45,8 +45,8 @@
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-
-                            $grid->setColunas($res->getCoPessoa()->getNoPessoa());
+                            $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoEmpresa() : '';
+                            $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
                             $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
