@@ -44,7 +44,6 @@ class EmpresaEntidade extends AbstractEntidade
             CO_ENDERECO,
             CO_CONTATO,
             CO_IMAGEM,
-            CO_ASSINANTE,
         ];
     }
 
