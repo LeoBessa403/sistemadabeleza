@@ -26,7 +26,6 @@ class AssinanteMatrizEntidade extends AbstractEntidade
 			CO_ASSINANTE_MATRIZ,
 			DT_CADASTRO,
 			CO_ASSINANTE,
-            CO_ASSINANTE_FILIAL,
 		];
     }
 

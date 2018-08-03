@@ -16,6 +16,7 @@ class PlanoAssinanteEntidade extends AbstractEntidade
 	private $dt_cadastro;
 	private $ds_observacao;
 	private $co_plano;
+	private $co_plano_assinante_assinatura;
 
 
 	/**
@@ -126,5 +127,23 @@ class PlanoAssinanteEntidade extends AbstractEntidade
     {
         return $this->co_plano = $co_plano;
     }
+
+    /**
+     * @return PlanoAssinanteAssinaturaEntidade $co_plano
+     */
+    public function getCoPlanoAssinanteAssinatura()
+    {
+        return $this->co_plano_assinante_assinatura;
+    }
+
+    /**
+     * @param $co_plano_assinante_assinatura
+     * @return mixed
+     */
+    public function setCoPlanoAssinanteAssinatura($co_plano_assinante_assinatura)
+    {
+        $this->co_plano_assinante_assinatura = $co_plano_assinante_assinatura;
+    }
+
 
 }

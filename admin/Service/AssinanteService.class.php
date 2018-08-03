@@ -15,7 +15,7 @@ class  AssinanteService extends AbstractService
         parent::__construct(AssinanteEntidade::ENTIDADE);
         $this->ObjetoModel = New AssinanteModel();
     }
-    
+
     public function salvaAssinante($dados)
     {
         /** @var ContatoService $contatoService */
@@ -24,6 +24,8 @@ class  AssinanteService extends AbstractService
         $pessoaService = $this->getService(PESSOA_SERVICE);
         /** @var EmpresaService $empresaService */
         $empresaService = $this->getService(EMPRESA_SERVICE);
+        /** @var AssinanteMatrizService $assinanteMatrizService */
+        $assinanteMatrizService = $this->getService(ASSINANTE_MATRIZ_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $session = new Session();
@@ -41,6 +43,12 @@ class  AssinanteService extends AbstractService
             $empresa[NO_FANTASIA] = trim($dados[NO_FANTASIA]);
 
             $PDO->beginTransaction();
+            if (!empty($_POST[CO_ASSINANTE_MATRIZ])):
+                $assinante[TP_ASSINANTE] = AssinanteEnum::FILIAL;
+            else:
+                $assinante[TP_ASSINANTE] = AssinanteEnum::MATRIZ;
+            endif;
+
             if (!empty($_POST[CO_ASSINANTE])):
                 /** @var AssinanteService $assinanteService */
                 $assinanteService = $this->getService(ASSINANTE_SERVICE);
@@ -48,7 +56,9 @@ class  AssinanteService extends AbstractService
                 $assinanteEdic = $assinanteService->PesquisaUmRegistro($_POST[CO_ASSINANTE]);
                 $contatoService->Salva($contato, $assinanteEdic->getCoPessoa()->getCoContato()->getCoContato());
                 $empresaService->Salva($empresa, $assinanteEdic->getCoEmpresa()->getNoFantasia());
-                $retorno[SUCESSO] = $pessoaService->Salva($pessoa, $assinanteEdic->getCoPessoa()->getCoPessoa());
+                $pessoaService->Salva($pessoa, $assinanteEdic->getCoPessoa()->getCoPessoa());
+                $this->Salva($assinante, $assinanteEdic->getCoAssinante());
+                $retorno[SUCESSO] = $assinanteEdic->getCoAssinante();
                 $session->setSession(ATUALIZADO, "OK");
             else:
                 $pessoa[CO_CONTATO] = $contatoService->Salva($contato);
@@ -58,10 +68,11 @@ class  AssinanteService extends AbstractService
                 $assinante[CO_EMPRESA] = $empresaService->Salva($empresa);
                 $assinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $assinante[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
-                    ConfiguracoesEnum::DIAS_EXPERIMENTAR,"+"));
+                    ConfiguracoesEnum::DIAS_EXPERIMENTAR, "+"));
                 $retorno[SUCESSO] = $this->Salva($assinante);
                 $session->setSession(CADASTRADO, "OK");
             endif;
+            $assinanteMatrizService->salvaAssinanteMatriz($dados, $retorno[SUCESSO]);
             if ($retorno[SUCESSO]) {
                 $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
                 $retorno[SUCESSO] = true;
@@ -88,10 +99,10 @@ class  AssinanteService extends AbstractService
         $assinanteService = new AssinanteService();
         $assinantes = $assinanteService->PesquisaTodos([
             TP_ASSINANTE => AssinanteEnum::MATRIZ,
-            '<>#'.CO_ASSINANTE => $coAssinante,
+            '<>#' . CO_ASSINANTE => $coAssinante,
         ]);
         /** @var AssinanteEntidade $assinante */
-        foreach ($assinantes as $assinante){
+        foreach ($assinantes as $assinante) {
             $dados[$assinante->getCoAssinante()] = $assinante->getCoEmpresa()->getNoFantasia();
         }
         return $dados;

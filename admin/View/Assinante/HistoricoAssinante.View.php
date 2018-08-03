@@ -7,16 +7,16 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Plano
+                            Assinante
                         </a>
                     </li>
                     <li class="active">
-                        Historico
+                        Histórico
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Plano
-                        <small>Historico Plano</small>
+                    <h1>Assinante
+                        <small>Histórico Planos do Assinante</small>
                     </h1>
                     <span class="pull-right" style="float: right; margin-right: 10px; margin-top: -30px;">
                         <?php
@@ -35,12 +35,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Historico do Plano
+                        Histórico Planos do Assinante
                     </div>
                     <div class="panel-body">
                         <?php
-                        $nome = $plano->getNoPlano();
-                        $historicos = $plano->getCoPlanoAssinante();
+                        /** @var AssinanteEntidade $assinante */
+                        $assinante = $assinante;
+                        $nome = $assinante->getCoEmpresa()->getNoFantasia();
+                        $historicos = $assinante->getCoPlanoAssinanteAssinatura();
                         require_once PARTIAL_ADMIN. 'historico.php';
                         ?>
                     </div>

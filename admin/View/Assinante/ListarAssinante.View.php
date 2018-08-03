@@ -45,6 +45,14 @@
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
+                            if (!empty($res->getCoPlanoAssinanteAssinatura())) {
+                                $acao .= ' <a href="' . PASTAADMIN . 'Assinante/HistoricoAssinante/' .
+                                    Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
+                                class="btn btn-med-grey tooltips" 
+                                    data-original-title="Histórico do Assinante" data-placement="top">
+                                     <i class="clip-folder-open"></i>
+                                 </a>';
+                            }
                             $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoFantasia() : '';
                             $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());

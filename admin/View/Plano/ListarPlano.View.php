@@ -48,7 +48,7 @@
                             $acao .= ' <a href="' . PASTAADMIN . 'Plano/HistoricoPlano/' .
                                 Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" 
                                 class="btn btn-med-grey tooltips" 
-                                    data-original-title="Historico do Plano" data-placement="top">
+                                    data-original-title="Histórico do Plano" data-placement="top">
                                      <i class="clip-folder-open"></i>
                                  </a>';
                             $modulos = [];
