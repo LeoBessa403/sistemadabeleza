@@ -272,12 +272,31 @@ class Relacionamentos
                 (CO_ASSINANTE_MATRIZ) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE_FILIAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteFilialEntidade',
                     ('Tipo') => '2',
                 ),
             ),
             (EmpresaEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_EMPRESA,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (AssinanteMatrizEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (AssinanteFilialEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
                 ),

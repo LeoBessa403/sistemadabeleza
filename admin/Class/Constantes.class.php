@@ -29,6 +29,9 @@
     define('NU_PROFISSIONAIS', 'nu_profissionais');
     define('CO_ASSINANTE', 'co_assinante');
     define('CO_ASSINANTE_MATRIZ', 'co_assinante_matriz');
+    define('CO_ASSINANTE_FILIAL', 'co_assinante_filial');
+    define('TP_ASSINANTE', 'tp_assinante');
+
 
 	// SERVICES
 	define('EMPRESA_SERVICE', 'EmpresaService');
@@ -38,3 +41,9 @@
 	define('PLANO_MODULO_SERVICE', 'PlanoModuloService');
     define('PLANO_ASSINANTE_ASSINATURA_SERVICE', 'PlanoAssinanteAssinaturaService');
 	define('ASSINANTE_SERVICE', 'AssinanteService');
+    define('ASSINANTE_MATRIZ_SERVICE', 'AssinanteMatrizService');
+    define('ASSINANTE_FILIAL_SERVICE', 'AssinanteFilialService');
+
+
+
+
