@@ -271,7 +271,7 @@ class Relacionamentos
                 ),
                 (CO_ASSINANTE_MATRIZ) => Array(
                     ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'AssinanteEntidade',
+                    ('Entidade') => 'AssinanteMatrizEntidade',
                     ('Tipo') => '1',
                 ),
                 (CO_ASSINANTE_FILIAL) => Array(

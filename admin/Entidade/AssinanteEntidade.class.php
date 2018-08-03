@@ -36,8 +36,6 @@ class AssinanteEntidade extends AbstractEntidade
             TP_ASSINANTE,
             CO_EMPRESA,
             CO_PESSOA,
-            CO_ASSINANTE_MATRIZ,
-            CO_ASSINANTE_FILIAL,
         ];
     }
 

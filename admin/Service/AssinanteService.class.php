@@ -87,11 +87,11 @@ class  AssinanteService extends AbstractService
         /** @var AssinanteService $assinanteService */
         $assinanteService = new AssinanteService();
         $assinantes = $assinanteService->PesquisaTodos([
-            'is null#'.CO_ASSINANTE_MATRIZ => 1
+            TP_ASSINANTE => AssinanteEnum::MATRIZ
         ]);
         /** @var AssinanteEntidade $assinante */
         foreach ($assinantes as $assinante){
-            $dados[$assinante->getCoAssinante()] = $assinante->getCoAssinante();
+            $dados[$assinante->getCoAssinante()] = $assinante->getCoEmpresa()->getNoFantasia();
         }
         return $dados;
     }
