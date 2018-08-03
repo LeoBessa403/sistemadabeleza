@@ -79,7 +79,7 @@ class  AssinanteService extends AbstractService
         return $retorno;
     }
 
-    public static function montaComboMatriz()
+    public static function montaComboMatriz($coAssinante)
     {
         $dados = [
             '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
@@ -87,7 +87,8 @@ class  AssinanteService extends AbstractService
         /** @var AssinanteService $assinanteService */
         $assinanteService = new AssinanteService();
         $assinantes = $assinanteService->PesquisaTodos([
-            TP_ASSINANTE => AssinanteEnum::MATRIZ
+            TP_ASSINANTE => AssinanteEnum::MATRIZ,
+            '<>#'.CO_ASSINANTE => $coAssinante,
         ]);
         /** @var AssinanteEntidade $assinante */
         foreach ($assinantes as $assinante){

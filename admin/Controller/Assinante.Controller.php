@@ -9,7 +9,9 @@ class Assinante extends AbstractController
     {
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
-        $this->result = $assinanteService->PesquisaTodos();
+        $this->result = $assinanteService->PesquisaTodos([
+            TP_ASSINANTE => AssinanteEnum::MATRIZ,
+        ]);
     }
 
     public function CadastroAssinante()

@@ -45,7 +45,9 @@ class AssinanteForm
             ->setTamanhoInput(8)
             ->CriaInpunt();
 
-        $options = AssinanteService::montaComboMatriz();
+        $coAssinante = (!empty($res[CO_ASSINANTE])) ? $res[CO_ASSINANTE] : null;
+
+        $options = AssinanteService::montaComboMatriz($coAssinante);
         $formulario
             ->setId(CO_ASSINANTE_MATRIZ)
             ->setType("select")

@@ -45,7 +45,7 @@
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoEmpresa() : '';
+                            $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoFantasia() : '';
                             $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());

@@ -14,6 +14,7 @@ class AssinanteMatrizEntidade extends AbstractEntidade
 	private $co_assinante_matriz;
 	private $dt_cadastro;
 	private $co_assinante;
+    private $co_assinante_filial;
 
 
 	/**
@@ -25,6 +26,7 @@ class AssinanteMatrizEntidade extends AbstractEntidade
 			CO_ASSINANTE_MATRIZ,
 			DT_CADASTRO,
 			CO_ASSINANTE,
+            CO_ASSINANTE_FILIAL,
 		];
     }
 
@@ -88,5 +90,23 @@ class AssinanteMatrizEntidade extends AbstractEntidade
     {
         return $this->co_assinante = $co_assinante;
     }
+
+    /**
+     * @return AssinanteFilialEntidade $co_assinante_filial
+     */
+    public function getCoAssinanteFilial()
+    {
+        return $this->co_assinante_filial;
+    }
+
+    /**
+     * @param $co_assinante_filial
+     * @return mixed
+     */
+    public function setCoAssinanteFilial($co_assinante_filial)
+    {
+        $this->co_assinante_filial = $co_assinante_filial;
+    }
+
 
 }
