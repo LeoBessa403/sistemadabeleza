@@ -7,7 +7,7 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Assinante
+                            Filiais Assinante
                         </a>
                     </li>
                     <li class="active">
@@ -15,9 +15,8 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Assinante
-                        <small>Listar Assinante</small>
-                        <?php Valida::geraBtnNovo(); ?>
+                    <h1>Filiais Assinante
+                        <small>Listar Filiais Assinante</small>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -28,13 +27,13 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Assinantes
+                        Filiais Assinante
                     </div>
                     <div class="panel-body">
                         <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Assinante");
-                        $arrColunas = array('Assinante', 'Responsável', 'E-mail', 'Expiração', 'Status', 'Ações');
+                        $arrColunas = array('Assinante / Filial', 'Responsável', 'E-mail', 'Expiração', 'Status', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -45,33 +44,13 @@
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            if (!empty($res->getCoPlanoAssinanteAssinatura())) {
-                                $acao .= ' <a href="' . PASTAADMIN . 'Assinante/HistoricoAssinante/' .
-                                    Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                                class="btn btn-med-grey tooltips" 
-                                    data-original-title="Histórico do Assinante" data-placement="top">
-                                     <i class="clip-folder-open"></i>
-                                 </a>';
-                            }
-                            if (!empty($res->getCoAssinanteMatriz())) {
-                                /** @var AssinanteMatrizEntidade $matriz */
-                                $matriz = $res->getCoAssinanteMatriz()[0];
-                                if (!empty($matriz->getCoAssinanteFilial())) {
-                                    $acao .= ' <a href="' . PASTAADMIN . 'Assinante/FilialAssinante/' .
-                                        Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                                class="btn btn-green tooltips" 
-                                    data-original-title="Filiais do Assinante" data-placement="top">
-                                     <i class="clip-tree"></i>
-                                 </a>';
-                                }
-                            }
                             $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoFantasia() : '';
                             $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
                             $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
                             $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
-                            $grid->setColunas($acao, 3);
+                            $grid->setColunas($acao, 1);
                             $grid->criaLinha($res->getCoAssinante());
                         endforeach;
                         $grid->finalizaGrid();
@@ -79,6 +58,7 @@
                     </div>
                 </div>
                 <!-- end: DYNAMIC TABLE PANEL -->
+                <?php Valida::geraBtnVoltar(); ?>
             </div>
         </div>
         <!-- end: PAGE CONTENT-->

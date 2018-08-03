@@ -14,6 +14,25 @@ class Assinante extends AbstractController
         ]);
     }
 
+    public function FilialAssinante()
+    {
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        $coAssinante = UrlAmigavel::PegaParametro(CO_ASSINANTE);
+        /** @var AssinanteEntidade $assinante */
+        $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
+        $filiais = $assinante->getCoAssinanteMatriz()[0]->getCoAssinanteFilial();
+        $coAssinanteFilial = [];
+        /** @var AssinanteFilialEntidade $filial */
+        foreach ($filiais as $filial){
+            $coAssinanteFilial[] = $filial->getCoAssinante();
+        }
+        /** @var AssinanteEntidade $assinante */
+        $this->result = $assinanteService->PesquisaTodos([
+            CO_ASSINANTE => implode(', ' , $coAssinanteFilial)
+        ]);
+    }
+
     public function CadastroAssinante()
     {
         /** @var AssinanteService $assinanteService */
