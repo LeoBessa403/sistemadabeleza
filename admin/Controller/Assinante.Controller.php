@@ -21,13 +21,13 @@ class Assinante extends AbstractController
         $coAssinante = UrlAmigavel::PegaParametro(CO_ASSINANTE);
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
-        $filiais = $assinante->getCoAssinanteMatriz()[0]->getCoAssinanteFilial();
+        $filiais = $assinante->getCoUnicoAssinanteMatriz()->getCoAssinanteFilial();
         $coAssinanteFilial = [];
         /** @var AssinanteFilialEntidade $filial */
         foreach ($filiais as $filial){
             $coAssinanteFilial[] = $filial->getCoAssinante();
         }
-        /** @var AssinanteEntidade $assinante */
+        /** @var AssinanteEntidade $this->result */
         $this->result = $assinanteService->PesquisaTodos([
             CO_ASSINANTE => implode(', ' , $coAssinanteFilial)
         ]);
@@ -56,9 +56,10 @@ class Assinante extends AbstractController
             $res[NU_TEL1] = $assinante->getCoPessoa()->getCoContato()->getNuTel1();
             $res[DS_EMAIL] = $assinante->getCoPessoa()->getCoContato()->getDsEmail();
             $res[CO_ASSINANTE] = $assinante->getCoAssinante();
-            $res[CO_ASSINANTE_MATRIZ] = ($assinante->getCoAssinanteMatriz())
-                ? $assinante->getCoAssinanteMatriz()->getCoAssinante() : null;
+            $res[CO_ASSINANTE_MATRIZ] = (empty($assinante->getCoMeuAssinanteMatriz()))
+                ? $assinante->getCoMeuAssinanteMatriz() : null;
         }
+//        debug($res);
         $this->form = AssinanteForm::Cadastrar($res);
     }
 

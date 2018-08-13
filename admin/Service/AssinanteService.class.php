@@ -43,7 +43,7 @@ class  AssinanteService extends AbstractService
             $empresa[NO_FANTASIA] = trim($dados[NO_FANTASIA]);
 
             $PDO->beginTransaction();
-            if (!empty($_POST[CO_ASSINANTE_MATRIZ])):
+            if (!empty($_POST[CO_ASSINANTE_MATRIZ][0])):
                 $assinante[TP_ASSINANTE] = AssinanteEnum::FILIAL;
             else:
                 $assinante[TP_ASSINANTE] = AssinanteEnum::MATRIZ;

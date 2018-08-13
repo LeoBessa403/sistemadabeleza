@@ -54,9 +54,7 @@
                                  </a>';
                             }
                             if (!empty($res->getCoAssinanteMatriz())) {
-                                /** @var AssinanteMatrizEntidade $matriz */
-                                $matriz = $res->getCoAssinanteMatriz()[0];
-                                if (!empty($matriz->getCoAssinanteFilial())) {
+                                if (!empty($res->getCoUnicoAssinanteMatriz())) {
                                     $acao .= ' <a href="' . PASTAADMIN . 'Assinante/FilialAssinante/' .
                                         Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
                                 class="btn btn-green tooltips" 

@@ -185,11 +185,34 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @return AssinanteMatrizEntidade $co_assinante_matriz
+     * @return array $co_assinante_matriz
      */
     public function getCoAssinanteMatriz()
     {
         return $this->co_assinante_matriz;
+    }
+
+    /**
+     * @return AssinanteMatrizEntidade $co_assinante_matriz
+     */
+    public function getCoUnicoAssinanteMatriz()
+    {
+        return $this->primeiro($this->co_assinante_matriz);
+    }
+
+    /**
+     * @return AssinanteMatrizEntidade $co_assinante_matriz
+     */
+    public function getCoMeuAssinanteMatriz()
+    {
+        if($this->co_assinante_filial){
+            /** @var AssinanteMatrizEntidade  $matriz */
+            $matriz = $this->primeiro($this->co_assinante_filial);
+            $co_assinante_matriz = $matriz->getCoAssinanteMatriz()->getCoAssinante();
+        }else{
+            $co_assinante_matriz = new AssinanteMatrizEntidade();
+        }
+        return $co_assinante_matriz;
     }
 
     /**
