@@ -77,5 +77,35 @@ class Assinante extends AbstractController
         }
     }
 
+    public function PagamentoAssinante()
+    {
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        $id = "cadastroAssinante";
+
+        if (!empty($_POST[$id])):
+            $retorno = $assinanteService->salvaAssinante($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarAssinante/');
+            }
+        endif;
+
+        $coAssinante = UrlAmigavel::PegaParametro(CO_ASSINANTE);
+        $res = [];
+        if ($coAssinante) {
+            /** @var AssinanteEntidade $assinante */
+            $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
+            $res[NO_PESSOA] = $assinante->getCoPessoa()->getNoPessoa();
+            $res[NO_FANTASIA] = $assinante->getCoEmpresa()->getNoFantasia();
+            $res[NU_TEL1] = $assinante->getCoPessoa()->getCoContato()->getNuTel1();
+            $res[DS_EMAIL] = $assinante->getCoPessoa()->getCoContato()->getDsEmail();
+            $res[CO_ASSINANTE] = $assinante->getCoAssinante();
+            $res[CO_ASSINANTE_MATRIZ] = $assinante->getCoMeuAssinanteMatriz();
+            $res[CO_ASSINANTE_FILIAL] = $assinante->getFiliaisMatriz();
+
+        }
+        $this->form = AssinanteForm::Cadastrar($res);
+    }
+
 }
    

@@ -53,6 +53,11 @@
                                      <i class="clip-folder-open"></i>
                                  </a>';
                             }
+                            $acao .= ' <a href="' . PASTAADMIN . 'Assinante/PagamentoAssinante/' .
+                                Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
+                        class="btn btn-warning tooltips" data-original-title="Pagamentos do Assinante" data-placement="top">
+                                     <i class="fa fa-money"></i>
+                                 </a>';
                             if (!empty($res->getCoAssinanteMatriz())) {
                                 if (!empty($res->getCoUnicoAssinanteMatriz())) {
                                     $acao .= ' <a href="' . PASTAADMIN . 'Assinante/FilialAssinante/' .
@@ -69,7 +74,7 @@
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
                             $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
                             $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
-                            $grid->setColunas($acao, 3);
+                            $grid->setColunas($acao, 4);
                             $grid->criaLinha($res->getCoAssinante());
                         endforeach;
                         $grid->finalizaGrid();
