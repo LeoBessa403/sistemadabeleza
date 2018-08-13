@@ -78,7 +78,7 @@ class  AssinanteService extends AbstractService
                 $retorno[SUCESSO] = true;
                 $PDO->commit();
             } else {
-                $session->setSession(MENSAGEM, 'Não foi possível cadastrar o Produto');
+                $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
                 $retorno[SUCESSO] = false;
                 $PDO->rollBack();
             }

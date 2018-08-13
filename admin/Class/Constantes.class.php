@@ -31,6 +31,7 @@
     define('CO_ASSINANTE_MATRIZ', 'co_assinante_matriz');
     define('CO_ASSINANTE_FILIAL', 'co_assinante_filial');
     define('TP_ASSINANTE', 'tp_assinante');
+    define('NU_FILIAIS', 'nu_filiais');
 
 
 	// SERVICES

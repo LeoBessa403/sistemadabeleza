@@ -76,43 +76,35 @@ class AssinanteForm
         $formulario->setValor($res);
 
         $formulario
-            ->setId(NO_FANTASIA)
-            ->setClasses("ob")
-            ->setLabel("Nome do Estabelecimento")
-            ->setTamanhoInput(12)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NO_PESSOA)
-            ->setClasses("ob")
-            ->setLabel("Nome do Responsável")
-            ->setTamanhoInput(12)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_TEL1)
+            ->setId(DT_EXPIRACAO)
             ->setTamanhoInput(4)
-            ->setIcon("fa fa-mobile-phone")
-            ->setLabel("Telefone Celular")
-            ->setInfo("Com <i class=\"fa fa-whatsapp\" style='color: green;' '></i> WhatSapp")
-            ->setClasses("tel ob")
+            ->setClasses("disabilita")
+            ->setIcon("clip-calendar-3")
+            ->setInfo("Data de termino")
+            ->setLabel("Data de Expiração")
             ->CriaInpunt();
 
         $formulario
-            ->setId(DS_EMAIL)
-            ->setIcon("fa-envelope fa")
-            ->setClasses("email ob")
-            ->setLabel("Email")
-            ->setTamanhoInput(8)
+            ->setId(NU_FILIAIS)
+            ->setClasses("ob numero")
+            ->setLabel("Número de Filiais")
+            ->setTamanhoInput(4)
             ->CriaInpunt();
 
-        $coAssinante = (!empty($res[CO_ASSINANTE])) ? $res[CO_ASSINANTE] : null;
-
-        $options = AssinanteService::montaComboMatriz($coAssinante);
         $formulario
-            ->setId(CO_ASSINANTE_MATRIZ)
+            ->setId(NU_PROFISSIONAIS)
+            ->setClasses("ob numero")
+            ->setLabel("Número de Profissionais")
+            ->setInfo("Prof. total com filiais")
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        $options = PlanoService::montaComboPlanosAtivos();
+        $formulario
+            ->setId(CO_PLANO)
             ->setType("select")
-            ->setLabel("Matriz")
+            ->setLabel("Plano")
+            ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
 

@@ -16,6 +16,7 @@ class PlanoAssinanteAssinaturaEntidade extends AbstractEntidade
 	private $dt_expiracao;
 	private $nu_valor_assinatura;
 	private $nu_profissionais;
+	private $nu_filiais;
 	private $co_assinante;
 	private $co_plano_assinante;
 
@@ -30,6 +31,7 @@ class PlanoAssinanteAssinaturaEntidade extends AbstractEntidade
 			DT_CADASTRO,
 			DT_EXPIRACAO,
 			NU_VALOR_ASSINATURA,
+            NU_FILIAIS,
 			NU_PROFISSIONAIS,
 			CO_ASSINANTE,
 			CO_PLANO_ASSINANTE,
@@ -163,6 +165,22 @@ class PlanoAssinanteAssinaturaEntidade extends AbstractEntidade
 	public function setCoPlanoAssinante($co_plano_assinante)
     {
         return $this->co_plano_assinante = $co_plano_assinante;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNuFiliais()
+    {
+        return $this->nu_filiais;
+    }
+
+    /**
+     * @param mixed $nu_filiais
+     */
+    public function setNuFiliais($nu_filiais)
+    {
+        $this->nu_filiais = $nu_filiais;
     }
 
 }

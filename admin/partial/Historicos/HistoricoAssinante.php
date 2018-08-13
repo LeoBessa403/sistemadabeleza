@@ -9,9 +9,10 @@ $plano = $planoService->PesquisaUmRegistro($historico->getCoPlanoAssinante()->ge
 <div class="content">
     Nome do Plano: <b><?= $plano->getNoPlano(); ?></b></br>
     Meses Ativos: <b><?= $plano->getNuMesAtivo(); ?></b></br>
-    Valor do plano R$: <b><?=
+    Valor da Assinatura R$: <b><?=
         Valida::FormataMoeda($historico->getNuValorAssinatura()); ?></b></br>
     Núm. de Profissionais: <b><?= $historico->getNuProfissionais(); ?></b></br>
+    Núm. de Filiais: <b><?= $historico->getNuFiliais(); ?></b></br>
     Expiração em: <b><?=
         Valida::DataShow(
             $historico->getDtExpiracao(), 'd/m/Y'

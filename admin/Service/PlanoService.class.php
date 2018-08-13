@@ -22,6 +22,9 @@ class  PlanoService extends AbstractService
         $PlanoModuloService = $this->getService(PLANO_MODULO_SERVICE);
         /** @var PlanoAssinanteService $PlanoAssinanteService */
         $PlanoAssinanteService = $this->getService(PLANO_ASSINANTE_SERVICE);
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $session = new Session();
         $retorno = [
             SUCESSO => false,
             MSG => null
@@ -37,7 +40,7 @@ class  PlanoService extends AbstractService
             $planoAssinante[NU_VALOR] = Valida::FormataMoedaBanco($_POST[NU_VALOR]);
             $planoAssinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
 
-
+            $PDO->beginTransaction();
             if (!empty($_POST[CO_PLANO])):
                 $coPlano = $dados[CO_PLANO];
                 $this->Salva($plano, $coPlano);
@@ -58,8 +61,16 @@ class  PlanoService extends AbstractService
                 }
             }
             $retorno[SUCESSO] = $PlanoAssinanteService->Salva($planoAssinante);
+            if ($retorno[SUCESSO]) {
+                $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
+                $retorno[SUCESSO] = true;
+                $PDO->commit();
+            } else {
+                $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+                $retorno[SUCESSO] = false;
+                $PDO->rollBack();
+            }
         } else {
-            $session = new Session();
             $session->setSession(MENSAGEM, $validador[MSG]);
             $retorno = $validador;
         }
@@ -76,6 +87,25 @@ class  PlanoService extends AbstractService
             24 => 24,
         ];
         return $todosMesAt;
+    }
+
+    public static function montaComboPlanosAtivos()
+    {
+        /** @var PlanoService $planoService */
+        $planoService = new PlanoService();
+
+        $planos = $planoService->PesquisaTodos([
+            ST_STATUS => StatusAcessoEnum::ATIVO
+        ]);
+        $todosPlanos = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        /** @var PlanoEntidade $plano */
+        foreach ($planos as $plano) :
+            $todosPlanos[$plano->getCoPlano()] = $plano->getNoPlano() .
+                 ' - R$ ' . $plano->getCoUltimoPlanoAssinante()->getNuValor() . ' - ' . $plano->getNuMesAtivo() . ' Mês';
+        endforeach;
+        return $todosPlanos;
     }
 
 }

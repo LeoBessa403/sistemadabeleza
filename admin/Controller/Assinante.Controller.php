@@ -81,10 +81,12 @@ class Assinante extends AbstractController
     {
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var PlanoAssinanteAssinaturaService $PlanoAssinanteAssinaturaService */
+        $PlanoAssinanteAssinaturaService = $this->getService(PLANO_ASSINANTE_ASSINATURA_SERVICE);
         $id = "cadastroAssinante";
 
         if (!empty($_POST[$id])):
-            $retorno = $assinanteService->salvaAssinante($_POST);
+            $retorno = $PlanoAssinanteAssinaturaService->salvaPagamentoAssinante($_POST);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarAssinante/');
             }
@@ -95,16 +97,12 @@ class Assinante extends AbstractController
         if ($coAssinante) {
             /** @var AssinanteEntidade $assinante */
             $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
-            $res[NO_PESSOA] = $assinante->getCoPessoa()->getNoPessoa();
-            $res[NO_FANTASIA] = $assinante->getCoEmpresa()->getNoFantasia();
-            $res[NU_TEL1] = $assinante->getCoPessoa()->getCoContato()->getNuTel1();
-            $res[DS_EMAIL] = $assinante->getCoPessoa()->getCoContato()->getDsEmail();
-            $res[CO_ASSINANTE] = $assinante->getCoAssinante();
-            $res[CO_ASSINANTE_MATRIZ] = $assinante->getCoMeuAssinanteMatriz();
-            $res[CO_ASSINANTE_FILIAL] = $assinante->getFiliaisMatriz();
-
+            $res[CO_ASSINANTE] = $coAssinante;
+            $res[DT_EXPIRACAO] = Valida::DataShow($assinante->getDtExpiracao());
+        } else {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AssinanteNaoEncontrado/');
         }
-        $this->form = AssinanteForm::Cadastrar($res);
+        $this->form = AssinanteForm::Pagamento($res);
     }
 
 }
