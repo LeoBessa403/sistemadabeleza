@@ -107,5 +107,4 @@ class AssinanteMatrizEntidade extends AbstractEntidade
         $this->co_assinante_filial = $co_assinante_filial;
     }
 
-
 }

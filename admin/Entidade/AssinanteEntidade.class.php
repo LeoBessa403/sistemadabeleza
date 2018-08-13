@@ -197,7 +197,11 @@ class AssinanteEntidade extends AbstractEntidade
      */
     public function getCoUnicoAssinanteMatriz()
     {
-        return $this->primeiro($this->co_assinante_matriz);
+        if ($this->co_assinante_matriz) {
+            return $this->primeiro($this->co_assinante_matriz);
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -205,12 +209,12 @@ class AssinanteEntidade extends AbstractEntidade
      */
     public function getCoMeuAssinanteMatriz()
     {
-        if($this->co_assinante_filial){
-            /** @var AssinanteMatrizEntidade  $matriz */
+        if ($this->co_assinante_filial) {
+            /** @var AssinanteMatrizEntidade $matriz */
             $matriz = $this->primeiro($this->co_assinante_filial);
             $co_assinante_matriz = $matriz->getCoAssinanteMatriz()->getCoAssinante();
-        }else{
-            $co_assinante_matriz = new AssinanteMatrizEntidade();
+        } else {
+            $co_assinante_matriz = null;
         }
         return $co_assinante_matriz;
     }
@@ -241,4 +245,16 @@ class AssinanteEntidade extends AbstractEntidade
         $this->co_assinante_filial = $co_assinante_filial;
     }
 
+    /**
+     * @return mixed $filiais
+     */
+    public function getFiliaisMatriz()
+    {
+        if (!empty($this->getCoUnicoAssinanteMatriz())) {
+            return $this->getCoUnicoAssinanteMatriz()->getCoAssinanteFilial();
+        } else {
+            return null;
+        }
+
+    }
 }

@@ -56,10 +56,10 @@ class Assinante extends AbstractController
             $res[NU_TEL1] = $assinante->getCoPessoa()->getCoContato()->getNuTel1();
             $res[DS_EMAIL] = $assinante->getCoPessoa()->getCoContato()->getDsEmail();
             $res[CO_ASSINANTE] = $assinante->getCoAssinante();
-            $res[CO_ASSINANTE_MATRIZ] = (empty($assinante->getCoMeuAssinanteMatriz()))
-                ? $assinante->getCoMeuAssinanteMatriz() : null;
+            $res[CO_ASSINANTE_MATRIZ] = $assinante->getCoMeuAssinanteMatriz();
+            $res[CO_ASSINANTE_FILIAL] = $assinante->getFiliaisMatriz();
+
         }
-//        debug($res);
         $this->form = AssinanteForm::Cadastrar($res);
     }
 
