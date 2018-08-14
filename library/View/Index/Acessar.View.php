@@ -49,7 +49,7 @@
 <!-- start: BODY -->
 <body class="login example1">
 <div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding: 20px 50px;">
-    <div class="logo" style="color: #660e7a;">
+    <div class="logo">
         <?= DESC_SIS; ?>
     </div>
     <!-- start: LOGIN BOX -->
@@ -67,8 +67,8 @@
             <fieldset>
                 <div class="form-group">
 							<span class="input-icon">
-								<input type="text" class="form-control cpf" name="nu_cpf" id="nu_cpf" placeholder="CPF">
-								<i class="fa fa-user"></i> </span>
+								<input type="text" class="form-control email" name="ds_email" id="ds_email" placeholder="E-Mail">
+								<i class="fa fa-envelope"></i> </span>
                 </div>
                 <div class="form-group form-actions">
 							<span class="input-icon">

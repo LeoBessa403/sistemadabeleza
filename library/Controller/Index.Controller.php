@@ -148,7 +148,7 @@ class Index extends AbstractController
                 $class = 4;
                 break;
             case 'A':
-                $msg = "CPF ou senha Inválido!";
+                $msg = "E-Mail ou senha Inválido!";
                 $class = 3;
                 break;
             case 'I':
@@ -184,31 +184,27 @@ class Index extends AbstractController
     public function Logar()
     {
         // CLASSE DE LOGAR
-        $cpf = Valida::RetiraMascara(Valida::LimpaVariavel($_POST[NU_CPF]));
+        $email = Valida::LimpaVariavel($_POST[DS_EMAIL]);
         $senha = Valida::LimpaVariavel($_POST[DS_SENHA]);
-        if (($cpf != "") && ($senha != "")):
-
-            /** @var UsuarioService $usuariaService */
-            $usuariaService = $this->getService(USUARIO_SERVICE);
-            $usuarios = $usuariaService->PesquisaTodos();
-
-            $user = "";
+        if (($email != "") && ($senha != "")):
             // Codifica a senha
             $senha = base64_encode(base64_encode($senha));
-            /** @var UsuarioEntidade $usuario */
-            foreach ($usuarios as $usuario):
-                if (($usuario->getCoPessoa()->getNuCpf() == $cpf)
-                    && (strtoupper($usuario->getDsCode()) == strtoupper($senha))
-                ) {
-                    if ($usuario->getStStatus() == "I"):
+            /** @var UsuarioService $usuariaService */
+            $usuariaService = $this->getService(USUARIO_SERVICE);
+            $dados = [
+                "usu." . DS_CODE => $senha,
+                "con." . DS_EMAIL => $email,
+            ];
+            $usuarios = $usuariaService->PesquisaUsuarioLogar($dados);
+            $user = "";
+            if (!empty($usuarios)) :
+                    /** @var UsuarioEntidade $user */
+                    $user = $usuarios[0];
+                    if ($user->getStStatus() == "I"):
                         Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/I"));
                         exit();
                     endif;
-                    /** @var UsuarioEntidade $user */
-                    $user = $usuario;
-                    break;
-                }
-            endforeach;
+            endif;
             if ($user != ""):
                 /** @var AcessoService $acessoService */
                 $acessoService = $this->getService(ACESSO_SERVICE);
@@ -223,7 +219,8 @@ class Index extends AbstractController
                     $no_perfis[] = $perfil->getCoPerfil()->getNoPerfil();
                 }
                 $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
-                $usuarioAcesso[DS_CAMINHO] = $user->getCoImagem()->getDsCaminho();
+                $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
+                $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
                 $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
                 $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
                 $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
@@ -244,7 +241,41 @@ class Index extends AbstractController
 
     public function AtivacaoUsuario()
     {
+        /** @var UsuarioService $usuariaService */
+        $usuariaService = $this->getService(USUARIO_SERVICE);
+        $coUsuario = UrlAmigavel::PegaParametro(CO_USUARIO);
+        $coUsuario = 7;
+        $usuario[ST_STATUS] = StatusUsuarioEnum::ATIVO;
+        $returno[SUCESSO] = $usuariaService->Salva($usuario, $coUsuario);
 
+        /** @var AcessoService $acessoService */
+        $acessoService = $this->getService(ACESSO_SERVICE);
+        $acessoService->finalizaAcessos();
+        $acessoService->salvarAcesso($coUsuario);
+        /** @var UsuarioEntidade $user */
+        $user = $usuariaService->PesquisaUmRegistro($coUsuario);
+
+        $perfis = array();
+        $no_perfis = array();
+        /** @var UsuarioPerfilEntidade $perfil */
+        foreach ($user->getCoUsuarioPerfil() as $perfil) {
+            $perfis[] = $perfil->getCoPerfil()->getCoPerfil();
+            $no_perfis[] = $perfil->getCoPerfil()->getNoPerfil();
+        }
+        $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
+        $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
+        $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
+        $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
+        $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
+        $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
+        $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
+        $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
+        $usuarioAcesso['no_perfis'] = implode(', ', $no_perfis);
+
+        $session = new Session();
+        $session->setUser($usuarioAcesso);
+
+        Redireciona(ADMIN . PRIMEIRO_ACESSO."/p/1");
     }
 
 

@@ -439,6 +439,7 @@ a.bricky:hover {
     font-family: 'Raleway', sans-serif;
     font-size: 25px;
     min-width: 210px;
+    color: #660e7a;
 }
 
 .navbar > .container .navbar-brand i, .logo i {

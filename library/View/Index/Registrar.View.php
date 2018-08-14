@@ -66,9 +66,7 @@
 <body class="login example1" style="margin-top: 0; padding: 0;">
 <div class="main-login col-md-4 col-md-offset-4" style="margin-top: 0; padding: 10px 0;">
     <div class="logo">
-        <a style="color: whitesmoke;" href="<?php echo PASTASITE; ?>">
-            <?= DESC_SIS; ?>
-        </a>
+        <?= DESC_SIS; ?>
     </div>
     <!-- start: LOGIN BOX -->
     <div class="box-login">
@@ -77,9 +75,6 @@
         echo $form;
         ?>
         <!-- end: COPYRIGHT -->
-    </div>
-    <div class="copyright" style="color: #ccc;">
-        <?php echo date("Y"); ?> &copy; LEO BESSA
     </div>
     <?php Modal::aviso("alerta"); ?>
     <!-- start: MAIN JAVASCRIPTS -->

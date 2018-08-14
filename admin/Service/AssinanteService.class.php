@@ -30,6 +30,8 @@ class  AssinanteService extends AbstractService
         $assinanteMatrizService = $this->getService(ASSINANTE_MATRIZ_SERVICE);
         /** @var UsuarioService $usuarioService */
         $usuarioService = $this->getService(USUARIO_SERVICE);
+        /** @var UsuarioPerfilService $usuarioPerfilService */
+        $usuarioPerfilService = $this->getService(USUARIO_PERFIL_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $session = new Session();
@@ -81,10 +83,13 @@ class  AssinanteService extends AbstractService
                 $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $retorno[SUCESSO] = $usuarioService->Salva($usuario);
                 $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($usuario[CO_ASSINANTE]);
+
+                $usuarioPerfil[CO_PERFIL] = 3;
+                $usuarioPerfil[CO_USUARIO] = $retorno[SUCESSO];
+                $retorno = $usuarioPerfilService->Salva($usuarioPerfil);
+
                 $session->setSession(CADASTRADO, "OK");
-            endif;
-            $assinanteMatrizService->salvaAssinanteMatriz($dados, $retorno[SUCESSO]);
-            if ($retorno[SUCESSO]) {
+
                 /** @var Email $email */
                 $email = new Email();
 
@@ -92,9 +97,10 @@ class  AssinanteService extends AbstractService
                 $emails = array(
                     $pessoa[NO_PESSOA] => $contato[DS_EMAIL],
                 );
-                $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no ".DESC." foi realizado com sucesso.</h3><br>";
-                $Mensagem .= "<p>Sua senha é: <b>".$usuario[DS_SENHA].".</b></p><br>";
-                $Mensagem .= "<p>Acesso o link para a <a href='".HOME."admin/Index/Registrar'>ATIVAÇÃO DO CADASTRO</a></p><br>";
+                $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no ".DESC." foi realizado com sucesso.</h3>";
+                $Mensagem .= "<p>Sua senha é: <b>".$usuario[DS_SENHA].".</b></p>";
+                $Mensagem .= "<p>Acesso o link para a <a href='".HOME."admin/Index/AtivacaoUsuario/".
+                    Valida::GeraParametro(CO_USUARIO . "/" . $retorno[SUCESSO]) ."'>ATIVAÇÃO DO CADASTRO</a></p><br>";
 
                 $email->setEmailDestinatario($emails)
                     ->setTitulo(DESC . " - Ativação do seu cadastro")
@@ -102,6 +108,9 @@ class  AssinanteService extends AbstractService
 
                 // Variável para validação de Emails Enviados com Sucesso.
                 $this->Email = $email->Enviar();
+            endif;
+            $assinanteMatrizService->salvaAssinanteMatriz($dados, $retorno[SUCESSO]);
+            if ($retorno[SUCESSO]) {
                 $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
                 $retorno[SUCESSO] = true;
                 $PDO->commit();

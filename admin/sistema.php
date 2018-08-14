@@ -83,6 +83,20 @@ endif;
     <!-- end: HEAD -->
     <!-- start: BODY -->
     <body>
+<!--    <div id="gritter-notice-wrapper" class="top-right">-->
+<!--        <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" style="" role="alert">-->
+<!--            <div class="gritter-top"></div>-->
+<!--            <div class="gritter-item"><a class="gritter-close" href="#" tabindex="1" style="display: none;">Close-->
+<!--                    Notification</a><img src="assets/images/avatar-1.jpg" class="gritter-image">-->
+<!--                <div class="gritter-with-image"><span class="gritter-title">This is a sticky notice!</span>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis-->
+<!--                        natoque penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur-->
+<!--                        ridiculus mus.</p></div>-->
+<!--                <div style="clear:both"></div>-->
+<!--            </div>-->
+<!--            <div class="gritter-bottom"></div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- start: HEADER -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <!-- start: TOP NAVIGATION CONTAINER -->
@@ -123,12 +137,12 @@ endif;
                                 $fotoPerfil = $foto;
                             endif;
 
-                            if ($foto == ""){
+                            if ($foto == "") {
                                 echo '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
                                     'library/Imagens/' . $fotoPerfil . '&w=35&h=35" 
                                 alt="' . $noPessoa . '" title="' . $noPessoa . '" 
                                 class="circle-img" />';
-                            }else{
+                            } else {
                                 echo Valida::GetMiniatura("usuarios/" . $fotoPerfil,
                                     'Leonardo', 35, 35, "circle-img");
                             }
@@ -205,7 +219,7 @@ endif;
             <?php
             $linhas = fopen('versao.txt', "a+");
             $versoes = fgets($linhas);
-            $versao = explode('//',$versoes);
+            $versao = explode('//', $versoes);
             ?>
             <?= date("Y"); ?> &copy; Leo Bessa Desenvolvimento. <b>Versão: <?= $versao[2]; ?></b>
         </div>

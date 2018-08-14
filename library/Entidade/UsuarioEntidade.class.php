@@ -35,6 +35,7 @@ class UsuarioEntidade extends UsuarioEntidadeExtends
 			DT_CADASTRO,
 			CO_IMAGEM,
 			CO_PESSOA,
+            CO_ASSINANTE,
 		];
     }
 

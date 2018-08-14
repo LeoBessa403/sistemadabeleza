@@ -253,4 +253,12 @@ class  UsuarioService extends AbstractService
         return $retorno;
     }
 
+    /**
+     * @param $dados
+     * @return int
+     */
+    public function PesquisaUsuarioLogar($dados)
+    {
+        return $this->ObjetoModel->PesquisaUsuarioLogar($dados);
+    }
 }

@@ -30,6 +30,27 @@ class  UsuarioModel extends AbstractModel
         return $usuarios;
     }
 
+    public function PesquisaUsuarioLogar($dados)
+    {
+        $tabela = UsuarioEntidade::TABELA . " usu" .
+            " inner join " . PessoaEntidade::TABELA . " pes" .
+            " on usu." . PessoaEntidade::CHAVE . " = pes." . PessoaEntidade::CHAVE .
+            " inner join " . ContatoEntidade::TABELA . " con" .
+            " on con." . ContatoEntidade::CHAVE . " = pes." . ContatoEntidade::CHAVE;
+
+        $campos = "usu.*";
+        $pesquisa = new Pesquisa();
+        $where = $pesquisa->getClausula($dados);
+        $pesquisa->Pesquisar($tabela, $where, null, $campos);
+        $usuarios = [];
+        /** @var UsuarioEntidade $usuario */
+        foreach ($pesquisa->getResult() as $usuario) {
+            $usu[0] = $usuario;
+            $usuarios[] = $this->getUmObjeto(UsuarioEntidade::ENTIDADE, $usu);
+        }
+        return $usuarios;
+    }
+
     public function Deleta($coUsuario)
     {
         /** @var PDO $PDO */

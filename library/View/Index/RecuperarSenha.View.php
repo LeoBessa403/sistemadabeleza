@@ -49,7 +49,7 @@
 <!-- start: BODY -->
 <body class="login example1">
 <div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding: 20px 50px;">
-    <div class="logo" style="color: white;">
+    <div class="logo">
         <?= DESC_SIS; ?>
     </div>
     <!-- start: LOGIN BOX -->
@@ -82,9 +82,6 @@
                 </div>
             </fieldset>
         </form>
-    </div>
-    <div class="copyright" style="color: whitesmoke;">
-        <?= date("Y"); ?> &copy; LEO BESSA
     </div>
     <div class="al-center logo" style="width: 100%">
         <a style="color: #000000;" class="btn btn-beige" href="<?= PASTASITE; ?>">
