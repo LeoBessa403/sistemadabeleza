@@ -19,4 +19,12 @@ class  PessoaValidador extends AbstractValidador
         );
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarEmail($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DS_EMAIL], AbstractValidador::VALIDACAO_EMAIL, 'E-Mail'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
 }

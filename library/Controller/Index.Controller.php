@@ -4,7 +4,7 @@ class Index extends AbstractController
 {
     public function Index()
     {
-        $index =  new IndexController();
+        $index = new IndexController();
         $this->dados = $index->Index();
     }
 
@@ -80,39 +80,36 @@ class Index extends AbstractController
             $visivel = true;
             $PessoaValidador = new PessoaValidador();
             /** @var PessoaValidador $validador */
-            $validador = $PessoaValidador->validarCPF($_POST);
+            $validador = $PessoaValidador->validarEmail($_POST);
             if ($validador[SUCESSO]) {
-                /** @var PessoaService $pessoaService */
-                $pessoaService = static::getService(PESSOA_SERVICE);
-                /** @var PessoaEntidade $pessoa */
-                $pessoa = $pessoaService->PesquisaUmQuando([
-                    NU_CPF => Valida::RetiraMascara($_POST[NU_CPF])
+                /** @var ContatoService $contatoService */
+                $contatoService = static::getService(CONTATO_SERVICE);
+                /** @var ContatoEntidade $contato */
+                $contato = $contatoService->PesquisaUmQuando([
+                    DS_EMAIL => $_POST[DS_EMAIL]
                 ]);
-                if (count($pessoa)) {
-                    if ($pessoa->getCoUsuario()) {
-                        $email = new Email();
+                if (count($contato)) {
+                    /** @var Email $email */
+                    $email = new Email();
+                    $nome = $contato->getCoPessoa()->getNoPessoa();
+                    // Índice = Nome, e Valor = Email.
+                    $emails = array(
+                        $nome => $contato->getDsEmail()
+                    );
+                    $Mensagem = "<h4>Oi " . $nome . ".</h4>";
+                    $Mensagem .= "<p>Sua senha de acesso ao sistema " . DESC . " é: <b>" .
+                        $contato->getCoPessoa()->getCoUsuario()->getDsSenha() .
+                        ".</b></p>";
 
-                        // Índice = Nome, e Valor = Email.
-                        $emails = array(
-                            $pessoa->getNoPessoa() => $pessoa->getCoContato()->getDsEmail()
-                        );
-                        $Mensagem = "<h4>Oi " . $pessoa->getNoPessoa() . ".</h4>";
-                        $Mensagem .= "<p>Sua senha de acesso ao sistema " . DESC . " é: <b>" . $pessoa->getCoUsuario()->getDsSenha() .
-                            ".</b></p>";
+                    $email->setEmailDestinatario($emails)
+                        ->setTitulo("[" . DESC . "] - Recuperação de senha")
+                        ->setMensagem($Mensagem);
 
-                        $email->setEmailDestinatario($emails)
-                            ->setTitulo("[Sistema " . DESC . "] - Recuperação de senha")
-                            ->setMensagem($Mensagem);
-
-                        // Variável para validação de Emails Enviados com Sucesso.
-                        $retorno = $email->Enviar();
-                        if ($retorno == true) {
-                            $msg = 'Sua senha foi enviada para seu email: ' . $pessoa->getCoContato()->getDsEmail();
-                            $class = 1;
-                        }
-                    } else {
-                        $msg = 'Usuário não cadastrado.';
-                        $class = 4;
+                    // Variável para validação de Emails Enviados com Sucesso.
+                    $retorno = $email->Enviar();
+                    if ($retorno == true) {
+                        $msg = 'Sua senha foi enviada para seu email: ' . $contato->getDsEmail();
+                        $class = 1;
                     }
                 } else {
                     $msg = 'Pessoa não cadastrada.';
@@ -198,12 +195,12 @@ class Index extends AbstractController
             $usuarios = $usuariaService->PesquisaUsuarioLogar($dados);
             $user = "";
             if (!empty($usuarios)) :
-                    /** @var UsuarioEntidade $user */
-                    $user = $usuarios[0];
-                    if ($user->getStStatus() == "I"):
-                        Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/I"));
-                        exit();
-                    endif;
+                /** @var UsuarioEntidade $user */
+                $user = $usuarios[0];
+                if ($user->getStStatus() == "I"):
+                    Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/I"));
+                    exit();
+                endif;
             endif;
             if ($user != ""):
                 /** @var AcessoService $acessoService */
@@ -244,7 +241,6 @@ class Index extends AbstractController
         /** @var UsuarioService $usuariaService */
         $usuariaService = $this->getService(USUARIO_SERVICE);
         $coUsuario = UrlAmigavel::PegaParametro(CO_USUARIO);
-        $coUsuario = 7;
         $usuario[ST_STATUS] = StatusUsuarioEnum::ATIVO;
         $returno[SUCESSO] = $usuariaService->Salva($usuario, $coUsuario);
 
@@ -275,7 +271,7 @@ class Index extends AbstractController
         $session = new Session();
         $session->setUser($usuarioAcesso);
 
-        Redireciona(ADMIN . PRIMEIRO_ACESSO."/p/1");
+        Redireciona(ADMIN . PRIMEIRO_ACESSO . "/p/1");
     }
 
 
@@ -317,7 +313,6 @@ class Index extends AbstractController
 //        $Create = new Create();
 //        $Create->ExeCreate(DB_VIEWS_TRAFEGO, $this->Traffic);
 //    }
-
 
 
     // EXEMPLO DE ENVIO DE EMAIL

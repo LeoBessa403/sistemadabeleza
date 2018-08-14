@@ -56,7 +56,7 @@
     <div class="box-login" style="padding: 10px 20px;">
         <h3>Recuperar Senha</h3>
         <p>
-            Por Favor! Entre com o CPF para recuperar sua senha.
+            Por Favor! Entre com o E-Mail para recuperar sua senha.
         </p>
         <form class="form-login" action="../Index/RecuperarSenha" method="post" id="RecuperarSenha" name="RecuperarSenha">
             <?php
@@ -67,8 +67,8 @@
             <fieldset>
                 <div class="form-group">
 							<span class="input-icon">
-								<input type="text" class="form-control cpf ob" name="nu_cpf" id="nu_cpf" placeholder="CPF">
-								<i class="fa fa-user"></i> </span>
+								<input type="text" class="form-control email ob" name="ds_email" id="ds_email" placeholder="E-Mail">
+								<i class="fa fa-envelope"></i> </span>
                 </div>
                 <div class="new-account" style="float: left;">
                     <a href="<?= PASTAADMIN; ?>Index/Acessar" class="register">

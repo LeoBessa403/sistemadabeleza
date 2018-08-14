@@ -70,23 +70,27 @@ class  AssinanteService extends AbstractService
                 $pessoa[CO_CONTATO] = $contatoService->Salva($contato);
                 $pessoa[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $empresa[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+
                 $assinante[CO_PESSOA] = $pessoaService->Salva($pessoa);
                 $assinante[CO_EMPRESA] = $empresaService->Salva($empresa);
+
                 $assinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $assinante[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
                     ConfiguracoesEnum::DIAS_EXPERIMENTAR, "+"));
+
                 $usuario[CO_ASSINANTE] = $this->Salva($assinante);
                 $usuario[CO_PESSOA] = $assinante[CO_PESSOA];
                 $usuario[DS_SENHA] = trim(FuncoesSistema::GeraCodigo());
                 $usuario[DS_CODE] = base64_encode(base64_encode($usuario[DS_SENHA]));
                 $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
                 $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $retorno[SUCESSO] = $usuarioService->Salva($usuario);
+
+                $coUsuario = $usuarioService->Salva($usuario);
                 $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($usuario[CO_ASSINANTE]);
 
                 $usuarioPerfil[CO_PERFIL] = 2;
-                $usuarioPerfil[CO_USUARIO] = $retorno[SUCESSO];
-                $retorno = $usuarioPerfilService->Salva($usuarioPerfil);
+                $usuarioPerfil[CO_USUARIO] = $coUsuario;
+                $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
 
                 $session->setSession(CADASTRADO, "OK");
 
@@ -97,10 +101,10 @@ class  AssinanteService extends AbstractService
                 $emails = array(
                     $pessoa[NO_PESSOA] => $contato[DS_EMAIL],
                 );
-                $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no ".DESC." foi realizado com sucesso.</h3>";
-                $Mensagem .= "<p>Sua senha é: <b>".$usuario[DS_SENHA].".</b></p>";
-                $Mensagem .= "<p>Acesso o link para a <a href='".HOME."admin/Index/AtivacaoUsuario/".
-                    Valida::GeraParametro(CO_USUARIO . "/" . $retorno[SUCESSO]) ."'>ATIVAÇÃO DO CADASTRO</a></p><br>";
+                $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no " . DESC . " foi realizado com sucesso.</h3>";
+                $Mensagem .= "<p>Sua senha é: <b>" . $usuario[DS_SENHA] . ".</b></p>";
+                $Mensagem .= "<p>Acesso o link para a <a href='" . HOME . "admin/Index/AtivacaoUsuario/" .
+                    Valida::GeraParametro(CO_USUARIO . "/" . $coUsuario) . "'>ATIVAÇÃO DO CADASTRO</a></p><br>";
 
                 $email->setEmailDestinatario($emails)
                     ->setTitulo(DESC . " - Ativação do seu cadastro")
@@ -109,7 +113,7 @@ class  AssinanteService extends AbstractService
                 // Variável para validação de Emails Enviados com Sucesso.
                 $this->Email = $email->Enviar();
             endif;
-            $assinanteMatrizService->salvaAssinanteMatriz($dados, $retorno[SUCESSO]);
+            $assinanteMatrizService->salvaAssinanteMatriz($dados, $usuario[CO_ASSINANTE]);
             if ($retorno[SUCESSO]) {
                 $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
                 $retorno[SUCESSO] = true;
