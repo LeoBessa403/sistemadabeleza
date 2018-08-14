@@ -24,8 +24,12 @@ class  AssinanteService extends AbstractService
         $pessoaService = $this->getService(PESSOA_SERVICE);
         /** @var EmpresaService $empresaService */
         $empresaService = $this->getService(EMPRESA_SERVICE);
+        /** @var PlanoAssinanteAssinaturaService $PlanoAssinanteAssinaturaService */
+        $PlanoAssinanteAssinaturaService = $this->getService(PLANO_ASSINANTE_ASSINATURA_SERVICE);
         /** @var AssinanteMatrizService $assinanteMatrizService */
         $assinanteMatrizService = $this->getService(ASSINANTE_MATRIZ_SERVICE);
+        /** @var UsuarioService $usuarioService */
+        $usuarioService = $this->getService(USUARIO_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $session = new Session();
@@ -55,7 +59,7 @@ class  AssinanteService extends AbstractService
                 /** @var AssinanteEntidade $assinanteEdic */
                 $assinanteEdic = $assinanteService->PesquisaUmRegistro($_POST[CO_ASSINANTE]);
                 $contatoService->Salva($contato, $assinanteEdic->getCoPessoa()->getCoContato()->getCoContato());
-                $empresaService->Salva($empresa, $assinanteEdic->getCoEmpresa()->getNoFantasia());
+                $empresaService->Salva($empresa, $assinanteEdic->getCoEmpresa()->getCoEmpresa());
                 $pessoaService->Salva($pessoa, $assinanteEdic->getCoPessoa()->getCoPessoa());
                 $this->Salva($assinante, $assinanteEdic->getCoAssinante());
                 $retorno[SUCESSO] = $assinanteEdic->getCoAssinante();
@@ -69,11 +73,35 @@ class  AssinanteService extends AbstractService
                 $assinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $assinante[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
                     ConfiguracoesEnum::DIAS_EXPERIMENTAR, "+"));
-                $retorno[SUCESSO] = $this->Salva($assinante);
+                $usuario[CO_ASSINANTE] = $this->Salva($assinante);
+                $usuario[CO_PESSOA] = $assinante[CO_PESSOA];
+                $usuario[DS_SENHA] = trim(FuncoesSistema::GeraCodigo());
+                $usuario[DS_CODE] = base64_encode(base64_encode($usuario[DS_SENHA]));
+                $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
+                $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $retorno[SUCESSO] = $usuarioService->Salva($usuario);
+                $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($usuario[CO_ASSINANTE]);
                 $session->setSession(CADASTRADO, "OK");
             endif;
             $assinanteMatrizService->salvaAssinanteMatriz($dados, $retorno[SUCESSO]);
             if ($retorno[SUCESSO]) {
+                /** @var Email $email */
+                $email = new Email();
+
+                // Índice = Nome, e Valor = Email.
+                $emails = array(
+                    $pessoa[NO_PESSOA] => $contato[DS_EMAIL],
+                );
+                $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no ".DESC." foi realizado com sucesso.</h3><br>";
+                $Mensagem .= "<p>Sua senha é: <b>".$usuario[DS_SENHA].".</b></p><br>";
+                $Mensagem .= "<p>Acesso o link para a <a href='".HOME."admin/Index/Registrar'>ATIVAÇÃO DO CADASTRO</a></p><br>";
+
+                $email->setEmailDestinatario($emails)
+                    ->setTitulo(DESC . " - Ativação do seu cadastro")
+                    ->setMensagem($Mensagem);
+
+                // Variável para validação de Emails Enviados com Sucesso.
+                $this->Email = $email->Enviar();
                 $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
                 $retorno[SUCESSO] = true;
                 $PDO->commit();

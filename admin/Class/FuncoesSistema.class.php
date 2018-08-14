@@ -54,11 +54,8 @@ class FuncoesSistema
         return $op;
     }
 
-    public static function GeraCodigo()
+    public static function GeraCodigo($blocosLetrasEnumeros = 2, $sequenciaNumeros = 1, $sequenciaLetras =3)
     {
-        $blocosLetrasEnumeros = 2;
-        $sequenciaNumeros = 1;
-        $sequenciaLetras = 3;
         $codigo = '';
         for ($p = 0; $p < $blocosLetrasEnumeros; $p++) {
             for ($m = 0; $m < $sequenciaLetras; $m++) {

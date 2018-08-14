@@ -124,10 +124,10 @@ class  UsuarioService extends AbstractService
                 $usu[DS_CODE] = base64_encode(base64_encode($dados[DS_SENHA]));
                 $usu[DS_SENHA] = trim($dados[DS_SENHA]);
                 if (!empty($dados[ST_STATUS])):
-                    $usu[ST_STATUS] = "A";
+                    $usu[ST_STATUS] = StatusUsuarioEnum::ATIVO;
                 else:
                     if (in_array(1, $meusPerfis) || in_array(2, $meusPerfis)):
-                        $usu[ST_STATUS] = "I";
+                        $usu[ST_STATUS] = StatusUsuarioEnum::INATIVO;
                     endif;
                 endif;
 

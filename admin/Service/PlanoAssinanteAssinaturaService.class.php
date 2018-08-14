@@ -96,12 +96,27 @@ class  PlanoAssinanteAssinaturaService extends AbstractService
         /** @var AssinanteService $AssinanteService */
         $AssinanteService = $this->getService(ASSINANTE_SERVICE);
         $filiais = $assinante->getFiliaisMatriz();
-        $assFilial[DT_EXPIRACAO] = $dtExpiracao;
-        /** @var AssinanteFilialEntidade $filial */
-        foreach ($filiais as $filial){
-            $AssinanteService->Salva($assFilial, $filial->getCoAssinante());
+        if(!empty($filiais)){
+            $assFilial[DT_EXPIRACAO] = $dtExpiracao;
+            /** @var AssinanteFilialEntidade $filial */
+            foreach ($filiais as $filial) {
+                $AssinanteService->Salva($assFilial, $filial->getCoAssinante());
+            }
+            return $AssinanteService->Salva($assFilial, $assinante->getCoAssinante());
         }
-        return $AssinanteService->Salva($assFilial, $assinante->getCoAssinante());
+        return true;
     }
 
+    public function salvaPlanoPadrao($coAssinante)
+    {
+        $planoAssinanteAssinatura[CO_PLANO_ASSINANTE] = 1;
+        $planoAssinanteAssinatura[CO_ASSINANTE] = $coAssinante;
+        $planoAssinanteAssinatura[NU_PROFISSIONAIS] = 3;
+        $planoAssinanteAssinatura[NU_FILIAIS] = 0;
+        $planoAssinanteAssinatura[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+        $planoAssinanteAssinatura[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
+            ConfiguracoesEnum::DIAS_EXPERIMENTAR, "+"));
+        $planoAssinanteAssinatura[NU_VALOR_ASSINATURA] = '0.00';
+        return $this->Salva($planoAssinanteAssinatura);
+    }
 }

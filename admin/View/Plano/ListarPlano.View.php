@@ -40,29 +40,31 @@
                         $grid->criaGrid();
                         /** @var PlanoEntidade $res */
                         foreach ($result as $res):
-                            $acao = '<a href="' . PASTAADMIN . 'Plano/CadastroPlano/' .
-                                Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" class="btn btn-primary tooltips" 
+                            if ($res->getCoPlano() != 1) {
+                                $acao = '<a href="' . PASTAADMIN . 'Plano/CadastroPlano/' .
+                                    Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            $acao .= ' <a href="' . PASTAADMIN . 'Plano/HistoricoPlano/' .
-                                Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" 
+                                $acao .= ' <a href="' . PASTAADMIN . 'Plano/HistoricoPlano/' .
+                                    Valida::GeraParametro(CO_PLANO . "/" . $res->getCoPlano()) . '" 
                                 class="btn btn-med-grey tooltips" 
                                     data-original-title="Histórico do Plano" data-placement="top">
                                      <i class="clip-folder-open"></i>
                                  </a>';
-                            $modulos = [];
-                            /** @var PlanoModuloEntidade $planoModulo */
-                            foreach ($res->getCoPlanoModulo() as $planoModulo) {
-                                $modulos[] = $planoModulo->getCoModulo()->getNoModulo();
-                            }
+                                $modulos = [];
+                                /** @var PlanoModuloEntidade $planoModulo */
+                                foreach ($res->getCoPlanoModulo() as $planoModulo) {
+                                    $modulos[] = $planoModulo->getCoModulo()->getNoModulo();
+                                }
 
-                            $grid->setColunas($res->getNoPlano());
-                            $grid->setColunas($res->getNuMesAtivo(), 2);
-                            $grid->setColunas(Valida::FormataMoeda($res->getCoUltimoPlanoAssinante()->getNuValor()), 2);
-                            $grid->setColunas(implode(', ', $modulos));
-                            $grid->setColunas($acao, 2);
-                            $grid->criaLinha($res->getCoPlano());
+                                $grid->setColunas($res->getNoPlano());
+                                $grid->setColunas($res->getNuMesAtivo(), 2);
+                                $grid->setColunas(Valida::FormataMoeda($res->getCoUltimoPlanoAssinante()->getNuValor()), 2);
+                                $grid->setColunas(implode(', ', $modulos));
+                                $grid->setColunas($acao, 2);
+                                $grid->criaLinha($res->getCoPlano());
+                            }
                         endforeach;
                         $grid->finalizaGrid();
                         ?>

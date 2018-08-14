@@ -102,8 +102,10 @@ class  PlanoService extends AbstractService
         ];
         /** @var PlanoEntidade $plano */
         foreach ($planos as $plano) :
-            $todosPlanos[$plano->getCoPlano()] = $plano->getNoPlano() .
-                 ' - R$ ' . $plano->getCoUltimoPlanoAssinante()->getNuValor() . ' - ' . $plano->getNuMesAtivo() . ' Mês';
+            if($plano->getCoPlano() != 1){
+                $todosPlanos[$plano->getCoPlano()] = $plano->getNoPlano() .
+                    ' - R$ ' . $plano->getCoUltimoPlanoAssinante()->getNuValor() . ' - ' . $plano->getNuMesAtivo() . ' Mês';
+            }
         endforeach;
         return $todosPlanos;
     }
