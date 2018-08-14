@@ -69,8 +69,8 @@ class  AssinanteService extends AbstractService
             else:
                 $pessoa[CO_CONTATO] = $contatoService->Salva($contato);
                 $pessoa[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $assinante[CO_PESSOA] = $pessoaService->Salva($pessoa);
                 $empresa[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $assinante[CO_PESSOA] = $pessoaService->Salva($pessoa);
                 $assinante[CO_EMPRESA] = $empresaService->Salva($empresa);
                 $assinante[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $assinante[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
@@ -84,7 +84,7 @@ class  AssinanteService extends AbstractService
                 $retorno[SUCESSO] = $usuarioService->Salva($usuario);
                 $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($usuario[CO_ASSINANTE]);
 
-                $usuarioPerfil[CO_PERFIL] = 3;
+                $usuarioPerfil[CO_PERFIL] = 2;
                 $usuarioPerfil[CO_USUARIO] = $retorno[SUCESSO];
                 $retorno = $usuarioPerfilService->Salva($usuarioPerfil);
 
