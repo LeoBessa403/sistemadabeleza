@@ -88,9 +88,6 @@
                 </div>
                 <div class="new-account">
                     Você não tem Conta?
-                    <a href="<?= PASTAADMIN; ?>Index/Registrar" class="register">
-                        Criar Conta
-                    </a>
                     <a href="<?= PASTAADMIN; ?>Index/RecuperarSenha" class="register" style="float: right;">
                         Recuperar Senha
                     </a>
