@@ -16,6 +16,9 @@ if ($compara != null):
     $url->pegaControllerAction();
     exit;
 endif;
+/** @var Session $us */
+$us = $_SESSION[SESSION_USER];
+$user = $us->getUser();
 ?>
     <!DOCTYPE html>
     <!-- Template Name: Clip-One - Responsive Admin Template build with Twitter Bootstrap 3.x Version: 1.3 Author: ClipTheme -->
@@ -85,25 +88,25 @@ endif;
     <!-- end: HEAD -->
     <!-- start: BODY -->
     <body>
-
-
-    <div id="gritter-notice-wrapper" class="top-right gritter-danger fadeIn">
-        <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">
-            <div class="gritter-item"><a class="gritter-close circle-img" href="#" tabindex="1">X</a>
-                <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
-                '/Images/sistemadabeleza.jpg&w=50&h=50"
+    <?php
+    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO) {
+        ?>
+        <div id="gritter-notice-wrapper" class="top-right gritter-warning fadeIn gritter-notificacao">
+            <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">
+                <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
+                    <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                    '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />'; ?>
-                <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
-                    <p>Para trocar sua senha acesseo link e <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario"
-                                                               style="color:#ccc">TROCAR SENHA</a>,
-                        para sua maior segurança</p></div>
-                <div style="clear:both"></div>
+                    <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
+                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario"
+                                                                   style="color:#ccc">TROCAR SENHA</a>,
+                            para sua maior segurança</p></div>
+                    <div style="clear:both"></div>
+                </div>
             </div>
         </div>
-    </div>
-
-
+    <?php } ?>
     <!-- start: HEADER -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <!-- start: TOP NAVIGATION CONTAINER -->
@@ -128,9 +131,6 @@ endif;
                         <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true"
                            href="#">
                             <?php
-                            /** @var Session $us */
-                            $us = $_SESSION[SESSION_USER];
-                            $user = $us->getUser();
                             $noPessoa = $user[md5(NO_PESSOA)];
                             $foto = $user[md5('ds_caminho')];
                             if ($foto == ""):

@@ -77,8 +77,7 @@
 	define('NU_USUARIO', 'nu_usuario');
 	define('DS_ESTADO', 'ds_estado');
 	define('ST_EDICAO', 'st_edicao');
-
-
+	define('ST_TROCA_SENHA', 'st_troca_senha');
 
 
 	// SERVICES PADRÃO

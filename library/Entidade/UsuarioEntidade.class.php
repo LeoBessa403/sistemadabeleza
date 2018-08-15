@@ -15,6 +15,7 @@ class UsuarioEntidade extends UsuarioEntidadeExtends
 	private $ds_senha;
 	private $ds_code;
 	private $st_status;
+	private $st_troca_senha;
 	private $dt_cadastro;
 	private $co_imagem;
 	private $co_pessoa;
@@ -33,6 +34,7 @@ class UsuarioEntidade extends UsuarioEntidadeExtends
 			DS_CODE,
 			ST_STATUS,
 			DT_CADASTRO,
+            ST_TROCA_SENHA,
 			CO_IMAGEM,
 			CO_PESSOA,
             CO_ASSINANTE,
@@ -97,6 +99,22 @@ class UsuarioEntidade extends UsuarioEntidadeExtends
 	public function setDsCode($ds_code)
     {
         return $this->ds_code = $ds_code;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStTrocaSenha()
+    {
+        return $this->st_troca_senha;
+    }
+
+    /**
+     * @param mixed $st_troca_senha
+     */
+    public function setStTrocaSenha($st_troca_senha)
+    {
+        $this->st_troca_senha = $st_troca_senha;
     }
 
 	/**

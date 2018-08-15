@@ -33,9 +33,11 @@ class Perfil extends AbstractController
             $res[NO_PERFIL] = $perfil->getNoPerfil();
             $res[CO_PERFIL] = $perfil->getCoPerfil();
             $perfisFunc = [];
-            /** @var PerfilFuncionalidadeEntidade $perfilFunc */
-            foreach ($perfil->getCoPerfilFuncionalidade() as $perfilFunc){
-                $perfisFunc[] = $perfilFunc->getCoFuncionalidade()->getCoFuncionalidade();
+            if(!empty($perfil->getCoPerfilFuncionalidade())){
+                /** @var PerfilFuncionalidadeEntidade $perfilFunc */
+                foreach ($perfil->getCoPerfilFuncionalidade() as $perfilFunc){
+                    $perfisFunc[] = $perfilFunc->getCoFuncionalidade()->getCoFuncionalidade();
+                }
             }
             $res[CO_FUNCIONALIDADE] = $perfisFunc;
         endif;

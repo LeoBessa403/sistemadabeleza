@@ -220,6 +220,7 @@ class Index extends AbstractController
                 $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
                 $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
                 $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
+                $usuarioAcesso[ST_TROCA_SENHA] = $user->getStTrocaSenha();
                 $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
                 $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
                 $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
@@ -263,6 +264,7 @@ class Index extends AbstractController
         $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
         $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
         $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
+        $usuarioAcesso[ST_TROCA_SENHA] = $user->getStTrocaSenha();
         $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
         $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
