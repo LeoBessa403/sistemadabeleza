@@ -35,7 +35,7 @@ class Usuario extends AbstractController
         elseif (!empty($_POST[$id2])) :
             $cadastro = true;
             $PessoaValidador = new PessoaValidador();
-            /** @var InscricaoValidador $validador */
+            /** @var PessoaValidador $validador */
             $validador = $PessoaValidador->validarCPF($_POST);
             if ($validador[SUCESSO]) {
                 /** @var PessoaService $pessoaService */
@@ -66,8 +66,10 @@ class Usuario extends AbstractController
 
             $res['ds_senha_confirma'] = $usuario->getDsSenha();
             $res[DS_SENHA] = $usuario->getDsSenha();
-            if ($usuario->getCoImagem()->getDsCaminho()):
-                $res[DS_CAMINHO] = "usuarios/" . $usuario->getCoImagem()->getDsCaminho();
+            if (!empty($usuario->getCoImagem())):
+                if ($usuario->getCoImagem()->getDsCaminho()):
+                    $res[DS_CAMINHO] = "usuarios/" . $usuario->getCoImagem()->getDsCaminho();
+                endif;
             endif;
             $res[CO_USUARIO] = $usuario->getCoUsuario();
             $res[NO_PESSOA] = $usuario->getCoPessoa()->getNoPessoa();
@@ -77,13 +79,17 @@ class Usuario extends AbstractController
 
             $res[NU_CPF] = $usuario->getCoPessoa()->getNuCpf();
             $res[NU_RG] = $usuario->getCoPessoa()->getNuRg();
-            $res[DT_NASCIMENTO] = Valida::DataShow($usuario->getCoPessoa()->getDtNascimento());
+            if (!empty($usuario->getCoPessoa()->getDtNascimento())):
+                $res[DT_NASCIMENTO] = Valida::DataShow($usuario->getCoPessoa()->getDtNascimento());
+            endif;
             $res[NU_TEL1] = $usuario->getCoPessoa()->getCoContato()->getNuTel1();
             $res[NU_TEL2] = $usuario->getCoPessoa()->getCoContato()->getNuTel2();
 
-            /** @var EnderecoService $enderecoService */
-            $enderecoService = $this->getService(ENDERECO_SERVICE);
-            $res = $enderecoService->getArrayDadosEndereco($usuario->getCoPessoa()->getCoEndereco(), $res);
+            if (!empty($usuario->getCoPessoa()->getCoEndereco())):
+                /** @var EnderecoService $enderecoService */
+                $enderecoService = $this->getService(ENDERECO_SERVICE);
+                $res = $enderecoService->getArrayDadosEndereco($usuario->getCoPessoa()->getCoEndereco(), $res);
+            endif;
             $this->form = UsuarioForm::Cadastrar($res, false, 6);
         else:
             if ($cadastro):

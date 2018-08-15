@@ -89,7 +89,8 @@ $user = $us->getUser();
     <!-- start: BODY -->
     <body>
     <?php
-    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO) {
+    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO &&
+        UrlAmigavel::$action == 'Index' && UrlAmigavel::$controller == 'Index') {
         ?>
         <div id="gritter-notice-wrapper" class="top-right gritter-warning fadeIn gritter-notificacao">
             <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">
@@ -100,7 +101,7 @@ $user = $us->getUser();
                                 class="circle-img" />'; ?>
                     <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
                         <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario"
-                                                                   style="color:#ccc">TROCAR SENHA</a>,
+                                                                 style="color:#ccc">TROCAR SENHA</a>,
                             para sua maior segurança</p></div>
                     <div style="clear:both"></div>
                 </div>
