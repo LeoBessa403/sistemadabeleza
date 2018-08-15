@@ -24,34 +24,16 @@
 }
 .gritter-item-wrapper {
 	position:relative;
-	margin:0 0 10px 0;
-	background:url('../images/ie-spacer.gif'); /* ie7/8 fix */ 
-}
-.gritter-top {
-	background:url(../images/gritter.png) no-repeat left -30px;
-	height:10px;
-}
-.hover .gritter-top {
-	background-position:right -30px;
-}
-.gritter-bottom {
-	background:url(../images/gritter.png) no-repeat left bottom;
-	height:8px;
-	margin:0;
-}
-.hover .gritter-bottom {
-	background-position: bottom right;
+	margin:0 0 8px 0;
+	background:url('../images/ie-spacer.gif'); /* ie7/8 fix */
 }
 .gritter-item {
 	display:block;
-	background:url(../images/gritter.png) no-repeat left -40px;
-	color:#eee;
-	padding:2px 11px 8px 11px;
+	background: rgba(0,0,0,0.6);
+	color:#eee!important;
+	padding:12px 11px 18px 11px;
 	font-size: 11px;
 	font-family:verdana;
-}
-.hover .gritter-item {
-	background-position:right -40px;
 }
 .gritter-item p {
 	padding:0;
@@ -59,15 +41,16 @@
 	word-wrap:break-word;
 }
 .gritter-close {
-	display:none;
+	display:inline;
 	position:absolute;
-	top:5px;
-	left:3px;
-	background:url(../images/gritter.png) no-repeat left top;
+	top:-10px;
+	left:-10px;
+	background-color: black;
 	cursor:pointer;
-	width:30px;
-	height:30px;
+	width:25px;
+	height:25px;
 	text-indent:-9999em;
+	color: white !important;
 }
 .gritter-title {
 	font-size:14px;
@@ -99,4 +82,20 @@
 }
 .gritter-light .gritter-title {
     text-shadow: none;
+}
+
+.gritter-danger{
+	background-color: red;
+}
+
+.gritter-warning{
+	background-color: yellow;
+}
+
+.gritter-info{
+	background-color: dodgerblue;
+}
+
+.gritter-success{
+	background-color: green;
 }

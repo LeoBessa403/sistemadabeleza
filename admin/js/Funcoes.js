@@ -7,6 +7,17 @@ var Funcoes = function () {
         var urlValida = dados['HOME'] + 'admin/Controller/Ajax.Controller.php';
         var upload = dados['PASTAUPLOADS'];
 
+        //Esconde a model de notificação
+        setTimeout(function () {
+            $("#gritter-notice-wrapper").animate({
+                right: -500
+            }, "slow");
+        }, 8000);
+
+        $('.gritter-close').click(function () {
+            $(this).parents("#gritter-notice-wrapper").fadeOut('slow');
+        });
+
     };
     return {
         init: function () {

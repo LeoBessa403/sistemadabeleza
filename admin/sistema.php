@@ -75,6 +75,8 @@ endif;
               href="<?= PASTAADMIN; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
         <!-- start: CSS REQUIRED FOR CHECK -->
         <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/DataTables/media/css/DT_bootstrap.css">
+        <!-- start: CSS REQUIRED Gritter -->
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/gritter/css/jquery.gritter.css">
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
         <link rel="shortcut icon" href="<?= PASTASITE; ?>img/favicon.ico"/>
         <!-- SCRIPT GERAR GRAFICOS -->
@@ -83,20 +85,25 @@ endif;
     <!-- end: HEAD -->
     <!-- start: BODY -->
     <body>
-<!--    <div id="gritter-notice-wrapper" class="top-right">-->
-<!--        <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" style="" role="alert">-->
-<!--            <div class="gritter-top"></div>-->
-<!--            <div class="gritter-item"><a class="gritter-close" href="#" tabindex="1" style="display: none;">Close-->
-<!--                    Notification</a><img src="assets/images/avatar-1.jpg" class="gritter-image">-->
-<!--                <div class="gritter-with-image"><span class="gritter-title">This is a sticky notice!</span>-->
-<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis-->
-<!--                        natoque penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur-->
-<!--                        ridiculus mus.</p></div>-->
-<!--                <div style="clear:both"></div>-->
-<!--            </div>-->
-<!--            <div class="gritter-bottom"></div>-->
-<!--        </div>-->
-<!--    </div>-->
+
+
+    <div id="gritter-notice-wrapper" class="top-right gritter-danger fadeIn">
+        <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">
+            <div class="gritter-item"><a class="gritter-close circle-img" href="#" tabindex="1">X</a>
+                <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                '/Images/sistemadabeleza.jpg&w=50&h=50"
+                                alt="' . DESC . '" title="' . DESC . '"
+                                class="circle-img" />'; ?>
+                <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
+                    <p>Para trocar sua senha acesseo link e <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario"
+                                                               style="color:#ccc">TROCAR SENHA</a>,
+                        para sua maior segurança</p></div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- start: HEADER -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <!-- start: TOP NAVIGATION CONTAINER -->
