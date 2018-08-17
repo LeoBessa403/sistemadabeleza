@@ -266,7 +266,7 @@ class Index extends AbstractController
             $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $usuarioAcesso[DT_EXPIRACAO]);
             if ($difDatas > 5) {
                 $statusSis = StatusSistemaEnum::ATIVO;
-            }elseif($difDatas <= ConfiguracoesEnum::DIAS_EXPIRADO && $difDatas >= 0){
+            }elseif($difDatas <= 5 && $difDatas >= 0){
                 $statusSis = StatusSistemaEnum::EXPIRANDO;
             }elseif ($difDatas < 0 && $difDatas <= ConfiguracoesEnum::DIAS_EXPIRADO) {
                 $statusSis = StatusSistemaEnum::PENDENTE;
