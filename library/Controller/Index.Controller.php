@@ -257,7 +257,6 @@ class Index extends AbstractController
         $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
         $usuarioAcesso['no_perfis'] = implode(', ', $no_perfis);
-        debug($usuarioAcesso);
 
         $session = new Session();
         $session->setUser($usuarioAcesso);

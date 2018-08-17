@@ -11,23 +11,28 @@
         <li>
             <div class="drop-down-wrapper ps-container">
                 <ul>
-                    <li>
-                        <a href="javascript:">
-                            <div class="clearfix">
-                                <div class="thread-image">
-                                    <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
-                                    '/Images/sistemadabeleza.jpg&w=50&h=50"
+                    <?php
+                    $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
+                    if ($difDatas >= 0 && $difDatas < 6) {
+                        ?>
+                        <li>
+                            <a href="javascript:">
+                                <div class="clearfix">
+                                    <div class="thread-image">
+                                        <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                                        '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '" />'; ?>
-                                </div>
-                                <div class="thread-content">
-                                    <span class="author">Renovação da Assinatura</span>
-                                    <span class="preview"><b>Sua assinatura irá expirar em 5 Dias</b>, click no link para
+                                    </div>
+                                    <div class="thread-content">
+                                        <span class="author">Renovação da Assinatura</span>
+                                        <span class="preview"><b>Sua assinatura irá expirar em <?= $difDatas; ?> Dias</b>, click no link para
                                         renovar sua assinatura.</span>
-                                    <span class="time"> Expira Em 20/08/2018</span>
+                                        <span class="time"> Expira Em 20/08/2018</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    <?php } ?>
                 </ul>
                 <div class="ps-scrollbar-x-rail"
                      style="left: 0px; bottom: 3px; width: 270px; display: none;">

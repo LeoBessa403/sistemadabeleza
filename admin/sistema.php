@@ -92,22 +92,41 @@ $user = $us->getUser();
     if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO &&
         UrlAmigavel::$action == 'Index' && UrlAmigavel::$controller == 'Index') {
         ?>
-        <div id="gritter-notice-wrapper" class="top-right gritter-warning fadeIn gritter-notificacao">
+        <!--        <div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-notificacao">-->
+        <!--            <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">-->
+        <!--                <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>-->
+        <!--                    --><?//= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+//                    '/Images/sistemadabeleza.jpg&w=50&h=50"
+//                                alt="' . DESC . '" title="' . DESC . '"
+//                                class="circle-img" />'; ?>
+        <!--                    <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>-->
+        <!--                        <p>Para trocar sua senha acesseo link <a href="--><?//= PASTAADMIN; ?><!--Usuario/MeuPerfilUsuario"-->
+        <!--                                                                 style="color:#ccc">TROCAR SENHA</a>,-->
+        <!--                            para sua maior segurança</p></div>-->
+        <!--                    <div style="clear:both"></div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+    <?php }
+    $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
+    if ($difDatas < 0) {
+        ?>
+        <div id="gritter-notice-wrapper" class="top-right gritter-danger fadeIn gritter-notificacao">
             <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
                     <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
                     '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />'; ?>
-                    <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
-                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario"
-                                                                 style="color:#ccc">TROCAR SENHA</a>,
-                            para sua maior segurança</p></div>
+                    <div class="gritter-with-image"><span class="gritter-title">Sistema Expirado!</span>
+                        <p>Sua assinatura está expirado em <?= $difDatas * -1; ?> Dia(s)</b>, click no link para
+                            renovar sua assinatura. Expirado Em <?= $user[md5(DT_EXPIRACAO)]; ?></p></div>
                     <div style="clear:both"></div>
                 </div>
             </div>
         </div>
-    <?php } ?>
+        <?php
+    } ?>
     <!-- start: HEADER -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <!-- start: TOP NAVIGATION CONTAINER -->
