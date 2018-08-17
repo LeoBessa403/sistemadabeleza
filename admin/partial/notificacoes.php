@@ -13,8 +13,8 @@
                 <ul>
                     <?php
                     if ($user[md5(DT_EXPIRACAO)]) {
-                        $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
-                        if ($difDatas >= 0 && $difDatas < 6) {
+                        if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
+                            $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
                             ?>
                             <li>
                                 <a href="javascript:">

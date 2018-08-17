@@ -12,6 +12,7 @@ class ConfiguracoesEnum extends AbstractEnum
     const TAXA_PROFISSIONAIS_BAIXA = 2.00;
     const TAXA_PROFISSIONAIS_MEDIA = 1.75;
     const TAXA_PROFISSIONAIS_ALTA = 1.50;
+    const DIAS_EXPIRADO = 5;
 
 
     public static $descricao = [

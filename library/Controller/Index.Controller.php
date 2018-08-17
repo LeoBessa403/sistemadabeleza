@@ -259,6 +259,24 @@ class Index extends AbstractController
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
         $usuarioAcesso['no_perfis'] = implode(', ', $no_perfis);
 
+        $statusSis = (!empty($user->getCoPessoa()->getCoAssinante()))
+            ? Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao()) : null;
+
+        if ($statusSis) {
+            $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $usuarioAcesso[DT_EXPIRACAO]);
+            if ($difDatas > 5) {
+                $statusSis = StatusSistemaEnum::ATIVO;
+            }elseif($difDatas <= 5 && $difDatas >= 0){
+                $statusSis = StatusSistemaEnum::EXPIRANDO;
+            }elseif ($difDatas < 0 && $difDatas <= ConfiguracoesEnum::DIAS_EXPIRADO) {
+                $statusSis = StatusSistemaEnum::PENDENTE;
+            }
+        } else {
+            $statusSis = StatusSistemaEnum::ATIVO;
+        }
+
+        $usuarioAcesso['status_sistema'] = $statusSis;
+
         $session = new Session();
         $session->setUser($usuarioAcesso);
     }
