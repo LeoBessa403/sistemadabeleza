@@ -248,6 +248,7 @@ class Index extends AbstractController
         }
         $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
         $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
+        $usuarioAcesso[DT_EXPIRACAO] = Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao());
         $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
         $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
         $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
@@ -256,6 +257,7 @@ class Index extends AbstractController
         $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
         $usuarioAcesso['no_perfis'] = implode(', ', $no_perfis);
+        debug($usuarioAcesso);
 
         $session = new Session();
         $session->setUser($usuarioAcesso);
