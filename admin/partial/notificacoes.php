@@ -26,7 +26,7 @@
                                         </div>
                                         <div class="thread-content">
                                             <span class="author">Renovação da Assinatura</span>
-                                            <span class="preview"><b>Sua assinatura irá expirar em <?= $difDatas; ?>
+                                            <span class="preview"><b>Sua assinatura irá expirar em <?= -1 * $difDatas; ?>
                                                     Dias</b>, click no link para
                                         renovar sua assinatura.</span>
                                             <span class="time"> Expira Em 20/08/2018</span>
