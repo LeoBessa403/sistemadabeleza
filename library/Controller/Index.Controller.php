@@ -203,31 +203,7 @@ class Index extends AbstractController
                 endif;
             endif;
             if ($user != ""):
-                /** @var AcessoService $acessoService */
-                $acessoService = $this->getService(ACESSO_SERVICE);
-                $acessoService->finalizaAcessos();
-                $acessoService->salvarAcesso($user->getCoUsuario());
-
-                $perfis = array();
-                $no_perfis = array();
-                /** @var UsuarioPerfilEntidade $perfil */
-                foreach ($user->getCoUsuarioPerfil() as $perfil) {
-                    $perfis[] = $perfil->getCoPerfil()->getCoPerfil();
-                    $no_perfis[] = $perfil->getCoPerfil()->getNoPerfil();
-                }
-                $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
-                $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
-                $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
-                $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
-                $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
-                $usuarioAcesso[ST_TROCA_SENHA] = $user->getStTrocaSenha();
-                $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
-                $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
-                $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
-                $usuarioAcesso['no_perfis'] = implode(', ', $no_perfis);
-
-                $session = new Session();
-                $session->setUser($usuarioAcesso);
+                $this->geraDadosSessao($user, $user->getCoUsuario());
                 Redireciona(ADMIN . PRIMEIRO_ACESSO);
             else:
                 Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/A"));
@@ -245,12 +221,23 @@ class Index extends AbstractController
         $usuario[ST_STATUS] = StatusUsuarioEnum::ATIVO;
         $returno[SUCESSO] = $usuariaService->Salva($usuario, $coUsuario);
 
+        /** @var UsuarioEntidade $user */
+        $user = $usuariaService->PesquisaUmRegistro($coUsuario);
+        $this->geraDadosSessao($user, $coUsuario);
+        Redireciona(ADMIN . PRIMEIRO_ACESSO . "/p/1");
+    }
+
+    /**
+     * @param UsuarioEntidade $user
+     * @param $coUsuario
+     * @return mixed
+     */
+    public function geraDadosSessao($user, $coUsuario)
+    {
         /** @var AcessoService $acessoService */
         $acessoService = $this->getService(ACESSO_SERVICE);
         $acessoService->finalizaAcessos();
         $acessoService->salvarAcesso($coUsuario);
-        /** @var UsuarioEntidade $user */
-        $user = $usuariaService->PesquisaUmRegistro($coUsuario);
 
         $perfis = array();
         $no_perfis = array();
@@ -272,8 +259,6 @@ class Index extends AbstractController
 
         $session = new Session();
         $session->setUser($usuarioAcesso);
-
-        Redireciona(ADMIN . PRIMEIRO_ACESSO . "/p/1");
     }
 
 

@@ -127,6 +127,11 @@ $user = $us->getUser();
             <div class="navbar-tools">
                 <!-- start: TOP NAVIGATION MENU -->
                 <ul class="nav navbar-right">
+                    <!-- Inclusão do Partial de Notificações  -->
+                    <?php include_once PASTA_RAIZ . ADMIN . '/partial/notificacoes.php'; ?>
+                    <!-- Inclusão do Partial de Perfis  -->
+                    <?php include_once PASTA_RAIZ . ADMIN . '/partial/perfis.php'; ?>
+
                     <!-- start: USER DROPDOWN -->
                     <li class="dropdown current-user">
                         <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true"

@@ -54,6 +54,7 @@
     font-size: 1.2em;
     padding: 2px 0 0 7px;
     text-decoration:none !important;
+	z-index: 9999 !important;
 
 }
 .gritter-close:hover {
