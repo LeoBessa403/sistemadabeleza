@@ -10,56 +10,56 @@ class Index extends AbstractController
 
     public function Registrar()
     {
-        $id = "CadastroUsuario";
-        $id2 = "ValidacaoPessoa";
-        if (!empty($_POST[$id])) {
-            /** @var UsuarioService $usuarioService */
-            $usuarioService = static::getService(USUARIO_SERVICE);
-            $usuarioService->salvaUsuario($_POST, $_FILES, true);
-        } elseif (!empty($_POST[$id2])) {
-            $PessoaValidador = new PessoaValidador();
-            /** @var PessoaValidador $validador */
-            $validador = $PessoaValidador->validarCPF($_POST);
-            if ($validador[SUCESSO]) {
-                /** @var PessoaService $pessoaService */
-                $pessoaService = static::getService(PESSOA_SERVICE);
-                /** @var PessoaEntidade $pessoa */
-                $pessoa = $pessoaService->PesquisaUmQuando([
-                    NU_CPF => Valida::RetiraMascara($_POST[NU_CPF])
-                ]);
-                $res = [];
-                if (!empty($pessoa)) {
-                    if ($pessoa->getCoUsuario()) {
-                        Redireciona('admin/Index/Acessar/' . Valida::GeraParametro('acesso/U'));
-                    } else {
-                        $res = $pessoaService->getArrayDadosPessoa($pessoa, $res);
-
-                        /** @var EnderecoService $enderecoService */
-                        $enderecoService = $this->getService(ENDERECO_SERVICE);
-                        $res = $enderecoService->getArrayDadosEndereco($pessoa->getCoEndereco(), $res);
-
-                        /** @var ContatoService $contatoService */
-                        $contatoService = $this->getService(CONTATO_SERVICE);
-                        $res = $contatoService->getArrayDadosContato($pessoa->getCoContato(), $res);
-                        if ($pessoa->getCoInscricao()) {
-                            if ($pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho()):
-                                $res[DS_CAMINHO] = "inscricoes/" . $pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho();
-                                $res[CO_IMAGEM] = $pessoa->getUltimaCoInscricao()->getCoImagem()->getCoImagem();
-                            endif;
-                        }
-                    }
-                } else {
-                    $res[NU_CPF] = $_POST[NU_CPF];
-                }
-                $this->form = UsuarioForm::Cadastrar($res, true, 12);
-            } else {
-                $session = new Session();
-                $session->setSession(MENSAGEM, $validador[MSG]);
-                $this->form = PessoaForm::ValidarCPF('Index/Acessar');
-            }
-        } else {
-            $this->form = PessoaForm::ValidarCPF('Index/Acessar');
-        }
+//        $id = "CadastroUsuario";
+//        $id2 = "ValidacaoPessoa";
+//        if (!empty($_POST[$id])) {
+//            /** @var UsuarioService $usuarioService */
+//            $usuarioService = static::getService(USUARIO_SERVICE);
+//            $usuarioService->salvaUsuario($_POST, $_FILES, true);
+//        } elseif (!empty($_POST[$id2])) {
+//            $PessoaValidador = new PessoaValidador();
+//            /** @var PessoaValidador $validador */
+//            $validador = $PessoaValidador->validarCPF($_POST);
+//            if ($validador[SUCESSO]) {
+//                /** @var PessoaService $pessoaService */
+//                $pessoaService = static::getService(PESSOA_SERVICE);
+//                /** @var PessoaEntidade $pessoa */
+//                $pessoa = $pessoaService->PesquisaUmQuando([
+//                    NU_CPF => Valida::RetiraMascara($_POST[NU_CPF])
+//                ]);
+//                $res = [];
+//                if (!empty($pessoa)) {
+//                    if ($pessoa->getCoUsuario()) {
+//                        Redireciona('admin/Index/Acessar/' . Valida::GeraParametro('acesso/U'));
+//                    } else {
+//                        $res = $pessoaService->getArrayDadosPessoa($pessoa, $res);
+//
+//                        /** @var EnderecoService $enderecoService */
+//                        $enderecoService = $this->getService(ENDERECO_SERVICE);
+//                        $res = $enderecoService->getArrayDadosEndereco($pessoa->getCoEndereco(), $res);
+//
+//                        /** @var ContatoService $contatoService */
+//                        $contatoService = $this->getService(CONTATO_SERVICE);
+//                        $res = $contatoService->getArrayDadosContato($pessoa->getCoContato(), $res);
+//                        if ($pessoa->getCoInscricao()) {
+//                            if ($pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho()):
+//                                $res[DS_CAMINHO] = "inscricoes/" . $pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho();
+//                                $res[CO_IMAGEM] = $pessoa->getUltimaCoInscricao()->getCoImagem()->getCoImagem();
+//                            endif;
+//                        }
+//                    }
+//                } else {
+//                    $res[NU_CPF] = $_POST[NU_CPF];
+//                }
+//                $this->form = UsuarioForm::Cadastrar($res, true, 12);
+//            } else {
+//                $session = new Session();
+//                $session->setSession(MENSAGEM, $validador[MSG]);
+//                $this->form = PessoaForm::ValidarCPF('Index/Acessar');
+//            }
+//        } else {
+//            $this->form = PessoaForm::ValidarCPF('Index/Acessar');
+//        }
     }
 
     public function PrimeiroAcesso()
@@ -168,6 +168,10 @@ class Index extends AbstractController
                 $msg = Mensagens::USUARIO_JA_CADASTRADO;
                 $class = 2;
                 break;
+            case 'S':
+                $msg = 'Sistema Expirado, favor renovar sua assinatura.';
+                $class = 2;
+                break;
             default:
                 $visivel = false;
                 break;
@@ -268,13 +272,14 @@ class Index extends AbstractController
                 $statusSis = StatusSistemaEnum::ATIVO;
             }elseif($difDatas <= 5 && $difDatas >= 0){
                 $statusSis = StatusSistemaEnum::EXPIRANDO;
-            }elseif ($difDatas < 0 && $difDatas <= ConfiguracoesEnum::DIAS_EXPIRADO) {
+            }elseif ($difDatas < 0 && ($difDatas * -1) <= ConfiguracoesEnum::DIAS_EXPIRADO) {
                 $statusSis = StatusSistemaEnum::PENDENTE;
+            }else{
+                Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/S"));
             }
         } else {
             $statusSis = StatusSistemaEnum::ATIVO;
         }
-
         $usuarioAcesso['status_sistema'] = $statusSis;
 
         $session = new Session();

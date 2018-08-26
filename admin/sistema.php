@@ -100,7 +100,7 @@ $user = $us->getUser();
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />'; ?>
                     <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
-                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario"
+                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/TrocaSenha"
                                                                  style="color:#ccc">TROCAR SENHA</a>,
                             para sua maior segurança</p></div>
                     <div style="clear:both"></div>

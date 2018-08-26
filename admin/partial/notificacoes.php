@@ -13,7 +13,7 @@
                 <ul>
                     <?php
                     if ($user[md5(DT_EXPIRACAO)]) {
-                        if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
+                        if ($user[md5('status_sistema')] == StatusSistemaEnum::EXPIRANDO) {
                             $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
                             ?>
                             <li>
@@ -26,10 +26,10 @@
                                         </div>
                                         <div class="thread-content">
                                             <span class="author">Renovação da Assinatura</span>
-                                            <span class="preview"><b>Sua assinatura irá expirar em <?= -1 * $difDatas; ?>
+                                            <span class="preview"><b>Sua assinatura irá expirar em <?= $difDatas; ?>
                                                     Dias</b>, click no link para
                                         renovar sua assinatura.</span>
-                                            <span class="time"> Expira Em 20/08/2018</span>
+                                            <span class="time"> Expira Em <?= $user[md5(DT_EXPIRACAO)]; ?></span>
                                         </div>
                                     </div>
                                 </a>
