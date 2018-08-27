@@ -266,15 +266,13 @@ class  UsuarioService extends AbstractService
         if ($validador[SUCESSO]) {
 
             $idCoUsuario = (isset($dados[CO_USUARIO]) ? $dados[CO_USUARIO] : null);
-
             $usuario[DS_CODE] = base64_encode(base64_encode(trim($dados[DS_SENHA])));
             $usuario[DS_SENHA] = trim($dados[DS_SENHA]);
             $usuario[ST_TROCA_SENHA] = SimNaoEnum::SIM;
 
-
             $session->setSession(ATUALIZADO, "OK");
+            $session->setSession(ST_TROCA_SENHA, "OK");
             $this->Salva($usuario, $idCoUsuario);
-
         } else {
             $session->setSession(MENSAGEM, $validador[MSG]);
             $retorno = $validador;

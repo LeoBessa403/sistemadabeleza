@@ -16,6 +16,7 @@ if ($compara != null):
     $url->pegaControllerAction();
     exit;
 endif;
+$session = new Session();
 /** @var Session $us */
 $us = $_SESSION[SESSION_USER];
 $user = $us->getUser();
@@ -89,7 +90,7 @@ $user = $us->getUser();
     <!-- start: BODY -->
     <body>
     <?php
-    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO &&
+    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO &&  empty($session->CheckSession(ST_TROCA_SENHA)) &&
         UrlAmigavel::$action == 'Index' && UrlAmigavel::$controller == 'Index') {
         ?>
         <div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-notificacao">
