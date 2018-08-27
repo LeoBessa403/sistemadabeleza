@@ -30,7 +30,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::LISTAR_FUNCIONALIDADE => 'Funcionalidade Listar',
         PermissaoAcessoEnum::FUNCIONALIDADES_PERFIL => 'Cadastro Funcionalidade',
         PermissaoAcessoEnum::CADASTRO_FUNCIONALIDADE => 'Funcionalidades Perfil',
-        PermissaoAcessoEnum::TROCA_SENHA => 'Troca Senha',
+        PermissaoAcessoEnum::TROCA_SENHA => 'Troca Senha Usuario',
     ];
 
     public static $actions = [
@@ -45,6 +45,6 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::LISTAR_FUNCIONALIDADE => 'ListarFuncionalidade',
         PermissaoAcessoEnum::CADASTRO_FUNCIONALIDADE => 'CadastroFuncionalidade',
         PermissaoAcessoEnum::FUNCIONALIDADES_PERFIL => 'FuncionalidadesPerfil',
-        PermissaoAcessoEnum::TROCA_SENHA => 'TrocaSenha',
+        PermissaoAcessoEnum::TROCA_SENHA => 'TrocaSenhaUsuario',
     ];
 }

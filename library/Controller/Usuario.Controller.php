@@ -101,7 +101,7 @@ class Usuario extends AbstractController
         endif;
     }
 
-    public function TrocaSenha()
+    public function TrocaSenhaUsuario()
     {
         /** @var UsuarioService $usuarioService */
         $usuarioService = $this->getService(USUARIO_SERVICE);

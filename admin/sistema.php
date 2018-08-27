@@ -100,7 +100,7 @@ $user = $us->getUser();
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />'; ?>
                     <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
-                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/TrocaSenha"
+                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/TrocaSenhaUsuario"
                                                                  style="color:#ccc">TROCAR SENHA</a>,
                             para sua maior segurança</p></div>
                     <div style="clear:both"></div>
@@ -225,7 +225,7 @@ $user = $us->getUser();
                     "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante"),
                     "Plano" => array("clip-banknote", "ListarPlano", "CadastroPlano"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
-                    "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario"),
+                    "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario",  "TrocaSenhaUsuario"),
                     "Perfil" => array("clip-stack-empty", "CadastroPerfil", "ListarPerfil"),
                     "Funcionalidade" => array("fa fa-outdent", "CadastroFuncionalidade", "ListarFuncionalidade"),
                     "Acesso" => array("clip-connection-2", "ListarAcesso"),
