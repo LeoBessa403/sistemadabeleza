@@ -100,86 +100,24 @@ class Usuario extends AbstractController
             endif;
         endif;
     }
+
     public function TrocaSenha()
     {
-        debug(1);
         /** @var UsuarioService $usuarioService */
         $usuarioService = $this->getService(USUARIO_SERVICE);
-
-        $id = "CadastroUsuario";
-        $id2 = "ValidacaoPessoa";
-        $idCoUsuario = false;
-        $cadastro = false;
-
+        $id = "TrocaSenha";
         if (!empty($_POST[$id])):
-            $usuarioService->salvaUsuario($_POST, $_FILES);
-        elseif (!empty($_POST[$id2])) :
-            $cadastro = true;
-            $PessoaValidador = new PessoaValidador();
-            /** @var PessoaValidador $validador */
-            $validador = $PessoaValidador->validarCPF($_POST);
-            if ($validador[SUCESSO]) {
-                /** @var PessoaService $pessoaService */
-                $pessoaService = static::getService(PESSOA_SERVICE);
-                /** @var PessoaEntidade $pessoa */
-                $pessoa = $pessoaService->PesquisaUmQuando([
-                    NU_CPF => Valida::RetiraMascara($_POST[NU_CPF])
-                ]);
-                if (count($pessoa)) {
-                    if (count($pessoa->getCoUsuario())) {
-                        $idCoUsuario = $pessoa->getCoUsuario()->getCoUsuario();
-                    }
-                }
-            } else {
-                $session = new Session();
-                $session->setSession(MENSAGEM, $validador[MSG]);
-                $this->form = PessoaForm::ValidarCPF('Usuario/CadastroUsuario');
+            $retorno = $usuarioService->TrocaSenha($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/Index/Index/');
             }
         endif;
 
-        if (!$idCoUsuario):
-            $idCoUsuario = UrlAmigavel::PegaParametro(CO_USUARIO);
-        endif;
-        $res = array();
-        if ($idCoUsuario):
-            /** @var UsuarioEntidade $usuario */
-            $usuario = $usuarioService->PesquisaUmRegistro($idCoUsuario);
-
-            $res['ds_senha_confirma'] = $usuario->getDsSenha();
-            $res[DS_SENHA] = $usuario->getDsSenha();
-            if (!empty($usuario->getCoImagem())):
-                if ($usuario->getCoImagem()->getDsCaminho()):
-                    $res[DS_CAMINHO] = "usuarios/" . $usuario->getCoImagem()->getDsCaminho();
-                endif;
-            endif;
-            $res[CO_USUARIO] = $usuario->getCoUsuario();
-            $res[NO_PESSOA] = $usuario->getCoPessoa()->getNoPessoa();
-            $res[DS_EMAIL] = $usuario->getCoPessoa()->getCoContato()->getDsEmail();
-            $res[ST_SEXO] = $usuario->getCoPessoa()->getStSexo();
-            $res[ST_STATUS] = $usuario->getStStatus();
-
-            $res[NU_CPF] = $usuario->getCoPessoa()->getNuCpf();
-            $res[NU_RG] = $usuario->getCoPessoa()->getNuRg();
-            if (!empty($usuario->getCoPessoa()->getDtNascimento())):
-                $res[DT_NASCIMENTO] = Valida::DataShow($usuario->getCoPessoa()->getDtNascimento());
-            endif;
-            $res[NU_TEL1] = $usuario->getCoPessoa()->getCoContato()->getNuTel1();
-            $res[NU_TEL2] = $usuario->getCoPessoa()->getCoContato()->getNuTel2();
-
-            if (!empty($usuario->getCoPessoa()->getCoEndereco())):
-                /** @var EnderecoService $enderecoService */
-                $enderecoService = $this->getService(ENDERECO_SERVICE);
-                $res = $enderecoService->getArrayDadosEndereco($usuario->getCoPessoa()->getCoEndereco(), $res);
-            endif;
-            $this->form = UsuarioForm::Cadastrar($res, false, 6);
-        else:
-            if ($cadastro):
-                $res[NU_CPF] = $_POST[NU_CPF];
-                $this->form = UsuarioForm::Cadastrar($res, false, 6);
-            else:
-                $this->form = PessoaForm::ValidarCPF('Usuario/CadastroUsuario', 6);
-            endif;
-        endif;
+        /** @var Session $us */
+        $us = $_SESSION[SESSION_USER];
+        $user = $us->getUser();
+        $idUsuario = $user[md5(CO_USUARIO)];
+        $this->form = UsuarioForm::TrocaSenha($idUsuario);
     }
 
     public function ListarUsuario()

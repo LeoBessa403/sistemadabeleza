@@ -250,6 +250,39 @@ class UsuarioForm extends AbstractController
         return $formulario->finalizaForm($link);
     }
 
+    public static function TrocaSenha($idUsuario)
+    {
+        $id = "TrocaSenha";
+
+        /** @var Form $formulario */
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller
+            . "/" . UrlAmigavel::$action, 'Trocar', 6);
+
+        $formulario
+            ->setId(DS_SENHA)
+            ->setClasses("ob senha")
+            ->setTamanhoInput(6)
+            ->setType("password")
+            ->setLabel("Senha")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId("ds_senha_confirma")
+            ->setClasses("ob confirma-senha")
+            ->setTamanhoInput(6)
+            ->setType("password")
+            ->setLabel("Confirmação da Senha")
+            ->CriaInpunt();
+
+        $formulario
+            ->setType("hidden")
+            ->setId(CO_USUARIO)
+            ->setValues($idUsuario)
+            ->CriaInpunt();
+
+        return $formulario->finalizaForm();
+    }
+
     public static function Pesquisar()
     {
         $id = "pesquisaUsuario";

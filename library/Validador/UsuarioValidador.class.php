@@ -41,4 +41,23 @@ class  UsuarioValidador extends AbstractValidador
 
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarTrocaSenha($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DS_SENHA], AbstractValidador::VALIDACAO_SENHA, 'Senha', 5
+        );
+
+        if ($dados[DS_SENHA] == $dados['ds_senha_confirma']) {
+            $this->retorno[DADOS][SUCESSO][] = true;
+        } else {
+            $this->retorno[DADOS][SUCESSO][] = false;
+            if (strlen($dados['ds_senha_confirma']) < 1) {
+                $this->retorno[DADOS][MSG][OBRIGATORIOS][] = 'Confirmação de Senha';
+            } else {
+                $this->retorno[DADOS][MSG][VALIDOS][] = 'Confirmação de Senha';
+            }
+        }
+        return $this->MontaRetorno($this->retorno);
+    }
 }

@@ -115,8 +115,8 @@ class AbstractValidador
                     if (strlen($validador) == 1) {
                         $validador = preg_replace('/[^A-Z]/', '', $dado);
                         if (strlen($validador) == 1) {
-                            if(strlen($dado) >= $qtdCaracteres)
-                            $validador = true;
+                            if (strlen($dado) >= $qtdCaracteres)
+                                $validador = true;
                         }
                     }
                 }
@@ -314,12 +314,14 @@ class AbstractValidador
             MSG => ''
         ];;
         foreach ($retorno[DADOS] as $dado) {
-            if (!$dado[SUCESSO][0]) {
-                if (!empty($dado[MSG][VALIDOS][0])) {
-                    $validos[] = $dado[MSG][VALIDOS][0];
-                }
-                if (!empty($dado[MSG][OBRIGATORIOS][0])) {
-                    $obrigatorios[] = $dado[MSG][OBRIGATORIOS][0];
+            if (!empty($dado[SUCESSO])) {
+                if (!$dado[SUCESSO][0]) {
+                    if (!empty($dado[MSG][VALIDOS][0])) {
+                        $validos[] = $dado[MSG][VALIDOS][0];
+                    }
+                    if (!empty($dado[MSG][OBRIGATORIOS][0])) {
+                        $obrigatorios[] = $dado[MSG][OBRIGATORIOS][0];
+                    }
                 }
             }
         }

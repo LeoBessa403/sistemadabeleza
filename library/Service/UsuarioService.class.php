@@ -253,6 +253,36 @@ class  UsuarioService extends AbstractService
         return $retorno;
     }
 
+    public function TrocaSenha($dados)
+    {
+        /** @var PessoaValidador $validador */
+        $retorno = [
+            SUCESSO => true,
+            MSG => null
+        ];
+        $session = new Session();
+        $usuarioValidador = new UsuarioValidador();
+        $validador = $usuarioValidador->validarTrocaSenha($dados);
+        if ($validador[SUCESSO]) {
+
+            $idCoUsuario = (isset($dados[CO_USUARIO]) ? $dados[CO_USUARIO] : null);
+
+            $usuario[DS_CODE] = base64_encode(base64_encode(trim($dados[DS_SENHA])));
+            $usuario[DS_SENHA] = trim($dados[DS_SENHA]);
+            $usuario[ST_TROCA_SENHA] = SimNaoEnum::SIM;
+
+
+            $session->setSession(ATUALIZADO, "OK");
+            $this->Salva($usuario, $idCoUsuario);
+
+        } else {
+            $session->setSession(MENSAGEM, $validador[MSG]);
+            $retorno = $validador;
+        }
+
+        return $retorno;
+    }
+
     /**
      * @param $dados
      * @return int
