@@ -49,14 +49,12 @@ class  FuncionalidadeService extends AbstractService
             if ($atualiza):
                 $perfilFuncional[CO_FUNCIONALIDADE] = $coFuncionalidade;
                 $perfilFuncionalidadeService->DeletaQuando($perfilFuncional);
-                $retorno[MSG] = Mensagens::OK_ATUALIZADO;
-                $session->setSession(ATUALIZADO, "OK");
+                $session->setSession(MENSAGEM, ATUALIZADO);
             endif;
         else:
             $coFuncionalidade = $this->Salva($funcionalidade);
             if ($coFuncionalidade):
-                $retorno[MSG] = Mensagens::OK_SALVO;
-                $session->setSession(CADASTRADO, "OK");
+                $session->setSession(MENSAGEM, CADASTRADO);
             endif;
         endif;
         if ($coFuncionalidade) {
@@ -70,7 +68,7 @@ class  FuncionalidadeService extends AbstractService
         if ($retorno[SUCESSO]) {
             $PDO->commit();
         } else {
-            $retorno[MSG] = 'Não foi possível Salvar a Funcionalidade';
+            $session->setSession(MENSAGEM, 'Não foi possível Salvar a Funcionalidade');
             $PDO->rollBack();
         }
         return $retorno;

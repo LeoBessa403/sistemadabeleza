@@ -69,14 +69,12 @@ class  PerfilService extends AbstractService
             if ($atualiza):
                 $perfilFuncional[CO_PERFIL] = $coPerfil;
                 $perfilFuncionalidadeService->DeletaQuando($perfilFuncional);
-                $retorno[MSG] = Mensagens::OK_ATUALIZADO;
-                $session->setSession(ATUALIZADO, "OK");
+                $session->setSession(MENSAGEM, ATUALIZADO);
             endif;
         else:
             $coPerfil = $this->Salva($perfil);
             if ($coPerfil):
-                $retorno[MSG] = Mensagens::OK_SALVO;
-                $session->setSession(CADASTRADO, "OK");
+                $session->setSession(MENSAGEM, CADASTRADO);
             endif;
         endif;
         if ($coPerfil){
@@ -90,7 +88,7 @@ class  PerfilService extends AbstractService
         if ($retorno[SUCESSO]) {
             $PDO->commit();
         } else {
-            $retorno[MSG] = 'Não foi possível Salvar o Perfil';
+            $session->setSession(MENSAGEM, 'Não foi possível Salvar o Perfil');
             $PDO->rollBack();
         }
         return $retorno;

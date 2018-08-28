@@ -44,11 +44,11 @@ class  PlanoService extends AbstractService
             if (!empty($_POST[CO_PLANO])):
                 $coPlano = $dados[CO_PLANO];
                 $this->Salva($plano, $coPlano);
-                $session->setSession(ATUALIZADO, Mensagens::OK_ATUALIZADO);
+                $session->setSession(MENSAGEM, ATUALIZADO);
             else:
                 $plano[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $coPlano = $this->Salva($plano);
-                $session->setSession(CADASTRADO, Mensagens::OK_SALVO);
+                $session->setSession(MENSAGEM, CADASTRADO);
             endif;
 
             $planoModulo[CO_PLANO] = $coPlano;

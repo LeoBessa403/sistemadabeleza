@@ -270,7 +270,7 @@ class  UsuarioService extends AbstractService
             $usuario[DS_SENHA] = trim($dados[DS_SENHA]);
             $usuario[ST_TROCA_SENHA] = SimNaoEnum::SIM;
 
-            $session->setSession(ATUALIZADO, "OK");
+            $session->setSession(MENSAGEM, ATUALIZADO);
             $session->setSession(ST_TROCA_SENHA, "OK");
             $this->Salva($usuario, $idCoUsuario);
         } else {
