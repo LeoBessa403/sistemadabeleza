@@ -44,9 +44,11 @@ class  PlanoService extends AbstractService
             if (!empty($_POST[CO_PLANO])):
                 $coPlano = $dados[CO_PLANO];
                 $this->Salva($plano, $coPlano);
+                $session->setSession(ATUALIZADO, Mensagens::OK_ATUALIZADO);
             else:
                 $plano[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                 $coPlano = $this->Salva($plano);
+                $session->setSession(CADASTRADO, Mensagens::OK_SALVO);
             endif;
 
             $planoModulo[CO_PLANO] = $coPlano;
@@ -62,7 +64,6 @@ class  PlanoService extends AbstractService
             }
             $retorno[SUCESSO] = $PlanoAssinanteService->Salva($planoAssinante);
             if ($retorno[SUCESSO]) {
-                $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
                 $retorno[SUCESSO] = true;
                 $PDO->commit();
             } else {

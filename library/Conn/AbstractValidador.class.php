@@ -162,11 +162,16 @@ class AbstractValidador
     {
         $this->iniciaRetorno();
         $validador = Valida::LimpaVariavel($dados);
-        if (strlen($validador) >= $qtdCaracteres) {
+        $tamanho = strlen($validador);
+        if ($tamanho >= $qtdCaracteres) {
             $this->retorno[SUCESSO][] = true;
         } else {
+            if ($tamanho == 0) {
+                $this->retorno[MSG][OBRIGATORIOS][] = $labelCampo;
+            }elseif($tamanho < $qtdCaracteres){
+                $this->retorno[MSG][VALIDOS][] = $labelCampo;
+            }
             $this->retorno[SUCESSO][] = false;
-            $this->retorno[MSG][OBRIGATORIOS][] = $labelCampo;
         }
 
         return $this->retorno;

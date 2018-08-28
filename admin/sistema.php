@@ -89,44 +89,6 @@ $user = $us->getUser();
     <!-- end: HEAD -->
     <!-- start: BODY -->
     <body>
-    <?php
-    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO &&  empty($session->CheckSession(ST_TROCA_SENHA)) &&
-        UrlAmigavel::$action == 'Index' && UrlAmigavel::$controller == 'Index') {
-        ?>
-        <div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-notificacao">
-            <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
-                <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
-                    <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
-                    '/Images/sistemadabeleza.jpg&w=50&h=50"
-                                alt="' . DESC . '" title="' . DESC . '"
-                                class="circle-img" />'; ?>
-                    <div class="gritter-with-image"><span class="gritter-title">Cadastro Ativado com Sucesso!</span>
-                        <p>Para trocar sua senha acesseo link <a href="<?= PASTAADMIN; ?>Usuario/TrocaSenhaUsuario"
-                                                                 style="color:#ccc">TROCAR SENHA</a>,
-                            para sua maior segurança</p></div>
-                    <div style="clear:both"></div>
-                </div>
-            </div>
-        </div>
-    <?php }
-    if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
-        $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
-        ?>
-        <div id="gritter-notice-wrapper" class="top-right gritter-danger fadeIn gritter-notificacao">
-            <div id="gritter-item-9" class="gritter-item-wrapper my-sticky-class" role="alert">
-                <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
-                    <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
-                    '/Images/sistemadabeleza.jpg&w=50&h=50"
-                                alt="' . DESC . '" title="' . DESC . '"
-                                class="circle-img" />'; ?>
-                    <div class="gritter-with-image"><span class="gritter-title">Sistema Expirado!</span>
-                        <p>Sua assinatura está expirada em <?= $difDatas * -1; ?> Dia(s)</b>, click no link para
-                            renovar sua assinatura. Expirado Em <?= $user[md5(DT_EXPIRACAO)]; ?></p></div>
-                    <div style="clear:both"></div>
-                </div>
-            </div>
-        </div>
-    <?php } ?>
     <!-- start: HEADER -->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <!-- start: TOP NAVIGATION CONTAINER -->
@@ -226,7 +188,7 @@ $user = $us->getUser();
                     "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante"),
                     "Plano" => array("clip-banknote", "ListarPlano", "CadastroPlano"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
-                    "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario",  "TrocaSenhaUsuario"),
+                    "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario", "TrocaSenhaUsuario"),
                     "Perfil" => array("clip-stack-empty", "CadastroPerfil", "ListarPerfil"),
                     "Funcionalidade" => array("fa fa-outdent", "CadastroFuncionalidade", "ListarFuncionalidade"),
                     "Acesso" => array("clip-connection-2", "ListarAcesso"),
@@ -260,7 +222,6 @@ $user = $us->getUser();
         </div>
     </div>
     <!-- end: FOOTER -->
-    <?php Modal::aviso("alerta"); ?>
     <!-- start: MAIN JAVASCRIPTS -->
     <!--[if lt IE 9]>
     <script src="<?= PASTAADMIN; ?>plugins/respond.min.js"></script>
@@ -322,34 +283,43 @@ $user = $us->getUser();
     <script>
         jQuery(document).ready(function () {
             Funcoes.init();
-            <?php
-            $session = new Session();
-            if($session->CheckSession(ATUALIZADO)):
-            $session->FinalizaSession(ATUALIZADO);
-            ?>
-            Funcoes.Sucesso("<?= Mensagens::OK_ATUALIZADO;?>");
-            <?php
-            endif;
-
-            if($session->CheckSession(CADASTRADO)):
-            $session->FinalizaSession(CADASTRADO);
-            ?>
-            Funcoes.Sucesso("<?= Mensagens::OK_SALVO;?>");
-            <?php
-            endif;
-            if($session->CheckSession(MENSAGEM)):
-            ?>
-            Funcoes.Informativo("<?php echo $session->getSession(MENSAGEM);?>");
-            <?php
-            $session->FinalizaSession(MENSAGEM);
-            endif;
-            ?>
             Main.init();
             TableData.init();
             Calendar.init();
             Index.init();
         });
     </script>
+    <?php
+    if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO && empty($session->CheckSession(ST_TROCA_SENHA)) &&
+        UrlAmigavel::$action == 'Index' && UrlAmigavel::$controller == 'Index') {
+
+        $dados['titulo'] = 'Cadastro Ativado com Sucesso!';
+        $dados['mensagem'] = '<p>Para trocar sua senha acesseo link <a href="' . PASTAADMIN . 'Usuario/TrocaSenhaUsuario"
+                                    style="color:#ccc">TROCAR SENHA</a>, para sua maior segurança</p>';
+        $dados['tipo'] = 'success';
+        Notificacoes::notificacao($dados);
+
+    }
+    if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
+        $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
+
+        $dados['titulo'] = 'Sistema Expirado!';
+        $dados['mensagem'] = '<p>Sua assinatura está expirada em ' . $difDatas * -1 . ' Dia(s)</b>, click no link para
+                            renovar sua assinatura. Expirado Em ' . $user[md5(DT_EXPIRACAO)] . '</p>';
+        $dados['tipo'] = 'danger';
+        Notificacoes::notificacao($dados);
+    }
+    if ($session->CheckSession(MENSAGEM)):
+        if ($session::getSession(MENSAGEM) == CADASTRADO):
+            Notificacoes::cadastrado();
+        elseif ($session::getSession(MENSAGEM) == ATUALIZADO):
+            Notificacoes::atualizado();
+        else:
+            Notificacoes::mesagens($session::getSession(MENSAGEM));
+        endif;
+        $session->FinalizaSession(MENSAGEM);
+    endif;
+    ?>
     </body>
     <!-- end: BODY -->
     </html>

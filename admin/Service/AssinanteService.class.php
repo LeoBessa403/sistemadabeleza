@@ -65,7 +65,8 @@ class  AssinanteService extends AbstractService
                 $pessoaService->Salva($pessoa, $assinanteEdic->getCoPessoa()->getCoPessoa());
                 $this->Salva($assinante, $assinanteEdic->getCoAssinante());
                 $retorno[SUCESSO] = $assinanteEdic->getCoAssinante();
-                $session->setSession(ATUALIZADO, "OK");
+                $session->setSession(MENSAGEM, ATUALIZADO);
+                $coAssinante = $assinanteEdic->getCoAssinante();
             else:
                 $pessoa[CO_CONTATO] = $contatoService->Salva($contato);
                 $pessoa[DT_CADASTRO] = Valida::DataHoraAtualBanco();
@@ -84,15 +85,16 @@ class  AssinanteService extends AbstractService
                 $usuario[DS_CODE] = base64_encode(base64_encode($usuario[DS_SENHA]));
                 $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
                 $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $coAssinante = $usuario[CO_ASSINANTE];
 
                 $coUsuario = $usuarioService->Salva($usuario);
-                $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($usuario[CO_ASSINANTE]);
+                $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($coAssinante);
 
                 $usuarioPerfil[CO_PERFIL] = 2;
                 $usuarioPerfil[CO_USUARIO] = $coUsuario;
                 $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
 
-                $session->setSession(CADASTRADO, "OK");
+                $session->setSession(MENSAGEM, CADASTRADO);
 
                 /** @var Email $email */
                 $email = new Email();
@@ -113,9 +115,8 @@ class  AssinanteService extends AbstractService
                 // Variável para validação de Emails Enviados com Sucesso.
                 $this->Email = $email->Enviar();
             endif;
-            $assinanteMatrizService->salvaAssinanteMatriz($dados, $usuario[CO_ASSINANTE]);
+            $assinanteMatrizService->salvaAssinanteMatriz($dados, $coAssinante);
             if ($retorno[SUCESSO]) {
-                $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
                 $retorno[SUCESSO] = true;
                 $PDO->commit();
             } else {

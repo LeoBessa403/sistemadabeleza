@@ -9,7 +9,7 @@ var Funcoes = function () {
 
         //Esconde a model de notificação
         setTimeout(function () {
-            $("#gritter-aviso").animate({
+            $(".gritter-aviso").animate({
                 right: -500
             }, "slow");
         }, 8000);

@@ -9,8 +9,8 @@
 class Mensagens
 {
 
-    const OK_SALVO = "Cadastro Realizado Com Sucesso!";
-    const OK_ATUALIZADO = "Cadastro Atualizado Com Sucesso!";
+    const OK_SALVO = "Seu registro foi Cadastro com Sucesso!";
+    const OK_ATUALIZADO = "Seu registro foi Atualizado com Sucesso!";
     const OK_ENVIO_EMAIL = "Email(s) Enviado(s) Com Sucesso!";
     const USUARIO_CADASTRADO_SUCESSO = "Usuário Cadastro Com Sucesso!</br>
                                         <b>Favor aguardar a ativação do seu cadastro.</b>";
