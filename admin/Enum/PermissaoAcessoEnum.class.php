@@ -17,6 +17,7 @@ class PermissaoAcessoEnum extends AbstractEnum
     const CADASTRO_FUNCIONALIDADE = 10;
     const FUNCIONALIDADES_PERFIL = 11;
     const TROCA_SENHA = 12;
+    const DADOS_COMPLEMENTARES_ASSINANTE = 13;
 
     public static $descricao = [
         PermissaoAcessoEnum::PERFIL_MASTER => 'Perfil Master',
@@ -31,6 +32,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::FUNCIONALIDADES_PERFIL => 'Cadastro Funcionalidade',
         PermissaoAcessoEnum::CADASTRO_FUNCIONALIDADE => 'Funcionalidades Perfil',
         PermissaoAcessoEnum::TROCA_SENHA => 'Troca Senha Usuario',
+        PermissaoAcessoEnum::DADOS_COMPLEMENTARES_ASSINANTE => 'Dados Complementares Assinante',
     ];
 
     public static $actions = [
@@ -46,5 +48,6 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::CADASTRO_FUNCIONALIDADE => 'CadastroFuncionalidade',
         PermissaoAcessoEnum::FUNCIONALIDADES_PERFIL => 'FuncionalidadesPerfil',
         PermissaoAcessoEnum::TROCA_SENHA => 'TrocaSenhaUsuario',
+        PermissaoAcessoEnum::DADOS_COMPLEMENTARES_ASSINANTE => 'DadosComplementaresAssinante',
     ];
 }

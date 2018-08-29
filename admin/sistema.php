@@ -185,7 +185,7 @@ $user = $us->getUser();
                 <!-- start: MAIN NAVIGATION MENU -->
                 <?php
                 $menu = array(
-                    "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante"),
+                    "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante", "DadosComplementaresAssinante"),
                     "Plano" => array("clip-banknote", "ListarPlano", "CadastroPlano"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
                     "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario", "TrocaSenhaUsuario"),
@@ -278,6 +278,8 @@ $user = $us->getUser();
     <script src="<?= PASTAADMIN; ?>plugins/ckeditor/adapters/jquery.js"></script>
     <script src="<?= PASTAADMIN; ?>js/Funcoes.js"></script>
     <script src="<?= PASTAADMIN; ?>js/FullCalendar.js"></script>
+    <script src="<?= PASTAADMIN; ?>plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+    <script src="<?= PASTAADMIN; ?>js/form-wizard.js"></script>
     <?php carregaJs($url); ?>
     <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
     <script>
@@ -286,6 +288,7 @@ $user = $us->getUser();
             Main.init();
             TableData.init();
             Calendar.init();
+            FormWizard.init();
             Index.init();
         });
     </script>

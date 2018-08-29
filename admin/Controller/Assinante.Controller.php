@@ -105,5 +105,10 @@ class Assinante extends AbstractController
         $this->form = AssinanteForm::Pagamento($res);
     }
 
+    public function DadosComplementaresAssinante()
+    {
+//        debug(1);
+    }
+
 }
    
