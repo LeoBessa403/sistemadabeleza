@@ -192,69 +192,69 @@
                                         <small>Informações de Endereço</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            full_name <span class="symbol"></span>
+                                        <label for="<?= NU_CEP; ?>" class="col-sm-3 control-label">
+                                            CEP
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="full_name" name="full_name"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control cep" id="<?= NU_CEP; ?>"
+                                                   name="<?= NU_CEP; ?>"
+                                                   placeholder="CEP do estabelecimento">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Phone Number <span class="symbol"></span>
+                                        <label for="<?= DS_ENDERECO; ?>" class="col-sm-3 control-label">
+                                            Endereço
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="phone" name="phone"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control tel" id="<?= DS_ENDERECO; ?>"
+                                                   name="<?= DS_ENDERECO; ?>"
+                                                   placeholder="Endereço do estabelecimento">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Gender <span class="symbol"></span>
+                                        <label for="<?= DS_COMPLEMENTO; ?>" class="col-sm-3 control-label">
+                                            Complemento
                                         </label>
                                         <div class="col-sm-7">
-                                            <label class="radio-inline">
-                                                <input type="radio" class="grey" value="f" name="gender"
-                                                       id="gender_female">
-                                                Female
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" class="grey" value="m" name="gender"
-                                                       id="gender_male">
-                                                Male
-                                            </label>
+                                            <input type="text" class="form-control tel" id="<?= DS_COMPLEMENTO; ?>"
+                                                   name="<?= DS_COMPLEMENTO; ?>"
+                                                   placeholder="Complemento do endereço">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Address <span class="symbol"></span>
+                                        <label for="<?= DS_BAIRRO; ?>" class="col-sm-3 control-label">
+                                            Bairro
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="address" name="address"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control tel" id="<?= DS_BAIRRO; ?>"
+                                                   name="<?= DS_BAIRRO; ?>"
+                                                   placeholder="Bairro do estabelecimento">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Country <span class="symbol"></span>
+                                        <label for="<?= NO_CIDADE; ?>" class="col-sm-3 control-label">
+                                            Cidade
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="country" name="country">
-                                                <option value="">&nbsp;</option>
-                                                <option value="Country 1">Country 1</option>
-                                                <option value="Country 2">Country 2</option>
-                                                <option value="Country 3">Country 3</option>
+                                            <input type="text" class="form-control tel" id="<?= NO_CIDADE; ?>"
+                                                   name="<?= NO_CIDADE; ?>"
+                                                   placeholder="Cidade do estabelecimento">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= SG_UF; ?>" class="col-sm-3 control-label">
+                                            Estado
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="<?= SG_UF; ?>" name="<?= SG_UF; ?>">
+                                                <option value="">&nbsp;Selecione um estado</option>
+                                                <?php
+                                                $options = EnderecoService::montaComboEstadosDescricao();
+                                                foreach ($options as $sg => $estado){
+                                                    echo '<option value="'.$sg.'">'.$estado.'</option>';
+                                                }
+                                                ?>
                                             </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            City <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="city" name="city"
-                                                   placeholder="Text Field">
                                         </div>
                                     </div>
                                     <div class="form-group">
