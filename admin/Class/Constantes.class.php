@@ -36,10 +36,10 @@
     define('NO_TIPO_PAGAMENTO', 'no_tipo_pagamento');
     define('CO_FACILIDADE_PAGAMENTO', 'co_facilidade_pagamento');
     define('CO_FACILIDADE_BENEFICIO', 'co_facilidade_beneficio');
-    define('NU_ESTABELECIMENTO', 'nu_estabelecimento');
-    define('NU_ATENDIMENTO', 'nu_atendimento');
-    define('NU_GENERO_ESPECIALIZADO', 'nu_genero_especializado');
-    define('NU_ESTACIONAMENTO', 'nu_estacionamento');
+    define('TP_ESTABELECIMENTO', 'tp_estabelecimento');
+    define('TP_ATENDIMENTO', 'tp_atendimento');
+    define('TP_GENERO_ESPECIALIZADO', 'tp_genero_especializado');
+    define('TP_ESTACIONAMENTO', 'tp_estacionamento');
     define('ST_LANCHONETE', 'st_lanchonete');
     define('ST_TELEVISAO', 'st_televisao');
     define('ST_WIFI', 'st_wifi');

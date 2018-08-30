@@ -155,7 +155,7 @@
                                         </label>
                                         <div class="col-sm-7">
                                             <textarea type="text" class="form-control tel" id="<?= DS_DESCRICAO; ?>"
-                                                   name="<?= DS_DESCRICAO; ?>"
+                                                      name="<?= DS_DESCRICAO; ?>"
                                                       placeholder="Descrição da sua empresa"></textarea>
                                         </div>
                                     </div>
@@ -186,7 +186,7 @@
                                             Endereço
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= DS_ENDERECO; ?>"
+                                            <input type="text" class="form-control" id="<?= DS_ENDERECO; ?>"
                                                    name="<?= DS_ENDERECO; ?>"
                                                    placeholder="Endereço do estabelecimento">
                                         </div>
@@ -196,7 +196,7 @@
                                             Complemento
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= DS_COMPLEMENTO; ?>"
+                                            <input type="text" class="form-control" id="<?= DS_COMPLEMENTO; ?>"
                                                    name="<?= DS_COMPLEMENTO; ?>"
                                                    placeholder="Complemento do endereço">
                                         </div>
@@ -206,7 +206,7 @@
                                             Bairro
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= DS_BAIRRO; ?>"
+                                            <input type="text" class="form-control" id="<?= DS_BAIRRO; ?>"
                                                    name="<?= DS_BAIRRO; ?>"
                                                    placeholder="Bairro do estabelecimento">
                                         </div>
@@ -216,7 +216,7 @@
                                             Cidade
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= NO_CIDADE; ?>"
+                                            <input type="text" class="form-control" id="<?= NO_CIDADE; ?>"
                                                    name="<?= NO_CIDADE; ?>"
                                                    placeholder="Cidade do estabelecimento">
                                         </div>
@@ -230,8 +230,8 @@
                                                 <option value="">&nbsp;Selecione um estado</option>
                                                 <?php
                                                 $options = EnderecoService::montaComboEstadosDescricao();
-                                                foreach ($options as $sg => $estado){
-                                                    echo '<option value="'.$sg.'">'.$estado.'</option>';
+                                                foreach ($options as $sg => $estado) {
+                                                    echo '<option value="' . $sg . '">' . $estado . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -279,7 +279,7 @@
                                             E-mail
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= DS_EMAIL; ?>"
+                                            <input type="text" class="form-control email" id="<?= DS_EMAIL; ?>"
                                                    name="<?= DS_EMAIL; ?>"
                                                    placeholder="E-mail para contato">
                                         </div>
@@ -289,7 +289,7 @@
                                             Site
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= DS_SITE; ?>"
+                                            <input type="text" class="form-control" id="<?= DS_SITE; ?>"
                                                    name="<?= DS_SITE; ?>"
                                                    placeholder="Site da empresa">
                                         </div>
@@ -312,63 +312,66 @@
                                         <small>Informações das Facilidades e Benefícios</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label for="<?= NU_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
+                                        <label for="<?= TP_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
                                             Tipo de estabelecimento
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="<?= NU_ESTABELECIMENTO; ?>" name="<?= NU_ESTABELECIMENTO; ?>">
-                                                <option value="">&nbsp;Selecione um item</option>
-                                                <option value="1">Salão de Beleza</option>
-                                                <option value="2">Barbearia</option>
-                                                <option value="3">Clínica de Estética</option>
-                                                <option value="4">SPA</option>
-                                                <option value="5">Esmaltaria</option>
-                                                <option value="6">Outro</option>
+                                            <select class="form-control" id="<?= TP_ESTABELECIMENTO; ?>"
+                                                    name="<?= TP_ESTABELECIMENTO; ?>">
+                                                <option value="">Selecione um item</option>
+                                                <?php
+                                                foreach (TipoEstabelecimentoEnum::$descricao as $tipo => $desc) {
+                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="<?= NU_ATENDIMENTO; ?>" class="col-sm-3 control-label">
+                                        <label for="<?= TP_ATENDIMENTO; ?>" class="col-sm-3 control-label">
                                             Atendimento
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="<?= NU_ATENDIMENTO; ?>" name="<?= NU_ATENDIMENTO; ?>">
-                                                <option value="">&nbsp;Selecione um item</option>
-                                                <option value="01">1</option>
-                                                <option value="02">2</option>
-                                                <option value="03">3</option>
-                                                <option value="04">4</option>
-                                                <option value="05">5</option>
+                                            <select class="form-control" id="<?= TP_ATENDIMENTO; ?>"
+                                                    name="<?= TP_ATENDIMENTO; ?>">
+                                                <option value="">Selecione um item</option>
+                                                <?php
+                                                foreach (TipoAtendimentoEnum::$descricao as $tipo => $desc) {
+                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="<?= NU_GENERO_ESPECIALIZADO; ?>" class="col-sm-3 control-label">
+                                        <label for="<?= TP_GENERO_ESPECIALIZADO; ?>" class="col-sm-3 control-label">
                                             Genero Especializado
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="<?= NU_GENERO_ESPECIALIZADO; ?>" name="<?= NU_GENERO_ESPECIALIZADO; ?>">
-                                                <option value="">&nbsp;Selecione um item</option>
-                                                <option value="01">1</option>
-                                                <option value="02">2</option>
-                                                <option value="03">3</option>
-                                                <option value="04">4</option>
-                                                <option value="05">5</option>
+                                            <select class="form-control" id="<?= TP_GENERO_ESPECIALIZADO; ?>"
+                                                    name="<?= TP_GENERO_ESPECIALIZADO; ?>">
+                                                <option value="">Selecione um item</option>
+                                                <?php
+                                                foreach (TipoGeneroEspecializadoEnum::$descricao as $tipo => $desc) {
+                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="<?= NU_ESTACIONAMENTO; ?>" class="col-sm-3 control-label">
+                                        <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-3 control-label">
                                             Estacionamento
                                         </label>
                                         <div class="col-sm-7">
-                                            <select class="form-control" id="<?= NU_ESTACIONAMENTO; ?>" name="<?= NU_ESTACIONAMENTO; ?>">
-                                                <option value="">&nbsp;Selecione um item</option>
-                                                <option value="01">1</option>
-                                                <option value="02">2</option>
-                                                <option value="03">3</option>
-                                                <option value="04">4</option>
-                                                <option value="05">5</option>
+                                            <select class="form-control" id="<?= TP_ESTACIONAMENTO; ?>"
+                                                    name="<?= TP_ESTACIONAMENTO; ?>">
+                                                <option value="">Selecione um item</option>
+                                                <?php
+                                                foreach (TipoEstacionamentoEnum::$descricao as $tipo => $desc) {
+                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>

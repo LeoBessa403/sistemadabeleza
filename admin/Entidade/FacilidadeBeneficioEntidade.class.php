@@ -12,10 +12,10 @@ class FacilidadeBeneficioEntidade extends AbstractEntidade
 	const CHAVE = CO_FACILIDADE_BENEFICIO;
 
 	private $co_facilidade_beneficio;
-	private $nu_estabelecimento;
-	private $nu_atendimento;
-	private $nu_genero_especializado;
-	private $nu_estacionamento;
+	private $tp_estabelecimento;
+	private $tp_atendimento;
+	private $tp_genero_especializado;
+	private $tp_estacionamento;
 	private $st_lanchonete;
 	private $st_televisao;
 	private $st_wifi;
@@ -32,10 +32,10 @@ class FacilidadeBeneficioEntidade extends AbstractEntidade
     {
     	return [
 			CO_FACILIDADE_BENEFICIO,
-			NU_ESTABELECIMENTO,
-			NU_ATENDIMENTO,
-			NU_GENERO_ESPECIALIZADO,
-			NU_ESTACIONAMENTO,
+			TP_ESTABELECIMENTO,
+            TP_ATENDIMENTO,
+            TP_GENERO_ESPECIALIZADO,
+            TP_ESTACIONAMENTO,
 			ST_LANCHONETE,
 			ST_TELEVISAO,
 			ST_WIFI,
@@ -73,71 +73,71 @@ class FacilidadeBeneficioEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return mixed $nu_estabelecimento
+	* @return mixed $tp_estabelecimento
     */
-	public function getNuEstabelecimento()
+	public function getTpEstabelecimento()
     {
-        return $this->nu_estabelecimento;
+        return $this->tp_estabelecimento;
     }
 
 	/**
-	* @param $nu_estabelecimento
+	* @param $tp_estabelecimento
     * @return mixed
     */
-	public function setNuEstabelecimento($nu_estabelecimento)
+	public function setTpEstabelecimento($tp_estabelecimento)
     {
-        return $this->nu_estabelecimento = $nu_estabelecimento;
+        return $this->tp_estabelecimento = $tp_estabelecimento;
     }
 
 	/**
-	* @return mixed $nu_atendimento
+	* @return mixed $tp_atendimento
     */
-	public function getNuAtendimento()
+	public function getTpAtendimento()
     {
-        return $this->nu_atendimento;
+        return $this->tp_atendimento;
     }
 
 	/**
-	* @param $nu_atendimento
+	* @param $tp_atendimento
     * @return mixed
     */
-	public function setNuAtendimento($nu_atendimento)
+	public function setTpAtendimento($tp_atendimento)
     {
-        return $this->nu_atendimento = $nu_atendimento;
+        return $this->tp_atendimento = $tp_atendimento;
     }
 
 	/**
-	* @return mixed $nu_genero_especializado
+	* @return mixed $tp_genero_especializado
     */
-	public function getNuGeneroEspecializado()
+	public function getTpGeneroEspecializado()
     {
-        return $this->nu_genero_especializado;
+        return $this->tp_genero_especializado;
     }
 
 	/**
-	* @param $nu_genero_especializado
+	* @param $tp_genero_especializado
     * @return mixed
     */
-	public function setNuGeneroEspecializado($nu_genero_especializado)
+	public function setTpGeneroEspecializado($tp_genero_especializado)
     {
-        return $this->nu_genero_especializado = $nu_genero_especializado;
+        return $this->tp_genero_especializado = $tp_genero_especializado;
     }
 
 	/**
-	* @return mixed $nu_estacionamento
+	* @return mixed $tp_estacionamento
     */
-	public function getNuEstacionamento()
+	public function getTpEstacionamento()
     {
-        return $this->nu_estacionamento;
+        return $this->tp_estacionamento;
     }
 
 	/**
-	* @param $nu_estacionamento
+	* @param $tp_estacionamento
     * @return mixed
     */
-	public function setNuEstacionamento($nu_estacionamento)
+	public function setTpEstacionamento($tp_estacionamento)
     {
-        return $this->nu_estacionamento = $nu_estacionamento;
+        return $this->tp_estacionamento = $tp_estacionamento;
     }
 
 	/**
