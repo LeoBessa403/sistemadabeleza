@@ -150,26 +150,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="<?= NU_TEL1; ?>" class="col-sm-3 control-label">
-                                            Telefone (WhatsApp)
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= NU_TEL1; ?>"
-                                                   name="<?= NU_TEL1; ?>"
-                                                   placeholder="Número do contato com WhatsApp">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="<?= NU_TEL2; ?>" class="col-sm-3 control-label">
-                                            Telefone 2
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control tel" id="<?= NU_TEL2; ?>"
-                                                   name="<?= NU_TEL2; ?>"
-                                                   placeholder="Número do contato do estabelecimento">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <label for="<?= DS_DESCRICAO; ?>" class="col-sm-3 control-label">
                                             Descrição
                                         </label>
@@ -275,82 +255,43 @@
                                         <small>Informações de Contatos</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Holder Name <span class="symbol"></span>
+                                        <label for="<?= NU_TEL1; ?>" class="col-sm-3 control-label">
+                                            Telefone (WhatsApp)
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_name" name="card_name"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control tel" id="<?= NU_TEL1; ?>"
+                                                   name="<?= NU_TEL1; ?>"
+                                                   placeholder="Número do contato com WhatsApp">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Number <span class="symbol"></span>
+                                        <label for="<?= NU_TEL2; ?>" class="col-sm-3 control-label">
+                                            Telefone 2
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_number" name="card_number"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control tel" id="<?= NU_TEL2; ?>"
+                                                   name="<?= NU_TEL2; ?>"
+                                                   placeholder="Número do contato do estabelecimento">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            CVC <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="card_cvc" name="card_cvc"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Expiration(MM/YYYY) <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <select class="form-control" id="card_expiry_mm"
-                                                            name="card_expiry_mm">
-                                                        <option value="">MM</option>
-                                                        <option value="01">1</option>
-                                                        <option value="02">2</option>
-                                                        <option value="03">3</option>
-                                                        <option value="04">4</option>
-                                                        <option value="05">5</option>
-                                                        <option value="06">6</option>
-                                                        <option value="07">7</option>
-                                                        <option value="08">8</option>
-                                                        <option value="09">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="card_expiry_yyyy"
-                                                           id="card_expiry_yyyy" placeholder="YYYY">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Payment Options <span class="symbol"></span>
+                                        <label for="<?= DS_EMAIL; ?>" class="col-sm-3 control-label">
+                                            E-mail
                                         </label>
                                         <div class="col-sm-7">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment1">
-                                                    Auto-Pay with this Credit Card
-                                                </label>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment2">
-                                                    Email me monthly billing
-                                                </label>
-                                            </div>
+                                            <input type="text" class="form-control tel" id="<?= DS_EMAIL; ?>"
+                                                   name="<?= DS_EMAIL; ?>"
+                                                   placeholder="E-mail para contato">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= DS_SITE; ?>" class="col-sm-3 control-label">
+                                            Site
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control tel" id="<?= DS_SITE; ?>"
+                                                   name="<?= DS_SITE; ?>"
+                                                   placeholder="Site da empresa">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -371,12 +312,64 @@
                                         <small>Informações das Facilidades e Benefícios</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Holder Name <span class="symbol"></span>
+                                        <label for="<?= NU_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
+                                            Tipo de estabelecimento
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_name" name="card_name"
-                                                   placeholder="Text Field">
+                                            <select class="form-control" id="<?= NU_ESTABELECIMENTO; ?>" name="<?= NU_ESTABELECIMENTO; ?>">
+                                                <option value="">&nbsp;Selecione um item</option>
+                                                <option value="1">Salão de Beleza</option>
+                                                <option value="2">Barbearia</option>
+                                                <option value="3">Clínica de Estética</option>
+                                                <option value="4">SPA</option>
+                                                <option value="5">Esmaltaria</option>
+                                                <option value="6">Outro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= NU_ATENDIMENTO; ?>" class="col-sm-3 control-label">
+                                            Atendimento
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="<?= NU_ATENDIMENTO; ?>" name="<?= NU_ATENDIMENTO; ?>">
+                                                <option value="">&nbsp;Selecione um item</option>
+                                                <option value="01">1</option>
+                                                <option value="02">2</option>
+                                                <option value="03">3</option>
+                                                <option value="04">4</option>
+                                                <option value="05">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= NU_GENERO_ESPECIALIZADO; ?>" class="col-sm-3 control-label">
+                                            Genero Especializado
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="<?= NU_GENERO_ESPECIALIZADO; ?>" name="<?= NU_GENERO_ESPECIALIZADO; ?>">
+                                                <option value="">&nbsp;Selecione um item</option>
+                                                <option value="01">1</option>
+                                                <option value="02">2</option>
+                                                <option value="03">3</option>
+                                                <option value="04">4</option>
+                                                <option value="05">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= NU_ESTACIONAMENTO; ?>" class="col-sm-3 control-label">
+                                            Estacionamento
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <select class="form-control" id="<?= NU_ESTACIONAMENTO; ?>" name="<?= NU_ESTACIONAMENTO; ?>">
+                                                <option value="">&nbsp;Selecione um item</option>
+                                                <option value="01">1</option>
+                                                <option value="02">2</option>
+                                                <option value="03">3</option>
+                                                <option value="04">4</option>
+                                                <option value="05">5</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">

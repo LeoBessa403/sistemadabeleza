@@ -32,6 +32,24 @@
     define('CO_ASSINANTE_FILIAL', 'co_assinante_filial');
     define('TP_ASSINANTE', 'tp_assinante');
     define('NU_FILIAIS', 'nu_filiais');
+    define('CO_TIPO_PAGAMENTO', 'co_tipo_pagamento');
+    define('NO_TIPO_PAGAMENTO', 'no_tipo_pagamento');
+    define('CO_FACILIDADE_PAGAMENTO', 'co_facilidade_pagamento');
+    define('CO_FACILIDADE_BENEFICIO', 'co_facilidade_beneficio');
+    define('NU_ESTABELECIMENTO', 'nu_estabelecimento');
+    define('NU_ATENDIMENTO', 'nu_atendimento');
+    define('NU_GENERO_ESPECIALIZADO', 'nu_genero_especializado');
+    define('NU_ESTACIONAMENTO', 'nu_estacionamento');
+    define('ST_LANCHONETE', 'st_lanchonete');
+    define('ST_TELEVISAO', 'st_televisao');
+    define('ST_WIFI', 'st_wifi');
+    define('ST_ACESSO_DEFICIENTE', 'st_acesso_deficiente');
+    define('ST_JOGOS', 'st_jogos');
+    define('CO_FUNCIONAMENTO', 'co_funcionamento');
+    define('NU_DIA_SEMANA', 'nu_dia_semana');
+    define('NU_HORA_ABERTURA', 'nu_hora_abertura');
+    define('NU_HORA_FECHAMENTO', 'nu_hora_fechamento');
+    define('CO_IMAGEM_ASSINANTE', 'co_imagem_assinante');
 
 
 	// SERVICES
@@ -44,7 +62,8 @@
 	define('ASSINANTE_SERVICE', 'AssinanteService');
     define('ASSINANTE_MATRIZ_SERVICE', 'AssinanteMatrizService');
     define('ASSINANTE_FILIAL_SERVICE', 'AssinanteFilialService');
-
-
-
-
+	define('TIPO_PAGAMENTO_SERVICE', 'TipoPagamentoService');
+	define('FACILIDADE_PAGAMENTO_SERVICE', 'FacilidadePagamentoService');
+	define('FACILIDADE_BENEFICIO_SERVICE', 'FacilidadeBeneficioService');
+	define('FUNCIONAMENTO_SERVICE', 'FuncionamentoService');
+	define('IMAGEM_ASSINANTE_SERVICE', 'ImagemAssinanteService');

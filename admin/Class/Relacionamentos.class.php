@@ -129,7 +129,13 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
-            (ImagemEntidade::TABELA) => Array(),
+            (ImagemEntidade::TABELA) => Array(
+                (CO_IMAGEM_ASSINANTE) => Array(
+                    ('Campo') => CO_IMAGEM,
+                    ('Entidade') => 'ImagemAssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
             (PerfilFuncionalidadeEntidade::TABELA) => Array(
                 (CO_PERFIL) => Array(
                     ('Campo') => CO_PERFIL,
@@ -279,6 +285,21 @@ class Relacionamentos
                     ('Entidade') => 'AssinanteFilialEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_FACILIDADE_BENEFICIO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'FacilidadeBeneficioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_FUNCIONAMENTO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'FuncionamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_IMAGEM_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ImagemAssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (EmpresaEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
@@ -308,6 +329,56 @@ class Relacionamentos
                 (CO_ASSINANTE_MATRIZ) => Array(
                     ('Campo') => CO_ASSINANTE_MATRIZ,
                     ('Entidade') => 'AssinanteMatrizEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (FacilidadePagamentoEntidade::TABELA) => Array(
+                (CO_TIPO_PAGAMENTO) => Array(
+                    ('Campo') => CO_TIPO_PAGAMENTO,
+                    ('Entidade') => 'TipoPagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_FACILIDADE_BENEFICIO) => Array(
+                    ('Campo') => CO_FACILIDADE_BENEFICIO,
+                    ('Entidade') => 'FacilidadeBeneficioEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (TipoPagamentoEntidade::TABELA) => Array(
+                (CO_FACILIDADE_PAGAMENTO) => Array(
+                    ('Campo') => CO_TIPO_PAGAMENTO,
+                    ('Entidade') => 'FacilidadePagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (FacilidadeBeneficioEntidade::TABELA) => Array(
+                (CO_FACILIDADE_PAGAMENTO) => Array(
+                    ('Campo') => CO_FACILIDADE_BENEFICIO,
+                    ('Entidade') => 'FacilidadePagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (FuncionamentoEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ImagemAssinanteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_IMAGEM) => Array(
+                    ('Campo') => CO_IMAGEM,
+                    ('Entidade') => 'ImagemEntidade',
                     ('Tipo') => '1',
                 ),
             ),
