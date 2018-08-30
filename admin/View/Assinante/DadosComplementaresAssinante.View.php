@@ -100,39 +100,83 @@
                                         <small>Informações básicas</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Username <span class="symbol"></span>
+                                        <label for="<?= NO_EMPRESA; ?>" class="col-sm-3 control-label">
+                                            Razão Social
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="username" name="username"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control" id="<?= NO_EMPRESA; ?>"
+                                                   name="<?= NO_EMPRESA; ?>"
+                                                   placeholder="Nome da Empresa">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Email <span class="symbol"></span>
+                                        <label for="<?= NO_FANTASIA; ?>" class="col-sm-3 control-label">
+                                            Nome Fantasia <span class="symbol  required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="email" class="form-control" id="email" name="email"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control" id="<?= NO_FANTASIA; ?>"
+                                                   name="<?= NO_FANTASIA; ?>"
+                                                   placeholder="Nome do Estabelecimento">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Password <span class="symbol"></span>
+                                        <label for="<?= NO_PESSOA; ?>" class="col-sm-3 control-label">
+                                            Responsável <span class="symbol  required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="password" class="form-control" id="password" name="password"
-                                                   placeholder="Text Field">
+                                            <input type="text" class="form-control" id="<?= NO_PESSOA; ?>"
+                                                   name="<?= NO_PESSOA; ?>"
+                                                   placeholder="Nome do Responsável pela empresa">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Confirm Password <span class="symbol"></span>
+                                        <label for="<?= NU_CNPJ; ?>" class="col-sm-3 control-label">
+                                            CNPJ
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="password" class="form-control" id="password_again"
-                                                   name="password_again" placeholder="Text Field">
+                                            <input type="text" class="form-control cnpj" id="<?= NU_CNPJ; ?>"
+                                                   name="<?= NU_CNPJ; ?>"
+                                                   placeholder="Número do CNPJ">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= NU_INSC_ESTADUAL; ?>" class="col-sm-3 control-label">
+                                            Inscrição Estadual
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control" id="<?= NU_INSC_ESTADUAL; ?>"
+                                                   name="<?= NU_INSC_ESTADUAL; ?>"
+                                                   placeholder="Número da Inscrição Estadual">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= NU_TEL1; ?>" class="col-sm-3 control-label">
+                                            Telefone (WhatsApp)
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control tel" id="<?= NU_TEL1; ?>"
+                                                   name="<?= NU_TEL1; ?>"
+                                                   placeholder="Número do contato com WhatsApp">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= NU_TEL2; ?>" class="col-sm-3 control-label">
+                                            Telefone 2
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control tel" id="<?= NU_TEL2; ?>"
+                                                   name="<?= NU_TEL2; ?>"
+                                                   placeholder="Número do contato do estabelecimento">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="<?= DS_DESCRICAO; ?>" class="col-sm-3 control-label">
+                                            Descrição
+                                        </label>
+                                        <div class="col-sm-7">
+                                            <textarea type="text" class="form-control tel" id="<?= DS_DESCRICAO; ?>"
+                                                   name="<?= DS_DESCRICAO; ?>"
+                                                      placeholder="Descrição da sua empresa"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">

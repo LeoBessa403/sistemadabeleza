@@ -1,4 +1,4 @@
-<!--CADASTRAR CLIENTE - ORIGEM BALCÃO / Como nos conheceu:-->
+<br/><br/><label>CADASTRAR CLIENTE - ORIGEM BALCÃO / Como nos conheceu:</label><br/>
 <select data-val="true" data-val-number="The field IdComoNosConheceu must be a number."
         data-val-required="The IdComoNosConheceu field is required." id="IdComoNosConheceu" name="IdComoNosConheceu"
         style="margin-top:6px" aria-required="true" aria-invalid="false" aria-describedby="IdComoNosConheceu-error"
@@ -33,7 +33,7 @@
 </select>
 
 
-<!--EDITAR SERVIÇO / Serviço Padrão-->
+<br/><br/><label>EDITAR SERVIÇO / Serviço Padrão</label><br/>
 <select id="combo-servico-padrao" style="width: 380px"
         data-bind="options: servico.listaServicosPadrao, value: servico.codigoServicoPai, optionsText: 'Descricao', optionsValue: 'Codigo', optionsCaption: '[sem vínculo]'">
     <option value="">[sem vínculo]</option>
@@ -50,7 +50,7 @@
 </select>
 
 
-<!--EDITAR SERVIÇO / Preço -->
+<br/><br/><label>EDITAR SERVIÇO / Preço </label><br/>
 <select id="TipoPreco" name="TipoPreco" aria-required="true"
         aria-invalid="false" aria-describedby="TipoPreco-error" class="valid">
     <option value="2">A partir de</option>
@@ -58,7 +58,7 @@
     <option value="4">Gratuito</option>
 </select>
 
-<!--ADICIONAR CATEGORIA / Categoria-->
+<br/><br/><label>ADICIONAR CATEGORIA / Categoria</label><br/>
 <select data-val="true">
     <option selected="selected" value="0"></option>
     <option value="10">Banhos - Ofurô</option>
@@ -87,7 +87,7 @@
 </select>
 
 
-<!--CADASTRAR PROFISSIONAL  / Acesso do Profissional ao Sistema:-->
+<br/><br/><label>CADASTRAR PROFISSIONAL  / Acesso do Profissional ao Sistema:</label><br/>
 <select data-disabled="False" class="valid">
     <option value="-1"></option>
     <option selected="selected" value="0">Sem acesso ao sistema através de login (e-mail)</option>
@@ -97,7 +97,7 @@
     <option value="4">Acesso total ao sistema (recomendado para gerentes/sócios)</option>
 </select>
 
-<!--CADASTRAR PROFISSIONAL / Função-->
+<br/><br/><label>CADASTRAR PROFISSIONAL / Função</label><br/>
 <select>
     <option value="0"></option>
     <option value="314749">Auxiliar Administrativo</option>
@@ -117,7 +117,7 @@
     <option value="314747">Terapeuta</option>
 </select>
 
-<!-- Ausência de Profissionais / Tipos de Ausência-->
+<br/><br/><label> Ausência de Profissionais / Tipos de Ausência</label><br/>
 <select class="valid">
     <option value="1">Almoço</option>
     <option value="5">Ausência Médica</option>
@@ -128,44 +128,45 @@
     <option value="6">Outros</option>
 </select>
 
-<!--Características e Facilidades / Tipo de Estabelecimento-->
+<br/><br/><label>Características e Facilidades / Tipo de Estabelecimento</label><br/>
 <select data-val="true">
+    <option value="1">Salão de Beleza</option>
     <option value="2">Barbearia</option>
     <option value="3">Clínica de Estética</option>
-    <option value="5">Outro</option>
-    <option value="1">Salão de Beleza</option>
     <option value="4">SPA</option>
+    <option value="5">Esmaltaria</option>
+    <option value="6">Outro</option>
 </select>
 
-<!--Características e Facilidades / Estacionamento-->
+<br/><br/><label>Características e Facilidades / Estacionamento</label><br/>
 <select data-val="true">
     <option value="1">Estacionamento - Grátis</option>
     <option value="2">Estacionamento - Pago</option>
     <option value="3">Não Possui Estacionamento</option>
 </select>
 
-<!--Características e Facilidades / Tipo de Franquia-->
+<br/><br/><label>Características e Facilidades / Tipo de Franquia</label><br/>
 <select>
     <option value="1">Estabelecimento Único</option>
-    <option value="3">Filial</option>
     <option value="2">Franquia</option>
+    <option value="3">Filial</option>
     <option value="4">Outro</option>
 </select>
 
-<!--Características e Facilidades / Crianças-->
+<br/><br/><label>Características e Facilidades / Crianças</label><br/>
 <select>
     <option value="1">Atendemos adultos e crianças</option>
     <option value="2">Atendemos somente crianças</option>
     <option value="3">Não atendemos crianças</option>
 </select>
 
-<!--Configurações do Agendamento pelo Site-->
+<br/><br/><label>Configurações do Agendamento pelo Site</label><br/>
 <select>
     <option value="3">Aguardando Confirmação do Estabelecimento</option>
     <option value="4">Confirmado</option>
 </select>
 
-<!--Antecedência máxima para agendamento-->
+<br/><br/><label>Antecedência máxima para agendamento</label><br/>
 <select>
     <option value="0">Sem restrição</option>
     <option value="3">3 dias</option>
@@ -177,7 +178,7 @@
     <option value="365">1 ano</option>
 </select>
 
-<!--Profissionais podem ver agenda de dias anteriores e posteriores-->
+<br/><br/><label>Profissionais podem ver agenda de dias anteriores e posteriores</label><br/>
 <select>
     <option value="1">Somente o dia de hoje</option>
     <option value="2">Hoje e dias futuros</option>
@@ -185,7 +186,7 @@
     <option value="4">Todos os dias</option>
 </select>
 
-<!--Tempo de antecedência para envio de SMS/Notificação Push-->
+<br/><br/><label>Tempo de antecedência para envio de SMS/Notificação Push</label><br/>
 <select>
     <option value="120">2 horas</option>
     <option value="180">3 horas</option>
@@ -193,7 +194,7 @@
     <option value="1440">24 horas</option>
 </select>
 
-<!--Dia para fechamento de mês-->
+<br/><br/><label>Dia para fechamento de mês</label><br/>
 <select>
     <option value="1">Primeiro dia do mês</option>
     <option value="2">Todo dia 2</option>
@@ -225,13 +226,13 @@
     <option value="28">Todo dia 28</option>
 </select>
 
-<!--Liberação da Comissão dos Profissionais-->
+<br/><br/><label>Liberação da Comissão dos Profissionais</label><br/>
 <select>
     <option value="1">Data Prevista de Recebimento do Estabelecimento</option>
     <option value="0">Data de Fechamento da Conta</option>
 </select>
 
-<!--INCLUIR TIPO DE DESPESA / Categoria-->
+<br/><br/><label>INCLUIR TIPO DE DESPESA / Categoria</label><br/>
 <select>
     <option value="">Selecione a categoria</option>
     <option value="107552">Despesas Fixas</option>
@@ -242,7 +243,7 @@
 </select>
 
 
-<!--entrada e saída / Entrada-->
+<br/><br/><label>entrada e saída / Entrada</label><br/>
 <select>
     <option value="">Selecione...</option>
     <option value="7">Ajuste</option>
@@ -254,7 +255,7 @@
 </select>
 
 
-<!--entrada e saída / Saída-->
+<br/><br/><label>entrada e saída / Saída</label><br/>
 <select>
     <option value="">Selecione...</option>
     <option value="13">Ajuste</option>
@@ -269,7 +270,7 @@
     <option value="16">Uso Interno com Registro de Cliente</option>
 </select>
 
-<!--Consulta Posição de Estoque / Nível de Estoque-->
+<br/><br/><label>Consulta Posição de Estoque / Nível de Estoque</label><br/>
 <select>
     <option value="0">Todos</option>
     <option value="1">Adequado</option>
@@ -279,7 +280,7 @@
     <option value="5">Perto ou abaixo do mínimo</option>
 </select>
 
-<!--CADASTRAR DESPESA / Tipo de Despesa-->
+<br/><br/><label>CADASTRAR DESPESA / Tipo de Despesa</label><br/>
 <select>
     <option value="456057">Alimentação</option>
     <option value="456061">Aluguel</option>
@@ -302,7 +303,7 @@
     <option value="456054">Vale Profissional</option>
 </select>
 
-<!--CADASTRAR DESPESA / Forma de Pagamentoa-->
+<br/><br/><label>CADASTRAR DESPESA / Forma de Pagamentoa</label><br/>
 <select>
     <option value="59">À Vista</option>
     <option value="4">American Express</option>
@@ -327,7 +328,7 @@
 </select>
 
 
-<!--Listar fechamentos com desconto-->
+<br/><br/><label>Listar fechamentos com desconto</label><br/>
 <select>
     <option value="0" style="background-color: #f0f0f0;">Com e sem desconto</option>
     <option value="1" style="background-color: #f0f0f0;">Com desconto</option>
@@ -341,14 +342,14 @@
     <option value="1.185250" style="">&nbsp;&nbsp;&nbsp;Pagamento à vista</option>
 </select>
 
-<!--Listar fechamentos com-->
+<br/><br/><label>Listar fechamentos com</label><br/>
 <select>
     <option value="0">Todos</option>
     <option value="1">Serviços</option>
     <option value="2">Produtos</option>
     <option value="3">Pacotes</option>
 </select>
-<!--Indique dois motivos pelos quais você escolheu Trinks:-->
+<br/><br/><label>Indique dois motivos pelos quais você escolheu Trinks:</label><br/>
 Agendamento online para clientes
 Programa de Gestão Completo
 Site
@@ -360,7 +361,7 @@ Controle de Despesas e Contas
 Pagamento de comissões de profissionais
 
 
-<!--Como você conheceu o Trinks?-->
+<br/><br/><label>Como você conheceu o Trinks?</label><br/>
 <select>
     <option value="1">Facebook</option>
     <option value="2">Google</option>
