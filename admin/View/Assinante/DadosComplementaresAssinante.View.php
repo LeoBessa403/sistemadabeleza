@@ -377,72 +377,87 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Card Number <span class="symbol"></span>
+                                            Lanchonete
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_number" name="card_number"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            CVC <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="card_cvc" name="card_cvc"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Expiration(MM/YYYY) <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <select class="form-control" id="card_expiry_mm"
-                                                            name="card_expiry_mm">
-                                                        <option value="">MM</option>
-                                                        <option value="01">1</option>
-                                                        <option value="02">2</option>
-                                                        <option value="03">3</option>
-                                                        <option value="04">4</option>
-                                                        <option value="05">5</option>
-                                                        <option value="06">6</option>
-                                                        <option value="07">7</option>
-                                                        <option value="08">8</option>
-                                                        <option value="09">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="card_expiry_yyyy"
-                                                           id="card_expiry_yyyy" placeholder="YYYY">
-                                                </div>
+
+                                            <div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class='fa fa-check fa-white'></i>"
+                                                 data-off-label="<i class='fa fa-times fa-white'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="<?= ST_LANCHONETE; ?>"
+                                                       name="<?= ST_LANCHONETE; ?>" class=""/>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">
-                                            Payment Options <span class="symbol"></span>
+                                            Televisão
                                         </label>
                                         <div class="col-sm-7">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment1">
-                                                    Auto-Pay with this Credit Card
-                                                </label>
+
+                                            <div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class='fa fa-check fa-white'></i>"
+                                                 data-off-label="<i class='fa fa-times fa-white'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="<?= ST_TELEVISAO; ?>"
+                                                       name="<?= ST_TELEVISAO; ?>" class=""/>
                                             </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment2">
-                                                    Email me monthly billing
-                                                </label>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Wi-Fi
+                                        </label>
+                                        <div class="col-sm-7">
+
+                                            <div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class='fa fa-check fa-white'></i>"
+                                                 data-off-label="<i class='fa fa-times fa-white'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="<?= ST_WIFI; ?>"
+                                                       name="<?= ST_WIFI; ?>" class=""/>
                                             </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Acesso Deficiente
+                                        </label>
+                                        <div class="col-sm-7">
+
+                                            <div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class='fa fa-check fa-white'></i>"
+                                                 data-off-label="<i class='fa fa-times fa-white'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="<?= ST_ACESSO_DEFICIENTE; ?>"
+                                                       name="<?= ST_ACESSO_DEFICIENTE; ?>" class=""/>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">
+                                            Jogos
+                                        </label>
+                                        <div class="col-sm-7">
+
+                                            <div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class='fa fa-check fa-white'></i>"
+                                                 data-off-label="<i class='fa fa-times fa-white'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="<?= ST_JOGOS; ?>"
+                                                       name="<?= ST_JOGOS; ?>" class=""/>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="form-group">

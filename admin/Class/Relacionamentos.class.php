@@ -129,13 +129,7 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
-            (ImagemEntidade::TABELA) => Array(
-                (CO_IMAGEM_ASSINANTE) => Array(
-                    ('Campo') => CO_IMAGEM,
-                    ('Entidade') => 'ImagemAssinanteEntidade',
-                    ('Tipo') => '1',
-                ),
-            ),
+            (ImagemEntidade::TABELA) => Array(),
             (PerfilFuncionalidadeEntidade::TABELA) => Array(
                 (CO_PERFIL) => Array(
                     ('Campo') => CO_PERFIL,

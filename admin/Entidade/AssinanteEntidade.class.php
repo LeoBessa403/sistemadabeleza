@@ -21,6 +21,9 @@ class AssinanteEntidade extends AbstractEntidade
     private $co_plano_assinante_assinatura;
     private $co_assinante_matriz;
     private $co_assinante_filial;
+    private $co_facilidade_beneficio;
+    private $co_funcionamento;
+    private $co_imagem_assinante;
 
 
     /**
@@ -257,4 +260,53 @@ class AssinanteEntidade extends AbstractEntidade
         }
 
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCoFacilidadeBeneficio()
+    {
+        return $this->co_facilidade_beneficio;
+    }
+
+    /**
+     * @param FacilidadeBeneficioEntidade $co_facilidade_beneficio
+     */
+    public function setCoFacilidadeBeneficio($co_facilidade_beneficio)
+    {
+        $this->co_facilidade_beneficio = $co_facilidade_beneficio;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoFuncionamento()
+    {
+        return $this->co_funcionamento;
+    }
+
+    /**
+     * @param FuncionamentoEntidade $co_funcionamento
+     */
+    public function setCoFuncionamento($co_funcionamento)
+    {
+        $this->co_funcionamento = $co_funcionamento;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoImagemAssinante()
+    {
+        return $this->co_imagem_assinante;
+    }
+
+    /**
+     * @param ImagemAssinanteEntidade $co_imagem_assinante
+     */
+    public function setCoImagemAssinante($co_imagem_assinante)
+    {
+        $this->co_imagem_assinante = $co_imagem_assinante;
+    }
+
 }
