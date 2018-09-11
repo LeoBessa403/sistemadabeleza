@@ -20,9 +20,10 @@ class FuncionamentoEnum extends AbstractEnum
         FuncionamentoEnum::SEG_SEX => 'Segunda a Sexta',
         FuncionamentoEnum::SEG_SAB => 'Segunda a Sábado',
         FuncionamentoEnum::SAB_DOM_FER => 'Sábado, Domingo e Feriado',
+        FuncionamentoEnum::SAB_DOM => 'Sábado e Domingo',
         FuncionamentoEnum::DOM_FER => 'Domingo e Feriado',
         FuncionamentoEnum::SABADO => 'Sábado',
         FuncionamentoEnum::DOMINGO => 'Domingo',
-        FuncionamentoEnum::DOMINGO => 'Feriado',
+        FuncionamentoEnum::FERIADO => 'Feriado',
     ];
 }
