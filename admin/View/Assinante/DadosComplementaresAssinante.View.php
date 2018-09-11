@@ -484,7 +484,7 @@
                                             </label>
                                             <div class="col-sm-3">
                                                 <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
-                                                        name="<?= NU_DIA_SEMANA; ?>">
+                                                        name="<?= NU_DIA_SEMANA; ?>[]">
                                                     <option value="">Selecione Dias Abertos</option>
                                                     <?php
                                                     foreach (FuncionamentoEnum::$descricao as $tipo => $desc) {
@@ -499,7 +499,7 @@
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
                                                        id="<?= NU_HORA_ABERTURA; ?>"
-                                                       name="<?= NU_HORA_ABERTURA; ?>"
+                                                       name="<?= NU_HORA_ABERTURA; ?>[]"
                                                        placeholder="Horário de Abertura">
                                             </div>
                                             <label class="col-sm-1 control-label">
@@ -508,7 +508,7 @@
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
                                                        id="<?= NU_HORA_FECHAMENTO; ?>"
-                                                       name="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       name="<?= NU_HORA_FECHAMENTO; ?>[]"
                                                        placeholder="Horário de Fechamento">
                                             </div>
                                         </div>
@@ -520,7 +520,7 @@
                                             </label>
                                             <div class="col-sm-3">
                                                 <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
-                                                        name="<?= NU_DIA_SEMANA; ?>">
+                                                        name="<?= NU_DIA_SEMANA; ?>[]">
                                                     <option value="">Selecione Dias Abertos</option>
                                                     <?php
                                                     foreach (FuncionamentoEnum::$descricao as $tipo => $desc) {
@@ -535,7 +535,7 @@
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
                                                        id="<?= NU_HORA_ABERTURA; ?>"
-                                                       name="<?= NU_HORA_ABERTURA; ?>"
+                                                       name="<?= NU_HORA_ABERTURA; ?>[]"
                                                        placeholder="Horário de Abertura">
                                             </div>
                                             <label class="col-sm-1 control-label">
@@ -544,7 +544,43 @@
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
                                                        id="<?= NU_HORA_FECHAMENTO; ?>"
-                                                       name="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       name="<?= NU_HORA_FECHAMENTO; ?>[]"
+                                                       placeholder="Horário de Fechamento">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-12" style="margin-top: 20px;">
+                                        <div class="form-group">
+                                            <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-1 control-label">
+                                                Aberto de
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
+                                                        name="<?= NU_DIA_SEMANA; ?>[]">
+                                                    <option value="">Selecione Dias Abertos</option>
+                                                    <?php
+                                                    foreach (FuncionamentoEnum::$descricao as $tipo => $desc) {
+                                                        echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-1 control-label">
+                                                Abertura
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control horas"
+                                                       id="<?= NU_HORA_ABERTURA; ?>"
+                                                       name="<?= NU_HORA_ABERTURA; ?>[]"
+                                                       placeholder="Horário de Abertura">
+                                            </div>
+                                            <label class="col-sm-1 control-label">
+                                                Fechamento
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control horas"
+                                                       id="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       name="<?= NU_HORA_FECHAMENTO; ?>[]"
                                                        placeholder="Horário de Fechamento">
                                             </div>
                                         </div>
@@ -567,82 +603,61 @@
                                         <small>Fotos do Estabelecimento</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Holder Name <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_name" name="card_name"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Number <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_number" name="card_number"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            CVC <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="card_cvc" name="card_cvc"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Expiration(MM/YYYY) <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <select class="form-control" id="card_expiry_mm"
-                                                            name="card_expiry_mm">
-                                                        <option value="">MM</option>
-                                                        <option value="01">1</option>
-                                                        <option value="02">2</option>
-                                                        <option value="03">3</option>
-                                                        <option value="04">4</option>
-                                                        <option value="05">5</option>
-                                                        <option value="06">6</option>
-                                                        <option value="07">7</option>
-                                                        <option value="08">8</option>
-                                                        <option value="09">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="card_expiry_yyyy"
-                                                           id="card_expiry_yyyy" placeholder="YYYY">
+                                        <div class="col-sm-12">
+                                            <label for="ds_caminho" class="control-label"> Foto Principal / Logo</label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                <div class="fileupload-new thumbnail"
+                                                     style="width: 150px; height: 150px;">
+                                                    <img src="http://localhost/sistemadabeleza/library/Helpers/Timthumb.class.php?src=http://localhost/sistemadabeleza/library/Imagens/sem-foto.jpg&amp;w=150&amp;h=150"
+                                                         alt="Pre Carregamento" title="Pre Carregamento"></div>
+                                                <div class="fileupload-preview fileupload-exists thumbnail"
+                                                     style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
+                                                <div class="user-edit-image-buttons">
+                                                    <span class="btn btn-success btn-file"><span
+                                                                class="fileupload-new"><i
+                                                                    class="fa fa-folder-open-o"></i> Abrir Arquivo</span>
+                                                    <span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Trocar</span>
+                                                            <input class="file-input " id="ds_caminho" name="ds_caminho"
+                                                                   type="file">
+                                                    </span>
+                                                    <a href="#" class="btn fileupload-exists btn-bricky"
+                                                       data-dismiss="fileupload">
+                                                        <i class="fa fa-trash-o"></i> Remover
+                                                    </a>
                                                 </div>
                                             </div>
+                                            <span class="help-block" id="ds_caminho-info"><i
+                                                        class="fa fa-info-circle"></i> Foto da fachada do estabelecimento</span>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Payment Options <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment1">
-                                                    Auto-Pay with this Credit Card
-                                                </label>
+                                        <div class="col-sm-6" style="margin-top: 30px;">
+                                            <label for="co_imagem_evento" class="control-label">
+                                                Galeria de Fotos do Estabelecimento</label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload"
+                                                 style="margin-bottom: 0px;">
+                                                <div class="input-group">
+                                                    <div class="form-control uneditable-input">
+                                                        <i class="fa fa-file fileupload-exists"></i>
+                                                        <span class="fileupload-preview"></span>
+                                                    </div>
+                                                    <div class="input-group-btn">
+                                                        <div class="btn btn-dark-grey btn-file">
+                                                            <span class="fileupload-new"><i
+                                                                        class="fa fa-folder-open-o"></i> Carregar Fotos</span>
+                                                            <span class="fileupload-exists"><i
+                                                                        class="fa fa-folder-open-o"></i> Trocar</span>
+                                                            <input multiple="multiple" class="file-input multipla"
+                                                                   placeholder="5" id="<?= CO_IMAGEM_ASSINANTE; ?>"
+                                                                   name="<?= CO_IMAGEM_ASSINANTE; ?>[]" type="file">
+                                                        </div>
+                                                        <a href="#" class="btn btn-bricky fileupload-exists"
+                                                           data-dismiss="fileupload">
+                                                            <i class="fa fa-trash-o"></i> Remover
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment2">
-                                                    Email me monthly billing
-                                                </label>
-                                            </div>
+                                            <span class="help-block" id="co_imagem_evento-info"><i
+                                                        class="fa fa-info-circle"></i> Pode enviar até 5 Fotos</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
