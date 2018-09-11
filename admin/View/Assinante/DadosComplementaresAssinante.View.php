@@ -477,82 +477,75 @@
                                     <h2 class="StepTitle">Funcionamento
                                         <small>Informações do horário de funcionamento</small>
                                     </h2>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Holder Name <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_name" name="card_name"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Card Number <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="card_number" name="card_number"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            CVC <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control" id="card_cvc" name="card_cvc"
-                                                   placeholder="Text Field">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Expiration(MM/YYYY) <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-4">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    <select class="form-control" id="card_expiry_mm"
-                                                            name="card_expiry_mm">
-                                                        <option value="">MM</option>
-                                                        <option value="01">1</option>
-                                                        <option value="02">2</option>
-                                                        <option value="03">3</option>
-                                                        <option value="04">4</option>
-                                                        <option value="05">5</option>
-                                                        <option value="06">6</option>
-                                                        <option value="07">7</option>
-                                                        <option value="08">8</option>
-                                                        <option value="09">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <input type="text" class="form-control" name="card_expiry_yyyy"
-                                                           id="card_expiry_yyyy" placeholder="YYYY">
-                                                </div>
+                                    <div class="form-group col-sm-12">
+                                        <div class="form-group">
+                                            <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-1 control-label">
+                                                Aberto de
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
+                                                        name="<?= NU_DIA_SEMANA; ?>">
+                                                    <option value="">Selecione Dias Abertos</option>
+                                                    <?php
+                                                    foreach (FuncionamentoEnum::$descricao as $tipo => $desc) {
+                                                        echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <label class="col-sm-1 control-label">
+                                                Abertura
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control horas"
+                                                       id="<?= NU_HORA_ABERTURA; ?>"
+                                                       name="<?= NU_HORA_ABERTURA; ?>"
+                                                       placeholder="Horário de Abertura">
+                                            </div>
+                                            <label class="col-sm-1 control-label">
+                                                Fechamento
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control horas"
+                                                       id="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       name="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       placeholder="Horário de Fechamento">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">
-                                            Payment Options <span class="symbol"></span>
-                                        </label>
-                                        <div class="col-sm-7">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment1">
-                                                    Auto-Pay with this Credit Card
-                                                </label>
+                                    <div class="form-group col-sm-12" style="margin-top: 20px;">
+                                        <div class="form-group">
+                                            <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-1 control-label">
+                                                Aberto de
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
+                                                        name="<?= NU_DIA_SEMANA; ?>">
+                                                    <option value="">Selecione Dias Abertos</option>
+                                                    <?php
+                                                    foreach (FuncionamentoEnum::$descricao as $tipo => $desc) {
+                                                        echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    }
+                                                    ?>
+                                                </select>
                                             </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" class="grey" value="" name="payment"
-                                                           id="payment2">
-                                                    Email me monthly billing
-                                                </label>
+                                            <label class="col-sm-1 control-label">
+                                                Abertura
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control horas"
+                                                       id="<?= NU_HORA_ABERTURA; ?>"
+                                                       name="<?= NU_HORA_ABERTURA; ?>"
+                                                       placeholder="Horário de Abertura">
+                                            </div>
+                                            <label class="col-sm-1 control-label">
+                                                Fechamento
+                                            </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" class="form-control horas"
+                                                       id="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       name="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       placeholder="Horário de Fechamento">
                                             </div>
                                         </div>
                                     </div>
