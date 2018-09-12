@@ -608,7 +608,7 @@
                                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                                 <div class="fileupload-new thumbnail"
                                                      style="width: 150px; height: 150px;">
-                                                    <img src="http://localhost/sistemadabeleza/library/Helpers/Timthumb.class.php?src=http://localhost/sistemadabeleza/library/Imagens/sem-foto.jpg&amp;w=150&amp;h=150"
+                                                    <img src="<?= HOME; ?>library/Helpers/Timthumb.class.php?src=<?= HOME; ?>library/Imagens/sem-foto.jpg&amp;w=150&amp;h=150"
                                                          alt="Pre Carregamento" title="Pre Carregamento"></div>
                                                 <div class="fileupload-preview fileupload-exists thumbnail"
                                                      style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
@@ -656,7 +656,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <span class="help-block" id="co_imagem_evento-info"><i
+                                            <span class="help-block" id="<?= CO_IMAGEM_ASSINANTE; ?>-info"><i
                                                         class="fa fa-info-circle"></i> Pode enviar até 5 Fotos</span>
                                         </div>
                                     </div>
