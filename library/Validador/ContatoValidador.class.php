@@ -20,6 +20,9 @@ class  ContatoValidador extends AbstractValidador
         $this->retorno[DADOS][] = $this->ValidaCampoValido(
             $dados[NU_TEL2], AbstractValidador::VALIDACAO_TEL, 'Telefone do Estabelecimento'
         );
+        $this->retorno[DADOS][] = $this->ValidaCampoValido(
+            $dados[DS_EMAIL], AbstractValidador::VALIDACAO_EMAIL, 'E-mail'
+        );
         return $this->MontaRetorno($this->retorno);
     }
 

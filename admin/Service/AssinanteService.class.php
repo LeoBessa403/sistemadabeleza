@@ -197,6 +197,9 @@ class  AssinanteService extends AbstractService
         return $dados;
     }
 
+    /**
+     * @return AssinanteEntidade $assinante
+     */
     public function getAssinanteLogado()
     {
         /** @var Session $us */

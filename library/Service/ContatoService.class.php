@@ -40,7 +40,6 @@ class  ContatoService extends AbstractService
         $validador = $contatoValidador->validarContato($dados);
         if ($validador[SUCESSO]) {
             $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
-            debug($contato);
             $this->Salva($contato, $assinante->getCoPessoa()->getCoContato());
             $retorno[SUCESSO] = true;
         } else {
