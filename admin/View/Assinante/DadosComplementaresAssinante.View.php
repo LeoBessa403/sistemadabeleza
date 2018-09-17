@@ -29,15 +29,16 @@
         ?>
         <div class="row">
             <div class="col-sm-12">
-
-
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
                         Dados Complementares
                     </div>
                     <div class="panel-body">
-                        <form action="#" role="form" class="smart-wizard form-horizontal" id="form">
+                        <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
+                              role="form" class="smart-wizard form-horizontal formulario"
+                              method="post" enctype="multipart/form-data"
+                              id="DadosComplementaresAssinante" name="DadosComplementaresAssinante">
                             <div id="wizard" class="swMain">
                                 <ul>
                                     <li>
@@ -154,14 +155,14 @@
                                             Descrição
                                         </label>
                                         <div class="col-sm-7">
-                                            <textarea type="text" class="form-control tel" id="<?= DS_DESCRICAO; ?>"
+                                            <textarea class="form-control tel" id="<?= DS_DESCRICAO; ?>"
                                                       name="<?= DS_DESCRICAO; ?>"
                                                       placeholder="Descrição da sua empresa"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-2 col-sm-offset-8">
-                                            <button id="1" class="btn btn-success next-step btn-block">
+                                            <button id="1" class="btn btn-primary next-step btn-block">
                                                 Próximo <i class="fa fa-arrow-circle-right"></i>
                                             </button>
                                         </div>
@@ -244,7 +245,7 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-2 col-sm-offset-3">
-                                            <button class="btn btn-success next-step btn-block">
+                                            <button class="btn btn-primary next-step btn-block">
                                                 Próximo <i class="fa fa-arrow-circle-right"></i>
                                             </button>
                                         </div>
@@ -301,7 +302,7 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-2 col-sm-offset-3">
-                                            <button class="btn btn-success next-step btn-block">
+                                            <button class="btn btn-primary next-step btn-block">
                                                 Próximo <i class="fa fa-arrow-circle-right"></i>
                                             </button>
                                         </div>
@@ -376,58 +377,52 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
+                                        <label for="<?= ST_LANCHONETE; ?>" class="col-sm-3 control-label">
                                             Lanchonete
                                         </label>
                                         <div class="col-sm-7">
-
                                             <div id="change-color-switch" class="make-switch"
                                                  data-on-label="<i class='fa fa-check fa-white'></i>"
                                                  data-off-label="<i class='fa fa-times fa-white'></i>"
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_LANCHONETE; ?>"
-                                                       name="<?= ST_LANCHONETE; ?>" class=""/>
+                                                       name="<?= ST_LANCHONETE; ?>" class="" title=""/>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
+                                        <label for="<?= ST_TELEVISAO; ?>" class="col-sm-3 control-label">
                                             Televisão
                                         </label>
                                         <div class="col-sm-7">
-
                                             <div id="change-color-switch" class="make-switch"
                                                  data-on-label="<i class='fa fa-check fa-white'></i>"
                                                  data-off-label="<i class='fa fa-times fa-white'></i>"
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_TELEVISAO; ?>"
-                                                       name="<?= ST_TELEVISAO; ?>" class=""/>
+                                                       name="<?= ST_TELEVISAO; ?>" class="" title=""/>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
+                                        <label for="<?= ST_WIFI; ?>" class="col-sm-3 control-label">
                                             Wi-Fi
                                         </label>
                                         <div class="col-sm-7">
-
                                             <div id="change-color-switch" class="make-switch"
                                                  data-on-label="<i class='fa fa-check fa-white'></i>"
                                                  data-off-label="<i class='fa fa-times fa-white'></i>"
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_WIFI; ?>"
-                                                       name="<?= ST_WIFI; ?>" class=""/>
+                                                       name="<?= ST_WIFI; ?>" class="" title=""/>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
+                                        <label for="<?= ST_ACESSO_DEFICIENTE; ?>" class="col-sm-3 control-label">
                                             Acesso Deficiente
                                         </label>
                                         <div class="col-sm-7">
@@ -438,13 +433,13 @@
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_ACESSO_DEFICIENTE; ?>"
-                                                       name="<?= ST_ACESSO_DEFICIENTE; ?>" class=""/>
+                                                       name="<?= ST_ACESSO_DEFICIENTE; ?>" class="" title=""/>
                                             </div>
 
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">
+                                        <label for="<?= ST_JOGOS; ?>" class="col-sm-3 control-label">
                                             Jogos
                                         </label>
                                         <div class="col-sm-7">
@@ -455,7 +450,7 @@
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_JOGOS; ?>"
-                                                       name="<?= ST_JOGOS; ?>" class=""/>
+                                                       name="<?= ST_JOGOS; ?>" class="" title=""/>
                                             </div>
 
                                         </div>
@@ -467,7 +462,7 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-2 col-sm-offset-3">
-                                            <button class="btn btn-success next-step btn-block">
+                                            <button class="btn btn-primary next-step btn-block">
                                                 Próximo <i class="fa fa-arrow-circle-right"></i>
                                             </button>
                                         </div>
@@ -479,11 +474,11 @@
                                     </h2>
                                     <div class="form-group col-sm-12">
                                         <div class="form-group">
-                                            <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-1 control-label">
+                                            <label for="<?= NU_DIA_SEMANA; ?>1" class="col-sm-1 control-label">
                                                 Aberto de
                                             </label>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
+                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>1"
                                                         name="<?= NU_DIA_SEMANA; ?>[]">
                                                     <option value="">Selecione Dias Abertos</option>
                                                     <?php
@@ -493,21 +488,21 @@
                                                     ?>
                                                 </select>
                                             </div>
-                                            <label class="col-sm-1 control-label">
+                                            <label for="<?= NU_HORA_ABERTURA; ?>1" class="col-sm-1 control-label">
                                                 Abertura
                                             </label>
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
-                                                       id="<?= NU_HORA_ABERTURA; ?>"
+                                                       id="<?= NU_HORA_ABERTURA; ?>1"
                                                        name="<?= NU_HORA_ABERTURA; ?>[]"
                                                        placeholder="Horário de Abertura">
                                             </div>
-                                            <label class="col-sm-1 control-label">
+                                            <label for="<?= NU_HORA_FECHAMENTO; ?>1" class="col-sm-1 control-label">
                                                 Fechamento
                                             </label>
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
-                                                       id="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       id="<?= NU_HORA_FECHAMENTO; ?>1"
                                                        name="<?= NU_HORA_FECHAMENTO; ?>[]"
                                                        placeholder="Horário de Fechamento">
                                             </div>
@@ -515,11 +510,11 @@
                                     </div>
                                     <div class="form-group col-sm-12" style="margin-top: 20px;">
                                         <div class="form-group">
-                                            <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-1 control-label">
+                                            <label for="<?= NU_DIA_SEMANA; ?>2" class="col-sm-1 control-label">
                                                 Aberto de
                                             </label>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
+                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>2"
                                                         name="<?= NU_DIA_SEMANA; ?>[]">
                                                     <option value="">Selecione Dias Abertos</option>
                                                     <?php
@@ -529,21 +524,21 @@
                                                     ?>
                                                 </select>
                                             </div>
-                                            <label class="col-sm-1 control-label">
+                                            <label for="<?= NU_HORA_ABERTURA; ?>2" class="col-sm-1 control-label">
                                                 Abertura
                                             </label>
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
-                                                       id="<?= NU_HORA_ABERTURA; ?>"
+                                                       id="<?= NU_HORA_ABERTURA; ?>2"
                                                        name="<?= NU_HORA_ABERTURA; ?>[]"
                                                        placeholder="Horário de Abertura">
                                             </div>
-                                            <label class="col-sm-1 control-label">
+                                            <label for="<?= NU_HORA_FECHAMENTO; ?>2" class="col-sm-1 control-label">
                                                 Fechamento
                                             </label>
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
-                                                       id="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       id="<?= NU_HORA_FECHAMENTO; ?>2"
                                                        name="<?= NU_HORA_FECHAMENTO; ?>[]"
                                                        placeholder="Horário de Fechamento">
                                             </div>
@@ -551,11 +546,11 @@
                                     </div>
                                     <div class="form-group col-sm-12" style="margin-top: 20px;">
                                         <div class="form-group">
-                                            <label for="<?= TP_ESTACIONAMENTO; ?>" class="col-sm-1 control-label">
+                                            <label for="<?= NU_DIA_SEMANA; ?>3" class="col-sm-1 control-label">
                                                 Aberto de
                                             </label>
                                             <div class="col-sm-3">
-                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>"
+                                                <select class="form-control" id="<?= NU_DIA_SEMANA; ?>3"
                                                         name="<?= NU_DIA_SEMANA; ?>[]">
                                                     <option value="">Selecione Dias Abertos</option>
                                                     <?php
@@ -565,21 +560,21 @@
                                                     ?>
                                                 </select>
                                             </div>
-                                            <label class="col-sm-1 control-label">
+                                            <label for="<?= NU_HORA_ABERTURA; ?>3" class="col-sm-1 control-label">
                                                 Abertura
                                             </label>
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
-                                                       id="<?= NU_HORA_ABERTURA; ?>"
+                                                       id="<?= NU_HORA_ABERTURA; ?>3"
                                                        name="<?= NU_HORA_ABERTURA; ?>[]"
                                                        placeholder="Horário de Abertura">
                                             </div>
-                                            <label class="col-sm-1 control-label">
+                                            <label for="<?= NU_HORA_FECHAMENTO; ?>3" class="col-sm-1 control-label">
                                                 Fechamento
                                             </label>
                                             <div class="col-sm-3">
                                                 <input type="text" class="form-control horas"
-                                                       id="<?= NU_HORA_FECHAMENTO; ?>"
+                                                       id="<?= NU_HORA_FECHAMENTO; ?>3"
                                                        name="<?= NU_HORA_FECHAMENTO; ?>[]"
                                                        placeholder="Horário de Fechamento">
                                             </div>
@@ -592,7 +587,7 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-2 col-sm-offset-3">
-                                            <button class="btn btn-success next-step btn-block">
+                                            <button class="btn btn-primary next-step btn-block">
                                                 Próximo <i class="fa fa-arrow-circle-right"></i>
                                             </button>
                                         </div>
@@ -630,7 +625,7 @@
                                                         class="fa fa-info-circle"></i> Foto da fachada do estabelecimento</span>
                                         </div>
                                         <div class="col-sm-6" style="margin-top: 30px;">
-                                            <label for="co_imagem_evento" class="control-label">
+                                            <label for="<?= CO_IMAGEM_ASSINANTE; ?>" class="control-label">
                                                 Galeria de Fotos do Estabelecimento</label>
                                             <div class="fileupload fileupload-new" data-provides="fileupload"
                                                  style="margin-bottom: 0px;">
@@ -667,8 +662,8 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-2 col-sm-offset-3">
-                                            <button class="btn btn-success next-step btn-block">
-                                                Próximo <i class="fa fa-arrow-circle-right"></i>
+                                            <button type="submit" class="btn btn-success btn-block">
+                                                Salvar <i class="fa fa-arrow-circle-right"></i>
                                             </button>
                                         </div>
                                     </div>

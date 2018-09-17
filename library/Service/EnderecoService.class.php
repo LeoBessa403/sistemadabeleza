@@ -65,4 +65,18 @@ class  EnderecoService extends AbstractService
         return $dados;
     }
 
+    public function salvaEnderecoAssinante($dados)
+    {
+        /** @var EmpresaService $empresaService */
+        $empresaService = $this->getService(EMPRESA_SERVICE);
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var AssinanteEntidade $assinante */
+        $assinante = $assinanteService->getAssinanteLogado();
+        $endereco = $this->getDados($dados, EnderecoEntidade::ENTIDADE);
+        $empresa[CO_ENDERECO] = $this->Salva($endereco);
+        $retorno[SUCESSO] = $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
+
+        return $retorno;
+    }
 }

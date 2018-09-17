@@ -20,6 +20,14 @@ class  PessoaValidador extends AbstractValidador
         return $this->MontaRetorno($this->retorno);
     }
 
+    public function validarNome($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[NO_PESSOA], AbstractValidador::VALIDACAO_NOME, 'Nome da Pessoa'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
+
     public function validarEmail($dados)
     {
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(

@@ -24,12 +24,12 @@ class Assinante extends AbstractController
         $filiais = $assinante->getCoUnicoAssinanteMatriz()->getCoAssinanteFilial();
         $coAssinanteFilial = [];
         /** @var AssinanteFilialEntidade $filial */
-        foreach ($filiais as $filial){
+        foreach ($filiais as $filial) {
             $coAssinanteFilial[] = $filial->getCoAssinante();
         }
-        /** @var AssinanteEntidade $this->result */
+        /** @var AssinanteEntidade $this ->result */
         $this->result = $assinanteService->PesquisaTodos([
-            CO_ASSINANTE => implode(', ' , $coAssinanteFilial)
+            CO_ASSINANTE => implode(', ', $coAssinanteFilial)
         ]);
     }
 
@@ -107,7 +107,15 @@ class Assinante extends AbstractController
 
     public function DadosComplementaresAssinante()
     {
-//        debug(1);
+        if (!empty($_POST)):
+            /** @var AssinanteService $assinanteService */
+            $assinanteService = $this->getService(ASSINANTE_SERVICE);
+
+            $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
+
+            debug($_POST, 1);
+            debug($_FILES);
+        endif;
     }
 
 }

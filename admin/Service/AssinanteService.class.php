@@ -132,6 +132,53 @@ class  AssinanteService extends AbstractService
         return $retorno;
     }
 
+    /**
+     * @param $dados
+     * @param $arquivos
+     * @return array|AssinanteValidador
+     */
+    public function salvaDadosComplementaresAssinante($dados, $arquivos)
+    {
+        /** @var EnderecoService $enderecoService */
+        $enderecoService = $this->getService(ENDERECO_SERVICE);
+        /** @var ContatoService $contatoService */
+        $contatoService = $this->getService(CONTATO_SERVICE);
+        /** @var PessoaService $pessoaService */
+        $pessoaService = $this->getService(PESSOA_SERVICE);
+        /** @var EmpresaService $empresaService */
+        $empresaService = $this->getService(EMPRESA_SERVICE);
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $session = new Session();
+
+        $PDO->beginTransaction();
+
+        $retorno = $pessoaService->salvaPessoaAssinante($dados);
+        if ($retorno[SUCESSO]) {
+            $retorno = $empresaService->salvaEmpressaAssinante($dados);
+            if ($retorno[SUCESSO]) {
+                $retorno = $enderecoService->salvaEnderecoAssinante($dados);
+                if ($retorno[SUCESSO]) {
+                    $retorno = $contatoService->salvaContatoAssinante($dados);
+                }
+            }
+        }
+
+        if ($retorno[SUCESSO]) {
+            $retorno[SUCESSO] = true;
+            $session->setSession(MENSAGEM, ATUALIZADO);
+            $PDO->commit();
+        } else {
+            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+            $retorno[SUCESSO] = false;
+            $PDO->rollBack();
+        }
+
+        return $retorno;
+    }
+
     public static function montaComboMatriz($coAssinante)
     {
         $dados = [
@@ -148,6 +195,15 @@ class  AssinanteService extends AbstractService
             $dados[$assinante->getCoAssinante()] = $assinante->getCoEmpresa()->getNoFantasia();
         }
         return $dados;
+    }
+
+    public function getAssinanteLogado()
+    {
+        /** @var Session $us */
+        $us = $_SESSION[SESSION_USER];
+        $user = $us->getUser();
+        /** @var AssinanteEntidade $assinante */
+        return $this->PesquisaUmRegistro($user[md5(CO_ASSINANTE)]);
     }
 
 }

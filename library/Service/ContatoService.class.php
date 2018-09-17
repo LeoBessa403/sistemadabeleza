@@ -24,4 +24,30 @@ class  ContatoService extends AbstractService
         return $dados;
     }
 
+    public function salvaContatoAssinante($dados)
+    {
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var AssinanteEntidade $assinante */
+        $assinante = $assinanteService->getAssinanteLogado();
+        $session = new Session();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+        $contatoValidador = new ContatoValidador();
+        /** @var ContatoValidador $validador */
+        $validador = $contatoValidador->validarContato($dados);
+        if ($validador[SUCESSO]) {
+            $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
+            debug($contato);
+            $this->Salva($contato, $assinante->getCoPessoa()->getCoContato());
+            $retorno[SUCESSO] = true;
+        } else {
+            $session->setSession(MENSAGEM, $validador[MSG]);
+            $retorno = $validador;
+        }
+        return $retorno;
+    }
+
 }
