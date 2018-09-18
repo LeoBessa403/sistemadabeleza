@@ -49,7 +49,6 @@ class  AssinanteValidador extends AbstractValidador
         $this->retorno[DADOS][] = $this->ValidaCampoValido(
             $dados[DS_EMAIL], AbstractValidador::VALIDACAO_EMAIL, 'E-mail'
         );
-
         return $this->MontaRetorno($this->retorno);
     }
 }

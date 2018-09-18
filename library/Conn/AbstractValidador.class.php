@@ -268,7 +268,7 @@ class AbstractValidador
             $validador = $this->ValidaCampoMascara($dados, $tipoValidacao, $qtdCaracteres);
             if (!$validador) {
                 $this->retorno[SUCESSO][] = false;
-                $this->retorno[MSG][] = $labelCampo;
+                $this->retorno[MSG][VALIDOS][] = $labelCampo;
             } else {
                 $this->retorno[SUCESSO][] = true;
             }

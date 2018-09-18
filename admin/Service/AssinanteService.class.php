@@ -212,7 +212,6 @@ class  AssinanteService extends AbstractService
         /** @var Session $us */
         $us = $_SESSION[SESSION_USER];
         $user = $us->getUser();
-        /** @var AssinanteEntidade $assinante */
         return $this->PesquisaUmRegistro($user[md5(CO_ASSINANTE)]);
     }
 
