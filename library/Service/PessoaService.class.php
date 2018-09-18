@@ -35,22 +35,8 @@ class  PessoaService extends AbstractService
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
-        $session = new Session();
-        $retorno = [
-            SUCESSO => false,
-            MSG => null
-        ];
-        $pessoaValidador = new PessoaValidador();
-        /** @var PessoaValidador $validador */
-        $validador = $pessoaValidador->validarNome($dados);
-        if ($validador[SUCESSO]) {
-            $pessoa[NO_PESSOA] = strtoupper(trim($dados[NO_PESSOA]));
-            $this->Salva($pessoa, $assinante->getCoPessoa()->getCoPessoa());
-            $retorno[SUCESSO] = true;
-        } else {
-            $session->setSession(MENSAGEM, $validador[MSG]);
-            $retorno = $validador;
-        }
+        $pessoa[NO_PESSOA] = strtoupper(trim($dados[NO_PESSOA]));
+        $retorno[SUCESSO] = $this->Salva($pessoa, $assinante->getCoPessoa()->getCoPessoa());
 
         return $retorno;
     }

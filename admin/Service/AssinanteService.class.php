@@ -155,15 +155,22 @@ class  AssinanteService extends AbstractService
 
         $PDO->beginTransaction();
 
-        $retorno = $pessoaService->salvaPessoaAssinante($dados);
-        if ($retorno[SUCESSO]) {
-            $retorno = $empresaService->salvaEmpressaAssinante($dados);
+        $assinanteValidador = new AssinanteValidador();
+        /** @var PessoaValidador $validador */
+        $validador = $assinanteValidador->validarDadosComplementaresAssinante($dados);
+        if ($validador[SUCESSO]) {
+            $retorno = $pessoaService->salvaPessoaAssinante($dados);
             if ($retorno[SUCESSO]) {
-                $retorno = $enderecoService->salvaEnderecoAssinante($dados);
+                $retorno = $empresaService->salvaEmpressaAssinante($dados);
                 if ($retorno[SUCESSO]) {
-                    $retorno = $contatoService->salvaContatoAssinante($dados);
+                    $retorno = $enderecoService->salvaEnderecoAssinante($dados);
+                    if ($retorno[SUCESSO]) {
+                        $retorno = $contatoService->salvaContatoAssinante($dados);
+                    }
                 }
             }
+        } else {
+            $retorno = $validador;
         }
 
         if ($retorno[SUCESSO]) {
@@ -171,7 +178,7 @@ class  AssinanteService extends AbstractService
             $session->setSession(MENSAGEM, ATUALIZADO);
             $PDO->commit();
         } else {
-            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+            $session->setSession(MENSAGEM, $retorno[MSG]);
             $retorno[SUCESSO] = false;
             $PDO->rollBack();
         }

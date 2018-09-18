@@ -101,13 +101,13 @@
                                         <small>Informações básicas</small>
                                     </h2>
                                     <div class="form-group">
-                                        <label for="<?= NO_EMPRESA; ?>" class="col-sm-3 control-label">
-                                            Razão Social
+                                        <label for="<?= NO_PESSOA; ?>" class="col-sm-3 control-label">
+                                            Responsável <span class="symbol  required"></span>
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="<?= NO_EMPRESA; ?>"
-                                                   name="<?= NO_EMPRESA; ?>"
-                                                   placeholder="Nome da Empresa">
+                                            <input type="text" class="form-control" id="<?= NO_PESSOA; ?>"
+                                                   name="<?= NO_PESSOA; ?>"
+                                                   placeholder="Nome do Responsável pela empresa">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -121,13 +121,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="<?= NO_PESSOA; ?>" class="col-sm-3 control-label">
-                                            Responsável <span class="symbol  required"></span>
+                                        <label for="<?= NO_EMPRESA; ?>" class="col-sm-3 control-label">
+                                            Razão Social
                                         </label>
                                         <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="<?= NO_PESSOA; ?>"
-                                                   name="<?= NO_PESSOA; ?>"
-                                                   placeholder="Nome do Responsável pela empresa">
+                                            <input type="text" class="form-control" id="<?= NO_EMPRESA; ?>"
+                                                   name="<?= NO_EMPRESA; ?>"
+                                                   placeholder="Nome da Empresa">
                                         </div>
                                     </div>
                                     <div class="form-group">

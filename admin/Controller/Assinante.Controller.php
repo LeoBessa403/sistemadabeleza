@@ -113,8 +113,8 @@ class Assinante extends AbstractController
 
             $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
 
-            debug($_POST, 1);
-            debug($_FILES);
+//            debug($_POST, 1);
+//            debug($_FILES);
         endif;
     }
 

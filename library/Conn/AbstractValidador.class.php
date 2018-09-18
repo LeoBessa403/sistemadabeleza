@@ -28,93 +28,93 @@ class AbstractValidador
         $validador = false;
         switch ($tipoValidacao) {
             case static::VALIDACAO_CPF:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = Valida::ValCPF(Valida::RetiraMascara($dado));
-                    if ($validador != 1) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = Valida::ValCPF(Valida::RetiraMascara($dado));
+                    if ($validadorDado != 1) {
                         $validador = false;
                     }
                 }
                 break;
             case static::VALIDACAO_CNPJ:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = Valida::ValCNPJ(Valida::RetiraMascara($dado));
-                    if ($validador != 1) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = Valida::ValCNPJ(Valida::RetiraMascara($dado));
+                    if ($validadorDado != 1) {
                         $validador = false;
                     }
                 }
                 break;
             case static::VALIDACAO_EMAIL:
-                $validador = Valida::ValEmail($dado);
-                if ($validador != 1) {
+                $validadorDado = Valida::ValEmail($dado);
+                if ($validadorDado != 1) {
                     $validador = false;
                 }
                 break;
             case static::VALIDACAO_CEP:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = preg_replace('/[^0-9]/', '', $dado);
-                    if (strlen($validador) == 7) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = preg_replace('/[^0-9]/', '', $dado);
+                    if (strlen($validadorDado) == 7) {
                         $validador = true;
                     }
                 }
                 break;
             case static::VALIDACAO_TEL:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = preg_replace('/[^0-9]/', '', $dado);
-                    if (strlen($validador) == 10 || strlen($validador) == 11) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = preg_replace('/[^0-9]/', '', $dado);
+                    if (strlen($validadorDado) == 10 || strlen($validadorDado) == 11) {
                         $validador = true;
                     }
                 }
                 break;
             case static::VALIDACAO_NOME:
-                $validador = preg_replace('/[^0-9]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                    if (strlen($validador) >= $qtdCaracteres) {
+                $validadorDado = preg_replace('/[^0-9]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                    if (strlen($validadorDado) >= $qtdCaracteres) {
                         $validador = true;
                     }
                 }
                 break;
             case static::VALIDACAO_DATA:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
                     $validador = $this->trataData($dado);
                 }
                 break;
             case static::VALIDACAO_MOEDA:
-                $validador = preg_replace('/[^a-zA-Z]/', '', Valida::RetiraMascara($dado));
-                if (strlen($validador) == 0) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', Valida::RetiraMascara($dado));
+                if (strlen($validadorDado) == 0) {
                     $validador = true;
                 }
                 break;
             case static::VALIDACAO_HORAS:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = preg_replace('/[^0-9]/', '', $dado);
-                    if (strlen($validador) == 4) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = preg_replace('/[^0-9]/', '', $dado);
+                    if (strlen($validadorDado) == 4) {
                         $validador = true;
                     }
                 }
                 break;
             case static::VALIDACAO_0800:
-                $validador = preg_replace('/[^a-zA-Z]/', '', $dado);
-                if (strlen($validador) == 0) {
-                    $validador = preg_replace('/[^0-9]/', '', $dado);
-                    if (strlen($validador) == 11) {
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = preg_replace('/[^0-9]/', '', $dado);
+                    if (strlen($validadorDado) == 11) {
                         $validador = true;
                     }
                 }
                 break;
             case static::VALIDACAO_SENHA:
-                $validador = preg_match('/^[a-zA-Z0-9]+/', $dado);
-                if (!$validador) {
-                    $validador = preg_replace('/[^a-z]/', '', $dado);
-                    if (strlen($validador) == 1) {
-                        $validador = preg_replace('/[^A-Z]/', '', $dado);
-                        if (strlen($validador) == 1) {
+                $validadorDado = preg_match('/^[a-zA-Z0-9]+/', $dado);
+                if (!$validadorDado) {
+                    $validadorDado = preg_replace('/[^a-z]/', '', $dado);
+                    if (strlen($validadorDado) == 1) {
+                        $validadorDado = preg_replace('/[^A-Z]/', '', $dado);
+                        if (strlen($validadorDado) == 1) {
                             if (strlen($dado) >= $qtdCaracteres)
                                 $validador = true;
                         }
@@ -239,7 +239,7 @@ class AbstractValidador
         $this->iniciaRetorno();
         $obrigatorioCpf = $this->ValidaCampoObrigatorioDescricao($dados, $qtdCaracteres, $labelCampo);
         $control = count($obrigatorioCpf[SUCESSO]) - 1;
-        if (!$obrigatorioCpf) {
+        if (!$obrigatorioCpf[SUCESSO][$control]) {
             $this->retorno[SUCESSO][$control] = false;
             $this->retorno[MSG][OBRIGATORIOS][$control] = $labelCampo;
         } else {

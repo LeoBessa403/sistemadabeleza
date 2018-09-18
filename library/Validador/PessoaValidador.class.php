@@ -23,7 +23,7 @@ class  PessoaValidador extends AbstractValidador
     public function validarNome($dados)
     {
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NO_PESSOA], AbstractValidador::VALIDACAO_NOME, 'Nome da Pessoa'
+            $dados[NO_PESSOA], AbstractValidador::VALIDACAO_NOME, 'Responsável'
         );
         return $this->MontaRetorno($this->retorno);
     }
