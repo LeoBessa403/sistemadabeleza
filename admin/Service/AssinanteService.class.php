@@ -147,8 +147,8 @@ class  AssinanteService extends AbstractService
         $pessoaService = $this->getService(PESSOA_SERVICE);
         /** @var EmpresaService $empresaService */
         $empresaService = $this->getService(EMPRESA_SERVICE);
-        /** @var AssinanteService $assinanteService */
-        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var FacilidadeBeneficioService $facilidadeBeneficioService */
+        $facilidadeBeneficioService = $this->getService(FACILIDADE_BENEFICIO_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $session = new Session();
@@ -166,6 +166,9 @@ class  AssinanteService extends AbstractService
                     $retorno = $enderecoService->salvaEnderecoAssinante($dados);
                     if ($retorno[SUCESSO]) {
                         $retorno = $contatoService->salvaContatoAssinante($dados);
+                        if ($retorno[SUCESSO]) {
+                            $retorno = $facilidadeBeneficioService->salvaFacilidadesAssinante($dados);
+                        }
                     }
                 }
             }

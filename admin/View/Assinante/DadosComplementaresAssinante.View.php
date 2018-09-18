@@ -314,7 +314,7 @@
                                     </h2>
                                     <div class="form-group">
                                         <label for="<?= TP_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
-                                            Tipo de estabelecimento
+                                            Tipo de estabelecimento <span class="symbol  required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <select class="form-control" id="<?= TP_ESTABELECIMENTO; ?>"
