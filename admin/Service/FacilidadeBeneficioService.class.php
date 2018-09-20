@@ -18,6 +18,7 @@ class  FacilidadeBeneficioService extends AbstractService
 
     public function salvaFacilidadesAssinante($dados)
     {
+        debug($dados);
         $facilidades[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $facilidades[TP_ESTABELECIMENTO] = $dados[TP_ESTABELECIMENTO];
         $facilidades[TP_ATENDIMENTO] = $dados[TP_ATENDIMENTO];
