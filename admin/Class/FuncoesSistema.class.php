@@ -9,9 +9,9 @@
 class FuncoesSistema
 {
 
-    public static function retornoCheckbox($check)
+    public static function retornoCheckbox($dados, $check)
     {
-        $check = (isset($check)) ? $check : null;
+        $check = (isset($dados[$check])) ? $dados[$check] : null;
         if ($check):
             return "S";
         else:

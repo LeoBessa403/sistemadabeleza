@@ -168,7 +168,7 @@ class AbstractValidador
         } else {
             if ($tamanho == 0) {
                 $this->retorno[MSG][OBRIGATORIOS][] = $labelCampo;
-            }elseif($tamanho < $qtdCaracteres){
+            } elseif ($tamanho < $qtdCaracteres) {
                 $this->retorno[MSG][VALIDOS][] = $labelCampo;
             }
             $this->retorno[SUCESSO][] = false;
@@ -305,6 +305,23 @@ class AbstractValidador
     }
 
     /**
+     * @param $select
+     * @param $labelCampo
+     * @return array
+     */
+    public function ValidaSelectObrigatorioNotArray($select, $labelCampo)
+    {
+        $this->iniciaRetorno();
+        if ($select) {
+            $this->retorno[SUCESSO][] = true;
+        } else {
+            $this->retorno[SUCESSO][] = false;
+            $this->retorno[MSG][OBRIGATORIOS][] = $labelCampo;
+        }
+        return $this->retorno;
+    }
+
+    /**
      * @param $retorno
      * @return mixed
      */
@@ -317,27 +334,33 @@ class AbstractValidador
         $msg = [
             SUCESSO => true,
             MSG => ''
-        ];;
+        ];
+        $v = 0;
+        $o = 0;
         foreach ($retorno[DADOS] as $dado) {
             if (!empty($dado[SUCESSO])) {
                 if (!$dado[SUCESSO][0]) {
                     if (!empty($dado[MSG][VALIDOS][0])) {
                         $validos[] = $dado[MSG][VALIDOS][0];
+                        $v++;
                     }
                     if (!empty($dado[MSG][OBRIGATORIOS][0])) {
                         $obrigatorios[] = $dado[MSG][OBRIGATORIOS][0];
+                        $o++;
                     }
                 }
             }
         }
         if ($obrigatorios || $validos) {
+            $complementoObrig = ($o > 1) ? ' são Obrigatórios' : ' é Obrigatório';
+            $complementoValido = ($v > 1) ? ' estão Inválidos' : ' está Inválido';
             if ($obrigatorios && $validos) {
-                $msgRetorno = implode(', ', $obrigatorios) . ' é(são) Obrigatório(s) e ' .
-                    implode(', ', $validos) . ' está(ão) Inválido(s)';
+                $msgRetorno = implode(', ', $obrigatorios) . $complementoObrig . ' e ' .
+                    implode(', ', $validos) . $complementoValido;
             } elseif ($obrigatorios) {
-                $msgRetorno = implode(', ', $obrigatorios) . ' é(são) Obrigatório(s)';
+                $msgRetorno = implode(', ', $obrigatorios) . $complementoObrig;
             } elseif ($validos) {
-                $msgRetorno = implode(', ', $validos) . ' está(ão) Inválido(s)';
+                $msgRetorno = implode(', ', $validos) . $complementoValido;
             }
             $mensagem = str_replace('%s', $msgRetorno, Mensagens::MSG_ERROS_CAMPOS);
         }

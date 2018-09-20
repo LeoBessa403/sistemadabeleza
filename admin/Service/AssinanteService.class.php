@@ -212,10 +212,18 @@ class  AssinanteService extends AbstractService
      */
     public function getAssinanteLogado()
     {
+        return $this->PesquisaUmRegistro(static::getCoAssinanteLogado());
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function getCoAssinanteLogado()
+    {
         /** @var Session $us */
         $us = $_SESSION[SESSION_USER];
         $user = $us->getUser();
-        return $this->PesquisaUmRegistro($user[md5(CO_ASSINANTE)]);
+        return $user[md5(CO_ASSINANTE)];
     }
 
 }

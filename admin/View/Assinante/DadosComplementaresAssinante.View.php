@@ -102,7 +102,7 @@
                                     </h2>
                                     <div class="form-group">
                                         <label for="<?= NO_PESSOA; ?>" class="col-sm-3 control-label">
-                                            Responsável <span class="symbol  required"></span>
+                                            Responsável <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NO_PESSOA; ?>"
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="<?= NO_FANTASIA; ?>" class="col-sm-3 control-label">
-                                            Nome Fantasia <span class="symbol  required"></span>
+                                            Nome Fantasia <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NO_FANTASIA; ?>"
@@ -257,7 +257,7 @@
                                     </h2>
                                     <div class="form-group">
                                         <label for="<?= NU_TEL1; ?>" class="col-sm-3 control-label">
-                                            Telefone (WhatsApp)
+                                            Telefone (WhatsApp) <span class="symbol  required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control tel" id="<?= NU_TEL1; ?>"

@@ -40,7 +40,7 @@ class  AssinanteValidador extends AbstractValidador
                 $dados[NU_CNPJ], AbstractValidador::VALIDACAO_CNPJ, 'CNPJ'
             );
         }
-        $this->retorno[DADOS][] = $this->ValidaCampoValido(
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
             $dados[NU_TEL1], AbstractValidador::VALIDACAO_TEL, 'Telefone Responsável'
         );
         $this->retorno[DADOS][] = $this->ValidaCampoValido(
@@ -49,7 +49,7 @@ class  AssinanteValidador extends AbstractValidador
         $this->retorno[DADOS][] = $this->ValidaCampoValido(
             $dados[DS_EMAIL], AbstractValidador::VALIDACAO_EMAIL, 'E-mail'
         );
-        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
+        $this->retorno[DADOS][] = $this->ValidaSelectObrigatorioNotArray(
             $dados[TP_ESTABELECIMENTO], 'Tipo de estabelecimento'
         );
         return $this->MontaRetorno($this->retorno);

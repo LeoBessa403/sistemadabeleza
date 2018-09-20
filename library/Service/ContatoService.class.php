@@ -31,7 +31,7 @@ class  ContatoService extends AbstractService
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
         $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
-        $retorno[SUCESSO] = $this->Salva($contato, $assinante->getCoPessoa()->getCoContato());
+        $retorno[SUCESSO] = $this->Salva($contato, $assinante->getCoPessoa()->getCoContato()->getCoContato());
         return $retorno;
     }
 
