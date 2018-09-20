@@ -175,7 +175,6 @@ class  AssinanteService extends AbstractService
         } else {
             $retorno = $validador;
         }
-
         if ($retorno[SUCESSO]) {
             $retorno[SUCESSO] = true;
             $session->setSession(MENSAGEM, ATUALIZADO);
