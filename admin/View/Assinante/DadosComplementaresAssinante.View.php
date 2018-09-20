@@ -500,174 +500,37 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>1"></label>
-                                                        <input type="checkbox" checked="checked" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>1"
-                                                               name="<?= NU_DIA_SEMANA; ?>[1]"/>
-                                                    </td>
-                                                    <td>Segunda</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>1"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[1]" value="08:00"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>1"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[1]" value="18:00"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>2"></label>
-                                                        <input type="checkbox" checked="checked" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>2"
-                                                               name="<?= NU_DIA_SEMANA; ?>[2]"/>
-                                                    </td>
-                                                    <td>Terça</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>2"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[2]" value="08:00"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>2"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[2]" value="18:00"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>3"></label>
-                                                        <input type="checkbox" checked="checked" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>3"
-                                                               name="<?= NU_DIA_SEMANA; ?>[3]"/>
-                                                    </td>
-                                                    <td>Quarta</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>3"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[3]" value="08:00"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>3"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[3]" value="18:00"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>4"></label>
-                                                        <input type="checkbox" checked="checked" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>4"
-                                                               name="<?= NU_DIA_SEMANA; ?>[4]"/>
-                                                    </td>
-                                                    <td>Quinta</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>4"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[4]" value="08:00"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>4"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[4]" value="18:00"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>5"></label>
-                                                        <input type="checkbox" checked="checked" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>5"
-                                                               name="<?= NU_DIA_SEMANA; ?>[5]"/>
-                                                    </td>
-                                                    <td>Sexta</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>5"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[5]" value="08:00"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>5"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[5]" value="18:00"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="" <?= NU_DIA_SEMANA; ?>6"></label>
-                                                        <input type="checkbox" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>6"
-                                                               name="<?= NU_DIA_SEMANA; ?>[6]"/>
-                                                    </td>
-                                                    <td>Sábado</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>6"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[6]"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>6"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[6]"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>7"></label>
-                                                        <input type="checkbox" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>7"
-                                                               name="<?= NU_DIA_SEMANA; ?>[7]"/>
-                                                    </td>
-                                                    <td>Domingo</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>7"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[7]"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>7"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[7]"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
-                                                <tr class="linha-tabela odd">
-                                                    <td>
-                                                        <label for="<?= NU_DIA_SEMANA; ?>8"></label>
-                                                        <input type="checkbox" class="square-purple"
-                                                               value="" id="<?= NU_DIA_SEMANA; ?>8"
-                                                               name="<?= NU_DIA_SEMANA; ?>[8]"/>
-                                                    </td>
-                                                    <td>Feriado</td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_ABERTURA; ?>8"
-                                                               name="<?= NU_HORA_ABERTURA; ?>[8]"
-                                                               placeholder="Horário de Abertura do dia">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" class="form-control horas"
-                                                               id="<?= NU_HORA_FECHAMENTO; ?>8"
-                                                               name="<?= NU_HORA_FECHAMENTO; ?>[8]"
-                                                               placeholder="Horário de Fechamento do dia">
-                                                    </td>
-                                                </tr>
+                                                <?php
+                                                foreach (DiasEnum::$descricao as $numero => $dia) {
+                                                    $check = ($numero < 6) ? ' checked="checked"' : null;
+                                                    $abertura = ($numero < 6) ? '08:00' : null;
+                                                    $fechamento = ($numero < 6) ? '18:00' : null;
+                                                    ?>
+                                                    <tr class="linha-tabela odd">
+                                                        <td>
+                                                            <label for="<?= NU_DIA_SEMANA; ?><?= $numero; ?>"></label>
+                                                            <input type="checkbox" <?= $check; ?>
+                                                                   class="square-purple"
+                                                                   value="" id="<?= NU_DIA_SEMANA; ?><?= $numero; ?>"
+                                                                   name="<?= NU_DIA_SEMANA; ?>[<?= $numero; ?>]"/>
+                                                        </td>
+                                                        <td><?= $dia; ?></td>
+                                                        <td>
+                                                            <input type="text" class="form-control horas"
+                                                                   id="<?= NU_HORA_ABERTURA; ?><?= $numero; ?>"
+                                                                   name="<?= NU_HORA_ABERTURA; ?>[<?= $numero; ?>]"
+                                                                   value="<?= $abertura; ?>"
+                                                                   placeholder="Horário de Abertura do dia">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control horas"
+                                                                   id="<?= NU_HORA_FECHAMENTO; ?><?= $numero; ?>"
+                                                                   name="<?= NU_HORA_FECHAMENTO; ?>[<?= $numero; ?>]"
+                                                                   value="<?= $fechamento; ?>"
+                                                                   placeholder="Horário de Fechamento do dia">
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>
