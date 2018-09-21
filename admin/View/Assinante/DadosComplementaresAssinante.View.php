@@ -355,6 +355,10 @@ $assinanteEdit = $assinante;
                                     <h2 class="StepTitle"> Facilidades e Benefícios
                                         <small>Informações das Facilidades e Benefícios</small>
                                     </h2>
+                                    <?php
+                                    /** @var FacilidadeBeneficioEntidade $facilidade */
+                                    $facilidadeEdit =  $facilidade;
+                                    ?>
                                     <div class="form-group">
                                         <label for="<?= TP_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
                                             Tipo de estabelecimento <span class="symbol required"></span>
@@ -365,7 +369,7 @@ $assinanteEdit = $assinante;
                                                 <option value="">Selecione um item</option>
                                                 <?php
                                                 foreach (TipoEstabelecimentoEnum::$descricao as $tipo => $desc) {
-                                                    $selectedTipoEstab = ($enderecoEdit->getSgUf() == $sg)
+                                                    $selectedTipoEstab = ($facilidadeEdit->getTpEstabelecimento() == $tipo)
                                                         ? 'selected="selected"' : '';
                                                     echo '<option value="' . $tipo . '" ' . $selectedTipoEstab . '>' . $desc . '</option>';
                                                 }
@@ -383,7 +387,9 @@ $assinanteEdit = $assinante;
                                                 <option value="">Selecione um item</option>
                                                 <?php
                                                 foreach (TipoAtendimentoEnum::$descricao as $tipo => $desc) {
-                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    $selectedTipoEstab = ($facilidadeEdit->getTpAtendimento() == $tipo)
+                                                        ? 'selected="selected"' : '';
+                                                    echo '<option value="' . $tipo . '" ' . $selectedTipoEstab . '>' . $desc . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -399,7 +405,9 @@ $assinanteEdit = $assinante;
                                                 <option value="">Selecione um item</option>
                                                 <?php
                                                 foreach (TipoGeneroEspecializadoEnum::$descricao as $tipo => $desc) {
-                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    $selectedTipoEstab = ($facilidadeEdit->getTpGeneroEspecializado() == $tipo)
+                                                        ? 'selected="selected"' : '';
+                                                    echo '<option value="' . $tipo . '" ' . $selectedTipoEstab . '>' . $desc . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -415,7 +423,9 @@ $assinanteEdit = $assinante;
                                                 <option value="">Selecione um item</option>
                                                 <?php
                                                 foreach (TipoEstacionamentoEnum::$descricao as $tipo => $desc) {
-                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    $selectedTipoEstab = ($facilidadeEdit->getTpEstacionamento() == $tipo)
+                                                        ? 'selected="selected"' : '';
+                                                    echo '<option value="' . $tipo . '" ' . $selectedTipoEstab . '>' . $desc . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -432,6 +442,8 @@ $assinanteEdit = $assinante;
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_LANCHONETE; ?>"
+                                                       <?= ($facilidadeEdit->getStLanchonete() == SimNaoEnum::SIM)
+                                                       ? ' checked="checked" ' : ''; ?>
                                                        name="<?= ST_LANCHONETE; ?>" class="" title=""/>
                                             </div>
                                         </div>
@@ -447,6 +459,8 @@ $assinanteEdit = $assinante;
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_TELEVISAO; ?>"
+                                                    <?= ($facilidadeEdit->getStTelevisao() == SimNaoEnum::SIM)
+                                                        ? ' checked="checked" ' : ''; ?>
                                                        name="<?= ST_TELEVISAO; ?>" class="" title=""/>
                                             </div>
                                         </div>
@@ -462,6 +476,8 @@ $assinanteEdit = $assinante;
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_WIFI; ?>"
+                                                    <?= ($facilidadeEdit->getStWifi() == SimNaoEnum::SIM)
+                                                        ? ' checked="checked" ' : ''; ?>
                                                        name="<?= ST_WIFI; ?>" class="" title=""/>
                                             </div>
                                         </div>
@@ -478,6 +494,8 @@ $assinanteEdit = $assinante;
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_ACESSO_DEFICIENTE; ?>"
+                                                    <?= ($facilidadeEdit->getStAcessoDeficiente() == SimNaoEnum::SIM)
+                                                        ? ' checked="checked" ' : ''; ?>
                                                        name="<?= ST_ACESSO_DEFICIENTE; ?>" class="" title=""/>
                                             </div>
 
@@ -495,6 +513,8 @@ $assinanteEdit = $assinante;
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_JOGOS; ?>"
+                                                    <?= ($facilidadeEdit->getStJogos() == SimNaoEnum::SIM)
+                                                        ? ' checked="checked" ' : ''; ?>
                                                        name="<?= ST_JOGOS; ?>" class="" title=""/>
                                             </div>
 
@@ -517,6 +537,10 @@ $assinanteEdit = $assinante;
                                     <h2 class="StepTitle">Funcionamento
                                         <small>Informações do horário de funcionamento</small>
                                     </h2>
+                                    <?php
+                                    /** @var FuncionamentoEntidade $funcionamento */
+                                    $funcionamentoEdit =  $funcionamento;
+                                    ?>
                                     <div class="form-group col-sm-12">
                                         <div class="col-sm-12">
 
