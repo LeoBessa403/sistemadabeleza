@@ -6,7 +6,7 @@
     </a>
     <ul class="dropdown-menu posts">
         <li>
-            <span class="dropdown-menu-title pullDown"> Você tem 2 Notificações</span>
+            <span class="dropdown-menu-title pullUp"> Você tem 2 Notificações</span>
         </li>
         <li>
             <div class="drop-down-wrapper ps-container">

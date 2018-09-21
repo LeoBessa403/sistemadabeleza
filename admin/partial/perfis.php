@@ -6,7 +6,7 @@
     </a>
     <ul class="dropdown-menu posts">
         <li>
-            <span class="dropdown-menu-title"> 3 Perfis</span>
+            <span class="dropdown-menu-title pullUp"> 3 Perfis</span>
         </li>
         <li>
             <div class="drop-down-wrapper ps-container">

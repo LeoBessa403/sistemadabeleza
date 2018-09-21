@@ -18,6 +18,9 @@ class  FacilidadeBeneficioService extends AbstractService
 
     public function salvaFacilidadesAssinante($dados)
     {
+        $this->DeletaQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
         $facilidades[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $facilidades[TP_ESTABELECIMENTO] = $dados[TP_ESTABELECIMENTO];
         $facilidades[TP_ATENDIMENTO] = $dados[TP_ATENDIMENTO];

@@ -18,6 +18,9 @@ class  FuncionamentoService extends AbstractService
 
     public function salvafuncionamentoAssinante($dados)
     {
+        $this->DeletaQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
         $retorno[SUCESSO] = false;
         $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         if (!empty($dados[NU_DIA_SEMANA])) {
