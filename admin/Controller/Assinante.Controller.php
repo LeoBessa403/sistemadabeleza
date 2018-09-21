@@ -113,58 +113,57 @@ class Assinante extends AbstractController
     {
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
-        $this->endereco = [];
-        $this->contato = [];
-        $this->facilidade = [];
-        $this->funcionamento = [];
 
         if (!empty($_POST)):
             $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
-        else:
-            /** @var EnderecoService $enderecoService */
-            $enderecoService = $this->getService(ENDERECO_SERVICE);
-            /** @var ContatoService $contatoService */
-            $contatoService = $this->getService(CONTATO_SERVICE);
-            /** @var EmpresaService $empresaService */
-            $empresaService = $this->getService(EMPRESA_SERVICE);
-            /** @var FacilidadeBeneficioService $facilidadeBeneficioService */
-            $facilidadeBeneficioService = $this->getService(FACILIDADE_BENEFICIO_SERVICE);
-            /** @var FuncionamentoService $funcionamentoService */
-            $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
-            /** @var AssinanteEntidade $assinante */
-            $assinante = $assinanteService->getAssinanteLogado();
-            /** @var AssinanteEntidade $this ->assinante */
-            $this->endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
-            $this->contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
-            if (!$this->contato) {
-                $contato[NU_TEL1] = '';
-                $coContato = $contatoService->Salva($contato);
-                $this->contato = $contatoService->PesquisaUmRegistro($coContato);
-                $empresa[CO_CONTATO] = $coContato;
-                $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/Index/Index/');
             }
-            $this->facilidade = $assinante->getCoFacilidadeBeneficio();
-            if (!$this->facilidade) {
-                $facilidad[TP_ESTABELECIMENTO] = 0;
-                $facilidad[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-                $cofacilidad = $facilidadeBeneficioService->Salva($facilidad);
-                $this->facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
-            }
-            $this->funcionamento = $assinante->getCoFuncionamento();
-            if (!$this->funcionamento) {
-                $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-                $funcionamento[NU_HORA_ABERTURA] = '08:00';
-                $funcionamento[NU_HORA_FECHAMENTO] = '18:00';
-                for ($i=1;$i<6;$i++) {
-                    $funcionamento[NU_DIA_SEMANA] = $i;
-                    $funcionamentoService->Salva($funcionamento);
-                }
-                $this->funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
-                    CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
-                ]);
-            }
-            $this->assinante = $assinante;
         endif;
+
+        /** @var EnderecoService $enderecoService */
+        $enderecoService = $this->getService(ENDERECO_SERVICE);
+        /** @var ContatoService $contatoService */
+        $contatoService = $this->getService(CONTATO_SERVICE);
+        /** @var EmpresaService $empresaService */
+        $empresaService = $this->getService(EMPRESA_SERVICE);
+        /** @var FacilidadeBeneficioService $facilidadeBeneficioService */
+        $facilidadeBeneficioService = $this->getService(FACILIDADE_BENEFICIO_SERVICE);
+        /** @var FuncionamentoService $funcionamentoService */
+        $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
+        /** @var AssinanteEntidade $assinante */
+        $assinante = $assinanteService->getAssinanteLogado();
+        /** @var AssinanteEntidade $this ->assinante */
+        $this->endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
+        $this->contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
+        if (!$this->contato) {
+            $contato[NU_TEL1] = '';
+            $coContato = $contatoService->Salva($contato);
+            $this->contato = $contatoService->PesquisaUmRegistro($coContato);
+            $empresa[CO_CONTATO] = $coContato;
+            $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
+        }
+        $this->facilidade = $assinante->getCoFacilidadeBeneficio();
+        if (!$this->facilidade) {
+            $facilidad[TP_ESTABELECIMENTO] = 0;
+            $facilidad[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+            $cofacilidad = $facilidadeBeneficioService->Salva($facilidad);
+            $this->facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
+        }
+        $this->funcionamento = $assinante->getCoFuncionamento();
+        if (!$this->funcionamento) {
+            $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+            $funcionamento[NU_HORA_ABERTURA] = '08:00';
+            $funcionamento[NU_HORA_FECHAMENTO] = '18:00';
+            for ($i = 1; $i < 6; $i++) {
+                $funcionamento[NU_DIA_SEMANA] = $i;
+                $funcionamentoService->Salva($funcionamento);
+            }
+            $this->funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
+                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+            ]);
+        }
+        $this->assinante = $assinante;
     }
 
 }

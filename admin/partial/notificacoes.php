@@ -1,4 +1,4 @@
-<li class="dropdown">
+<li class="dropdown" xmlns="http://www.w3.org/1999/html">
     <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
        href="#">
         <i class="clip-notification-2"></i>
@@ -22,7 +22,7 @@
                                         <div class="thread-image">
                                             <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
                                             '/Images/sistemadabeleza.jpg&w=50&h=50"
-                                alt="' . DESC . '" title="' . DESC . '" />'; ?>
+                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />'; ?>
                                         </div>
                                         <div class="thread-content">
                                             <span class="author">Renovação da Assinatura</span>
@@ -35,6 +35,28 @@
                                 </a>
                             </li>
                         <?php }
+                    } ?>
+                    <?php
+                    if ($user[md5(ST_DADOS_COMPLEMENTARES)] == SimNaoEnum::NAO) {
+                        ?>
+                        <li>
+                            <a href="javascript:">
+                                <div class="clearfix">
+                                    <div class="thread-image">
+                                        <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                                        '/Images/sistemadabeleza.jpg&w=50&h=50"
+                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />'; ?>
+                                    </div>
+                                    <div class="thread-content">
+                                        <span class="author">Dados Complementares</span>
+                                        <span class="preview"><b>Preencha os seus dados complementares para
+                                                completar as informações para sua página! Acesse no Menu.</br>
+                                        <big>Assinante >> DadosComplementares</big></b></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <?php
                     } ?>
                 </ul>
                 <div class="ps-scrollbar-x-rail"
