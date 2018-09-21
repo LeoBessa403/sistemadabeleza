@@ -558,9 +558,14 @@ $assinanteEdit = $assinante;
                                                 <tbody role="alert" aria-live="polite" aria-relevant="all">
                                                 <?php
                                                 foreach (DiasEnum::$descricao as $numero => $dia) {
-                                                    $check = ($numero < 6) ? ' checked="checked"' : null;
-                                                    $abertura = ($numero < 6) ? '08:00' : null;
-                                                    $fechamento = ($numero < 6) ? '18:00' : null;
+                                                    $check =  null;
+                                                    $abertura =  null;
+                                                    $fechamento = null;
+                                                    if(!empty($funcionamentoEdit[$numero-1])){
+                                                        $check = ' checked="checked"';
+                                                        $abertura = $funcionamentoEdit[$numero-1]->getNuHoraAbertura();
+                                                        $fechamento = $funcionamentoEdit[$numero-1]->getNuHoraFechamento();
+                                                    }
                                                     ?>
                                                     <tr class="linha-tabela odd">
                                                         <td>
