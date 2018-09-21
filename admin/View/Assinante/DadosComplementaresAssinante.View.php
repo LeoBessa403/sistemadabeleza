@@ -11,6 +11,10 @@
         margin: 0 !important;
     }
 </style>
+<?php
+/** @var AssinanteEntidade $assinanteEdit */
+$assinanteEdit = $assinante;
+?>
 <div class="main-content">
     <div class="container">
         <!-- start: PAGE HEADER -->
@@ -120,6 +124,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NO_PESSOA; ?>"
                                                    name="<?= NO_PESSOA; ?>"
+                                                   value="<?= $assinanteEdit->getCoPessoa()->getNoPessoa(); ?>"
                                                    placeholder="Nome do Responsável pela empresa">
                                         </div>
                                     </div>
@@ -130,6 +135,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NO_FANTASIA; ?>"
                                                    name="<?= NO_FANTASIA; ?>"
+                                                   value="<?= $assinanteEdit->getCoEmpresa()->getNoFantasia(); ?>"
                                                    placeholder="Nome do Estabelecimento">
                                         </div>
                                     </div>
@@ -140,6 +146,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NO_EMPRESA; ?>"
                                                    name="<?= NO_EMPRESA; ?>"
+                                                   value="<?= $assinanteEdit->getCoEmpresa()->getNoEmpresa(); ?>"
                                                    placeholder="Nome da Empresa">
                                         </div>
                                     </div>
@@ -150,6 +157,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control cnpj" id="<?= NU_CNPJ; ?>"
                                                    name="<?= NU_CNPJ; ?>"
+                                                   value="<?= $assinanteEdit->getCoEmpresa()->getNuCnpj(); ?>"
                                                    placeholder="Número do CNPJ">
                                         </div>
                                     </div>
@@ -160,6 +168,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NU_INSC_ESTADUAL; ?>"
                                                    name="<?= NU_INSC_ESTADUAL; ?>"
+                                                   value="<?= $assinanteEdit->getCoEmpresa()->getNuInscEstadual(); ?>"
                                                    placeholder="Número da Inscrição Estadual">
                                         </div>
                                     </div>
@@ -170,7 +179,9 @@
                                         <div class="col-sm-7">
                                             <textarea class="form-control tel" id="<?= DS_DESCRICAO; ?>"
                                                       name="<?= DS_DESCRICAO; ?>"
-                                                      placeholder="Descrição da sua empresa"></textarea>
+                                                      placeholder="Descrição da sua empresa">
+                                                <?= $assinanteEdit->getCoEmpresa()->getDsObservacao(); ?>
+                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -182,6 +193,10 @@
                                     </div>
                                 </div>
                                 <div id="step-2">
+                                    <?php
+                                        /** @var EnderecoEntidade $endereco */
+                                        $enderecoEdit =  $endereco;
+                                    ?>
                                     <h2 class="StepTitle">Endereço
                                         <small>Informações de Endereço</small>
                                     </h2>
@@ -192,6 +207,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control cep" id="<?= NU_CEP; ?>"
                                                    name="<?= NU_CEP; ?>"
+                                                   value="<?= $enderecoEdit->getNuCep(); ?>"
                                                    placeholder="CEP do estabelecimento">
                                         </div>
                                     </div>
@@ -202,6 +218,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= DS_ENDERECO; ?>"
                                                    name="<?= DS_ENDERECO; ?>"
+                                                   value="<?= $enderecoEdit->getDsEndereco(); ?>"
                                                    placeholder="Endereço do estabelecimento">
                                         </div>
                                     </div>
@@ -212,6 +229,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= DS_COMPLEMENTO; ?>"
                                                    name="<?= DS_COMPLEMENTO; ?>"
+                                                   value="<?= $enderecoEdit->getDsComplemento(); ?>"
                                                    placeholder="Complemento do endereço">
                                         </div>
                                     </div>
@@ -222,6 +240,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= DS_BAIRRO; ?>"
                                                    name="<?= DS_BAIRRO; ?>"
+                                                   value="<?= $enderecoEdit->getDsBairro(); ?>"
                                                    placeholder="Bairro do estabelecimento">
                                         </div>
                                     </div>
@@ -232,6 +251,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= NO_CIDADE; ?>"
                                                    name="<?= NO_CIDADE; ?>"
+                                                   value="<?= $enderecoEdit->getNoCidade(); ?>"
                                                    placeholder="Cidade do estabelecimento">
                                         </div>
                                     </div>
@@ -245,7 +265,9 @@
                                                 <?php
                                                 $options = EnderecoService::montaComboEstadosDescricao();
                                                 foreach ($options as $sg => $estado) {
-                                                    echo '<option value="' . $sg . '">' . $estado . '</option>';
+                                                    $selectedEstado = ($enderecoEdit->getSgUf() == $sg)
+                                                        ? 'selected="selected"' : '';
+                                                    echo '<option value="' . $sg . '" ' . $selectedEstado . '>' . $estado . '</option>';
                                                 }
                                                 ?>
                                             </select>
@@ -268,6 +290,10 @@
                                     <h2 class="StepTitle">Contatos
                                         <small>Informações de Contatos</small>
                                     </h2>
+                                    <?php
+                                    /** @var ContatoEntidade $contato */
+                                    $contatoEdit =  $contato;
+                                    ?>
                                     <div class="form-group">
                                         <label for="<?= NU_TEL1; ?>" class="col-sm-3 control-label">
                                             Telefone (WhatsApp) <span class="symbol  required"></span>
@@ -275,6 +301,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control tel" id="<?= NU_TEL1; ?>"
                                                    name="<?= NU_TEL1; ?>"
+                                                   value="<?= $contatoEdit->getNuTel1(); ?>"
                                                    placeholder="Número do contato com WhatsApp">
                                         </div>
                                     </div>
@@ -285,6 +312,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control tel" id="<?= NU_TEL2; ?>"
                                                    name="<?= NU_TEL2; ?>"
+                                                   value="<?= $contatoEdit->getNuTel2(); ?>"
                                                    placeholder="Número do contato do estabelecimento">
                                         </div>
                                     </div>
@@ -295,6 +323,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control email" id="<?= DS_EMAIL; ?>"
                                                    name="<?= DS_EMAIL; ?>"
+                                                   value="<?= $contatoEdit->getDsEmail(); ?>"
                                                    placeholder="E-mail para contato">
                                         </div>
                                     </div>
@@ -305,6 +334,7 @@
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control" id="<?= DS_SITE; ?>"
                                                    name="<?= DS_SITE; ?>"
+                                                   value="<?= $contatoEdit->getDsSite(); ?>"
                                                    placeholder="Site da empresa">
                                         </div>
                                     </div>
@@ -335,7 +365,9 @@
                                                 <option value="">Selecione um item</option>
                                                 <?php
                                                 foreach (TipoEstabelecimentoEnum::$descricao as $tipo => $desc) {
-                                                    echo '<option value="' . $tipo . '">' . $desc . '</option>';
+                                                    $selectedTipoEstab = ($enderecoEdit->getSgUf() == $sg)
+                                                        ? 'selected="selected"' : '';
+                                                    echo '<option value="' . $tipo . '" ' . $selectedTipoEstab . '>' . $desc . '</option>';
                                                 }
                                                 ?>
                                             </select>

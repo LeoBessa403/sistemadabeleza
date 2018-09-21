@@ -4,6 +4,8 @@ class Assinante extends AbstractController
 {
     public $result;
     public $assinante;
+    public $endereco;
+    public $contato;
 
     public function ListarAssinante()
     {
@@ -109,16 +111,29 @@ class Assinante extends AbstractController
     {
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
-        /** @var AssinanteEntidade $assinante */
-        $assinante = $assinanteService->getAssinanteLogado();
-        debug($assinante);
 
         if (!empty($_POST)):
-
             $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
-
-//            debug($_POST, 1);
-//            debug($_FILES);
+        else:
+            /** @var EnderecoService $enderecoService */
+            $enderecoService = $this->getService(ENDERECO_SERVICE);
+            /** @var ContatoService $contatoService */
+            $contatoService = $this->getService(CONTATO_SERVICE);
+            /** @var EmpresaService $empresaService */
+            $empresaService = $this->getService(EMPRESA_SERVICE);
+            /** @var AssinanteEntidade $assinante */
+            $assinante = $assinanteService->getAssinanteLogado();
+            /** @var AssinanteEntidade $this->assinante */
+            $this->endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
+            $this->contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
+            if(!$this->contato){
+                $contato[NU_TEL1] = '';
+                $coContato = $contatoService->Salva($contato);
+                $this->contato = $contatoService->PesquisaUmRegistro($coContato);
+                $empresa[CO_CONTATO] = $coContato;
+                $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
+            }
+            $this->assinante = $assinante;
         endif;
     }
 
