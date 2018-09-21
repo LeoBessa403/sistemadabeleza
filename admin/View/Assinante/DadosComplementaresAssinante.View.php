@@ -194,8 +194,8 @@ $assinanteEdit = $assinante;
                                 </div>
                                 <div id="step-2">
                                     <?php
-                                        /** @var EnderecoEntidade $endereco */
-                                        $enderecoEdit =  $endereco;
+                                    /** @var EnderecoEntidade $endereco */
+                                    $enderecoEdit = $endereco;
                                     ?>
                                     <h2 class="StepTitle">Endereço
                                         <small>Informações de Endereço</small>
@@ -292,7 +292,7 @@ $assinanteEdit = $assinante;
                                     </h2>
                                     <?php
                                     /** @var ContatoEntidade $contato */
-                                    $contatoEdit =  $contato;
+                                    $contatoEdit = $contato;
                                     ?>
                                     <div class="form-group">
                                         <label for="<?= NU_TEL1; ?>" class="col-sm-3 control-label">
@@ -357,7 +357,7 @@ $assinanteEdit = $assinante;
                                     </h2>
                                     <?php
                                     /** @var FacilidadeBeneficioEntidade $facilidade */
-                                    $facilidadeEdit =  $facilidade;
+                                    $facilidadeEdit = $facilidade;
                                     ?>
                                     <div class="form-group">
                                         <label for="<?= TP_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
@@ -442,8 +442,8 @@ $assinanteEdit = $assinante;
                                                  data-on="success"
                                                  data-off="danger">
                                                 <input type="checkbox" id="<?= ST_LANCHONETE; ?>"
-                                                       <?= ($facilidadeEdit->getStLanchonete() == SimNaoEnum::SIM)
-                                                       ? ' checked="checked" ' : ''; ?>
+                                                    <?= ($facilidadeEdit->getStLanchonete() == SimNaoEnum::SIM)
+                                                        ? ' checked="checked" ' : ''; ?>
                                                        name="<?= ST_LANCHONETE; ?>" class="" title=""/>
                                             </div>
                                         </div>
@@ -539,7 +539,7 @@ $assinanteEdit = $assinante;
                                     </h2>
                                     <?php
                                     /** @var FuncionamentoEntidade $funcionamento */
-                                    $funcionamentoEdit =  $funcionamento;
+                                    $funcionamentoEdit = $funcionamento;
                                     ?>
                                     <div class="form-group col-sm-12">
                                         <div class="col-sm-12">
@@ -558,13 +558,13 @@ $assinanteEdit = $assinante;
                                                 <tbody role="alert" aria-live="polite" aria-relevant="all">
                                                 <?php
                                                 foreach (DiasEnum::$descricao as $numero => $dia) {
-                                                    $check =  null;
-                                                    $abertura =  null;
+                                                    $check = null;
+                                                    $abertura = null;
                                                     $fechamento = null;
-                                                    if(!empty($funcionamentoEdit[$numero-1])){
+                                                    if (!empty($funcionamentoEdit[$numero - 1])) {
                                                         $check = ' checked="checked"';
-                                                        $abertura = $funcionamentoEdit[$numero-1]->getNuHoraAbertura();
-                                                        $fechamento = $funcionamentoEdit[$numero-1]->getNuHoraFechamento();
+                                                        $abertura = $funcionamentoEdit[$numero - 1]->getNuHoraAbertura();
+                                                        $fechamento = $funcionamentoEdit[$numero - 1]->getNuHoraFechamento();
                                                     }
                                                     ?>
                                                     <tr class="linha-tabela odd">
@@ -615,8 +615,7 @@ $assinanteEdit = $assinante;
                                     </h2>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <label for="ds_caminho" class="control-label"> Foto Principal /
-                                                Logo</label>
+                                            <label for="ds_caminho" class="control-label"> Foto Principal / Logo</label>
                                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                                 <div class="fileupload-new thumbnail"
                                                      style="width: 150px; height: 150px;">
