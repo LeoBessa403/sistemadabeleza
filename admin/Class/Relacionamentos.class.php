@@ -287,12 +287,12 @@ class Relacionamentos
                 (CO_FUNCIONAMENTO) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'FuncionamentoEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
                 (CO_IMAGEM_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'ImagemAssinanteEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
             ),
             (EmpresaEntidade::TABELA) => Array(
