@@ -240,6 +240,8 @@ class Index extends AbstractController
     {
         /** @var AcessoService $acessoService */
         $acessoService = $this->getService(ACESSO_SERVICE);
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
         $acessoService->finalizaAcessos();
         $acessoService->salvarAcesso($coUsuario);
 
@@ -250,6 +252,8 @@ class Index extends AbstractController
             $perfis[] = $perfil->getCoPerfil()->getCoPerfil();
             $no_perfis[] = $perfil->getCoPerfil()->getNoPerfil();
         }
+        /** @var AssinanteEntidade $assinante */
+        $assinante = $assinanteService->getAssinanteLogado($user->getCoAssinante());
         $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
         $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
         $usuarioAcesso[DT_EXPIRACAO] = (!empty($user->getCoPessoa()->getCoAssinante()))
@@ -258,6 +262,7 @@ class Index extends AbstractController
         $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
         $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
         $usuarioAcesso[ST_TROCA_SENHA] = $user->getStTrocaSenha();
+        $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = $assinante->getStDadosComplementares();
         $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
         $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);

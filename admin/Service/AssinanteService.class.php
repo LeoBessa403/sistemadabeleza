@@ -217,11 +217,14 @@ class  AssinanteService extends AbstractService
     }
 
     /**
-     * @return AssinanteEntidade $assinante
+     * @param mixed $coAssinante
+     * @return array|mixed
      */
-    public function getAssinanteLogado()
+    public function getAssinanteLogado($coAssinante = null)
     {
-        return $this->PesquisaUmRegistro(static::getCoAssinanteLogado());
+        if (!$coAssinante)
+            $coAssinante = static::getCoAssinanteLogado();
+        return $this->PesquisaUmRegistro($coAssinante);
     }
 
     /**

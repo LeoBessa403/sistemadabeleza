@@ -16,6 +16,7 @@ class AssinanteEntidade extends AbstractEntidade
     private $dt_expiracao;
     private $st_status;
     private $tp_assinante;
+    private $st_dados_complementares;
     private $co_empresa;
     private $co_pessoa;
     private $co_plano_assinante_assinatura;
@@ -37,6 +38,7 @@ class AssinanteEntidade extends AbstractEntidade
             DT_EXPIRACAO,
             ST_STATUS,
             TP_ASSINANTE,
+            ST_DADOS_COMPLEMENTARES,
             CO_EMPRESA,
             CO_PESSOA,
         ];
@@ -118,6 +120,22 @@ class AssinanteEntidade extends AbstractEntidade
     public function setStStatus($st_status)
     {
         return $this->st_status = $st_status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStDadosComplementares()
+    {
+        return $this->st_dados_complementares;
+    }
+
+    /**
+     * @param mixed $st_dados_complementares
+     */
+    public function setStDadosComplementares($st_dados_complementares)
+    {
+        $this->st_dados_complementares = $st_dados_complementares;
     }
 
     /**
