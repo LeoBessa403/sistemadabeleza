@@ -47,8 +47,8 @@ class AbstractValidador
                 break;
             case static::VALIDACAO_EMAIL:
                 $validadorDado = Valida::ValEmail($dado);
-                if ($validadorDado != 1) {
-                    $validador = false;
+                if ($validadorDado == 1) {
+                    $validador = true;
                 }
                 break;
             case static::VALIDACAO_CEP:

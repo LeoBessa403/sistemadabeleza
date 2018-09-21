@@ -149,6 +149,10 @@ class  AssinanteService extends AbstractService
         $empresaService = $this->getService(EMPRESA_SERVICE);
         /** @var FacilidadeBeneficioService $facilidadeBeneficioService */
         $facilidadeBeneficioService = $this->getService(FACILIDADE_BENEFICIO_SERVICE);
+        /** @var FuncionamentoService $funcionamentoService */
+        $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
+        /** @var ImagemAssinanteService $imagemAssinanteService */
+        $imagemAssinanteService = $this->getService(IMAGEM_ASSINANTE_SERVICE);
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $session = new Session();
@@ -157,7 +161,7 @@ class  AssinanteService extends AbstractService
 
         $assinanteValidador = new AssinanteValidador();
         /** @var PessoaValidador $validador */
-        $validador = $assinanteValidador->validarDadosComplementaresAssinante($dados);
+        $validador = $assinanteValidador->validarDadosComplementaresAssinante($dados, $arquivos);
         if ($validador[SUCESSO]) {
             $retorno = $pessoaService->salvaPessoaAssinante($dados);
             if ($retorno[SUCESSO]) {
@@ -168,6 +172,12 @@ class  AssinanteService extends AbstractService
                         $retorno = $contatoService->salvaContatoAssinante($dados);
                         if ($retorno[SUCESSO]) {
                             $retorno = $facilidadeBeneficioService->salvaFacilidadesAssinante($dados);
+                            if ($retorno[SUCESSO]) {
+                                $retorno = $funcionamentoService->salvafuncionamentoAssinante($dados);
+                                if ($retorno[SUCESSO]) {
+                                    $retorno = $imagemAssinanteService->salvaImagemAssinante($arquivos, $dados[NO_FANTASIA]);
+                                }
+                            }
                         }
                     }
                 }

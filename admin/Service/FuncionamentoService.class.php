@@ -16,5 +16,19 @@ class  FuncionamentoService extends AbstractService
         $this->ObjetoModel = New FuncionamentoModel();
     }
 
+    public function salvafuncionamentoAssinante($dados)
+    {
+        $retorno[SUCESSO] = false;
+        $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        if (!empty($dados[NU_DIA_SEMANA])) {
+            foreach ($dados[NU_DIA_SEMANA] as $dia => $valor) {
+                $funcionamento[NU_DIA_SEMANA] = $dia;
+                $funcionamento[NU_HORA_ABERTURA] = $dados[NU_HORA_ABERTURA][$dia];
+                $funcionamento[NU_HORA_FECHAMENTO] = $dados[NU_HORA_FECHAMENTO][$dia];
+                $retorno[SUCESSO] = $this->Salva($funcionamento);
+            }
+        }
+        return $retorno;
+    }
 
 }

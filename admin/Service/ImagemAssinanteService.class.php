@@ -16,5 +16,38 @@ class  ImagemAssinanteService extends AbstractService
         $this->ObjetoModel = New ImagemAssinanteModel();
     }
 
+    public function salvaImagemAssinante($arquivos, $noFantasia)
+    {
+        /** @var ImagemService $imagemService */
+        $imagemService = $this->getService(IMAGEM_SERVICE);
+        $up = new Upload();
+        $retorno[SUCESSO] = false;
+        $noFantasia = (!empty($noFantasia)) ? strtoupper(trim($noFantasia)) : 'Novo Assinante';
+        $noFantasia = $noFantasia . "-" . AssinanteService::getCoAssinanteLogado();
+        $noPasta = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado();
+
+        $imagemAssinante[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        $imagem[DS_CAMINHO] = "";
+        $nome = Valida::ValNome($noFantasia);
+        if ($arquivos[DS_CAMINHO]["tmp_name"]):
+            $foto = $_FILES[DS_CAMINHO];
+            $up->UploadImagens($foto, "FP-" . $nome, $noPasta);
+            $imagem[DS_CAMINHO] = $up->getNameImage();
+            $imagemAssinante[CO_IMAGEM] = $imagemService->Salva($imagem);
+        endif;
+        $retorno[SUCESSO] = $this->Salva($imagemAssinante);
+
+        $fotos = $arquivos[CO_IMAGEM_ASSINANTE];
+        if ($fotos['name'][0]) {
+            $upArquivos = $up->UploadImagens($fotos, $nome, $noPasta);
+            foreach ($upArquivos as $value) {
+                $imagem[DS_CAMINHO] = $value;
+                $imagemAssinante[CO_IMAGEM] = $imagemService->Salva($imagem);
+                $retorno[SUCESSO] = $this->Salva($imagemAssinante);
+            }
+        }
+
+        return $retorno;
+    }
 
 }

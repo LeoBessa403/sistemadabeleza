@@ -290,7 +290,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="<?= DS_EMAIL; ?>" class="col-sm-3 control-label">
-                                            E-mail
+                                            E-mail <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <input type="text" class="form-control email" id="<?= DS_EMAIL; ?>"
@@ -327,7 +327,7 @@
                                     </h2>
                                     <div class="form-group">
                                         <label for="<?= TP_ESTABELECIMENTO; ?>" class="col-sm-3 control-label">
-                                            Tipo de estabelecimento <span class="symbol  required"></span>
+                                            Tipo de estabelecimento <span class="symbol required"></span>
                                         </label>
                                         <div class="col-sm-7">
                                             <select class="form-control" id="<?= TP_ESTABELECIMENTO; ?>"
