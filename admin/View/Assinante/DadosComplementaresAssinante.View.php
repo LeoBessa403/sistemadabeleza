@@ -615,7 +615,7 @@ $assinanteEdit = $assinante;
                                     </h2>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <label for="ds_caminho" class="control-label"> Foto Principal / Logo</label>
+                                            <label for="<?= DS_CAMINHO; ?>" class="control-label"> Foto Principal / Logo</label>
                                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                                 <div class="fileupload-new thumbnail"
                                                      style="width: 150px; height: 150px;">
