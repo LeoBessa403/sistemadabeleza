@@ -113,6 +113,10 @@ class Assinante extends AbstractController
     {
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        $this->endereco = [];
+        $this->contato = [];
+        $this->facilidade = [];
+        $this->funcionamento = [];
 
         if (!empty($_POST)):
             $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
