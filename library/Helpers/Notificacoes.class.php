@@ -79,6 +79,4 @@ class Notificacoes
             </div>
         </div>';
     }
-
-
 }

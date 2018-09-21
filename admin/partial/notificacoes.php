@@ -1,5 +1,5 @@
 <li class="dropdown" xmlns="http://www.w3.org/1999/html">
-    <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
+    <a class="dropdown-toggle pulse" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
        href="#">
         <i class="clip-notification-2"></i>
         <span class="badge"> 2</span>
@@ -9,7 +9,7 @@
             <span class="dropdown-menu-title pullUp"> Você tem 2 Notificações</span>
         </li>
         <li>
-            <div class="drop-down-wrapper ps-container">
+            <div class="drop-down-wrapper ps-container notifica">
                 <ul>
                     <?php
                     if ($user[md5(DT_EXPIRACAO)]) {
