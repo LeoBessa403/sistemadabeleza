@@ -34,8 +34,8 @@ class  ImagemAssinanteService extends AbstractService
             $up->UploadImagens($foto, "FP-" . $nome, $noPasta);
             $imagem[DS_CAMINHO] = $up->getNameImage();
             $imagemAssinante[CO_IMAGEM] = $imagemService->Salva($imagem);
+            $retorno[SUCESSO] = $this->Salva($imagemAssinante);
         endif;
-        $retorno[SUCESSO] = $this->Salva($imagemAssinante);
 
         $fotos = $arquivos[CO_IMAGEM_ASSINANTE];
         if ($fotos['name'][0]) {
