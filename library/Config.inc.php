@@ -51,6 +51,7 @@ define('PASTA_CLASS', PASTA_RAIZ . ADMIN . '/Class/');
 define('PASTA_SEVICE', PASTA_RAIZ . ADMIN . '/Service/');
 define('PARTIAL_SITE', PASTA_RAIZ . SITE . '/Partial/');
 define('PARTIAL_ADMIN', PASTA_RAIZ . ADMIN . '/Partial/');
+define('PASTA_UPLOADS', HOME  . 'uploads/');
 
 
 // DEFINE PARA VALIDAÇÃO DO CADASTRO

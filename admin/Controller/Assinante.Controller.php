@@ -8,6 +8,7 @@ class Assinante extends AbstractController
     public $contato;
     public $facilidade;
     public $funcionamento;
+    public $logo;
 
     public function ListarAssinante()
     {
@@ -162,6 +163,11 @@ class Assinante extends AbstractController
             $this->funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
                 CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
             ]);
+        }
+        $this->logo = '';
+        if (!empty($assinante->getCoImagemAssinante())) {
+            $this->logo = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado() . "/" .
+                $assinante->getLogoImagemAssinante()->getCoImagem()->getDsCaminho();
         }
         $this->assinante = $assinante;
     }

@@ -327,4 +327,16 @@ class AssinanteEntidade extends AbstractEntidade
         $this->co_imagem_assinante = $co_imagem_assinante;
     }
 
+    /**
+     * @return ImagemAssinanteEntidade $co_imagem_assinante
+     */
+    public function getLogoImagemAssinante()
+    {
+        if ($this->co_imagem_assinante) {
+            return $this->primeiro($this->co_imagem_assinante);
+        } else {
+            return null;
+        }
+    }
+
 }

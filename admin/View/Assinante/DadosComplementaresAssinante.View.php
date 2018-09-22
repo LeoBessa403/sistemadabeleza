@@ -613,13 +613,16 @@ $assinanteEdit = $assinante;
                                     <h2 class="StepTitle">Fotos
                                         <small>Fotos do Estabelecimento</small>
                                     </h2>
+                                    <?php
+                                        $logo = ($logo) ? PASTA_UPLOADS . $logo : HOME . 'library/Imagens/sem-foto.jpg';
+                                    ?>
                                     <div class="form-group">
                                         <div class="col-sm-12">
                                             <label for="<?= DS_CAMINHO; ?>" class="control-label"> Foto Principal / Logo</label>
                                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                                 <div class="fileupload-new thumbnail"
                                                      style="width: 150px; height: 150px;">
-                                                    <img src="<?= HOME; ?>library/Helpers/Timthumb.class.php?src=<?= HOME; ?>library/Imagens/sem-foto.jpg&amp;w=150&amp;h=150"
+                                                    <img src="<?= HOME; ?>library/Helpers/Timthumb.class.php?src=<?= $logo; ?>&amp;w=150&amp;h=150"
                                                          alt="Pre Carregamento" title="Pre Carregamento"></div>
                                                 <div class="fileupload-preview fileupload-exists thumbnail"
                                                      style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
