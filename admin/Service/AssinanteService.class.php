@@ -175,7 +175,9 @@ class  AssinanteService extends AbstractService
                             if ($retorno[SUCESSO]) {
                                 $retorno = $funcionamentoService->salvafuncionamentoAssinante($dados);
                                 if ($retorno[SUCESSO]) {
-                                    $retorno = $imagemAssinanteService->salvaImagemAssinante($arquivos, $dados[NO_FANTASIA]);
+                                    $retorno = $imagemAssinanteService->salvaImagemAssinante(
+                                        $arquivos, $dados[NO_FANTASIA], $dados['imagem_logo']
+                                    );
                                 }
                             }
                         }

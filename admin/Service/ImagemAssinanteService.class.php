@@ -16,7 +16,7 @@ class  ImagemAssinanteService extends AbstractService
         $this->ObjetoModel = New ImagemAssinanteModel();
     }
 
-    public function salvaImagemAssinante($arquivos, $noFantasia)
+    public function salvaImagemAssinante($arquivos, $noFantasia, $imagem_logo)
     {
         /** @var ImagemService $imagemService */
         $imagemService = $this->getService(IMAGEM_SERVICE);
@@ -33,8 +33,8 @@ class  ImagemAssinanteService extends AbstractService
             $foto = $_FILES[DS_CAMINHO];
             $up->UploadImagens($foto, "FP-" . $nome, $noPasta);
             $imagem[DS_CAMINHO] = $up->getNameImage();
-            $imagemAssinante[CO_IMAGEM] = $imagemService->Salva($imagem);
-            $retorno[SUCESSO] = $this->Salva($imagemAssinante);
+            $imagemAssinante[CO_IMAGEM] = $imagemService->Salva($imagem, $imagem_logo);
+            $retorno[SUCESSO] = $this->Salva($imagemAssinante, $imagem_logo);
         endif;
 
         $fotos = $arquivos[CO_IMAGEM_ASSINANTE];

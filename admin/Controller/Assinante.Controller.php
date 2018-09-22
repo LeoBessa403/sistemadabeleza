@@ -9,6 +9,7 @@ class Assinante extends AbstractController
     public $facilidade;
     public $funcionamento;
     public $logo;
+    public $imagem_logo;
 
     public function ListarAssinante()
     {
@@ -165,7 +166,9 @@ class Assinante extends AbstractController
             ]);
         }
         $this->logo = '';
+        $this->imagem_logo = '';
         if (!empty($assinante->getCoImagemAssinante())) {
+            $this->imagem_logo = $assinante->getLogoImagemAssinante()->getCoImagem()->getCoImagem();
             $this->logo = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado() . "/" .
                 $assinante->getLogoImagemAssinante()->getCoImagem()->getDsCaminho();
         }

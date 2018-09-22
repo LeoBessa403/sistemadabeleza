@@ -52,9 +52,11 @@ class  AssinanteValidador extends AbstractValidador
         $this->retorno[DADOS][] = $this->ValidaSelectObrigatorioNotArray(
             $dados[TP_ESTABELECIMENTO], 'Tipo de estabelecimento'
         );
-        $this->retorno[DADOS][] = $this->ValidaCampoArquivo(
-            $files[DS_CAMINHO], 'Foto Principal / Logo'
-        );
+        if (!$dados['imagem_logo']) {
+            $this->retorno[DADOS][] = $this->ValidaCampoArquivo(
+                $files[DS_CAMINHO], 'Foto Principal / Logo'
+            );
+        }
         return $this->MontaRetorno($this->retorno);
     }
 }

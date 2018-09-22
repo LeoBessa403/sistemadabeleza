@@ -614,11 +614,12 @@ $assinanteEdit = $assinante;
                                         <small>Fotos do Estabelecimento</small>
                                     </h2>
                                     <?php
-                                        $logo = ($logo) ? PASTA_UPLOADS . $logo : HOME . 'library/Imagens/sem-foto.jpg';
+                                    $logo = ($logo) ? PASTA_UPLOADS . $logo : HOME . 'library/Imagens/sem-foto.jpg';
                                     ?>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <label for="<?= DS_CAMINHO; ?>" class="control-label"> Foto Principal / Logo</label>
+                                            <label for="<?= DS_CAMINHO; ?>" class="control-label"> Foto Principal /
+                                                Logo</label>
                                             <div class="fileupload fileupload-new" data-provides="fileupload">
                                                 <div class="fileupload-new thumbnail"
                                                      style="width: 150px; height: 150px;">
@@ -633,6 +634,8 @@ $assinanteEdit = $assinante;
                                                     <span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Trocar</span>
                                                             <input class="file-input " id="ds_caminho" name="ds_caminho"
                                                                    type="file">
+                                                        <input id="imagem_logo" name="imagem_logo" type="hidden"
+                                                               value="<?= $imagem_logo; ?>">
                                                     </span>
                                                     <a href="#" class="btn fileupload-exists btn-bricky"
                                                        data-dismiss="fileupload">
