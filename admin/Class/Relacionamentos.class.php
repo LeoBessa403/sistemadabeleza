@@ -198,6 +198,7 @@ class Relacionamentos
                 ),
             ),
             (TrafegoEntidade::TABELA) => Array(),
+            (FeriadoEntidade::TABELA) => Array(),
             (PlanoModuloEntidade::TABELA) => Array(
                 (CO_PLANO) => Array(
                     ('Campo') => CO_PLANO,
@@ -294,6 +295,11 @@ class Relacionamentos
                     ('Entidade') => 'ImagemAssinanteEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_DIA_ESPECIAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'DiaEspecialEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (EmpresaEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
@@ -373,6 +379,13 @@ class Relacionamentos
                 (CO_IMAGEM) => Array(
                     ('Campo') => CO_IMAGEM,
                     ('Entidade') => 'ImagemEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (DiaEspecialEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
                 ),
             ),
