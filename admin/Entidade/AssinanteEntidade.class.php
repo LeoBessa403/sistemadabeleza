@@ -25,6 +25,7 @@ class AssinanteEntidade extends AbstractEntidade
     private $co_facilidade_beneficio;
     private $co_funcionamento;
     private $co_imagem_assinante;
+    private $co_dia_especial;
 
 
     /**
@@ -337,6 +338,22 @@ class AssinanteEntidade extends AbstractEntidade
         } else {
             return null;
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoDiaEspecial()
+    {
+        return $this->co_dia_especial;
+    }
+
+    /**
+     * @param DiaEspecialEntidade $co_dia_especial
+     */
+    public function setCoDiaEspecial($co_dia_especial)
+    {
+        $this->co_dia_especial = $co_dia_especial;
     }
 
 }
