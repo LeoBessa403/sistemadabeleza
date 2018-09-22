@@ -21,7 +21,7 @@ class  ImagemAssinanteService extends AbstractService
         /** @var ImagemService $imagemService */
         $imagemService = $this->getService(IMAGEM_SERVICE);
         $up = new Upload();
-        $retorno[SUCESSO] = false;
+        $retorno[SUCESSO] = true;
         $noFantasia = (!empty($noFantasia)) ? strtoupper(trim($noFantasia)) : 'Novo Assinante';
         $noFantasia = $noFantasia . "-" . AssinanteService::getCoAssinanteLogado();
         $noPasta = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado();
