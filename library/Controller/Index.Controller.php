@@ -252,8 +252,13 @@ class Index extends AbstractController
             $perfis[] = $perfil->getCoPerfil()->getCoPerfil();
             $no_perfis[] = $perfil->getCoPerfil()->getNoPerfil();
         }
-        /** @var AssinanteEntidade $assinante */
-        $assinante = $assinanteService->getAssinanteLogado($user->getCoAssinante());
+        if (!empty($user->getCoAssinante())) {
+            /** @var AssinanteEntidade $assinante */
+            $assinante = $assinanteService->getAssinanteLogado($user->getCoAssinante());
+            $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = $assinante->getStDadosComplementares();
+        } else {
+            $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = SimNaoEnum::SIM;
+        }
         $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
         $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
         $usuarioAcesso[DT_EXPIRACAO] = (!empty($user->getCoPessoa()->getCoAssinante()))
@@ -262,7 +267,6 @@ class Index extends AbstractController
         $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
         $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
         $usuarioAcesso[ST_TROCA_SENHA] = $user->getStTrocaSenha();
-        $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = $assinante->getStDadosComplementares();
         $usuarioAcesso[ST_SEXO] = $user->getCoPessoa()->getStSexo();
         $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
@@ -275,11 +279,11 @@ class Index extends AbstractController
             $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $usuarioAcesso[DT_EXPIRACAO]);
             if ($difDatas > 5) {
                 $statusSis = StatusSistemaEnum::ATIVO;
-            }elseif($difDatas <= 5 && $difDatas >= 0){
+            } elseif ($difDatas <= 5 && $difDatas >= 0) {
                 $statusSis = StatusSistemaEnum::EXPIRANDO;
-            }elseif ($difDatas < 0 && ($difDatas * -1) <= ConfiguracoesEnum::DIAS_EXPIRADO) {
+            } elseif ($difDatas < 0 && ($difDatas * -1) <= ConfiguracoesEnum::DIAS_EXPIRADO) {
                 $statusSis = StatusSistemaEnum::PENDENTE;
-            }else{
+            } else {
                 Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/S"));
             }
         } else {

@@ -33,7 +33,8 @@
                                 <i class="clip-users-3"></i>
                                 Produtos Cadastrados
                                 <span class="negrito dados dados-success">
-                                    <?= $dados['ProdutosCadastrados']; ?>
+                                  <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -42,7 +43,8 @@
                                 <i class="clip-users-3"></i>
                                 Categorias cadastradas
                                 <span class="negrito dados dados-danger">
-                                    <?= $dados['CategoriasCadastrados']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -51,7 +53,8 @@
                                 <i class="clip-users-2"></i>
                                 Fabricantes Cadastrados
                                 <span class="dados negrito dados-black">
-                                    <?= $dados['FabricantesCadastrados']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -60,7 +63,8 @@
                                 <i class="clip-users-3"></i>
                                 Produtos Destaque
                                 <span class="negrito dados dados-warning">
-                                    <?= $dados['ProdutosDestaque']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -69,7 +73,8 @@
                                 <i class="fa fa-money"></i>
                                 Mais Visitados
                                 <span class="dados negrito dados-info">
-                                    <?= $dados['MaisVisitados']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -78,7 +83,8 @@
                                 <i class="clip-user-cancel"></i>
                                 Mais Vendidos
                                 <span class="dados negrito dados-beige">
-                                    <?= $dados['MaisVendidos']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -87,7 +93,8 @@
                                 <i class="clip-user-3"></i>
                                 Produtos sem estoque
                                 <span class="dados negrito dados-olivia">
-                                    <?= $dados['ProdutosSemEstoque']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -96,7 +103,8 @@
                                 <i class="fa-dollar fa"></i>
                                 Novos Produtos
                                 <span class="dados negrito dados-orange">
-                                    <?= $dados['NovosProdutos']; ?>
+                                     <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>
@@ -105,7 +113,8 @@
                                 <i class="fa-eur fa"></i>
                                 Mais procurados
                                 <span class="dados negrito dados-gray">
-                                    <?= $dados['MaisProdurados']; ?>
+                                    <? //= $dados['ProdutosCadastrados']; ?>
+                                    0
                                 </span>
                             </button>
                         </div>

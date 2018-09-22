@@ -237,7 +237,7 @@ class  AssinanteService extends AbstractService
         /** @var Session $us */
         $us = $_SESSION[SESSION_USER];
         $user = $us->getUser();
-        return $user[md5(CO_ASSINANTE)];
+        return (!empty($user[md5(CO_ASSINANTE)])) ? $user[md5(CO_ASSINANTE)] : null;
     }
 
 }
