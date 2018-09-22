@@ -133,14 +133,14 @@ class Assinante extends AbstractController
         $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
-        /** @var AssinanteEntidade $this ->assinante */
-        $this->endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
+
         $this->contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
-        if (!$this->contato) {
-            $contato[NU_TEL1] = '';
-            $coContato = $contatoService->Salva($contato);
-            $this->contato = $contatoService->PesquisaUmRegistro($coContato);
-            $empresa[CO_CONTATO] = $coContato;
+        $this->endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
+        if (!$this->endereco) {
+            $endereco[DS_ENDERECO] = '';
+            $coEndereco = $enderecoService->Salva($endereco);
+            $this->endereco = $enderecoService->PesquisaUmRegistro($coEndereco);
+            $empresa[CO_ENDERECO] = $coEndereco;
             $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
         }
         $this->facilidade = $assinante->getCoFacilidadeBeneficio();
