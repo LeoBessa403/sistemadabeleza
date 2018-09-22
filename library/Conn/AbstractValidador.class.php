@@ -31,8 +31,8 @@ class AbstractValidador
                 $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
                 if (strlen($validadorDado) == 0) {
                     $validadorDado = Valida::ValCPF(Valida::RetiraMascara($dado));
-                    if ($validadorDado != 1) {
-                        $validador = false;
+                    if ($validadorDado == 1) {
+                        $validador = true;
                     }
                 }
                 break;
@@ -40,8 +40,8 @@ class AbstractValidador
                 $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
                 if (strlen($validadorDado) == 0) {
                     $validadorDado = Valida::ValCNPJ(Valida::RetiraMascara($dado));
-                    if ($validadorDado != 1) {
-                        $validador = false;
+                    if ($validadorDado == 1) {
+                        $validador = true;
                     }
                 }
                 break;

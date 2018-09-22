@@ -173,15 +173,14 @@ $assinanteEdit = $assinante;
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="<?= DS_DESCRICAO; ?>" class="col-sm-3 control-label">
+                                        <label for="<?= DS_OBSERVACAO; ?>" class="col-sm-3 control-label">
                                             Descrição
                                         </label>
                                         <div class="col-sm-7">
-                                            <textarea class="form-control tel" id="<?= DS_DESCRICAO; ?>"
-                                                      name="<?= DS_DESCRICAO; ?>"
-                                                      placeholder="Descrição da sua empresa">
-                                                <?= $assinanteEdit->getCoEmpresa()->getDsObservacao(); ?>
-                                            </textarea>
+                                            <textarea class="form-control" id="<?= DS_OBSERVACAO; ?>"
+                                                      name="<?= DS_OBSERVACAO; ?>"
+                                                      placeholder="Descrição da sua empresa"
+                                            ><?= $assinanteEdit->getCoEmpresa()->getDsObservacao(); ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
