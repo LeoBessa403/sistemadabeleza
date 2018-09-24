@@ -7,7 +7,7 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Assinante
+                            Dias Especiais / Feriados
                         </a>
                     </li>
                     <li class="active">
@@ -15,9 +15,12 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Assinante
-                        <small>Listar Assinante</small>
-                        <?php Valida::geraBtnNovo(); ?>
+                    <h1>Dias Especiais / Feriados
+                        <small>Listar Dias Especiais / Feriados</small>
+                        <?php Valida::geraBtnNovo("Criar Dia Especial", "CadastroDiaEspecialConfiguracao" ); ?>
+                        <a href="#" id="acao-feriado" class="btn btn-info tooltips" data-original-title="Ver Feriados"
+                           data-placement="top">
+                            <i class="fa fa-plus"></i> Ver Feriados</a>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -33,52 +36,63 @@
                     <div class="panel-body">
                         <?php
                         Modal::load();
-                        Modal::confirmacao("confirma_Assinante");
-                        $arrColunas = array('Assinante', 'Responsável', 'E-mail', 'Expiração', 'Status', 'Ações');
+                        Modal::confirmacao("confirma_DiaEspecial");
+                        $arrColunas = array('Data', 'Dia da Semana', 'Abertura', 'Fechamento', 'Motivo', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var AssinanteEntidade $res */
+                        /** @var DiaEspecialEntidade $res */
                         foreach ($result as $res):
-                            $acao = '<a href="' . PASTAADMIN . 'Assinante/CadastroAssinante/' .
-                                Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" class="btn btn-primary tooltips" 
-                                    data-original-title="Editar Registro" data-placement="top">
-                                     <i class="fa fa-clipboard"></i>
-                                 </a>';
-                            if (!empty($res->getCoPlanoAssinanteAssinatura())) {
-                                $acao .= ' <a href="' . PASTAADMIN . 'Assinante/HistoricoAssinante/' .
-                                    Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                                class="btn btn-med-grey tooltips" 
-                                    data-original-title="Histórico do Assinante" data-placement="top">
-                                     <i class="clip-folder-open"></i>
-                                 </a>';
-                            }
-                            $acao .= ' <a href="' . PASTAADMIN . 'Assinante/PagamentoAssinante/' .
-                                Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                        class="btn btn-warning tooltips" data-original-title="Pagamentos do Assinante" data-placement="top">
-                                     <i class="fa fa-money"></i>
-                                 </a>';
-                            if (!empty($res->getCoAssinanteMatriz())) {
-                                if (!empty($res->getCoUnicoAssinanteMatriz())) {
-                                    $acao .= ' <a href="' . PASTAADMIN . 'Assinante/FilialAssinante/' .
-                                        Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                                class="btn btn-green tooltips" 
-                                    data-original-title="Filiais do Assinante" data-placement="top">
-                                     <i class="clip-tree"></i>
-                                 </a>';
-                                }
-                            }
-                            $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoFantasia() : '';
-                            $grid->setColunas($empresa);
-                            $grid->setColunas($res->getCoPessoa()->getNoPessoa());
-                            $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
-                            $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
-                            $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
-                            $grid->setColunas($acao, 4);
-                            $grid->criaLinha($res->getCoAssinante());
+                            $acao = '<a href="' . PASTAADMIN . 'Configuracao/CadastroDiaEspecialConfiguracao/' .
+                                Valida::GeraParametro(CO_DIA_ESPECIAL . "/" . $res->getCoDiaEspecial()) . '" class="btn btn-primary tooltips"
+                                                data-original-title="Editar Registro" data-placement="top">
+                                                 <i class="fa fa-clipboard"></i>
+                                             </a>';
+                            $acao .= ' <a data-toggle="modal" role="button" class="btn btn-bricky tooltips deleta" id="' .
+                                $res->getCoDiaEspecial() . '" 
+                                   href="#DiaEspecial" data-original-title="Excluir Registro" data-placement="top">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>';
+                            $grid->setColunas(Valida::DataShow($res->getDtDia()));
+                            $grid->setColunas(DiasEnum::getDescricaoValor($res->getNuDiaSemana()));
+                            $grid->setColunas($res->getNuHoraAbertura());
+                            $grid->setColunas($res->getNuHoraFechamento());
+                            $grid->setColunas($res->getDsMotivo());
+                            $grid->setColunas($acao, 2);
+                            $grid->criaLinha($res->getCoDiaEspecial());
                         endforeach;
                         $grid->finalizaGrid();
                         ?>
+                    </div>
+                </div>
+                <!-- end: DYNAMIC TABLE PANEL -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="feriados">
+                        <i class="fa fa-external-link-square"></i>
+                        Próximos Feriados Nacionais
+                    </div>
+                    <div class="panel-body">
+                        <?php
+                        $feriados = array_reverse($feriados);
+                        /** @var FeriadoEntidade $feriado */
+                        foreach ($feriados as $feriado) {
+                            ?>
+                            <div class="col-md-6">
+                                <div class="col-md-2">
+                                    <?= Valida::DataShow($feriado->getDtFeriado()); ?>
+                                </div>
+                                <div class="col-md-2">
+                                    <?= DiasEnum::getDescricaoValor($feriado->getNuDiaSemana()); ?>
+                                </div>
+                                <div class="col-md-8">
+                                    <?= $feriado->getDsDescricao(); ?>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <!-- end: DYNAMIC TABLE PANEL -->

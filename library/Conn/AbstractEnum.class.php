@@ -19,4 +19,15 @@ class AbstractEnum
         return static::$descricao;
     }
 
+    public static function getValorDescricao($descricao = null)
+    {
+        if (!empty($descricao)) {
+            foreach (static::$descricao as $chave => $desc){
+                if($descricao == $desc)
+                return $chave;
+            }
+        }
+        return static::$descricao;
+    }
+
 }

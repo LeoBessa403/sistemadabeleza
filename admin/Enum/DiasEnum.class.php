@@ -5,7 +5,7 @@
  */
 class DiasEnum extends AbstractEnum
 {
-    const SEGUNDA= 1;
+    const SEGUNDA = 1;
     const TERCA = 2;
     const QUARTA = 3;
     const QUINTA = 4;

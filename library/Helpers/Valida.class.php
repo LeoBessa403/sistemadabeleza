@@ -172,6 +172,42 @@ class Valida
     }
 
     /**
+     * @param $data ("1985-03-30");
+     * @return string
+     */
+    public static function DataDiaDaSemana($data)
+    {
+        $ano = substr("$data", 0, 4);
+        $mes = substr("$data", 5, -3);
+        $dia = substr("$data", 8, 9);
+        $diasemana = date("w", mktime(0, 0, 0, $mes, $dia, $ano));
+        switch ($diasemana) {
+            case"0":
+                self::$Data = "Domingo";
+                break;
+            case"1":
+                self::$Data = "Segunda";
+                break;
+            case"2":
+                self::$Data = "Terça";
+                break;
+            case"3":
+                self::$Data = "Quarta";
+                break;
+            case"4":
+                self::$Data = "Quinta";
+                break;
+            case"5":
+                self::$Data = "Sexta";
+                break;
+            case"6":
+                self::$Data = "Sábado";
+                break;
+        }
+        return self::$Data;
+    }
+
+    /**
      * @param $link
      * @return string
      */
@@ -612,11 +648,17 @@ class Valida
             </a>';
     }
 
-    public static function geraBtnNovo()
+    /**
+     * @param null $descricao
+     * @param null $action
+     */
+    public static function geraBtnNovo($descricao = null, $action = null)
     {
-        echo '<a href="' . PASTAADMIN . UrlAmigavel::$controller . '/Cadastro' . UrlAmigavel::$controller . '"
-               class="btn btn-green tooltips" data-original-title="Criar ' . UrlAmigavel::$controller . '" data-placement="top">
-               <i class="fa fa-plus"></i> Criar ' . UrlAmigavel::$controller . '
+        $act = ($action) ? $action : 'Cadastro' . UrlAmigavel::$controller;
+        $desc = ($descricao) ? $descricao : 'Criar ' . UrlAmigavel::$controller;
+        echo '<a href="' . PASTAADMIN . UrlAmigavel::$controller . '/' . $act . '"
+               class="btn btn-green tooltips" data-original-title="' . $desc . '" data-placement="top">
+               <i class="fa fa-plus"></i> ' . $desc . '
             </a>';
     }
 
