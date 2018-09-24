@@ -31,24 +31,17 @@ class Configuracao extends AbstractController
         endif;
 
         $coDiaEspecial = UrlAmigavel::PegaParametro(CO_DIA_ESPECIAL);
+        $res = [];
         if ($coDiaEspecial) {
-            /** @var DiaEspecialEntidade $plano */
-            $plano = $diaEspecialService->PesquisaUmRegistro($coDiaEspecial);
-//            $res[NO_PLANO] = $plano->getNoPlano();
-//            $res[NU_MES_ATIVO] = $plano->getNuMesAtivo();
-//            $res[DS_OBSERVACAO] = $plano->getCoUltimoPlanoAssinante()->getDsObservacao();
-//            $res[NU_VALOR] = Valida::FormataMoeda($plano->getCoUltimoPlanoAssinante()->getNuValor());
-//            $modulos = [];
-//            /** @var PlanoModuloEntidade $ModuloEntidade */
-//            foreach ($plano->getCoPlanoModulo() as $ModuloEntidade) {
-//                $modulos[] = $ModuloEntidade->getCoModulo()->getCoModulo();
-//            }
-//            $res[CO_MODULO] = $modulos;
-//            $res[CO_PLANO] = $plano->getCoPlano();
-//            $res[ST_STATUS] = ($plano->getStStatus() == 'A')
-//                ? 'checked' : '';
+            /** @var DiaEspecialEntidade $diaEspecial */
+            $diaEspecial = $diaEspecialService->PesquisaUmRegistro($coDiaEspecial);
+            $res[DT_DIA] = Valida::DataShow($diaEspecial->getDtDia());
+            $res[NU_HORA_ABERTURA] = $diaEspecial->getNuHoraAbertura();
+            $res[NU_HORA_FECHAMENTO] = $diaEspecial->getNuHoraFechamento();
+            $res[DS_MOTIVO] = $diaEspecial->getDsMotivo();
+            $res[CO_DIA_ESPECIAL] = $diaEspecial->getCoDiaEspecial();
         }
-        $this->form = DiaEspecialForm::Cadastrar();
+        $this->form = DiaEspecialForm::Cadastrar($res);
     }
 
 }
