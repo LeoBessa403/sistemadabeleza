@@ -3,13 +3,14 @@
 class Configuracao extends AbstractController
 {
     public $result;
+    public $feriado;
     public $plano;
 
     public function ListarDiaEspecialConfiguracao()
     {
-        /** @var PlanoService $planoService */
-        $planoService = $this->getService(PLANO_SERVICE);
-        $this->result = $planoService->PesquisaTodos();
+        /** @var FeriadoService $feriadoService */
+        $feriadoService = $this->getService(FERIADO_SERVICE);
+        $this->feriado = $feriadoService->PesquisaTodos();
     }
 
     public function CadastroDiaEspecialConfiguracao()
