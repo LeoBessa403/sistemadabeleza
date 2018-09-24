@@ -17,7 +17,7 @@
                 <div class="page-header">
                     <h1>Dias Especiais / Feriados
                         <small>Listar Dias Especiais / Feriados</small>
-                        <?php Valida::geraBtnNovo("Criar Dia Especial", "CadastroDiaEspecialConfiguracao" ); ?>
+                        <?php Valida::geraBtnNovo("Criar Dia Especial", "CadastroDiaEspecialConfiguracao"); ?>
                         <a href="#" id="acao-feriado" class="btn btn-info tooltips" data-original-title="Ver Feriados"
                            data-placement="top">
                             <i class="fa fa-plus"></i> Ver Feriados</a>
@@ -31,11 +31,12 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Assinantes
+                        Dias Especiais
                     </div>
                     <div class="panel-body">
                         <?php
                         Modal::load();
+                        Modal::deletaRegistro("DiaEspecial");
                         Modal::confirmacao("confirma_DiaEspecial");
                         $arrColunas = array('Data', 'Dia da Semana', 'Abertura', 'Fechamento', 'Motivo', 'Ações');
                         $grid = new Grid();

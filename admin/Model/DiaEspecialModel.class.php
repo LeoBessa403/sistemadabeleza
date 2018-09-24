@@ -12,5 +12,8 @@ class  DiaEspecialModel extends AbstractModel
         parent::__construct(DiaEspecialEntidade::ENTIDADE);
     }
 
-
+    public function Deleta($coDiaEspecial)
+    {
+        return parent::Deleta($coDiaEspecial);
+    }
 }
