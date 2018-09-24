@@ -11,6 +11,7 @@ class Mensagens
 
     const OK_SALVO = "Seu registro foi Cadastro com Sucesso!";
     const OK_ATUALIZADO = "Seu registro foi Atualizado com Sucesso!";
+    const OK_DELETADO = "A exclusão do registro Foi realizada com Sucesso!";
     const OK_ENVIO_EMAIL = "Email(s) Enviado(s) Com Sucesso!";
     const USUARIO_CADASTRADO_SUCESSO = "Usuário Cadastro Com Sucesso!</br>
                                         <b>Favor aguardar a ativação do seu cadastro.</b>";
@@ -31,10 +32,7 @@ class Mensagens
     const ZAP05 = "Vi no site o item: %s e gostaria de saber mais sobre o mesmo!";
 
 
-
-
     public $MSG01 = "Esse Perfil esta vinculado a um Usuário ou Funcionalidade.";
-
 
 
 }

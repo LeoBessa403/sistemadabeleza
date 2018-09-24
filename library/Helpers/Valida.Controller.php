@@ -37,10 +37,12 @@ if (isset($_GET['valida'])) {
          * Deleta Registros do Banco da Grid
          *****************************/
         case 'deleta_registro':
+            $session = new Session();
             $id = $_GET['id'];
             $objeto = $_GET['entidade'] . "Model";
             $obj = new $objeto();
             echo $obj->Deleta($id);
+            $session->setSession(MENSAGEM, DELETADO);
             break;
         /*****************************
          * Deleta Registros do Banco da Grid

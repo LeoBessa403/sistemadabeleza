@@ -318,6 +318,8 @@ $user = $us->getUser();
             Notificacoes::cadastrado();
         elseif ($session::getSession(MENSAGEM) == ATUALIZADO):
             Notificacoes::atualizado();
+        elseif ($session::getSession(MENSAGEM) == DELETADO):
+            Notificacoes::deletado();
         else:
             Notificacoes::mesagens($session::getSession(MENSAGEM));
         endif;

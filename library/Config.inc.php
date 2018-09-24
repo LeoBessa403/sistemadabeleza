@@ -57,6 +57,7 @@ define('PASTA_UPLOADS', HOME  . 'uploads/');
 // DEFINE PARA VALIDAÇÃO DO CADASTRO
 define('CADASTRADO', "cadastrado");
 define('ATUALIZADO', "atualizado");
+define('DELETADO', "deletado");
 define('MENSAGEM', "mensagem");
 define('PESQUISA_AVANCADA', "pesquisa_avancada");
 
