@@ -186,6 +186,7 @@ $user = $us->getUser();
                 <?php
                 $menu = array(
                     "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante", "DadosComplementaresAssinante"),
+                    "Configuracao" => array("clip-settings", "ListarDiaEspecialConfiguracao", "CadastroDiaEspecialConfiguracao"),
                     "Plano" => array("clip-banknote", "ListarPlano", "CadastroPlano"),
                     "Visita" => array("clip-airplane", "ListarVisita"),
                     "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario", "TrocaSenhaUsuario"),

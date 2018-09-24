@@ -5,14 +5,14 @@ class Configuracao extends AbstractController
     public $result;
     public $plano;
 
-    public function ListarPlano()
+    public function ListarDiaEspecialConfiguracao()
     {
         /** @var PlanoService $planoService */
         $planoService = $this->getService(PLANO_SERVICE);
         $this->result = $planoService->PesquisaTodos();
     }
 
-    public function CadastroPlano()
+    public function CadastroDiaEspecialConfiguracao()
     {
         /** @var PlanoService $planoService */
         $planoService = $this->getService(PLANO_SERVICE);
@@ -45,20 +45,6 @@ class Configuracao extends AbstractController
                 ? 'checked' : '';
         }
         $this->form = PlanoForm::Cadastrar($res);
-    }
-
-    public function HistoricoPlano()
-    {
-        /** @var PlanoService $planoService */
-        $planoService = $this->getService(PLANO_SERVICE);
-
-        $coPlano = UrlAmigavel::PegaParametro(CO_PLANO);
-        if ($coPlano) {
-            /** @var PlanoEntidade $plano */
-            $this->plano = $planoService->PesquisaUmRegistro($coPlano);
-        } else {
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PlanoNaoEncontrado/');
-        }
     }
 
 }
