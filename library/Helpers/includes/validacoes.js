@@ -460,7 +460,7 @@ $(function () {
 
             if (retorno == true) {
                 Funcoes.Sucesso("A exclusão do registro Foi realizada com Sucesso!");
-                window.setTimeout('location.reload()', 1000);
+                window.setTimeout('location.reload()', 1);
             } else if (retorno != "") {
                 if (msg) {
                     $.get(urlValida, {valida: 'msg_valida', msg: msg}, function (retorno) {
