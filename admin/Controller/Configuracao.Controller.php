@@ -67,7 +67,7 @@ class Configuracao extends AbstractController
             $res[DS_MOTIVO] = $diaEspecial->getDsMotivo();
             $res[CO_DIA_ESPECIAL] = $diaEspecial->getCoDiaEspecial();
         }
-        $this->form = DiaEspecialForm::Cadastrar($res);
+        $this->form = FormasDePagamentoForm::Cadastrar($res);
     }
 
 }
