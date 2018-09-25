@@ -3,7 +3,7 @@ ob_start();
 $url = new UrlAmigavel();
 $back = new Backup();
 //$entidade = new GerarEntidades([
-//        'TB_TIPO_PAGAMENTO', 'TB_FACILIDADE_PAGAMENTO', 'TB_FACILIDADE_BENEFICIO', 'TB_FUNCIONAMENTO', 'TB_IMAGEM_ASSINANTE'
+//        'TB_BANDEIRA_CARTAO', 'TB_TAXA_CARTAO', 'TB_PAGAMENTO_BANDEIRA_CARTAO'
 //]);
 if (in_array(UrlAmigavel::$action, UrlAmigavel::$ACESSO_PERMITIDO)):
     $url->pegaControllerAction();

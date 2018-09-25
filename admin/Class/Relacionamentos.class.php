@@ -350,6 +350,11 @@ class Relacionamentos
                     ('Entidade') => 'FacilidadePagamentoEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PAGAMENTO_BANDEIRA_CARTAO) => Array(
+                    ('Campo') => CO_FACILIDADE_PAGAMENTO,
+                    ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (FacilidadeBeneficioEntidade::TABELA) => Array(
                 (CO_FACILIDADE_PAGAMENTO) => Array(
@@ -387,6 +392,37 @@ class Relacionamentos
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
+                ),
+            ),
+            (TaxaCartaoEntidade::TABELA) => Array(
+                (CO_PAGAMENTO_BANDEIRA_CARTAO) => Array(
+                    ('Campo') => CO_PAGAMENTO_BANDEIRA_CARTAO,
+                    ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (PagamentoBandeiraCartaoEntidade::TABELA) => Array(
+                (CO_TAXA_CARTAO) => Array(
+                    ('Campo') => CO_PAGAMENTO_BANDEIRA_CARTAO,
+                    ('Entidade') => 'TaxaCartaoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_FACILIDADE_PAGAMENTO) => Array(
+                    ('Campo') => CO_FACILIDADE_PAGAMENTO,
+                    ('Entidade') => 'FacilidadePagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_BANDEIRA_CARTAO) => Array(
+                    ('Campo') => CO_BANDEIRA_CARTAO,
+                    ('Entidade') => 'BandeiraCartaoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (BandeiraCartaoEntidade::TABELA) => Array(
+                (CO_PAGAMENTO_BANDEIRA_CARTAO) => Array(
+                    ('Campo') => CO_BANDEIRA_CARTAO,
+                    ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
+                    ('Tipo') => '2',
                 ),
             ),
         );

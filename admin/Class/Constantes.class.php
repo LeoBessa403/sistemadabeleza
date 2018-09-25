@@ -55,6 +55,12 @@ define('DT_DIA', 'dt_dia');
 define('DS_MOTIVO', 'ds_motivo');
 define('CO_FERIADO', 'co_feriado');
 define('DT_FERIADO', 'dt_feriado');
+define('CO_BANDEIRA_CARTAO', 'co_bandeira_cartao');
+define('NO_BANDEIRA_CARTAO', 'no_bandeira_cartao');
+define('CO_TAXA_CARTAO', 'co_taxa_cartao');
+define('NU_TAXA_CARTAO', 'nu_taxa_cartao');
+define('NU_TAXA_ANTECIPACAO', 'nu_taxa_antecipacao');
+define('CO_PAGAMENTO_BANDEIRA_CARTAO', 'co_pagamento_bandeira_cartao');
 
 
 // SERVICES
@@ -74,3 +80,6 @@ define('FUNCIONAMENTO_SERVICE', 'FuncionamentoService');
 define('IMAGEM_ASSINANTE_SERVICE', 'ImagemAssinanteService');
 define('DIA_ESPECIAL_SERVICE', 'DiaEspecialService');
 define('FERIADO_SERVICE', 'FeriadoService');
+define('BANDEIRA_CARTAO_SERVICE', 'BandeiraCartaoService');
+define('TAXA_CARTAO_SERVICE', 'TaxaCartaoService');
+define('PAGAMENTO_BANDEIRA_CARTAO_SERVICE', 'PagamentoBandeiraCartaoService');
