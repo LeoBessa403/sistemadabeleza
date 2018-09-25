@@ -20,6 +20,7 @@ class PermissaoAcessoEnum extends AbstractEnum
     const DADOS_COMPLEMENTARES_ASSINANTE = 13;
     const LISTAR_DIA_ESPECIAL = 14;
     const CADASTRO_DIA_ESPECIAL = 15;
+    const FORMAS_DE_PAGAMENTO = 16;
 
     public static $descricao = [
         PermissaoAcessoEnum::PERFIL_MASTER => 'Perfil Master',
@@ -36,7 +37,8 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::TROCA_SENHA => 'Troca Senha Usuario',
         PermissaoAcessoEnum::DADOS_COMPLEMENTARES_ASSINANTE => 'Dados Complementares Assinante',
         PermissaoAcessoEnum::LISTAR_DIA_ESPECIAL => 'Listar Dia Especial',
-        PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'Cadastro Dia EspecialL',
+        PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'Cadastro Dia Especial',
+        PermissaoAcessoEnum::FORMAS_DE_PAGAMENTO => 'Formas De Pagamento',
     ];
 
     public static $actions = [
@@ -55,5 +57,6 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::DADOS_COMPLEMENTARES_ASSINANTE => 'DadosComplementaresAssinante',
         PermissaoAcessoEnum::LISTAR_DIA_ESPECIAL => 'ListarDiaEspecialConfiguracao',
         PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'CadastroDiaEspecialConfiguracao',
+        PermissaoAcessoEnum::FORMAS_DE_PAGAMENTO => 'FormasDePagamentoConfiguracao',
     ];
 }
