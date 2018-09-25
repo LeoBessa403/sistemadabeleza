@@ -185,15 +185,15 @@ $user = $us->getUser();
                 <!-- start: MAIN NAVIGATION MENU -->
                 <?php
                 $menu = array(
-                    "Assinante" => array("clip-user-5", "ListarAssinante", "CadastroAssinante", "DadosComplementaresAssinante"),
-                    "Configuracao" => array("clip-settings", "ListarDiaEspecialConfiguracao", "CadastroDiaEspecialConfiguracao"),
-                    "Plano" => array("clip-banknote", "ListarPlano", "CadastroPlano"),
-                    "Visita" => array("clip-airplane", "ListarVisita"),
-                    "Usuario" => array("fa fa-group", "MeuPerfilUsuario", "CadastroUsuario", "ListarUsuario", "TrocaSenhaUsuario"),
-                    "Perfil" => array("clip-stack-empty", "CadastroPerfil", "ListarPerfil"),
-                    "Funcionalidade" => array("fa fa-outdent", "CadastroFuncionalidade", "ListarFuncionalidade"),
-                    "Acesso" => array("clip-connection-2", "ListarAcesso"),
-                    "Auditoria" => array("fa fa-crosshairs", "ListarAuditoria"),
+                    "Assinante" => array("clip-user-5", "Listar Assinante", "Cadastro Assinante", "Dados Complementares Assinante"),
+                    "Configuracao" => array("clip-settings", "Listar Dia Especial Configuracao", "Cadastro Dia Especial Configuracao"),
+                    "Plano" => array("clip-banknote", "Listar Plano", "Cadastro Plano"),
+                    "Visita" => array("clip-airplane", "Listar Visita"),
+                    "Usuario" => array("fa fa-group", "Meu Perfil Usuario", "Listar Usuario", "Cadastro Usuario", "Troca Senha Usuario"),
+                    "Perfil" => array("clip-stack-empty", "Listar Perfil", "Cadastro Perfil"),
+                    "Funcionalidade" => array("fa fa-outdent", "Listar Funcionalidade", "Cadastro Funcionalidade"),
+                    "Acesso" => array("clip-connection-2", "Listar Acesso"),
+                    "Auditoria" => array("fa fa-crosshairs", "Listar Auditoria"),
                 );
                 $url->GeraMenu($menu);
                 ?>

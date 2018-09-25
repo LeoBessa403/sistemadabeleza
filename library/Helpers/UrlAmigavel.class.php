@@ -191,6 +191,7 @@ class UrlAmigavel
             $controle = 0;
             foreach ($montando[$key] as $res) :
                 if ($controle > 0):
+                    $res = str_replace(' ','',$res);
                     $ac = $this->setActionPermissao($res);
                     if (Valida::ValPerfil($ac, $res)) :
                         $tem = true;
@@ -214,6 +215,7 @@ class UrlAmigavel
                 foreach ($montando[$key] as $result) {
                     if ($cout > 0):
                         $titulo_menu = str_replace($titulo[0], "", $result);
+                        $result = str_replace(' ','',$result);
                         $act = $this->setActionPermissao($result);
                         if (Valida::ValPerfil($act, $result)):
                             echo '<li>
