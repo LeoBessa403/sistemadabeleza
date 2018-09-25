@@ -247,7 +247,7 @@ class AssinanteEntidade extends AbstractEntidade
      */
     public function setCoAssinanteMatriz($co_assinante_matriz)
     {
-        $this->co_assinante_matriz = $co_assinante_matriz;
+        return $this->co_assinante_matriz = $co_assinante_matriz;
     }
 
     /**
@@ -264,7 +264,7 @@ class AssinanteEntidade extends AbstractEntidade
      */
     public function setCoAssinanteFilial($co_assinante_filial)
     {
-        $this->co_assinante_filial = $co_assinante_filial;
+        return $this->co_assinante_filial = $co_assinante_filial;
     }
 
     /**
@@ -281,7 +281,7 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @return mixed
+     * @return FacilidadeBeneficioEntidade $co_facilidade_beneficio
      */
     public function getCoFacilidadeBeneficio()
     {
@@ -289,15 +289,16 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @param FacilidadeBeneficioEntidade $co_facilidade_beneficio
+     * @param $co_facilidade_beneficio
+     * @return mixed
      */
     public function setCoFacilidadeBeneficio($co_facilidade_beneficio)
     {
-        $this->co_facilidade_beneficio = $co_facilidade_beneficio;
+        return $this->co_facilidade_beneficio = $co_facilidade_beneficio;
     }
 
     /**
-     * @return mixed
+     * @return FuncionamentoEntidade $co_funcionamento
      */
     public function getCoFuncionamento()
     {
@@ -305,15 +306,16 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @param FuncionamentoEntidade $co_funcionamento
+     * @param $co_funcionamento
+     * @return mixed
      */
     public function setCoFuncionamento($co_funcionamento)
     {
-        $this->co_funcionamento = $co_funcionamento;
+        return $this->co_funcionamento = $co_funcionamento;
     }
 
     /**
-     * @return mixed
+     * @return ImagemAssinanteEntidade $co_facilidade_beneficio
      */
     public function getCoImagemAssinante()
     {
@@ -321,11 +323,12 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @param ImagemAssinanteEntidade $co_imagem_assinante
+     * @param $co_imagem_assinante
+     * @return mixed
      */
     public function setCoImagemAssinante($co_imagem_assinante)
     {
-        $this->co_imagem_assinante = $co_imagem_assinante;
+        return $this->co_imagem_assinante = $co_imagem_assinante;
     }
 
     /**
@@ -341,7 +344,7 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @return mixed
+     * @return DiaEspecialEntidade $co_dia_especial
      */
     public function getCoDiaEspecial()
     {
@@ -349,11 +352,12 @@ class AssinanteEntidade extends AbstractEntidade
     }
 
     /**
-     * @param DiaEspecialEntidade $co_dia_especial
+     * @param $co_dia_especial
+     * @return mixed
      */
     public function setCoDiaEspecial($co_dia_especial)
     {
-        $this->co_dia_especial = $co_dia_especial;
+        return $this->co_dia_especial = $co_dia_especial;
     }
 
 }

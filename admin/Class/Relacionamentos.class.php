@@ -343,6 +343,11 @@ class Relacionamentos
                     ('Entidade') => 'FacilidadeBeneficioEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PAGAMENTO_BANDEIRA_CARTAO) => Array(
+                    ('Campo') => CO_BANDEIRA_CARTAO,
+                    ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (TipoPagamentoEntidade::TABELA) => Array(
                 (CO_FACILIDADE_PAGAMENTO) => Array(
@@ -350,17 +355,12 @@ class Relacionamentos
                     ('Entidade') => 'FacilidadePagamentoEntidade',
                     ('Tipo') => '1',
                 ),
-                (CO_PAGAMENTO_BANDEIRA_CARTAO) => Array(
-                    ('Campo') => CO_FACILIDADE_PAGAMENTO,
-                    ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
-                    ('Tipo') => '1',
-                ),
             ),
             (FacilidadeBeneficioEntidade::TABELA) => Array(
                 (CO_FACILIDADE_PAGAMENTO) => Array(
                     ('Campo') => CO_FACILIDADE_BENEFICIO,
                     ('Entidade') => 'FacilidadePagamentoEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,

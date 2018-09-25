@@ -18,11 +18,19 @@ class FormasDePagamentoForm
         $formulario
             ->setId(CO_TIPO_PAGAMENTO)
             ->setLabel("Formas De Pagamento")
-            ->setClasses("multipla")
+            ->setClasses("multipla ob")
             ->setInfo("Selecione todas as formas de pagamentos aceitas.")
             ->setType("select")
             ->setOptions($todasFormas)
             ->CriaInpunt();
+
+        if (!empty($res[CO_FACILIDADE_BENEFICIO])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_FACILIDADE_BENEFICIO)
+                ->setValues($res[CO_FACILIDADE_BENEFICIO])
+                ->CriaInpunt();
+        endif;
 
         return $formulario->finalizaForm('Configuracao/FormasDePagamentoConfiguracao');
     }

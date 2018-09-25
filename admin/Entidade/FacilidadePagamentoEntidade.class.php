@@ -14,6 +14,7 @@ class FacilidadePagamentoEntidade extends AbstractEntidade
 	private $co_facilidade_pagamento;
 	private $co_tipo_pagamento;
 	private $co_facilidade_beneficio;
+	private $co_pagamento_bandeira_cartao;
 
 
 	/**
@@ -89,4 +90,19 @@ class FacilidadePagamentoEntidade extends AbstractEntidade
         return $this->co_facilidade_beneficio = $co_facilidade_beneficio;
     }
 
+    /**
+     * @return PagamentoBandeiraCartaoEntidade $co_pagamento_bandeira_cartao
+     */
+    public function getCoPagamentoBandeiraCartao()
+    {
+        return $this->co_pagamento_bandeira_cartao;
+    }
+
+    /**
+     * @param mixed $co_pagamento_bandeira_cartao
+     */
+    public function setCoPagamentoBandeiraCartao($co_pagamento_bandeira_cartao)
+    {
+        $this->co_pagamento_bandeira_cartao = $co_pagamento_bandeira_cartao;
+    }
 }
