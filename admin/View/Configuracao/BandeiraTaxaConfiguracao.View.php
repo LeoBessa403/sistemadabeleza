@@ -49,6 +49,7 @@
                               id="BandeiraTaxaDebito" name="BandeiraTaxaDebito">
                             <h2>Taxas Cartões de Débito</h2>
                             <?php
+                            $bandeiras = array_reverse($bandeiras);
                             Modal::load();
                             $arrColunas = array('Aceita', 'Bandeira', 'Taxa do Cartão', 'Taxa de Antecipação', 'Ações');
                             $grid = new Grid();
@@ -74,8 +75,13 @@
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
+                                $nomeBandeira = '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
+                                    'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()).'.png' .
+                                    '&w=80&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
+                                    '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
+
                                 $grid->setColunas($aceita, 1);
-                                $grid->setColunas($bandeira->getNoBandeiraCartao());
+                                $grid->setColunas($nomeBandeira.' - '.$bandeira->getNoBandeiraCartao());
                                 $grid->setColunas($taxa, 4);
                                 $grid->setColunas($taxaAntec, 4);
                                 $grid->setColunas($acao, 2);
@@ -104,7 +110,6 @@
                             $grid = new Grid();
                             $grid->setColunasIndeces($arrColunas);
                             $grid->criaGrid();
-                            $bandeiras = array_reverse($bandeiras);
                             /** @var BandeiraCartaoEntidade $bandeira */
                             foreach ($bandeiras as $bandeira) :
                                 $acao = '';
@@ -124,7 +129,10 @@
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
-                                $nomeBandeira = Valida::ValNome($bandeira->getNoBandeiraCartao()).'.png';
+                                $nomeBandeira = '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
+                                    'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()).'.png' .
+                                    '&w=80&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
+                                    '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
 
                                 $grid->setColunas($aceita, 1);
                                 $grid->setColunas($nomeBandeira.' - '.$bandeira->getNoBandeiraCartao());
