@@ -43,41 +43,104 @@
                         Bandeiras / Taxas
                     </div>
                     <div class="panel-body">
-                        <?php
-                        Modal::load();
-                        $arrColunas = array('Aceita', 'Bandeira', 'Taxa do Cartão', 'Taxa de Antecipação', 'Ações');
-                        $grid = new Grid();
-                        $grid->setColunasIndeces($arrColunas);
-                        $grid->criaGrid();
-                        $bandeiras = array_reverse($bandeiras);
-                        /** @var BandeiraCartaoEntidade $bandeira */
-                        foreach ($bandeiras as $bandeira) :
-                            $acao = '';
-                            $aceita = '<input type="checkbox" class="square-green"
-                                          value="" id="bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '"
-                                          name="bandeira-taxa[' . $bandeira->getCoBandeiraCartao() . ']"/>';
-                            $taxa = '<div class="col-md-12 input-group bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '">
+                        <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
+                              role="form" class="formulario"
+                              method="post" enctype="multipart/form-data"
+                              id="BandeiraTaxaDebito" name="BandeiraTaxaDebito">
+                            <h2>Taxas Cartões de Débito</h2>
+                            <?php
+                            Modal::load();
+                            $arrColunas = array('Aceita', 'Bandeira', 'Taxa do Cartão', 'Taxa de Antecipação', 'Ações');
+                            $grid = new Grid();
+                            $grid->setColunasIndeces($arrColunas);
+                            $grid->criaGrid();
+                            $bandeiras = array_reverse($bandeiras);
+                            /** @var BandeiraCartaoEntidade $bandeira */
+                            foreach ($bandeiras as $bandeira) :
+                                $acao = '';
+                                $aceita = '<input type="checkbox" class="square-green"
+                                          value="" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
+                                          name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>';
+                                $taxa = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
-                                          placeholder="0,00" id="bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '"
-                                          value="" name="bandeira-taxa[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                          placeholder="0,00" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
+                                          value="" name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
-                            $taxaAntec = '<div class="col-md-12 input-group bandeira-taxaAntec-' . $bandeira->getCoBandeiraCartao() . '">
+                                $taxaAntec = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
-                                          placeholder="0,00" id="bandeira-taxaAntec-' . $bandeira->getCoBandeiraCartao() . '"
-                                           value="" name="bandeira-taxaAntec[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                          placeholder="0,00" id="bandeira-taxaAntec-deb-' . $bandeira->getCoBandeiraCartao() . '"
+                                           value="" name="bandeira-taxaAntec-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
-                            $grid->setColunas($aceita, 1);
-                            $grid->setColunas($bandeira->getNoBandeiraCartao());
-                            $grid->setColunas($taxa, 4);
-                            $grid->setColunas($taxaAntec, 4);
-                            $grid->setColunas($acao, 2);
-                            $grid->criaLinha($bandeira->getCoBandeiraCartao());
-                        endforeach;
-                        $grid->finalizaGrid();
-                        ?>
+                                $grid->setColunas($aceita, 1);
+                                $grid->setColunas($bandeira->getNoBandeiraCartao());
+                                $grid->setColunas($taxa, 4);
+                                $grid->setColunas($taxaAntec, 4);
+                                $grid->setColunas($acao, 2);
+                                $grid->criaLinha($bandeira->getCoBandeiraCartao());
+                            endforeach;
+                            $grid->finalizaGrid();
+                            ?>
+                            <div class="form-group">
+                                <div class="col-sm-2 col-sm-offset-10">
+                                    <button type="submit" class="btn btn-success btn-block">
+                                        Salvar <i class="fa fa-arrow-circle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-body">
+                        <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
+                              role="form" class="formulario"
+                              method="post" enctype="multipart/form-data"
+                              id="BandeiraTaxaCredito" name="BandeiraTaxaCredito">
+                            <h2>Taxas Cartões de Crédito</h2>
+                            <?php
+                            Modal::load();
+                            $arrColunas = array('Aceita', 'Bandeira', 'Taxa do Cartão', 'Taxa de Antecipação', 'Ações');
+                            $grid = new Grid();
+                            $grid->setColunasIndeces($arrColunas);
+                            $grid->criaGrid();
+                            $bandeiras = array_reverse($bandeiras);
+                            /** @var BandeiraCartaoEntidade $bandeira */
+                            foreach ($bandeiras as $bandeira) :
+                                $acao = '';
+                                $aceita = '<input type="checkbox" class="square-green"
+                                          value="" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
+                                          name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>';
+                                $taxa = '<div class="col-md-12 input-group">
+                                    <input type="text" class="form-control porcentagem"
+                                          placeholder="0,00" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
+                                          value="" name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                          <span class="input-group-addon" style="height: 34px;">
+                                    %</span></div>';
+                                $taxaAntec = '<div class="col-md-12 input-group">
+                                    <input type="text" class="form-control porcentagem"
+                                          placeholder="0,00" id="bandeira-taxaAntec-cred-' . $bandeira->getCoBandeiraCartao() . '"
+                                           value="" name="bandeira-taxaAntec-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                          <span class="input-group-addon" style="height: 34px;">
+                                    %</span></div>';
+
+                                $grid->setColunas($aceita, 1);
+                                $grid->setColunas($bandeira->getNoBandeiraCartao());
+                                $grid->setColunas($taxa, 4);
+                                $grid->setColunas($taxaAntec, 4);
+                                $grid->setColunas($acao, 2);
+                                $grid->criaLinha($bandeira->getCoBandeiraCartao());
+                            endforeach;
+                            $grid->finalizaGrid();
+                            ?>
+                            <div class="form-group">
+                                <div class="col-sm-2 col-sm-offset-10">
+                                    <button type="submit" class="btn btn-success btn-block">
+                                        Salvar <i class="fa fa-arrow-circle-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <!-- end: DYNAMIC TABLE PANEL -->

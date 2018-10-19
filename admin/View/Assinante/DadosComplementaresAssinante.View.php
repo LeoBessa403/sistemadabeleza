@@ -542,8 +542,6 @@ $assinanteEdit = $assinante;
                                     ?>
                                     <div class="form-group col-sm-12">
                                         <div class="col-sm-12">
-
-
                                             <table class="table-striped table-bordered table-hover table-full-width"
                                                    id="nova" style="width: 100%" cellpadding="5" cellspacing="5">
                                                 <thead>
