@@ -124,8 +124,10 @@
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
+                                $nomeBandeira = Valida::ValNome($bandeira->getNoBandeiraCartao()).'.png';
+
                                 $grid->setColunas($aceita, 1);
-                                $grid->setColunas($bandeira->getNoBandeiraCartao());
+                                $grid->setColunas($nomeBandeira.' - '.$bandeira->getNoBandeiraCartao());
                                 $grid->setColunas($taxa, 4);
                                 $grid->setColunas($taxaAntec, 4);
                                 $grid->setColunas($acao, 2);
