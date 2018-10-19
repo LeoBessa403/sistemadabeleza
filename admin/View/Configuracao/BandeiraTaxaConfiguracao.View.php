@@ -56,13 +56,13 @@
                             $aceita = '<input type="checkbox" class="square-green"
                                           value="" id="bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '"
                                           name="bandeira-taxa[' . $bandeira->getCoBandeiraCartao() . ']"/>';
-                            $taxa = '<div class="col-md-4 input-group bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '">
-                                    <input type="text" class="form-control porcentagem" maxlenght="4"
+                            $taxa = '<div class="col-md-12 input-group bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '">
+                                    <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '"
                                           value="" name="bandeira-taxa[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
-                            $taxaAntec = '<div class="col-md-4 input-group bandeira-taxaAntec-' . $bandeira->getCoBandeiraCartao() . '">
+                            $taxaAntec = '<div class="col-md-12 input-group bandeira-taxaAntec-' . $bandeira->getCoBandeiraCartao() . '">
                                     <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxaAntec-' . $bandeira->getCoBandeiraCartao() . '"
                                            value="" name="bandeira-taxaAntec[' . $bandeira->getCoBandeiraCartao() . ']"/>
@@ -71,8 +71,8 @@
 
                             $grid->setColunas($aceita, 1);
                             $grid->setColunas($bandeira->getNoBandeiraCartao());
-                            $grid->setColunas($taxa);
-                            $grid->setColunas($taxaAntec);
+                            $grid->setColunas($taxa, 4);
+                            $grid->setColunas($taxaAntec, 4);
                             $grid->setColunas($acao, 2);
                             $grid->criaLinha($bandeira->getCoBandeiraCartao());
                         endforeach;
