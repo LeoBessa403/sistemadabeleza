@@ -4,6 +4,7 @@ class Configuracao extends AbstractController
 {
     public $result;
     public $feriados;
+    public $bandeiras;
 
     public function ListarDiaEspecialConfiguracao()
     {
@@ -79,6 +80,19 @@ class Configuracao extends AbstractController
         }
         $this->form = FormasDePagamentoForm::Cadastrar($res);
     }
+
+
+    public function BandeiraTaxaConfiguracao()
+    {
+        /** @var BandeiraCartaoService $bandeiraCartaoService */
+        $bandeiraCartaoService = $this->getService(BANDEIRA_CARTAO_SERVICE);
+        $this->bandeiras = $bandeiraCartaoService->PesquisaTodos();
+
+        /** @var DiaEspecialService $diaEspecialService */
+        $diaEspecialService = $this->getService(DIA_ESPECIAL_SERVICE);
+        $this->result = $diaEspecialService->PesquisaTodos();
+    }
+
 
 }
    

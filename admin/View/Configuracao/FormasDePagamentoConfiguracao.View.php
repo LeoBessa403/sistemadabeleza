@@ -17,7 +17,9 @@
 
                             </ol>
                             <div class="page-header">
-                                    <h1>Formas de Pagamento <small>Cadastro / Edição</small></h1>
+                                    <h1>Formas de Pagamento <small>Cadastro / Edição</small>
+                                        <?php Valida::geraBtnNovo("Bandeiras / Taxas", "BandeiraTaxaConfiguracao"); ?>
+                                    </h1>
                             </div>
                             <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>

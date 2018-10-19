@@ -21,6 +21,7 @@ class PermissaoAcessoEnum extends AbstractEnum
     const LISTAR_DIA_ESPECIAL = 14;
     const CADASTRO_DIA_ESPECIAL = 15;
     const FORMAS_DE_PAGAMENTO = 16;
+    const BANDEIRAS_TAXAS = 17;
 
     public static $descricao = [
         PermissaoAcessoEnum::PERFIL_MASTER => 'Perfil Master',
@@ -39,6 +40,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::LISTAR_DIA_ESPECIAL => 'Listar Dia Especial',
         PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'Cadastro Dia Especial',
         PermissaoAcessoEnum::FORMAS_DE_PAGAMENTO => 'Formas De Pagamento',
+        PermissaoAcessoEnum::BANDEIRAS_TAXAS => 'Bandeiras / Taxas',
     ];
 
     public static $actions = [
@@ -58,5 +60,6 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::LISTAR_DIA_ESPECIAL => 'ListarDiaEspecialConfiguracao',
         PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'CadastroDiaEspecialConfiguracao',
         PermissaoAcessoEnum::FORMAS_DE_PAGAMENTO => 'FormasDePagamentoConfiguracao',
+        PermissaoAcessoEnum::BANDEIRAS_TAXAS => 'BandeiraTaxaConfiguracao',
     ];
 }

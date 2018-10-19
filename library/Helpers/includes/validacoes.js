@@ -206,6 +206,16 @@ $(function () {
         }
     }
 
+    function mascaraPorcentagem(element, valor) {
+        if (valor.length === 4) {
+            element.unmask();
+            element.mask("99,9?9");
+        } else if (valor.length === 3) {
+            element.unmask();
+            element.mask("9,99");
+        }
+    }
+
     // MASCARAS
 
     // Somente letras maiúsculas, minúsculas, espaço e acentos
@@ -382,6 +392,12 @@ $(function () {
     }).keyup(function () {
         var valor = $(this).val().replace(/[^0-9]+/g, '');
         valor = valor.val().replace(/[^,.]+/g, '');
+        $(this).val(valor);
+    });
+    $(".porcentagem").mask("99,9?9").keyup(function () {
+        var valor = $(this).val().replace(/[^0-9]+/g, '');
+        mascaraPorcentagem($(this), valor);
+        valor = valor.val().replace(/[^()-]+/g, '');
         $(this).val(valor);
     });
 
