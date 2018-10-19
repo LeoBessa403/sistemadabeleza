@@ -57,7 +57,7 @@
                                           value="" id="bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '"
                                           name="bandeira-taxa[' . $bandeira->getCoBandeiraCartao() . ']"/>';
                             $taxa = '<div class="col-md-4 input-group bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '">
-                                    <input type="text" class="form-control porcentagem"
+                                    <input type="text" class="form-control porcentagem" maxlenght="4"
                                           placeholder="0,00" id="bandeira-taxa-' . $bandeira->getCoBandeiraCartao() . '"
                                           value="" name="bandeira-taxa[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
