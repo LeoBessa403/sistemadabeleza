@@ -61,7 +61,6 @@
                                 $bandeiras = array_reverse($bandeiras);
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
-                                    $acao = '';
                                     $aceita = '<input type="checkbox" class="square-green"
                                           value="" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
                                           name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>';
@@ -76,6 +75,13 @@
                                         'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()) . '.png' .
                                         '&w=80&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
+
+                                    $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoCartao/' .
+                                        Valida::GeraParametro(CO_BANDEIRA_CARTAO . "/" . $bandeira->getCoBandeiraCartao()) . '" 
+                                        class="btn btn-med-grey tooltips" 
+                                            data-original-title="Histórico de taxas da bandeira" data-placement="top">
+                                             <i class="clip-folder-open"></i>
+                                         </a>';
 
                                     $grid->setColunas($aceita, 1);
                                     $grid->setColunas($nomeBandeira . ' - ' . $bandeira->getNoBandeiraCartao());
@@ -112,7 +118,6 @@
                                 $grid->criaGrid();
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
-                                    $acao = '';
                                     $aceita = '<input type="checkbox" class="square-green"
                                           value="" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
                                           name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>';
@@ -133,6 +138,13 @@
                                         'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()) . '.png' .
                                         '&w=80&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
+
+                                    $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoCartao/' .
+                                        Valida::GeraParametro(CO_BANDEIRA_CARTAO . "/" . $bandeira->getCoBandeiraCartao()) . '" 
+                                        class="btn btn-med-grey tooltips" 
+                                            data-original-title="Histórico de taxas da bandeira" data-placement="top">
+                                             <i class="clip-folder-open"></i>
+                                         </a>';
 
                                     $grid->setColunas($aceita, 1);
                                     $grid->setColunas($nomeBandeira . ' - ' . $bandeira->getNoBandeiraCartao());
