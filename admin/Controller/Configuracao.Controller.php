@@ -5,6 +5,7 @@ class Configuracao extends AbstractController
     public $result;
     public $feriados;
     public $bandeiras;
+    public $dadosTipoPagamento;
 
     public function ListarDiaEspecialConfiguracao()
     {
@@ -59,6 +60,12 @@ class Configuracao extends AbstractController
         if (!empty($_POST[$id])):
             $retorno = $facilidadePagamentoService->salvaFacilidadePagamento($_POST);
             if ($retorno[SUCESSO]) {
+                foreach ($_POST[CO_TIPO_PAGAMENTO] as $tipoPagamento) {
+                    if ($tipoPagamento == TipoPagamentoEnum::CARTAO_CREDITO ||
+                        $tipoPagamento == TipoPagamentoEnum::CARTAO_DEBITO) {
+                        Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/BandeiraTaxaConfiguracao/');
+                    }
+                }
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/FormasDePagamentoConfiguracao/');
             }
         endif;
@@ -70,9 +77,9 @@ class Configuracao extends AbstractController
             $FacilidadeBeneficio = $facilidadeBeneficioService->PesquisaUmRegistro($res[CO_FACILIDADE_BENEFICIO]);
 
             $facPag = [];
-            if(!empty($FacilidadeBeneficio->getCoFacilidadePagamento())){
+            if (!empty($FacilidadeBeneficio->getCoFacilidadePagamento())) {
                 /** @var FacilidadePagamentoEntidade $FacilidadePag */
-                foreach ($FacilidadeBeneficio->getCoFacilidadePagamento() as $FacilidadePag){
+                foreach ($FacilidadeBeneficio->getCoFacilidadePagamento() as $FacilidadePag) {
                     $facPag[] = $FacilidadePag->getCoTipoPagamento()->getCoTipoPagamento();
                 }
             }
@@ -84,6 +91,35 @@ class Configuracao extends AbstractController
 
     public function BandeiraTaxaConfiguracao()
     {
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var AssinanteEntidade $assinante */
+        $assinante = $assinanteService->getAssinanteLogado();
+        $session = new Session();
+
+        $facilidadesPagamentos = $assinante->getCoFacilidadeBeneficio()->getCoFacilidadePagamento();
+        /** @var FacilidadePagamentoEntidade $tipoPagamento */
+        $dadosTipoPagamento = [
+            TipoPagamentoEnum::CARTAO_CREDITO => null,
+            TipoPagamentoEnum::CARTAO_DEBITO => null
+        ];
+
+        foreach ($facilidadesPagamentos as $tipoPagamento) {
+            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO){
+                $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] = true;
+            }
+            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO){
+                $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
+            }
+        }
+
+        if(!$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] &&
+            !$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO]){
+            $session->setSession(MENSAGEM,
+                'Inclusão apenas de taxas para tipos de pagamento aceito com Cartões de Débito e/ou Crédito');
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/FormasDePagamentoConfiguracao/');
+        }
+
         /** @var BandeiraCartaoService $bandeiraCartaoService */
         $bandeiraCartaoService = $this->getService(BANDEIRA_CARTAO_SERVICE);
         $this->bandeiras = $bandeiraCartaoService->PesquisaTodos();
@@ -91,6 +127,8 @@ class Configuracao extends AbstractController
         /** @var DiaEspecialService $diaEspecialService */
         $diaEspecialService = $this->getService(DIA_ESPECIAL_SERVICE);
         $this->result = $diaEspecialService->PesquisaTodos();
+
+        $this->dadosTipoPagamento = $dadosTipoPagamento;
     }
 
 
