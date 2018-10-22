@@ -54,7 +54,7 @@
                                 <?php
                                 $bandeiras = array_reverse($bandeiras);
                                 Modal::load();
-                                $arrColunas = array('Aceita', 'Bandeira', 'Taxa do Cartão', 'Taxa de Antecipação', 'Ações');
+                                $arrColunas = array('Aceita', 'Bandeira', 'Taxa do Cartão', 'Ações');
                                 $grid = new Grid();
                                 $grid->setColunasIndeces($arrColunas);
                                 $grid->criaGrid();
@@ -71,12 +71,6 @@
                                           value="" name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
-                                    $taxaAntec = '<div class="col-md-12 input-group">
-                                    <input type="text" class="form-control porcentagem"
-                                          placeholder="0,00" id="bandeira-taxaAntec-deb-' . $bandeira->getCoBandeiraCartao() . '"
-                                           value="" name="bandeira-taxaAntec-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
-                                          <span class="input-group-addon" style="height: 34px;">
-                                    %</span></div>';
 
                                     $nomeBandeira = '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
                                         'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()) . '.png' .
@@ -86,7 +80,6 @@
                                     $grid->setColunas($aceita, 1);
                                     $grid->setColunas($nomeBandeira . ' - ' . $bandeira->getNoBandeiraCartao());
                                     $grid->setColunas($taxa, 4);
-                                    $grid->setColunas($taxaAntec, 4);
                                     $grid->setColunas($acao, 2);
                                     $grid->criaLinha($bandeira->getCoBandeiraCartao());
                                 endforeach;
@@ -161,7 +154,11 @@
                         </div>
                     <?php } ?>
                 </div>
-                <!-- end: DYNAMIC TABLE PANEL -->
+                <div class="col-sm-2 col-sm-offset-11">
+                    <!-- end: DYNAMIC TABLE PANEL -->
+                    <?php Valida::geraBtnVoltar('Configuracao/FormasDePagamentoConfiguracao/'); ?>
+                </div>
+                <br><br><br>
             </div>
         </div>
         <!-- end: PAGE CONTENT-->
