@@ -344,7 +344,7 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
                 (CO_PAGAMENTO_BANDEIRA_CARTAO) => Array(
-                    ('Campo') => CO_BANDEIRA_CARTAO,
+                    ('Campo') => CO_FACILIDADE_PAGAMENTO,
                     ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
                     ('Tipo') => '2',
                 ),
