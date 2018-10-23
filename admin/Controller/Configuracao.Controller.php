@@ -6,6 +6,8 @@ class Configuracao extends AbstractController
     public $feriados;
     public $bandeiras;
     public $dadosTipoPagamento;
+    public $taxasCartDeb;
+    public $taxasCartCred;
 
     public function ListarDiaEspecialConfiguracao()
     {
@@ -117,20 +119,32 @@ class Configuracao extends AbstractController
             TipoPagamentoEnum::CARTAO_DEBITO => null
         ];
 
+        $taxasCartDeb = [];
+        $taxasCartCred = [];
         /** @var FacilidadePagamentoEntidade $facilidadePagamentos */
         foreach ($facilidadesPagamentos as $facilidadePagamentos) {
             if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO) {
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] = true;
+                /** @var FacilidadePagamentoEntidade $facPagamento */
+                $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro($facilidadePagamentos->getCoFacilidadePagamento());
+                /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
+                foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
+                    $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
+                    $taxasCartCred[$bandCartao][NU_TAXA_CARTAO] = $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao();
+                    $taxasCartCred[$bandCartao][NU_TAXA_ANTECIPACAO] = $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaAntecipacao();
+                }
             }
             if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO) {
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
                 /** @var FacilidadePagamentoEntidade $facPagamento */
                 $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro($facilidadePagamentos->getCoFacilidadePagamento());
-                debug($facPagamento);
+                /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
+                foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
+                    $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
+                    $taxasCartDeb[$bandCartao][NU_TAXA_CARTAO] = $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao();
+                }
             }
-
         }
-
         if (!$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] &&
             !$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO]) {
             $session->setSession(MENSAGEM,
@@ -143,6 +157,8 @@ class Configuracao extends AbstractController
         $this->bandeiras = $bandeiraCartaoService->PesquisaTodos();
 
         $this->dadosTipoPagamento = $dadosTipoPagamento;
+        $this->taxasCartCred = $taxasCartCred;
+        $this->taxasCartDeb = $taxasCartDeb;
     }
 
 

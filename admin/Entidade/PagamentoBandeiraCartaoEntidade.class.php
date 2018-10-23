@@ -107,4 +107,12 @@ class PagamentoBandeiraCartaoEntidade extends AbstractEntidade
         return $this->co_taxa_cartao = $co_taxa_cartao;
     }
 
+    /**
+     * @return TaxaCartaoEntidade $co_taxa_cartao
+     */
+    public function getCoUltimaTaxaCartao()
+    {
+        return $this->ultimo($this->co_taxa_cartao);
+    }
+
 }

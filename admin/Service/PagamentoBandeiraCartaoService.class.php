@@ -58,7 +58,7 @@ class  PagamentoBandeiraCartaoService extends AbstractService
                     $cartCred[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
                     $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartCred);
                     $taxaCartCred[NU_TAXA_CARTAO] = Valida::FormataMoedaBanco($taxaCartao);
-                    $taxaCartCred[NU_TAXA_ANTECIPACAO] = Valida::FormataMoedaBanco($taxaCartao);
+                    $taxaCartCred[NU_TAXA_ANTECIPACAO] = Valida::FormataMoedaBanco($dados["bandeira-taxaAntec-cred"][$bandeiraCartao]);
                     $retorno[SUCESSO] = $taxaCartaoService->Salva($taxaCartCred);
                 }
             }

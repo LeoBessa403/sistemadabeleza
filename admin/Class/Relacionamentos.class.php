@@ -405,7 +405,7 @@ class Relacionamentos
                 (CO_TAXA_CARTAO) => Array(
                     ('Campo') => CO_PAGAMENTO_BANDEIRA_CARTAO,
                     ('Entidade') => 'TaxaCartaoEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
                 (CO_FACILIDADE_PAGAMENTO) => Array(
                     ('Campo') => CO_FACILIDADE_PAGAMENTO,

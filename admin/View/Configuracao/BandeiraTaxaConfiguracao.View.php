@@ -59,7 +59,12 @@
                                 $grid->criaGrid();
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
-
+                                    $check = '';
+                                    $valor = '';
+                                    if (isset($taxasCartDeb[$bandeira->getCoBandeiraCartao()])) {
+                                        $valor = $taxasCartDeb[$bandeira->getCoBandeiraCartao()][NU_TAXA_CARTAO];
+                                        $check = 'checked="checked"';
+                                    }
                                     $aceita = '<div id="change-color-switch" class="make-switch"
                                                  data-on-label="<i class=\'fa fa-check fa-white\'></i>"
                                                  data-off-label="<i class=\'fa fa-times fa-white\'></i>"
@@ -67,13 +72,13 @@
                                                  data-off="danger">
                                                 <input type="checkbox" id="aceite-bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
                                                        name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']" 
-                                                       class="aceite-deb" title=""/>
+                                                       ' . $check . ' class="aceite-deb" title=""/>
                                             </div>';
 
                                     $taxa = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
-                                          value="" name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                          value="' . $valor . '" name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
@@ -123,6 +128,14 @@
                                 $grid->criaGrid();
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
+                                    $check = '';
+                                    $valor = '';
+                                    $valorAnt = '';
+                                    if (isset($taxasCartCred[$bandeira->getCoBandeiraCartao()])) {
+                                        $valor = $taxasCartCred[$bandeira->getCoBandeiraCartao()][NU_TAXA_CARTAO];
+                                        $valorAnt = $taxasCartCred[$bandeira->getCoBandeiraCartao()][NU_TAXA_ANTECIPACAO];
+                                        $check = 'checked="checked"';
+                                    }
                                     $aceita = '<div id="change-color-switch" class="make-switch"
                                                  data-on-label="<i class=\'fa fa-check fa-white\'></i>"
                                                  data-off-label="<i class=\'fa fa-times fa-white\'></i>"
@@ -130,19 +143,19 @@
                                                  data-off="danger">
                                                 <input type="checkbox" id="aceite-bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
                                                        name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']" 
-                                                       class="aceite-cred" title=""/>
+                                                       ' . $check . ' class="aceite-cred" title=""/>
                                             </div>';
 
                                     $taxa = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
-                                          value="" name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                          value="' . $valor . '" name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
                                     $taxaAntec = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxaAntec-cred-' . $bandeira->getCoBandeiraCartao() . '"
-                                           value="" name="bandeira-taxaAntec-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
+                                           value="' . $valorAnt . '" name="bandeira-taxaAntec-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
