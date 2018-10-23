@@ -99,7 +99,8 @@ class FacilidadePagamentoEntidade extends AbstractEntidade
     }
 
     /**
-     * @param mixed $co_pagamento_bandeira_cartao
+     * @param $co_pagamento_bandeira_cartao
+     * @return mixed
      */
     public function setCoPagamentoBandeiraCartao($co_pagamento_bandeira_cartao)
     {

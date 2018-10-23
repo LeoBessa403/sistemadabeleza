@@ -93,6 +93,8 @@ class Configuracao extends AbstractController
     {
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var FacilidadePagamentoService $facilidadePagamentoService */
+        $facilidadePagamentoService = $this->getService(FACILIDADE_PAGAMENTO_SERVICE);
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
         $session = new Session();
@@ -115,13 +117,18 @@ class Configuracao extends AbstractController
             TipoPagamentoEnum::CARTAO_DEBITO => null
         ];
 
-        foreach ($facilidadesPagamentos as $tipoPagamento) {
-            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO) {
+        /** @var FacilidadePagamentoEntidade $facilidadePagamentos */
+        foreach ($facilidadesPagamentos as $facilidadePagamentos) {
+            if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO) {
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] = true;
             }
-            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO) {
+            if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO) {
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
+                /** @var FacilidadePagamentoEntidade $facPagamento */
+                $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro($facilidadePagamentos->getCoFacilidadePagamento());
+                debug($facPagamento);
             }
+
         }
 
         if (!$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] &&
@@ -134,10 +141,6 @@ class Configuracao extends AbstractController
         /** @var BandeiraCartaoService $bandeiraCartaoService */
         $bandeiraCartaoService = $this->getService(BANDEIRA_CARTAO_SERVICE);
         $this->bandeiras = $bandeiraCartaoService->PesquisaTodos();
-
-        /** @var DiaEspecialService $diaEspecialService */
-        $diaEspecialService = $this->getService(DIA_ESPECIAL_SERVICE);
-        $this->result = $diaEspecialService->PesquisaTodos();
 
         $this->dadosTipoPagamento = $dadosTipoPagamento;
     }
