@@ -16,27 +16,4 @@ class  TaxaCartaoService extends AbstractService
         $this->ObjetoModel = New TaxaCartaoModel();
     }
 
-    public function salvaTaxaCartao($dados)
-    {
-        $session = new Session();
-        $retorno = [
-            SUCESSO => false,
-            MSG => null
-        ];
-
-        debug($dados);
-
-
-        $retorno[SUCESSO] = true;
-
-        if ($retorno[SUCESSO]) {
-            $retorno[SUCESSO] = true;
-            $session->setSession(MENSAGEM, ATUALIZADO);
-        } else {
-            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
-            $retorno[SUCESSO] = false;
-        }
-        return $retorno;
-    }
-
 }
