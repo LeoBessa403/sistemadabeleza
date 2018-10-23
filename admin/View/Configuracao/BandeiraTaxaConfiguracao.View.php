@@ -81,7 +81,7 @@
 
                                     $nomeBandeira = '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
                                         'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()) . '.png' .
-                                        '&w=80&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
+                                        '&w=100&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
 
                                     $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoCartao/' .
@@ -151,7 +151,7 @@
 
                                     $nomeBandeira = '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
                                         'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()) . '.png' .
-                                        '&w=80&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
+                                        '&w=100&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
 
                                     $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoCartao/' .
