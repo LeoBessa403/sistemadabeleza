@@ -57,7 +57,6 @@
                                 $grid = new Grid();
                                 $grid->setColunasIndeces($arrColunas);
                                 $grid->criaGrid();
-                                $bandeiras = array_reverse($bandeiras);
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
 

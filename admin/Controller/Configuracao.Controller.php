@@ -100,8 +100,9 @@ class Configuracao extends AbstractController
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
         $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
 
-        if (!empty($_POST["bandeira-taxa-deb"] || !empty($_POST["bandeira-taxa-cred"]))):
-            $retorno = $pagamentoBandeiraCartaoService->salvaPagamentoBandeiraCartao($_POST);
+        if (isset($_POST["bandeira-taxa-deb"]) || isset($_POST["bandeira-taxa-cred"])):
+            $retorno = $pagamentoBandeiraCartaoService->salvaPagamentoBandeiraCartao($_POST,
+                $assinante->getCoFacilidadeBeneficio()->getCoFacilidadePagamento());
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/FormasDePagamentoConfiguracao/');
             }
