@@ -61,9 +61,17 @@
                                 $bandeiras = array_reverse($bandeiras);
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
-                                    $aceita = '<input type="checkbox" class="square-green"
-                                          value="" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
-                                          name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>';
+
+                                    $aceita = '<div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class=\'fa fa-check fa-white\'></i>"
+                                                 data-off-label="<i class=\'fa fa-times fa-white\'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="aceite-bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
+                                                       name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']" 
+                                                       class="aceite-deb" title=""/>
+                                            </div>';
+
                                     $taxa = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
@@ -118,9 +126,16 @@
                                 $grid->criaGrid();
                                 /** @var BandeiraCartaoEntidade $bandeira */
                                 foreach ($bandeiras as $bandeira) :
-                                    $aceita = '<input type="checkbox" class="square-green"
-                                          value="" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
-                                          name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>';
+                                    $aceita = '<div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class=\'fa fa-check fa-white\'></i>"
+                                                 data-off-label="<i class=\'fa fa-times fa-white\'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="aceite-bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
+                                                       name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']" 
+                                                       class="aceite-cred" title=""/>
+                                            </div>';
+
                                     $taxa = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porcentagem"
                                           placeholder="0,00" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
