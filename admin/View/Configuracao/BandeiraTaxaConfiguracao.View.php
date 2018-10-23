@@ -47,8 +47,7 @@
                         ?>
                         <div class="panel-body">
                             <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
-                                  role="form" class="formulario"
-                                  method="post" enctype="multipart/form-data"
+                                  role="form" class="formulario" method="post" enctype="multipart/form-data"
                                   id="BandeiraTaxaDebito" name="BandeiraTaxaDebito">
                                 <h2>Taxas Cartões de Débito</h2>
                                 <?php
@@ -114,8 +113,7 @@
                         ?>
                         <div class="panel-body">
                             <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
-                                  role="form" class="formulario"
-                                  method="post" enctype="multipart/form-data"
+                                  role="form" class="formulario" method="post" enctype="multipart/form-data"
                                   id="BandeiraTaxaCredito" name="BandeiraTaxaCredito">
                                 <h2>Taxas Cartões de Crédito</h2>
                                 <?php

@@ -97,6 +97,16 @@ class Configuracao extends AbstractController
         $assinante = $assinanteService->getAssinanteLogado();
         $session = new Session();
 
+        /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
+        $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
+
+        if (!empty($_POST["bandeira-taxa-deb"] || !empty($_POST["bandeira-taxa-cred"]))):
+            $retorno = $pagamentoBandeiraCartaoService->salvaPagamentoBandeiraCartao($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/FormasDePagamentoConfiguracao/');
+            }
+        endif;
+
         $facilidadesPagamentos = $assinante->getCoFacilidadeBeneficio()->getCoFacilidadePagamento();
         /** @var FacilidadePagamentoEntidade $tipoPagamento */
         $dadosTipoPagamento = [
@@ -105,16 +115,16 @@ class Configuracao extends AbstractController
         ];
 
         foreach ($facilidadesPagamentos as $tipoPagamento) {
-            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO){
+            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO) {
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] = true;
             }
-            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO){
+            if ($tipoPagamento->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO) {
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
             }
         }
 
-        if(!$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] &&
-            !$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO]){
+        if (!$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] &&
+            !$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO]) {
             $session->setSession(MENSAGEM,
                 'Inclusão apenas de taxas para tipos de pagamento aceito com Cartões de Débito e/ou Crédito');
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/FormasDePagamentoConfiguracao/');
