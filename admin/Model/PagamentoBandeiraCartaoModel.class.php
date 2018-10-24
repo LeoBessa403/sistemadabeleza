@@ -21,7 +21,7 @@ class  PagamentoBandeiraCartaoModel extends AbstractModel
             " inner join " . PagamentoBandeiraCartaoEntidade::TABELA . " pbc" .
             " on fpa." . FacilidadePagamentoEntidade::CHAVE . " = pbc." . FacilidadePagamentoEntidade::CHAVE;
 
-        $campos = "fpa." . CO_FACILIDADE_PAGAMENTO;
+        $campos = "pbc." . CO_PAGAMENTO_BANDEIRA_CARTAO;
         $pesquisa = new Pesquisa();
         $where = "where fbe." . CO_ASSINANTE . " in (11)";
         if (!empty($dados[CO_TIPO_PAGAMENTO])) {

@@ -50,7 +50,7 @@ class  PagamentoBandeiraCartaoService extends AbstractService
                         $cartDeb[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
                         $taxaCartDeb[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartDeb);
                     } else {
-                        $taxaCartDeb[CO_PAGAMENTO_BANDEIRA_CARTAO] = $coFacPag[0][CO_FACILIDADE_PAGAMENTO];
+                        $taxaCartDeb[CO_PAGAMENTO_BANDEIRA_CARTAO] = $coFacPag[0][CO_PAGAMENTO_BANDEIRA_CARTAO];
                     }
                     $taxaCartDeb[NU_TAXA_CARTAO] = Valida::FormataMoedaBanco($taxaCartao);
                     $retorno[SUCESSO] = $taxaCartaoService->Salva($taxaCartDeb);
@@ -69,7 +69,7 @@ class  PagamentoBandeiraCartaoService extends AbstractService
                         $cartCred[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
                         $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartCred);
                     } else {
-                        $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $coFacPag[0][CO_FACILIDADE_PAGAMENTO];
+                        $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $coFacPag[0][CO_PAGAMENTO_BANDEIRA_CARTAO];
                     }
 
                     $taxaCartCred[NU_TAXA_CARTAO] = Valida::FormataMoedaBanco($taxaCartao);
