@@ -16,7 +16,7 @@
                 </ol>
                 <div class="page-header">
                     <h1>Taxas Cartão
-                        <small>Histórico Taxa Cartão Débito</small>
+                        <small>Histórico Taxa Cartão Crédito</small>
                     </h1>
                     <span class="pull-right" style="float: right; margin-right: 10px; margin-top: -30px;">
                         <?php
@@ -36,11 +36,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Historico Taxa Cartão Debito
+                        Historico Taxa Cartão Crédito
                     </div>
                     <div class="panel-body">
                         <?php
-                        $nome = "Cartão Debito " . $pagBandCartao->getCoBandeiraCartao()->getNoBandeiraCartao();
+                        $nome = "Cartão Crédito " . $pagBandCartao->getCoBandeiraCartao()->getNoBandeiraCartao();
                         $historicos = $pagBandCartao->getCoTaxaCartao();
                         require_once PARTIAL_ADMIN . 'historico.php';
                         ?>

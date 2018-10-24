@@ -175,7 +175,6 @@ class Configuracao extends AbstractController
         $this->taxasCartDeb = $taxasCartDeb;
     }
 
-
     public function HistoricoTaxaCartaoDebito()
     {
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
@@ -187,6 +186,21 @@ class Configuracao extends AbstractController
             $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
         } else {
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/TaxasCartaoDebitoNaoEncontrado/');
+        }
+    }
+
+
+    public function HistoricoTaxaCartaoCredito()
+    {
+        /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
+        $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
+
+        $coPagBandCartao = UrlAmigavel::PegaParametro(CO_PAGAMENTO_BANDEIRA_CARTAO);
+        if ($coPagBandCartao) {
+            /** @var PlanoEntidade $plano */
+            $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
+        } else {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/TaxasCartaoCreditoNaoEncontrado/');
         }
     }
 
