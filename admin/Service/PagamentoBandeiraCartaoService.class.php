@@ -42,9 +42,16 @@ class  PagamentoBandeiraCartaoService extends AbstractService
         if (!empty($dados["bandeira-taxa-deb"])) {
             $taxaCartDeb[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             foreach ($dados["bandeira-taxa-deb"] as $bandeiraCartao => $taxaCartao) {
-                if($taxaCartao){
-                    $cartDeb[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
-                    $taxaCartDeb[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartDeb);
+                $condicoes[CO_TIPO_PAGAMENTO] = TipoPagamentoEnum::CARTAO_DEBITO;
+                $condicoes[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
+                $coFacPag = $this->ObjetoModel->PesquisaPagBandeiraCartao($condicoes);
+                if ($taxaCartao) {
+                    if (!$coFacPag) {
+                        $cartDeb[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
+                        $taxaCartDeb[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartDeb);
+                    } else {
+                        $taxaCartDeb[CO_PAGAMENTO_BANDEIRA_CARTAO] = $coFacPag[0][CO_FACILIDADE_PAGAMENTO];
+                    }
                     $taxaCartDeb[NU_TAXA_CARTAO] = Valida::FormataMoedaBanco($taxaCartao);
                     $retorno[SUCESSO] = $taxaCartaoService->Salva($taxaCartDeb);
                 }
@@ -54,9 +61,17 @@ class  PagamentoBandeiraCartaoService extends AbstractService
         if (!empty($dados["bandeira-taxa-cred"])) {
             $taxaCartCred[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             foreach ($dados["bandeira-taxa-cred"] as $bandeiraCartao => $taxaCartao) {
-                if($taxaCartao){
-                    $cartCred[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
-                    $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartCred);
+                $condicoes[CO_TIPO_PAGAMENTO] = TipoPagamentoEnum::CARTAO_DEBITO;
+                $condicoes[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
+                $coFacPag = $this->ObjetoModel->PesquisaPagBandeiraCartao($condicoes);
+                if ($taxaCartao) {
+                    if (!$coFacPag) {
+                        $cartCred[CO_BANDEIRA_CARTAO] = $bandeiraCartao;
+                        $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $this->Salva($cartCred);
+                    } else {
+                        $taxaCartCred[CO_PAGAMENTO_BANDEIRA_CARTAO] = $coFacPag[0][CO_FACILIDADE_PAGAMENTO];
+                    }
+
                     $taxaCartCred[NU_TAXA_CARTAO] = Valida::FormataMoedaBanco($taxaCartao);
                     $taxaCartCred[NU_TAXA_ANTECIPACAO] = Valida::FormataMoedaBanco($dados["bandeira-taxaAntec-cred"][$bandeiraCartao]);
                     $retorno[SUCESSO] = $taxaCartaoService->Salva($taxaCartCred);
@@ -74,6 +89,11 @@ class  PagamentoBandeiraCartaoService extends AbstractService
             $PDO->rollBack();
         }
         return $retorno;
+    }
+
+    public function PesquisaPagBandeiraCartao($dados)
+    {
+        return $this->ObjetoModel->PesquisaPagBandeiraCartao($dados);
     }
 
 }
