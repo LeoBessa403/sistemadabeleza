@@ -138,6 +138,8 @@ class Configuracao extends AbstractController
                 $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
                 /** @var FacilidadePagamentoEntidade $facPagamento */
                 $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro($facilidadePagamentos->getCoFacilidadePagamento());
+
+                debug($facPagamento);
                 /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
                 foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
                     $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
