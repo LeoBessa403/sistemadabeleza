@@ -8,6 +8,7 @@ class Configuracao extends AbstractController
     public $dadosTipoPagamento;
     public $taxasCartDeb;
     public $taxasCartCred;
+    public $pagBandCartao;
 
     public function ListarDiaEspecialConfiguracao()
     {
@@ -134,6 +135,8 @@ class Configuracao extends AbstractController
                         $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
                         $taxasCartDeb[$bandCartao][NU_TAXA_CARTAO] = Valida::FormataMoeda(
                             $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao());
+                        $taxasCartDeb[$bandCartao][CO_PAGAMENTO_BANDEIRA_CARTAO] =
+                            $pagBandCartao->getCoPagamentoBandeiraCartao();
                     }
                 }
             }
@@ -150,6 +153,8 @@ class Configuracao extends AbstractController
                             $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao());
                         $taxasCartCred[$bandCartao][NU_TAXA_ANTECIPACAO] = Valida::FormataMoeda(
                             $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaAntecipacao());
+                        $taxasCartCred[$bandCartao][CO_PAGAMENTO_BANDEIRA_CARTAO] =
+                            $pagBandCartao->getCoPagamentoBandeiraCartao();
                     }
                 }
             }
@@ -170,6 +175,20 @@ class Configuracao extends AbstractController
         $this->taxasCartDeb = $taxasCartDeb;
     }
 
+
+    public function HistoricoTaxaCartaoDebito()
+    {
+        /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
+        $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
+
+        $coPagBandCartao = UrlAmigavel::PegaParametro(CO_PAGAMENTO_BANDEIRA_CARTAO);
+        if ($coPagBandCartao) {
+            /** @var PlanoEntidade $plano */
+            $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
+        } else {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/TaxasCartaoDebitoNaoEncontrado/');
+        }
+    }
 
 }
    

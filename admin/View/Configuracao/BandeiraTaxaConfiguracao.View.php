@@ -87,8 +87,12 @@
                                         '&w=100&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
 
-                                    $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoCartao/' .
-                                        Valida::GeraParametro(CO_BANDEIRA_CARTAO . "/" . $bandeira->getCoBandeiraCartao()) . '" 
+                                    $coPagBandCartao = (!empty($taxasCartDeb[$bandeira->getCoBandeiraCartao()]))
+                                        ? $taxasCartDeb[$bandeira->getCoBandeiraCartao()][CO_PAGAMENTO_BANDEIRA_CARTAO]
+                                        : "";
+
+                                    $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoTaxaCartaoDebito/' .
+                                        Valida::GeraParametro(CO_PAGAMENTO_BANDEIRA_CARTAO . "/" . $coPagBandCartao) . '" 
                                         class="btn btn-med-grey tooltips" 
                                             data-original-title="Histórico de taxas da bandeira" data-placement="top">
                                              <i class="clip-folder-open"></i>
@@ -164,7 +168,7 @@
                                         '&w=100&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';
 
-                                    $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoCartao/' .
+                                    $acao = ' <a href="' . PASTAADMIN . 'Configuracao/HistoricoTaxaCartaoDebito/' .
                                         Valida::GeraParametro(CO_BANDEIRA_CARTAO . "/" . $bandeira->getCoBandeiraCartao()) . '" 
                                         class="btn btn-med-grey tooltips" 
                                             data-original-title="Histórico de taxas da bandeira" data-placement="top">

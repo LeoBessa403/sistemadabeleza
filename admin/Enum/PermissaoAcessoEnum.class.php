@@ -22,6 +22,8 @@ class PermissaoAcessoEnum extends AbstractEnum
     const CADASTRO_DIA_ESPECIAL = 15;
     const FORMAS_DE_PAGAMENTO = 16;
     const BANDEIRAS_TAXAS = 17;
+    const HISTORICO_TAXA_CARTAO_DEBITO = 18;
+    const HISTORICO_TAXA_CARTAO_CREDITO = 19;
 
     public static $descricao = [
         PermissaoAcessoEnum::PERFIL_MASTER => 'Perfil Master',
@@ -41,6 +43,8 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'Cadastro Dia Especial',
         PermissaoAcessoEnum::FORMAS_DE_PAGAMENTO => 'Formas De Pagamento',
         PermissaoAcessoEnum::BANDEIRAS_TAXAS => 'Bandeiras / Taxas',
+        PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_DEBITO => 'Historico Taxa Cartao Debito',
+        PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_CREDITO => 'Historico Taxa Cartao Credito',
     ];
 
     public static $actions = [
@@ -61,5 +65,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::CADASTRO_DIA_ESPECIAL => 'CadastroDiaEspecialConfiguracao',
         PermissaoAcessoEnum::FORMAS_DE_PAGAMENTO => 'FormasDePagamentoConfiguracao',
         PermissaoAcessoEnum::BANDEIRAS_TAXAS => 'BandeiraTaxaConfiguracao',
+        PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_DEBITO => 'HistoricoTaxaCartaoDebito',
+        PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_CREDITO => 'HistoricoTaxaCartaoCredito',
     ];
 }
