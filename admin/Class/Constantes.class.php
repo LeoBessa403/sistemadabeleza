@@ -83,3 +83,7 @@ define('FERIADO_SERVICE', 'FeriadoService');
 define('BANDEIRA_CARTAO_SERVICE', 'BandeiraCartaoService');
 define('TAXA_CARTAO_SERVICE', 'TaxaCartaoService');
 define('PAGAMENTO_BANDEIRA_CARTAO_SERVICE', 'PagamentoBandeiraCartaoService');
+define('CO_CONFIG_CLIENTE', 'co_config_cliente');
+define('ST_MARCA_SERVICO', 'st_marca_servico');
+define('NU_AUSENCIA', 'nu_ausencia');
+define('CONFIG_CLIENTE_SERVICE', 'ConfigClienteService');

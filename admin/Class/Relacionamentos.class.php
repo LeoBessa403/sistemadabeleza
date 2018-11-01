@@ -254,6 +254,13 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (ConfigClienteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
             (AssinanteEntidade::TABELA) => Array(
                 (CO_PLANO_ASSINANTE_ASSINATURA) => Array(
                     ('Campo') => CO_ASSINANTE,
@@ -299,6 +306,11 @@ class Relacionamentos
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'DiaEspecialEntidade',
                     ('Tipo') => '2',
+                ),
+                (CO_CONFIG_CLIENTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ConfigClienteEntidade',
+                    ('Tipo') => '1',
                 ),
             ),
             (EmpresaEntidade::TABELA) => Array(
