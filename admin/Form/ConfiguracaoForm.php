@@ -8,7 +8,7 @@ class ConfiguracaoForm
 {
     public static function ConfigCliente($res = false)
     {
-        $id = "cadastroPlano";
+        $id = "configCliente";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Cadastrar", 6);
@@ -16,27 +16,31 @@ class ConfiguracaoForm
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Plano Ativo")
-            ->setClasses($res[ST_STATUS])
-            ->setId(ST_STATUS)
+            ->setLabel("Marcar Serviço")
+            ->setClasses($res[ST_MARCA_SERVICO])
+            ->setId(ST_MARCA_SERVICO)
             ->setType("checkbox")
+            ->setInfo('Aceita que o cliente marque serviço pelo site?')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
             ->CriaInpunt();
 
+        $options = [0 => "0", 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 10 => 10, 200 => 'Sem Limite'];
         $formulario
-            ->setId(NU_VALOR)
-            ->setClasses("numero ob")
+            ->setType("select")
+            ->setId(NU_AUSENCIA)
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->setTamanhoInput(12)
             ->setLabel("Número de Ausência")
-            ->setInfo('Número de Ausencias aceitaveis pra marcar serviço pelo site')
+            ->setInfo('Número de ausências do cliente aceitáveis pra marcar serviço pelo site')
             ->CriaInpunt();
 
-
-        if (!empty($res[CO_PLANO])):
+        if (!empty($res[CO_CONFIG_CLIENTE])):
             $formulario
                 ->setType("hidden")
-                ->setId(CO_PLANO)
-                ->setValues($res[CO_PLANO])
+                ->setId(CO_CONFIG_CLIENTE)
+                ->setValues($res[CO_CONFIG_CLIENTE])
                 ->CriaInpunt();
         endif;
 

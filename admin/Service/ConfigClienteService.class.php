@@ -16,5 +16,33 @@ class  ConfigClienteService extends AbstractService
         $this->ObjetoModel = New ConfigClienteModel();
     }
 
+    public function salvaConfigCliente($dados)
+    {
+        $session = new Session();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+        $configCli[NU_AUSENCIA] = $dados[NU_AUSENCIA][0];
+        $configCli[ST_MARCA_SERVICO] = (!empty($dados[ST_MARCA_SERVICO])) ? "S" : "N";
+        $configCli[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+
+        if (!empty($_POST[CO_CONFIG_CLIENTE])):
+            $coConfigCli = $dados[CO_CONFIG_CLIENTE];
+            $retorno[SUCESSO] = $this->Salva($configCli, $coConfigCli);
+            $session->setSession(MENSAGEM, ATUALIZADO);
+        else:
+            $retorno[SUCESSO] = $this->Salva($configCli);
+            $session->setSession(MENSAGEM, CADASTRADO);
+        endif;
+
+        if ($retorno[SUCESSO]) {
+            $retorno[SUCESSO] = true;
+        } else {
+            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+            $retorno[SUCESSO] = false;
+        }
+        return $retorno;
+    }
 
 }
