@@ -1,7 +1,7 @@
 <?php
 ob_start();
 $url = new UrlAmigavel();
-$back = new Backup();
+//$back = new Backup();
 //$entidade = new GerarEntidades([
 //        'TB_BANDEIRA_CARTAO', 'TB_TAXA_CARTAO', 'TB_PAGAMENTO_BANDEIRA_CARTAO'
 //]);
