@@ -5,12 +5,12 @@ define('SITE', 'web');
 // Pasta dos arquivos da Admiistração
 define('ADMIN', 'admin');
 session_start();
-if (file_exists(ADMIN."/configuracoes.php")):
-    include ADMIN."/configuracoes.php";
-elseif (file_exists("../".ADMIN."/configuracoes.php")):
-    include "../".ADMIN."/configuracoes.php";
+if (file_exists(ADMIN . "/configuracoes.php")):
+    include ADMIN . "/configuracoes.php";
+elseif (file_exists("../" . ADMIN . "/configuracoes.php")):
+    include "../" . ADMIN . "/configuracoes.php";
 else:
-    include "../../".ADMIN."/configuracoes.php";
+    include "../../" . ADMIN . "/configuracoes.php";
 endif;
 servidor_inicial();
 
@@ -27,7 +27,7 @@ define('LOGADO', '/Index/Index');
 define('ERRO_404', '404');
 // CONTROLLERS PARA NÃO SEGUIR PARA A AUDITORIA
 define('SEM_AUDITORIA', AcessoEntidade::TABELA . ', ' . TrafegoEntidade::TABELA . ', ' .
-    PaginaVisitaEntidade::TABELA. ', ' . PaginaEntidade::TABELA . ', ' . VisitaEntidade::TABELA);
+    PaginaVisitaEntidade::TABELA . ', ' . PaginaEntidade::TABELA . ', ' . VisitaEntidade::TABELA);
 
 
 // CONFIGURAÇÕES DO SERVIDOR
@@ -49,9 +49,9 @@ define('PASTA_ENTIDADES', PASTA_RAIZ . ADMIN . '/Entidade/');
 define('PASTA_MODEL', PASTA_RAIZ . ADMIN . '/Model/');
 define('PASTA_CLASS', PASTA_RAIZ . ADMIN . '/Class/');
 define('PASTA_SEVICE', PASTA_RAIZ . ADMIN . '/Service/');
-define('PARTIAL_SITE', PASTA_RAIZ . SITE . '/Partial/');
-define('PARTIAL_ADMIN', PASTA_RAIZ . ADMIN . '/Partial/');
-define('PASTA_UPLOADS', HOME  . 'uploads/');
+define('PARTIAL_SITE', PASTA_RAIZ . SITE . '/partial/');
+define('PARTIAL_ADMIN', PASTA_RAIZ . ADMIN . '/partial/');
+define('PASTA_UPLOADS', HOME . 'uploads/');
 
 
 // DEFINE PARA VALIDAÇÃO DO CADASTRO
@@ -123,7 +123,7 @@ function PHPErro($ErrNo, $ErrMsg, $ErrFile, $ErrLine)
  */
 function Redireciona($local)
 {
-    echo "<script>location.href='".HOME . $local."';</script>";
+    echo "<script>location.href='" . HOME . $local . "';</script>";
     exit();
 }
 
@@ -146,7 +146,7 @@ function debug($array, $Exit = false)
 
     echo "</pre>"
         . "</fieldset><br />";
-        echo '<script src="' . INCLUDES . 'jquery-2.0.3.js"></script>
+    echo '<script src="' . INCLUDES . 'jquery-2.0.3.js"></script>
                 <script type="text/javascript">
                         $(function() {
                             $(".navbar-content").hide();

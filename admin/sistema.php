@@ -109,11 +109,11 @@ $user = $us->getUser();
                 <!-- start: TOP NAVIGATION MENU -->
                 <ul class="nav navbar-right">
                     <!-- Inclusão do Partial de Notificações  -->
-                    <?php include_once PASTA_RAIZ . ADMIN . '/partial/notificacoes.php'; ?>
+                    <?php include_once PARTIAL_ADMIN . 'notificacoes.php'; ?>
                     <!-- Inclusão do Partial de Perfis  -->
-                    <?php include_once PASTA_RAIZ . ADMIN . '/partial/perfis.php'; ?>
+                    <?php include_once PARTIAL_ADMIN . 'perfis.php'; ?>
                     <!-- USER DROPDOWN -->
-                    <?php include_once PASTA_RAIZ . ADMIN . '/partial/user_dropdown.php'; ?>
+                    <?php include_once PARTIAL_ADMIN . 'user_dropdown.php'; ?>
                 </ul>
                 <!-- end: TOP NAVIGATION MENU -->
             </div>
@@ -162,7 +162,7 @@ $user = $us->getUser();
     <!-- start: FOOTER -->
     <div class="footer clearfix">
         <div class="footer-inner">
-            <?php include_once PASTA_RAIZ . ADMIN . '/partial/controle_versao.php'; ?>
+            <?php include_once PARTIAL_ADMIN . 'controle_versao.php'; ?>
         </div>
         <div class="footer-items">
             <span class="go-top"><i class="clip-chevron-up"></i></span>
@@ -239,7 +239,7 @@ $user = $us->getUser();
             Index.init();
         });
     </script>
-    <?php include_once PASTA_RAIZ . ADMIN . '/partial/alertas.php'; ?>
+    <?php include_once PARTIAL_ADMIN . 'alertas.php'; ?>
     </body>
     <!-- end: BODY -->
     </html>
