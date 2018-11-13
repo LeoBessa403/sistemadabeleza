@@ -112,58 +112,8 @@ $user = $us->getUser();
                     <?php include_once PASTA_RAIZ . ADMIN . '/partial/notificacoes.php'; ?>
                     <!-- Inclusão do Partial de Perfis  -->
                     <?php include_once PASTA_RAIZ . ADMIN . '/partial/perfis.php'; ?>
-
-                    <!-- start: USER DROPDOWN -->
-                    <li class="dropdown current-user">
-                        <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true"
-                           href="#">
-                            <?php
-                            $noPessoa = $user[md5(NO_PESSOA)];
-                            $foto = $user[md5('ds_caminho')];
-                            if ($foto == ""):
-                                $sexo = $user[md5('st_sexo')];
-                                if ($sexo == "M"):
-                                    $fotoPerfil = "avatar-homem.jpg";
-                                else:
-                                    $fotoPerfil = "avatar-mulher.jpg";
-                                endif;
-                            else:
-                                $fotoPerfil = $foto;
-                            endif;
-
-                            if ($foto == "") {
-                                echo '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
-                                    'library/Imagens/' . $fotoPerfil . '&w=35&h=35" 
-                                alt="' . $noPessoa . '" title="' . $noPessoa . '" 
-                                class="circle-img" />';
-                            } else {
-                                echo Valida::GetMiniatura("usuarios/" . $fotoPerfil,
-                                    'Leonardo', 35, 35, "circle-img");
-                            }
-                            ?>
-                            <span class="username">
-                            <?php
-                            echo Valida::Resumi($noPessoa, 25);
-                            ?>
-                            </span>
-                            <i class="clip-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario">
-                                    <i class="clip-user-3"></i>
-                                    &nbsp;Meu Usuário
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?= PASTAADMIN; ?>login/deslogar/desloga/10">
-                                    <i class="clip-exit"></i>
-                                    &nbsp;Sair do Sistema
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- end: USER DROPDOWN -->
+                    <!-- USER DROPDOWN -->
+                    <?php include_once PASTA_RAIZ . ADMIN . '/partial/user_dropdown.php'; ?>
                 </ul>
                 <!-- end: TOP NAVIGATION MENU -->
             </div>
@@ -212,12 +162,7 @@ $user = $us->getUser();
     <!-- start: FOOTER -->
     <div class="footer clearfix">
         <div class="footer-inner">
-            <?php
-            $linhas = fopen('versao.txt', "a+");
-            $versoes = fgets($linhas);
-            $versao = explode('//', $versoes);
-            ?>
-            <?= date("Y"); ?> &copy; Leo Bessa Desenvolvimento. <b>Versão: <?= $versao[2]; ?></b>
+            <?php include_once PASTA_RAIZ . ADMIN . '/partial/controle_versao.php'; ?>
         </div>
         <div class="footer-items">
             <span class="go-top"><i class="clip-chevron-up"></i></span>
