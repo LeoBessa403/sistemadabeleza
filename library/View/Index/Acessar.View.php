@@ -33,7 +33,11 @@
     <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/css3-animation/animations.css">
     <!--[if IE 7]>
     <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/font-awesome/css/font-awesome-ie7.min.css">
+    <!--[if IE 7]>
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/font-awesome/css/font-awesome-ie7.min.css">
     <![endif]-->
+    <!-- start: CSS REQUIRED Gritter -->
+    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/gritter/css/jquery.gritter.css">
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
     <link rel="shortcut icon" href="<?= PASTASITE; ?>img/favicon.ico"/>
     <!-- end: MAIN CSS -->
@@ -59,15 +63,11 @@
             Por Favor! Entre com login e senha.
         </p>
         <form class="form-login" action="../Logar" method="post">
-            <?php
-            if (!empty($visivel)):
-                Valida::Mensagem($msg, $class);
-            endif;
-            ?>
             <fieldset>
                 <div class="form-group">
 							<span class="input-icon">
-								<input type="text" class="form-control email" name="ds_email" id="ds_email" placeholder="E-Mail">
+								<input type="text" class="form-control email" name="ds_email" id="ds_email"
+                                       placeholder="E-Mail">
 								<i class="fa fa-envelope"></i> </span>
                 </div>
                 <div class="form-group form-actions">
@@ -128,33 +128,11 @@
 <script type="text/javascript" src="<?= INCLUDES; ?>jquery.maskMoney.js"></script>
 <script type="text/javascript" src="<?= INCLUDES; ?>validacoes.js"></script>
 <script src="<?= PASTAADMIN; ?>plugins/select2/select2.min.js"></script>
+<script src="<?= PASTAADMIN; ?>js/Funcoes.js"></script>
+<?php Notificacoes::mesagens($msg, $class); ?>
 <script>
     jQuery(document).ready(function () {
-        <?php
-        $session = new Session();
-        if($session->CheckSession(ATUALIZADO)):
-        $session->FinalizaSession(ATUALIZADO);
-        ?>
-        Funcoes.Sucesso("<?= Mensagens::OK_ATUALIZADO;?>");
-        <?php
-        endif;
-
-        if($session->CheckSession(CADASTRADO)):
-        $session->FinalizaSession(CADASTRADO);
-        ?>
-        Funcoes.Sucesso("<?= Mensagens::OK_SALVO;?>");
-        <?php
-        endif;
-        if($session->CheckSession(MENSAGEM)):
-        ?>
-        Funcoes.Alerta("<?php echo $session->getSession(MENSAGEM);?>");
-        <?php
-        $session->FinalizaSession(MENSAGEM);
-        endif;
-        ?>
-        $('.close').click(function () {
-            $(this).parents('#sumir').fadeOut('fast');
-        });
+        Funcoes.init();
     });
 </script>
 </body>

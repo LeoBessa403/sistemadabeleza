@@ -133,7 +133,6 @@ class Index extends AbstractController
         $acesso = UrlAmigavel::PegaParametro('acesso');
         $class = 0;
         $msg = "";
-        $visivel = true;
 
         switch ($acesso) {
             case 'B':
@@ -172,13 +171,10 @@ class Index extends AbstractController
                 $msg = 'Sistema Expirado, favor renovar sua assinatura.';
                 $class = 2;
                 break;
-            default:
-                $visivel = false;
-                break;
 
         }
-        $this->class = " " . $class;
-        $this->visivel = $visivel;
+
+        $this->class = $class;
         $this->msg = $msg;
     }
 

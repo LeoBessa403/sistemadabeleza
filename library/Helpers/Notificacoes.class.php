@@ -80,16 +80,18 @@ class Notificacoes
         </div>';
     }
 
-    public static function mesagens($dados)
+    public static function mesagens($dados, $typo = 3)
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-warning fadeIn gritter-notificacao">
-            <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
+        $class = ($typo == 1 ? "success" : ($typo == 2 ? "info" : ($typo == 3 ? "warning" : "danger")));
+        $label = ($typo == 1 ? "SUCESSO" : ($typo == 2 ? "INFORMATIVO" : ($typo == 3 ? "ALERTA" : "ERRO")));
+        echo '<div id="gritter-notice-wrapper" class="top-right gritter-' . $class . ' fadeIn gritter-notificacao">
+            <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
                     <img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
                     '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />
-                    <div class="gritter-with-image"><span class="gritter-title">Aviso!</span>
+                    <div class="gritter-with-image"><span class="gritter-title">' . $label . '</span>
                         '.$dados.'
                     </div>
                     <div style="clear:both"></div>
