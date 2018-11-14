@@ -171,9 +171,7 @@ class Index extends AbstractController
                 $msg = 'Sistema Expirado, favor renovar sua assinatura.';
                 $class = 2;
                 break;
-
         }
-
         $this->class = $class;
         $this->msg = $msg;
     }

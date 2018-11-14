@@ -1,43 +1,33 @@
 <li class="dropdown">
+    <?php
+    $no_perfis = $user[md5('no_perfis')];
+    $perfis = explode(', ', $no_perfis);
+    ?>
     <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
        href="#">
         <i class="clip-bubble-3"></i>
-        <span class="badge"> 3</span>
+        <span class="badge"> <?= count($perfis) ?></span>
     </a>
     <ul class="dropdown-menu posts">
         <li>
-            <span class="dropdown-menu-title pullUp"> 3 Perfis</span>
+            <span class="dropdown-menu-title pullUp"> <?= count($perfis) ?> Perfis Ativos</span>
         </li>
         <li>
             <div class="drop-down-wrapper ps-container">
                 <ul>
-                    <li>
-                        <a href="javascript:">
-                            <div class="clearfix">
-                                <div class="thread-content">
-                                    <span class="author">Master</span>
+                    <?php
+                    foreach ($perfis as $perfil) {
+                        ?>
+                        <li>
+                            <a href="javascript:">
+                                <div class="clearfix">
+                                    <div class="thread-content">
+                                        <span class="author"><?= $perfil; ?></span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:">
-                            <div class="clearfix">
-                                <div class="thread-content">
-                                    <span class="author">Gestor</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:">
-                            <div class="clearfix">
-                                <div class="thread-content">
-                                    <span class="author">Profissional</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                            </a>
+                        </li>
+                    <?php } ?>
                 </ul>
                 <div class="ps-scrollbar-x-rail"
                      style="left: 0px; bottom: 3px; width: 270px; display: none;">
