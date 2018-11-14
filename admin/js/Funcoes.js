@@ -18,6 +18,17 @@ var Funcoes = function () {
             $(this).parents("#gritter-notice-wrapper").fadeOut('slow');
         });
 
+        // Ler a quantidade de notificações
+        $(window).load(function () {
+            var itens = 0;
+            $(".notifica li").each(function () {
+                if($(this).children('li')){
+                    itens++;
+                }
+            });
+            $("span .nu_notificacoes").text(itens);
+        });
+
     };
     return {
         init: function () {

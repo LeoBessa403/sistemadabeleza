@@ -2,11 +2,11 @@
     <a class="dropdown-toggle pulse" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
        href="#">
         <i class="clip-notification-2"></i>
-        <span class="badge"> 2</span>
+        <span class="badge"> <span class="nu_notificacoes"></span></span>
     </a>
     <ul class="dropdown-menu posts">
         <li>
-            <span class="dropdown-menu-title pullUp"> Você tem 2 Notificações</span>
+            <span class="dropdown-menu-title pullUp"> Você tem <span class="nu_notificacoes"></span> Notificações</span>
         </li>
         <li>
             <div class="drop-down-wrapper ps-container notifica">
