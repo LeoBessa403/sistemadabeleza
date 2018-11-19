@@ -222,7 +222,7 @@ class Configuracao extends AbstractController
         /** @var ConfigClienteEntidade $configClinte */
         $configClinte = $configClienteService->PesquisaUmQuando([
             CO_ASSINANTE => $coAssinante
-            ]);
+        ]);
         if ($configClinte) {
             $res[NU_AUSENCIA] = $configClinte->getNuAusencia();
             $res[CO_CONFIG_CLIENTE] = $configClinte->getCoConfigCliente();
@@ -234,30 +234,38 @@ class Configuracao extends AbstractController
 
     public function ConfigAgendamentoConfiguracao()
     {
-        /** @var ConfigClienteService $configClienteService */
-        $configClienteService = $this->getService(CONFIG_CLIENTE_SERVICE);
-        $id = "configCliente";
+        /** @var ConfigAgendamentoService $configAgendamentoService */
+        $configAgendamentoService = $this->getService(CONFIG_AGENDAMENTO_SERVICE);
+        $id = "configAgendamento";
 
         if (!empty($_POST[$id])):
-            $retorno = $configClienteService->salvaConfigCliente($_POST);
+            $retorno = $configAgendamentoService->salvaConfigAgendamento($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ConfigClienteConfiguracao/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ConfigAgendamentoConfiguracao/');
             }
         endif;
 
         $coAssinante = AssinanteService::getCoAssinanteLogado();
-        $res[ST_MARCA_SERVICO] = 'checked';
-        /** @var ConfigClienteEntidade $configClinte */
-        $configClinte = $configClienteService->PesquisaUmQuando([
+        $res[ST_AGENDAMENTO_SITE] = 'checked';
+        $res[ST_RECEBER_EMAIL_AGENDAMENTO] = 'checked';
+        $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = 'checked';
+        /** @var ConfigAgendamentoEntidade $configAgendamento */
+        $configAgendamento = $configAgendamentoService->PesquisaUmQuando([
             CO_ASSINANTE => $coAssinante
-            ]);
-        if ($configClinte) {
-            $res[NU_AUSENCIA] = $configClinte->getNuAusencia();
-            $res[CO_CONFIG_CLIENTE] = $configClinte->getCoConfigCliente();
-            $res[ST_MARCA_SERVICO] = ($configClinte->getStMarcaServico() == 'S')
+        ]);
+        if ($configAgendamento) {
+            $res[CO_CONFIG_AGENDAMENTO] = $configAgendamento->getCoConfigAgendamento();
+            $res[NU_ANTECEDENCIA_AGENDAMENTO] = $configAgendamento->getNuAntecedenciaAgendamento();
+            $res[NU_INTERVALO] = $configAgendamento->getNuIntervalo();
+            $res[ST_STATUS_AGENDAMENTO_SITE] = $configAgendamento->getStStatusAgendamentoSite();
+            $res[ST_AGENDAMENTO_SITE] = ($configAgendamento->getStAgendamentoSite() == 'S')
+                ? 'checked' : '';
+            $res[ST_RECEBER_EMAIL_AGENDAMENTO] = ($configAgendamento->getStReceberEmailAgendamento() == 'S')
+                ? 'checked' : '';
+            $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = ($configAgendamento->getStEnviarEmailConfirmacao() == 'S')
                 ? 'checked' : '';
         }
-        $this->form = ConfiguracaoForm::ConfigCliente($res);
+        $this->form = ConfiguracaoForm::ConfigAgendamento($res);
     }
 }
    
