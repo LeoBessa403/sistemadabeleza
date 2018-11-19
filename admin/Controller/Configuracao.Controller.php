@@ -231,5 +231,33 @@ class Configuracao extends AbstractController
         }
         $this->form = ConfiguracaoForm::ConfigCliente($res);
     }
+
+    public function ConfigAgendamentoConfiguracao()
+    {
+        /** @var ConfigClienteService $configClienteService */
+        $configClienteService = $this->getService(CONFIG_CLIENTE_SERVICE);
+        $id = "configCliente";
+
+        if (!empty($_POST[$id])):
+            $retorno = $configClienteService->salvaConfigCliente($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ConfigClienteConfiguracao/');
+            }
+        endif;
+
+        $coAssinante = AssinanteService::getCoAssinanteLogado();
+        $res[ST_MARCA_SERVICO] = 'checked';
+        /** @var ConfigClienteEntidade $configClinte */
+        $configClinte = $configClienteService->PesquisaUmQuando([
+            CO_ASSINANTE => $coAssinante
+            ]);
+        if ($configClinte) {
+            $res[NU_AUSENCIA] = $configClinte->getNuAusencia();
+            $res[CO_CONFIG_CLIENTE] = $configClinte->getCoConfigCliente();
+            $res[ST_MARCA_SERVICO] = ($configClinte->getStMarcaServico() == 'S')
+                ? 'checked' : '';
+        }
+        $this->form = ConfiguracaoForm::ConfigCliente($res);
+    }
 }
    

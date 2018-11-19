@@ -25,6 +25,7 @@ class PermissaoAcessoEnum extends AbstractEnum
     const HISTORICO_TAXA_CARTAO_DEBITO = 18;
     const HISTORICO_TAXA_CARTAO_CREDITO = 19;
     const CONFIGURACAO_DE_CLIENTE = 20;
+    const CONFIGURACAO_DE_AGENDAMENTO = 21;
 
     public static $descricao = [
         PermissaoAcessoEnum::PERFIL_MASTER => 'Perfil Master',
@@ -47,6 +48,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_DEBITO => 'Historico Taxa Cartao Debito',
         PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_CREDITO => 'Historico Taxa Cartao Credito',
         PermissaoAcessoEnum::CONFIGURACAO_DE_CLIENTE => 'Configuração de Cliente',
+        PermissaoAcessoEnum::CONFIGURACAO_DE_AGENDAMENTO => 'Configuração de Agendamento',
     ];
 
     public static $actions = [
@@ -70,5 +72,6 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_DEBITO => 'HistoricoTaxaCartaoDebito',
         PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_CREDITO => 'HistoricoTaxaCartaoCredito',
         PermissaoAcessoEnum::CONFIGURACAO_DE_CLIENTE => 'ConfigClienteConfiguracao',
+        PermissaoAcessoEnum::CONFIGURACAO_DE_AGENDAMENTO => 'ConfigAgendamentoConfiguracao',
     ];
 }
