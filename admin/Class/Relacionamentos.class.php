@@ -312,6 +312,11 @@ class Relacionamentos
                     ('Entidade') => 'ConfigClienteEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_CONFIG_AGENDAMENTO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ConfigAgendamentoEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (EmpresaEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
@@ -435,6 +440,13 @@ class Relacionamentos
                     ('Campo') => CO_BANDEIRA_CARTAO,
                     ('Entidade') => 'PagamentoBandeiraCartaoEntidade',
                     ('Tipo') => '2',
+                ),
+            ),
+            (ConfigAgendamentoEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
                 ),
             ),
         );

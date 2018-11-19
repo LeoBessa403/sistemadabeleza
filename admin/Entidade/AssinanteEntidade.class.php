@@ -27,6 +27,7 @@ class AssinanteEntidade extends AbstractEntidade
     private $co_imagem_assinante;
     private $co_dia_especial;
     private $co_config_cliente;
+    private $co_config_agendamento;
 
 
     /**
@@ -376,6 +377,23 @@ class AssinanteEntidade extends AbstractEntidade
     public function setCoConfigCliente($co_config_cliente)
     {
         return $this->co_config_cliente = $co_config_cliente;
+    }
+
+    /**
+     * @return ConfigAgendamentoEntidade $co_config_agendamento
+     */
+    public function getCoConfigAgendamento()
+    {
+        return $this->co_config_agendamento;
+    }
+
+    /**
+     * @param $co_config_agendamento
+     * @return mixed
+     */
+    public function setCoConfigAgendamento($co_config_agendamento)
+    {
+        return $this->co_config_agendamento = $co_config_agendamento;
     }
 
 }
