@@ -71,7 +71,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::BANDEIRAS_TAXAS => 'BandeiraTaxaConfiguracao',
         PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_DEBITO => 'HistoricoTaxaCartaoDebito',
         PermissaoAcessoEnum::HISTORICO_TAXA_CARTAO_CREDITO => 'HistoricoTaxaCartaoCredito',
-        PermissaoAcessoEnum::CONFIGURACAO_DE_CLIENTE => 'ConfigClienteConfiguracao',
-        PermissaoAcessoEnum::CONFIGURACAO_DE_AGENDAMENTO => 'ConfigAgendamentoConfiguracao',
+        PermissaoAcessoEnum::CONFIGURACAO_DE_CLIENTE => 'ClienteConfiguracao',
+        PermissaoAcessoEnum::CONFIGURACAO_DE_AGENDAMENTO => 'AgendamentoConfiguracao',
     ];
 }

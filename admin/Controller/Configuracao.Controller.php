@@ -204,7 +204,7 @@ class Configuracao extends AbstractController
         }
     }
 
-    public function ConfigClienteConfiguracao()
+    public function ClienteConfiguracao()
     {
         /** @var ConfigClienteService $configClienteService */
         $configClienteService = $this->getService(CONFIG_CLIENTE_SERVICE);
@@ -213,7 +213,7 @@ class Configuracao extends AbstractController
         if (!empty($_POST[$id])):
             $retorno = $configClienteService->salvaConfigCliente($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ConfigClienteConfiguracao/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ClienteConfiguracao/');
             }
         endif;
 
@@ -232,7 +232,7 @@ class Configuracao extends AbstractController
         $this->form = ConfiguracaoForm::ConfigCliente($res);
     }
 
-    public function ConfigAgendamentoConfiguracao()
+    public function AgendamentoConfiguracao()
     {
         /** @var ConfigAgendamentoService $configAgendamentoService */
         $configAgendamentoService = $this->getService(CONFIG_AGENDAMENTO_SERVICE);
@@ -241,7 +241,7 @@ class Configuracao extends AbstractController
         if (!empty($_POST[$id])):
             $retorno = $configAgendamentoService->salvaConfigAgendamento($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ConfigAgendamentoConfiguracao/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AgendamentoConfiguracao/');
             }
         endif;
 
