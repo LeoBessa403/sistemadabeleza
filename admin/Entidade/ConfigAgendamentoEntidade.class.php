@@ -60,7 +60,7 @@ class ConfigAgendamentoEntidade extends AbstractEntidade
 	* @param $co_config_agendamento
     * @return mixed
     */
-	public function setCoConfigAgendamenti($co_config_agendamento)
+	public function setCoConfigAgendamento($co_config_agendamento)
     {
         return $this->co_config_agendamento = $co_config_agendamento;
     }
