@@ -108,12 +108,17 @@ $user = $us->getUser();
             <div class="navbar-tools">
                 <!-- start: TOP NAVIGATION MENU -->
                 <ul class="nav navbar-right">
+                    <!-- USER DROPDOWN -->
+                    <?php include_once PARTIAL_ADMIN . 'user_dropdown.php'; ?>
                     <!-- Inclusão do Partial de Notificações  -->
                     <?php include_once PARTIAL_ADMIN . 'notificacoes.php'; ?>
                     <!-- Inclusão do Partial de Perfis  -->
                     <?php include_once PARTIAL_ADMIN . 'perfis.php'; ?>
-                    <!-- USER DROPDOWN -->
-                    <?php include_once PARTIAL_ADMIN . 'user_dropdown.php'; ?>
+                    <li class="dropdown">
+                        <a href="<?= PASTAADMIN; ?>login/deslogar/desloga/10" title="Sair do Sistema" tabindex="1">
+                            <i class="clip-exit" title="Sair do Sistema"></i>
+                        </a>
+                    </li>
                 </ul>
                 <!-- end: TOP NAVIGATION MENU -->
             </div>

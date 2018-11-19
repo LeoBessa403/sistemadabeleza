@@ -39,11 +39,5 @@
                 &nbsp;Meu Usuário
             </a>
         </li>
-        <li>
-            <a href="<?= PASTAADMIN; ?>login/deslogar/desloga/10">
-                <i class="clip-exit"></i>
-                &nbsp;Sair do Sistema
-            </a>
-        </li>
     </ul>
 </li>
