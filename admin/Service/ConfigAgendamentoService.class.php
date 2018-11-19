@@ -27,7 +27,6 @@ class  ConfigAgendamentoService extends AbstractService
         $configAgendam[NU_ANTECEDENCIA_AGENDAMENTO] = $dados[NU_ANTECEDENCIA_AGENDAMENTO];
         $configAgendam[ST_STATUS_AGENDAMENTO_SITE] = $dados[ST_STATUS_AGENDAMENTO_SITE][0];
         $configAgendam[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-        $configAgendam[ST_AGENDAMENTO_SITE] = (!empty($dados[ST_AGENDAMENTO_SITE])) ? "S" : "N";
         $configAgendam[ST_RECEBER_EMAIL_AGENDAMENTO] = (!empty($dados[ST_RECEBER_EMAIL_AGENDAMENTO])) ? "S" : "N";
         $configAgendam[ST_ENVIAR_EMAIL_CONFIRMACAO] = (!empty($dados[ST_ENVIAR_EMAIL_CONFIRMACAO])) ? "S" : "N";
 

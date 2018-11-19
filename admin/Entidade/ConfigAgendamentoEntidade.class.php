@@ -12,7 +12,6 @@ class ConfigAgendamentoEntidade extends AbstractEntidade
 	const CHAVE = CO_CONFIG_AGENDAMENTO;
 
 	private $co_config_agendamento;
-	private $st_agendamento_site;
 	private $nu_intervalo;
 	private $st_status_agendamento_site;
 	private $nu_antecedencia_agendamento;
@@ -28,7 +27,6 @@ class ConfigAgendamentoEntidade extends AbstractEntidade
     {
     	return [
 			CO_CONFIG_AGENDAMENTO,
-			ST_AGENDAMENTO_SITE,
 			NU_INTERVALO,
 			ST_STATUS_AGENDAMENTO_SITE,
 			NU_ANTECEDENCIA_AGENDAMENTO,
@@ -63,23 +61,6 @@ class ConfigAgendamentoEntidade extends AbstractEntidade
 	public function setCoConfigAgendamento($co_config_agendamento)
     {
         return $this->co_config_agendamento = $co_config_agendamento;
-    }
-
-	/**
-	* @return mixed $st_agendamento_site
-    */
-	public function getStAgendamentoSite()
-    {
-        return $this->st_agendamento_site;
-    }
-
-	/**
-	* @param $st_agendamento_site
-    * @return mixed
-    */
-	public function setStAgendamentoSite($st_agendamento_site)
-    {
-        return $this->st_agendamento_site = $st_agendamento_site;
     }
 
 	/**

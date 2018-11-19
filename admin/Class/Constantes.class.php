@@ -62,7 +62,6 @@ define('NU_TAXA_CARTAO', 'nu_taxa_cartao');
 define('NU_TAXA_ANTECIPACAO', 'nu_taxa_antecipacao');
 define('CO_PAGAMENTO_BANDEIRA_CARTAO', 'co_pagamento_bandeira_cartao');
 define('CO_CONFIG_AGENDAMENTO', 'co_config_agendamento');
-define('ST_AGENDAMENTO_SITE', 'st_agendamento_site');
 define('NU_INTERVALO', 'nu_intervalo');
 define('ST_STATUS_AGENDAMENTO_SITE', 'st_status_agendamento_site');
 define('NU_ANTECEDENCIA_AGENDAMENTO', 'nu_antecedencia_agendamento');

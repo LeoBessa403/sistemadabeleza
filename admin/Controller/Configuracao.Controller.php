@@ -246,7 +246,6 @@ class Configuracao extends AbstractController
         endif;
 
         $coAssinante = AssinanteService::getCoAssinanteLogado();
-        $res[ST_AGENDAMENTO_SITE] = 'checked';
         $res[ST_RECEBER_EMAIL_AGENDAMENTO] = 'checked';
         $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = 'checked';
         /** @var ConfigAgendamentoEntidade $configAgendamento */
@@ -258,8 +257,6 @@ class Configuracao extends AbstractController
             $res[NU_ANTECEDENCIA_AGENDAMENTO] = $configAgendamento->getNuAntecedenciaAgendamento();
             $res[NU_INTERVALO] = $configAgendamento->getNuIntervalo();
             $res[ST_STATUS_AGENDAMENTO_SITE] = $configAgendamento->getStStatusAgendamentoSite();
-            $res[ST_AGENDAMENTO_SITE] = ($configAgendamento->getStAgendamentoSite() == 'S')
-                ? 'checked' : '';
             $res[ST_RECEBER_EMAIL_AGENDAMENTO] = ($configAgendamento->getStReceberEmailAgendamento() == 'S')
                 ? 'checked' : '';
             $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = ($configAgendamento->getStEnviarEmailConfirmacao() == 'S')

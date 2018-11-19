@@ -16,11 +16,11 @@ class ConfiguracaoForm
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Marcar Serviço")
+            ->setLabel("Agendar pelo Site")
             ->setClasses($res[ST_MARCA_SERVICO])
             ->setId(ST_MARCA_SERVICO)
             ->setType("checkbox")
-            ->setInfo('Aceita que o cliente marque serviço pelo site?')
+            ->setInfo('Aceita que o cliente agende serviços pelo site?')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
             ->CriaInpunt();
@@ -56,16 +56,6 @@ class ConfiguracaoForm
         $formulario->setValor($res);
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
-        $formulario
-            ->setLabel("Agendar pelo Site")
-            ->setClasses($res[ST_AGENDAMENTO_SITE])
-            ->setId(ST_AGENDAMENTO_SITE)
-            ->setType("checkbox")
-            ->setInfo('Aceita que o cliente agende serviços pelo site?')
-            ->setTamanhoInput(12)
-            ->setOptions($label_options2)
-            ->CriaInpunt();
-
         $formulario
             ->setLabel("Receber E-mail de Agendamento")
             ->setClasses($res[ST_RECEBER_EMAIL_AGENDAMENTO])
