@@ -252,10 +252,8 @@ class Valida
         self::$Format = explode(' ', $data);
         self::$Data = explode('-', self::$Format[0]);
 
-        if (empty(self::$Format[1])):
+        if (empty(self::$Format[1]) || !$formato):
             self::$Format[1] = date('H:i:s');
-        endif;
-        if (!$formato):
             $formato = "d/m/Y";
         endif;
 
