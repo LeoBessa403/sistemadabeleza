@@ -264,5 +264,38 @@ class Configuracao extends AbstractController
         }
         $this->form = ConfiguracaoForm::ConfigAgendamento($res);
     }
+
+    public function MotivoDescontoConfiguracao()
+    {
+        /** @var ConfigAgendamentoService $configAgendamentoService */
+        $configAgendamentoService = $this->getService(CONFIG_AGENDAMENTO_SERVICE);
+        $id = "configAgendamento";
+
+        if (!empty($_POST[$id])):
+            $retorno = $configAgendamentoService->salvaConfigAgendamento($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AgendamentoConfiguracao/');
+            }
+        endif;
+
+        $coAssinante = AssinanteService::getCoAssinanteLogado();
+        $res[ST_RECEBER_EMAIL_AGENDAMENTO] = 'checked';
+        $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = 'checked';
+        /** @var ConfigAgendamentoEntidade $configAgendamento */
+        $configAgendamento = $configAgendamentoService->PesquisaUmQuando([
+            CO_ASSINANTE => $coAssinante
+        ]);
+        if ($configAgendamento) {
+            $res[CO_CONFIG_AGENDAMENTO] = $configAgendamento->getCoConfigAgendamento();
+            $res[NU_ANTECEDENCIA_AGENDAMENTO] = $configAgendamento->getNuAntecedenciaAgendamento();
+            $res[NU_INTERVALO] = $configAgendamento->getNuIntervalo();
+            $res[ST_STATUS_AGENDAMENTO_SITE] = $configAgendamento->getStStatusAgendamentoSite();
+            $res[ST_RECEBER_EMAIL_AGENDAMENTO] = ($configAgendamento->getStReceberEmailAgendamento() == 'S')
+                ? 'checked' : '';
+            $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = ($configAgendamento->getStEnviarEmailConfirmacao() == 'S')
+                ? 'checked' : '';
+        }
+        $this->form = ConfiguracaoForm::ConfigAgendamento($res);
+    }
 }
    
