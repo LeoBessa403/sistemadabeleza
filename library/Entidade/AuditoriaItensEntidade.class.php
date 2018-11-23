@@ -64,6 +64,9 @@ class AuditoriaItensEntidade extends AbstractEntidade
      */
 	public function getDsItemAnterior()
     {
+        if($this->getDsCampo() == DT_CADASTRO && $this->ds_item_anterior){
+            return Valida::DataShow($this->ds_item_anterior, "d/m/Y H:i");
+        }
         return $this->ds_item_anterior;
     }
 
@@ -81,6 +84,9 @@ class AuditoriaItensEntidade extends AbstractEntidade
      */
 	public function getDsItemAtual()
     {
+        if($this->getDsCampo() == DT_CADASTRO && $this->ds_item_atual){
+            return Valida::DataShow($this->ds_item_atual, "d/m/Y H:i");
+        }
         return $this->ds_item_atual;
     }
 
