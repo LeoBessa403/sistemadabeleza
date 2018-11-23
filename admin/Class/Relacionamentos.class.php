@@ -317,6 +317,11 @@ class Relacionamentos
                     ('Entidade') => 'ConfigAgendamentoEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_MOTIVO_DESCONTO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'MotivoDescontoAssinanteEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (EmpresaEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
@@ -447,6 +452,25 @@ class Relacionamentos
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
+                ),
+            ),
+            (MotivoDescontoAssinanteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_MOTIVO_DESCONTO) => Array(
+                    ('Campo') => CO_MOTIVO_DESCONTO,
+                    ('Entidade') => 'MotivoDescontoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (MotivoDescontoEntidade::TABELA) => Array(
+                (CO_MOTIVO_DESCONTO_ASSINANTE) => Array(
+                    ('Campo') => CO_MOTIVO_DESCONTO,
+                    ('Entidade') => 'MotivoDescontoAssinanteEntidade',
+                    ('Tipo') => '2',
                 ),
             ),
         );

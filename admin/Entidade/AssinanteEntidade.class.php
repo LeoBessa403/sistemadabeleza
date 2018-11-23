@@ -28,6 +28,7 @@ class AssinanteEntidade extends AbstractEntidade
     private $co_dia_especial;
     private $co_config_cliente;
     private $co_config_agendamento;
+    private $co_motivo_desconto;
 
 
     /**
@@ -394,6 +395,22 @@ class AssinanteEntidade extends AbstractEntidade
     public function setCoConfigAgendamento($co_config_agendamento)
     {
         return $this->co_config_agendamento = $co_config_agendamento;
+    }
+
+    /**
+     * @return MotivoDescontoEntidade $co_motivo_desconto
+     */
+    public function getCoMotivoDesconto()
+    {
+        return $this->co_motivo_desconto;
+    }
+
+    /**
+     * @param mixed $co_motivo_desconto
+     */
+    public function setCoMotivoDesconto($co_motivo_desconto)
+    {
+        $this->co_motivo_desconto = $co_motivo_desconto;
     }
 
 }

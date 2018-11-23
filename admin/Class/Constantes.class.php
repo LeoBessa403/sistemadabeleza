@@ -67,6 +67,11 @@ define('ST_STATUS_AGENDAMENTO_SITE', 'st_status_agendamento_site');
 define('NU_ANTECEDENCIA_AGENDAMENTO', 'nu_antecedencia_agendamento');
 define('ST_RECEBER_EMAIL_AGENDAMENTO', 'st_receber_email_agendamento');
 define('ST_ENVIAR_EMAIL_CONFIRMACAO', 'st_enviar_email_confirmacao');
+define('CO_MOTIVO_DESCONTO', 'co_motivo_desconto');
+define('DS_MOTIVO_DESCONTO', 'ds_motivo_desconto');
+define('CO_MOTIVO_DESCONTO_ASSINANTE', 'co_motivo_desconto_assinante');
+define('ST_STATUS_DESCONTO', 'st_status_desconto');
+define('ST_REFLETE_DESCONTO_COMISSAO', 'st_reflete_desconto_comissao');
 
 
 // SERVICES
@@ -94,3 +99,5 @@ define('ST_MARCA_SERVICO', 'st_marca_servico');
 define('NU_AUSENCIA', 'nu_ausencia');
 define('CONFIG_CLIENTE_SERVICE', 'ConfigClienteService');
 define('CONFIG_AGENDAMENTO_SERVICE', 'ConfigAgendamentoService');
+define('MOTIVO_DESCONTO_SERVICE', 'MotivoDescontoService');
+define('MOTIVO_DESCONTO_ASSINANTE_SERVICE', 'MotivoDescontoAssinanteService');
