@@ -9,6 +9,8 @@ class Configuracao extends AbstractController
     public $taxasCartDeb;
     public $taxasCartCred;
     public $pagBandCartao;
+    public $motivosDesconto;
+    public $motivosDescontoAss;
 
     public function ListarDiaEspecialConfiguracao()
     {
@@ -217,11 +219,10 @@ class Configuracao extends AbstractController
             }
         endif;
 
-        $coAssinante = AssinanteService::getCoAssinanteLogado();
         $res[ST_MARCA_SERVICO] = 'checked';
         /** @var ConfigClienteEntidade $configClinte */
         $configClinte = $configClienteService->PesquisaUmQuando([
-            CO_ASSINANTE => $coAssinante
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         if ($configClinte) {
             $res[NU_AUSENCIA] = $configClinte->getNuAusencia();
@@ -245,12 +246,11 @@ class Configuracao extends AbstractController
             }
         endif;
 
-        $coAssinante = AssinanteService::getCoAssinanteLogado();
         $res[ST_RECEBER_EMAIL_AGENDAMENTO] = 'checked';
         $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = 'checked';
         /** @var ConfigAgendamentoEntidade $configAgendamento */
         $configAgendamento = $configAgendamentoService->PesquisaUmQuando([
-            CO_ASSINANTE => $coAssinante
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         if ($configAgendamento) {
             $res[CO_CONFIG_AGENDAMENTO] = $configAgendamento->getCoConfigAgendamento();
@@ -267,35 +267,34 @@ class Configuracao extends AbstractController
 
     public function MotivoDescontoConfiguracao()
     {
-        /** @var ConfigAgendamentoService $configAgendamentoService */
-        $configAgendamentoService = $this->getService(CONFIG_AGENDAMENTO_SERVICE);
-        $id = "configAgendamento";
+        /** @var MotivoDescontoAssinanteService $motivoDescontoAssinanteService */
+        $motivoDescontoAssinanteService = $this->getService(MOTIVO_DESCONTO_ASSINANTE_SERVICE);
+        $id = "cadastraMotivoDescAssinante";
 
         if (!empty($_POST[$id])):
-            $retorno = $configAgendamentoService->salvaConfigAgendamento($_POST);
-            if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AgendamentoConfiguracao/');
-            }
+//            $retorno = $motivoDescontoAssinanteService->($_POST);
+//            if ($retorno[SUCESSO]) {
+//                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/MotivoDescontoConfiguracao/');
+//            }
         endif;
 
-        $coAssinante = AssinanteService::getCoAssinanteLogado();
-        $res[ST_RECEBER_EMAIL_AGENDAMENTO] = 'checked';
-        $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = 'checked';
-        /** @var ConfigAgendamentoEntidade $configAgendamento */
-        $configAgendamento = $configAgendamentoService->PesquisaUmQuando([
-            CO_ASSINANTE => $coAssinante
+        $this->motivosDesconto = MotivoDescontoService::montaComboMotivosDesconto();
+        $motivosDescontoAssinante = $motivoDescontoAssinanteService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
-        if ($configAgendamento) {
-            $res[CO_CONFIG_AGENDAMENTO] = $configAgendamento->getCoConfigAgendamento();
-            $res[NU_ANTECEDENCIA_AGENDAMENTO] = $configAgendamento->getNuAntecedenciaAgendamento();
-            $res[NU_INTERVALO] = $configAgendamento->getNuIntervalo();
-            $res[ST_STATUS_AGENDAMENTO_SITE] = $configAgendamento->getStStatusAgendamentoSite();
-            $res[ST_RECEBER_EMAIL_AGENDAMENTO] = ($configAgendamento->getStReceberEmailAgendamento() == 'S')
-                ? 'checked' : '';
-            $res[ST_ENVIAR_EMAIL_CONFIRMACAO] = ($configAgendamento->getStEnviarEmailConfirmacao() == 'S')
-                ? 'checked' : '';
+        /** @var MotivoDescontoAssinanteEntidade $motivoDescontoAss */
+        foreach ($motivosDescontoAssinante as $motivoDescontoAss) {
+            $this->motivosDescontoAss[$motivoDescontoAss
+                ->getCoMotivoDesconto()->getCoMotivoDesconto()][ST_STATUS_DESCONTO]
+                = $motivoDescontoAss->getStStatusDesconto();
+            $this->motivosDescontoAss[$motivoDescontoAss
+                ->getCoMotivoDesconto()->getCoMotivoDesconto()][ST_REFLETE_DESCONTO_COMISSAO]
+                = $motivoDescontoAss->getStRefleteDescontoComissao();
         }
-        $this->form = ConfiguracaoForm::ConfigAgendamento($res);
+        if (!$motivosDescontoAssinante) {
+            $motivoDescontoAssinanteService->iniciaMotivoDescontoAssinante();
+            $this->motivosDescontoAss = [];
+        }
     }
 }
    

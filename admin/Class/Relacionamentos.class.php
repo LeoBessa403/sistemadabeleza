@@ -11,6 +11,68 @@ class Relacionamentos
     public static function getRelacionamentos()
     {
         return array(
+            (AssinanteEntidade::TABELA) => Array(
+                (CO_PLANO_ASSINANTE_ASSINATURA) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'PlanoAssinanteAssinaturaEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_EMPRESA) => Array(
+                    ('Campo') => CO_EMPRESA,
+                    ('Entidade') => 'EmpresaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PESSOA) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'PessoaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE_MATRIZ) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteMatrizEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_ASSINANTE_FILIAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteFilialEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_FACILIDADE_BENEFICIO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'FacilidadeBeneficioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_FUNCIONAMENTO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'FuncionamentoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_IMAGEM_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ImagemAssinanteEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_DIA_ESPECIAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'DiaEspecialEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_CONFIG_CLIENTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ConfigClienteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_CONFIG_AGENDAMENTO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ConfigAgendamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_MOTIVO_DESCONTO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'MotivoDescontoAssinanteEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,
@@ -259,68 +321,6 @@ class Relacionamentos
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
-                ),
-            ),
-            (AssinanteEntidade::TABELA) => Array(
-                (CO_PLANO_ASSINANTE_ASSINATURA) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'PlanoAssinanteAssinaturaEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_EMPRESA) => Array(
-                    ('Campo') => CO_EMPRESA,
-                    ('Entidade') => 'EmpresaEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_PESSOA) => Array(
-                    ('Campo') => CO_PESSOA,
-                    ('Entidade') => 'PessoaEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_ASSINANTE_MATRIZ) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'AssinanteMatrizEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_ASSINANTE_FILIAL) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'AssinanteFilialEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_FACILIDADE_BENEFICIO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'FacilidadeBeneficioEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_FUNCIONAMENTO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'FuncionamentoEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_IMAGEM_ASSINANTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ImagemAssinanteEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_DIA_ESPECIAL) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'DiaEspecialEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CONFIG_CLIENTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ConfigClienteEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_CONFIG_AGENDAMENTO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ConfigAgendamentoEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_MOTIVO_DESCONTO_ASSINANTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'MotivoDescontoAssinanteEntidade',
-                    ('Tipo') => '2',
                 ),
             ),
             (EmpresaEntidade::TABELA) => Array(

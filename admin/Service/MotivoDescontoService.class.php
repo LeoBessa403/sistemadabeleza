@@ -16,5 +16,16 @@ class  MotivoDescontoService extends AbstractService
         $this->ObjetoModel = New MotivoDescontoModel();
     }
 
-
+    public static function montaComboMotivosDesconto()
+    {
+        /** @var MotivoDescontoService $motivoDescontoService */
+        $motivoDescontoService = new MotivoDescontoService();
+        $motivos = [];
+        $motivosDesconto = $motivoDescontoService->PesquisaTodos();
+        /** @var MotivoDescontoEntidade $motivoDesconto */
+        foreach ($motivosDesconto as $motivoDesconto){
+            $motivos[$motivoDesconto->getCoMotivoDesconto()] = $motivoDesconto->getDsMotivoDesconto();
+        }
+        return $motivos;
+    }
 }

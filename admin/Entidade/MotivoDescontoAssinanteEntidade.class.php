@@ -12,26 +12,26 @@ class MotivoDescontoAssinanteEntidade extends AbstractEntidade
 	const CHAVE = CO_MOTIVO_DESCONTO_ASSINANTE;
 
 	private $co_motivo_desconto_assinante;
-	private $co_assinante;
-	private $co_motivo_desconto;
-	private $st_status_desconto;
-	private $st_reflete_desconto_comissao;
-	private $dt_cadastro;
+    private $st_status_desconto;
+    private $st_reflete_desconto_comissao;
+    private $dt_cadastro;
+    private $co_assinante;
+    private $co_motivo_desconto;
 
 
-	/**
+    /**
     * @return array
     */
 	public static function getCampos() 
     {
     	return [
 			CO_MOTIVO_DESCONTO_ASSINANTE,
-			CO_ASSINANTE,
-			CO_MOTIVO_DESCONTO,
 			ST_STATUS_DESCONTO,
-			ST_REFLETE_DESCONTO_COMISSAO,
-			DT_CADASTRO,
-		];
+            ST_REFLETE_DESCONTO_COMISSAO,
+            DT_CADASTRO,
+            CO_ASSINANTE,
+            CO_MOTIVO_DESCONTO,
+        ];
     }
 
 	/**
@@ -59,40 +59,6 @@ class MotivoDescontoAssinanteEntidade extends AbstractEntidade
 	public function setCoMotivoDescontoAssinante($co_motivo_desconto_assinante)
     {
         return $this->co_motivo_desconto_assinante = $co_motivo_desconto_assinante;
-    }
-
-	/**
-	* @return AssinanteEntidade $co_assinante
-    */
-	public function getCoAssinante()
-    {
-        return $this->co_assinante;
-    }
-
-	/**
-	* @param $co_assinante
-    * @return mixed
-    */
-	public function setCoAssinante($co_assinante)
-    {
-        return $this->co_assinante = $co_assinante;
-    }
-
-	/**
-	* @return MotivoDescontoEntidade $co_motivo_desconto
-    */
-	public function getCoMotivoDesconto()
-    {
-        return $this->co_motivo_desconto;
-    }
-
-	/**
-	* @param $co_motivo_desconto
-    * @return mixed
-    */
-	public function setCoMotivoDesconto($co_motivo_desconto)
-    {
-        return $this->co_motivo_desconto = $co_motivo_desconto;
     }
 
 	/**
@@ -144,6 +110,40 @@ class MotivoDescontoAssinanteEntidade extends AbstractEntidade
 	public function setDtCadastro($dt_cadastro)
     {
         return $this->dt_cadastro = $dt_cadastro;
+    }
+
+    /**
+     * @return AssinanteEntidade $co_assinante
+     */
+    public function getCoAssinante()
+    {
+        return $this->co_assinante;
+    }
+
+    /**
+     * @param $co_assinante
+     * @return mixed
+     */
+    public function setCoAssinante($co_assinante)
+    {
+        return $this->co_assinante = $co_assinante;
+    }
+
+    /**
+     * @return MotivoDescontoEntidade $co_motivo_desconto
+     */
+    public function getCoMotivoDesconto()
+    {
+        return $this->co_motivo_desconto;
+    }
+
+    /**
+     * @param $co_motivo_desconto
+     * @return mixed
+     */
+    public function setCoMotivoDesconto($co_motivo_desconto)
+    {
+        return $this->co_motivo_desconto = $co_motivo_desconto;
     }
 
 }

@@ -1,12 +1,4 @@
 <style>
-    table {
-        margin-bottom: 30px;
-    }
-
-    td, th {
-        padding: 8px;
-    }
-
     .icheckbox_square-purple {
         margin: 0 !important;
     }
@@ -542,7 +534,7 @@ $assinanteEdit = $assinante;
                                     ?>
                                     <div class="form-group col-sm-12">
                                         <div class="col-sm-12">
-                                            <table class="table-striped table-bordered table-hover table-full-width"
+                                            <table class="table-striped table-bordered table-hover table-full-width table-nodatable"
                                                    id="nova" style="width: 100%" cellpadding="5" cellspacing="5">
                                                 <thead>
                                                 <tr style="background-color: #99ccff; color: #000;" role="row">

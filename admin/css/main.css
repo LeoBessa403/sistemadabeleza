@@ -5685,3 +5685,13 @@ td.column-right {
 .dados-olivia {
     background-color: darkolivegreen;
 }
+
+.table-nodatable {
+    margin-bottom: 30px;
+}
+
+.table-nodatable td, .table-nodatable th {
+    padding: 8px;
+}
+
+
