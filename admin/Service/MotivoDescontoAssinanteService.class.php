@@ -52,7 +52,7 @@ class  MotivoDescontoAssinanteService extends AbstractService
             $dadosMotDesAss[ST_REFLETE_DESCONTO_COMISSAO] = SimNaoEnum::NAO;
             $this->Salva($dadosMotDesAss, $coMotivoDesAss);
         }
-        // Atualiza os Status para SIM
+        // Atualiza a Situação dos Status de descontos para SIM
         if(!empty($dados[ST_STATUS_DESCONTO])){
             foreach ($dados[ST_STATUS_DESCONTO] as $coMotivo => $status) {
                 $coMotDesAss = $dados[CO_MOTIVO_DESCONTO_ASSINANTE][$coMotivo];
@@ -60,7 +60,7 @@ class  MotivoDescontoAssinanteService extends AbstractService
                 $this->Salva($dadosStatus, $coMotDesAss);
             }
         }
-        // Atualiza os Status para SIM
+        // Atualiza os Situação de reflete desconto na comissão para SIM
         if(!empty($dados[ST_REFLETE_DESCONTO_COMISSAO])){
             foreach ($dados[ST_REFLETE_DESCONTO_COMISSAO] as $coMotivo => $status) {
                 $coMotDesAss = $dados[CO_MOTIVO_DESCONTO_ASSINANTE][$coMotivo];
