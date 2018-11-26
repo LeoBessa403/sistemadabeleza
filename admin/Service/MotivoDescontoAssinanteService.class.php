@@ -32,4 +32,54 @@ class  MotivoDescontoAssinanteService extends AbstractService
 
         return $motivos;
     }
+
+    public function salvaMotivoDescontoAssinante($dados)
+    {
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $session = new Session();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+        $dadosStatus = [];
+        $dadosReflete = [];
+        $dadosMotDesAss= [];
+        $PDO->beginTransaction();
+        // Atualiza todos para NÃO nos campos de Status e reflete desconto
+        foreach ($dados[CO_MOTIVO_DESCONTO_ASSINANTE] as $coMotivoDesAss) {
+            $dadosMotDesAss[ST_STATUS_DESCONTO] = SimNaoEnum::NAO;
+            $dadosMotDesAss[ST_REFLETE_DESCONTO_COMISSAO] = SimNaoEnum::NAO;
+            $this->Salva($dadosMotDesAss, $coMotivoDesAss);
+        }
+        // Atualiza os Status para SIM
+        if(!empty($dados[ST_STATUS_DESCONTO])){
+            foreach ($dados[ST_STATUS_DESCONTO] as $coMotivo => $status) {
+                $coMotDesAss = $dados[CO_MOTIVO_DESCONTO_ASSINANTE][$coMotivo];
+                $dadosStatus[ST_STATUS_DESCONTO] = SimNaoEnum::SIM;
+                $this->Salva($dadosStatus, $coMotDesAss);
+            }
+        }
+        // Atualiza os Status para SIM
+        if(!empty($dados[ST_REFLETE_DESCONTO_COMISSAO])){
+            foreach ($dados[ST_REFLETE_DESCONTO_COMISSAO] as $coMotivo => $status) {
+                $coMotDesAss = $dados[CO_MOTIVO_DESCONTO_ASSINANTE][$coMotivo];
+                $dadosReflete[ST_REFLETE_DESCONTO_COMISSAO] = SimNaoEnum::SIM;
+                $this->Salva($dadosReflete, $coMotDesAss);
+            }
+        }
+        $session->setSession(MENSAGEM, ATUALIZADO);
+        $retorno[SUCESSO] = true;
+
+        if ($retorno[SUCESSO]) {
+            $retorno[SUCESSO] = true;
+            $PDO->commit();
+        } else {
+            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+            $retorno[SUCESSO] = false;
+            $PDO->rollBack();
+        }
+
+        return $retorno;
+    }
 }

@@ -269,13 +269,11 @@ class Configuracao extends AbstractController
     {
         /** @var MotivoDescontoAssinanteService $motivoDescontoAssinanteService */
         $motivoDescontoAssinanteService = $this->getService(MOTIVO_DESCONTO_ASSINANTE_SERVICE);
-        $id = "cadastraMotivoDescAssinante";
-
-        if (!empty($_POST[$id])):
-//            $retorno = $motivoDescontoAssinanteService->($_POST);
-//            if ($retorno[SUCESSO]) {
-//                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/MotivoDescontoConfiguracao/');
-//            }
+        if (!empty($_POST)):
+            $retorno = $motivoDescontoAssinanteService->salvaMotivoDescontoAssinante($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/MotivoDescontoConfiguracao/');
+            }
         endif;
 
         $this->motivosDesconto = MotivoDescontoService::montaComboMotivosDesconto();
@@ -290,6 +288,9 @@ class Configuracao extends AbstractController
             $this->motivosDescontoAss[$motivoDescontoAss
                 ->getCoMotivoDesconto()->getCoMotivoDesconto()][ST_REFLETE_DESCONTO_COMISSAO]
                 = $motivoDescontoAss->getStRefleteDescontoComissao();
+            $this->motivosDescontoAss[$motivoDescontoAss
+                ->getCoMotivoDesconto()->getCoMotivoDesconto()][CO_MOTIVO_DESCONTO_ASSINANTE]
+                = $motivoDescontoAss->getCoMotivoDescontoAssinante();
         }
         if (!$motivosDescontoAssinante) {
             $motivoDescontoAssinanteService->iniciaMotivoDescontoAssinante();
