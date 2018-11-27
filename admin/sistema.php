@@ -144,6 +144,7 @@ $user = $us->getUser();
                     "Configuracao" => array("clip-settings", "Listar Dia Especial Configuracao", "Cadastro Dia Especial Configuracao",
                         "Formas De Pagamento Configuracao", "Cliente Configuracao", "Agendamento Configuracao",
                         "Motivo Desconto Configuracao"),
+                    "Profissional" => array("clip-user", "Listar Profissional", "Cadastro Profissional"),
                     "Plano" => array("clip-banknote", "Listar Plano", "Cadastro Plano"),
                     "Visita" => array("clip-airplane", "Listar Visita"),
                     "Usuario" => array("fa fa-group", "Meu Perfil Usuario", "Listar Usuario", "Cadastro Usuario", "Troca Senha Usuario"),
