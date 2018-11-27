@@ -84,6 +84,11 @@ class Relacionamentos
                     ('Entidade') => 'TrafegoEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (UsuarioEntidade::TABELA) => Array(
                 (CO_ACESSO) => Array(
@@ -110,6 +115,11 @@ class Relacionamentos
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'UsuarioPerfilEntidade',
                     ('Tipo') => '2',
+                ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
                 ),
             ),
             (FuncionalidadeEntidade::TABELA) => Array(
@@ -174,6 +184,11 @@ class Relacionamentos
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_PESSOA,
                     ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'ProfissionalEntidade',
                     ('Tipo') => '1',
                 ),
             ),
@@ -473,6 +488,66 @@ class Relacionamentos
                     ('Tipo') => '2',
                 ),
             ),
+            (ProfissionalCargoEntidade::TABELA) => Array(
+                (CO_CARGO) => Array(
+                    ('Campo') => CO_CARGO,
+                    ('Entidade') => 'CargoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (CargoEntidade::TABELA) => Array(
+                (CO_PROFISSIONAL_CARGO) => Array(
+                    ('Campo') => CO_CARGO,
+                    ('Entidade') => 'ProfissionalCargoEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (ProfissionalEntidade::TABELA) => Array(
+                (CO_PROFISSIONAL_CARGO) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ProfissionalCargoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_IMAGEM) => Array(
+                    ('Campo') => CO_IMAGEM,
+                    ('Entidade') => 'ImagemEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PESSOA) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'PessoaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_CONTA_BANCARIA) => Array(
+                    ('Campo') => CO_CONTA_BANCARIA,
+                    ('Entidade') => 'ContaBancariaEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ContaBancariaEntidade::TABELA) => Array(
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_CONTA_BANCARIA,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+
+
         );
     }
 }

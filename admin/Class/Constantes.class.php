@@ -72,6 +72,31 @@ define('DS_MOTIVO_DESCONTO', 'ds_motivo_desconto');
 define('CO_MOTIVO_DESCONTO_ASSINANTE', 'co_motivo_desconto_assinante');
 define('ST_STATUS_DESCONTO', 'st_status_desconto');
 define('ST_REFLETE_DESCONTO_COMISSAO', 'st_reflete_desconto_comissao');
+define('DS_FACEBOOK', 'ds_facebook');
+define('DS_TWITTER', 'ds_twitter');
+define('DS_INSTAGRAM', 'ds_instagram');
+define('CO_CARGO', 'co_cargo');
+define('NO_CARGO', 'no_cargo');
+define('CO_PROFISSIONAL_CARGO', 'co_profissional_cargo');
+define('CO_PROFISSIONAL', 'co_profissional');
+define('DS_COR_AGENDA', 'ds_cor_agenda');
+define('ST_ASSISTENTE', 'st_assistente');
+define('DS_SOBRE', 'ds_sobre');
+define('NO_APELIDO', 'no_apelido');
+define('ST_AGENDA', 'st_agenda');
+define('ST_AGENDA_ONLINE', 'st_agenda_online');
+define('NU_ORDEM_AGENDA', 'nu_ordem_agenda');
+define('TP_CONTRATACAO', 'tp_contratacao');
+define('DT_ADMISSAO', 'dt_admissao');
+define('DT_DEMISSAO', 'dt_demissao');
+define('CO_CONTA_BANCARIA', 'co_conta_bancaria');
+define('NU_AGENCIA', 'nu_agencia');
+define('NU_CONTA', 'nu_conta');
+define('NU_BANCO', 'nu_banco');
+define('TP_CONTA', 'tp_conta');
+
+
+
 
 
 // SERVICES
@@ -101,3 +126,7 @@ define('CONFIG_CLIENTE_SERVICE', 'ConfigClienteService');
 define('CONFIG_AGENDAMENTO_SERVICE', 'ConfigAgendamentoService');
 define('MOTIVO_DESCONTO_SERVICE', 'MotivoDescontoService');
 define('MOTIVO_DESCONTO_ASSINANTE_SERVICE', 'MotivoDescontoAssinanteService');
+define('CARGO_SERVICE', 'CargoService');
+define('PROFISSIONAL_CARGO_SERVICE', 'ProfissionalCargoService');
+define('PROFISSIONAL_SERVICE', 'ProfissionalService');
+define('CONTA_BANCARIA_SERVICE', 'ContaBancariaService');
