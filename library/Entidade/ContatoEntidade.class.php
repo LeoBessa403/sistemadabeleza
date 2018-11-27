@@ -18,6 +18,9 @@ class ContatoEntidade extends ContatoEntidadeExtends
     private $nu_tel_0800;
     private $ds_email;
     private $ds_site;
+    private $ds_facebook;
+    private $ds_twitter;
+    private $ds_instagram;
     private $co_pessoa;
 
     /**
@@ -33,6 +36,9 @@ class ContatoEntidade extends ContatoEntidadeExtends
             NU_TEL_0800,
             DS_EMAIL,
             DS_SITE,
+            DS_FACEBOOK,
+            DS_TWITTER,
+            DS_INSTAGRAM,
         ];
     }
 
@@ -162,6 +168,54 @@ class ContatoEntidade extends ContatoEntidadeExtends
     public function setDsSite($ds_site)
     {
         return $this->ds_site = $ds_site;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsFacebook()
+    {
+        return $this->ds_facebook;
+    }
+
+    /**
+     * @param mixed $ds_facebook
+     */
+    public function setDsFacebook($ds_facebook)
+    {
+        $this->ds_facebook = $ds_facebook;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsTwitter()
+    {
+        return $this->ds_twitter;
+    }
+
+    /**
+     * @param mixed $ds_twitter
+     */
+    public function setDsTwitter($ds_twitter)
+    {
+        $this->ds_twitter = $ds_twitter;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsInstagram()
+    {
+        return $this->ds_instagram;
+    }
+
+    /**
+     * @param mixed $ds_instagram
+     */
+    public function setDsInstagram($ds_instagram)
+    {
+        $this->ds_instagram = $ds_instagram;
     }
 
     /**
