@@ -29,7 +29,6 @@ class  MotivoDescontoAssinanteService extends AbstractService
             $motivoDesc[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $this->Salva($motivoDesc);
         }
-
         return $motivos;
     }
 
