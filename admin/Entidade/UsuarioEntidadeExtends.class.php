@@ -8,6 +8,7 @@
 class UsuarioEntidadeExtends extends AbstractEntidade
 {
     private $co_assinante;
+    private $co_profissional;
 
     /**
      * @return AssinanteEntidade $co_assinante
@@ -24,6 +25,23 @@ class UsuarioEntidadeExtends extends AbstractEntidade
     public function setCoAssinante($co_assinante)
     {
         return $this->co_assinante = $co_assinante;
+    }
+
+    /**
+     * @return ProfissionalEntidade $co_profissional
+     */
+    public function getCoProfissional()
+    {
+        return $this->co_profissional;
+    }
+
+    /**
+     * @param $co_profissional
+     * @return mixed
+     */
+    public function setCoProfissional($co_profissional)
+    {
+        $this->co_profissional = $co_profissional;
     }
 
 }

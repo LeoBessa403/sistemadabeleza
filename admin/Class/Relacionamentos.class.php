@@ -72,6 +72,11 @@ class Relacionamentos
                     ('Entidade') => 'MotivoDescontoAssinanteEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -83,11 +88,6 @@ class Relacionamentos
                     ('Campo') => CO_TRAFEGO,
                     ('Entidade') => 'TrafegoEntidade',
                     ('Tipo') => '1',
-                ),
-                (CO_PROFISSIONAL) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ProfissionalEntidade',
-                    ('Tipo') => '2',
                 ),
             ),
             (UsuarioEntidade::TABELA) => Array(

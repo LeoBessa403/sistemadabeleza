@@ -29,7 +29,7 @@ class AssinanteEntidade extends AbstractEntidade
     private $co_config_cliente;
     private $co_config_agendamento;
     private $co_motivo_desconto_assinante;
-
+    private $co_profissional;
 
     /**
      * @return array
@@ -411,6 +411,23 @@ class AssinanteEntidade extends AbstractEntidade
     public function setCoMotivoDescontoAssinante($co_motivo_desconto_assinante)
     {
         $this->co_motivo_desconto_assinante = $co_motivo_desconto_assinante;
+    }
+
+    /**
+     * @return ProfissionalEntidade $co_profissional
+     */
+    public function getCoProfissional()
+    {
+        return $this->co_profissional;
+    }
+
+    /**
+     * @param $co_profissional
+     * @return mixed
+     */
+    public function setCoProfissional($co_profissional)
+    {
+        $this->co_profissional = $co_profissional;
     }
 
 }
