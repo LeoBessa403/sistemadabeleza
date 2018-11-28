@@ -16,7 +16,7 @@
         endif;
 
         if ($foto == "") {
-            echo '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
+            echo '<img src="' . TIMTHUMB . '?src=' . HOME .
                 'library/Imagens/' . $fotoPerfil . '&w=35&h=35" 
                                 alt="' . $noPessoa . '" title="' . $noPessoa . '" 
                                 class="circle-img" />';

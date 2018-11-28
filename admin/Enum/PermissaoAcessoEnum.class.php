@@ -27,6 +27,8 @@ class PermissaoAcessoEnum extends AbstractEnum
     const CONFIGURACAO_DE_CLIENTE = 20;
     const CONFIGURACAO_DE_AGENDAMENTO = 21;
     const MOTIVO_DESCONTO = 22;
+    const CADASTRO_PROFISSIONAL = 23;
+    const LISTAR_PROFISSIONAL = 24;
 
     public static $descricao = [
         PermissaoAcessoEnum::PERFIL_MASTER => 'Perfil Master',
@@ -51,6 +53,8 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::CONFIGURACAO_DE_CLIENTE => 'Configuração de Cliente',
         PermissaoAcessoEnum::CONFIGURACAO_DE_AGENDAMENTO => 'Configuração de Agendamento',
         PermissaoAcessoEnum::MOTIVO_DESCONTO => 'Motivo Desconto',
+        PermissaoAcessoEnum::CADASTRO_PROFISSIONAL => 'Motivo Desconto',
+        PermissaoAcessoEnum::LISTAR_PROFISSIONAL => 'Motivo Desconto',
     ];
 
     public static $actions = [
@@ -76,5 +80,7 @@ class PermissaoAcessoEnum extends AbstractEnum
         PermissaoAcessoEnum::CONFIGURACAO_DE_CLIENTE => 'ClienteConfiguracao',
         PermissaoAcessoEnum::CONFIGURACAO_DE_AGENDAMENTO => 'AgendamentoConfiguracao',
         PermissaoAcessoEnum::MOTIVO_DESCONTO => 'MotivoDescontoConfiguracao',
+        PermissaoAcessoEnum::CADASTRO_PROFISSIONAL => 'CadastroProfissional',
+        PermissaoAcessoEnum::LISTAR_PROFISSIONAL => 'ListarProfissional',
     ];
 }

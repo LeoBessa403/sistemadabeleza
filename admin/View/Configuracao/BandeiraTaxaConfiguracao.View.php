@@ -82,7 +82,7 @@
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
 
-                                    $nomeBandeira = '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME .
+                                    $nomeBandeira = '<img src="' . TIMTHUMB . '?src=' . HOME .
                                         'library/Imagens/' . Valida::ValNome($bandeira->getNoBandeiraCartao()) . '.png' .
                                         '&w=100&h=50" alt="' . $bandeira->getNoBandeiraCartao() .
                                         '" title="' . $bandeira->getNoBandeiraCartao() . '" />';

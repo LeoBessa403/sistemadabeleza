@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Form.class [ HELPER ]
- * Classe responável por gerar formulários!
+ * FormAssistente.class [ HELPER ]
+ * Classe responável por gerar formulários Assistentes!
  *
  * @copyright (c) 2014, Leo Bessa
  */
-class Form
+class FormAssistente
 {
     private static $classes;
     private static $label;
@@ -21,21 +21,23 @@ class Form
     private static $options;
     private static $label_options;
     private static $style;
-    private static $tamanhoForm;
     private static $tamanho;
     private static $action;
     public static $idForm;
     public static $form;
-    public static $botao;
+    public static $titulo;
+    public static $colEsquerda;
+    public static $colDireita;
+    public static $abas;
+    public static $tituloAba;
 
     /**
      * <b>Form da Pesquisa Avançada:</b> ionicia o formulário e suas configurações
      * @param STRING $idform : atribui o ID para o Formulário
      * @param STRING $action : Ação a realizar a pesquisa e carregar a GRID
-     * @param STRING $botao : Label do Botão
-     * @param INT $tamanhoForm : Tamanho do Formulário
+     * @param STRING $titulo : Título da tela
      */
-    function __construct($idform, $action, $botao = "Salvar", $tamanhoForm = 6)
+    function __construct($idform, $titulo, $action = null)
     {
         self::$idForm = $idform;
         self::$style = "";
@@ -43,10 +45,11 @@ class Form
         self::$options = array();
         self::$label_options = array();
         self::$form = "";
-        self::$tamanhoForm = $tamanhoForm;
+        self::$tituloAba = array();
+        self::$abas = '';
         self::$tamanho = "";
-        self::$action = $action;
-        self::$botao = $botao;
+        self::$titulo = $titulo;
+        self::$action = ($action) ? $action : HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
     }
 
     /**
@@ -321,23 +324,21 @@ class Form
     {
         // VALIDA CAMPOS OCUILTOS
         if (self::$type != "hidden"):
-            // VALIDA TAMANHO DO GRUPO DO INPUT
-            if (self::$tamanho != ""):
-                self::$form .= '<div class="col-sm-' . self::$tamanho . '" style="padding:0px 2px;">';
-            endif;
             // VERIFICA SE TEM OBRIGATORIEDADE O CAMPO.
             $obrigatoriedade = $this->verificaObrigatoriedade();
             // INICIA O GRUPO DO INPUT
-            self::$form .= '<div class="form-group">'
-                . '<label for="' . self::$id . '" class="control-label">'
-                . ' ' . self::$label . $obrigatoriedade . ''
-                . '</label>';
+            self::$abas .= '
+                    <div class="form-group">'
+                . '<label for="' . self::$id . '" class="col-sm-' . self::$colEsquerda . ' control-label">'
+                . ' ' . self::$label . $obrigatoriedade . ' '
+                . '</label>
+                <div class="col-sm-' . self::$colDireita . '">';
             // VERIFICA SE TEM ÍCONE
             if (self::$icon != ""):
-                self::$form .= '<div class="input-group ' . self::$id . '">';
+                self::$abas .= '<div class="input-group ' . self::$id . '">';
                 // VERIFICA O LADO DO ÍCONE
                 if (self::$lado == "esq"):
-                    self::$form .= '<span class="input-group-addon" style="height: 34px;">'
+                    self::$abas .= '<span class="input-group-addon" style="height: 34px;">'
                         . '<i class="' . self::$icon . '"></i></span>';
                 endif;
             endif;
@@ -349,7 +350,7 @@ class Form
             //CAMPO TIPO SELECT
             if (self::$type == "select"):
                 $mutiplo = $this->verificaMultiplo();
-                self::$form .= "<select " . $mutiplo . self::$place . " id='" . self::$id . "' name='" . self::$id . "[]' class='form-control search-select " . self::$classes . "'>";
+                self::$abas .= "<select " . $mutiplo . self::$place . " id='" . self::$id . "' name='" . self::$id . "[]' class='form-control search-select " . self::$classes . "'>";
                 foreach (self::$options as $key => $values):
                     $checked = "";
                     if (!empty(self::$valor[self::$id])):
@@ -363,9 +364,9 @@ class Form
                             endif;
                         endif;
                     endif;
-                    self::$form .= '<option value="' . $key . '" ' . $checked . '>' . $values . '</option>';
+                    self::$abas .= '<option value="' . $key . '" ' . $checked . '>' . $values . '</option>';
                 endforeach;
-                self::$form .= "</select>";
+                self::$abas .= "</select>";
 
             //CAMPO TIPO TEXTAREA
             elseif (self::$type == "textarea"):
@@ -380,12 +381,12 @@ class Form
                         self::$valor = "";
                     endif;
                 endif;
-                self::$form .= "<textarea id='" . self::$id . "' name='" . self::$id . "'" . self::$place . " style='resize: none;' class='form-control " . self::$classes . "' >" . $valor . "</textarea>";
+                self::$abas .= "<textarea id='" . self::$id . "' name='" . self::$id . "'" . self::$place . " style='resize: none;' class='form-control " . self::$classes . "' >" . $valor . "</textarea>";
 
             //CAMPO TIPO FILE (ARQUIVO)
             elseif (self::$type == "file"):
                 $mutiplo = $this->verificaMultiplo();
-                self::$form .= '<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-bottom: 0px;">
+                self::$abas .= '<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-bottom: 0px;">
                                     <div class="input-group">
                                             <div class="form-control uneditable-input">
                                                     <i class="fa fa-file fileupload-exists"></i>
@@ -406,14 +407,14 @@ class Form
 
             //CAMPO TIPO SIMGLE FILE (SOMENTE PRA UM ARQUIVO)
             elseif (self::$type == "singlefile"):
-                self::$form .= '<div class="fileupload fileupload-new" data-provides="fileupload">
+                self::$abas .= '<div class="fileupload fileupload-new" data-provides="fileupload">
                                             <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;">';
                 if (isset(self::$valor[self::$id])) {
-                    self::$form .= Valida::getMiniatura(self::$valor[self::$id], "Pre Carregamento", 150, 150);
+                    self::$abas .= Valida::getMiniatura(self::$valor[self::$id], "Pre Carregamento", 150, 150);
                 } else {
-                    self::$form .= '<img src="' . TIMTHUMB . '?src=' . SEM_FOTO . '&w=150&h=150" alt="Pre Carregamento" title="Pre Carregamento"  />';
+                    self::$abas .= '<img src="' . TIMTHUMB . '?src=' . SEM_FOTO . '&w=150&h=150" alt="Pre Carregamento" title="Pre Carregamento"  />';
                 }
-                self::$form .= '</div>
+                self::$abas .= '</div>
                                             <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
                                             <div class="user-edit-image-buttons">
                                                     <span class="btn btn-dark-grey btn-file"><span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Abrir Arquivo</span>
@@ -429,12 +430,12 @@ class Form
             // CAMPO TIPO RADIO OU CHECKBOX
             elseif (self::$type == "radio" || self::$type == "checkbox"):
 
-                self::$form .= "</label><br/>";
+                self::$abas .= "</label><br/>";
 
                 if (self::$type == "checkbox" && !empty(self::$options)):
                     $cor = array("branco" => "default", "azul" => "primary", "verde" => "success", "vermelho" => "danger", "amarelo" => "warning");
                     $verifcaChecked = $this->verificaChecked();
-                    self::$form .= '<div id="change-color-switch" class="make-switch" data-on-label="' . self::$options[0] . '" data-off-label="' . self::$options[1] . '" data-on="' . $cor[self::$options[2]] . '" data-off="' . $cor[self::$options[3]] . '">
+                    self::$abas .= '<div id="change-color-switch" class="make-switch" data-on-label="' . self::$options[0] . '" data-off-label="' . self::$options[1] . '" data-on="' . $cor[self::$options[2]] . '" data-off="' . $cor[self::$options[3]] . '">
                                             <input type="checkbox" ' . $verifcaChecked . ' id="' . self::$id . '" name="' . self::$id . '"  class="' . self::$classes . '"/>
                                     </div>';
                 else:
@@ -453,15 +454,15 @@ class Form
 
                         $verifcaInputs = $this->verificaInline();
 
-                        self::$form .= $verifcaInputs['inicio'];
+                        self::$abas .= $verifcaInputs['inicio'];
                         if ($valor == $key):
                             $verifcaChecked = " checked='checked'";
                         else:
                             $verifcaChecked = "";
                         endif;
-                        self::$form .= " <input id='" . self::$id . "'" . $verifcaChecked . " name='" . self::$id . "' value='" . $key . "'  class='flat-black " . self::$classes . "' type='" . self::$type . "' />"
+                        self::$abas .= " <input id='" . self::$id . "'" . $verifcaChecked . " name='" . self::$id . "' value='" . $key . "'  class='flat-black " . self::$classes . "' type='" . self::$type . "' />"
                             . $op;
-                        self::$form .= $verifcaInputs['fim'];
+                        self::$abas .= $verifcaInputs['fim'];
                     endforeach;
 
                 endif;
@@ -478,39 +479,35 @@ class Form
                     endif;
                 endif;
                 //CAMPO TIPO TEXT
-                self::$form .= '<input type="' . self::$type . '" stylo="' . self::$style . '"' . self::$place . ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '"/>';
+                self::$abas .= '<input type="' . self::$type . '" stylo="' . self::$style . '"' . self::$place . ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '"/>';
             endif;
 
             // VERIFICA SE TEM ÍCONE
             if (self::$icon != ""):
                 // VERIFICA SE O ÍCONE É DO LADO DIREITO
                 if (self::$lado == "dir"):
-                    self::$form .= '<span class="input-group-addon">'
+                    self::$abas .= '<span class="input-group-addon">'
                         . '<i class="' . self::$icon . '"></i></span>';
                 endif;
 
                 // FECHA DIV DO ÍCONE
-                self::$form .= '</div>';
+                self::$abas .= '</div>';
             endif;
 
             // VERIFICA SE TEM INFORMAÇÃO
             if (self::$info != ""):
-                self::$form .= '<span class="help-block" id="' . self::$id . '-info"><i class="fa fa-info-circle"></i> ' . self::$info . '</span>';
+                self::$abas .= '<span class="help-block" id="' . self::$id . '-info"><i class="fa fa-info-circle"></i> ' . self::$info . '</span>';
             else:
-                self::$form .= '<span class="help-block" id="' . self::$id . '-info">.</span>';
-            endif;
-
-            // FECHA O TAMANHO DO INPUT
-            if (self::$tamanho != ""):
-                self::$form .= '</div>';
+                self::$abas .= '<span class="help-block" id="' . self::$id . '-info">.</span>';
             endif;
 
             // FECHA O GRUPO DO INPUT
-            self::$form .= '</div>';
+            self::$abas .= '</div>
+                       </div>';
         else:
 
             // CAMPO TIPO HIDDEN
-            self::$form .= '<input id="' . self::$id . '" name="' . self::$id . '" value="' . self::$values . '" type="hidden" />';
+            self::$abas .= '<input id="' . self::$id . '" name="' . self::$id . '" value="' . self::$values . '" type="hidden" />';
         endif;
 
         // ZERA TODOS OS ATRIBUTOS
@@ -529,80 +526,115 @@ class Form
     }
 
     /**
-     * <b>finalizaForm:</b> Fecha o formulário
-     * @return STRING com o fechamento do FORM.
+     * <b>Cria a Aba :</b> Aba do formulário de assistente
+     * @param $titulo : título da Aba
+     * @param $subTitulo : sub Título da Aba
+     * @param $primeiraColuna : Primeira coluna da aba a da esquerda
+     * @param $segundaColuna : Segunda coluna da aba a da direita
+     * @return string Abas.
      */
-    public function finalizaForm($link = false, $btnVoltar = true, $titulo = null)
+    public function criaAba($titulo, $subTitulo, $primeiraColuna = 3, $segundaColuna = 9)
     {
-        self::$form = '<div class="col-md-' . self::$tamanhoForm . '">							
-                <div class="panel panel-box">
-                        <div class="panel-body">
-                 <h2 style="margin: 0 0 15px;"><small>' . $titulo . '</small></h2>
-                            <form action="' . HOME . self::$action . '" role="form" id="'
-            . self::$idForm . '" name="' . self::$idForm . '" method="post"  enctype="multipart/form-data" class="formulario">                                                         
-                            <div class="col-md-12"">' .
-            self::$form
-            . '<div class="col-md-12" style="display: block; padding: 0;">
-                 <button data-style="zoom-out" class="btn btn-success ladda-button" type="submit" 
-                 value="' . self::$idForm . '" name="' . self::$idForm . '" style="margin-top: 10px;">
-                            <span class="ladda-label"> ' . self::$botao . ' </span>
-                            <i class="fa fa-save"></i>
-                            <span class="ladda-spinner"></span>
-                        </button>
-                        <button data-style="expand-right" class="btn btn-danger ladda-button" type="reset" style="margin-top: 10px;">
-                            <span class="ladda-label"> Limpar </span>
-                            <i class="fa fa-ban"></i>
-                            <span class="ladda-spinner"></span>
-                        </button>';
-        if ($btnVoltar) {
-            if (!$link) {
-                $link = UrlAmigavel::$modulo;
-                $link .= (UrlAmigavel::$modulo == ADMIN)
-                    ? '/' . UrlAmigavel::$controller . '/Listar' . UrlAmigavel::$controller
-                    : '';
-            } else {
-                $link = UrlAmigavel::$modulo . '/' . $link;
-            }
-            self::$form .= '<a href="' . HOME . $link . '"
-                           class="btn btn-primary tooltips" data-original-title="Voltar" data-placement="top"
-                           style="float: right; margin-top: 10px;">
-                            Voltar <i class="clip-arrow-right-2"></i>
-                         </a>';
+        self::$colEsquerda = $primeiraColuna;
+        self::$colDireita = $segundaColuna;
+        $nuAba = count(self::$tituloAba) + 1;
+        self::$abas .= '
+                            <div id="step-' . $nuAba . '">
+                                    <h2 class="StepTitle">' . $titulo . '
+                                        <small>' . $subTitulo . '</small>
+                                    </h2>
+                                    <div class="col-sm-12">
+                                        <div class="form-group col-sm-12">';
+
+        self::$tituloAba[$nuAba]['titulo'] = $titulo;
+        self::$tituloAba[$nuAba]['subTitulo'] = $subTitulo;
+        return self::$abas;
+    }
+
+    /**
+     * <b>Finaliza a Aba :</b> Aba do formulário de assistente
+     * @param $ultima : Indica se é a ultima aba
+     * @return string Abas.
+     */
+    public function finalizaAba($ultima = null)
+    {
+        self::$abas .= '</div>
+                        <div class="form-group">';
+        // Caso ja tenha aba cria o botão de voltar
+        if ($ultima) {
+            self::$abas .= '<div class="col-sm-2 pull-right">
+                                <button type="submit" class="btn btn-success btn-block">
+                                    Salvar <i class="fa fa-arrow-circle-right"></i>
+                                </button>
+                            </div>';
+        } else {
+            self::$abas .= '<div class="col-sm-2 pull-right">
+                                <button id="1" class="btn btn-primary next-step btn-block">
+                                    Próximo <i class="fa fa-arrow-circle-right"></i>
+                                </button>
+                            </div>';
         }
-
-        self::$form .= '</div>
+        if (count(self::$tituloAba) - 1) {
+            self::$abas .= '<div class="col-sm-2 pull-right">
+                                <button class="btn btn-light-grey back-step btn-block">
+                                    <i class="fa fa-circle-arrow-left"></i> Voltar
+                                </button>
+                            </div>';
+        }
+        self::$abas .= '</div>
                     </div>
-                </form>
-             </div>
-             </div>
-        </div>';
+                </div>';
 
-        return self::$form;
+        return self::$abas;
     }
 
     /**
      * <b>finalizaForm:</b> Fecha o formulário
      * @return STRING com o fechamento do FORM.
      */
-    public function finalizaFormPesquisaAvancada()
+    public function finalizaForm()
     {
-        self::$form = '<form action="' . HOME . self::$action . '" role="form" id="' . self::$idForm . '" name="' .
-            self::$idForm . '" method="post"  enctype="multipart/form-data" class="formulario">                                                         
-                            <div class="col-md-12">' .
-            self::$form
-            . '</div>
-                                <button data-style="zoom-out" class="btn btn-success ladda-button" type="submit" value="' .
-            Form::$idForm . '" name="' . Form::$idForm . '">
-                                    <span class="ladda-label"> Pesquisar </span>
-                                    <i class="fa fa-save"></i>
-                                    <span class="ladda-spinner"></span>
-                                </button>
-                                <button data-style="expand-right" class="btn btn-danger ladda-button" type="reset">
-                                    <span class="ladda-label"> Limpar </span>
-                                    <i class="fa fa-ban"></i>
-                                    <span class="ladda-spinner"></span>
-                                </button>
-                        </form>';
+        self::$form .= '<div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-external-link-square"></i>
+                        ' . self::$titulo . '
+                    </div>
+                    <div class="panel-body">
+                        <form action="' . self::$action . '"
+                              role="form" class="smart-wizard form-horizontal formulario"
+                              method="post" enctype="multipart/form-data"
+                              id="' . self::$idForm . '" name="' . self::$idForm . '">
+                            <div id="wizard" class="swMain">
+                                <ul>';
+
+        foreach (self::$tituloAba as $nuAba => $aba) {
+            self::$form .= '
+                            <li>
+                                <a href="#step-' . $nuAba . '" class="selected">
+                                    <div class="stepNumber">' . $nuAba . '</div>
+                                    <span class="stepDesc"> ' . $aba['titulo'] . '<br/>
+                                        <small>' . $aba['subTitulo'] . '</small>
+                                    </span>
+                                </a>
+                            </li>';
+        }
+
+        self::$form .= '</ul>
+                        <div class="progress progress-striped active progress-sm">
+                            <div aria-valuemax="100" aria-valuemin="0" role="progressbar"
+                                 class="progress-bar progress-bar-success step-bar">
+                                <span class="sr-only"> 0% Complete (success)</span>
+                            </div>
+                        </div>';
+
+        self::$form .= self::$abas;
+
+        self::$form .= '</div>
+                    </form>
+                </div>
+             </div>
+        </div>';
 
         return self::$form;
     }

@@ -13,7 +13,7 @@ class Notificacoes
         echo '<div id="gritter-notice-wrapper" class="top-right gritter-'.$dados['tipo'].' fadeIn gritter-notificacao">
             <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
-                    <img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                    <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
                     '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />
@@ -49,7 +49,7 @@ class Notificacoes
         echo '<div id="gritter-notice-wrapper" class="top-right gritter-info fadeIn gritter-aviso">
             <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">
-                    <img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                    <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
                     '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />
@@ -87,7 +87,7 @@ class Notificacoes
         echo '<div id="gritter-notice-wrapper" class="top-right gritter-' . $class . ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
-                    <img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                    <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
                     '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '"
                                 class="circle-img" />

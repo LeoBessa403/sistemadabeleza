@@ -92,22 +92,22 @@ $visitaService->gestaoVisita();
         </div>
         <?php
         $display = 'block';
-            if (Session::CheckCookie('sem-lead-bicalho') || Session::CheckCookie('lead-bicalho'))
-                $display = 'none';
+        if (Session::CheckCookie('sem-lead-bicalho') || Session::CheckCookie('lead-bicalho'))
+            $display = 'none';
         ?>
         <div class="overlay-model" style="display: <?= $display; ?>">
             <div class="captura-email">
                 <span class="fechar">x</span>
-                <img src="<?= HOME; ?>library/Helpers/Timthumb.class.php?src=<?=
-                HOME; ?>uploads/captura.jpg&amp;w=500&amp;h=600&amp;zc=3"
+                <img src="<?= TIMTHUMB; ?>?src=<?= HOME; ?>uploads/captura.jpg&amp;w=500&amp;h=600&amp;zc=3"
                      alt="Captura de Email" title="Captura de Email" class="img-responsive">
                 <div class="form">
-                  <h4>Aproveite</h4>
+                    <h4>Aproveite</h4>
                     <h3>Ofertas Exclusivas</h3>
                     <h4>Em seu email <i class="fa fa-envelope"></i></h4>
                     <p>Digite seu e-mail abaixo e receba ofertas exclusivas e muito mais...</p>
                     <p>Para Saber das novidades deixe seu email</p>
-                    <input id="email-lead" name="email" class="email" placeholder="Digite aqui seu e-mail e aproveite!"/>
+                    <input id="email-lead" name="email" class="email"
+                           placeholder="Digite aqui seu e-mail e aproveite!"/>
                     <p class="mensagem-erro alert-danger">Email Inválido</p>
                     <p class="mensagem-success alert-success">Cadastrado com Sucesso</p>
                     <button id="envia-email" class="le-button" title="Enviar">Cadastrar</button>

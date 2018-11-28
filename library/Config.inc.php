@@ -53,6 +53,10 @@ define('PARTIAL_SITE', PASTA_RAIZ . SITE . '/partial/');
 define('PARTIAL_ADMIN', PASTA_RAIZ . ADMIN . '/partial/');
 define('PASTA_UPLOADS', HOME . 'uploads/');
 
+// ARQUIVOS PRE DEFINIDOS
+define('TIMTHUMB', HOME . 'library/Helpers/Timthumb.class.php');
+define('SEM_FOTO', HOME . 'library/Imagens/sem-foto.jpg');
+
 
 // DEFINE PARA VALIDAÇÃO DO CADASTRO
 define('CADASTRADO', "cadastrado");

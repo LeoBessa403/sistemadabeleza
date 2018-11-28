@@ -20,7 +20,7 @@
                                 <a href="javascript:">
                                     <div class="clearfix">
                                         <div class="thread-image">
-                                            <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
+                                            <?= '<img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
                                             '/Images/sistemadabeleza.jpg&w=50&h=50"
                                 alt="' . DESC . '" title="' . DESC . '" class="circle-img" />'; ?>
                                         </div>

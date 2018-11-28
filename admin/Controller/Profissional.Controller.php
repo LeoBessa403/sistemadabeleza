@@ -6,15 +6,17 @@ class Profissional extends AbstractController
 
     public function ListarProfissional()
     {
-        /** @var ProfissionalService $profissionalService */
-        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
-        $this->result = $profissionalService->PesquisaTodos([
-            TP_PROFISSIONAL => ProfissionalEnum::MATRIZ,
-        ]);
+//        /** @var ProfissionalService $profissionalService */
+//        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+//        $this->result = $profissionalService->PesquisaTodos([
+//            TP_PROFISSIONAL => ProfissionalEnum::MATRIZ,
+//        ]);
     }
 
     public function CadastroProfissional()
     {
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
         /** @var ProfissionalService $profissionalService */
         $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
 
@@ -34,45 +36,47 @@ class Profissional extends AbstractController
         /** @var FacilidadeBeneficioService $facilidadeBeneficioService */
         $facilidadeBeneficioService = $this->getService(FACILIDADE_BENEFICIO_SERVICE);
         /** @var ProfissionalEntidade $profissional */
-        $profissional = $profissionalService->getProfissionalLogado();
+        $assinante = $assinanteService->getAssinanteLogado();
 
-        $this->contato = $contatoService->PesquisaUmRegistro($profissional->getCoEmpresa()->getCoContato());
-        $this->endereco = $enderecoService->PesquisaUmRegistro($profissional->getCoEmpresa()->getCoEndereco());
-        if (!$this->endereco) {
-            $endereco[DS_ENDERECO] = '';
-            $coEndereco = $enderecoService->Salva($endereco);
-            $this->endereco = $enderecoService->PesquisaUmRegistro($coEndereco);
-            $empresa[CO_ENDERECO] = $coEndereco;
-            $empresaService->Salva($empresa, $profissional->getCoEmpresa()->getCoEmpresa());
-        }
-        $this->facilidade = $profissional->getCoFacilidadeBeneficio();
-        if (!$this->facilidade) {
-            $facilidad[TP_ESTABELECIMENTO] = 0;
-            $facilidad[CO_PROFISSIONAL] = ProfissionalService::getCoProfissionalLogado();
-            $cofacilidad = $facilidadeBeneficioService->Salva($facilidad);
-            $this->facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
-        }
-        $this->funcionamento = $profissional->getCoFuncionamento();
-        if (!$this->funcionamento) {
-            $funcionamento[CO_PROFISSIONAL] = ProfissionalService::getCoProfissionalLogado();
-            $funcionamento[NU_HORA_ABERTURA] = '08:00';
-            $funcionamento[NU_HORA_FECHAMENTO] = '18:00';
-            for ($i = 1; $i < 6; $i++) {
-                $funcionamento[NU_DIA_SEMANA] = $i;
-                $funcionamentoService->Salva($funcionamento);
-            }
-            $this->funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
-                CO_PROFISSIONAL => ProfissionalService::getCoProfissionalLogado()
-            ]);
-        }
-        $this->logo = '';
-        $this->imagem_logo = '';
-        if (!empty($profissional->getCoImagemProfissional())) {
-            $this->imagem_logo = $profissional->getLogoImagemProfissional()->getCoImagem()->getCoImagem();
-            $this->logo = "Profissional/Profissional-" . ProfissionalService::getCoProfissionalLogado() . "/" .
-                $profissional->getLogoImagemProfissional()->getCoImagem()->getDsCaminho();
-        }
-        $this->profissional = $profissional;
+//        $this->contato = $contatoService->PesquisaUmRegistro($profissional->getCoEmpresa()->getCoContato());
+//        $this->endereco = $enderecoService->PesquisaUmRegistro($profissional->getCoEmpresa()->getCoEndereco());
+//        if (!$this->endereco) {
+//            $endereco[DS_ENDERECO] = '';
+//            $coEndereco = $enderecoService->Salva($endereco);
+//            $this->endereco = $enderecoService->PesquisaUmRegistro($coEndereco);
+//            $empresa[CO_ENDERECO] = $coEndereco;
+//            $empresaService->Salva($empresa, $profissional->getCoEmpresa()->getCoEmpresa());
+//        }
+//        $this->facilidade = $profissional->getCoFacilidadeBeneficio();
+//        if (!$this->facilidade) {
+//            $facilidad[TP_ESTABELECIMENTO] = 0;
+//            $facilidad[CO_PROFISSIONAL] = ProfissionalService::getCoProfissionalLogado();
+//            $cofacilidad = $facilidadeBeneficioService->Salva($facilidad);
+//            $this->facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
+//        }
+//        $this->funcionamento = $profissional->getCoFuncionamento();
+//        if (!$this->funcionamento) {
+//            $funcionamento[CO_PROFISSIONAL] = ProfissionalService::getCoProfissionalLogado();
+//            $funcionamento[NU_HORA_ABERTURA] = '08:00';
+//            $funcionamento[NU_HORA_FECHAMENTO] = '18:00';
+//            for ($i = 1; $i < 6; $i++) {
+//                $funcionamento[NU_DIA_SEMANA] = $i;
+//                $funcionamentoService->Salva($funcionamento);
+//            }
+//            $this->funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
+//                CO_PROFISSIONAL => ProfissionalService::getCoProfissionalLogado()
+//            ]);
+//        }
+//        $this->logo = '';
+//        $this->imagem_logo = '';
+//        if (!empty($profissional->getCoImagemProfissional())) {
+//            $this->imagem_logo = $profissional->getLogoImagemProfissional()->getCoImagem()->getCoImagem();
+//            $this->logo = "Profissional/Profissional-" . ProfissionalService::getCoProfissionalLogado() . "/" .
+//                $profissional->getLogoImagemProfissional()->getCoImagem()->getDsCaminho();
+//        }
+//        $this->profissional = $profissional;
+
+        $this->form = ProfissionalForm::Cadastrar();
     }
 
 }
