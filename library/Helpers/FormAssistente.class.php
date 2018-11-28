@@ -543,8 +543,8 @@ class FormAssistente
                                     <h2 class="StepTitle">' . $titulo . '
                                         <small>' . $subTitulo . '</small>
                                     </h2>
-                                    <div class="col-sm-12">
-                                        <div class="form-group col-sm-12">';
+                                    <div class="col-sm-8">
+                                        <div class="form-group">';
 
         self::$tituloAba[$nuAba]['titulo'] = $titulo;
         self::$tituloAba[$nuAba]['subTitulo'] = $subTitulo;
