@@ -22,7 +22,7 @@ class FuncionalidadeForm
         $formulario
             ->setId(CO_PERFIL)
             ->setLabel("Perfis")
-            ->setClasses("multipla")
+            ->setClasses("multipla ob")
             ->setInfo("Perfis que podem acessar a funcionalidade.")
             ->setType("select")
             ->setOptions($perfis)

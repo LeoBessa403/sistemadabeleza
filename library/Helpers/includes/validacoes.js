@@ -177,21 +177,18 @@ $(function () {
 
     function validaErro(id, msg) {
         $('#' + id).parent(".form-group").addClass('has-error').removeClass('has-success');
-        $('.' + id).parent(".form-group").addClass('has-error').removeClass('has-success');
         $('span#' + id + '-info').text(msg).prepend('<i class="fa clip-cancel-circle-2"></i> ');
         return false;
     }
 
     function validaOK(id, msg) {
         $('#' + id).parent(".form-group").addClass('has-success').removeClass('has-error');
-        $('.' + id).parent(".form-group").addClass('has-success').removeClass('has-error');
         $('span#' + id + '-info').text(msg).prepend('<i class="fa clip-checkmark-circle-2"></i> ');
         return true;
     }
 
     function tiraValidacao(id) {
         $('#' + id).parent(".form-group").removeClass('has-success').removeClass('has-error');
-        $('.' + id).parent(".form-group").removeClass('has-success').removeClass('has-error');
         $('span#' + id + '-info').text(".");
         return true;
     }
