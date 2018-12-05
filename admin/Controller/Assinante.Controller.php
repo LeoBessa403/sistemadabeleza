@@ -173,6 +173,26 @@ class Assinante extends AbstractController
                 $assinante->getLogoImagemAssinante()->getCoImagem()->getDsCaminho();
         }
         $this->assinante = $assinante;
+
+//        $coAssinante = UrlAmigavel::PegaParametro(CO_ASSINANTE);
+        $res[ST_LANCHONETE] = '';
+        $res[ST_TELEVISAO] = '';
+        $res[ST_WIFI] = '';
+        $res[ST_ACESSO_DEFICIENTE] = '';
+        $res[ST_JOGOS] = '';
+//        if ($coAssinante) {
+//            /** @var AssinanteEntidade $assinante */
+//            $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
+//            $res[NO_PESSOA] = $assinante->getCoPessoa()->getNoPessoa();
+//            $res[NO_FANTASIA] = $assinante->getCoEmpresa()->getNoFantasia();
+//            $res[NU_TEL1] = $assinante->getCoPessoa()->getCoContato()->getNuTel1();
+//            $res[DS_EMAIL] = $assinante->getCoPessoa()->getCoContato()->getDsEmail();
+//            $res[CO_ASSINANTE] = $assinante->getCoAssinante();
+//            $res[CO_ASSINANTE_MATRIZ] = $assinante->getCoMeuAssinanteMatriz();
+//            $res[CO_ASSINANTE_FILIAL] = $assinante->getFiliaisMatriz();
+//
+//        }
+        $this->form = AssinanteForm::DadosComplementares($res);
     }
 
 }

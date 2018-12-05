@@ -430,7 +430,7 @@ class FormAssistente
             // CAMPO TIPO RADIO OU CHECKBOX
             elseif (self::$type == "radio" || self::$type == "checkbox"):
 
-                self::$abas .= "</label><br/>";
+                self::$abas .= "</label>";
 
                 if (self::$type == "checkbox" && !empty(self::$options)):
                     $cor = array("branco" => "default", "azul" => "primary", "verde" => "success", "vermelho" => "danger", "amarelo" => "warning");
@@ -554,10 +554,14 @@ class FormAssistente
     /**
      * <b>Finaliza a Aba :</b> Aba do formulário de assistente
      * @param $ultima : Indica se é a ultima aba
+     * @param $gridAssistente : Se a Aba sera de uma Grid Assistente
      * @return string Abas.
      */
-    public function finalizaAba($ultima = null)
+    public function finalizaAba($ultima = null, $gridAssistente = null)
     {
+        if($gridAssistente){
+            self::$abas .= $gridAssistente;
+        }
         self::$abas .= '</div>
                         <div class="form-group">';
         // Caso ja tenha aba cria o botão de voltar
