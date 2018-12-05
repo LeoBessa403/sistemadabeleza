@@ -561,6 +561,7 @@ class FormAssistente
     {
         if($gridAssistente){
             self::$abas .= $gridAssistente;
+            self::$abas .= '</div>';
         }
         self::$abas .= '</div>
                         <div class="form-group">';

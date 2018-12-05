@@ -381,8 +381,28 @@ class AssinanteForm
         $formulario
             ->finalizaAba(false, $gridAssitente);
 
+        // Aba 4
+        $formulario
+            ->criaAba("Facilidades e Benefícios", "Informações das Facilidades e Benefícios");
 
+        $formulario
+            ->setId(DS_CAMINHO)
+            ->setType("singlefile")
+            ->setInfo("Foto da fachada do estabelecimento")
+            ->setLabel("Foto Principal / Logo")
+            ->CriaInpunt();
 
+        $formulario
+            ->setId(CO_IMAGEM_ASSINANTE)
+            ->setLabel("Galeria de Fotos do Estabelecimento")
+            ->setType("file")
+            ->setClasses("multipla")
+            ->setLimite(5)
+            ->setInfo("Pode enviar até 5 Fotos")
+            ->CriaInpunt();
+
+        $formulario
+            ->finalizaAba(true);
 
         return $formulario->finalizaForm();
     }
