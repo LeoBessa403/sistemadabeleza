@@ -529,11 +529,12 @@ class FormAssistente
      * <b>Cria a Aba :</b> Aba do formulário de assistente
      * @param $titulo : título da Aba
      * @param $subTitulo : sub Título da Aba
+     * @param $tamanhoForm : Tamanho da grid do formulário
      * @param $primeiraColuna : Primeira coluna da aba a da esquerda
      * @param $segundaColuna : Segunda coluna da aba a da direita
      * @return string Abas.
      */
-    public function criaAba($titulo, $subTitulo, $primeiraColuna = 3, $segundaColuna = 9)
+    public function criaAba($titulo, $subTitulo, $tamanhoForm = 6, $primeiraColuna = 3, $segundaColuna = 9)
     {
         self::$colEsquerda = $primeiraColuna;
         self::$colDireita = $segundaColuna;
@@ -543,7 +544,7 @@ class FormAssistente
                                     <h2 class="StepTitle">' . $titulo . '
                                         <small>' . $subTitulo . '</small>
                                     </h2>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-' . $tamanhoForm . '">
                                         <div class="form-group">';
 
         self::$tituloAba[$nuAba]['titulo'] = $titulo;

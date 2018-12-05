@@ -334,7 +334,7 @@ class AssinanteForm
 
         // Aba 5
         $formulario
-            ->criaAba("Funcionamento", "Informações do horário de funcionamento");
+            ->criaAba("Funcionamento", "Informações do horário de funcionamento", 10);
 
 
         $grid = new GridAssistente();
@@ -352,22 +352,22 @@ class AssinanteForm
                 $abertura = $funcionamentoEdit[$numero - 1]->getNuHoraAbertura();
                 $fechamento = $funcionamentoEdit[$numero - 1]->getNuHoraFechamento();
             }
-            $campoAtende = '<input type="checkbox" '. $check . '
+            $campoAtende = '<input type="checkbox" ' . $check . '
                            class="square-purple"
-                           value="" id="'. NU_DIA_SEMANA . $numero . '"
-                           name="'. NU_DIA_SEMANA . '['. $numero . ']"/>';
+                           value="" id="' . NU_DIA_SEMANA . $numero . '"
+                           name="' . NU_DIA_SEMANA . '[' . $numero . ']"/>';
 
 
             $campoAbertura = '<input type="text" class="form-control horas"
-                           id="'. NU_HORA_ABERTURA . $numero . '"
-                           name="'. NU_HORA_ABERTURA . '['. $numero . ']"
-                           value="'. $abertura . '"
+                           id="' . NU_HORA_ABERTURA . $numero . '"
+                           name="' . NU_HORA_ABERTURA . '[' . $numero . ']"
+                           value="' . $abertura . '"
                            placeholder="Horário de Abertura do dia">';
 
             $campoFechamento = '<input type="text" class="form-control horas"
-               id="'. NU_HORA_FECHAMENTO . $numero . '"
-               name="'. NU_HORA_FECHAMENTO . '['. $numero . ']"
-               value="'. $fechamento . '"
+               id="' . NU_HORA_FECHAMENTO . $numero . '"
+               name="' . NU_HORA_FECHAMENTO . '[' . $numero . ']"
+               value="' . $fechamento . '"
                placeholder="Horário de Fechamento do dia">';
 
             $grid->setColunas($campoAtende);
