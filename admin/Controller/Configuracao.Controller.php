@@ -124,39 +124,41 @@ class Configuracao extends AbstractController
 
         $taxasCartDeb = [];
         $taxasCartCred = [];
-        /** @var FacilidadePagamentoEntidade $facilidadePagamentos */
-        foreach ($facilidadesPagamentos as $facilidadePagamentos) {
-            if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO) {
-                $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
-                /** @var FacilidadePagamentoEntidade $facPagamento */
-                $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro(
-                    $facilidadePagamentos->getCoFacilidadePagamento());
-                if ($facPagamento->getCoPagamentoBandeiraCartao()) {
-                    /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
-                    foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
-                        $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
-                        $taxasCartDeb[$bandCartao][NU_TAXA_CARTAO] = Valida::FormataMoeda(
-                            $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao());
-                        $taxasCartDeb[$bandCartao][CO_PAGAMENTO_BANDEIRA_CARTAO] =
-                            $pagBandCartao->getCoPagamentoBandeiraCartao();
+        if ($facilidadesPagamentos) {
+            /** @var FacilidadePagamentoEntidade $facilidadePagamentos */
+            foreach ($facilidadesPagamentos as $facilidadePagamentos) {
+                if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_DEBITO) {
+                    $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO] = true;
+                    /** @var FacilidadePagamentoEntidade $facPagamento */
+                    $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro(
+                        $facilidadePagamentos->getCoFacilidadePagamento());
+                    if ($facPagamento->getCoPagamentoBandeiraCartao()) {
+                        /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
+                        foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
+                            $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
+                            $taxasCartDeb[$bandCartao][NU_TAXA_CARTAO] = Valida::FormataMoeda(
+                                $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao());
+                            $taxasCartDeb[$bandCartao][CO_PAGAMENTO_BANDEIRA_CARTAO] =
+                                $pagBandCartao->getCoPagamentoBandeiraCartao();
+                        }
                     }
                 }
-            }
-            if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO) {
-                $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] = true;
-                /** @var FacilidadePagamentoEntidade $facPagamento */
-                $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro(
-                    $facilidadePagamentos->getCoFacilidadePagamento());
-                if ($facPagamento->getCoPagamentoBandeiraCartao()) {
-                    /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
-                    foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
-                        $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
-                        $taxasCartCred[$bandCartao][NU_TAXA_CARTAO] = Valida::FormataMoeda(
-                            $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao());
-                        $taxasCartCred[$bandCartao][NU_TAXA_ANTECIPACAO] = Valida::FormataMoeda(
-                            $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaAntecipacao());
-                        $taxasCartCred[$bandCartao][CO_PAGAMENTO_BANDEIRA_CARTAO] =
-                            $pagBandCartao->getCoPagamentoBandeiraCartao();
+                if ($facilidadePagamentos->getCoTipoPagamento() == TipoPagamentoEnum::CARTAO_CREDITO) {
+                    $dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] = true;
+                    /** @var FacilidadePagamentoEntidade $facPagamento */
+                    $facPagamento = $facilidadePagamentoService->PesquisaUmRegistro(
+                        $facilidadePagamentos->getCoFacilidadePagamento());
+                    if ($facPagamento->getCoPagamentoBandeiraCartao()) {
+                        /** @var PagamentoBandeiraCartaoEntidade $pagBandCartao */
+                        foreach ($facPagamento->getCoPagamentoBandeiraCartao() as $pagBandCartao) {
+                            $bandCartao = $pagBandCartao->getCoBandeiraCartao()->getCoBandeiraCartao();
+                            $taxasCartCred[$bandCartao][NU_TAXA_CARTAO] = Valida::FormataMoeda(
+                                $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaCartao());
+                            $taxasCartCred[$bandCartao][NU_TAXA_ANTECIPACAO] = Valida::FormataMoeda(
+                                $pagBandCartao->getCoUltimaTaxaCartao()->getNuTaxaAntecipacao());
+                            $taxasCartCred[$bandCartao][CO_PAGAMENTO_BANDEIRA_CARTAO] =
+                                $pagBandCartao->getCoPagamentoBandeiraCartao();
+                        }
                     }
                 }
             }
@@ -179,6 +181,7 @@ class Configuracao extends AbstractController
 
     public function HistoricoTaxaCartaoDebito()
     {
+        $session = new Session();
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
         $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
 
@@ -187,13 +190,16 @@ class Configuracao extends AbstractController
             /** @var PlanoEntidade $plano */
             $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
         } else {
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/TaxasCartaoDebitoNaoEncontrado/');
+            $session->setSession(MENSAGEM,
+                'Não Existe Histórico de taxas para esse Cartões de Débito');
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/BandeiraTaxaConfiguracao/');
         }
     }
 
 
     public function HistoricoTaxaCartaoCredito()
     {
+        $session = new Session();
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
         $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
 
@@ -202,7 +208,9 @@ class Configuracao extends AbstractController
             /** @var PlanoEntidade $plano */
             $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
         } else {
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/TaxasCartaoCreditoNaoEncontrado/');
+            $session->setSession(MENSAGEM,
+                'Não Existe Histórico de taxas para esse Cartões de Crédito');
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/BandeiraTaxaConfiguracao/');
         }
     }
 
