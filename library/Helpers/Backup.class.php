@@ -26,6 +26,7 @@ class Backup
             fwrite($backupCheck, Valida::DataDBDate($novaData));
             fclose($backupCheck);
             $this->charset = 'utf8';
+            $this->controleVersao();
             $conn = new ObjetoPDO();
             $this->conn = $conn->inicializarConexao();
             $this->RealizarBackup();
@@ -119,5 +120,22 @@ class Backup
             return false;
         }
         return true;
+    }
+
+    /**
+     * Realiza o controle da versão
+     */
+    public function controleVersao()
+    {
+        $linhas = fopen('versao.txt', "a+");
+        $versoes = fgets($linhas);
+        $versao = explode('//', $versoes);
+        $versaoNova = explode('.', $versao[2]);
+        $nova = $versaoNova[0] . '.' . $versaoNova[1] . '.' . ($versaoNova[2] + 1);
+        $versao[2] = $nova;
+        $versaoAtualizada = implode('//',$versao);
+        $backupVersao = fopen('versao.txt', "w");
+        fwrite($backupVersao, $versaoAtualizada);
+        fclose($backupVersao);
     }
 }
