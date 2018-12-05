@@ -328,7 +328,7 @@ class FormAssistente
             $obrigatoriedade = $this->verificaObrigatoriedade();
             // INICIA O GRUPO DO INPUT
             self::$abas .= '
-                    <div class="form-group">'
+                    <div id="form-group-' . self::$id . '" class="form-group">'
                 . '<label for="' . self::$id . '" class="col-sm-' . self::$colEsquerda . ' control-label">'
                 . ' ' . self::$label . $obrigatoriedade . ' '
                 . '</label>

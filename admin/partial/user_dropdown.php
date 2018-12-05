@@ -4,26 +4,21 @@
         <?php
         $noPessoa = $user[md5(NO_PESSOA)];
         $foto = $user[md5('ds_caminho')];
-        if ($foto == ""):
-            $sexo = $user[md5('st_sexo')];
-            if ($sexo == "M"):
-                $fotoPerfil = "avatar-homem.jpg";
-            else:
-                $fotoPerfil = "avatar-mulher.jpg";
-            endif;
+        $sexo = $user[md5('st_sexo')];
+        if ($sexo == "M"):
+            $fotoPerfil = "avatar-homem.jpg";
         else:
-            $fotoPerfil = $foto;
+            $fotoPerfil = "avatar-mulher.jpg";
         endif;
-
-        if ($foto == "") {
+        if ($foto != "" && file_exists(PASTA_RAIZ . "uploads/usuarios/" . $foto)):
+            echo Valida::GetMiniatura("usuarios/" . $foto,
+                $noPessoa, 35, 35, "circle-img");
+        else:
             echo '<img src="' . TIMTHUMB . '?src=' . HOME .
                 'library/Imagens/' . $fotoPerfil . '&w=35&h=35" 
                                 alt="' . $noPessoa . '" title="' . $noPessoa . '" 
                                 class="circle-img" />';
-        } else {
-            echo Valida::GetMiniatura("usuarios/" . $fotoPerfil,
-                'Leonardo', 35, 35, "circle-img");
-        }
+        endif;
         ?>
         <span class="username">
                             <?php

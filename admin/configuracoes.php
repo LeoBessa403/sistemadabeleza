@@ -39,7 +39,7 @@ function servidor_inicial()
     // Título do Site
     define('DESC', 'Sistema da Beleza');
     // Título do Sistema
-    define('DESC_SIS', 'Sistema da Beleza');
+    define('DESC_SIS', 'SisBela');
     // Tabela de pesquisa de usuário para validação
     define('TABLE_USER', 'tb_usuario');
     // Campo de login na Tabela de pesquisa de usuário para validação
