@@ -9,7 +9,7 @@ class TrafegoService extends AbstractService
 
     private $ObjetoModel;
     private $nu_ip;
-    private $ds_pais;
+    public $ds_pais;
     private $ds_code_pais;
     private $ds_uf;
     private $ds_estado;
@@ -44,6 +44,7 @@ class TrafegoService extends AbstractService
         $this->ds_uf = (isset($geo->region)) ? $geo->region : 'Desconhecida';
         $this->ds_cidade = (isset($geo->city)) ? $geo->city : 'Desconhecida';
         $this->ds_agente = $_SERVER['HTTP_USER_AGENT'];
+        return $this;
     }
 
     /**

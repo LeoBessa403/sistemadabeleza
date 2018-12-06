@@ -29,22 +29,24 @@ class  AcessoService extends AbstractService
     {
         /** @var TrafegoService $trafegoService */
         $trafegoService = $this->getService(TRAFEGO_SERVICE);
+        if($trafegoService->ds_pais == 'BR'){
+            $acesso[DS_SESSION_ID] = session_id();
+            $acesso[CO_USUARIO] = $coUsuario;
+            $acesso[TP_SITUACAO] = StatusAcessoEnum::ATIVO;
 
-        $acesso[DS_SESSION_ID] = session_id();
-        $acesso[CO_USUARIO] = $coUsuario;
-        $acesso[TP_SITUACAO] = StatusAcessoEnum::ATIVO;
-
-        /** @var AcessoEntidade $meuAcesso */
-        $meuAcesso = $this->PesquisaUmQuando($acesso);
-        if ($meuAcesso) {
-            $novoAcesso[DT_FIM_ACESSO] = $this->geraDataFimAcesso();
-            $this->Salva($novoAcesso, $meuAcesso->getCoAcesso());
-        } else {
-            $acesso[CO_TRAFEGO] = $trafegoService->salvaTrafego();
-            $acesso[DT_FIM_ACESSO] = $this->geraDataFimAcesso();
-            $acesso[DT_INICIO_ACESSO] = Valida::DataHoraAtualBanco();
-            $this->Salva($acesso);
+            /** @var AcessoEntidade $meuAcesso */
+            $meuAcesso = $this->PesquisaUmQuando($acesso);
+            if ($meuAcesso) {
+                $novoAcesso[DT_FIM_ACESSO] = $this->geraDataFimAcesso();
+                $this->Salva($novoAcesso, $meuAcesso->getCoAcesso());
+            } else {
+                $acesso[CO_TRAFEGO] = $trafegoService->salvaTrafego();
+                $acesso[DT_FIM_ACESSO] = $this->geraDataFimAcesso();
+                $acesso[DT_INICIO_ACESSO] = Valida::DataHoraAtualBanco();
+                $this->Salva($acesso);
+            }
         }
+
     }
 
     /**
