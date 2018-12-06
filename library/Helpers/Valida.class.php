@@ -509,8 +509,6 @@ class Valida
 
         switch ($ext) {
             case 'jpg':
-                $img = imagecreatefromjpeg($tmp);
-                break;
             case 'jpeg':
                 $img = imagecreatefromjpeg($tmp);
                 break;
@@ -530,12 +528,10 @@ class Valida
         if (file_exists($arquivo)):
             unlink($arquivo);
         endif;
-
+        $ext = strtolower($ext);
 
         switch ($ext) {
             case 'jpg':
-                imagejpeg($nova, PASTAUPLOADS . $nome_foto . "." . $ext, 100);
-                break;
             case 'jpeg':
                 imagejpeg($nova, PASTAUPLOADS . $nome_foto . "." . $ext, 100);
                 break;

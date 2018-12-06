@@ -9,7 +9,7 @@ class TrafegoService extends AbstractService
 
     private $ObjetoModel;
     private $nu_ip;
-    public $ds_pais;
+    private $ds_pais;
     private $ds_code_pais;
     private $ds_uf;
     private $ds_estado;
@@ -179,6 +179,15 @@ class TrafegoService extends AbstractService
         $trafego[DS_AGENTE] = $this->ds_agente;
 
         return $this->Salva($trafego);
+    }
+
+    /** Salva na Entidade de Trafego */
+    public function validaPaisTrafego()
+    {
+        if($this->ds_pais == 'BR' || !PROD){
+            return true;
+        }
+        return false;
     }
 
 }

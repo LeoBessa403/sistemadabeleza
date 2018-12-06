@@ -27,28 +27,30 @@ class  VisitaService extends AbstractService
         $paginaService = $this->getService(PAGINA_SERVICE);
         /** @var TrafegoService $trafegoService */
         $trafegoService = $this->getService(TRAFEGO_SERVICE);
-        $PDO->beginTransaction();
-        $noCookie = Valida::ValNome(DESC . '-user');
+        if ($trafegoService->validaPaisTrafego()) {
+            $PDO->beginTransaction();
+            $noCookie = Valida::ValNome(DESC . '-user');
 
-        if ($session::CheckCookie($noCookie)) {
-            $coVisita = $session::getCookie($noCookie);
-            /** @var VisitaEntidade $visitaPesquisa */
-            $visitaPesquisa = $this->PesquisaUmRegistro($coVisita);
-            // Edição da Página
-            $visita[NU_VISITAS] = $visitaPesquisa->getNuVisitas() + 1;
-            $visita[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
-            $this->Salva($visita, $visitaPesquisa->getCoVisita());
-            $retorno[SUCESSO] = $paginaService->salvaPagina($visitaPesquisa->getCoVisita());
-        } else {
-            $coTrafego = $trafegoService->salvaTrafego();
-            $coVisita = $this->salvaVisita($coTrafego);
-            $retorno[SUCESSO] = $paginaService->salvaPagina($coVisita);
-            $session::setCookie($noCookie, $coVisita, 24 * 60);
-        }
-        if ($retorno[SUCESSO]) {
-            $PDO->commit();
-        } else {
-            $PDO->rollBack();
+            if ($session::CheckCookie($noCookie)) {
+                $coVisita = $session::getCookie($noCookie);
+                /** @var VisitaEntidade $visitaPesquisa */
+                $visitaPesquisa = $this->PesquisaUmRegistro($coVisita);
+                // Edição da Página
+                $visita[NU_VISITAS] = $visitaPesquisa->getNuVisitas() + 1;
+                $visita[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
+                $this->Salva($visita, $visitaPesquisa->getCoVisita());
+                $retorno[SUCESSO] = $paginaService->salvaPagina($visitaPesquisa->getCoVisita());
+            } else {
+                $coTrafego = $trafegoService->salvaTrafego();
+                $coVisita = $this->salvaVisita($coTrafego);
+                $retorno[SUCESSO] = $paginaService->salvaPagina($coVisita);
+                $session::setCookie($noCookie, $coVisita, 24 * 60);
+            }
+            if ($retorno[SUCESSO]) {
+                $PDO->commit();
+            } else {
+                $PDO->rollBack();
+            }
         }
     }
 
