@@ -184,7 +184,7 @@ class TrafegoService extends AbstractService
     /** Salva na Entidade de Trafego */
     public function validaPaisTrafego()
     {
-        if($this->ds_pais == 'BR' || !PROD){
+        if($this->ds_code_pais == 'BR' || !PROD){
             return true;
         }
         return false;
