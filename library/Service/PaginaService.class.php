@@ -30,6 +30,7 @@ class  PaginaService extends AbstractService
             $this->Salva($pagina, $paginaPesquisa->getCoPagina());
             $coPagina = $paginaPesquisa->getCoPagina();
         } else {
+            debug($url);
             // Cadastra página
             $pagina[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $pagina[DS_TITULO_URL_AMIGAVEL] = $url;

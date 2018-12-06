@@ -29,7 +29,7 @@ class  AcessoService extends AbstractService
     {
         /** @var TrafegoService $trafegoService */
         $trafegoService = $this->getService(TRAFEGO_SERVICE);
-        if($trafegoService->ds_pais == 'BR'){
+        if($trafegoService->ds_pais == 'BR' || !PROD){
             $acesso[DS_SESSION_ID] = session_id();
             $acesso[CO_USUARIO] = $coUsuario;
             $acesso[TP_SITUACAO] = StatusAcessoEnum::ATIVO;
