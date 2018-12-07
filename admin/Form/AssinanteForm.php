@@ -342,7 +342,7 @@ class AssinanteForm
         $grid->setColunasIndeces($arrColunas);
         $grid->criaGrid('nova');
 
-        $funcionamentoEdit = [];
+        $funcionamentoEdit = $res['funcionamento'];
         foreach (DiasEnum::$descricao as $numero => $dia) {
             $check = null;
             $abertura = null;
@@ -381,9 +381,9 @@ class AssinanteForm
         $formulario
             ->finalizaAba(false, $gridAssitente);
 
-        // Aba 4
+        // Aba 6
         $formulario
-            ->criaAba("Facilidades e Benefícios", "Informações das Facilidades e Benefícios");
+            ->criaAba("Fotos", "Fotos do Estabelecimento");
 
         $formulario
             ->setId(DS_CAMINHO)

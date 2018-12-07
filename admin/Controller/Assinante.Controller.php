@@ -4,12 +4,7 @@ class Assinante extends AbstractController
 {
     public $result;
     public $assinante;
-    public $endereco;
-    public $contato;
-    public $facilidade;
-    public $funcionamento;
-    public $logo;
-    public $imagem_logo;
+    public $form;
 
     public function ListarAssinante()
     {
@@ -136,24 +131,65 @@ class Assinante extends AbstractController
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
 
-        $this->contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
-        $this->endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
-        if (!$this->endereco) {
-            $endereco[DS_ENDERECO] = '';
-            $coEndereco = $enderecoService->Salva($endereco);
-            $this->endereco = $enderecoService->PesquisaUmRegistro($coEndereco);
+
+        // Aba 1
+        $res[NO_PESSOA] = $assinante->getCoPessoa()->getNoPessoa();
+        $res[NO_FANTASIA] = $assinante->getCoEmpresa()->getNoFantasia();
+        $res[NO_EMPRESA] = $assinante->getCoEmpresa()->getNoEmpresa();
+        $res[NU_CNPJ] = $assinante->getCoEmpresa()->getNuCnpj();
+        $res[NU_INSC_ESTADUAL] = $assinante->getCoEmpresa()->getNuInscEstadual();
+        $res[DS_OBSERVACAO] = $assinante->getCoEmpresa()->getDsObservacao();
+
+
+        // Aba 2
+        /** @var EnderecoEntidade $endereco */
+        $endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
+        if (!$endereco) {
+            $end[DS_ENDERECO] = '';
+            $coEndereco = $enderecoService->Salva($end);
+            /** @var EnderecoEntidade $endereco */
+            $endereco = $enderecoService->PesquisaUmRegistro($coEndereco);
             $empresa[CO_ENDERECO] = $coEndereco;
             $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
         }
-        $this->facilidade = $assinante->getCoFacilidadeBeneficio();
-        if (!$this->facilidade) {
+        $res = $enderecoService->getArrayDadosEndereco($endereco, $res);
+
+
+        // Aba 3
+        /** @var ContatoEntidade $contato */
+        $contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
+        $res = $contatoService->getArrayDadosContato($contato, $res);
+
+
+        // Aba 4
+        /** @var FacilidadeBeneficioEntidade $facilidade */
+        $facilidade = $assinante->getCoFacilidadeBeneficio();
+        if (!$facilidade) {
             $facilidad[TP_ESTABELECIMENTO] = 0;
             $facilidad[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
             $cofacilidad = $facilidadeBeneficioService->Salva($facilidad);
-            $this->facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
+            /** @var FacilidadeBeneficioEntidade $facilidade */
+            $facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
         }
-        $this->funcionamento = $assinante->getCoFuncionamento();
-        if (!$this->funcionamento) {
+        $res[ST_LANCHONETE] = ($facilidade->getStLanchonete() == 'S')
+            ? 'checked' : '';
+        $res[ST_TELEVISAO] = ($facilidade->getStTelevisao() == 'S')
+            ? 'checked' : '';
+        $res[ST_WIFI] = ($facilidade->getStWifi() == 'S')
+            ? 'checked' : '';
+        $res[ST_ACESSO_DEFICIENTE] = ($facilidade->getStAcessoDeficiente() == 'S')
+            ? 'checked' : '';
+        $res[ST_JOGOS] = ($facilidade->getStJogos() == 'S')
+            ? 'checked' : '';
+        $res[TP_ESTABELECIMENTO] = $facilidade->getTpEstabelecimento();
+        $res[TP_ATENDIMENTO] = $facilidade->getTpAtendimento();
+        $res[TP_GENERO_ESPECIALIZADO] = $facilidade->getTpGeneroEspecializado();
+        $res[TP_ESTACIONAMENTO] = $facilidade->getTpEstacionamento();
+
+
+        // Aba 5
+        $funcionamento = $assinante->getCoFuncionamento();
+        if (!$funcionamento) {
             $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
             $funcionamento[NU_HORA_ABERTURA] = '08:00';
             $funcionamento[NU_HORA_FECHAMENTO] = '18:00';
@@ -161,37 +197,22 @@ class Assinante extends AbstractController
                 $funcionamento[NU_DIA_SEMANA] = $i;
                 $funcionamentoService->Salva($funcionamento);
             }
-            $this->funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
+            $funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
                 CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
             ]);
         }
-        $this->logo = '';
-        $this->imagem_logo = '';
+        $res['funcionamento'] = $funcionamento;
+
+
+        // Aba 6
+        $logo = '';
         if (!empty($assinante->getCoImagemAssinante())) {
-            $this->imagem_logo = $assinante->getLogoImagemAssinante()->getCoImagem()->getCoImagem();
-            $this->logo = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado() . "/" .
+            $logo = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado() . "/" .
                 $assinante->getLogoImagemAssinante()->getCoImagem()->getDsCaminho();
         }
-        $this->assinante = $assinante;
+        $res[DS_CAMINHO] = $logo;
 
-//        $coAssinante = UrlAmigavel::PegaParametro(CO_ASSINANTE);
-        $res[ST_LANCHONETE] = '';
-        $res[ST_TELEVISAO] = '';
-        $res[ST_WIFI] = '';
-        $res[ST_ACESSO_DEFICIENTE] = '';
-        $res[ST_JOGOS] = '';
-//        if ($coAssinante) {
-//            /** @var AssinanteEntidade $assinante */
-//            $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
-//            $res[NO_PESSOA] = $assinante->getCoPessoa()->getNoPessoa();
-//            $res[NO_FANTASIA] = $assinante->getCoEmpresa()->getNoFantasia();
-//            $res[NU_TEL1] = $assinante->getCoPessoa()->getCoContato()->getNuTel1();
-//            $res[DS_EMAIL] = $assinante->getCoPessoa()->getCoContato()->getDsEmail();
-//            $res[CO_ASSINANTE] = $assinante->getCoAssinante();
-//            $res[CO_ASSINANTE_MATRIZ] = $assinante->getCoMeuAssinanteMatriz();
-//            $res[CO_ASSINANTE_FILIAL] = $assinante->getFiliaisMatriz();
-//
-//        }
+//        debug($res);
         $this->form = AssinanteForm::DadosComplementares($res);
     }
 
