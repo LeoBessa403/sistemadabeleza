@@ -22,10 +22,10 @@ class  FacilidadeBeneficioService extends AbstractService
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         $facilidades[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-        $facilidades[TP_ESTABELECIMENTO] = $dados[TP_ESTABELECIMENTO];
-        $facilidades[TP_ATENDIMENTO] = $dados[TP_ATENDIMENTO];
-        $facilidades[TP_GENERO_ESPECIALIZADO] = $dados[TP_GENERO_ESPECIALIZADO];
-        $facilidades[TP_ESTACIONAMENTO] = $dados[TP_ESTACIONAMENTO];
+        $facilidades[TP_ESTABELECIMENTO] = $dados[TP_ESTABELECIMENTO][0];
+        $facilidades[TP_ATENDIMENTO] = $dados[TP_ATENDIMENTO][0];
+        $facilidades[TP_GENERO_ESPECIALIZADO] = $dados[TP_GENERO_ESPECIALIZADO][0];
+        $facilidades[TP_ESTACIONAMENTO] = $dados[TP_ESTACIONAMENTO][0];
         $facilidades[ST_LANCHONETE] = FuncoesSistema::retornoCheckbox($dados, ST_LANCHONETE);
         $facilidades[ST_TELEVISAO] = FuncoesSistema::retornoCheckbox($dados, ST_TELEVISAO);
         $facilidades[ST_WIFI] = FuncoesSistema::retornoCheckbox($dados, ST_WIFI);
