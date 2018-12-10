@@ -71,7 +71,7 @@ class  PlanoAssinanteAssinaturaService extends AbstractService
             $this->Salva($planoAssinanteAssinatura);
             $retorno[SUCESSO] = $this->atualizaDtExpiracaoMatrizFilias($assinante, $planoAssinanteAssinatura[DT_EXPIRACAO]);
             if ($retorno[SUCESSO]) {
-                $session->setSession(MENSAGEM, Mensagens::OK_SALVO);
+                $session->setSession(MENSAGEM, CADASTRADO);
                 $retorno[SUCESSO] = true;
                 $PDO->commit();
             } else {
