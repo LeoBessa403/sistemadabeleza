@@ -322,10 +322,10 @@ class Index extends AbstractController
 //        $Create->ExeCreate(DB_VIEWS_TRAFEGO, $this->Traffic);
 //    }
 
-
-    // EXEMPLO DE ENVIO DE EMAIL
-    public function VerGraficos()
-    {
+//
+//    // EXEMPLO DE ENVIO DE EMAIL
+//    public function VerGraficos()
+//    {
 //        $grafico = new Grafico(Grafico::PORCENTAGEM, "Teste Porcentagem", "div_porcentagem");
 //        $grafico->SetDados(array("Teórica" => 80, "Prática e Teórica" => 12));
 //        $grafico->GeraGrafico();
@@ -384,7 +384,7 @@ class Index extends AbstractController
 //        ));
 //        $grafico->GeraGrafico();
 
-    }
+//    }
 //
 //    // EXEMPLO DE ENVIO DE EMAIL
 //    public function EmailCliente()
