@@ -385,57 +385,57 @@ class Index extends AbstractController
 //        $grafico->GeraGrafico();
 
     }
-
-    // EXEMPLO DE ENVIO DE EMAIL
-    public function EmailCliente()
-    {
-        /** @var Email $email */
-        $email = new Email();
-
-        // Índice = Nome, e Valor = Email.
-        $emails = array(
-            "Leo Bessa Hot" => "leodjx@hotmail.com",
-            "Lili Gmail" => "lililasp@gmail.com",
-            "Lele Hot" => "lele.403@hotmail.com",
-            "Leo Bessa Gmail" => "leonardomcbessa@gmail.com"
-        );
-        $Mensagem = "<h2>Olá vc ganhou um Bônus de 5 Milhões.... que piada</h2>";
-
-        $email->setEmailDestinatario($emails)
-            ->setTitulo("Email de  Teste Pra Todos")
-            ->setMensagem($Mensagem);
-
-        // Variável para validação de Emails Enviados com Sucesso.
-        $this->Email = $email->Enviar();
-    }
-
-
-    // AÇÃO DA TELA DE PESQUISA AVANÇADA
-    public function ListarMembrosPesquisaAvancada()
-    {
-
-        $id = "pesquisaMembros";
-
-        $formulario = new Form($id, "admin/Membros/ListarMembros", "Pesquisa", 12);
-
-
-        $label_options = array("" => "Todos", "S" => "Ativo", "N" => "Inativo");
-        $formulario
-            ->setLabel("Status do Membro")
-            ->setId("st_status")
-            ->setType("select")
-            ->setOptions($label_options)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId("no_membro")
-            ->setIcon("clip-user-6")
-            ->setLabel("Nome do Membro")
-            ->setInfo("Pode ser Parte do nome")
-            ->CriaInpunt();
-
-        echo $formulario->finalizaFormPesquisaAvancada();
-
-    }
+//
+//    // EXEMPLO DE ENVIO DE EMAIL
+//    public function EmailCliente()
+//    {
+//        /** @var Email $email */
+//        $email = new Email();
+//
+//        // Índice = Nome, e Valor = Email.
+//        $emails = array(
+//            "Leo Bessa Hot" => "leodjx@hotmail.com",
+//            "Lili Gmail" => "lililasp@gmail.com",
+//            "Lele Hot" => "lele.403@hotmail.com",
+//            "Leo Bessa Gmail" => "leonardomcbessa@gmail.com"
+//        );
+//        $Mensagem = "<h2>Olá vc ganhou um Bônus de 5 Milhões.... que piada</h2>";
+//
+//        $email->setEmailDestinatario($emails)
+//            ->setTitulo("Email de  Teste Pra Todos")
+//            ->setMensagem($Mensagem);
+//
+//        // Variável para validação de Emails Enviados com Sucesso.
+//        $this->Email = $email->Enviar();
+//    }
+//
+//
+//    // AÇÃO DA TELA DE PESQUISA AVANÇADA
+//    public function ListarMembrosPesquisaAvancada()
+//    {
+//
+//        $id = "pesquisaMembros";
+//
+//        $formulario = new Form($id, "admin/Membros/ListarMembros", "Pesquisa", 12);
+//
+//
+//        $label_options = array("" => "Todos", "S" => "Ativo", "N" => "Inativo");
+//        $formulario
+//            ->setLabel("Status do Membro")
+//            ->setId("st_status")
+//            ->setType("select")
+//            ->setOptions($label_options)
+//            ->CriaInpunt();
+//
+//        $formulario
+//            ->setId("no_membro")
+//            ->setIcon("clip-user-6")
+//            ->setLabel("Nome do Membro")
+//            ->setInfo("Pode ser Parte do nome")
+//            ->CriaInpunt();
+//
+//        echo $formulario->finalizaFormPesquisaAvancada();
+//
+//    }
 
 }
