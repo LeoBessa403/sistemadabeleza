@@ -34,7 +34,7 @@
                         <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Assinante");
-                        $arrColunas = array('Assinante', 'Responsável', 'E-mail', 'Expiração', 'Status', 'Ações');
+                        $arrColunas = array('Assinante', 'Responsável', 'E-mail', 'Status Assinante', 'Expiração', 'Status Plano', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -68,12 +68,14 @@
                                  </a>';
                                 }
                             }
+                            $statusSis = AssinanteService::getStatusAssinante(Valida::DataShow($res->getDtExpiracao()));
                             $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoFantasia() : '';
                             $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
-                            $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
                             $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
+                            $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
+                            $grid->setColunas(FuncoesSistema::getLabelStatusPlano($statusSis), 2);
                             $grid->setColunas($acao, 4);
                             $grid->criaLinha($res->getCoAssinante());
                         endforeach;

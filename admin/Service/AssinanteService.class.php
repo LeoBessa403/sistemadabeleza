@@ -240,4 +240,22 @@ class  AssinanteService extends AbstractService
         return (!empty($user[md5(CO_ASSINANTE)])) ? $user[md5(CO_ASSINANTE)] : null;
     }
 
+    /**
+     * @return mixed
+     */
+    public static function getStatusAssinante($data)
+    {
+        $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $data);
+        if ($difDatas > 5) {
+            $statusSis = StatusSistemaEnum::ATIVO;
+        } elseif ($difDatas <= 5 && $difDatas >= 0) {
+            $statusSis = StatusSistemaEnum::EXPIRANDO;
+        } elseif ($difDatas < 0 && ($difDatas * -1) <= ConfiguracoesEnum::DIAS_EXPIRADO) {
+            $statusSis = StatusSistemaEnum::PENDENTE;
+        } else {
+            $statusSis = StatusSistemaEnum::EXPIRADO;
+        }
+        return $statusSis;
+    }
+
 }

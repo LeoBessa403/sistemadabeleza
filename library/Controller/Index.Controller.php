@@ -270,16 +270,9 @@ class Index extends AbstractController
             ? Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao()) : null;
 
         if ($statusSis) {
-            $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $usuarioAcesso[DT_EXPIRACAO]);
-            if ($difDatas > 5) {
-                $statusSis = StatusSistemaEnum::ATIVO;
-            } elseif ($difDatas <= 5 && $difDatas >= 0) {
-                $statusSis = StatusSistemaEnum::EXPIRANDO;
-            } elseif ($difDatas < 0 && ($difDatas * -1) <= ConfiguracoesEnum::DIAS_EXPIRADO) {
-                $statusSis = StatusSistemaEnum::PENDENTE;
-            } else {
+            $statusSis = AssinanteService::getStatusAssinante($usuarioAcesso[DT_EXPIRACAO]);
+            if($statusSis == StatusSistemaEnum::EXPIRADO)
                 Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/S"));
-            }
         } else {
             $statusSis = StatusSistemaEnum::ATIVO;
         }

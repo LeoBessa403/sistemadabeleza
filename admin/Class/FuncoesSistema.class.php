@@ -344,4 +344,29 @@ class FuncoesSistema
         return $mes_extenso;
     }
 
+    public static function getLabelStatusPlano($st)
+    {
+        switch ($st) {
+            case "A":
+                $op = '<span class="label label-success">Ativo</span>';
+                break;
+            case "E":
+                $op = '<span class="label label-info">Expirando</span>';
+                break;
+            case "P":
+                $op = '<span class="label label-warning">Pendente</span>';
+                break;
+            case "B":
+                $op = '<span class="label label-inverse">Bloqueado</span>';
+                break;
+            case "R":
+                $op = '<span class="label label-danger">Expirado</span>';
+                break;
+            default:
+                $op = '';
+                break;
+        }
+        return $op;
+    }
+
 }
