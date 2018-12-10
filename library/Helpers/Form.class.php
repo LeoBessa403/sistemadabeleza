@@ -478,7 +478,7 @@ class Form
                     endif;
                 endif;
                 //CAMPO TIPO TEXT
-                self::$form .= '<input type="' . self::$type . '" stylo="' . self::$style . '"' . self::$place . ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '"/>';
+                self::$form .= '<input type="' . self::$type . '" style="' . self::$style . '"' . self::$place . ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '"/>';
             endif;
 
             // VERIFICA SE TEM ÍCONE
