@@ -402,6 +402,12 @@ class AssinanteForm
             ->CriaInpunt();
 
         $formulario
+            ->setType("hidden")
+            ->setId('imagem_logo')
+            ->setValues($res['imagem_logo'])
+            ->CriaInpunt();
+
+        $formulario
             ->finalizaAba(true);
 
         return $formulario->finalizaForm();

@@ -206,13 +206,15 @@ class Assinante extends AbstractController
 
         // Aba 6
         $logo = '';
+        $imagem_logo = '';
         if (!empty($assinante->getCoImagemAssinante())) {
+            $imagem_logo = $assinante->getLogoImagemAssinante()->getCoImagem()->getCoImagem();
             $logo = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado() . "/" .
                 $assinante->getLogoImagemAssinante()->getCoImagem()->getDsCaminho();
         }
         $res[DS_CAMINHO] = $logo;
+        $res['imagem_logo'] = $imagem_logo;
 
-//        debug($res);
         $this->form = AssinanteForm::DadosComplementares($res);
     }
 
