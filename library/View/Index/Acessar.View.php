@@ -53,8 +53,8 @@
 <!-- start: BODY -->
 <body class="login example1">
 <div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding: 20px 50px;">
-    <div class="logo" style="text-shadow: 3px 3px 2px #fefefe; font-size: 40px;">
-        <?= DESC_SIS; ?>
+    <div class="logo">
+       <span class="no_sistema"><?= DESC_SIS; ?></span>
     </div>
     <!-- start: LOGIN BOX -->
     <div class="box-login" style="padding: 10px 20px;">
