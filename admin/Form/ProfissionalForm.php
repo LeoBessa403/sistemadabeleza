@@ -156,6 +156,58 @@ class ProfissionalForm
 
 
 
+
+        $formulario
+            ->finalizaAba();
+
+
+        // Aba 6
+        $formulario
+            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional");
+
+        $grid = new GridAssistente();
+        $arrColunas = array('Atende', 'Dia da Semana', 'Abertura', 'Fechamento');
+        $grid->setColunasIndeces($arrColunas);
+        $grid->criaGrid('nova');
+
+        $funcionamentoEdit = $res['funcionamento'];
+        foreach (DiasEnum::$descricao as $numero => $dia) {
+            $check = null;
+            $abertura = null;
+            $fechamento = null;
+            if (!empty($funcionamentoEdit[$numero - 1])) {
+                $check = ' checked="checked"';
+                $abertura = $funcionamentoEdit[$numero - 1]->getNuHoraAbertura();
+                $fechamento = $funcionamentoEdit[$numero - 1]->getNuHoraFechamento();
+            }
+            $campoAtende = '<input type="checkbox" ' . $check . '
+                           class="square-purple"
+                           value="" id="' . NU_DIA_SEMANA . $numero . '"
+                           name="' . NU_DIA_SEMANA . '[' . $numero . ']"/>';
+
+
+            $campoAbertura = '<input type="text" class="form-control horas"
+                           id="' . NU_HORA_ABERTURA . $numero . '"
+                           name="' . NU_HORA_ABERTURA . '[' . $numero . ']"
+                           value="' . $abertura . '"
+                           placeholder="Horário de Abertura do dia">';
+
+            $campoFechamento = '<input type="text" class="form-control horas"
+               id="' . NU_HORA_FECHAMENTO . $numero . '"
+               name="' . NU_HORA_FECHAMENTO . '[' . $numero . ']"
+               value="' . $fechamento . '"
+               placeholder="Horário de Fechamento do dia">';
+
+            $grid->setColunas($campoAtende);
+            $grid->setColunas($dia);
+            $grid->setColunas($campoAbertura);
+            $grid->setColunas($campoFechamento);
+            $grid->criaLinha($numero);
+        }
+        $gridAssitente = $grid->finalizaGrid();
+
+
+
         $formulario
             ->finalizaAba(true);
 

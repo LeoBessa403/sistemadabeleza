@@ -538,10 +538,22 @@ class Relacionamentos
                     ('Entidade') => 'ContaBancariaEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_JORNADA_TRABALHO) => Array(
+                    ('Campo') => CO_JORNADA_TRABALHO,
+                    ('Entidade') => 'JornadaTrabalhoEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ContaBancariaEntidade::TABELA) => Array(
                 (CO_PROFISSIONAL) => Array(
                     ('Campo') => CO_CONTA_BANCARIA,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (JornadaTrabalhoEntidade::TABELA) => Array(
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_JORNADA_TRABALHO,
                     ('Entidade') => 'ProfissionalEntidade',
                     ('Tipo') => '1',
                 ),
