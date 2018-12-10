@@ -13,14 +13,25 @@ class  ContatoService extends AbstractService
     }
 
 
-    public function getArrayDadosContato(ContatoEntidade $contato, array $dados)
+    public function getArrayDadosContato($cont, array $dados)
     {
-        $dados[CO_CONTATO] = $contato->getCoContato();
-        $dados[NU_TEL1] = Valida::MascaraTel($contato->getNuTel1());
-        $dados[NU_TEL2] = Valida::MascaraTel($contato->getNuTel2());
-        $dados[NU_TEL3] = Valida::MascaraTel($contato->getNuTel3());
-        $dados[DS_EMAIL] = $contato->getDsEmail();
-        $dados[DS_SITE] = $contato->getDsSite();
+        if($cont){
+            /** @var ContatoEntidade $contato */
+            $contato = $cont;
+            $dados[CO_CONTATO] = $contato->getCoContato();
+            $dados[NU_TEL1] = Valida::MascaraTel($contato->getNuTel1());
+            $dados[NU_TEL2] = Valida::MascaraTel($contato->getNuTel2());
+            $dados[NU_TEL3] = Valida::MascaraTel($contato->getNuTel3());
+            $dados[DS_EMAIL] = $contato->getDsEmail();
+            $dados[DS_SITE] = $contato->getDsSite();
+        }else{
+            $dados[CO_CONTATO] = '';
+            $dados[NU_TEL1] = '';
+            $dados[NU_TEL2] = '';
+            $dados[NU_TEL3] = '';
+            $dados[DS_EMAIL] = '';
+            $dados[DS_SITE] = '';
+        }
 
         return $dados;
     }

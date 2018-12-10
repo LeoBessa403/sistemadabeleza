@@ -160,7 +160,6 @@ class Assinante extends AbstractController
         $contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
         $res = $contatoService->getArrayDadosContato($contato, $res);
 
-
         // Aba 4
         /** @var FacilidadeBeneficioEntidade $facilidade */
         $facilidade = $assinante->getCoFacilidadeBeneficio();
@@ -197,7 +196,7 @@ class Assinante extends AbstractController
                 $funcionamento[NU_DIA_SEMANA] = $i;
                 $funcionamentoService->Salva($funcionamento);
             }
-            $funcionamento = $facilidadeBeneficioService->PesquisaUmQuando([
+            $funcionamento = $funcionamentoService->PesquisaUmQuando([
                 CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
             ]);
         }
