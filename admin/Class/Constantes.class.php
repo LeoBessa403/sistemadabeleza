@@ -98,7 +98,6 @@ define('CO_JORNADA_TRABALHO', 'co_jornada_trabalho');
 
 
 
-
 // SERVICES
 define('EMPRESA_SERVICE', 'EmpresaService');
 define('MODULO_SERVICE', 'ModuloService');
