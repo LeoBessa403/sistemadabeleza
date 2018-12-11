@@ -563,13 +563,7 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
-            (BancoEntidade::TABELA) => Array(
-                (CO_CONTA_BANCARIA) => Array(
-                    ('Campo') => CO_BANCO,
-                    ('Entidade') => 'ContaBancariaEntidade',
-                    ('Tipo') => '2',
-                ),
-            ),
+            (BancoEntidade::TABELA) => Array(),
         );
     }
 }

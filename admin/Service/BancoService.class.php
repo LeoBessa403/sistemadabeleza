@@ -16,5 +16,17 @@ class  BancoService extends AbstractService
         $this->ObjetoModel = New BancoModel();
     }
 
-
+    public static function montaComboBancos()
+    {
+        /** @var BancoService $bancoService */
+        $bancoService = new BancoService();
+        $bancos = $bancoService->PesquisaTodos();
+        /** @var BancoEntidade $banco */
+        foreach ($bancos as $banco) {
+            $comboBancos[$banco->getCoBanco()] = $banco->getNoBanco();
+        }
+        $comboBancos[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
+        $comboBancos = array_reverse($comboBancos);
+        return $comboBancos;
+    }
 }

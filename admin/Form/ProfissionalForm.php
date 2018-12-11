@@ -178,17 +178,13 @@ class ProfissionalForm
         $formulario
             ->criaAba("Conta Bancária", "Dados bancários");
 
-        $usuarios = UsuarioService::PesquisaUsuariosCombo([]);
+        $bancos = BancoService::montaComboBancos();
         $formulario
             ->setId(CO_USUARIO)
-            ->setLabel("Nome do Usuário")
-            ->setClasses("multipla")
-            ->setInfo("Pode selecionar vários USUÁRIOS.")
+            ->setLabel("Banco")
             ->setType("select")
-            ->setOptions($usuarios)
+            ->setOptions($bancos)
             ->CriaInpunt();
-
-
 
 
         $formulario
