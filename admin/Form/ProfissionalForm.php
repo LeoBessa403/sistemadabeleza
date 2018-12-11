@@ -180,12 +180,36 @@ class ProfissionalForm
 
         $bancos = BancoService::montaComboBancos();
         $formulario
-            ->setId(CO_USUARIO)
+            ->setId(CO_BANCO)
             ->setLabel("Banco")
             ->setType("select")
             ->setOptions($bancos)
             ->CriaInpunt();
 
+        $formulario
+            ->setId(NU_AGENCIA)
+            ->setIcon("clip-home-2")
+            ->setClasses("numero")
+            ->setInfo("Somente números com digito")
+            ->setLabel("Agência")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_CONTA)
+            ->setIcon("fa-dolar fa")
+            ->setClasses("numero")
+            ->setInfo("Somente números com digito")
+            ->setLabel("Conta")
+            ->CriaInpunt();
+
+        $contas = TipoContaEnum::$descricao;
+        $contas[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
+        $formulario
+            ->setId(TP_CONTA)
+            ->setLabel("Tipo de Conta")
+            ->setType("select")
+            ->setOptions(array_reverse($contas))
+            ->CriaInpunt();
 
         $formulario
             ->finalizaAba();
@@ -235,8 +259,6 @@ class ProfissionalForm
             $grid->criaLinha($numero);
         }
         $gridAssitente = $grid->finalizaGrid();
-
-
 
         $formulario
             ->finalizaAba(true, $gridAssitente);

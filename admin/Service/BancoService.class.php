@@ -26,7 +26,6 @@ class  BancoService extends AbstractService
             $comboBancos[$banco->getCoBanco()] = $banco->getNoBanco();
         }
         $comboBancos[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
-        $comboBancos = array_reverse($comboBancos);
-        return $comboBancos;
+        return array_reverse($comboBancos);
     }
 }
