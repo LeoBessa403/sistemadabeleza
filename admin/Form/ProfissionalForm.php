@@ -167,7 +167,57 @@ class ProfissionalForm
         $formulario
             ->criaAba("Configurações", "Configurações do profissional");
 
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Televisão")
+            ->setClasses($res[ST_ASSISTENTE])
+            ->setId(ST_ASSISTENTE)
+            ->setType("checkbox")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
 
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Televisão")
+            ->setClasses($res[ST_AGENDA])
+            ->setId(ST_AGENDA)
+            ->setType("checkbox")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Televisão")
+            ->setClasses($res[ST_AGENDA_ONLINE])
+            ->setId(ST_AGENDA_ONLINE)
+            ->setType("checkbox")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $contas = TipoContaEnum::$descricao;
+        $contas[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
+        $formulario
+            ->setId(TP_CONTRATACAO)
+            ->setLabel("Tipo de Conta")
+            ->setType("select")
+            ->setOptions(array_reverse($contas))
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_ADMISSAO)
+            ->setClasses("data ob")
+            ->setLabel("Nascimento")
+            ->setInfo("Data de Nascimento")
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
+        $formulario
+            ->setLabel("Sexo")
+            ->setId(NU_ORDEM_AGENDA)
+            ->setClasses("ob")
+            ->setType("select")
+            ->setOptions($label_options)
+            ->CriaInpunt();
 
 
         $formulario

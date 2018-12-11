@@ -110,6 +110,9 @@ class Profissional extends AbstractController
 //            ]);
 //        }
         $res['jornada'] = [];
+        $res[ST_ASSISTENTE] = '';
+        $res[ST_AGENDA] = '';
+        $res[ST_AGENDA_ONLINE] = '';
 
 
 //        // Aba 6

@@ -77,6 +77,20 @@ $user = $us->getUser();
         <!-- start: CSS REQUIRED FOR CHECK -->
         <link rel="stylesheet"
               href="<?= PASTAADMIN; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
+
+
+        <!-- start: CSS PALETA DE CORES -->
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/select2/select2.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/datepicker/css/datepicker.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-daterangepicker/daterangepicker-bs3.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/jQuery-Tags-Input/jquery.tagsinput.css">
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+        <link rel="stylesheet" href=<?= PASTAADMIN; ?>"plugins/summernote/build/summernote.css">
+
+
         <!-- start: CSS REQUIRED FOR CHECK -->
         <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/DataTables/media/css/DT_bootstrap.css">
         <!-- start: CSS REQUIRED Gritter -->
@@ -221,6 +235,8 @@ $user = $us->getUser();
     <script src="<?= PASTAADMIN; ?>plugins/bootstrap-modal/js/bootstrap-modal.js"></script>
     <script src="<?= PASTAADMIN; ?>plugins/bootstrap-modal/js/bootstrap-modalmanager.js"></script>
     <script src="<?= PASTAADMIN; ?>js/index.js"></script>
+
+    <script src="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
 
     <script src="<?= PASTAADMIN; ?>plugins/select2/select2.min.js"></script>
     <script src="<?= PASTAADMIN; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
