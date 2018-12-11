@@ -196,9 +196,8 @@ class ProfissionalForm
 
         $formulario
             ->setId(NU_CONTA)
-            ->setIcon("fa-dolar fa")
-            ->setClasses("numero")
-            ->setInfo("Somente números com digito")
+            ->setIcon("fa-dollar fa")
+            ->setInfo("Com digito")
             ->setLabel("Conta")
             ->CriaInpunt();
 
