@@ -169,51 +169,54 @@ class ProfissionalForm
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Televisão")
+            ->setLabel("Assistente")
             ->setClasses($res[ST_ASSISTENTE])
             ->setId(ST_ASSISTENTE)
+            ->setInfo("Trabalha como assistente")
             ->setType("checkbox")
             ->setOptions($label_options2)
             ->CriaInpunt();
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Televisão")
+            ->setLabel("Possui agenda")
             ->setClasses($res[ST_AGENDA])
             ->setId(ST_AGENDA)
             ->setType("checkbox")
+            ->setInfo("Tem agenda no sistema de atendimento")
             ->setOptions($label_options2)
             ->CriaInpunt();
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Televisão")
+            ->setLabel("Mostra agenda on line")
             ->setClasses($res[ST_AGENDA_ONLINE])
             ->setId(ST_AGENDA_ONLINE)
             ->setType("checkbox")
+            ->setInfo("Pode mostrar a agenda on line")
             ->setOptions($label_options2)
             ->CriaInpunt();
 
-        $contas = TipoContaEnum::$descricao;
-        $contas[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
+        $contratacoes = TipoContratacaoEnum::$descricao;
         $formulario
             ->setId(TP_CONTRATACAO)
-            ->setLabel("Tipo de Conta")
+            ->setLabel("Tipo de Contratação")
             ->setType("select")
-            ->setOptions(array_reverse($contas))
+            ->setOptions($contratacoes)
             ->CriaInpunt();
 
         $formulario
             ->setId(DT_ADMISSAO)
-            ->setClasses("data ob")
-            ->setLabel("Nascimento")
-            ->setInfo("Data de Nascimento")
+            ->setClasses("data")
+            ->setLabel("Data da Admissão")
+            ->setInfo("Data de contratação")
             ->CriaInpunt();
 
         $formulario
-            ->setLabel("Sexo")
+            ->setLabel("Ordem da agenda")
             ->setId(NU_ORDEM_AGENDA)
             ->setClasses("ob")
+            ->setInfo("Número da ordem de paresentação na agenda")
             ->setType("select")
             ->setOptions($comboProfissionais)
             ->CriaInpunt();
