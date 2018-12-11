@@ -6,7 +6,7 @@
  */
 class ProfissionalForm
 {
-    public static function Cadastrar($res = false)
+    public static function Cadastrar($res = false, $comboProfissionais)
     {
         $id = "cadastroProfissional";
 
@@ -210,13 +210,19 @@ class ProfissionalForm
             ->setInfo("Data de Nascimento")
             ->CriaInpunt();
 
-        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
         $formulario
             ->setLabel("Sexo")
             ->setId(NU_ORDEM_AGENDA)
             ->setClasses("ob")
             ->setType("select")
-            ->setOptions($label_options)
+            ->setOptions($comboProfissionais)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_COR_AGENDA)
+//            ->setClasses("data ob")
+            ->setLabel("Cor da agenda")
+            ->setInfo("que da agenda do profissional")
             ->CriaInpunt();
 
 

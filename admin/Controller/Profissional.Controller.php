@@ -126,8 +126,9 @@ class Profissional extends AbstractController
 //        $res[DS_CAMINHO] = $logo;
 //        $res['imagem_logo'] = $imagem_logo;
 
+        $comboProfissionais = $assinanteService->getComboNuProfissionais();
 
-        $this->form = ProfissionalForm::Cadastrar($res);
+        $this->form = ProfissionalForm::Cadastrar($res, $comboProfissionais);
     }
 
 }
