@@ -60,6 +60,12 @@ class ProfissionalForm
             ->CriaInpunt();
 
         $formulario
+            ->setId(DS_CAMINHO)
+            ->setType("singlefile")
+            ->setLabel("Foto do Perfil")
+            ->CriaInpunt();
+
+        $formulario
             ->setType("textarea")
             ->setId(DS_OBSERVACAO)
             ->setLabel("Sobre")
@@ -137,6 +143,24 @@ class ProfissionalForm
             ->CriaInpunt();
 
         $formulario
+            ->setId(DS_FACEBOOK)
+            ->setIcon("fa-facebook fa")
+            ->setLabel("Facebook")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_INSTAGRAM)
+            ->setIcon("fa-instagram fa")
+            ->setLabel("Instagram")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_TWITTER)
+            ->setIcon("fa-twitter fa")
+            ->setLabel("Twitter")
+            ->CriaInpunt();
+
+        $formulario
             ->finalizaAba();
 
         // Aba 4
@@ -154,6 +178,16 @@ class ProfissionalForm
         $formulario
             ->criaAba("Conta Bancária", "Dados bancários");
 
+        $usuarios = UsuarioService::PesquisaUsuariosCombo([]);
+        $formulario
+            ->setId(CO_USUARIO)
+            ->setLabel("Nome do Usuário")
+            ->setClasses("multipla")
+            ->setInfo("Pode selecionar vários USUÁRIOS.")
+            ->setType("select")
+            ->setOptions($usuarios)
+            ->CriaInpunt();
+
 
 
 
@@ -163,22 +197,22 @@ class ProfissionalForm
 
         // Aba 6
         $formulario
-            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional");
+            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional",8);
 
         $grid = new GridAssistente();
-        $arrColunas = array('Atende', 'Dia da Semana', 'Abertura', 'Fechamento');
+        $arrColunas = array('Atende', 'Dia da Semana', 'Inicio', 'Termino');
         $grid->setColunasIndeces($arrColunas);
         $grid->criaGrid('nova');
 
-        $funcionamentoEdit = $res['funcionamento'];
+        $jornada = $res['jornada'];
         foreach (DiasEnum::$descricao as $numero => $dia) {
             $check = null;
             $abertura = null;
             $fechamento = null;
-            if (!empty($funcionamentoEdit[$numero - 1])) {
+            if (!empty($jornada[$numero - 1])) {
                 $check = ' checked="checked"';
-                $abertura = $funcionamentoEdit[$numero - 1]->getNuHoraAbertura();
-                $fechamento = $funcionamentoEdit[$numero - 1]->getNuHoraFechamento();
+                $abertura = $jornada[$numero - 1]->getNuHoraAbertura();
+                $fechamento = $jornada[$numero - 1]->getNuHoraFechamento();
             }
             $campoAtende = '<input type="checkbox" ' . $check . '
                            class="square-purple"
@@ -190,13 +224,13 @@ class ProfissionalForm
                            id="' . NU_HORA_ABERTURA . $numero . '"
                            name="' . NU_HORA_ABERTURA . '[' . $numero . ']"
                            value="' . $abertura . '"
-                           placeholder="Horário de Abertura do dia">';
+                           placeholder="Início do atendimento">';
 
             $campoFechamento = '<input type="text" class="form-control horas"
                id="' . NU_HORA_FECHAMENTO . $numero . '"
                name="' . NU_HORA_FECHAMENTO . '[' . $numero . ']"
                value="' . $fechamento . '"
-               placeholder="Horário de Fechamento do dia">';
+               placeholder="Termino do atendimento">';
 
             $grid->setColunas($campoAtende);
             $grid->setColunas($dia);
@@ -209,7 +243,7 @@ class ProfissionalForm
 
 
         $formulario
-            ->finalizaAba(true);
+            ->finalizaAba(true, $gridAssitente);
 
         return $formulario->finalizaForm();
     }

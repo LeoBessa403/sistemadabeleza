@@ -95,6 +95,8 @@ define('NU_CONTA', 'nu_conta');
 define('NU_BANCO', 'nu_banco');
 define('TP_CONTA', 'tp_conta');
 define('CO_JORNADA_TRABALHO', 'co_jornada_trabalho');
+define('CO_BANCO', 'co_banco');
+define('NO_BANCO', 'no_banco');
 
 
 
@@ -130,3 +132,4 @@ define('PROFISSIONAL_CARGO_SERVICE', 'ProfissionalCargoService');
 define('PROFISSIONAL_SERVICE', 'ProfissionalService');
 define('CONTA_BANCARIA_SERVICE', 'ContaBancariaService');
 define('JORNADA_TRABALHO_SERVICE', 'JornadaTrabalhoService');
+define('BANCO_SERVICE', 'BancoService');

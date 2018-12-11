@@ -550,6 +550,11 @@ class Relacionamentos
                     ('Entidade') => 'ProfissionalEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_BANCO) => Array(
+                    ('Campo') => CO_BANCO,
+                    ('Entidade') => 'BancoEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (JornadaTrabalhoEntidade::TABELA) => Array(
                 (CO_PROFISSIONAL) => Array(
@@ -558,8 +563,13 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
-
-
+            (BancoEntidade::TABELA) => Array(
+                (CO_CONTA_BANCARIA) => Array(
+                    ('Campo') => CO_BANCO,
+                    ('Entidade') => 'ContaBancariaEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
         );
     }
 }
