@@ -48,13 +48,17 @@ class  ProfissionalService extends AbstractService
         /** @var ProfissionalValidador $validador */
         $validador = $profissionalValidador->validarProfissional($dados);
         if ($validador[SUCESSO]) {
-            $retorno = $pessoaService->salvaPessoaAssinante($dados);
-            if ($retorno[SUCESSO]) {
-                $retorno = $empresaService->salvaEmpressaAssinante($dados);
-                if ($retorno[SUCESSO]) {
-                    $retorno = $enderecoService->salvaEnderecoAssinante($dados);
-                    if ($retorno[SUCESSO]) {
-                        $retorno = $contatoService->salvaContatoAssinante($dados);
+            $endereco = $this->getDados($dados, EnderecoEntidade::ENTIDADE);
+            $endereco[SG_UF] = $dados[SG_UF][0];
+            $coEndereco = $enderecoService->Salva($endereco);
+            if ($coEndereco) {
+                $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
+                $coContato = $contatoService->Salva($contato);
+                if ($coContato) {
+                    $pessoa[NO_PESSOA] = $dados[NO_PESSOA];
+                    $coPessoa = $pessoaService->Salva($pessoa);
+                    if ($coPessoa) {
+                        $retorno = $empresaService->salvaEmpressaAssinante($dados);
                         if ($retorno[SUCESSO]) {
                             $retorno = $facilidadeBeneficioService->salvaFacilidadesAssinante($dados);
                             if ($retorno[SUCESSO]) {
