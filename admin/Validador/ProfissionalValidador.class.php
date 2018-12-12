@@ -15,27 +15,24 @@ class  ProfissionalValidador extends AbstractValidador
     public function validarProfissional($dados)
     {
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NO_PESSOA], AbstractValidador::VALIDACAO_NOME, 'Responsável'
+            $dados[NO_PESSOA], AbstractValidador::VALIDACAO_NOME, 'Nome Completo'
         );
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
-            $dados[NO_PESSOA], 2, 'Nome Fantasia'
+        $this->retorno[DADOS][] = $this->ValidaCampoValido(
+            $dados[DT_NASCIMENTO], AbstractValidador::VALIDACAO_DATA, 'Nascimento'
         );
-        if (!empty($dados[NU_CNPJ])) {
+        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
+            $dados[ST_SEXO], 'Sexo'
+        );
+        if (!empty($dados[NU_CPF])) {
             $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-                $dados[NU_CNPJ], AbstractValidador::VALIDACAO_CNPJ, 'CNPJ'
+                $dados[NU_CPF], AbstractValidador::VALIDACAO_CPF, 'CPF'
             );
         }
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NU_TEL1], AbstractValidador::VALIDACAO_TEL, 'Telefone Responsável'
-        );
-        $this->retorno[DADOS][] = $this->ValidaCampoValido(
-            $dados[NU_TEL2], AbstractValidador::VALIDACAO_TEL, 'Telefone do Estabelecimento'
+            $dados[NU_TEL1], AbstractValidador::VALIDACAO_TEL, 'Telefone (WhatsApp) '
         );
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
             $dados[DS_EMAIL], AbstractValidador::VALIDACAO_EMAIL, 'E-mail'
-        );
-        $this->retorno[DADOS][] = $this->ValidaSelectObrigatorioNotArray(
-            $dados[TP_ESTABELECIMENTO], 'Tipo de estabelecimento'
         );
         return $this->MontaRetorno($this->retorno);
     }
