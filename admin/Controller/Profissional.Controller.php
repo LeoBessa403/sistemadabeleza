@@ -17,17 +17,19 @@ class Profissional extends AbstractController
 
     public function CadastroProfissional()
     {
-        /** @var AssinanteService $assinanteService */
-        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
 
         if (!empty($_POST)):
-            debug($_POST);
-            $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
+            $retorno = $profissionalService->salvaProfisssional($_POST, $_FILES);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/Index/Index/');
+                Redireciona(UrlAmigavel::$modulo . '/Profissional/ListarProfissional/');
             }
         endif;
 
+
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
         /** @var EnderecoService $enderecoService */
         $enderecoService = $this->getService(ENDERECO_SERVICE);
         /** @var ContatoService $contatoService */
