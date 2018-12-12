@@ -21,6 +21,7 @@ class Profissional extends AbstractController
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
 
         if (!empty($_POST)):
+            debug($_POST);
             $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/Index/Index/');

@@ -214,7 +214,6 @@ class ProfissionalForm
         $formulario
             ->setLabel("Ordem da agenda")
             ->setId(NU_ORDEM_AGENDA)
-            ->setClasses("ob")
             ->setInfo("Número da ordem de paresentação na agenda")
             ->setType("select")
             ->setOptions($comboProfissionais)
@@ -222,11 +221,10 @@ class ProfissionalForm
 
         $formulario
             ->setId(DS_COR_AGENDA)
-//            ->setClasses("data ob")
+            ->setType("color")
             ->setLabel("Cor da agenda")
             ->setInfo("que da agenda do profissional")
             ->CriaInpunt();
-
 
         $formulario
             ->finalizaAba();

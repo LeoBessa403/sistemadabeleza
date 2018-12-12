@@ -70,6 +70,10 @@ $user = $us->getUser();
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
         <!-- start: CSS REQUIRED FOR DATAPICKER -->
         <link rel="stylesheet" href="<?= INCLUDES; ?>Jcalendar.css">
+        <!-- CSS paleta de cores       -->
+        <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+
+        <link rel="stylesheet" href="Jcalendar.css">
         <!-- start: CSS REQUIRED FOR SELECT -->
         <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/select2/select2.css">
         <!-- start: CSS REQUIRED FOR UPLOAD -->
@@ -208,6 +212,7 @@ $user = $us->getUser();
     <script src="<?= PASTAADMIN; ?>plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
     <script src="<?= PASTAADMIN; ?>plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
     <script src="<?= PASTAADMIN; ?>plugins/jquery-cookie/jquery.cookie.js"></script>
+    <script src="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
     <script src="<?= PASTAADMIN; ?>js/main.js"></script>
     <script src="<?= PASTAADMIN; ?>js/ui-animation.js"></script>
     <!-- end: MAIN JAVASCRIPTS -->
