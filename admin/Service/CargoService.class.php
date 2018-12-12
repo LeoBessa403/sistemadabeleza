@@ -16,5 +16,18 @@ class  CargoService extends AbstractService
         $this->ObjetoModel = New CargoModel();
     }
 
-
+    public static function montaComboCargos()
+    {
+        /** @var CargoService $cargoService */
+        $cargoService = new CargoService();
+        $cargos = $cargoService->PesquisaTodos();
+        $todoscargos = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        /** @var CargoEntidade $cargo */
+        foreach ($cargos as $cargo) :
+            $todoscargos[$cargo->getCoCargo()] = $cargo->getNoCargo();
+        endforeach;
+        return $todoscargos;
+    }
 }

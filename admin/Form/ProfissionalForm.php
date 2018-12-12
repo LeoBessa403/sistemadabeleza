@@ -50,6 +50,16 @@ class ProfissionalForm
             ->setInfo("Data de Nascimento")
             ->CriaInpunt();
 
+        $cargos = CargoService::montaComboCargos();
+        $formulario
+            ->setId(CO_CARGO)
+            ->setLabel("Cargo")
+            ->setClasses("multipla ob")
+            ->setInfo("Cargos exercidos pelo profissional")
+            ->setType("select")
+            ->setOptions($cargos)
+            ->CriaInpunt();
+
         $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
         $formulario
             ->setLabel("Sexo")

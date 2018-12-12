@@ -59,8 +59,8 @@ class  ProfissionalService extends AbstractService
                     $pessoa[ST_SEXO] = $dados[ST_SEXO][0];
                     $pessoa[CO_CONTATO] = $coContato;
                     $pessoa[CO_ENDERECO] = $coEndereco;
-                    debug($pessoa);
                     $coPessoa = $pessoaService->Salva($pessoa);
+                    debug($dados);
                     if ($coPessoa) {
                         $retorno = $empresaService->salvaEmpressaAssinante($dados);
                         if ($retorno[SUCESSO]) {
