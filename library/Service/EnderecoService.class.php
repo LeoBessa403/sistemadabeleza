@@ -16,13 +16,14 @@ class  EnderecoService extends AbstractService
     {
         $ComboEstados =
             array(
-                "DF" => "Distrito Federal",
+                "" => Mensagens::MSG_SEM_ITEM_SELECIONADO,
                 "AC" => "Acre",
                 "AL" => "Alagoas",
                 "AM" => "Amazonas",
                 "AP" => "Amapá",
                 "BA" => "Bahia",
                 "CE" => "Ceará",
+                "DF" => "Distrito Federal",
                 "ES" => "Espírito Santo",
                 "GO" => "Goiás",
                 "MA" => "Maranhão",

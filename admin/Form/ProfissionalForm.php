@@ -87,7 +87,6 @@ class ProfissionalForm
         $formulario
             ->setId(DS_ENDERECO)
             ->setIcon("clip-home-2")
-            ->setClasses("ob")
             ->setLabel("Endereço")
             ->CriaInpunt();
 
