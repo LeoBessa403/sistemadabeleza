@@ -30,3 +30,4 @@ if ($session->CheckSession(MENSAGEM)):
     endif;
     $session->FinalizaSession(MENSAGEM);
 endif;
+Notificacoes::alerta();

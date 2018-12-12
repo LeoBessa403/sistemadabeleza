@@ -99,4 +99,22 @@ class Notificacoes
             </div>
         </div>';
     }
+
+    public static function alerta()
+    {
+        echo '<div id="gritter-notice-wrapper" class="top-right alerta-js fadeIn gritter-notificacao no-display">
+            <div class="gritter-item-wrapper my-sticky-class" role="alert">
+                <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>
+                    <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
+                    '/Images/sistemadabeleza.jpg&w=50&h=50"
+                                alt="' . DESC . '" title="' . DESC . '"
+                                class="circle-img" />
+                    <div class="gritter-with-image"><span class="gritter-title"></span>
+                        <span class="mensagem-alerta-js"></span>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>';
+    }
 }

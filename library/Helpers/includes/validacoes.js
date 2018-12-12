@@ -412,11 +412,11 @@ $(function () {
 
         if (obrigatorios == true) {
             if (validacao == "error") {
-                Funcoes.Alerta("Existe(em) campo(s) com erro, favor verificar!");
+                Funcoes.Alerta("Existe(em) campo(s) inválido(s), favor verificar!");
                 return false;
             }
         } else {
-            Funcoes.Informativo("Existe(em) campo(s) obrigatório(s) em branco, favor verificar!");
+            Funcoes.Alerta("Existe(em) campo(s) obrigatório(s) em branco, favor verificar!");
             return false;
         }
     });
@@ -460,6 +460,7 @@ $(function () {
         });
         if (campos != "") {
             $(".ob:first").focus();
+            Funcoes.Alerta('Existem campos em branco que são obrigatórios ou campos inválidos, favor verificar');
             return false;
         } else {
             return true;
