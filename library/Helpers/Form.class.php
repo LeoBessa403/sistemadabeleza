@@ -35,7 +35,7 @@ class Form
      * @param STRING $botao : Label do Botão
      * @param INT $tamanhoForm : Tamanho do Formulário
      */
-    function __construct($idform, $action, $botao = "Salvar", $tamanhoForm = 6)
+    function __construct($idform, $action = null, $botao = "Salvar", $tamanhoForm = 6)
     {
         self::$idForm = $idform;
         self::$style = "";
@@ -45,7 +45,7 @@ class Form
         self::$form = "";
         self::$tamanhoForm = $tamanhoForm;
         self::$tamanho = "";
-        self::$action = $action;
+        self::$action = ($action) ? $action : HOME . UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
         self::$botao = $botao;
     }
 

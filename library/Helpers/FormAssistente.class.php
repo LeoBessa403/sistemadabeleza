@@ -49,7 +49,7 @@ class FormAssistente
         self::$abas = '';
         self::$tamanho = "";
         self::$titulo = $titulo;
-        self::$action = ($action) ? $action : HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
+        self::$action = ($action) ? $action : HOME . UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
     }
 
     /**
