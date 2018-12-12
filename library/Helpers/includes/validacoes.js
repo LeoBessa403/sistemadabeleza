@@ -416,7 +416,7 @@ $(function () {
                 return false;
             }
         } else {
-            Funcoes.Alerta("Existe(em) campo(s) obrigatório(s) em branco, favor verificar!");
+            Funcoes.Informativo("Existe(em) campo(s) obrigatório(s) em branco, favor verificar!");
             return false;
         }
     });

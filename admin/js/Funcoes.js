@@ -63,11 +63,6 @@ var Funcoes = function () {
 
         MSG_CONFIRMACAO: "CONFIRMAÇÃO",
 
-        MSG01: "Sua Idade Não é Permitida.",
-        MSG02: "Ano de publicação não pode ser maior que o ano atual.",
-        MSG03: "Ano de publicação não pode ser menor que o ano de 1950.",
-        MSG04: "Livro sem Foto de Capa"
-
     };
 }();
 
