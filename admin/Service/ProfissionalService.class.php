@@ -55,7 +55,11 @@ class  ProfissionalService extends AbstractService
                 $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
                 $coContato = $contatoService->Salva($contato);
                 if ($coContato) {
-                    $pessoa[NO_PESSOA] = $dados[NO_PESSOA];
+                    $pessoa = $this->getDados($dados, PessoaEntidade::ENTIDADE);
+                    $pessoa[ST_SEXO] = $dados[ST_SEXO][0];
+                    $pessoa[CO_CONTATO] = $coContato;
+                    $pessoa[CO_ENDERECO] = $coEndereco;
+                    debug($pessoa);
                     $coPessoa = $pessoaService->Salva($pessoa);
                     if ($coPessoa) {
                         $retorno = $empresaService->salvaEmpressaAssinante($dados);
