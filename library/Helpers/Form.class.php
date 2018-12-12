@@ -465,7 +465,26 @@ class Form
                     endforeach;
 
                 endif;
+            //CAMPO TIPO COLOR
+            elseif (self::$type == "color"):
+                $valor = '';
+                if (!empty(self::$valor[self::$id])):
+                    $valor = self::$valor[self::$id];
+                endif;
+                self::$form .= '<div class="input-group">
+                                        <span class="input-group-addon color-back"></span>';
+                self::$form .= '<input type="text" disabled="disabled" style="' . self::$style . '"' . self::$place . ' 
+                class="form-control color ' . self::$classes . '" id="' . self::$id . '-input" name="' . self::$id . '-input" value="' . $valor . '"/>';
+                self::$form .= '<span class="btn input-group-addon" data-toggle="dropdown">Cor</span>
+											<ul class="dropdown-menu pull-right center">
+												<li>
+													<div class="color-palette"></div>
+												</li>
+											</ul>
+											<input class="color" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '" type="hidden" />
+                                        </div>';
             else:
+                //CAMPO TIPO TEXT
                 $valor = '';
                 if (is_array(self::$valor) && !empty(self::$valor)):
                     if (!empty(self::$valor[self::$id])):
@@ -477,7 +496,6 @@ class Form
                         self::$valor = "";
                     endif;
                 endif;
-                //CAMPO TIPO TEXT
                 self::$form .= '<input type="' . self::$type . '" style="' . self::$style . '"' . self::$place . ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '"/>';
             endif;
 
