@@ -77,7 +77,7 @@ class ProfissionalForm
 
         $formulario
             ->setType("textarea")
-            ->setId(DS_OBSERVACAO)
+            ->setId(DS_SOBRE)
             ->setLabel("Sobre")
             ->CriaInpunt();
 

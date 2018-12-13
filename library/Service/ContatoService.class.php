@@ -15,7 +15,7 @@ class  ContatoService extends AbstractService
 
     public function getArrayDadosContato($cont, array $dados)
     {
-        if($cont){
+        if ($cont) {
             /** @var ContatoEntidade $contato */
             $contato = $cont;
             $dados[CO_CONTATO] = $contato->getCoContato();
@@ -24,13 +24,19 @@ class  ContatoService extends AbstractService
             $dados[NU_TEL3] = Valida::MascaraTel($contato->getNuTel3());
             $dados[DS_EMAIL] = $contato->getDsEmail();
             $dados[DS_SITE] = $contato->getDsSite();
-        }else{
+            $dados[DS_FACEBOOK] = $contato->getDsFacebook();
+            $dados[DS_INSTAGRAM] = $contato->getDsInstagram();
+            $dados[DS_TWITTER] = $contato->getDsTwitter();
+        } else {
             $dados[CO_CONTATO] = '';
             $dados[NU_TEL1] = '';
             $dados[NU_TEL2] = '';
             $dados[NU_TEL3] = '';
             $dados[DS_EMAIL] = '';
             $dados[DS_SITE] = '';
+            $dados[DS_FACEBOOK] = '';
+            $dados[DS_INSTAGRAM] = '';
+            $dados[DS_TWITTER] = '';
         }
 
         return $dados;

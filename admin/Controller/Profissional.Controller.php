@@ -26,11 +26,6 @@ class Profissional extends AbstractController
                 Redireciona(UrlAmigavel::$modulo . '/Profissional/ListarProfissional/');
             }
         endif;
-        // Inicia elementos do Form
-        $res['jornada'] = [];
-        $res[ST_ASSISTENTE] = '';
-        $res[ST_AGENDA] = '';
-        $res[ST_AGENDA_ONLINE] = '';
 
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
@@ -45,38 +40,62 @@ class Profissional extends AbstractController
         /** @var FuncionamentoService $funcionamentoService */
         $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
         /** @var AssinanteEntidade $assinante */
-        $assinante = $assinanteService->getAssinanteLogado();
 
 
-        // Aba 1
-//        $res[NO_PESSOA] = $assinante->getCoPessoa()->getNoPessoa();
-//        $res[NO_FANTASIA] = $assinante->getCoEmpresa()->getNoFantasia();
-//        $res[NO_EMPRESA] = $assinante->getCoEmpresa()->getNoEmpresa();
-//        $res[NU_CNPJ] = $assinante->getCoEmpresa()->getNuCnpj();
-//        $res[NU_INSC_ESTADUAL] = $assinante->getCoEmpresa()->getNuInscEstadual();
-//        $res[DS_OBSERVACAO] = $assinante->getCoEmpresa()->getDsObservacao();
+        // Inicia elementos do Form
+        $res['jornada'] = [];
+        $res[ST_ASSISTENTE] = '';
+        $res[ST_AGENDA] = '';
+        $res[ST_AGENDA_ONLINE] = '';
 
 
-        // Aba 2
-//        /** @var EnderecoEntidade $endereco */
-//        $endereco = $enderecoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoEndereco());
-//        if (!$endereco) {
-//            $end[DS_ENDERECO] = '';
-//            $coEndereco = $enderecoService->Salva($end);
-//            /** @var EnderecoEntidade $endereco */
-//            $endereco = $enderecoService->PesquisaUmRegistro($coEndereco);
-//            $empresa[CO_ENDERECO] = $coEndereco;
-//            $empresaService->Salva($empresa, $assinante->getCoEmpresa()->getCoEmpresa());
-//        }
-//        $res = $enderecoService->getArrayDadosEndereco($endereco, $res);
+        $coProfissional = UrlAmigavel::PegaParametro(CO_PROFISSIONAL);
+        if ($coProfissional) {
+            /** @var ProfissionalService $profissionalService */
+            $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+            /** @var ProfissionalEntidade $profissional */
+            $profissional = $profissionalService->PesquisaUmRegistro($coProfissional);
+            // Aba 1
+            $res[NU_CPF] = $profissional->getCoPessoa()->getNuCpf();
+            $res[NU_RG] = $profissional->getCoPessoa()->getNuRg();
+            $res[NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+            $res[NO_APELIDO] = $profissional->getNoApelido();
+            $res[DT_NASCIMENTO] = Valida::DataShow($profissional->getCoPessoa()->getDtNascimento());
+            $res[DS_SOBRE] = $profissional->getDsSobre();
+            $res[ST_SEXO] = $profissional->getCoPessoa()->getStSexo();
+            // Carrega a Imagem de perfil
+            $foto = '';
+            if (!empty($profissional->getCoImagem())) {
+                $foto = "usuarios/" . $profissional->getCoImagem()->getDsCaminho();
+            }
+            $res[DS_CAMINHO] = $foto;
+            // Carrega os cargos
+            $cargos = [];
+            if (!empty($profissional->getCoProfissionalCargo())) {
+                /** @var ProfissionalCargoEntidade $cargo */
+                foreach ($profissional->getCoProfissionalCargo() as $cargo) {
+                    $cargos[] = $cargo->getCoCargo()->getCoCargo();
+                }
+            }
+            $res[CO_CARGO] = $cargos;
 
 
-        // Aba 3
-//        /** @var ContatoEntidade $contato */
-//        $contato = $contatoService->PesquisaUmRegistro($assinante->getCoEmpresa()->getCoContato());
-//        $res = $contatoService->getArrayDadosContato($contato, $res);
+            // Aba 2
+            /** @var EnderecoEntidade $endereco */
+            $endereco = $enderecoService->PesquisaUmRegistro(
+                $profissional->getCoPessoa()->getCoEndereco()->getCoEndereco()
+            );
+            $res = $enderecoService->getArrayDadosEndereco($endereco, $res);
 
-        // Aba 4
+
+            // Aba 3
+            /** @var ContatoEntidade $contato */
+            $contato = $contatoService->PesquisaUmRegistro(
+                $profissional->getCoPessoa()->getCoContato()->getCoContato()
+            );
+            $res = $contatoService->getArrayDadosContato($contato, $res);
+
+            // Aba 4
 //        /** @var FacilidadeBeneficioEntidade $facilidade */
 //        $facilidade = $assinante->getCoFacilidadeBeneficio();
 //        if (!$facilidade) {
@@ -118,15 +137,17 @@ class Profissional extends AbstractController
 //        }
 
 //        // Aba 6
-//        $logo = '';
-//        $imagem_logo = '';
-//        if (!empty($assinante->getCoImagemAssinante())) {
-//            $imagem_logo = $assinante->getLogoImagemAssinante()->getCoImagem()->getCoImagem();
-//            $logo = "Assinante/Assinante-" . AssinanteService::getCoAssinanteLogado() . "/" .
-//                $assinante->getLogoImagemAssinante()->getCoImagem()->getDsCaminho();
-//        }
-//        $res[DS_CAMINHO] = $logo;
-//        $res['imagem_logo'] = $imagem_logo;
+
+
+
+        } else {
+            // Inicia elementos do Form
+            $res['jornada'] = [];
+            $res[ST_ASSISTENTE] = '';
+            $res[ST_AGENDA] = '';
+            $res[ST_AGENDA_ONLINE] = '';
+        }
+
 
         $comboProfissionais = $assinanteService->getComboNuProfissionais();
 
