@@ -36,6 +36,7 @@ class  PessoaService extends AbstractService
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
         $pessoa[NO_PESSOA] = strtoupper(trim($dados[NO_PESSOA]));
+        $pessoa[DT_NASCIMENTO] = Valida::DataDBDate($dados[DT_NASCIMENTO]);
         $retorno[SUCESSO] = $this->Salva($pessoa, $assinante->getCoPessoa()->getCoPessoa());
 
         return $retorno;

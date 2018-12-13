@@ -63,6 +63,7 @@ class  ProfissionalService extends AbstractService
                 $coContato = $contatoService->Salva($contato);
                 if ($coContato) {
                     $pessoa = $this->getDados($dados, PessoaEntidade::ENTIDADE);
+                    $pessoa[DT_NASCIMENTO] = Valida::DataDBDate($dados[DT_NASCIMENTO]);
                     $pessoa[CO_CONTATO] = $coContato;
                     $pessoa[CO_ENDERECO] = $coEndereco;
                     $coPessoa = $pessoaService->Salva($pessoa);

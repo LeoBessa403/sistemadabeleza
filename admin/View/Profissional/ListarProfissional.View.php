@@ -7,7 +7,7 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Assinante
+                            Profissional
                         </a>
                     </li>
                     <li class="active">
@@ -16,7 +16,7 @@
                 </ol>
                 <div class="page-header">
                     <h1>Assinante
-                        <small>Listar Assinante</small>
+                        <small>Listar Profissional</small>
                         <?php Valida::geraBtnNovo(); ?>
                     </h1>
                 </div>
@@ -28,54 +28,35 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Assinantes
+                        Profissionais
                     </div>
                     <div class="panel-body">
                         <?php
                         Modal::load();
-                        Modal::confirmacao("confirma_Assinante");
-                        $arrColunas = array('Assinante', 'Responsável', 'E-mail', 'Expiração', 'Status', 'Ações');
+                        Modal::confirmacao("confirma_Profissional");
+                        $arrColunas = array('Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var AssinanteEntidade $res */
+                        /** @var ProfissionalEntidade $res */
                         foreach ($result as $res):
-                            $acao = '<a href="' . PASTAADMIN . 'Assinante/CadastroAssinante/' .
-                                Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" class="btn btn-primary tooltips" 
+                            $acao = '<a href="' . PASTAADMIN . 'Profissional/CadastroProfissional/' .
+                                Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            if (!empty($res->getCoPlanoAssinanteAssinatura())) {
-                                $acao .= ' <a href="' . PASTAADMIN . 'Assinante/HistoricoAssinante/' .
-                                    Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                                class="btn btn-med-grey tooltips" 
-                                    data-original-title="Histórico do Assinante" data-placement="top">
-                                     <i class="clip-folder-open"></i>
-                                 </a>';
+                            $cargos = [];
+                            /** @var ProfissionalCargoEntidade $cargoProf */
+                            foreach ($res->getCoProfissionalCargo() as $cargoProf) {
+                                $cargos[] = $cargoProf->getCoCargo()->getNoCargo();
                             }
-                            $acao .= ' <a href="' . PASTAADMIN . 'Assinante/PagamentoAssinante/' .
-                                Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                        class="btn btn-warning tooltips" data-original-title="Pagamentos do Assinante" data-placement="top">
-                                     <i class="fa fa-money"></i>
-                                 </a>';
-                            if (!empty($res->getCoAssinanteMatriz())) {
-                                if (!empty($res->getCoUnicoAssinanteMatriz())) {
-                                    $acao .= ' <a href="' . PASTAADMIN . 'Assinante/FilialAssinante/' .
-                                        Valida::GeraParametro(CO_ASSINANTE . "/" . $res->getCoAssinante()) . '" 
-                                class="btn btn-green tooltips" 
-                                    data-original-title="Filiais do Assinante" data-placement="top">
-                                     <i class="clip-tree"></i>
-                                 </a>';
-                                }
-                            }
-                            $empresa = ($res->getCoEmpresa()) ? $res->getCoEmpresa()->getNoFantasia() : '';
-                            $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
-                            $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
-                            $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
-                            $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
-                            $grid->setColunas($acao, 4);
-                            $grid->criaLinha($res->getCoAssinante());
+                            $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()),2);
+                            $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
+                            $grid->setColunas(implode(', ' , $cargos));
+                            $grid->setColunas(FuncoesSistema::SituacaoSimNao($res->getStAssistente()), 2);
+                            $grid->setColunas($acao, 2);
+                            $grid->criaLinha($res->getCoProfissional());
                         endforeach;
                         $grid->finalizaGrid();
                         ?>

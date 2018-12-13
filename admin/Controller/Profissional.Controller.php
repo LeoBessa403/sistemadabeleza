@@ -8,11 +8,11 @@ class Profissional extends AbstractController
 
     public function ListarProfissional()
     {
-//        /** @var ProfissionalService $profissionalService */
-//        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
-//        $this->result = $profissionalService->PesquisaTodos([
-//            TP_PROFISSIONAL => ProfissionalEnum::MATRIZ,
-//        ]);
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+        $this->result = $profissionalService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+        ]);
     }
 
     public function CadastroProfissional()
@@ -26,7 +26,11 @@ class Profissional extends AbstractController
                 Redireciona(UrlAmigavel::$modulo . '/Profissional/ListarProfissional/');
             }
         endif;
-
+        // Inicia elementos do Form
+        $res['jornada'] = [];
+        $res[ST_ASSISTENTE] = '';
+        $res[ST_AGENDA] = '';
+        $res[ST_AGENDA_ONLINE] = '';
 
         /** @var AssinanteService $assinanteService */
         $assinanteService = $this->getService(ASSINANTE_SERVICE);
@@ -112,11 +116,6 @@ class Profissional extends AbstractController
 //                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
 //            ]);
 //        }
-        $res['jornada'] = [];
-        $res[ST_ASSISTENTE] = '';
-        $res[ST_AGENDA] = '';
-        $res[ST_AGENDA_ONLINE] = '';
-
 
 //        // Aba 6
 //        $logo = '';
