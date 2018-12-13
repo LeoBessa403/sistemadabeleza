@@ -79,21 +79,16 @@ class  AssinanteService extends AbstractService
                 $assinante[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
                     ConfiguracoesEnum::DIAS_EXPERIMENTAR, "+"));
 
-                $usuario[CO_ASSINANTE] = $this->Salva($assinante);
-                $usuario[CO_PESSOA] = $assinante[CO_PESSOA];
-                $usuario[DS_SENHA] = trim(FuncoesSistema::GeraCodigo());
-                $usuario[DS_CODE] = base64_encode(base64_encode($usuario[DS_SENHA]));
-                $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
-                $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $coAssinante = $usuario[CO_ASSINANTE];
-
-                $coUsuario = $usuarioService->Salva($usuario);
+                $coAssinante = $this->Salva($assinante);
+                $coUsuario = $usuarioService->salvaUsuarioInicial($assinante[CO_PESSOA], $coAssinante);
                 $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($coAssinante);
 
                 $usuarioPerfil[CO_PERFIL] = 2;
                 $usuarioPerfil[CO_USUARIO] = $coUsuario;
                 $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
-
+                /** @var UsuarioEntidade $usuario */
+                $usuario = $usuarioService->PesquisaUmRegistro($coUsuario);
+                $dsSenha = $usuario->getDsSenha();
                 $session->setSession(MENSAGEM, CADASTRADO);
 
                 /** @var Email $email */
@@ -104,7 +99,7 @@ class  AssinanteService extends AbstractService
                     $pessoa[NO_PESSOA] => $contato[DS_EMAIL],
                 );
                 $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no " . DESC . " foi realizado com sucesso.</h3>";
-                $Mensagem .= "<p>Sua senha é: <b>" . $usuario[DS_SENHA] . ".</b></p>";
+                $Mensagem .= "<p>Sua senha é: <b>" . $dsSenha . ".</b></p>";
                 $Mensagem .= "<p>Acesso o link para a <a href='" . HOME . "admin/Index/AtivacaoUsuario/" .
                     Valida::GeraParametro(CO_USUARIO . "/" . $coUsuario) . "'>ATIVAÇÃO DO CADASTRO</a></p><br>";
 

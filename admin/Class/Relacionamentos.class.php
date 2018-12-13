@@ -539,7 +539,7 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
                 (CO_JORNADA_TRABALHO) => Array(
-                    ('Campo') => CO_JORNADA_TRABALHO,
+                    ('Campo') => CO_PROFISSIONAL,
                     ('Entidade') => 'JornadaTrabalhoEntidade',
                     ('Tipo') => '2',
                 ),
@@ -558,7 +558,7 @@ class Relacionamentos
             ),
             (JornadaTrabalhoEntidade::TABELA) => Array(
                 (CO_PROFISSIONAL) => Array(
-                    ('Campo') => CO_JORNADA_TRABALHO,
+                    ('Campo') => CO_PROFISSIONAL,
                     ('Entidade') => 'ProfissionalEntidade',
                     ('Tipo') => '1',
                 ),

@@ -73,10 +73,7 @@ class  UsuarioService extends AbstractService
             $idCoUsuario = (isset($dados[CO_USUARIO]) ? $dados[CO_USUARIO] : null);
 
             $endereco = $enderecoService->getDados($dados, EnderecoEntidade::ENTIDADE);
-            $endereco[SG_UF] = $dados[SG_UF][0];
-
             $contato = $contatoService->getDados($dados, ContatoEntidade::ENTIDADE);
-
             $pessoa = $pessoaService->getDados($dados, PessoaEntidade::ENTIDADE);
             $pessoa[NO_PESSOA] = strtoupper(trim($dados[NO_PESSOA]));
             $pessoa[DT_NASCIMENTO] = Valida::DataDBDate($dados[DT_NASCIMENTO]);
@@ -288,5 +285,23 @@ class  UsuarioService extends AbstractService
     public function PesquisaUsuarioLogar($dados)
     {
         return $this->ObjetoModel->PesquisaUsuarioLogar($dados);
+    }
+
+    /**
+     * Salva o Usuário para logar inicialmente no sistema
+     * @param $coPessoa
+     * @param null $coAssinante
+     * @return bool|INT CoUsuario
+     */
+    public function salvaUsuarioInicial($coPessoa, $coAssinante = null)
+    {
+        $usuario[CO_ASSINANTE] = ($coAssinante) ? $coAssinante : AssinanteService::getCoAssinanteLogado();
+        $usuario[CO_PESSOA] = $coPessoa;
+        $usuario[DS_SENHA] = trim(FuncoesSistema::GeraCodigo());
+        $usuario[DS_CODE] = base64_encode(base64_encode($usuario[DS_SENHA]));
+        $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
+        $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+
+        return $this->Salva($usuario);
     }
 }

@@ -75,7 +75,6 @@ class  EnderecoService extends AbstractService
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
         $endereco = $this->getDados($dados, EnderecoEntidade::ENTIDADE);
-        $endereco[SG_UF] = $dados[SG_UF][0];
         if (!empty($assinante->getCoEmpresa()->getCoEndereco())) {
             $this->Salva($endereco, $assinante->getCoEmpresa()->getCoEndereco());
             $empresa[CO_ENDERECO] = $assinante->getCoEmpresa()->getCoEndereco();

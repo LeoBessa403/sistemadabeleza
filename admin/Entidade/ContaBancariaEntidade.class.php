@@ -14,7 +14,6 @@ class ContaBancariaEntidade extends AbstractEntidade
     private $co_conta_bancaria;
     private $nu_agencia;
     private $nu_conta;
-    private $nu_banco;
     private $tp_conta;
     private $co_profissional;
     private $co_banco;
@@ -29,7 +28,6 @@ class ContaBancariaEntidade extends AbstractEntidade
             CO_CONTA_BANCARIA,
             NU_AGENCIA,
             NU_CONTA,
-            NU_BANCO,
             TP_CONTA,
         ];
     }
@@ -93,23 +91,6 @@ class ContaBancariaEntidade extends AbstractEntidade
     public function setNuConta($nu_conta)
     {
         return $this->nu_conta = $nu_conta;
-    }
-
-    /**
-     * @return mixed $nu_banco
-     */
-    public function getNuBanco()
-    {
-        return $this->nu_banco;
-    }
-
-    /**
-     * @param $nu_banco
-     * @return mixed
-     */
-    public function setNuBanco($nu_banco)
-    {
-        return $this->nu_banco = $nu_banco;
     }
 
     /**

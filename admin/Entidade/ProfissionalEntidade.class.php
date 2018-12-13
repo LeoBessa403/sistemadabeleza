@@ -29,6 +29,7 @@ class ProfissionalEntidade extends AbstractEntidade
 	private $co_assinante;
 	private $co_conta_bancaria;
 	private $co_profissional_cargo;
+	private $co_jornada_trabalho;
 
 
 	/**
@@ -371,6 +372,23 @@ class ProfissionalEntidade extends AbstractEntidade
 	public function setCoProfissionalCargo($co_profissional_cargo)
     {
         return $this->co_profissional_cargo = $co_profissional_cargo;
+    }
+
+    /**
+     * @return JornadaTrabalhoEntidade $co_jornada_trabalho
+     */
+    public function getCoJornadaTrabalho()
+    {
+        return $this->co_jornada_trabalho;
+    }
+
+    /**
+     * @param $co_jornada_trabalho
+     * @return mixed
+     */
+    public function setCoJornadaTrabalho($co_jornada_trabalho)
+    {
+        $this->co_jornada_trabalho = $co_jornada_trabalho;
     }
 
 }
