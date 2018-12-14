@@ -108,20 +108,8 @@ class Profissional extends AbstractController
             $res = $contaBancariaService->getArrayDadosContaBancaria($profissional->getCoContaBancaria(), $res);
 
 
-//        // Aba 6
-//            $funcionamento = $assinante->getCoFuncionamento();
-//        if (!$funcionamento) {
-//            $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-//            $funcionamento[NU_HORA_ABERTURA] = '08:00';
-//            $funcionamento[NU_HORA_FECHAMENTO] = '18:00';
-//            for ($i = 1; $i < 6; $i++) {
-//                $funcionamento[NU_DIA_SEMANA] = $i;
-//                $funcionamentoService->Salva($funcionamento);
-//            }
-//            $funcionamento = $funcionamentoService->PesquisaUmQuando([
-//                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
-//            ]);
-//        }
+//          // Aba 6
+            $res['jornada'] = $profissional->getCoJornadaTrabalho();
 
 
         } else {

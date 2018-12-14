@@ -472,7 +472,7 @@ class Form
                     $valor = self::$valor[self::$id];
                 endif;
                 self::$form .= '<div class="input-group">
-                                        <span class="input-group-addon color-back"></span>';
+                                        <span style="background: ' . $valor . '" class="input-group-addon color-back"></span>';
                 self::$form .= '<input type="text" disabled="disabled" style="' . self::$style . '"' . self::$place . ' 
                 class="form-control color ' . self::$classes . '" id="' . self::$id . '-input" name="' . self::$id . '-input" value="' . $valor . '"/>';
                 self::$form .= '<span class="btn input-group-addon" data-toggle="dropdown">Cor</span>
