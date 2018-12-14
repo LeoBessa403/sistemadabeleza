@@ -92,29 +92,16 @@ class Profissional extends AbstractController
             $res = $contatoService->getArrayDadosContato($contato, $res);
 
             // Aba 4
-//        /** @var FacilidadeBeneficioEntidade $facilidade */
-//        $facilidade = $assinante->getCoFacilidadeBeneficio();
-//        if (!$facilidade) {
-//            $facilidad[TP_ESTABELECIMENTO] = 0;
-//            $facilidad[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-//            $cofacilidad = $facilidadeBeneficioService->Salva($facilidad);
-//            /** @var FacilidadeBeneficioEntidade $facilidade */
-//            $facilidade = $facilidadeBeneficioService->PesquisaUmRegistro($cofacilidad);
-//        }
-//        $res[ST_LANCHONETE] = ($facilidade->getStLanchonete() == 'S')
-//            ? 'checked' : '';
-//        $res[ST_TELEVISAO] = ($facilidade->getStTelevisao() == 'S')
-//            ? 'checked' : '';
-//        $res[ST_WIFI] = ($facilidade->getStWifi() == 'S')
-//            ? 'checked' : '';
-//        $res[ST_ACESSO_DEFICIENTE] = ($facilidade->getStAcessoDeficiente() == 'S')
-//            ? 'checked' : '';
-//        $res[ST_JOGOS] = ($facilidade->getStJogos() == 'S')
-//            ? 'checked' : '';
-//        $res[TP_ESTABELECIMENTO] = $facilidade->getTpEstabelecimento();
-//        $res[TP_ATENDIMENTO] = $facilidade->getTpAtendimento();
-//        $res[TP_GENERO_ESPECIALIZADO] = $facilidade->getTpGeneroEspecializado();
-//        $res[TP_ESTACIONAMENTO] = $facilidade->getTpEstacionamento();
+            $res[ST_ASSISTENTE] = ($profissional->getStAssistente() == 'S')
+                ? 'checked' : '';
+            $res[ST_AGENDA] = ($profissional->getStAgenda() == 'S')
+                ? 'checked' : '';
+            $res[ST_AGENDA_ONLINE] = ($profissional->getStAgendaOnline() == 'S')
+                ? 'checked' : '';
+            $res[TP_CONTRATACAO] = $profissional->getTpContratacao();
+            $res[DT_ADMISSAO] = Valida::DataShow($profissional->getDtAdmissao());
+            $res[NU_ORDEM_AGENDA] = $profissional->getNuOrdemAgenda();
+            $res[DS_COR_AGENDA] = $profissional->getDsCorAgenda();
 
 
             // Aba 5
