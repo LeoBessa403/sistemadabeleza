@@ -29,6 +29,7 @@ class ContaBancariaEntidade extends AbstractEntidade
             NU_AGENCIA,
             NU_CONTA,
             TP_CONTA,
+            CO_BANCO,
         ];
     }
 

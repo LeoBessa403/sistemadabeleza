@@ -12,32 +12,22 @@ class  ContatoService extends AbstractService
         parent::__construct(ContatoEntidade::ENTIDADE);
     }
 
-
-    public function getArrayDadosContato($cont, array $dados)
+    /**
+     * @param ContatoEntidade $contato
+     * @param array $dados
+     * @return array
+     */
+    public function getArrayDadosContato(ContatoEntidade $contato, array $dados)
     {
-        if ($cont) {
-            /** @var ContatoEntidade $contato */
-            $contato = $cont;
-            $dados[CO_CONTATO] = $contato->getCoContato();
-            $dados[NU_TEL1] = Valida::MascaraTel($contato->getNuTel1());
-            $dados[NU_TEL2] = Valida::MascaraTel($contato->getNuTel2());
-            $dados[NU_TEL3] = Valida::MascaraTel($contato->getNuTel3());
-            $dados[DS_EMAIL] = $contato->getDsEmail();
-            $dados[DS_SITE] = $contato->getDsSite();
-            $dados[DS_FACEBOOK] = $contato->getDsFacebook();
-            $dados[DS_INSTAGRAM] = $contato->getDsInstagram();
-            $dados[DS_TWITTER] = $contato->getDsTwitter();
-        } else {
-            $dados[CO_CONTATO] = '';
-            $dados[NU_TEL1] = '';
-            $dados[NU_TEL2] = '';
-            $dados[NU_TEL3] = '';
-            $dados[DS_EMAIL] = '';
-            $dados[DS_SITE] = '';
-            $dados[DS_FACEBOOK] = '';
-            $dados[DS_INSTAGRAM] = '';
-            $dados[DS_TWITTER] = '';
-        }
+        $dados[CO_CONTATO] = $contato->getCoContato();
+        $dados[NU_TEL1] = Valida::MascaraTel($contato->getNuTel1());
+        $dados[NU_TEL2] = Valida::MascaraTel($contato->getNuTel2());
+        $dados[NU_TEL3] = Valida::MascaraTel($contato->getNuTel3());
+        $dados[DS_EMAIL] = $contato->getDsEmail();
+        $dados[DS_SITE] = $contato->getDsSite();
+        $dados[DS_FACEBOOK] = $contato->getDsFacebook();
+        $dados[DS_INSTAGRAM] = $contato->getDsInstagram();
+        $dados[DS_TWITTER] = $contato->getDsTwitter();
 
         return $dados;
     }

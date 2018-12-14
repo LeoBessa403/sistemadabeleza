@@ -33,10 +33,10 @@ class Profissional extends AbstractController
         $enderecoService = $this->getService(ENDERECO_SERVICE);
         /** @var ContatoService $contatoService */
         $contatoService = $this->getService(CONTATO_SERVICE);
-        /** @var EmpresaService $empresaService */
-        $empresaService = $this->getService(EMPRESA_SERVICE);
-        /** @var FacilidadeBeneficioService $facilidadeBeneficioService */
-        $facilidadeBeneficioService = $this->getService(FACILIDADE_BENEFICIO_SERVICE);
+        /** @var PessoaService $pessoaService */
+        $pessoaService = $this->getService(PESSOA_SERVICE);
+        /** @var ContaBancariaService $contaBancariaService */
+        $contaBancariaService = $this->getService(CONTA_BANCARIA_SERVICE);
         /** @var FuncionamentoService $funcionamentoService */
         $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
         /** @var AssinanteEntidade $assinante */
@@ -56,13 +56,9 @@ class Profissional extends AbstractController
             /** @var ProfissionalEntidade $profissional */
             $profissional = $profissionalService->PesquisaUmRegistro($coProfissional);
             // Aba 1
-            $res[NU_CPF] = $profissional->getCoPessoa()->getNuCpf();
-            $res[NU_RG] = $profissional->getCoPessoa()->getNuRg();
-            $res[NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+            $res = $pessoaService->getArrayDadosPessoa($profissional->getCoPessoa(), $res);
             $res[NO_APELIDO] = $profissional->getNoApelido();
-            $res[DT_NASCIMENTO] = Valida::DataShow($profissional->getCoPessoa()->getDtNascimento());
             $res[DS_SOBRE] = $profissional->getDsSobre();
-            $res[ST_SEXO] = $profissional->getCoPessoa()->getStSexo();
             // Carrega a Imagem de perfil
             $foto = '';
             if (!empty($profissional->getCoImagem())) {
@@ -121,8 +117,12 @@ class Profissional extends AbstractController
 //        $res[TP_ESTACIONAMENTO] = $facilidade->getTpEstacionamento();
 
 
-//        // Aba 5
-//        $funcionamento = $assinante->getCoFuncionamento();
+            // Aba 5
+            $res = $contaBancariaService->getArrayDadosContaBancaria($profissional->getCoContaBancaria(), $res);
+
+
+//        // Aba 6
+//            $funcionamento = $assinante->getCoFuncionamento();
 //        if (!$funcionamento) {
 //            $funcionamento[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 //            $funcionamento[NU_HORA_ABERTURA] = '08:00';
@@ -135,9 +135,6 @@ class Profissional extends AbstractController
 //                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
 //            ]);
 //        }
-
-//        // Aba 6
-
 
 
         } else {

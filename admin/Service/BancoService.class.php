@@ -21,11 +21,12 @@ class  BancoService extends AbstractService
         /** @var BancoService $bancoService */
         $bancoService = new BancoService();
         $bancos = $bancoService->PesquisaTodos();
+        $comboBancos[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
+        $bancos = array_reverse($bancos);
         /** @var BancoEntidade $banco */
         foreach ($bancos as $banco) {
             $comboBancos[$banco->getCoBanco()] = $banco->getNoBanco();
         }
-        $comboBancos[""] = Mensagens::MSG_SEM_ITEM_SELECIONADO;
-        return array_reverse($comboBancos);
+        return $comboBancos;
     }
 }

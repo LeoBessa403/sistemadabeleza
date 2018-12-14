@@ -69,7 +69,6 @@ class  ProfissionalService extends AbstractService
                     $coPessoa = $pessoaService->Salva($pessoa);
                     if ($coPessoa) {
                         $conta = $this->getDados($dados, ContaBancariaEntidade::ENTIDADE);
-                        $conta[CO_BANCO] = $dados[CO_BANCO][0];
                         $coContaBancaria = $contaBancariaService->Salva($conta);
                         if ($coContaBancaria) {
                             $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa);
@@ -84,7 +83,7 @@ class  ProfissionalService extends AbstractService
                                     $profissional[CO_IMAGEM] = $coImagem;
                                     $profissional[CO_PESSOA] = $coPessoa;
                                     $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-                                    $profissional[CO_CONTA_BANCARIA] = $coImagem;
+                                    $profissional[CO_CONTA_BANCARIA] = $coContaBancaria;
                                     $profissional[CO_USUARIO] = $coUsuario;
                                     $coProfissional = $profissionalService->Salva($profissional);
                                     if ($coProfissional) {
