@@ -69,7 +69,7 @@
                                 alt="' . $noPessoa . '" title="' . $noPessoa . '" 
                                 class="circle-img" />';
                             }
-                            $grid->setColunas($imagem, 2);
+                            $grid->setColunas($imagem, 1);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
                             $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);

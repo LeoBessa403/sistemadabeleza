@@ -23,11 +23,18 @@ class  ContaBancariaService extends AbstractService
      */
     public function getArrayDadosContaBancaria(ContaBancariaEntidade $contaBancaria, array $dados)
     {
-        $dados[CO_CONTA_BANCARIA] = $contaBancaria->getCoContaBancaria();
-        $dados[CO_BANCO] = $contaBancaria->getCoBanco()->getCoBanco();
-        $dados[NU_AGENCIA] = $contaBancaria->getNuAgencia();
-        $dados[NU_CONTA] = $contaBancaria->getNuConta();
-        $dados[TP_CONTA] = $contaBancaria->getTpConta();
+        if($contaBancaria->getCoBanco()){
+            $dados[CO_CONTA_BANCARIA] = $contaBancaria->getCoContaBancaria();
+            $dados[CO_BANCO] = $contaBancaria->getCoBanco()->getCoBanco();
+            $dados[NU_AGENCIA] = $contaBancaria->getNuAgencia();
+            $dados[NU_CONTA] = $contaBancaria->getNuConta();
+            $dados[TP_CONTA] = $contaBancaria->getTpConta();
+        }else{
+            $dados[CO_CONTA_BANCARIA] = '';
+            $dados[NU_AGENCIA] = '';
+            $dados[NU_CONTA] = '';
+            $dados[TP_CONTA] = '';
+        }
 
         return $dados;
     }

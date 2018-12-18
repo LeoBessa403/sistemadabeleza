@@ -38,14 +38,6 @@ class Profissional extends AbstractController
         /** @var ContaBancariaService $contaBancariaService */
         $contaBancariaService = $this->getService(CONTA_BANCARIA_SERVICE);
 
-
-        // Inicia elementos do Form
-        $res['jornada'] = [];
-        $res[ST_ASSISTENTE] = '';
-        $res[ST_AGENDA] = '';
-        $res[ST_AGENDA_ONLINE] = '';
-
-
         $coProfissional = UrlAmigavel::PegaParametro(CO_PROFISSIONAL);
         if ($coProfissional) {
             /** @var ProfissionalService $profissionalService */
@@ -53,11 +45,11 @@ class Profissional extends AbstractController
             /** @var ProfissionalEntidade $profissional */
             $profissional = $profissionalService->PesquisaUmRegistro($coProfissional);
             // Aba 1
-            $res = $pessoaService->getArrayDadosPessoa($profissional->getCoPessoa(), $res);
+            $res = $pessoaService->getArrayDadosPessoa($profissional->getCoPessoa(), []);
             $res[NO_APELIDO] = $profissional->getNoApelido();
             $res[DS_SOBRE] = $profissional->getDsSobre();
             // Carrega a Imagem de perfil
-            $foto = '';
+            $foto = null;
             if (!empty($profissional->getCoImagem())) {
                 $foto = "usuarios/" . $profissional->getCoImagem()->getDsCaminho();
             }
@@ -88,6 +80,7 @@ class Profissional extends AbstractController
             );
             $res = $contatoService->getArrayDadosContato($contato, $res);
 
+
             // Aba 4
             $res[ST_ASSISTENTE] = ($profissional->getStAssistente() == 'S')
                 ? 'checked' : '';
@@ -96,7 +89,7 @@ class Profissional extends AbstractController
             $res[ST_AGENDA_ONLINE] = ($profissional->getStAgendaOnline() == 'S')
                 ? 'checked' : '';
             $res[TP_CONTRATACAO] = $profissional->getTpContratacao();
-            $res[DT_ADMISSAO] = Valida::DataShow($profissional->getDtAdmissao());
+            $res[DT_ADMISSAO] = ($profissional->getDtAdmissao()) ? Valida::DataShow($profissional->getDtAdmissao()) : null;
             $res[NU_ORDEM_AGENDA] = $profissional->getNuOrdemAgenda();
             $res[DS_COR_AGENDA] = $profissional->getDsCorAgenda();
 
@@ -105,7 +98,7 @@ class Profissional extends AbstractController
             $res = $contaBancariaService->getArrayDadosContaBancaria($profissional->getCoContaBancaria(), $res);
 
 
-//          // Aba 6
+            // Aba 6
             $res['jornada'] = $profissional->getCoJornadaTrabalho();
 
 
