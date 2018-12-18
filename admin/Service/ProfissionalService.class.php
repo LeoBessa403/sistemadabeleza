@@ -108,6 +108,7 @@ class  ProfissionalService extends AbstractService
         } else {
             $retorno = $validador;
         }
+        debug($retorno);
         if ($retorno[SUCESSO]) {
             $retorno[SUCESSO] = true;
             $session->setSession(MENSAGEM, ATUALIZADO);
