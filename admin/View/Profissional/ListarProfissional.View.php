@@ -15,7 +15,7 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Assinante
+                    <h1>Profissional
                         <small>Listar Profissional</small>
                         <?php Valida::geraBtnNovo(); ?>
                     </h1>
@@ -34,7 +34,7 @@
                         <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Profissional");
-                        $arrColunas = array('Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
+                        $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -50,10 +50,30 @@
                             foreach ($res->getCoProfissionalCargo() as $cargoProf) {
                                 $cargos[] = $cargoProf->getCoCargo()->getNoCargo();
                             }
+                            $tamanhoImg = 60;
+                            $noPessoa = Valida::ValNome($res->getCoPessoa()->getNoPessoa());
+                            if ($res->getCoImagem() && (file_exists(PASTA_RAIZ . "uploads/usuarios/" . $res->getCoImagem()->getDsCaminho()))){
+                                    $imagem = Valida::GetMiniatura(
+                                        'usuarios/' . $res->getCoImagem()->getDsCaminho(),
+                                        $noPessoa, $tamanhoImg, $tamanhoImg, "circle-img"
+                                    );
+                            }else{
+                                if ($res->getCoPessoa()->getStSexo() == "M"):
+                                    $fotoPerfil = "avatar-homem.jpg";
+                                else:
+                                    $fotoPerfil = "avatar-mulher.jpg";
+                                endif;
+
+                                $imagem = '<img src="' . TIMTHUMB . '?src=' . HOME .
+                                    'library/Imagens/' . $fotoPerfil . '&w=' . $tamanhoImg . '&h=' . $tamanhoImg . '" 
+                                alt="' . $noPessoa . '" title="' . $noPessoa . '" 
+                                class="circle-img" />';
+                            }
+                            $grid->setColunas($imagem, 2);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
-                            $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()),2);
+                            $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
                             $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
-                            $grid->setColunas(implode(', ' , $cargos));
+                            $grid->setColunas(implode(', ', $cargos));
                             $grid->setColunas(FuncoesSistema::SituacaoSimNao($res->getStAssistente()), 2);
                             $grid->setColunas($acao, 2);
                             $grid->criaLinha($res->getCoProfissional());

@@ -22,7 +22,6 @@ class  ImagemService extends AbstractService
     {
         /** @var Upload $up */
         $up = new Upload();
-        $retorno[SUCESSO] = true;
         $noImagem =  Valida::ValNome(strtolower(trim($noImagem)));
 
         if ($imagem[DS_CAMINHO]["tmp_name"]):
@@ -31,6 +30,7 @@ class  ImagemService extends AbstractService
             $imagem[DS_CAMINHO] = $up->getNameImage();
            return $this->Salva($imagem);
         endif;
+        return false;
     }
 
 }

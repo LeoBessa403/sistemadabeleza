@@ -37,9 +37,6 @@ class Profissional extends AbstractController
         $pessoaService = $this->getService(PESSOA_SERVICE);
         /** @var ContaBancariaService $contaBancariaService */
         $contaBancariaService = $this->getService(CONTA_BANCARIA_SERVICE);
-        /** @var FuncionamentoService $funcionamentoService */
-        $funcionamentoService = $this->getService(FUNCIONAMENTO_SERVICE);
-        /** @var AssinanteEntidade $assinante */
 
 
         // Inicia elementos do Form

@@ -74,31 +74,31 @@ class  ProfissionalService extends AbstractService
                             $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa);
                             if ($coUsuario) {
                                 $coImagem = $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'usuarios/');
-                                if ($coImagem) {
-                                    $profissional = $this->getDados($dados, ProfissionalEntidade::ENTIDADE);
-                                    $profissional[ST_AGENDA] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA);
-                                    $profissional[ST_AGENDA_ONLINE] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA_ONLINE);
-                                    $profissional[ST_ASSISTENTE] = FuncoesSistema::retornoCheckbox($dados, ST_ASSISTENTE);
-                                    $profissional[DT_ADMISSAO] = Valida::DataDBDate($profissional[DT_ADMISSAO]);
-                                    $profissional[CO_IMAGEM] = $coImagem;
-                                    $profissional[CO_PESSOA] = $coPessoa;
-                                    $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-                                    $profissional[CO_CONTA_BANCARIA] = $coContaBancaria;
-                                    $profissional[CO_USUARIO] = $coUsuario;
-                                    $coProfissional = $profissionalService->Salva($profissional);
-                                    if ($coProfissional) {
-                                        $coProfissionalCargo = '';
-                                        $profissionalCargo[CO_PROFISSIONAL] = $coProfissional;
-                                        foreach ($dados[CO_CARGO] as $cargo) {
-                                            $profissionalCargo[CO_CARGO] = $cargo;
-                                            $profissionalCargo[ST_STATUS] = StatusUsuarioEnum::ATIVO;
-                                            $profissionalCargo[DT_CADASTRO] = Valida::DataAtualBanco();
-                                            $coProfissionalCargo = $profissionalCargoService->Salva($profissionalCargo);
-                                        }
-                                        if ($coProfissionalCargo) {
-                                            $retorno = $jornadaTrabalhoService->salvaJornadaTrabalho($dados, $coProfissional);
-                                        }
+                                $profissional = $this->getDados($dados, ProfissionalEntidade::ENTIDADE);
+                                $profissional[ST_AGENDA] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA);
+                                $profissional[ST_AGENDA_ONLINE] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA_ONLINE);
+                                $profissional[ST_ASSISTENTE] = FuncoesSistema::retornoCheckbox($dados, ST_ASSISTENTE);
+                                $profissional[DT_ADMISSAO] = ($profissional[DT_ADMISSAO])
+                                    ? Valida::DataDBDate($profissional[DT_ADMISSAO]) : null;
+                                $profissional[CO_IMAGEM] = $coImagem;
+                                $profissional[CO_PESSOA] = $coPessoa;
+                                $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+                                $profissional[CO_CONTA_BANCARIA] = $coContaBancaria;
+                                $profissional[CO_USUARIO] = $coUsuario;
+                                $coProfissional = $profissionalService->Salva($profissional);
+                                if ($coProfissional) {
+                                    $coProfissionalCargo = '';
+                                    $profissionalCargo[CO_PROFISSIONAL] = $coProfissional;
+                                    foreach ($dados[CO_CARGO] as $cargo) {
+                                        $profissionalCargo[CO_CARGO] = $cargo;
+                                        $profissionalCargo[ST_STATUS] = StatusUsuarioEnum::ATIVO;
+                                        $profissionalCargo[DT_CADASTRO] = Valida::DataAtualBanco();
+                                        $coProfissionalCargo = $profissionalCargoService->Salva($profissionalCargo);
                                     }
+                                    if ($coProfissionalCargo) {
+                                        $jornadaTrabalhoService->salvaJornadaTrabalho($dados, $coProfissional);
+                                    }
+                                    $retorno = [SUCESSO => true];
                                 }
                             }
                         }
