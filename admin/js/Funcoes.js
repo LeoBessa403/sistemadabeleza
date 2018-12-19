@@ -27,8 +27,8 @@ var Funcoes = function () {
                 }
             });
             $("span .nu_notificacoes").text(itens);
-            if(itens == 0){
-                $(".dropdown a.pulse").removeClass('pulse');
+            if(itens > 0){
+                $("#notif").addClass('pulse');
             }
         });
 

@@ -369,4 +369,11 @@ class FuncoesSistema
         return $op;
     }
 
+    public static function getImgSistema()
+    {
+        return '<img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
+            '/Images/sistemadabeleza.jpg&w=50&h=50"
+                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />';
+    }
+
 }

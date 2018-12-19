@@ -1,8 +1,7 @@
 <li class="dropdown" xmlns="http://www.w3.org/1999/html">
-    <a class="dropdown-toggle pulse" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
-       href="#">
-        <i class="clip-notification-2"></i>
-        <span class="badge"> <span class="nu_notificacoes"></span></span>
+    <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown" href="#" id="notif">
+        <i class="fa-envelope fa"></i>
+        <span class="badge"><span class="nu_notificacoes">0</span></span>
     </a>
     <ul class="dropdown-menu posts">
         <li>
@@ -20,9 +19,7 @@
                                 <a href="javascript:">
                                     <div class="clearfix">
                                         <div class="thread-image">
-                                            <?= '<img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
-                                            '/Images/sistemadabeleza.jpg&w=50&h=50"
-                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />'; ?>
+                                            <?= FuncoesSistema::getImgSistema(); ?>
                                         </div>
                                         <div class="thread-content">
                                             <span class="author">Renovação da Assinatura</span>
@@ -43,9 +40,7 @@
                             <a href="javascript:">
                                 <div class="clearfix">
                                     <div class="thread-image">
-                                        <?= '<img src="' . HOME . 'library/Helpers/Timthumb.class.php?src=' . HOME . ADMIN .
-                                        '/Images/sistemadabeleza.jpg&w=50&h=50"
-                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />'; ?>
+                                        <?= FuncoesSistema::getImgSistema(); ?>
                                     </div>
                                     <div class="thread-content">
                                         <span class="author">Dados Complementares</span>

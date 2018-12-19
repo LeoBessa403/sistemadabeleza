@@ -5,7 +5,7 @@
     ?>
     <a class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown"
        href="#">
-        <i class="clip-bubble-3"></i>
+        <i class="clip-users"></i>
         <span class="badge"> <?= count($perfis) ?></span>
     </a>
     <ul class="dropdown-menu posts">

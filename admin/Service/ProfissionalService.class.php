@@ -108,10 +108,9 @@ class  ProfissionalService extends AbstractService
         } else {
             $retorno = $validador;
         }
-        debug($retorno);
         if ($retorno[SUCESSO]) {
-            $retorno[SUCESSO] = true;
             $session->setSession(MENSAGEM, ATUALIZADO);
+            $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {
             $session->setSession(MENSAGEM, $retorno[MSG]);

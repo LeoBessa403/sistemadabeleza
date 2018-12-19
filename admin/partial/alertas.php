@@ -18,6 +18,7 @@ if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
     $dados['tipo'] = 'danger';
     Notificacoes::notificacao($dados);
 }
+//debug($session->CheckSession(MENSAGEM),1);
 if ($session->CheckSession(MENSAGEM)):
     if ($session::getSession(MENSAGEM) == CADASTRADO):
         Notificacoes::cadastrado();
