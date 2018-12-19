@@ -109,17 +109,14 @@ class Session
     /**
      * <b>Finaliza a Session:</b> Responsável por finalizar uma Session
      * @param STRING $name : O nome da Session a ser finalizada
-     * @return BOOL
      */
     public function FinalizaSession($name)
     {
         if ($this->CheckSession($name)):
-            echo '.';
             unset($_SESSION[$name]);
         else:
             Notificacoes::mesagens("A Sessão <big><b>$name</b></big> não existe!",4);
         endif;
-        return true;
     }
 
     /**

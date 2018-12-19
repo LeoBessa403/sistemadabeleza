@@ -13,7 +13,7 @@ if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
     $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
 
     $dados['titulo'] = 'Sistema Expirado!';
-    $dados['mensagem'] = '<p>Sua assinatura está expirada em ' . $difDatas * -1 . ' Dia(s)</b>, click no link para
+    $dados['mensagem'] = '<p>Sua assinatura está expirada em <b>' . $difDatas * -1 . ' Dia(s)</b>, click no link para
     renovar sua assinatura. Expirado Em ' . $user[md5(DT_EXPIRACAO)] . '</p>';
     $dados['tipo'] = 'danger';
     Notificacoes::notificacao($dados);
@@ -33,6 +33,6 @@ if ($session->CheckSession(MENSAGEM)) {
             Notificacoes::mesagens($session::getSession(MENSAGEM));
             break;
     }
+    $session->FinalizaSession(MENSAGEM);
 }
 Notificacoes::alerta();
-$session->FinalizaSession(MENSAGEM);

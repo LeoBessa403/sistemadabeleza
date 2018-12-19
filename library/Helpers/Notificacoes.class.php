@@ -10,7 +10,7 @@ class Notificacoes
 {
     public static function notificacao($dados)
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-' . $dados['tipo'] . ' fadeIn gritter-notificacao">
+        echo '<div class="gritter-notice-wrapper top-right gritter-' . $dados['tipo'] . ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
             FuncoesSistema::getImgSistema()
@@ -25,7 +25,7 @@ class Notificacoes
 
     public static function cadastrado()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-aviso">
+        echo '<div class="gritter-notice-wrapper top-right gritter-success fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">' .
             FuncoesSistema::getImgSistema()
@@ -40,7 +40,7 @@ class Notificacoes
 
     public static function atualizado()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-info fadeIn gritter-aviso">
+        echo '<div class="gritter-notice-wrapper top-right gritter-info fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">' . FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Atualizado com Sucesso!</span>
@@ -54,7 +54,7 @@ class Notificacoes
 
     public static function deletado()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-aviso">
+        echo '<div class="gritter-notice-wrapper top-right gritter-success fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">' . FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Deletado com Sucesso!</span>
@@ -70,7 +70,7 @@ class Notificacoes
     {
         $class = ($typo == 1 ? "success" : ($typo == 2 ? "info" : ($typo == 3 ? "warning" : "danger")));
         $label = ($typo == 1 ? "SUCESSO" : ($typo == 2 ? "INFORMATIVO" : ($typo == 3 ? "ALERTA" : "ERRO")));
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-' . $class . ' fadeIn gritter-notificacao">
+        echo '<div class="gritter-notice-wrapper top-right gritter-' . $class . ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
             FuncoesSistema::getImgSistema()
@@ -85,7 +85,7 @@ class Notificacoes
 
     public static function alerta()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right alerta-js fadeIn gritter-notificacao no-display">
+        echo '<div class="gritter-notice-wrapper top-right alerta-js fadeIn gritter-notificacao no-display">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
             FuncoesSistema::getImgSistema()

@@ -15,7 +15,7 @@ var Funcoes = function () {
         }, 8000);
 
         $('.gritter-close').click(function () {
-            $(this).parents("#gritter-notice-wrapper").fadeOut('slow');
+            $(this).parents(".gritter-notice-wrapper").fadeOut('slow');
         });
 
         // Ler a quantidade de notificações
