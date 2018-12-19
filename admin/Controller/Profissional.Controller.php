@@ -50,7 +50,8 @@ class Profissional extends AbstractController
             $res[DS_SOBRE] = $profissional->getDsSobre();
             // Carrega a Imagem de perfil
             $foto = null;
-            if (!empty($profissional->getCoImagem())) {
+            if (!empty($profissional->getCoImagem()) &&
+                (file_exists(PASTA_UPLOADS . "usuarios/" . $profissional->getCoImagem()->getDsCaminho()))) {
                 $foto = "usuarios/" . $profissional->getCoImagem()->getDsCaminho();
             }
             $res[DS_CAMINHO] = $foto;
