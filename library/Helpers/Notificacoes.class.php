@@ -11,7 +11,7 @@ class Notificacoes
     public static function notificacao($dados)
     {
         echo '<div id="gritter-notice-wrapper" class="top-right gritter-' . $dados['tipo'] . ' fadeIn gritter-notificacao">
-            <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
+            <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
             FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">' . $dados['titulo'] . '</span>
@@ -26,7 +26,7 @@ class Notificacoes
     public static function cadastrado()
     {
         echo '<div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-aviso">
-            <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
+            <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">' .
             FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Cadastrado com Sucesso!</span>
@@ -40,10 +40,9 @@ class Notificacoes
 
     public static function atualizado()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-info fadeIn gritter-aviso">
-            <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
-                <div class="gritter-item">' .
-            FuncoesSistema::getImgSistema()
+        echo '<div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-aviso">
+            <div class="gritter-item-wrapper my-sticky-class" role="alert">
+                <div class="gritter-item">' . FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Atualizado com Sucesso!</span>
                          <p>' . Mensagens::OK_ATUALIZADO . '</p>
                     </div>
@@ -55,10 +54,9 @@ class Notificacoes
 
     public static function deletado()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-danger fadeIn gritter-aviso">
-            <div id="gritter-item-8" class="gritter-item-wrapper my-sticky-class" role="alert">
-                <div class="gritter-item">' .
-            FuncoesSistema::getImgSistema()
+        echo '<div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-aviso">
+            <div class="gritter-item-wrapper my-sticky-class" role="alert">
+                <div class="gritter-item">' . FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Deletado com Sucesso!</span>
                          <p>' . Mensagens::OK_DELETADO . '</p>
                     </div>
