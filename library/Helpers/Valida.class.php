@@ -117,25 +117,9 @@ class Valida
      * @param INT $typo : atribui a classe para ser estilizada <br>(1 - Sucesso, ok / 2 - Informativo /
      * <br>3 - Alerta / 4 - Erro).
      */
-    public static function Mensagem($msg, $typo, $termina = null)
+    public static function Mensagem($msg, $typo)
     {
-        $class = ($typo == 1 ? "success" : ($typo == 2 ? "info" : ($typo == 3 ? "warning" : "danger")));
-        $label = ($typo == 1 ? "SUCESSO" : ($typo == 2 ? "INFORMATIVO" : ($typo == 3 ? "ALERTA" : "ERRO")));
-        $icon = ($typo == 1 ? "check-circle" : ($typo == 2 ? "info-circle" :
-            ($typo == 3 ? "exclamation-triangle" : "times-circle"))
-        );
-
-        echo '<div id="sumir" class="alert alert-' . $class . '" style="padding-left: 30px;">
-                <p data-dismiss="alert" class="close" style="margin-top: 0;">
-                        &times;
-                </p>
-                <i class="fa fa-' . $icon . '"></i>                
-                <b>' . $label . ': </b>' . $msg . '
-            </div>';
-
-        if ($termina):
-            die;
-        endif;
+        Notificacoes::mesagens($msg, $typo);
     }
 
     /**
@@ -635,14 +619,14 @@ class Valida
         }
     }
 
-   public static function geraBtnVoltar($parametros = null)
-   {
-       $link = ($parametros) ? $parametros : UrlAmigavel::$controller . '/Listar' . UrlAmigavel::$controller;
-       echo '<a href="' . PASTAADMIN . $link.'"
+    public static function geraBtnVoltar($parametros = null)
+    {
+        $link = ($parametros) ? $parametros : UrlAmigavel::$controller . '/Listar' . UrlAmigavel::$controller;
+        echo '<a href="' . PASTAADMIN . $link . '"
                class="btn btn-primary tooltips" data-original-title="Voltar" data-placement="top">
                 Voltar <i class="clip-arrow-right-2"></i>
             </a>';
-   }
+    }
 
     /**
      * @param null $descricao

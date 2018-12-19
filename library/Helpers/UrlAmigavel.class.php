@@ -156,8 +156,8 @@ class UrlAmigavel
         elseif (file_exists("library/" . $arquivo_include) && !is_dir( "library/" . $arquivo_include)):
             include "library/" . $arquivo_include;
         else:
-            Valida::Mensagem("A View <b>" . self::$modulo . "/" . self::$controller . "/" .
-                $action . ".View.php</b> não foi encontrada!", 3);
+            Notificacoes::mesagens("A View <b>" . self::$modulo . "/" . self::$controller . "/" .
+                $action . ".View.php</b> não foi encontrada!", 4);
         endif;
     }
 

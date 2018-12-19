@@ -15,7 +15,7 @@ class Session
     /**
      * <b>Atribui a uma Session:</b> Cria uma session e atribui um valor
      * @param STRING $name : atribui o nome da Session
-     * @param VALOR ou ARRAY $valor: atribui o valor para a Session ou Cria uma session que armazena vários dados para array
+     * @param INT VALOR ou ARRAY $valor: atribui o valor para a Session ou Cria uma session que armazena vários dados para array
      * Ex.: $_SESSION[$name][$key] = $value
      */
     public function setSession($name, $valor)
@@ -71,6 +71,7 @@ class Session
     /**
      * <b>Pega uma Session:</b> Retorna o valor de uma Session
      * @param STRING $name : O nome da Session a ser verificada
+     * @param STRING $segundo_indice : O nome da Session a ser verificada
      * @return STRING O valor da Session pesquisada ou FALSE caso não existe ou tenha o valor em branco da Session
      */
     public static function getSession($name, $segundo_indice = null)
@@ -108,15 +109,17 @@ class Session
     /**
      * <b>Finaliza a Session:</b> Responsável por finalizar uma Session
      * @param STRING $name : O nome da Session a ser finalizada
+     * @return BOOL
      */
     public function FinalizaSession($name)
     {
         if ($this->CheckSession($name)):
+            echo '.';
             unset($_SESSION[$name]);
         else:
-            Valida::Mensagem("A Sessão informada não existe!", 3);
+            Notificacoes::mesagens("A Sessão <big><b>$name</b></big> não existe!",4);
         endif;
-
+        return true;
     }
 
     /**
@@ -167,7 +170,7 @@ class Session
         if (self::CheckCookie($name)):
             setcookie($name);
         else:
-            Valida::Mensagem("O Cookie informado não existe!", 3);
+            Notificacoes::mesagens("O Cookie <big><b>$name</b></big> não existe!", 4);
         endif;
     }
 

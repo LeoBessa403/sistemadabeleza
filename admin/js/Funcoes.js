@@ -30,8 +30,8 @@ var Funcoes = function () {
             if(itens > 0){
                 $("#notif").addClass('pulse');
             }
-        });
 
+        });
     };
     return {
         init: function () {
@@ -61,7 +61,7 @@ var Funcoes = function () {
             Funcoes.Modal(msg, "danger", "Erro");
         },
 
-        MSG_CONFIRMACAO: "CONFIRMAÇÃO",
+        MSG_CONFIRMACAO: "CONFIRMAÇÃO"
 
     };
 }();

@@ -224,7 +224,7 @@ class Pesquisa extends Conn
             $this->Result = $this->Read->fetchAll();
         } catch (PDOException $e) {
             $this->Result = null;
-            Valida::Mensagem("Erro ao Ler: {$e->getMessage()}</br>{$this->getSql()}", 4);
+            Notificacoes::mesagens("Erro ao Ler: {$e->getMessage()}</br>{$this->getSql()}", 4);
         }
     }
 

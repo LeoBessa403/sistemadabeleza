@@ -40,7 +40,7 @@ class Notificacoes
 
     public static function atualizado()
     {
-        echo '<div id="gritter-notice-wrapper" class="top-right gritter-success fadeIn gritter-aviso">
+        echo '<div id="gritter-notice-wrapper" class="top-right gritter-info fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">' . FuncoesSistema::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Atualizado com Sucesso!</span>

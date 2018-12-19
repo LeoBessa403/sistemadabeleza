@@ -18,17 +18,21 @@ if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
     $dados['tipo'] = 'danger';
     Notificacoes::notificacao($dados);
 }
-//debug($session->CheckSession(MENSAGEM),1);
-if ($session->CheckSession(MENSAGEM)):
-    if ($session::getSession(MENSAGEM) == CADASTRADO):
-        Notificacoes::cadastrado();
-    elseif ($session::getSession(MENSAGEM) == ATUALIZADO):
-        Notificacoes::atualizado();
-    elseif ($session::getSession(MENSAGEM) == DELETADO):
-        Notificacoes::deletado();
-    else:
-        Notificacoes::mesagens($session::getSession(MENSAGEM));
-    endif;
-    $session->FinalizaSession(MENSAGEM);
-endif;
+if ($session->CheckSession(MENSAGEM)) {
+    switch ($session::getSession(MENSAGEM)) {
+        case CADASTRADO:
+            Notificacoes::cadastrado();
+            break;
+        case ATUALIZADO:
+            Notificacoes::atualizado();
+            break;
+        case DELETADO:
+            Notificacoes::deletado();
+            break;
+        default:
+            Notificacoes::mesagens($session::getSession(MENSAGEM));
+            break;
+    }
+}
 Notificacoes::alerta();
+$session->FinalizaSession(MENSAGEM);

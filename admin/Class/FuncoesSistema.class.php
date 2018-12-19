@@ -54,7 +54,7 @@ class FuncoesSistema
         return $op;
     }
 
-    public static function GeraCodigo($blocosLetrasEnumeros = 2, $sequenciaNumeros = 1, $sequenciaLetras =3)
+    public static function GeraCodigo($blocosLetrasEnumeros = 2, $sequenciaNumeros = 1, $sequenciaLetras = 3)
     {
         $codigo = '';
         for ($p = 0; $p < $blocosLetrasEnumeros; $p++) {
@@ -371,9 +371,11 @@ class FuncoesSistema
 
     public static function getImgSistema()
     {
-        return '<img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
+        return '
+        <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
             '/Images/sistemadabeleza.jpg&w=50&h=50"
-                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />';
+                                alt="' . DESC . '" title="' . DESC . '" class="circle-img" />
+        ';
     }
 
 }

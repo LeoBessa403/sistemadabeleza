@@ -81,7 +81,6 @@ $user = $us->getUser();
         <!-- start: CSS REQUIRED FOR CHECK -->
         <link rel="stylesheet"
               href="<?= PASTAADMIN; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
-
         <!-- start: CSS REQUIRED FOR CHECK -->
         <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/DataTables/media/css/DT_bootstrap.css">
         <!-- start: CSS REQUIRED Gritter -->
@@ -251,6 +250,7 @@ $user = $us->getUser();
             Index.init();
         });
     </script>
+    <!-- Carrega DIVs dos Alertas e Notificações   -->
     <?php include_once PARTIAL_ADMIN . 'alertas.php'; ?>
     </body>
     <!-- end: BODY -->

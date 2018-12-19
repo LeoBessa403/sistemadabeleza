@@ -61,7 +61,7 @@
         <form class="form-login" action="../Index/RecuperarSenha" method="post" id="RecuperarSenha" name="RecuperarSenha">
             <?php
             if (!empty($visivel)):
-                Valida::Mensagem($msg, $class);
+                Notificacoes::mesagens($msg, $class);
             endif;
             ?>
             <fieldset>

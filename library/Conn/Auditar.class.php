@@ -143,7 +143,7 @@ class Auditar extends Conn
             $this->Result = null;
             $this->Result = null;
             if (DEBUG) {
-                Valida::Mensagem("Erro ao Cadastrar a {$this->tabela}: {$e->getMessage()}", 4);
+                Notificacoes::mesagens("Erro ao Cadastrar a {$this->tabela}: {$e->getMessage()}", 4);
                 debug(10);
             }
         }
