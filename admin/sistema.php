@@ -73,8 +73,6 @@ $user = $us->getUser();
         <link rel="stylesheet" href="<?= INCLUDES; ?>Jcalendar.css">
         <!-- CSS paleta de cores       -->
         <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-
-        <link rel="stylesheet" href="Jcalendar.css">
         <!-- start: CSS REQUIRED FOR SELECT -->
         <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/select2/select2.css">
         <!-- start: CSS REQUIRED FOR UPLOAD -->
