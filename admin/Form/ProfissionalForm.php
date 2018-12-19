@@ -289,15 +289,18 @@ class ProfissionalForm
         $grid->setColunasIndeces($arrColunas);
         $grid->criaGrid('nova');
 
-        $jornada = $res['jornada'];
+        $jornadas = $res['jornada'];
         foreach (DiasEnum::$descricao as $numero => $dia) {
             $check = null;
             $abertura = null;
             $fechamento = null;
-            if (!empty($jornada[$numero - 1])) {
-                $check = ' checked="checked"';
-                $abertura = $jornada[$numero - 1]->getNuHoraAbertura();
-                $fechamento = $jornada[$numero - 1]->getNuHoraFechamento();
+            /** @var JornadaTrabalhoEntidade $jornada */
+            foreach ($jornadas as $jornada){
+                if ($jornada->getNuDiaSemana() == $numero) {
+                    $check = ' checked="checked"';
+                    $abertura = $jornada->getNuHoraAbertura();
+                    $fechamento = $jornada->getNuHoraFechamento();
+                }
             }
             $campoAtende = '<input type="checkbox" ' . $check . '
                            class="square-purple"
@@ -327,6 +330,39 @@ class ProfissionalForm
 
         $formulario
             ->finalizaAba(true, $gridAssitente);
+
+        if (!empty($res[CO_PROFISSIONAL])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_PROFISSIONAL)
+                ->setValues($res[CO_PROFISSIONAL])
+                ->CriaInpunt();
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_ENDERECO)
+                ->setValues($res[CO_ENDERECO])
+                ->CriaInpunt();
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_CONTATO)
+                ->setValues($res[CO_CONTATO])
+                ->CriaInpunt();
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_PESSOA)
+                ->setValues($res[CO_PESSOA])
+                ->CriaInpunt();
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_CONTA_BANCARIA)
+                ->setValues($res[CO_CONTA_BANCARIA])
+                ->CriaInpunt();
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_IMAGEM)
+                ->setValues($res[CO_IMAGEM])
+                ->CriaInpunt();
+        endif;
 
         return $formulario->finalizaForm();
     }

@@ -51,7 +51,7 @@ class Profissional extends AbstractController
             // Carrega a Imagem de perfil
             $foto = null;
             if (!empty($profissional->getCoImagem()) &&
-                (file_exists(PASTA_UPLOADS . "usuarios/" . $profissional->getCoImagem()->getDsCaminho()))) {
+                (file_exists(PASTA_RAIZ . "uploads/usuarios/" . $profissional->getCoImagem()->getDsCaminho()))) {
                 $foto = "usuarios/" . $profissional->getCoImagem()->getDsCaminho();
             }
             $res[DS_CAMINHO] = $foto;
@@ -102,6 +102,16 @@ class Profissional extends AbstractController
             // Aba 6
             $res['jornada'] = $profissional->getCoJornadaTrabalho();
 
+
+            // Inicia parametros para edição
+            $res[CO_PROFISSIONAL] = $profissional->getCoProfissional();
+            $res[CO_ENDERECO] = $profissional->getCoPessoa()->getCoEndereco()->getCoEndereco();
+            $res[CO_CONTATO] = $profissional->getCoPessoa()->getCoContato()->getCoContato();
+            $res[CO_PESSOA] = $profissional->getCoPessoa()->getCoPessoa();
+            $res[CO_CONTA_BANCARIA] = ($profissional->getCoContaBancaria())
+                ? $profissional->getCoContaBancaria()->getCoContaBancaria() : null;
+            $res[CO_IMAGEM] = ($profissional->getCoImagem())
+                ? $profissional->getCoImagem()->getCoImagem() : null;
 
         } else {
             // Inicia elementos do Form
