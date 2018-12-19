@@ -7,31 +7,7 @@ var Funcoes = function () {
         var urlValida = dados['HOME'] + 'admin/Controller/Ajax.Controller.php';
         var upload = dados['PASTAUPLOADS'];
 
-        //Esconde a model de notificação
-        setTimeout(function () {
-            $(".gritter-aviso").animate({
-                right: -500
-            }, "slow");
-        }, 8000);
 
-        $('.gritter-close').click(function () {
-            $(this).parents(".gritter-notice-wrapper").fadeOut('slow');
-        });
-
-        // Ler a quantidade de notificações
-        $(window).load(function () {
-            var itens = 0;
-            $(".notifica li").each(function () {
-                if($(this).children('li')){
-                    itens++;
-                }
-            });
-            $("span .nu_notificacoes").text(itens);
-            if(itens > 0){
-                $("#notif").addClass('pulse');
-            }
-
-        });
     };
     return {
         init: function () {

@@ -16,6 +16,7 @@ if ($compara != null):
     $url->pegaControllerAction();
     exit;
 endif;
+/** @var Session $session */
 $session = new Session();
 /** @var Session $us */
 $us = $_SESSION[SESSION_USER];

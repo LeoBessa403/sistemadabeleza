@@ -474,8 +474,6 @@ $(function () {
         $("#load").click();
 
         $.get(urlValida, {valida: 'deleta_registro', entidade: entidade, id: id}, function (retorno) {
-            $("#carregando .cancelar").click();
-
             if (retorno == true) {
                 window.setTimeout('location.reload()', 1);
             } else if (retorno != "") {
@@ -490,6 +488,7 @@ $(function () {
                 Funcoes.Erro("Foi identificado um Erro<br><br>" +
                     "Favor entrar em contato com o Administrador do Sistema<br>Informando o erro ocorrido.");
             }
+            $("#carregando .cancelar").click();
         });
     });
 
@@ -499,6 +498,32 @@ $(function () {
         $(".deleta_registro .btn-success").attr('id', id);
         $(".deleta_registro .btn-success").attr('data-msg-restricao', MSG);
         $("#registro-" + id).attr("style", "").css("background", "#ffcccc").addClass("deletando");
+    });
+
+    //Esconde a model de notificação
+    setTimeout(function () {
+        $(".gritter-aviso").animate({
+            right: -500
+        }, "slow");
+    }, 8000);
+
+    $('.gritter-close').click(function () {
+        $(this).parents(".gritter-notice-wrapper").fadeOut('slow');
+    });
+
+    // Ler a quantidade de notificações
+    $(window).load(function () {
+        var itens = 0;
+        $(".notifica li").each(function () {
+            if($(this).children('li')){
+                itens++;
+            }
+        });
+        $("span .nu_notificacoes").text(itens);
+        if(itens > 0){
+            $("#notif").addClass('pulse');
+        }
+
     });
 
     $(".cancelar").click(function () {
