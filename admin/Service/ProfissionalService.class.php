@@ -112,6 +112,7 @@ class  ProfissionalService extends AbstractService
                                     $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
                                     $profissional[CO_CONTA_BANCARIA] = $coContaBancaria;
                                     $profissional[CO_USUARIO] = $coUsuario;
+                                    $profissional[ST_STATUS] = StatusAcessoEnum::ATIVO;
                                     $coProfissional = $profissionalService->Salva($profissional);
                                 }
                             }

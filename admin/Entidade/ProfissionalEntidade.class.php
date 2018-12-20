@@ -19,6 +19,7 @@ class ProfissionalEntidade extends AbstractEntidade
 	private $no_apelido;
 	private $st_agenda;
 	private $st_agenda_online;
+    private $st_status;
 	private $nu_ordem_agenda;
 	private $tp_contratacao;
 	private $dt_admissao;
@@ -46,6 +47,7 @@ class ProfissionalEntidade extends AbstractEntidade
 			NO_APELIDO,
 			ST_AGENDA,
 			ST_AGENDA_ONLINE,
+            ST_STATUS,
 			NU_ORDEM_AGENDA,
 			TP_CONTRATACAO,
 			DT_ADMISSAO,
@@ -202,6 +204,23 @@ class ProfissionalEntidade extends AbstractEntidade
 	public function setStAgendaOnline($st_agenda_online)
     {
         return $this->st_agenda_online = $st_agenda_online;
+    }
+
+    /**
+     * @return mixed $st_status
+     */
+    public function getStStatus()
+    {
+        return $this->st_status;
+    }
+
+    /**
+     * @param $st_status
+     * @return mixed
+     */
+    public function setStStatus($st_status)
+    {
+        return $this->st_status = $st_status;
     }
 
 	/**
