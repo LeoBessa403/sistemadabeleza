@@ -16,9 +16,10 @@ class  ImagemService extends AbstractService
      * @param $imagem
      * @param $noImagem
      * @param null $pasta
+     * @param null $coImagem
      * @return mixed
      */
-    public function salvaImagem($imagem, $noImagem, $pasta = null)
+    public function salvaImagem($imagem, $noImagem, $pasta = null, $coImagem = null)
     {
         /** @var Upload $up */
         $up = new Upload();
@@ -28,7 +29,7 @@ class  ImagemService extends AbstractService
             $img = $imagem[DS_CAMINHO];
             $up->UploadImagens($img, $noImagem, $pasta);
             $imagem[DS_CAMINHO] = $up->getNameImage();
-           return $this->Salva($imagem);
+           return $this->Salva($imagem, $coImagem);
         endif;
         return false;
     }

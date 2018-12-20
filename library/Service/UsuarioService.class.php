@@ -7,6 +7,7 @@
 class  UsuarioService extends AbstractService
 {
     private $ObjetoModel;
+    private $Email;
 
     public function __construct()
     {
@@ -290,10 +291,11 @@ class  UsuarioService extends AbstractService
     /**
      * Salva o Usuário para logar inicialmente no sistema
      * @param $coPessoa
+     * @param $dadosEmail
      * @param null $coAssinante
      * @return bool|INT CoUsuario
      */
-    public function salvaUsuarioInicial($coPessoa, $coAssinante = null)
+    public function salvaUsuarioInicial($coPessoa, $dadosEmail, $coAssinante = null)
     {
         $usuario[CO_ASSINANTE] = ($coAssinante) ? $coAssinante : AssinanteService::getCoAssinanteLogado();
         $usuario[CO_PESSOA] = $coPessoa;
@@ -302,6 +304,28 @@ class  UsuarioService extends AbstractService
         $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
         $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
 
-        return $this->Salva($usuario);
+        $coUsuario = $this->Salva($usuario);
+        if($coUsuario){
+            /** @var Email $email */
+            $email = new Email();
+
+            // Índice = Nome, e Valor = Email.
+            $emails = array(
+                $dadosEmail[NO_PESSOA] => $dadosEmail[DS_EMAIL],
+            );
+            $Mensagem = "<h3>Olá " . $dadosEmail[NO_PESSOA] . ", Seu cadastro no " . DESC . " foi realizado com sucesso.</h3>";
+            $Mensagem .= "<p>Sua senha é: <b>" . $usuario[DS_SENHA] . ".</b></p>";
+            $Mensagem .= "<p>Acesso o link para a <a href='" . HOME . "admin/Index/AtivacaoUsuario/" .
+                Valida::GeraParametro(CO_USUARIO . "/" . $coUsuario) . "'>ATIVAÇÃO DO CADASTRO</a></p><br>";
+
+            $email->setEmailDestinatario($emails)
+                ->setTitulo(DESC . " - Ativação do seu cadastro")
+                ->setMensagem($Mensagem);
+
+            // Variável para validação de Emails Enviados com Sucesso.
+            $this->Email = $email->Enviar();
+        }
+
+        return $coUsuario;
     }
 }

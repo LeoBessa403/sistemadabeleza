@@ -16,5 +16,24 @@ class  ProfissionalCargoService extends AbstractService
         $this->ObjetoModel = New ProfissionalCargoModel();
     }
 
-
+    /**
+     * @param $dados
+     * @param null $coProfissional
+     * @return mixed
+     */
+    public function salvaProfissionalCargo($dados, $coProfissional)
+    {
+        $this->DeletaQuando([
+            CO_PROFISSIONAL => $coProfissional
+        ]);
+        $retorno = false;
+        $profissionalCargo[CO_PROFISSIONAL] = $coProfissional;
+        $profissionalCargo[ST_STATUS] = StatusUsuarioEnum::ATIVO;
+        $profissionalCargo[DT_CADASTRO] = Valida::DataAtualBanco();
+        foreach ($dados[CO_CARGO] as $cargo) {
+            $profissionalCargo[CO_CARGO] = $cargo;
+            $retorno = $this->Salva($profissionalCargo);
+        }
+        return $retorno;
+    }
 }

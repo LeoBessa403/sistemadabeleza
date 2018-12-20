@@ -79,36 +79,17 @@ class  AssinanteService extends AbstractService
                 $assinante[DT_EXPIRACAO] = Valida::DataDBDate(Valida::CalculaData(date('d/m/Y'),
                     ConfiguracoesEnum::DIAS_EXPERIMENTAR, "+"));
 
+                $dadosEmail[NO_PESSOA] = $pessoa[NO_PESSOA];
+                $dadosEmail[DS_EMAIL] = $contato[DS_EMAIL];
+
                 $coAssinante = $this->Salva($assinante);
-                $coUsuario = $usuarioService->salvaUsuarioInicial($assinante[CO_PESSOA], $coAssinante);
+                $coUsuario = $usuarioService->salvaUsuarioInicial($assinante[CO_PESSOA], $dadosEmail, $coAssinante);
                 $PlanoAssinanteAssinaturaService->salvaPlanoPadrao($coAssinante);
 
                 $usuarioPerfil[CO_PERFIL] = 2;
                 $usuarioPerfil[CO_USUARIO] = $coUsuario;
                 $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
-                /** @var UsuarioEntidade $usuario */
-                $usuario = $usuarioService->PesquisaUmRegistro($coUsuario);
-                $dsSenha = $usuario->getDsSenha();
                 $session->setSession(MENSAGEM, CADASTRADO);
-
-                /** @var Email $email */
-                $email = new Email();
-
-                // Índice = Nome, e Valor = Email.
-                $emails = array(
-                    $pessoa[NO_PESSOA] => $contato[DS_EMAIL],
-                );
-                $Mensagem = "<h3>Olá " . $pessoa[NO_PESSOA] . ", Seu cadastro no " . DESC . " foi realizado com sucesso.</h3>";
-                $Mensagem .= "<p>Sua senha é: <b>" . $dsSenha . ".</b></p>";
-                $Mensagem .= "<p>Acesso o link para a <a href='" . HOME . "admin/Index/AtivacaoUsuario/" .
-                    Valida::GeraParametro(CO_USUARIO . "/" . $coUsuario) . "'>ATIVAÇÃO DO CADASTRO</a></p><br>";
-
-                $email->setEmailDestinatario($emails)
-                    ->setTitulo(DESC . " - Ativação do seu cadastro")
-                    ->setMensagem($Mensagem);
-
-                // Variável para validação de Emails Enviados com Sucesso.
-                $this->Email = $email->Enviar();
             endif;
             $assinanteMatrizService->salvaAssinanteMatriz($dados, $coAssinante);
             if ($retorno[SUCESSO]) {

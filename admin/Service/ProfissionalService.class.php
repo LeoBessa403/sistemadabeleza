@@ -56,58 +56,77 @@ class  ProfissionalService extends AbstractService
         /** @var ProfissionalValidador $validador */
         $validador = $profissionalValidador->validarProfissional($dados);
         if ($validador[SUCESSO]) {
-            if (!empty($dados[CO_PROFISSIONAL])){
-                debug('edição');
-            }else{
-                $endereco = $this->getDados($dados, EnderecoEntidade::ENTIDADE);
+            // Monta os dados para Salvar
+            $endereco = $this->getDados($dados, EnderecoEntidade::ENTIDADE);
+            $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
+            $pessoa = $this->getDados($dados, PessoaEntidade::ENTIDADE);
+            $pessoa[DT_NASCIMENTO] = Valida::DataDBDate($dados[DT_NASCIMENTO]);
+            $conta = $this->getDados($dados, ContaBancariaEntidade::ENTIDADE);
+            $profissional = $this->getDados($dados, ProfissionalEntidade::ENTIDADE);
+            $profissional[ST_AGENDA] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA);
+            $profissional[ST_AGENDA_ONLINE] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA_ONLINE);
+            $profissional[ST_ASSISTENTE] = FuncoesSistema::retornoCheckbox($dados, ST_ASSISTENTE);
+            $profissional[DT_ADMISSAO] = ($profissional[DT_ADMISSAO])
+                ? Valida::DataDBDate($profissional[DT_ADMISSAO]) : null;
+            $coProfissional = null;
+
+
+            if (!empty($dados[CO_PROFISSIONAL])) {
+                $coProfissional = $dados[CO_PROFISSIONAL];
+                $enderecoService->Salva($endereco, $dados[CO_ENDERECO]);
+                $contatoService->Salva($contato, $dados[CO_CONTATO]);
+                $pessoaService->Salva($pessoa, $dados[CO_PESSOA]);
+                // Verifica a existência  conta bancária
+                if (!empty($dados[CO_CONTA_BANCARIA])) {
+                    $contaBancariaService->Salva($conta, $dados[CO_CONTA_BANCARIA]);
+                } else {
+                    $profissional[CO_CONTA_BANCARIA] = $contaBancariaService->Salva($conta);
+                }
+                // Verifica a existência de uma imagem de perfil
+                if (!empty($dados[CO_IMAGEM])) {
+                    $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'usuarios/', $dados[CO_IMAGEM]);
+                } else {
+                    $profissional[CO_IMAGEM] = $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'usuarios/');
+                }
+
+                $profissionalService->Salva($profissional, $coProfissional);
+            } else {
                 $coEndereco = $enderecoService->Salva($endereco);
                 if ($coEndereco) {
-                    $contato = $this->getDados($dados, ContatoEntidade::ENTIDADE);
                     $coContato = $contatoService->Salva($contato);
                     if ($coContato) {
-                        $pessoa = $this->getDados($dados, PessoaEntidade::ENTIDADE);
-                        $pessoa[DT_NASCIMENTO] = Valida::DataDBDate($dados[DT_NASCIMENTO]);
                         $pessoa[CO_CONTATO] = $coContato;
                         $pessoa[CO_ENDERECO] = $coEndereco;
                         $coPessoa = $pessoaService->Salva($pessoa);
                         if ($coPessoa) {
-                            $conta = $this->getDados($dados, ContaBancariaEntidade::ENTIDADE);
                             $coContaBancaria = $contaBancariaService->Salva($conta);
                             if ($coContaBancaria) {
-                                $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa);
+                                // Dados para o envio de email com a senha do usuário
+                                $dadosEmail[NO_PESSOA] = $pessoa[NO_PESSOA];
+                                $dadosEmail[DS_EMAIL] = $contato[DS_EMAIL];
+                                $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa, $dadosEmail);
                                 if ($coUsuario) {
                                     $coImagem = $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'usuarios/');
-                                    $profissional = $this->getDados($dados, ProfissionalEntidade::ENTIDADE);
-                                    $profissional[ST_AGENDA] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA);
-                                    $profissional[ST_AGENDA_ONLINE] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA_ONLINE);
-                                    $profissional[ST_ASSISTENTE] = FuncoesSistema::retornoCheckbox($dados, ST_ASSISTENTE);
-                                    $profissional[DT_ADMISSAO] = ($profissional[DT_ADMISSAO])
-                                        ? Valida::DataDBDate($profissional[DT_ADMISSAO]) : null;
                                     $profissional[CO_IMAGEM] = $coImagem;
                                     $profissional[CO_PESSOA] = $coPessoa;
                                     $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
                                     $profissional[CO_CONTA_BANCARIA] = $coContaBancaria;
                                     $profissional[CO_USUARIO] = $coUsuario;
                                     $coProfissional = $profissionalService->Salva($profissional);
-                                    if ($coProfissional) {
-                                        $coProfissionalCargo = '';
-                                        $profissionalCargo[CO_PROFISSIONAL] = $coProfissional;
-                                        foreach ($dados[CO_CARGO] as $cargo) {
-                                            $profissionalCargo[CO_CARGO] = $cargo;
-                                            $profissionalCargo[ST_STATUS] = StatusUsuarioEnum::ATIVO;
-                                            $profissionalCargo[DT_CADASTRO] = Valida::DataAtualBanco();
-                                            $coProfissionalCargo = $profissionalCargoService->Salva($profissionalCargo);
-                                        }
-                                        if ($coProfissionalCargo) {
-                                            $jornadaTrabalhoService->salvaJornadaTrabalho($dados, $coProfissional);
-                                        }
-                                        $retorno = [SUCESSO => true];
-                                    }
                                 }
                             }
                         }
                     }
                 }
+            }
+            if ($coProfissional) {
+                $coProfissionalCargo = $profissionalCargoService->salvaProfissionalCargo(
+                    $dados, $coProfissional
+                );
+                if ($coProfissionalCargo) {
+                    $jornadaTrabalhoService->salvaJornadaTrabalho($dados, $coProfissional);
+                }
+                $retorno = [SUCESSO => true];
             }
         } else {
             $retorno = $validador;
