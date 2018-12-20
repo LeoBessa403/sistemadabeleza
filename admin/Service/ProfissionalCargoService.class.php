@@ -17,8 +17,8 @@ class  ProfissionalCargoService extends AbstractService
     }
 
     /**
-     * @param $dados
-     * @param null $coProfissional
+     * @param array $dados
+     * @param int $coProfissional
      * @return mixed
      */
     public function salvaProfissionalCargo($dados, $coProfissional)

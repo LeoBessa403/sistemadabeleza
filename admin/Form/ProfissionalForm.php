@@ -294,12 +294,14 @@ class ProfissionalForm
             $check = null;
             $abertura = null;
             $fechamento = null;
-            /** @var JornadaTrabalhoEntidade $jornada */
-            foreach ($jornadas as $jornada){
-                if ($jornada->getNuDiaSemana() == $numero) {
-                    $check = ' checked="checked"';
-                    $abertura = $jornada->getNuHoraAbertura();
-                    $fechamento = $jornada->getNuHoraFechamento();
+            if($jornadas){
+                /** @var JornadaTrabalhoEntidade $jornada */
+                foreach ($jornadas as $jornada){
+                    if ($jornada->getNuDiaSemana() == $numero) {
+                        $check = ' checked="checked"';
+                        $abertura = $jornada->getNuHoraAbertura();
+                        $fechamento = $jornada->getNuHoraFechamento();
+                    }
                 }
             }
             $campoAtende = '<input type="checkbox" ' . $check . '

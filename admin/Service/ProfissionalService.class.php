@@ -70,7 +70,6 @@ class  ProfissionalService extends AbstractService
                 ? Valida::DataDBDate($profissional[DT_ADMISSAO]) : null;
             $coProfissional = null;
 
-
             if (!empty($dados[CO_PROFISSIONAL])) {
                 $coProfissional = $dados[CO_PROFISSIONAL];
                 $enderecoService->Salva($endereco, $dados[CO_ENDERECO]);
@@ -90,6 +89,7 @@ class  ProfissionalService extends AbstractService
                 }
 
                 $profissionalService->Salva($profissional, $coProfissional);
+                $session->setSession(MENSAGEM, ATUALIZADO);
             } else {
                 $coEndereco = $enderecoService->Salva($endereco);
                 if ($coEndereco) {
@@ -118,6 +118,7 @@ class  ProfissionalService extends AbstractService
                         }
                     }
                 }
+                $session->setSession(MENSAGEM, CADASTRADO);
             }
             if ($coProfissional) {
                 $coProfissionalCargo = $profissionalCargoService->salvaProfissionalCargo(
@@ -132,7 +133,6 @@ class  ProfissionalService extends AbstractService
             $retorno = $validador;
         }
         if ($retorno[SUCESSO]) {
-            $session->setSession(MENSAGEM, ATUALIZADO);
             $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {

@@ -31,7 +31,7 @@ class AbstractEntidade
             if ($campo == DT_CADASTRO) {
                 $resultado[$campo] = Valida::DataHoraAtualBanco();
             }
-            if (strstr($campo, 'co_')) {
+            if (strstr($campo, 'co_') && (empty($dados[$campo]))) {
                 unset($resultado[$campo]);
             }
         }
