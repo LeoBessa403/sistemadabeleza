@@ -446,6 +446,10 @@ a.bricky:hover {
     font-size: 20px;
 }
 
+.navbar > .container .navbar-brand img {
+    margin-top: -5px;
+}
+
 .navbar-tools > ul {
     list-style: none;
 }

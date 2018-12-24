@@ -369,11 +369,11 @@ class FuncoesSistema
         return $op;
     }
 
-    public static function getImgSistema()
+    public static function getImgSistema($tamanho = 50)
     {
         return '
         <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
-            '/Images/sistemadabeleza.jpg&w=50&h=50"
+            '/Images/sistemadabeleza.jpg&w=' . $tamanho . '&h=' . $tamanho . '"
                                 alt="' . DESC . '" title="' . DESC . '" class="circle-img" />
         ';
     }
