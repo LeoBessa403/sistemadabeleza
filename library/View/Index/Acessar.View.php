@@ -47,6 +47,12 @@
     <link rel="stylesheet"
           href="<?= PASTAADMIN; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
     <![endif]-->
+    <style>
+        body.login.example1 {
+            background: url("<?= PASTAADMIN; ?>images/novas/bg (<?= rand(1,50); ?>).jpg") rgba(0, 0, 0, 0) center center !important;
+            background-size: auto !important;
+        }
+    </style>
     <!-- end: MAIN CSS -->
 </head>
 <!-- end: HEAD -->
@@ -54,7 +60,7 @@
 <body class="login example1">
 <div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding: 20px 50px;">
     <div class="logo">
-       <span class="no_sistema"><?= DESC_SIS; ?></span>
+        <span class="no_sistema"><?= DESC_SIS; ?></span>
     </div>
     <!-- start: LOGIN BOX -->
     <div class="box-login" style="padding: 10px 20px;">
@@ -129,7 +135,10 @@
 <script type="text/javascript" src="<?= INCLUDES; ?>validacoes.js"></script>
 <script src="<?= PASTAADMIN; ?>plugins/select2/select2.min.js"></script>
 <script src="<?= PASTAADMIN; ?>js/Funcoes.js"></script>
-<?php Notificacoes::mesagens($msg, $class); ?>
+<?php
+if ($msg)
+    Notificacoes::mesagens($msg, $class);
+?>
 <script>
     jQuery(document).ready(function () {
         Funcoes.init();

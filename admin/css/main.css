@@ -3431,11 +3431,6 @@ body.login {
     color: #7F7F7F;
 }
 
-body.login.example1 {
-    background: url("../images/team-bg.jpg") rgba(0, 0, 0, 0) center center !important;
-    background-size: auto !important;
-}
-
 body.login.example2 {
     background: url("../images/bg_2.png") rgba(255, 255, 255, 0);
 }
