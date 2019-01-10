@@ -22,8 +22,8 @@ class  PerfilService extends AbstractService
         $todosPerfis = array();
         /** @var PerfilEntidade $perfil */
         foreach ($Perfis as $perfil) :
-            if($perfil->getCoPerfil() > 1)
-            $todosPerfis[$perfil->getCoPerfil()] = $perfil->getNoPerfil();
+            if ($perfil->getCoPerfil() > 1)
+                $todosPerfis[$perfil->getCoPerfil()] = $perfil->getNoPerfil();
         endforeach;
         return $todosPerfis;
     }
@@ -31,7 +31,7 @@ class  PerfilService extends AbstractService
     public static function montaComboPerfil(UsuarioEntidade $usuario)
     {
         $meusPerfis = array();
-        if($usuario->getCoUsuarioPerfil()){
+        if ($usuario->getCoUsuarioPerfil()) {
             /** @var UsuarioPerfilEntidade $perfil */
             foreach ($usuario->getCoUsuarioPerfil() as $perfil) :
                 $meusPerfis[$perfil->getCoPerfil()->getCoPerfil()] = $perfil->getCoPerfil()->getNoPerfil();
@@ -43,10 +43,12 @@ class  PerfilService extends AbstractService
     public static function montaArrayPerfil(UsuarioEntidade $usuario)
     {
         $meusPerfis = array();
-        /** @var UsuarioPerfilEntidade $perfil */
-        foreach ($usuario->getCoUsuarioPerfil() as $perfil) :
-            $meusPerfis[] = $perfil->getCoPerfil()->getCoPerfil();
-        endforeach;
+        if ($usuario->getCoUsuarioPerfil()) {
+            /** @var UsuarioPerfilEntidade $perfil */
+            foreach ($usuario->getCoUsuarioPerfil() as $perfil) :
+                $meusPerfis[] = $perfil->getCoPerfil()->getCoPerfil();
+            endforeach;
+        }
         return $meusPerfis;
     }
 
@@ -79,7 +81,7 @@ class  PerfilService extends AbstractService
                 $session->setSession(MENSAGEM, CADASTRADO);
             endif;
         endif;
-        if ($coPerfil){
+        if ($coPerfil) {
             $perfilFunc[CO_PERFIL] = $coPerfil;
             foreach ($dados[CO_FUNCIONALIDADE] as $coFuncionalidade) {
                 $perfilFunc[CO_FUNCIONALIDADE] = $coFuncionalidade;

@@ -10,59 +10,63 @@ class Index extends AbstractController
 
     public function Registrar()
     {
-//        $id = "CadastroUsuario";
-//        $id2 = "ValidacaoPessoa";
-//        if (!empty($_POST[$id])) {
-//            /** @var UsuarioService $usuarioService */
-//            $usuarioService = static::getService(USUARIO_SERVICE);
-//            $usuarioService->salvaUsuario($_POST, $_FILES, true);
-//        } elseif (!empty($_POST[$id2])) {
-//            $PessoaValidador = new PessoaValidador();
-//            /** @var PessoaValidador $validador */
-//            $validador = $PessoaValidador->validarCPF($_POST);
-//            if ($validador[SUCESSO]) {
-//                /** @var PessoaService $pessoaService */
-//                $pessoaService = static::getService(PESSOA_SERVICE);
-//                /** @var PessoaEntidade $pessoa */
-//                $pessoa = $pessoaService->PesquisaUmQuando([
-//                    NU_CPF => Valida::RetiraMascara($_POST[NU_CPF])
-//                ]);
-//                $res = [];
-//                if (!empty($pessoa)) {
-//                    if ($pessoa->getCoUsuario()) {
-//                        Redireciona('admin/Index/Acessar/' . Valida::GeraParametro('acesso/U'));
-//                    } else {
-//                        $res = $pessoaService->getArrayDadosPessoa($pessoa, $res);
-//
-//                        /** @var EnderecoService $enderecoService */
-//                        $enderecoService = $this->getService(ENDERECO_SERVICE);
-//                        $res = $enderecoService->getArrayDadosEndereco($pessoa->getCoEndereco(), $res);
-//
-//                        /** @var ContatoService $contatoService */
-//                        $contatoService = $this->getService(CONTATO_SERVICE);
-//                        $res = $contatoService->getArrayDadosContato($pessoa->getCoContato(), $res);
-//                        if ($pessoa->getCoInscricao()) {
-//                            if ($pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho()):
-//                                $res[DS_CAMINHO] = "inscricoes/" . $pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho();
-//                                $res[CO_IMAGEM] = $pessoa->getUltimaCoInscricao()->getCoImagem()->getCoImagem();
-//                            endif;
-//                        }
-//                    }
-//                } else {
-//                    $res[NU_CPF] = $_POST[NU_CPF];
-//                }
-//                $this->form = UsuarioForm::Cadastrar($res, true, 12);
-//            } else {
-//                $session = new Session();
-//                $session->setSession(MENSAGEM, $validador[MSG]);
-//                $this->form = PessoaForm::ValidarCPF('Index/Acessar');
-//            }
-//        } else {
-//            $this->form = PessoaForm::ValidarCPF('Index/Acessar');
-//        }
+        if (MODULO_ASSINANTE) {
+            Redireciona(ADMIN . "/" . CONTROLLER_INICIAL_ADMIN . "/" . ACTION_INICIAL_ADMIN);
+        }
+        $id = "CadastroUsuario";
+        $id2 = "ValidacaoPessoa";
+        if (!empty($_POST[$id])) {
+            /** @var UsuarioService $usuarioService */
+            $usuarioService = static::getService(USUARIO_SERVICE);
+            $usuarioService->salvaUsuario($_POST, $_FILES, true);
+        } elseif (!empty($_POST[$id2])) {
+            $PessoaValidador = new PessoaValidador();
+            /** @var PessoaValidador $validador */
+            $validador = $PessoaValidador->validarCPF($_POST);
+            if ($validador[SUCESSO]) {
+                /** @var PessoaService $pessoaService */
+                $pessoaService = static::getService(PESSOA_SERVICE);
+                /** @var PessoaEntidade $pessoa */
+                $pessoa = $pessoaService->PesquisaUmQuando([
+                    NU_CPF => Valida::RetiraMascara($_POST[NU_CPF])
+                ]);
+                $res = [];
+                if (!empty($pessoa)) {
+                    if ($pessoa->getCoUsuario()) {
+                        Redireciona('admin/Index/Acessar/' . Valida::GeraParametro('acesso/U'));
+                    } else {
+                        $res = $pessoaService->getArrayDadosPessoa($pessoa, $res);
+
+                        /** @var EnderecoService $enderecoService */
+                        $enderecoService = $this->getService(ENDERECO_SERVICE);
+                        $res = $enderecoService->getArrayDadosEndereco($pessoa->getCoEndereco(), $res);
+
+                        /** @var ContatoService $contatoService */
+                        $contatoService = $this->getService(CONTATO_SERVICE);
+                        $res = $contatoService->getArrayDadosContato($pessoa->getCoContato(), $res);
+                        if ($pessoa->getCoInscricao()) {
+                            if ($pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho()):
+                                $res[DS_CAMINHO] = "inscricoes/" . $pessoa->getUltimaCoInscricao()->getCoImagem()->getDsCaminho();
+                                $res[CO_IMAGEM] = $pessoa->getUltimaCoInscricao()->getCoImagem()->getCoImagem();
+                            endif;
+                        }
+                    }
+                } else {
+                    $res[NU_CPF] = $_POST[NU_CPF];
+                }
+                $this->form = UsuarioForm::Cadastrar($res, true, 12);
+            } else {
+                $session = new Session();
+                $session->setSession(MENSAGEM, $validador[MSG]);
+                $this->form = PessoaForm::ValidarCPF('Index/Acessar');
+            }
+        } else {
+            $this->form = PessoaForm::ValidarCPF('Index/Acessar');
+        }
     }
 
-    public function PrimeiroAcesso()
+    public
+    function PrimeiroAcesso()
     {
         /** @var Session $session */
         $session = new Session();
@@ -71,7 +75,8 @@ class Index extends AbstractController
         }
     }
 
-    public function RecuperarSenha()
+    public
+    function RecuperarSenha()
     {
         $visivel = false;
         $msg = '';
@@ -128,7 +133,8 @@ class Index extends AbstractController
         $this->visivel = $visivel;
     }
 
-    public function Acessar()
+    public
+    function Acessar()
     {
         $acesso = UrlAmigavel::PegaParametro('acesso');
         $class = 0;
@@ -179,7 +185,8 @@ class Index extends AbstractController
     /**
      * CLASSE DE LOGAR
      */
-    public function Logar()
+    public
+    function Logar()
     {
         // Verifica se o loguin e por Email ou CPF
         if (LOGAR_EMAIL):
@@ -220,7 +227,8 @@ class Index extends AbstractController
         endif;
     }
 
-    public function AtivacaoUsuario()
+    public
+    function AtivacaoUsuario()
     {
         /** @var UsuarioService $usuariaService */
         $usuariaService = $this->getService(USUARIO_SERVICE);
@@ -239,7 +247,8 @@ class Index extends AbstractController
      * @param $coUsuario
      * @return mixed
      */
-    public function geraDadosSessao($user, $coUsuario)
+    public
+    function geraDadosSessao($user, $coUsuario)
     {
         /** @var AcessoService $acessoService */
         $acessoService = $this->getService(ACESSO_SERVICE);

@@ -1,11 +1,6 @@
 var Funcoes = function () {
     var inicio = function () {
 
-        //VARIÁVEIS GLOBAIS
-        var dados = constantes();
-        var home = dados['HOME'];
-        var urlValida = dados['HOME'] + 'admin/Controller/Ajax.Controller.php';
-        var upload = dados['PASTAUPLOADS'];
 
 
     };
