@@ -43,8 +43,6 @@ if (TEM_SITE) {
 <?php
 /** @var Session $session */
 $session = new Session();
-if ($msg)
-    Notificacoes::mesagens($msg, $class);
 if ($session->CheckSession(MENSAGEM)) {
     switch ($session::getSession(MENSAGEM)) {
         case CADASTRADO:
@@ -57,7 +55,7 @@ if ($session->CheckSession(MENSAGEM)) {
             Notificacoes::deletado();
             break;
         default:
-            Notificacoes::mesagens($session::getSession(MENSAGEM));
+            Notificacoes::mesagens($session::getSession(MENSAGEM), $class);
             break;
     }
     $session->FinalizaSession(MENSAGEM);

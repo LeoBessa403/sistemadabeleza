@@ -33,7 +33,8 @@ class Index extends AbstractController
                 $res = [];
                 if (!empty($pessoa)) {
                     if ($pessoa->getCoUsuario()) {
-                        Redireciona('admin/Index/Acessar/' . Valida::GeraParametro('acesso/U'));
+                        Redireciona(ADMIN . '/' . CONTROLLER_INICIAL_ADMIN . '/Acessar/' .
+                            Valida::GeraParametro('acesso/U'));
                     } else {
                         $res = $pessoaService->getArrayDadosPessoa($pessoa, $res);
 
@@ -58,15 +59,14 @@ class Index extends AbstractController
             } else {
                 $session = new Session();
                 $session->setSession(MENSAGEM, $validador[MSG]);
-                $this->form = PessoaForm::ValidarCPF('Index/Acessar');
+                $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar');
             }
         } else {
-            $this->form = PessoaForm::ValidarCPF('Index/Acessar');
+            $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar');
         }
     }
 
-    public
-    function PrimeiroAcesso()
+    public function PrimeiroAcesso()
     {
         /** @var Session $session */
         $session = new Session();
@@ -75,9 +75,10 @@ class Index extends AbstractController
         }
     }
 
-    public
-    function RecuperarSenha()
+    public function RecuperarSenha()
     {
+        /** @var Session $session */
+        $session = new Session();
         $visivel = false;
         $msg = '';
         $class = '';
@@ -113,7 +114,7 @@ class Index extends AbstractController
                     // Variável para validação de Emails Enviados com Sucesso.
                     $retorno = $email->Enviar();
                     if ($retorno == true) {
-                        $msg = 'Sua senha foi enviada para seu email: ' . $contato->getDsEmail();
+                        $msg = 'Sua senha foi enviada para seu email: <b>' . $contato->getDsEmail().'</b>';
                         $class = 1;
                     }
                 } else {
@@ -124,21 +125,19 @@ class Index extends AbstractController
                 $msg = $validador[MSG];
                 $class = 3;
             }
-        } else {
-            $msg = 'O Campo CPF é obrigatório';
-            $class = 3;
         }
         $this->msg = $msg;
         $this->class = $class;
         $this->visivel = $visivel;
     }
 
-    public
-    function Acessar()
+    public function Acessar()
     {
         $acesso = UrlAmigavel::PegaParametro('acesso');
         $class = 0;
         $msg = "";
+        /** @var Session $session */
+        $session = new Session();
 
         switch ($acesso) {
             case 'B':
@@ -180,13 +179,13 @@ class Index extends AbstractController
         }
         $this->class = $class;
         $this->msg = $msg;
+        $session->setSession(MENSAGEM, $msg);
     }
 
     /**
      * CLASSE DE LOGAR
      */
-    public
-    function Logar()
+    public function Logar()
     {
         // Verifica se o loguin e por Email ou CPF
         if (LOGAR_EMAIL):
@@ -227,8 +226,7 @@ class Index extends AbstractController
         endif;
     }
 
-    public
-    function AtivacaoUsuario()
+    public function AtivacaoUsuario()
     {
         /** @var UsuarioService $usuariaService */
         $usuariaService = $this->getService(USUARIO_SERVICE);
@@ -247,8 +245,7 @@ class Index extends AbstractController
      * @param $coUsuario
      * @return mixed
      */
-    public
-    function geraDadosSessao($user, $coUsuario)
+    public function geraDadosSessao($user, $coUsuario)
     {
         /** @var AcessoService $acessoService */
         $acessoService = $this->getService(ACESSO_SERVICE);
