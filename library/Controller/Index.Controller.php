@@ -77,8 +77,6 @@ class Index extends AbstractController
 
     public function RecuperarSenha()
     {
-        /** @var Session $session */
-        $session = new Session();
         $visivel = false;
         $msg = '';
         $class = '';
