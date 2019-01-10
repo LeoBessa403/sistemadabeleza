@@ -18,16 +18,18 @@ servidor_inicial();
 //* CONFIGURAÇÕES DE LOGIN DO SISTEMA *//
 //*************************************//
 // Define o Controler/Action para area de login
-define('LOGIN', '/Index/Acessar/');
+define('LOGIN', '/' . CONTROLLER_INICIAL_ADMIN . '/Acessar/');
 // Define o Controler/Action para validar o login
 define('VALIDA_LOGAR', '/acesso/valida');
 // Define o Controler/Action para Redireciona apos o login ser validado
-define('LOGADO', '/Index/Index');
+define('LOGADO', '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
 // Nome da View da Página de Erro Controller ou Action não encontrado. (Erro 404).
 define('ERRO_404', '404');
 // CONTROLLERS PARA NÃO SEGUIR PARA A AUDITORIA
 define('SEM_AUDITORIA', AcessoEntidade::TABELA . ', ' . TrafegoEntidade::TABELA . ', ' .
     PaginaVisitaEntidade::TABELA . ', ' . PaginaEntidade::TABELA . ', ' . VisitaEntidade::TABELA);
+// Action do primeiro acesso
+define('PRIMEIRO_ACESSO', '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
 
 
 // CONFIGURAÇÕES DO SERVIDOR
@@ -69,7 +71,6 @@ define('PESQUISA_AVANCADA', "pesquisa_avancada");
 // AUTO LOAD DE CLASSES ####################
 function __autoload($Class)
 {
-
     $pastas = array('Conn', 'Entidade', 'Service', 'Controller', 'Helpers', 'Model', 'Class', 'Form', 'Enum', 'Validador');
     $rotas = array(
         './library/',
@@ -79,7 +80,7 @@ function __autoload($Class)
         './' . ADMIN . '/',
         '../../' . ADMIN . '/',
         './' . SITE . '/',
-        '../../' . SITE . '/'
+       '../../' . SITE . '/'
     );
     $control = false;
 

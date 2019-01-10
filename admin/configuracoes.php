@@ -36,8 +36,22 @@ function servidor_inicial()
     // ******* CONFIGURAÇÕES DO SITE ********** //
     //////////////////////////////////////////////
 
+    // PROJETO POSSUI SITE
+    define('TEM_SITE', FALSE);
+    // PROJETO POSSUI MODULO ASSINANTE
+    define('MODULO_ASSINANTE', TRUE);
+    // LOGAR COM EMAIL OU CPF
+    define('LOGAR_EMAIL', FALSE);
     // Título do Site
     define('DESC', 'Sistema da Beleza');
+    // CONTROLLER INICIAL DO SITE
+    define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
+    // AÇÃO INICIAL DO SITE
+    define('ACTION_INICIAL_SITE', 'Index');
+    // CONTROLLER INICIAL DO ADMIN
+    define('CONTROLLER_INICIAL_ADMIN', 'Index');
+    // AÇÃO INICIAL DO ADMIN
+    define('ACTION_INICIAL_ADMIN', 'Index');
     // Título do Sistema
     define('DESC_SIS', 'SisBela');
     // Tabela de pesquisa de usuário para validação
@@ -46,8 +60,6 @@ function servidor_inicial()
     define('CAMPO_USER', 'ds_login');
     // Campo da senha na Tabela de pesquisa de usuário para validação
     define('CAMPO_PASS', 'ds_code');
-    // Action do primeiro acesso
-    define('PRIMEIRO_ACESSO', '/Index/Index');
     // Campo do ID (Chave Primaria) na Tabela de pesquisa de usuário para validação
     define('CAMPO_ID', 'co_usuario');
     // Campo do Perfil na Tabela de pesquisa de usuário para validação dos perfis 

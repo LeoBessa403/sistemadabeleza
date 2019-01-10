@@ -61,9 +61,9 @@ class UrlAmigavel
      */
     public static function PegaParametroUrlAmigavel()
     {
-        if(!empty(self::$explode[3])){
+        if (!empty(self::$explode[3])) {
             return self::$explode[3];
-        }else{
+        } else {
             return false;
         }
     }
@@ -78,36 +78,37 @@ class UrlAmigavel
     public function pegaControllerAction()
     {
         $erro_404 = false;
-        if (self::$modulo != SITE && self::$action != "Index" && self::$controller != "Index"):
+        if (self::$modulo != SITE && self::$action != ACTION_INICIAL_ADMIN &&
+            self::$controller != CONTROLLER_INICIAL_ADMIN):
             $ac = $this->setActionPermissao(self::$action);
             if (!Valida::ValPerfil($ac, self::$action)):
-                self::$action = "Index";
-                self::$controller = "Index";
+                self::$action = ACTION_INICIAL_ADMIN;
+                self::$controller = CONTROLLER_INICIAL_ADMIN;
                 $erro_404 = true;
             endif;
         endif;
 
 
         if (self::$modulo != SITE && self::$modulo != ADMIN):
-            self::$modulo = 'web';
-            self::$controller = "IndexWeb";
-            self::$action = "Index";
+            self::$modulo = SITE;
+            self::$controller = CONTROLLER_INICIAL_SITE;
+            self::$action = ACTION_INICIAL_SITE;
             $erro_404 = true;
         endif;
 
         if (self::$controller == ""):
-            self::$controller = "IndexWeb";
-            self::$action = "Index";
+            self::$controller = CONTROLLER_INICIAL_SITE;
+            self::$action = ACTION_INICIAL_SITE;
         elseif (self::$action == ""):
-            self::$action = "Index";
+            self::$action = ACTION_INICIAL_SITE;
         endif;
 
         $controller_path = self::$modulo . "/Controller/" . self::$controller . '.Controller.php';
         if ((!file_exists($controller_path)) &&
             (!file_exists("Controller/" . self::$controller . '.Controller.php')) &&
             (!file_exists("library/Controller/" . self::$controller . '.Controller.php'))):
-            self::$controller = (self::$modulo == ADMIN) ? "Index" : "IndexWeb";
-            self::$action = "Index";
+            self::$controller = (self::$modulo == ADMIN) ? CONTROLLER_INICIAL_ADMIN : CONTROLLER_INICIAL_SITE;
+            self::$action = (self::$modulo == ADMIN) ? ACTION_INICIAL_ADMIN : ACTION_INICIAL_SITE;
             $erro_404 = true;
         endif;
 
@@ -121,7 +122,7 @@ class UrlAmigavel
         $app = new self::$controller();
 
         if (!method_exists($app, self::$action)):
-            self::$action = "Index";
+            self::$action = (self::$modulo == ADMIN) ? ACTION_INICIAL_ADMIN : ACTION_INICIAL_SITE;
             $erro_404 = true;
         endif;
 
@@ -129,7 +130,7 @@ class UrlAmigavel
             // VALIDAÇÃO POR PERFIL REFAZER PRA NOVA ENTIDADE
             $act = $this->setActionPermissao(self::$action);
             if (!Valida::ValPerfil($act, self::$action) && !in_array(self::$action, self::$ACESSO_PERMITIDO)) :
-                self::$action = "Index";
+                self::$action = ACTION_INICIAL_ADMIN;
                 $erro_404 = true;
             endif;
         endif;
@@ -142,8 +143,8 @@ class UrlAmigavel
         extract((array)$app);
 
         if ($erro_404):
-            $module = (self::$modulo == SITE) ? 'Web' : '';
-            $arquivo_include = 'View/Index' . $module . '/' . ERRO_404 . '.View.php';
+            $module = (self::$modulo == SITE) ? CONTROLLER_INICIAL_SITE : CONTROLLER_INICIAL_ADMIN;
+            $arquivo_include = 'View/' . $module . '/' . ERRO_404 . '.View.php';
             $action = ERRO_404;
         else:
             $arquivo_include = 'View/' . self::$controller . "/" . self::$action . '.View.php';
@@ -153,7 +154,7 @@ class UrlAmigavel
             include $arquivo_include;
         elseif (file_exists(self::$modulo . "/" . $arquivo_include) && !is_dir(self::$modulo . "/" . $arquivo_include)):
             include self::$modulo . "/" . $arquivo_include;
-        elseif (file_exists("library/" . $arquivo_include) && !is_dir( "library/" . $arquivo_include)):
+        elseif (file_exists("library/" . $arquivo_include) && !is_dir("library/" . $arquivo_include)):
             include "library/" . $arquivo_include;
         else:
             Notificacoes::mesagens("A View <b>" . self::$modulo . "/" . self::$controller . "/" .
@@ -171,7 +172,7 @@ class UrlAmigavel
         $ativo = UrlAmigavel::$controller;
 
         echo '<ul class="main-navigation-menu">';
-        if ($ativo == "Index"):
+        if ($ativo == ACTION_INICIAL_ADMIN):
             echo '<li class="active">';
         else:
             echo '<li>';
@@ -191,7 +192,7 @@ class UrlAmigavel
             $controle = 0;
             foreach ($montando[$key] as $res) :
                 if ($controle > 0):
-                    $res = str_replace(' ','',$res);
+                    $res = str_replace(' ', '', $res);
                     $ac = $this->setActionPermissao($res);
                     if (Valida::ValPerfil($ac, $res)) :
                         $tem = true;
@@ -215,7 +216,7 @@ class UrlAmigavel
                 foreach ($montando[$key] as $result) {
                     if ($cout > 0):
                         $titulo_menu = str_replace($titulo[0], "", $result);
-                        $result = str_replace(' ','',$result);
+                        $result = str_replace(' ', '', $result);
                         $act = $this->setActionPermissao($result);
                         if (Valida::ValPerfil($act, $result)):
                             echo '<li>
@@ -247,7 +248,8 @@ class UrlAmigavel
     private static function setUrl()
     {
         $link = static::getLink();
-        $url = (isset($link) && $link != "" ? $link : Redireciona("web/IndexWeb/Index"));
+        $url = (isset($link) && $link != "" ? $link :
+            Redireciona(SITE . "/" . CONTROLLER_INICIAL_SITE . "/" . ACTION_INICIAL_SITE));
         self::$url = $url . '/';
     }
 
@@ -268,8 +270,9 @@ class UrlAmigavel
 
     private static function setAction()
     {
-        $ac = (!isset(self::$explode[2]) || self::$explode[2] == null || self::$explode[2] == 'Index'
-            ? 'Index' : self::$explode[2]);
+        $act = (self::$modulo == ADMIN) ? ACTION_INICIAL_ADMIN : ACTION_INICIAL_SITE;
+        $ac = (!isset(self::$explode[2]) || self::$explode[2] == null || self::$explode[2] == $act
+            ? $act : self::$explode[2]);
         self::$action = $ac;
     }
 

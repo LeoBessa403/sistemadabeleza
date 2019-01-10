@@ -16,7 +16,8 @@ class ValidaUsuario extends AbstractController
         $session = new Session();
         if (!$session->CheckSession(SESSION_USER)) {
             if (!isset($_POST['logar_sistema'])):
-                if (isset($explode[2]) && $explode[2] == "PrimeiroAcesso"):
+                if (isset($explode[2]) && $explode[2] == "PrimeiroAcesso"
+                    || ($url == SITE . "/" . CONTROLLER_INICIAL_SITE . "/" . ACTION_INICIAL_SITE)):
                     Redireciona(ADMIN . LOGIN);
                     die;
                 else:

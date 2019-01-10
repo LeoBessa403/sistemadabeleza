@@ -31,10 +31,12 @@ class  PerfilService extends AbstractService
     public static function montaComboPerfil(UsuarioEntidade $usuario)
     {
         $meusPerfis = array();
-        /** @var UsuarioPerfilEntidade $perfil */
-        foreach ($usuario->getCoUsuarioPerfil() as $perfil) :
-            $meusPerfis[$perfil->getCoPerfil()->getCoPerfil()] = $perfil->getCoPerfil()->getNoPerfil();
-        endforeach;
+        if($usuario->getCoUsuarioPerfil()){
+            /** @var UsuarioPerfilEntidade $perfil */
+            foreach ($usuario->getCoUsuarioPerfil() as $perfil) :
+                $meusPerfis[$perfil->getCoPerfil()->getCoPerfil()] = $perfil->getCoPerfil()->getNoPerfil();
+            endforeach;
+        }
         return $meusPerfis;
     }
 

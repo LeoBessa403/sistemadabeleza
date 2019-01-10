@@ -71,15 +71,29 @@
         <form class="form-login" action="../Logar" method="post">
             <fieldset>
                 <div class="form-group">
-							<span class="input-icon">
-								<input type="text" class="form-control email" name="ds_email" id="ds_email"
+                    <?php
+                    if (LOGAR_EMAIL):
+                        ?>
+                        <span class="input-icon">
+								<input type="text" class="form-control email" name="<?= DS_EMAIL; ?>"
+                                       id="<?= DS_EMAIL; ?>"
                                        placeholder="E-Mail">
 								<i class="fa fa-envelope"></i> </span>
+                    <?php
+                    else:
+                        ?>
+                        <span class="input-icon">
+								<input type="text" class="form-control cpf" name="<?= NU_CPF; ?>" id="<?= NU_CPF; ?>"
+                                       placeholder="CPF">
+								<i class="fa fa-user"></i> </span>
+                    <?php
+                    endif;
+                    ?>
                 </div>
                 <div class="form-group form-actions">
 							<span class="input-icon">
-								<input type="password" class="form-control password" name="ds_senha" id="ds_senha"
-                                       placeholder="Senha">
+								<input type="password" class="form-control password" name="<?= DS_SENHA; ?>"
+                                       id="<?= DS_SENHA; ?>" placeholder="Senha">
 								<i class="fa fa-lock"></i>
                 </div>
                 <div class="form-actions">
@@ -94,7 +108,8 @@
                 </div>
                 <div class="new-account">
                     Você não tem Conta?
-                    <a href="<?= PASTAADMIN; ?>Index/RecuperarSenha" class="register" style="float: right;">
+                    <a href="<?= PASTAADMIN . ACTION_INICIAL_ADMIN; ?>/RecuperarSenha" class="register"
+                       style="float: right;">
                         Recuperar Senha
                     </a>
                 </div>

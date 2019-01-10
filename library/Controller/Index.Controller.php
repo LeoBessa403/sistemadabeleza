@@ -176,19 +176,28 @@ class Index extends AbstractController
         $this->msg = $msg;
     }
 
+    /**
+     * CLASSE DE LOGAR
+     */
     public function Logar()
     {
-        // CLASSE DE LOGAR
-        $email = Valida::LimpaVariavel($_POST[DS_EMAIL]);
+        // Verifica se o loguin e por Email ou CPF
+        if (LOGAR_EMAIL):
+            $campo_logar = Valida::LimpaVariavel($_POST[DS_EMAIL]);
+            $campo = "con." . DS_EMAIL;
+        else:
+            $campo_logar = Valida::RetiraMascara(Valida::LimpaVariavel($_POST[NU_CPF]));
+            $campo = "pes." . NU_CPF;
+        endif;
         $senha = Valida::LimpaVariavel($_POST[DS_SENHA]);
-        if (($email != "") && ($senha != "")):
+        if (($campo_logar != "") && ($senha != "")):
             // Codifica a senha
             $senha = base64_encode(base64_encode($senha));
             /** @var UsuarioService $usuariaService */
             $usuariaService = $this->getService(USUARIO_SERVICE);
             $dados = [
                 "usu." . DS_CODE => $senha,
-                "con." . DS_EMAIL => $email,
+                $campo => $campo_logar,
             ];
             $usuarios = $usuariaService->PesquisaUsuarioLogar($dados);
             $user = "";
@@ -271,7 +280,7 @@ class Index extends AbstractController
 
         if ($statusSis) {
             $statusSis = AssinanteService::getStatusAssinante($usuarioAcesso[DT_EXPIRACAO]);
-            if($statusSis == StatusSistemaEnum::EXPIRADO)
+            if ($statusSis == StatusSistemaEnum::EXPIRADO)
                 Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/S"));
         } else {
             $statusSis = StatusSistemaEnum::ATIVO;
