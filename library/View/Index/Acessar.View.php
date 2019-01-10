@@ -49,7 +49,7 @@
     <![endif]-->
     <style>
         body.login.example1 {
-            background: url("<?= PASTAADMIN; ?>images/novas/bg (<?= rand(1,50); ?>).jpg") rgba(0, 0, 0, 0) center center !important;
+            background: url("<?= PASTAADMIN; ?>images/novas/bg (<?= rand(1,50); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
             background-size: auto !important;
         }
     </style>
