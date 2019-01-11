@@ -41,7 +41,7 @@ function servidor_inicial()
     // PROJETO POSSUI MODULO ASSINANTE
     define('MODULO_ASSINANTE', TRUE);
     // LOGAR COM EMAIL OU CPF
-    define('LOGAR_EMAIL', FALSE);
+    define('LOGAR_EMAIL', TRUE);
     // Título do Site
     define('DESC', 'Sistema da Beleza');
     // CONTROLLER INICIAL DO SITE
