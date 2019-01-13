@@ -11,7 +11,7 @@ $url->pegaControllerAction();
 <!-- start: FOOTER -->
 <div class="footer clearfix">
     <div class="footer-inner">
-        <?php include_once PARTIAL_ADMIN . 'controle_versao.php'; ?>
+        <?php include_once 'controle_versao.php'; ?>
     </div>
     <div class="footer-items">
         <span class="go-top"><i class="clip-chevron-up"></i></span>
@@ -89,7 +89,7 @@ $url->pegaControllerAction();
     });
 </script>
 <!-- Carrega DIVs dos Alertas e Notificações   -->
-<?php include_once PARTIAL_ADMIN . 'alertas.php'; ?>
+<?php include_once 'alertas.php'; ?>
 </body>
 <!-- end: BODY -->
 </html>
