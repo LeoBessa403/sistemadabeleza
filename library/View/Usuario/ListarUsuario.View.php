@@ -27,7 +27,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
-                        Membros
+                        Usuários
                     </div>
                     <div class="panel-body">
                         <?php
