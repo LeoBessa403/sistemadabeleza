@@ -25,9 +25,7 @@ class Backup
             $backupCheck = fopen('BancoDados/Backup.txt', "w");
             fwrite($backupCheck, Valida::DataDBDate($novaData));
             fclose($backupCheck);
-            $AtualizaArqBanco = fopen('BancoDados/Atualizacao.sql', "w");
-            fwrite($AtualizaArqBanco,  "");
-            fclose($AtualizaArqBanco);
+            $this->limpaArquivoAtualizacaoBanco();
             $this->charset = 'utf8';
             $this->controleVersao();
             $conn = new ObjetoPDO();
@@ -140,5 +138,15 @@ class Backup
         $backupVersao = fopen('versao.txt', "w");
         fwrite($backupVersao, $versaoAtualizada);
         fclose($backupVersao);
+    }
+
+    /**
+     * Realiza o controle da versão
+     */
+    private function limpaArquivoAtualizacaoBanco()
+    {
+        $AtualizaArqBanco = fopen('BancoDados/Atualizacao.sql', "w");
+        fwrite($AtualizaArqBanco,  "");
+        fclose($AtualizaArqBanco);
     }
 }
