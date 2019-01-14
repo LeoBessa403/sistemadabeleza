@@ -4,10 +4,11 @@
  * Conn.class [ CONEXÃO ]
  * Classe abstrata de conexão. Padrão SingleTon.
  * Retorna um objeto PDO pelo método estático getConn();
- * 
+ *
  * @copyright (c) 2014, Leo Bessa
  */
-abstract class Conn {
+abstract class Conn
+{
 
     private static $Host = HOST;
     private static $User = USER;
@@ -21,7 +22,8 @@ abstract class Conn {
      * Conecta com o banco de dados com o pattern singleton.
      * Retorna um objeto PDO!
      */
-    private static function Conectar() {
+    private static function Conectar()
+    {
         try {
             if (self::$Connect == null):
                 $dsn = 'mysql:host=' . self::$Host . ';dbname=' . self::$Dbsa;
@@ -38,7 +40,8 @@ abstract class Conn {
     }
 
     /** Retorna um objeto PDO Singleton Pattern. */
-    protected static function getConn() {
+    protected static function getConn()
+    {
         return self::Conectar();
     }
 
@@ -61,5 +64,26 @@ abstract class Conn {
         }
         return false;
     }
+
+    /**
+     * @param $sql
+     * @param $dados
+     * @param null $co_registro
+     */
+    protected function gravaAtualizacaoBanco($sql, $dados, $co_registro = null)
+    {
+        if($sql) {
+            foreach ($dados as $chave => $valor) {
+                $sql = str_replace(':' . $chave, '"' . $valor . '"', $sql);
+            }
+            if($co_registro){
+                $sql = str_replace(':codigo',  $co_registro , $sql);
+            }
+            $AtualizaArqBanco = fopen('BancoDados/Atualizacao.sql', "a+");
+            fwrite($AtualizaArqBanco, $sql . ";\n\n");
+            fclose($AtualizaArqBanco);
+        }
+    }
+
 
 }

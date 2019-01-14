@@ -25,6 +25,9 @@ class Backup
             $backupCheck = fopen('BancoDados/Backup.txt', "w");
             fwrite($backupCheck, Valida::DataDBDate($novaData));
             fclose($backupCheck);
+            $AtualizaArqBanco = fopen('BancoDados/Atualizacao.sql', "w");
+            fwrite($AtualizaArqBanco,  "");
+            fclose($AtualizaArqBanco);
             $this->charset = 'utf8';
             $this->controleVersao();
             $conn = new ObjetoPDO();
@@ -112,8 +115,8 @@ class Backup
     {
         if (!$sql) return false;
         try {
-            $handle = fopen(PASTABACKUP . 'Backup ' . Valida::ValNome(DESC) . ' ' . date("Y-m-d H-i-s", time()) . '.sql', 'w+');
-            fwrite($handle, $sql);
+            $handle = fopen(PASTABACKUP . 'Backup-' . Valida::ValNome(DESC) . '.sql', 'w');
+            fwrite($handle, "-- Atualizado em: " . Valida::DataAtual() . "\n\n" . $sql);
             fclose($handle);
         } catch (Exception $e) {
             var_dump($e->getMessage());

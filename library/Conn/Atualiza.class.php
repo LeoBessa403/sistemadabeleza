@@ -37,15 +37,15 @@ class Atualiza extends Conn
         $this->Dados = $Dados;
         $this->Termos = (string)$Termos;
 
-        if ($this->liberaAuditoria($this->Tabela)):
-            $auditoria = new Auditar();
-            $auditoria->Audita($this->Tabela, $this->Dados, AuditoriaEnum::UPDATE, $co_registro, $Termos, $Valores);
-        endif;
-
         parse_str($Valores, $this->Places);
         $this->getSyntax();
         $this->Execute();
 
+        if ($this->liberaAuditoria($this->Tabela)):
+            $auditoria = new Auditar();
+            $auditoria->Audita($this->Tabela, $this->Dados, AuditoriaEnum::UPDATE, $co_registro, $Termos, $Valores);
+            $this->gravaAtualizacaoBanco($this->Update->queryString, $this->Dados, $co_registro);
+        endif;
     }
 
     /**

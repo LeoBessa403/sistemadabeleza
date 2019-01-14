@@ -84,7 +84,7 @@ class  PlanoService extends AbstractService
             1 => 1,
             3 => 3,
             6 => 6,
-            12 => 2,
+            12 => 12,
             24 => 24,
         ];
         return $todosMesAt;

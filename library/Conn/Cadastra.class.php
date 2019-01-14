@@ -10,7 +10,7 @@ class Cadastra extends Conn
 {
 
     private $Tabela;
-    private $dados;
+    private $Dados;
     private $Result;
 
     /** @var PDOStatement */
@@ -22,15 +22,14 @@ class Cadastra extends Conn
     /**
      * <b>Inseri:</b> Executa um cadastro simplificado no banco de dados utilizando prepared statements.
      * Basta informar o nome da Tabela e um array atribuitivo com nome da coluna e valor!
-     *
      * @param STRING $Tabela = Informe o nome da Tabela no banco!
-     * @param ARRAY $Dados = Informe um array atribuitivo. <br>( Nome Da Coluna => Valor ).<br>
+     * @param Array $Dados = Informe um array atribuitivo. <br>( Nome Da Coluna => Valor ).<br>
      * Ex.: ("nome" => "leo", "sobrenome" => "bessa").
      */
-    public function Cadastrar($Tabela, array $dados)
+    public function Cadastrar($Tabela, array $Dados)
     {
         $this->Tabela = (string)$Tabela;
-        $this->dados = $dados;
+        $this->Dados = $Dados;
 
         $this->getSyntax();
         $this->Execute();
@@ -38,14 +37,15 @@ class Cadastra extends Conn
         if ($this->liberaAuditoria($this->Tabela)):
             $co_registro = $this->Result;
             $auditoria = new Auditar();
-            $auditoria->Audita($this->Tabela, $this->dados, AuditoriaEnum::INSERT, $co_registro);
+            $auditoria->Audita($this->Tabela, $this->Dados, AuditoriaEnum::INSERT, $co_registro);
+            $this->gravaAtualizacaoBanco($this->Create->queryString, $this->Dados);
         endif;
     }
 
     private function getSyntax()
     {
-        $Fileds = implode(', ', array_keys($this->dados));
-        $Places = ':' . implode(', :', array_keys($this->dados));
+        $Fileds = implode(', ', array_keys($this->Dados));
+        $Places = ':' . implode(', :', array_keys($this->Dados));
         $this->Create = "INSERT INTO {$this->Tabela} ({$Fileds}) VALUES ({$Places})";
     }
 
@@ -53,7 +53,7 @@ class Cadastra extends Conn
     {
         $this->Connect();
         try {
-            $this->Create->execute($this->dados);
+            $this->Create->execute($this->Dados);
             $this->Result = $this->Conn->lastInsertId();
         } catch (PDOException $e) {
             $this->Result = null;

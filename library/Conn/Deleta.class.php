@@ -31,15 +31,15 @@ class Deleta extends Conn
     {
         $this->Tabela = (string)$Tabela;
         $this->Termos = (string)$Termos;
+        parse_str($Valores, $this->Places);
+        $this->getSyntax();
+        $this->Execute();
 
         if ($this->liberaAuditoria($this->Tabela)):
             $auditoria = new Auditar();
             $auditoria->Audita($this->Tabela, null, AuditoriaEnum::DELETE, $co_registro, $Termos, $Valores);
+            $this->gravaAtualizacaoBanco($this->Delete->queryString, $this->Places);
         endif;
-
-        parse_str($Valores, $this->Places);
-        $this->getSyntax();
-        $this->Execute();
     }
 
     /**

@@ -1,3 +1,5 @@
+-- Atualizado em: 14/01/2019 17:33:47
+
 CREATE DATABASE IF NOT EXISTS sistem25_dabelez;
 
 USE sistem25_dabelez;
@@ -16,7 +18,7 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_acesso VALUES("1","au886dq4kojafm6uua4vtlccc5","2018-12-20 16:58:38","2018-12-20 17:22:29","F","8","1");
@@ -26,6 +28,62 @@ INSERT INTO tb_acesso VALUES("2","au886dq4kojafm6uua4vtlccc5","2018-12-20 17:22:
 INSERT INTO tb_acesso VALUES("3","au886dq4kojafm6uua4vtlccc5","2018-12-20 17:38:47","2018-12-20 18:26:14","F","8","3");
 
 INSERT INTO tb_acesso VALUES("4","au886dq4kojafm6uua4vtlccc5","2018-12-21 12:00:18","2018-12-21 12:31:18","F","8","4");
+
+INSERT INTO tb_acesso VALUES("5","h062pgepun9rplcatp5kp3l804","2018-12-26 17:06:07","2018-12-26 17:37:52","F","8","5");
+
+INSERT INTO tb_acesso VALUES("6","h062pgepun9rplcatp5kp3l804","2018-12-27 12:13:59","2018-12-27 12:20:32","F","8","6");
+
+INSERT INTO tb_acesso VALUES("7","qc3ln4doacb0v64ifvfjuuhc85","2019-01-04 10:31:41","2019-01-04 11:01:54","F","8","7");
+
+INSERT INTO tb_acesso VALUES("8","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 10:15:40","2019-01-10 10:15:52","F","8","8");
+
+INSERT INTO tb_acesso VALUES("9","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 10:33:06","2019-01-10 10:33:15","F","8","9");
+
+INSERT INTO tb_acesso VALUES("10","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 10:39:15","2019-01-10 10:44:00","F","1","10");
+
+INSERT INTO tb_acesso VALUES("11","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 11:00:26","2019-01-10 11:00:37","F","8","11");
+
+INSERT INTO tb_acesso VALUES("12","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 11:06:30","2019-01-10 11:46:03","F","1","12");
+
+INSERT INTO tb_acesso VALUES("13","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 12:11:23","2019-01-10 12:11:47","F","1","13");
+
+INSERT INTO tb_acesso VALUES("14","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 12:20:53","2019-01-10 12:23:31","F","1","14");
+
+INSERT INTO tb_acesso VALUES("15","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 12:53:55","2019-01-10 12:54:01","F","1","15");
+
+INSERT INTO tb_acesso VALUES("16","eq7iu344l6pht078svt9t4g7o7","2019-01-14 11:59:46","2019-01-14 12:33:41","F","1","16");
+
+INSERT INTO tb_acesso VALUES("17","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:14:31","2019-01-14 14:15:19","F","1","17");
+
+INSERT INTO tb_acesso VALUES("18","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:15:26","2019-01-14 14:17:11","F","8","18");
+
+INSERT INTO tb_acesso VALUES("19","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:17:18","2019-01-14 14:30:21","F","1","19");
+
+INSERT INTO tb_acesso VALUES("20","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:30:28","2019-01-14 14:31:03","F","1","20");
+
+INSERT INTO tb_acesso VALUES("21","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:31:10","2019-01-14 14:53:32","F","1","21");
+
+INSERT INTO tb_acesso VALUES("22","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:55:21","2019-01-14 15:09:10","F","8","22");
+
+INSERT INTO tb_acesso VALUES("23","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:09:19","2019-01-14 15:26:06","F","1","23");
+
+INSERT INTO tb_acesso VALUES("24","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:28:33","2019-01-14 15:48:11","F","8","24");
+
+INSERT INTO tb_acesso VALUES("25","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:48:21","2019-01-14 15:49:31","F","8","25");
+
+INSERT INTO tb_acesso VALUES("26","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:49:44","2019-01-14 15:50:54","F","1","26");
+
+INSERT INTO tb_acesso VALUES("27","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:51:01","2019-01-14 16:21:01","F","11","27");
+
+INSERT INTO tb_acesso VALUES("28","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:48:05","2019-01-14 16:50:50","F","1","44");
+
+INSERT INTO tb_acesso VALUES("29","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:51:00","2019-01-14 16:58:03","F","8","45");
+
+INSERT INTO tb_acesso VALUES("30","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:51:00","2019-01-14 18:02:51","A","8","45");
+
+INSERT INTO tb_acesso VALUES("31","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:51:00","2019-01-14 17:21:00","A","8","45");
+
+INSERT INTO tb_acesso VALUES("32","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:58:09","2019-01-14 17:04:46","F","1","47");
 
 
 
@@ -113,7 +171,7 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria VALUES("1","2018-12-20 17:17:04","Gestor, Colaborador","8");
@@ -123,6 +181,30 @@ INSERT INTO tb_auditoria VALUES("2","2018-12-20 17:17:56","Gestor, Colaborador",
 INSERT INTO tb_auditoria VALUES("3","2018-12-20 17:19:05","Gestor, Colaborador","8");
 
 INSERT INTO tb_auditoria VALUES("4","2018-12-20 17:19:45","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("5","2019-01-14 16:50:14","Master","1");
+
+INSERT INTO tb_auditoria VALUES("6","2019-01-14 16:58:52","Master","1");
+
+INSERT INTO tb_auditoria VALUES("7","2019-01-14 16:59:16","Master","1");
+
+INSERT INTO tb_auditoria VALUES("8","2019-01-14 16:59:23","Master","1");
+
+INSERT INTO tb_auditoria VALUES("9","2019-01-14 17:03:55","Master","1");
+
+INSERT INTO tb_auditoria VALUES("10","2019-01-14 17:04:13","Master","1");
+
+INSERT INTO tb_auditoria VALUES("11","2019-01-14 17:05:48","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("14","2019-01-14 17:17:29","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("15","2019-01-14 17:18:56","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("16","2019-01-14 17:20:07","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("17","2019-01-14 17:21:57","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("18","2019-01-14 17:25:21","Gestor, Colaborador","8");
 
 
 
@@ -138,7 +220,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=489 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_itens VALUES("1","2","","co_config_agendamento","1");
@@ -197,6 +279,898 @@ INSERT INTO tb_auditoria_itens VALUES("27","N","N","st_enviar_email_confirmacao"
 
 INSERT INTO tb_auditoria_itens VALUES("28","11","11","co_assinante","4");
 
+INSERT INTO tb_auditoria_itens VALUES("29","","novinho","no_plano","5");
+
+INSERT INTO tb_auditoria_itens VALUES("30","","24","nu_mes_ativo","5");
+
+INSERT INTO tb_auditoria_itens VALUES("31","","A","st_status","5");
+
+INSERT INTO tb_auditoria_itens VALUES("32","","2019-01-14 16:50:14","dt_cadastro","5");
+
+INSERT INTO tb_auditoria_itens VALUES("33","","9","co_plano","7");
+
+INSERT INTO tb_auditoria_itens VALUES("34","","1","co_modulo","7");
+
+INSERT INTO tb_auditoria_itens VALUES("35","","ce","ds_observacao","8");
+
+INSERT INTO tb_auditoria_itens VALUES("36","","3.99","nu_valor","8");
+
+INSERT INTO tb_auditoria_itens VALUES("37","","2019-01-14 16:50:14","dt_cadastro","8");
+
+INSERT INTO tb_auditoria_itens VALUES("38","","9","co_plano","8");
+
+INSERT INTO tb_auditoria_itens VALUES("39","19","","co_perfil","9");
+
+INSERT INTO tb_auditoria_itens VALUES("40","sda ga rg","","no_perfil","9");
+
+INSERT INTO tb_auditoria_itens VALUES("41","A","","st_status","9");
+
+INSERT INTO tb_auditoria_itens VALUES("42","17","","co_perfil","10");
+
+INSERT INTO tb_auditoria_itens VALUES("43","TESTE 333693465","","no_perfil","10");
+
+INSERT INTO tb_auditoria_itens VALUES("44","A","","st_status","10");
+
+INSERT INTO tb_auditoria_itens VALUES("45","","TESTE","no_perfil","12");
+
+INSERT INTO tb_auditoria_itens VALUES("46","20","","co_perfil","13");
+
+INSERT INTO tb_auditoria_itens VALUES("47","TESTE","","no_perfil","13");
+
+INSERT INTO tb_auditoria_itens VALUES("48","A","","st_status","13");
+
+INSERT INTO tb_auditoria_itens VALUES("49","96","96","co_endereco","14");
+
+INSERT INTO tb_auditoria_itens VALUES("50","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","14");
+
+INSERT INTO tb_auditoria_itens VALUES("51","","","ds_complemento","14");
+
+INSERT INTO tb_auditoria_itens VALUES("52","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","14");
+
+INSERT INTO tb_auditoria_itens VALUES("53","72319111","72319111","nu_cep","14");
+
+INSERT INTO tb_auditoria_itens VALUES("54","Brasília","Brasília","no_cidade","14");
+
+INSERT INTO tb_auditoria_itens VALUES("55","DF","DF","sg_uf","14");
+
+INSERT INTO tb_auditoria_itens VALUES("56","82","82","co_contato","15");
+
+INSERT INTO tb_auditoria_itens VALUES("57","6546546131","6546546131","nu_tel1","15");
+
+INSERT INTO tb_auditoria_itens VALUES("58","","","nu_tel2","15");
+
+INSERT INTO tb_auditoria_itens VALUES("59","","","nu_tel3","15");
+
+INSERT INTO tb_auditoria_itens VALUES("60","","","nu_tel_0800","15");
+
+INSERT INTO tb_auditoria_itens VALUES("61","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","15");
+
+INSERT INTO tb_auditoria_itens VALUES("62","","","ds_site","15");
+
+INSERT INTO tb_auditoria_itens VALUES("63","","","ds_facebook","15");
+
+INSERT INTO tb_auditoria_itens VALUES("64","","","ds_twitter","15");
+
+INSERT INTO tb_auditoria_itens VALUES("65","","","ds_instagram","15");
+
+INSERT INTO tb_auditoria_itens VALUES("66","77","77","co_pessoa","16");
+
+INSERT INTO tb_auditoria_itens VALUES("67","","","nu_cpf","16");
+
+INSERT INTO tb_auditoria_itens VALUES("68","Seu Biga","Seu Biga","no_pessoa","16");
+
+INSERT INTO tb_auditoria_itens VALUES("69","","","nu_rg","16");
+
+INSERT INTO tb_auditoria_itens VALUES("70","2018-12-20 11:37:17","2019-01-14 17:05:48","dt_cadastro","16");
+
+INSERT INTO tb_auditoria_itens VALUES("71","2018-12-04","2018-12-04","dt_nascimento","16");
+
+INSERT INTO tb_auditoria_itens VALUES("72","M","M","st_sexo","16");
+
+INSERT INTO tb_auditoria_itens VALUES("73","96","96","co_endereco","16");
+
+INSERT INTO tb_auditoria_itens VALUES("74","82","82","co_contato","16");
+
+INSERT INTO tb_auditoria_itens VALUES("75","0","","co_imagem","16");
+
+INSERT INTO tb_auditoria_itens VALUES("76","43","43","co_conta_bancaria","17");
+
+INSERT INTO tb_auditoria_itens VALUES("77","2399","2399","nu_agencia","17");
+
+INSERT INTO tb_auditoria_itens VALUES("78","22982-7","22982-7","nu_conta","17");
+
+INSERT INTO tb_auditoria_itens VALUES("79","CC","CC","tp_conta","17");
+
+INSERT INTO tb_auditoria_itens VALUES("80","1","1","co_banco","17");
+
+INSERT INTO tb_auditoria_itens VALUES("81","21","21","co_profissional","18");
+
+INSERT INTO tb_auditoria_itens VALUES("82","2018-12-20 11:37:17","2019-01-14 17:05:48","dt_cadastro","18");
+
+INSERT INTO tb_auditoria_itens VALUES("83","#EFC631","#EFC631","ds_cor_agenda","18");
+
+INSERT INTO tb_auditoria_itens VALUES("84","N","N","st_assistente","18");
+
+INSERT INTO tb_auditoria_itens VALUES("85","","","ds_sobre","18");
+
+INSERT INTO tb_auditoria_itens VALUES("86","","","no_apelido","18");
+
+INSERT INTO tb_auditoria_itens VALUES("87","S","S","st_agenda","18");
+
+INSERT INTO tb_auditoria_itens VALUES("88","S","S","st_agenda_online","18");
+
+INSERT INTO tb_auditoria_itens VALUES("89","A","","st_status","18");
+
+INSERT INTO tb_auditoria_itens VALUES("90","0","","nu_ordem_agenda","18");
+
+INSERT INTO tb_auditoria_itens VALUES("91","1","1","tp_contratacao","18");
+
+INSERT INTO tb_auditoria_itens VALUES("92","","","dt_admissao","18");
+
+INSERT INTO tb_auditoria_itens VALUES("93","","","dt_demissao","18");
+
+INSERT INTO tb_auditoria_itens VALUES("94","38","38","co_imagem","18");
+
+INSERT INTO tb_auditoria_itens VALUES("95","77","77","co_pessoa","18");
+
+INSERT INTO tb_auditoria_itens VALUES("96","50","","co_usuario","18");
+
+INSERT INTO tb_auditoria_itens VALUES("97","11","","co_assinante","18");
+
+INSERT INTO tb_auditoria_itens VALUES("98","43","43","co_conta_bancaria","18");
+
+INSERT INTO tb_auditoria_itens VALUES("99","45","","co_profissional_cargo","19");
+
+INSERT INTO tb_auditoria_itens VALUES("100","32","","co_cargo","19");
+
+INSERT INTO tb_auditoria_itens VALUES("101","21","","co_profissional","19");
+
+INSERT INTO tb_auditoria_itens VALUES("102","2018-12-20 00:00:00","","dt_cadastro","19");
+
+INSERT INTO tb_auditoria_itens VALUES("103","A","","st_status","19");
+
+INSERT INTO tb_auditoria_itens VALUES("104","","21","co_profissional","20");
+
+INSERT INTO tb_auditoria_itens VALUES("105","","A","st_status","20");
+
+INSERT INTO tb_auditoria_itens VALUES("106","","2019-01-14","dt_cadastro","20");
+
+INSERT INTO tb_auditoria_itens VALUES("107","","32","co_cargo","20");
+
+INSERT INTO tb_auditoria_itens VALUES("122","95","95","co_endereco","24");
+
+INSERT INTO tb_auditoria_itens VALUES("123","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","24");
+
+INSERT INTO tb_auditoria_itens VALUES("124","Casa 28","Casa 28","ds_complemento","24");
+
+INSERT INTO tb_auditoria_itens VALUES("125","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","24");
+
+INSERT INTO tb_auditoria_itens VALUES("126","72319111","72319111","nu_cep","24");
+
+INSERT INTO tb_auditoria_itens VALUES("127","Brasília","Brasília","no_cidade","24");
+
+INSERT INTO tb_auditoria_itens VALUES("128","DF","DF","sg_uf","24");
+
+INSERT INTO tb_auditoria_itens VALUES("129","81","81","co_contato","25");
+
+INSERT INTO tb_auditoria_itens VALUES("130","61993003405","61993003405","nu_tel1","25");
+
+INSERT INTO tb_auditoria_itens VALUES("131","","","nu_tel2","25");
+
+INSERT INTO tb_auditoria_itens VALUES("132","","","nu_tel3","25");
+
+INSERT INTO tb_auditoria_itens VALUES("133","","","nu_tel_0800","25");
+
+INSERT INTO tb_auditoria_itens VALUES("134","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","25");
+
+INSERT INTO tb_auditoria_itens VALUES("135","","","ds_site","25");
+
+INSERT INTO tb_auditoria_itens VALUES("136","","","ds_facebook","25");
+
+INSERT INTO tb_auditoria_itens VALUES("137","","","ds_twitter","25");
+
+INSERT INTO tb_auditoria_itens VALUES("138","","","ds_instagram","25");
+
+INSERT INTO tb_auditoria_itens VALUES("139","76","76","co_pessoa","26");
+
+INSERT INTO tb_auditoria_itens VALUES("140","22322191191","22322191191","nu_cpf","26");
+
+INSERT INTO tb_auditoria_itens VALUES("141","Jose Arnaldo","Jose Arnaldo","no_pessoa","26");
+
+INSERT INTO tb_auditoria_itens VALUES("142","2346","2346","nu_rg","26");
+
+INSERT INTO tb_auditoria_itens VALUES("143","2018-12-20 11:09:12","2019-01-14 17:17:29","dt_cadastro","26");
+
+INSERT INTO tb_auditoria_itens VALUES("144","1959-06-05","1959-06-05","dt_nascimento","26");
+
+INSERT INTO tb_auditoria_itens VALUES("145","M","M","st_sexo","26");
+
+INSERT INTO tb_auditoria_itens VALUES("146","95","95","co_endereco","26");
+
+INSERT INTO tb_auditoria_itens VALUES("147","81","81","co_contato","26");
+
+INSERT INTO tb_auditoria_itens VALUES("148","0","","co_imagem","26");
+
+INSERT INTO tb_auditoria_itens VALUES("149","42","42","co_conta_bancaria","27");
+
+INSERT INTO tb_auditoria_itens VALUES("150","2399","2399","nu_agencia","27");
+
+INSERT INTO tb_auditoria_itens VALUES("151","22982-7","22982-7","nu_conta","27");
+
+INSERT INTO tb_auditoria_itens VALUES("152","CC","CC","tp_conta","27");
+
+INSERT INTO tb_auditoria_itens VALUES("153","104","104","co_banco","27");
+
+INSERT INTO tb_auditoria_itens VALUES("154","20","20","co_profissional","28");
+
+INSERT INTO tb_auditoria_itens VALUES("155","2018-12-20 11:09:12","2019-01-14 17:17:29","dt_cadastro","28");
+
+INSERT INTO tb_auditoria_itens VALUES("156","#397B21","#397B21","ds_cor_agenda","28");
+
+INSERT INTO tb_auditoria_itens VALUES("157","S","S","st_assistente","28");
+
+INSERT INTO tb_auditoria_itens VALUES("158","Representante comercial da Bartofil","Representante comercial da Bartofil","ds_sobre","28");
+
+INSERT INTO tb_auditoria_itens VALUES("159","Bigode","Bigode","no_apelido","28");
+
+INSERT INTO tb_auditoria_itens VALUES("160","S","S","st_agenda","28");
+
+INSERT INTO tb_auditoria_itens VALUES("161","S","S","st_agenda_online","28");
+
+INSERT INTO tb_auditoria_itens VALUES("162","A","","st_status","28");
+
+INSERT INTO tb_auditoria_itens VALUES("163","1","1","nu_ordem_agenda","28");
+
+INSERT INTO tb_auditoria_itens VALUES("164","2","2","tp_contratacao","28");
+
+INSERT INTO tb_auditoria_itens VALUES("165","2018-12-17","2018-12-17","dt_admissao","28");
+
+INSERT INTO tb_auditoria_itens VALUES("166","","","dt_demissao","28");
+
+INSERT INTO tb_auditoria_itens VALUES("167","37","37","co_imagem","28");
+
+INSERT INTO tb_auditoria_itens VALUES("168","76","76","co_pessoa","28");
+
+INSERT INTO tb_auditoria_itens VALUES("169","49","","co_usuario","28");
+
+INSERT INTO tb_auditoria_itens VALUES("170","11","","co_assinante","28");
+
+INSERT INTO tb_auditoria_itens VALUES("171","42","42","co_conta_bancaria","28");
+
+INSERT INTO tb_auditoria_itens VALUES("172","39","","co_profissional_cargo","29");
+
+INSERT INTO tb_auditoria_itens VALUES("173","34","","co_cargo","29");
+
+INSERT INTO tb_auditoria_itens VALUES("174","20","","co_profissional","29");
+
+INSERT INTO tb_auditoria_itens VALUES("175","2018-12-20 00:00:00","","dt_cadastro","29");
+
+INSERT INTO tb_auditoria_itens VALUES("176","A","","st_status","29");
+
+INSERT INTO tb_auditoria_itens VALUES("177","","20","co_profissional","30");
+
+INSERT INTO tb_auditoria_itens VALUES("178","","A","st_status","30");
+
+INSERT INTO tb_auditoria_itens VALUES("179","","2019-01-14","dt_cadastro","30");
+
+INSERT INTO tb_auditoria_itens VALUES("180","","34","co_cargo","30");
+
+INSERT INTO tb_auditoria_itens VALUES("181","","20","co_profissional","32");
+
+INSERT INTO tb_auditoria_itens VALUES("182","","1","nu_dia_semana","32");
+
+INSERT INTO tb_auditoria_itens VALUES("183","","05:00","nu_hora_abertura","32");
+
+INSERT INTO tb_auditoria_itens VALUES("184","","18:11","nu_hora_fechamento","32");
+
+INSERT INTO tb_auditoria_itens VALUES("185","","20","co_profissional","33");
+
+INSERT INTO tb_auditoria_itens VALUES("186","","2","nu_dia_semana","33");
+
+INSERT INTO tb_auditoria_itens VALUES("187","","05:00","nu_hora_abertura","33");
+
+INSERT INTO tb_auditoria_itens VALUES("188","","18:04","nu_hora_fechamento","33");
+
+INSERT INTO tb_auditoria_itens VALUES("189","","20","co_profissional","34");
+
+INSERT INTO tb_auditoria_itens VALUES("190","","3","nu_dia_semana","34");
+
+INSERT INTO tb_auditoria_itens VALUES("191","","05:44","nu_hora_abertura","34");
+
+INSERT INTO tb_auditoria_itens VALUES("192","","18:11","nu_hora_fechamento","34");
+
+INSERT INTO tb_auditoria_itens VALUES("193","95","95","co_endereco","35");
+
+INSERT INTO tb_auditoria_itens VALUES("194","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","35");
+
+INSERT INTO tb_auditoria_itens VALUES("195","Casa 28","Casa 28","ds_complemento","35");
+
+INSERT INTO tb_auditoria_itens VALUES("196","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","35");
+
+INSERT INTO tb_auditoria_itens VALUES("197","72319111","72319111","nu_cep","35");
+
+INSERT INTO tb_auditoria_itens VALUES("198","Brasília","Brasília","no_cidade","35");
+
+INSERT INTO tb_auditoria_itens VALUES("199","DF","DF","sg_uf","35");
+
+INSERT INTO tb_auditoria_itens VALUES("200","81","81","co_contato","36");
+
+INSERT INTO tb_auditoria_itens VALUES("201","61993003405","61993003405","nu_tel1","36");
+
+INSERT INTO tb_auditoria_itens VALUES("202","","","nu_tel2","36");
+
+INSERT INTO tb_auditoria_itens VALUES("203","","","nu_tel3","36");
+
+INSERT INTO tb_auditoria_itens VALUES("204","","","nu_tel_0800","36");
+
+INSERT INTO tb_auditoria_itens VALUES("205","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","36");
+
+INSERT INTO tb_auditoria_itens VALUES("206","","","ds_site","36");
+
+INSERT INTO tb_auditoria_itens VALUES("207","","","ds_facebook","36");
+
+INSERT INTO tb_auditoria_itens VALUES("208","","","ds_twitter","36");
+
+INSERT INTO tb_auditoria_itens VALUES("209","","","ds_instagram","36");
+
+INSERT INTO tb_auditoria_itens VALUES("210","76","76","co_pessoa","37");
+
+INSERT INTO tb_auditoria_itens VALUES("211","22322191191","22322191191","nu_cpf","37");
+
+INSERT INTO tb_auditoria_itens VALUES("212","Jose Arnaldo","Jose Arnaldo","no_pessoa","37");
+
+INSERT INTO tb_auditoria_itens VALUES("213","2346","2346","nu_rg","37");
+
+INSERT INTO tb_auditoria_itens VALUES("214","2019-01-14 17:17:29","2019-01-14 17:18:56","dt_cadastro","37");
+
+INSERT INTO tb_auditoria_itens VALUES("215","1959-06-05","1959-06-05","dt_nascimento","37");
+
+INSERT INTO tb_auditoria_itens VALUES("216","M","M","st_sexo","37");
+
+INSERT INTO tb_auditoria_itens VALUES("217","95","95","co_endereco","37");
+
+INSERT INTO tb_auditoria_itens VALUES("218","81","81","co_contato","37");
+
+INSERT INTO tb_auditoria_itens VALUES("219","0","","co_imagem","37");
+
+INSERT INTO tb_auditoria_itens VALUES("220","42","42","co_conta_bancaria","38");
+
+INSERT INTO tb_auditoria_itens VALUES("221","2399","2399","nu_agencia","38");
+
+INSERT INTO tb_auditoria_itens VALUES("222","22982-7","22982-7","nu_conta","38");
+
+INSERT INTO tb_auditoria_itens VALUES("223","CC","CC","tp_conta","38");
+
+INSERT INTO tb_auditoria_itens VALUES("224","104","104","co_banco","38");
+
+INSERT INTO tb_auditoria_itens VALUES("225","20","20","co_profissional","39");
+
+INSERT INTO tb_auditoria_itens VALUES("226","2019-01-14 17:17:29","2019-01-14 17:18:56","dt_cadastro","39");
+
+INSERT INTO tb_auditoria_itens VALUES("227","#397B21","#397B21","ds_cor_agenda","39");
+
+INSERT INTO tb_auditoria_itens VALUES("228","S","S","st_assistente","39");
+
+INSERT INTO tb_auditoria_itens VALUES("229","Representante comercial da Bartofil","Representante comercial da Bartofil","ds_sobre","39");
+
+INSERT INTO tb_auditoria_itens VALUES("230","Bigode","Bigode","no_apelido","39");
+
+INSERT INTO tb_auditoria_itens VALUES("231","S","S","st_agenda","39");
+
+INSERT INTO tb_auditoria_itens VALUES("232","S","S","st_agenda_online","39");
+
+INSERT INTO tb_auditoria_itens VALUES("233","","","st_status","39");
+
+INSERT INTO tb_auditoria_itens VALUES("234","1","1","nu_ordem_agenda","39");
+
+INSERT INTO tb_auditoria_itens VALUES("235","2","2","tp_contratacao","39");
+
+INSERT INTO tb_auditoria_itens VALUES("236","2018-12-17","2018-12-17","dt_admissao","39");
+
+INSERT INTO tb_auditoria_itens VALUES("237","","","dt_demissao","39");
+
+INSERT INTO tb_auditoria_itens VALUES("238","37","37","co_imagem","39");
+
+INSERT INTO tb_auditoria_itens VALUES("239","76","76","co_pessoa","39");
+
+INSERT INTO tb_auditoria_itens VALUES("240","49","","co_usuario","39");
+
+INSERT INTO tb_auditoria_itens VALUES("241","11","","co_assinante","39");
+
+INSERT INTO tb_auditoria_itens VALUES("242","42","42","co_conta_bancaria","39");
+
+INSERT INTO tb_auditoria_itens VALUES("243","47","","co_profissional_cargo","40");
+
+INSERT INTO tb_auditoria_itens VALUES("244","34","","co_cargo","40");
+
+INSERT INTO tb_auditoria_itens VALUES("245","20","","co_profissional","40");
+
+INSERT INTO tb_auditoria_itens VALUES("246","2019-01-14 00:00:00","","dt_cadastro","40");
+
+INSERT INTO tb_auditoria_itens VALUES("247","A","","st_status","40");
+
+INSERT INTO tb_auditoria_itens VALUES("248","","20","co_profissional","41");
+
+INSERT INTO tb_auditoria_itens VALUES("249","","A","st_status","41");
+
+INSERT INTO tb_auditoria_itens VALUES("250","","2019-01-14","dt_cadastro","41");
+
+INSERT INTO tb_auditoria_itens VALUES("251","","34","co_cargo","41");
+
+INSERT INTO tb_auditoria_itens VALUES("252","43","","co_jornada_trabalho","42");
+
+INSERT INTO tb_auditoria_itens VALUES("253","1","","nu_dia_semana","42");
+
+INSERT INTO tb_auditoria_itens VALUES("254","05:00","","nu_hora_abertura","42");
+
+INSERT INTO tb_auditoria_itens VALUES("255","18:11","","nu_hora_fechamento","42");
+
+INSERT INTO tb_auditoria_itens VALUES("256","20","","co_profissional","42");
+
+INSERT INTO tb_auditoria_itens VALUES("257","44","","co_jornada_trabalho","42");
+
+INSERT INTO tb_auditoria_itens VALUES("258","2","","nu_dia_semana","42");
+
+INSERT INTO tb_auditoria_itens VALUES("259","05:00","","nu_hora_abertura","42");
+
+INSERT INTO tb_auditoria_itens VALUES("260","18:04","","nu_hora_fechamento","42");
+
+INSERT INTO tb_auditoria_itens VALUES("261","20","","co_profissional","42");
+
+INSERT INTO tb_auditoria_itens VALUES("262","45","","co_jornada_trabalho","42");
+
+INSERT INTO tb_auditoria_itens VALUES("263","3","","nu_dia_semana","42");
+
+INSERT INTO tb_auditoria_itens VALUES("264","05:44","","nu_hora_abertura","42");
+
+INSERT INTO tb_auditoria_itens VALUES("265","18:11","","nu_hora_fechamento","42");
+
+INSERT INTO tb_auditoria_itens VALUES("266","20","","co_profissional","42");
+
+INSERT INTO tb_auditoria_itens VALUES("267","","20","co_profissional","43");
+
+INSERT INTO tb_auditoria_itens VALUES("268","","1","nu_dia_semana","43");
+
+INSERT INTO tb_auditoria_itens VALUES("269","","05:00","nu_hora_abertura","43");
+
+INSERT INTO tb_auditoria_itens VALUES("270","","18:11","nu_hora_fechamento","43");
+
+INSERT INTO tb_auditoria_itens VALUES("271","","20","co_profissional","44");
+
+INSERT INTO tb_auditoria_itens VALUES("272","","2","nu_dia_semana","44");
+
+INSERT INTO tb_auditoria_itens VALUES("273","","05:00","nu_hora_abertura","44");
+
+INSERT INTO tb_auditoria_itens VALUES("274","","18:04","nu_hora_fechamento","44");
+
+INSERT INTO tb_auditoria_itens VALUES("275","","20","co_profissional","45");
+
+INSERT INTO tb_auditoria_itens VALUES("276","","3","nu_dia_semana","45");
+
+INSERT INTO tb_auditoria_itens VALUES("277","","05:44","nu_hora_abertura","45");
+
+INSERT INTO tb_auditoria_itens VALUES("278","","18:11","nu_hora_fechamento","45");
+
+INSERT INTO tb_auditoria_itens VALUES("279","95","95","co_endereco","46");
+
+INSERT INTO tb_auditoria_itens VALUES("280","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","46");
+
+INSERT INTO tb_auditoria_itens VALUES("281","Casa 28","Casa 28","ds_complemento","46");
+
+INSERT INTO tb_auditoria_itens VALUES("282","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","46");
+
+INSERT INTO tb_auditoria_itens VALUES("283","72319111","72319111","nu_cep","46");
+
+INSERT INTO tb_auditoria_itens VALUES("284","Brasília","Brasília","no_cidade","46");
+
+INSERT INTO tb_auditoria_itens VALUES("285","DF","DF","sg_uf","46");
+
+INSERT INTO tb_auditoria_itens VALUES("286","81","81","co_contato","47");
+
+INSERT INTO tb_auditoria_itens VALUES("287","61993003405","61993003405","nu_tel1","47");
+
+INSERT INTO tb_auditoria_itens VALUES("288","","","nu_tel2","47");
+
+INSERT INTO tb_auditoria_itens VALUES("289","","","nu_tel3","47");
+
+INSERT INTO tb_auditoria_itens VALUES("290","","","nu_tel_0800","47");
+
+INSERT INTO tb_auditoria_itens VALUES("291","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","47");
+
+INSERT INTO tb_auditoria_itens VALUES("292","","","ds_site","47");
+
+INSERT INTO tb_auditoria_itens VALUES("293","","","ds_facebook","47");
+
+INSERT INTO tb_auditoria_itens VALUES("294","","","ds_twitter","47");
+
+INSERT INTO tb_auditoria_itens VALUES("295","","","ds_instagram","47");
+
+INSERT INTO tb_auditoria_itens VALUES("296","76","76","co_pessoa","48");
+
+INSERT INTO tb_auditoria_itens VALUES("297","22322191191","22322191191","nu_cpf","48");
+
+INSERT INTO tb_auditoria_itens VALUES("298","Jose Arnaldo","Jose Arnaldo","no_pessoa","48");
+
+INSERT INTO tb_auditoria_itens VALUES("299","2346","2346","nu_rg","48");
+
+INSERT INTO tb_auditoria_itens VALUES("300","2019-01-14 17:20:07","2019-01-14 17:20:07","dt_cadastro","48");
+
+INSERT INTO tb_auditoria_itens VALUES("301","1959-06-05","1959-06-05","dt_nascimento","48");
+
+INSERT INTO tb_auditoria_itens VALUES("302","M","M","st_sexo","48");
+
+INSERT INTO tb_auditoria_itens VALUES("303","95","95","co_endereco","48");
+
+INSERT INTO tb_auditoria_itens VALUES("304","81","81","co_contato","48");
+
+INSERT INTO tb_auditoria_itens VALUES("305","0","","co_imagem","48");
+
+INSERT INTO tb_auditoria_itens VALUES("306","42","42","co_conta_bancaria","49");
+
+INSERT INTO tb_auditoria_itens VALUES("307","2399","2399","nu_agencia","49");
+
+INSERT INTO tb_auditoria_itens VALUES("308","22982-7","22982-7","nu_conta","49");
+
+INSERT INTO tb_auditoria_itens VALUES("309","CC","CC","tp_conta","49");
+
+INSERT INTO tb_auditoria_itens VALUES("310","104","104","co_banco","49");
+
+INSERT INTO tb_auditoria_itens VALUES("311","20","20","co_profissional","50");
+
+INSERT INTO tb_auditoria_itens VALUES("312","2019-01-14 17:20:07","2019-01-14 17:20:07","dt_cadastro","50");
+
+INSERT INTO tb_auditoria_itens VALUES("313","#397B21","#397B21","ds_cor_agenda","50");
+
+INSERT INTO tb_auditoria_itens VALUES("314","S","S","st_assistente","50");
+
+INSERT INTO tb_auditoria_itens VALUES("315","Representante comercial da Bartofil","Representante comercial da Bartofil","ds_sobre","50");
+
+INSERT INTO tb_auditoria_itens VALUES("316","Bigode","Bigode","no_apelido","50");
+
+INSERT INTO tb_auditoria_itens VALUES("317","S","S","st_agenda","50");
+
+INSERT INTO tb_auditoria_itens VALUES("318","S","S","st_agenda_online","50");
+
+INSERT INTO tb_auditoria_itens VALUES("319","","","st_status","50");
+
+INSERT INTO tb_auditoria_itens VALUES("320","1","1","nu_ordem_agenda","50");
+
+INSERT INTO tb_auditoria_itens VALUES("321","2","2","tp_contratacao","50");
+
+INSERT INTO tb_auditoria_itens VALUES("322","2018-12-17","2018-12-17","dt_admissao","50");
+
+INSERT INTO tb_auditoria_itens VALUES("323","","","dt_demissao","50");
+
+INSERT INTO tb_auditoria_itens VALUES("324","37","37","co_imagem","50");
+
+INSERT INTO tb_auditoria_itens VALUES("325","76","76","co_pessoa","50");
+
+INSERT INTO tb_auditoria_itens VALUES("326","49","","co_usuario","50");
+
+INSERT INTO tb_auditoria_itens VALUES("327","11","","co_assinante","50");
+
+INSERT INTO tb_auditoria_itens VALUES("328","42","42","co_conta_bancaria","50");
+
+INSERT INTO tb_auditoria_itens VALUES("329","","20","co_profissional","52");
+
+INSERT INTO tb_auditoria_itens VALUES("330","","A","st_status","52");
+
+INSERT INTO tb_auditoria_itens VALUES("331","","2019-01-14","dt_cadastro","52");
+
+INSERT INTO tb_auditoria_itens VALUES("332","","34","co_cargo","52");
+
+INSERT INTO tb_auditoria_itens VALUES("333","","20","co_profissional","54");
+
+INSERT INTO tb_auditoria_itens VALUES("334","","1","nu_dia_semana","54");
+
+INSERT INTO tb_auditoria_itens VALUES("335","","05:00","nu_hora_abertura","54");
+
+INSERT INTO tb_auditoria_itens VALUES("336","","18:11","nu_hora_fechamento","54");
+
+INSERT INTO tb_auditoria_itens VALUES("337","","20","co_profissional","55");
+
+INSERT INTO tb_auditoria_itens VALUES("338","","2","nu_dia_semana","55");
+
+INSERT INTO tb_auditoria_itens VALUES("339","","05:00","nu_hora_abertura","55");
+
+INSERT INTO tb_auditoria_itens VALUES("340","","18:04","nu_hora_fechamento","55");
+
+INSERT INTO tb_auditoria_itens VALUES("341","","20","co_profissional","56");
+
+INSERT INTO tb_auditoria_itens VALUES("342","","3","nu_dia_semana","56");
+
+INSERT INTO tb_auditoria_itens VALUES("343","","05:44","nu_hora_abertura","56");
+
+INSERT INTO tb_auditoria_itens VALUES("344","","18:11","nu_hora_fechamento","56");
+
+INSERT INTO tb_auditoria_itens VALUES("345","","20","co_profissional","57");
+
+INSERT INTO tb_auditoria_itens VALUES("346","","4","nu_dia_semana","57");
+
+INSERT INTO tb_auditoria_itens VALUES("347","","04:44","nu_hora_abertura","57");
+
+INSERT INTO tb_auditoria_itens VALUES("348","","18:11","nu_hora_fechamento","57");
+
+INSERT INTO tb_auditoria_itens VALUES("349","95","95","co_endereco","58");
+
+INSERT INTO tb_auditoria_itens VALUES("350","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","58");
+
+INSERT INTO tb_auditoria_itens VALUES("351","Casa 28","Casa 28","ds_complemento","58");
+
+INSERT INTO tb_auditoria_itens VALUES("352","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","58");
+
+INSERT INTO tb_auditoria_itens VALUES("353","72319111","72319111","nu_cep","58");
+
+INSERT INTO tb_auditoria_itens VALUES("354","Brasília","Brasília","no_cidade","58");
+
+INSERT INTO tb_auditoria_itens VALUES("355","DF","DF","sg_uf","58");
+
+INSERT INTO tb_auditoria_itens VALUES("356","81","81","co_contato","59");
+
+INSERT INTO tb_auditoria_itens VALUES("357","61993003405","61993003405","nu_tel1","59");
+
+INSERT INTO tb_auditoria_itens VALUES("358","","","nu_tel2","59");
+
+INSERT INTO tb_auditoria_itens VALUES("359","","","nu_tel3","59");
+
+INSERT INTO tb_auditoria_itens VALUES("360","","","nu_tel_0800","59");
+
+INSERT INTO tb_auditoria_itens VALUES("361","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","59");
+
+INSERT INTO tb_auditoria_itens VALUES("362","","","ds_site","59");
+
+INSERT INTO tb_auditoria_itens VALUES("363","","","ds_facebook","59");
+
+INSERT INTO tb_auditoria_itens VALUES("364","","","ds_twitter","59");
+
+INSERT INTO tb_auditoria_itens VALUES("365","","","ds_instagram","59");
+
+INSERT INTO tb_auditoria_itens VALUES("366","76","76","co_pessoa","60");
+
+INSERT INTO tb_auditoria_itens VALUES("367","22322191191","22322191191","nu_cpf","60");
+
+INSERT INTO tb_auditoria_itens VALUES("368","Jose Arnaldo","Jose Arnaldo","no_pessoa","60");
+
+INSERT INTO tb_auditoria_itens VALUES("369","2346","2346","nu_rg","60");
+
+INSERT INTO tb_auditoria_itens VALUES("370","2019-01-14 17:21:57","2019-01-14 17:21:57","dt_cadastro","60");
+
+INSERT INTO tb_auditoria_itens VALUES("371","1959-06-05","1959-06-05","dt_nascimento","60");
+
+INSERT INTO tb_auditoria_itens VALUES("372","M","M","st_sexo","60");
+
+INSERT INTO tb_auditoria_itens VALUES("373","95","95","co_endereco","60");
+
+INSERT INTO tb_auditoria_itens VALUES("374","81","81","co_contato","60");
+
+INSERT INTO tb_auditoria_itens VALUES("375","0","","co_imagem","60");
+
+INSERT INTO tb_auditoria_itens VALUES("376","42","42","co_conta_bancaria","61");
+
+INSERT INTO tb_auditoria_itens VALUES("377","2399","2399","nu_agencia","61");
+
+INSERT INTO tb_auditoria_itens VALUES("378","22982-7","22982-7","nu_conta","61");
+
+INSERT INTO tb_auditoria_itens VALUES("379","CC","CC","tp_conta","61");
+
+INSERT INTO tb_auditoria_itens VALUES("380","104","104","co_banco","61");
+
+INSERT INTO tb_auditoria_itens VALUES("381","20","20","co_profissional","62");
+
+INSERT INTO tb_auditoria_itens VALUES("382","2019-01-14 17:21:57","2019-01-14 17:21:57","dt_cadastro","62");
+
+INSERT INTO tb_auditoria_itens VALUES("383","#397B21","#397B21","ds_cor_agenda","62");
+
+INSERT INTO tb_auditoria_itens VALUES("384","S","S","st_assistente","62");
+
+INSERT INTO tb_auditoria_itens VALUES("385","Representante comercial da Bartofil","Representante comercial da Bartofil","ds_sobre","62");
+
+INSERT INTO tb_auditoria_itens VALUES("386","Bigode","Bigode","no_apelido","62");
+
+INSERT INTO tb_auditoria_itens VALUES("387","S","S","st_agenda","62");
+
+INSERT INTO tb_auditoria_itens VALUES("388","S","S","st_agenda_online","62");
+
+INSERT INTO tb_auditoria_itens VALUES("389","","","st_status","62");
+
+INSERT INTO tb_auditoria_itens VALUES("390","1","1","nu_ordem_agenda","62");
+
+INSERT INTO tb_auditoria_itens VALUES("391","2","2","tp_contratacao","62");
+
+INSERT INTO tb_auditoria_itens VALUES("392","2018-12-17","2018-12-17","dt_admissao","62");
+
+INSERT INTO tb_auditoria_itens VALUES("393","","","dt_demissao","62");
+
+INSERT INTO tb_auditoria_itens VALUES("394","37","37","co_imagem","62");
+
+INSERT INTO tb_auditoria_itens VALUES("395","76","76","co_pessoa","62");
+
+INSERT INTO tb_auditoria_itens VALUES("396","49","","co_usuario","62");
+
+INSERT INTO tb_auditoria_itens VALUES("397","11","","co_assinante","62");
+
+INSERT INTO tb_auditoria_itens VALUES("398","42","42","co_conta_bancaria","62");
+
+INSERT INTO tb_auditoria_itens VALUES("399","","20","co_profissional","64");
+
+INSERT INTO tb_auditoria_itens VALUES("400","","A","st_status","64");
+
+INSERT INTO tb_auditoria_itens VALUES("401","","2019-01-14","dt_cadastro","64");
+
+INSERT INTO tb_auditoria_itens VALUES("402","","34","co_cargo","64");
+
+INSERT INTO tb_auditoria_itens VALUES("403","","20","co_profissional","65");
+
+INSERT INTO tb_auditoria_itens VALUES("404","","A","st_status","65");
+
+INSERT INTO tb_auditoria_itens VALUES("405","","2019-01-14","dt_cadastro","65");
+
+INSERT INTO tb_auditoria_itens VALUES("406","","32","co_cargo","65");
+
+INSERT INTO tb_auditoria_itens VALUES("407","","20","co_profissional","67");
+
+INSERT INTO tb_auditoria_itens VALUES("408","","2","nu_dia_semana","67");
+
+INSERT INTO tb_auditoria_itens VALUES("409","","05:00","nu_hora_abertura","67");
+
+INSERT INTO tb_auditoria_itens VALUES("410","","18:04","nu_hora_fechamento","67");
+
+INSERT INTO tb_auditoria_itens VALUES("411","","20","co_profissional","68");
+
+INSERT INTO tb_auditoria_itens VALUES("412","","3","nu_dia_semana","68");
+
+INSERT INTO tb_auditoria_itens VALUES("413","","05:44","nu_hora_abertura","68");
+
+INSERT INTO tb_auditoria_itens VALUES("414","","18:11","nu_hora_fechamento","68");
+
+INSERT INTO tb_auditoria_itens VALUES("415","","20","co_profissional","69");
+
+INSERT INTO tb_auditoria_itens VALUES("416","","4","nu_dia_semana","69");
+
+INSERT INTO tb_auditoria_itens VALUES("417","","04:44","nu_hora_abertura","69");
+
+INSERT INTO tb_auditoria_itens VALUES("418","","18:11","nu_hora_fechamento","69");
+
+INSERT INTO tb_auditoria_itens VALUES("419","95","95","co_endereco","70");
+
+INSERT INTO tb_auditoria_itens VALUES("420","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","70");
+
+INSERT INTO tb_auditoria_itens VALUES("421","Casa 28","Casa 28","ds_complemento","70");
+
+INSERT INTO tb_auditoria_itens VALUES("422","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","70");
+
+INSERT INTO tb_auditoria_itens VALUES("423","72319111","72319111","nu_cep","70");
+
+INSERT INTO tb_auditoria_itens VALUES("424","Brasília","Brasília","no_cidade","70");
+
+INSERT INTO tb_auditoria_itens VALUES("425","DF","DF","sg_uf","70");
+
+INSERT INTO tb_auditoria_itens VALUES("426","81","81","co_contato","71");
+
+INSERT INTO tb_auditoria_itens VALUES("427","61993003405","61993003405","nu_tel1","71");
+
+INSERT INTO tb_auditoria_itens VALUES("428","","","nu_tel2","71");
+
+INSERT INTO tb_auditoria_itens VALUES("429","","","nu_tel3","71");
+
+INSERT INTO tb_auditoria_itens VALUES("430","","","nu_tel_0800","71");
+
+INSERT INTO tb_auditoria_itens VALUES("431","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","71");
+
+INSERT INTO tb_auditoria_itens VALUES("432","","","ds_site","71");
+
+INSERT INTO tb_auditoria_itens VALUES("433","","","ds_facebook","71");
+
+INSERT INTO tb_auditoria_itens VALUES("434","","","ds_twitter","71");
+
+INSERT INTO tb_auditoria_itens VALUES("435","","","ds_instagram","71");
+
+INSERT INTO tb_auditoria_itens VALUES("436","76","76","co_pessoa","72");
+
+INSERT INTO tb_auditoria_itens VALUES("437","22322191191","22322191191","nu_cpf","72");
+
+INSERT INTO tb_auditoria_itens VALUES("438","Jose Arnaldo","Jose Arnaldo","no_pessoa","72");
+
+INSERT INTO tb_auditoria_itens VALUES("439","2346","2346","nu_rg","72");
+
+INSERT INTO tb_auditoria_itens VALUES("440","2019-01-14 17:25:21","2019-01-14 17:25:21","dt_cadastro","72");
+
+INSERT INTO tb_auditoria_itens VALUES("441","1959-06-05","1959-06-05","dt_nascimento","72");
+
+INSERT INTO tb_auditoria_itens VALUES("442","M","M","st_sexo","72");
+
+INSERT INTO tb_auditoria_itens VALUES("443","95","95","co_endereco","72");
+
+INSERT INTO tb_auditoria_itens VALUES("444","81","81","co_contato","72");
+
+INSERT INTO tb_auditoria_itens VALUES("445","0","","co_imagem","72");
+
+INSERT INTO tb_auditoria_itens VALUES("446","42","42","co_conta_bancaria","73");
+
+INSERT INTO tb_auditoria_itens VALUES("447","2399","2399","nu_agencia","73");
+
+INSERT INTO tb_auditoria_itens VALUES("448","22982-7","22982-7","nu_conta","73");
+
+INSERT INTO tb_auditoria_itens VALUES("449","CC","CC","tp_conta","73");
+
+INSERT INTO tb_auditoria_itens VALUES("450","104","104","co_banco","73");
+
+INSERT INTO tb_auditoria_itens VALUES("451","20","20","co_profissional","74");
+
+INSERT INTO tb_auditoria_itens VALUES("452","2019-01-14 17:25:21","2019-01-14 17:25:21","dt_cadastro","74");
+
+INSERT INTO tb_auditoria_itens VALUES("453","#397B21","#397B21","ds_cor_agenda","74");
+
+INSERT INTO tb_auditoria_itens VALUES("454","S","S","st_assistente","74");
+
+INSERT INTO tb_auditoria_itens VALUES("455","Representante comercial da Bartofil","Representante comercial da Bartofil","ds_sobre","74");
+
+INSERT INTO tb_auditoria_itens VALUES("456","Bigode","Bigode","no_apelido","74");
+
+INSERT INTO tb_auditoria_itens VALUES("457","S","S","st_agenda","74");
+
+INSERT INTO tb_auditoria_itens VALUES("458","S","S","st_agenda_online","74");
+
+INSERT INTO tb_auditoria_itens VALUES("459","","","st_status","74");
+
+INSERT INTO tb_auditoria_itens VALUES("460","1","1","nu_ordem_agenda","74");
+
+INSERT INTO tb_auditoria_itens VALUES("461","2","2","tp_contratacao","74");
+
+INSERT INTO tb_auditoria_itens VALUES("462","2018-12-17","2018-12-17","dt_admissao","74");
+
+INSERT INTO tb_auditoria_itens VALUES("463","","","dt_demissao","74");
+
+INSERT INTO tb_auditoria_itens VALUES("464","37","37","co_imagem","74");
+
+INSERT INTO tb_auditoria_itens VALUES("465","76","76","co_pessoa","74");
+
+INSERT INTO tb_auditoria_itens VALUES("466","49","","co_usuario","74");
+
+INSERT INTO tb_auditoria_itens VALUES("467","11","","co_assinante","74");
+
+INSERT INTO tb_auditoria_itens VALUES("468","42","42","co_conta_bancaria","74");
+
+INSERT INTO tb_auditoria_itens VALUES("469","","20","co_profissional","76");
+
+INSERT INTO tb_auditoria_itens VALUES("470","","A","st_status","76");
+
+INSERT INTO tb_auditoria_itens VALUES("471","","2019-01-14","dt_cadastro","76");
+
+INSERT INTO tb_auditoria_itens VALUES("472","","34","co_cargo","76");
+
+INSERT INTO tb_auditoria_itens VALUES("473","","20","co_profissional","77");
+
+INSERT INTO tb_auditoria_itens VALUES("474","","A","st_status","77");
+
+INSERT INTO tb_auditoria_itens VALUES("475","","2019-01-14","dt_cadastro","77");
+
+INSERT INTO tb_auditoria_itens VALUES("476","","32","co_cargo","77");
+
+INSERT INTO tb_auditoria_itens VALUES("477","","20","co_profissional","79");
+
+INSERT INTO tb_auditoria_itens VALUES("478","","1","nu_dia_semana","79");
+
+INSERT INTO tb_auditoria_itens VALUES("479","","05:00","nu_hora_abertura","79");
+
+INSERT INTO tb_auditoria_itens VALUES("480","","18:40","nu_hora_fechamento","79");
+
+INSERT INTO tb_auditoria_itens VALUES("481","","20","co_profissional","80");
+
+INSERT INTO tb_auditoria_itens VALUES("482","","2","nu_dia_semana","80");
+
+INSERT INTO tb_auditoria_itens VALUES("483","","05:00","nu_hora_abertura","80");
+
+INSERT INTO tb_auditoria_itens VALUES("484","","18:04","nu_hora_fechamento","80");
+
+INSERT INTO tb_auditoria_itens VALUES("485","","20","co_profissional","81");
+
+INSERT INTO tb_auditoria_itens VALUES("486","","4","nu_dia_semana","81");
+
+INSERT INTO tb_auditoria_itens VALUES("487","","04:44","nu_hora_abertura","81");
+
+INSERT INTO tb_auditoria_itens VALUES("488","","18:11","nu_hora_fechamento","81");
+
 
 
 
@@ -211,7 +1185,7 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_tabela VALUES("1","TB_CONFIG_AGENDAMENTO","U","2","1");
@@ -221,6 +1195,156 @@ INSERT INTO tb_auditoria_tabela VALUES("2","TB_CONFIG_AGENDAMENTO","U","2","2");
 INSERT INTO tb_auditoria_tabela VALUES("3","TB_CONFIG_AGENDAMENTO","U","2","3");
 
 INSERT INTO tb_auditoria_tabela VALUES("4","TB_CONFIG_AGENDAMENTO","U","2","4");
+
+INSERT INTO tb_auditoria_tabela VALUES("5","TB_PLANO","I","9","5");
+
+INSERT INTO tb_auditoria_tabela VALUES("6","TB_PLANO_MODULO","D","","5");
+
+INSERT INTO tb_auditoria_tabela VALUES("7","TB_PLANO_MODULO","I","34","5");
+
+INSERT INTO tb_auditoria_tabela VALUES("8","TB_PLANO_ASSINANTE","I","21","5");
+
+INSERT INTO tb_auditoria_tabela VALUES("9","TB_PERFIL","D","19","6");
+
+INSERT INTO tb_auditoria_tabela VALUES("10","TB_PERFIL","D","17","7");
+
+INSERT INTO tb_auditoria_tabela VALUES("11","TB_PERFIL","D","19","8");
+
+INSERT INTO tb_auditoria_tabela VALUES("12","TB_PERFIL","I","20","9");
+
+INSERT INTO tb_auditoria_tabela VALUES("13","TB_PERFIL","D","20","10");
+
+INSERT INTO tb_auditoria_tabela VALUES("14","TB_ENDERECO","U","96","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("15","TB_CONTATO","U","82","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("16","TB_PESSOA","U","77","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("17","TB_CONTA_BANCARIA","U","43","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("18","TB_PROFISSIONAL","U","21","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("19","TB_PROFISSIONAL_CARGO","D","","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("20","TB_PROFISSIONAL_CARGO","I","46","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("21","TB_JORNADA_TRABALHO","D","","11");
+
+INSERT INTO tb_auditoria_tabela VALUES("24","TB_ENDERECO","U","95","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("25","TB_CONTATO","U","81","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("26","TB_PESSOA","U","76","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("27","TB_CONTA_BANCARIA","U","42","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("28","TB_PROFISSIONAL","U","20","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("29","TB_PROFISSIONAL_CARGO","D","","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("30","TB_PROFISSIONAL_CARGO","I","47","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("31","TB_JORNADA_TRABALHO","D","","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("32","TB_JORNADA_TRABALHO","I","43","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("33","TB_JORNADA_TRABALHO","I","44","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("34","TB_JORNADA_TRABALHO","I","45","14");
+
+INSERT INTO tb_auditoria_tabela VALUES("35","TB_ENDERECO","U","95","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("36","TB_CONTATO","U","81","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("37","TB_PESSOA","U","76","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("38","TB_CONTA_BANCARIA","U","42","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("39","TB_PROFISSIONAL","U","20","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("40","TB_PROFISSIONAL_CARGO","D","","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("41","TB_PROFISSIONAL_CARGO","I","48","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("42","TB_JORNADA_TRABALHO","D","","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("43","TB_JORNADA_TRABALHO","I","46","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("44","TB_JORNADA_TRABALHO","I","47","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("45","TB_JORNADA_TRABALHO","I","48","15");
+
+INSERT INTO tb_auditoria_tabela VALUES("46","TB_ENDERECO","U","95","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("47","TB_CONTATO","U","81","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("48","TB_PESSOA","U","76","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("49","TB_CONTA_BANCARIA","U","42","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("50","TB_PROFISSIONAL","U","20","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("51","TB_PROFISSIONAL_CARGO","D","","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("52","TB_PROFISSIONAL_CARGO","I","49","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("53","TB_JORNADA_TRABALHO","D","","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("54","TB_JORNADA_TRABALHO","I","49","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("55","TB_JORNADA_TRABALHO","I","50","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("56","TB_JORNADA_TRABALHO","I","51","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("57","TB_JORNADA_TRABALHO","I","52","16");
+
+INSERT INTO tb_auditoria_tabela VALUES("58","TB_ENDERECO","U","95","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("59","TB_CONTATO","U","81","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("60","TB_PESSOA","U","76","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("61","TB_CONTA_BANCARIA","U","42","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("62","TB_PROFISSIONAL","U","20","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("63","TB_PROFISSIONAL_CARGO","D","","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("64","TB_PROFISSIONAL_CARGO","I","50","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("65","TB_PROFISSIONAL_CARGO","I","51","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("66","TB_JORNADA_TRABALHO","D","","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("67","TB_JORNADA_TRABALHO","I","53","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("68","TB_JORNADA_TRABALHO","I","54","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("69","TB_JORNADA_TRABALHO","I","55","17");
+
+INSERT INTO tb_auditoria_tabela VALUES("70","TB_ENDERECO","U","95","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("71","TB_CONTATO","U","81","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("72","TB_PESSOA","U","76","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("73","TB_CONTA_BANCARIA","U","42","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("74","TB_PROFISSIONAL","U","20","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("75","TB_PROFISSIONAL_CARGO","D","","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("76","TB_PROFISSIONAL_CARGO","I","52","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("77","TB_PROFISSIONAL_CARGO","I","53","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("78","TB_JORNADA_TRABALHO","D","","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("79","TB_JORNADA_TRABALHO","I","56","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("80","TB_JORNADA_TRABALHO","I","57","18");
+
+INSERT INTO tb_auditoria_tabela VALUES("81","TB_JORNADA_TRABALHO","I","58","18");
 
 
 
@@ -1392,7 +2516,7 @@ CREATE TABLE `tb_jornada_trabalho` (
   `co_profissional` int(11) NOT NULL,
   PRIMARY KEY (`co_jornada_trabalho`,`co_profissional`),
   KEY `fk_TB_JORNADA_TRABALHO_TB_PROFISSIONAL1_idx` (`co_profissional`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_jornada_trabalho VALUES("15","1","05:44","18:40","0");
@@ -1430,6 +2554,12 @@ INSERT INTO tb_jornada_trabalho VALUES("40","1","05:00","18:11","0");
 INSERT INTO tb_jornada_trabalho VALUES("41","2","05:44","18:04","0");
 
 INSERT INTO tb_jornada_trabalho VALUES("42","8","02:23","21:23","0");
+
+INSERT INTO tb_jornada_trabalho VALUES("56","1","05:00","18:40","20");
+
+INSERT INTO tb_jornada_trabalho VALUES("57","2","05:00","18:04","20");
+
+INSERT INTO tb_jornada_trabalho VALUES("58","4","04:44","18:11","20");
 
 
 
@@ -1602,7 +2732,7 @@ CREATE TABLE `tb_perfil` (
   `no_perfil` varchar(45) NOT NULL COMMENT 'Nome do Perfil',
   `st_status` varchar(1) NOT NULL DEFAULT 'A' COMMENT '''A - Ativo / I - Inativo''',
   PRIMARY KEY (`co_perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_perfil VALUES("1","Master","A");
@@ -1613,11 +2743,7 @@ INSERT INTO tb_perfil VALUES("3","Colaborador","A");
 
 INSERT INTO tb_perfil VALUES("16","TESTE 33369","A");
 
-INSERT INTO tb_perfil VALUES("17","TESTE 333693465","A");
-
 INSERT INTO tb_perfil VALUES("18","SAF SA","A");
-
-INSERT INTO tb_perfil VALUES("19","sda ga rg","A");
 
 
 
@@ -1783,9 +2909,9 @@ INSERT INTO tb_pessoa VALUES("73","","Novo Profissional DSF ","","2018-12-19 10:
 
 INSERT INTO tb_pessoa VALUES("74","12345678909","LEO BESSA NOVINHO","1111111111111","2018-12-20 10:56:22","1984-07-06","F","93","79","0");
 
-INSERT INTO tb_pessoa VALUES("76","22322191191","Jose Arnaldo","2346","2018-12-20 11:09:12","1959-06-05","M","95","81","0");
+INSERT INTO tb_pessoa VALUES("76","22322191191","Jose Arnaldo","2346","2019-01-14 17:25:21","1959-06-05","M","95","81","0");
 
-INSERT INTO tb_pessoa VALUES("77","","Seu Biga","","2018-12-20 11:37:17","2018-12-04","M","96","82","0");
+INSERT INTO tb_pessoa VALUES("77","","Seu Biga","","2019-01-14 17:05:48","2018-12-04","M","96","82","0");
 
 
 
@@ -1800,7 +2926,7 @@ CREATE TABLE `tb_plano` (
   `nu_mes_ativo` int(1) DEFAULT NULL COMMENT 'Número de meses ativo do plano (1, 3, 6, 12 e 24)',
   `st_status` varchar(1) DEFAULT 'A' COMMENT 'Status do plano A - Ativo / I - Inativo',
   PRIMARY KEY (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_plano VALUES("1","2018-07-31 10:17:46","Plano Padrão","1","A");
@@ -1819,6 +2945,8 @@ INSERT INTO tb_plano VALUES("7","2018-08-28 11:17:47","hhrt","24","A");
 
 INSERT INTO tb_plano VALUES("8","2018-12-10 11:56:19","fewf efe","3","A");
 
+INSERT INTO tb_plano VALUES("9","2019-01-14 16:50:14","novinho","24","A");
+
 
 
 
@@ -1833,7 +2961,7 @@ CREATE TABLE `tb_plano_assinante` (
   `co_plano` int(11) NOT NULL,
   PRIMARY KEY (`co_plano_assinante`,`co_plano`),
   KEY `fk_TB_PLANO_ASSINANTE_TB_PLANO1_idx` (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_plano_assinante VALUES("1","0.00","2018-07-31 10:17:46","texto","1");
@@ -1875,6 +3003,10 @@ INSERT INTO tb_plano_assinante VALUES("18","54.99","2018-08-28 11:17:22","","5")
 INSERT INTO tb_plano_assinante VALUES("19","119.90","2018-08-28 11:17:47","","7");
 
 INSERT INTO tb_plano_assinante VALUES("20","18.50","2018-12-10 11:56:19","fewf","8");
+
+INSERT INTO tb_plano_assinante VALUES("21","3.99","2019-01-14 16:50:14","ce","9");
+
+INSERT INTO tb_plano_assinante VALUES("22","3.99","2019-01-14 16:50:14","ce","9");
 
 
 
@@ -1942,7 +3074,7 @@ CREATE TABLE `tb_plano_modulo` (
   PRIMARY KEY (`co_plano_modulo`,`co_plano`,`co_modulo`),
   KEY `fk_TB_PLANO_has_TB_MODULO_TB_MODULO1_idx` (`co_modulo`),
   KEY `fk_TB_PLANO_has_TB_MODULO_TB_PLANO1_idx` (`co_plano`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_plano_modulo VALUES("8","3","2");
@@ -1968,6 +3100,8 @@ INSERT INTO tb_plano_modulo VALUES("31","7","2");
 INSERT INTO tb_plano_modulo VALUES("32","8","1");
 
 INSERT INTO tb_plano_modulo VALUES("33","8","2");
+
+INSERT INTO tb_plano_modulo VALUES("34","9","1");
 
 
 
@@ -2013,9 +3147,9 @@ INSERT INTO tb_profissional VALUES("18","2018-12-19 10:59:48","","N","","","N","
 
 INSERT INTO tb_profissional VALUES("19","2018-12-20 10:56:22","#F7C6CE","N","SObre 22","meu apelido 22","S","S","A","2","3","2018-12-19","","36","74","47","11","40");
 
-INSERT INTO tb_profissional VALUES("20","2018-12-20 11:09:12","#397B21","S","Representante comercial da Bartofil","Bigode","S","S","A","1","2","2018-12-17","","37","76","49","11","42");
+INSERT INTO tb_profissional VALUES("20","2019-01-14 17:25:21","#397B21","S","Representante comercial da Bartofil","Bigode","S","S","","1","2","2018-12-17","","37","76","49","11","42");
 
-INSERT INTO tb_profissional VALUES("21","2018-12-20 11:37:17","#EFC631","N","","","S","S","A","0","1","","","38","77","50","11","43");
+INSERT INTO tb_profissional VALUES("21","2019-01-14 17:05:48","#EFC631","N","","","S","S","","0","1","","","38","77","50","11","43");
 
 
 
@@ -2034,7 +3168,7 @@ CREATE TABLE `tb_profissional_cargo` (
   KEY `fk_TB_PROFISSIONAL_has_TB_CARGO_TB_PROFISSIONAL1_idx` (`co_profissional`),
   CONSTRAINT `fk_TB_PROFISSIONAL_has_TB_CARGO_TB_CARGO1` FOREIGN KEY (`co_cargo`) REFERENCES `tb_cargo` (`co_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_TB_PROFISSIONAL_has_TB_CARGO_TB_PROFISSIONAL1` FOREIGN KEY (`co_profissional`) REFERENCES `tb_profissional` (`co_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_profissional_cargo VALUES("14","30","15","2018-12-18 00:00:00","A");
@@ -2055,9 +3189,11 @@ INSERT INTO tb_profissional_cargo VALUES("24","6","9","2018-12-19 00:00:00","A")
 
 INSERT INTO tb_profissional_cargo VALUES("37","33","19","2018-12-20 00:00:00","A");
 
-INSERT INTO tb_profissional_cargo VALUES("39","34","20","2018-12-20 00:00:00","A");
+INSERT INTO tb_profissional_cargo VALUES("46","32","21","2019-01-14 00:00:00","A");
 
-INSERT INTO tb_profissional_cargo VALUES("45","32","21","2018-12-20 00:00:00","A");
+INSERT INTO tb_profissional_cargo VALUES("52","34","20","2019-01-14 00:00:00","A");
+
+INSERT INTO tb_profissional_cargo VALUES("53","32","20","2019-01-14 00:00:00","A");
 
 
 
@@ -2154,7 +3290,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("1","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
@@ -2164,6 +3300,92 @@ INSERT INTO tb_trafego VALUES("2","::1","Desconhecido","Desconhecida","Desconhec
 INSERT INTO tb_trafego VALUES("3","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
 
 INSERT INTO tb_trafego VALUES("4","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
+
+INSERT INTO tb_trafego VALUES("5","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("6","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("7","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("8","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("9","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("10","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("11","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("12","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("13","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("14","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("15","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("16","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("17","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("18","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("19","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("20","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("21","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("22","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("23","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("24","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("25","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("26","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("27","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("29","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("30","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("31","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("32","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("33","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("34","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("35","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("36","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("37","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("38","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("39","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("40","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("41","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("42","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("43","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("44","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("45","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("47","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

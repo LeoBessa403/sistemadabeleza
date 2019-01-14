@@ -70,7 +70,7 @@ function servidor_inicial()
     // Tempo de Inativadade Máximo em Minutos, aceito para deslogar do Sistema.
     define('INATIVO', 30);
     // A frequencia em dias para realizar o BACKUP NO BANCO DE DADOS
-    define('BACKUP', 1);
+    define('BACKUP', 5);
     // TAMANHO PADRÃO DO WIDTH DAS IAMGENS A SEREM CARREGADAS
     define('TAMANHO', 800);
     // PASTA DE ARMAZENAMENTO DE UPLOADS
