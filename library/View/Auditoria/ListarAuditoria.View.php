@@ -109,15 +109,17 @@
                                                             $grid->criaGrid(
                                                                 $auditoriaTabela->getCoAuditoriaTabela(), false
                                                             );
-                                                            /** @var AuditoriaItensEntidade $item */
-                                                            foreach ($auditoriaTabela->getCoAuditoriaItens() as $item):
-                                                                $grid->setColunas(
-                                                                    FuncoesSistema::getDsCampoLabel($item->getDsCampo())
-                                                                );
-                                                                $grid->setColunas($item->getDsItemAtual());
-                                                                $grid->setColunas($item->getDsItemAnterior());
-                                                                $grid->criaLinha($item->getCoAuditoriaItens());
-                                                            endforeach;
+                                                            if($auditoriaTabela->getCoAuditoriaItens()){
+                                                                /** @var AuditoriaItensEntidade $item */
+                                                                foreach ($auditoriaTabela->getCoAuditoriaItens() as $item):
+                                                                    $grid->setColunas(
+                                                                        FuncoesSistema::getDsCampoLabel($item->getDsCampo())
+                                                                    );
+                                                                    $grid->setColunas($item->getDsItemAtual());
+                                                                    $grid->setColunas($item->getDsItemAnterior());
+                                                                    $grid->criaLinha($item->getCoAuditoriaItens());
+                                                                endforeach;
+                                                            }
                                                             $grid->finalizaGrid();
                                                             ?>
 
