@@ -53,6 +53,7 @@ define('PASTA_CLASS', PASTA_RAIZ . ADMIN . '/Class/');
 define('PASTA_SEVICE', PASTA_RAIZ . ADMIN . '/Service/');
 define('PARTIAL_SITE', PASTA_RAIZ . SITE . '/partial/');
 define('PARTIAL_ADMIN', PASTA_RAIZ . ADMIN . '/partial/');
+define('PARTIAL_LIBRARY', PASTA_RAIZ . 'library/Partial/');
 define('PASTA_UPLOADS', HOME . 'uploads/');
 
 // ARQUIVOS PRE DEFINIDOS
