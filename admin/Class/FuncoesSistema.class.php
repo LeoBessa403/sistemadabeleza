@@ -372,8 +372,8 @@ class FuncoesSistema
     public static function getImgSistema($tamanho = 50)
     {
         return '
-        <img src="' . TIMTHUMB . '?src=' . HOME . ADMIN .
-            '/Images/sistemadabeleza.jpg&w=' . $tamanho . '&h=' . $tamanho . '"
+        <img src="' . TIMTHUMB . '?src=' . PASTA_LIBRARY .
+            '/Images/logo_padrao.jpg&w=' . $tamanho . '&h=' . $tamanho . '"
                                 alt="' . DESC . '" title="' . DESC . '" class="circle-img" />
         ';
     }

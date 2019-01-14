@@ -46,48 +46,48 @@ $user = $us->getUser();
     <meta content="" name="author"/>
     <!-- end: META -->
     <!-- start: MAIN CSS -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>fonts/style.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/main-responsive.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/main.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/iCheck/skins/all.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/theme_navy.css" type="text/css" id="skin_color">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/css3-animation/animations.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/print.css" type="text/css" media="print"/>
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>fonts/style.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/main-responsive.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/main.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/iCheck/skins/all.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/theme_navy.css" type="text/css" id="skin_color">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/css3-animation/animations.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/print.css" type="text/css" media="print"/>
     <!--[if IE 7]>
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/font-awesome/css/font-awesome-ie7.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/font-awesome/css/font-awesome-ie7.min.css">
     <![endif]-->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
 
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css"
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css"
           type="text/css"/>
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-modal/css/bootstrap-modal.css"
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-modal/css/bootstrap-modal.css"
           type="text/css"/>
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/fullcalendar/fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/fullcalendar/fullcalendar/fullcalendar.css">
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
     <!-- start: CSS REQUIRED FOR DATAPICKER -->
     <link rel="stylesheet" href="<?= INCLUDES; ?>Jcalendar.css">
     <!-- CSS paleta de cores       -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
     <!-- start: CSS REQUIRED FOR SELECT -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/select2/select2.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/select2/select2.css">
     <!-- start: CSS REQUIRED FOR UPLOAD -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
     <!-- start: CSS REQUIRED FOR CHECK -->
     <link rel="stylesheet"
-          href="<?= PASTAADMIN; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
+          href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
     <!-- start: CSS REQUIRED FOR CHECK -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/DataTables/media/css/DT_bootstrap.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/DataTables/media/css/DT_bootstrap.css">
     <!-- start: CSS REQUIRED Gritter -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/gritter/css/jquery.gritter.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/gritter/css/jquery.gritter.css">
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link rel="shortcut icon" href="<?= PASTASITE; ?>img/favicon.ico"/>
+    <link rel="shortcut icon" href="<?= PASTA_LIBRARY; ?>img/favicon.ico"/>
     <!-- SCRIPT GERAR GRAFICOS -->
-    <script type="text/javascript" src="<?= HOME; ?>library/Helpers/includes/gera-grafico.js"></script>
+    <script type="text/javascript" src="<?= INCLUDES; ?>gera-grafico.js"></script>
 </head>
 <!-- end: HEAD -->
 <!-- start: BODY -->

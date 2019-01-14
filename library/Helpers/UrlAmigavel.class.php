@@ -162,13 +162,23 @@ class UrlAmigavel
         endif;
     }
 
-
     /**
      * <b>Usada para Gerar o Menu da Aplicação</b>
-     * @return STRING = Menu.
+     * @param array $menu
      */
     public function GeraMenu(array $menu)
     {
+        if(MODULO_ASSINANTE){
+            $menu["Assinante"] = array("clip-user-5", "Listar Assinante", "Cadastro Assinante", "Dados Complementares Assinante");
+            $menu["Plano"] = array("clip-banknote", "Listar Plano", "Cadastro Plano");
+        }
+        $menu["Visita"] = array("clip-airplane", "Listar Visita");
+        $menu["Usuario"] = array("fa fa-group", "Meu Perfil Usuario", "Listar Usuario", "Cadastro Usuario", "Troca Senha Usuario");
+        $menu["Perfil"] = array("clip-stack-empty", "Listar Perfil", "Cadastro Perfil");
+        $menu["Funcionalidade"] = array("fa fa-outdent", "Listar Funcionalidade", "Cadastro Funcionalidade");
+        $menu["Acesso"] = array("clip-connection-2", "Listar Acesso");
+        $menu["Auditoria"] = array("fa fa-crosshairs", "Listar Auditoria");
+
         $ativo = UrlAmigavel::$controller;
 
         echo '<ul class="main-navigation-menu">';
@@ -180,12 +190,14 @@ class UrlAmigavel
         echo '<a href="' . PASTAADMIN . 'Index/Index"><i class="clip-home-3"></i>
                                    <span class="title"> PÁGINA INICIAL  </span><span class="selected"></span>
                            </a>
-                   </li>
-                   <li>
+                   </li>';
+        if(TEM_SITE){
+            echo '<li>
                            <a href="' . HOME . '" target="_blank"><i class="clip-cog-2"></i>
                                    <span class="title"> SITE </span><span class="selected"></span>
                            </a>
                    </li>';
+        }
         foreach ($menu as $key => $value) {
             $montando[$key] = $value;
             $tem = false;

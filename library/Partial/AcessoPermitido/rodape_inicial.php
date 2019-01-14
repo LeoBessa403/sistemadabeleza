@@ -11,8 +11,8 @@ if (TEM_SITE) {
 <!-- start: MAIN JAVASCRIPTS -->
 <!-- start: MAIN JAVASCRIPTS -->
 <!--[if lt IE 9]>
-<script src="<?= PASTAADMIN; ?>plugins/respond.min.js"></script>
-<script src="<?= PASTAADMIN; ?>plugins/excanvas.min.js"></script>
+<script src="<?= PASTA_LIBRARY; ?>plugins/respond.min.js"></script>
+<script src="<?= PASTA_LIBRARY; ?>plugins/excanvas.min.js"></script>
 <script type="text/javascript" src="<?= INCLUDES;?>jquery-1.10.2.js"></script>
 <![endif]-->
 <!--[if gte IE 9]><!-->
@@ -28,13 +28,13 @@ if (TEM_SITE) {
                                 return dados;
                         }
                 </script>'; ?>
-<!--<script src="<?= PASTAADMIN; ?>plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>-->
+<!--<script src="<?= PASTA_LIBRARY; ?>plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>-->
 <script src="<?= INCLUDES; ?>jquery-ui.js"></script>
 <script type="text/javascript" src="<?= INCLUDES; ?>jquery.mask.js"></script>
 <script type="text/javascript" src="<?= INCLUDES; ?>jquery.maskMoney.js"></script>
 <script type="text/javascript" src="<?= INCLUDES; ?>validacoes.js"></script>
-<script src="<?= PASTAADMIN; ?>plugins/select2/select2.min.js"></script>
-<script src="<?= PASTAADMIN; ?>js/Funcoes.js"></script>
+<script src="<?= PASTA_LIBRARY; ?>plugins/select2/select2.min.js"></script>
+<script src="<?= PASTA_LIBRARY; ?>js/Funcoes.js"></script>
 <script>
     jQuery(document).ready(function () {
         Funcoes.init();

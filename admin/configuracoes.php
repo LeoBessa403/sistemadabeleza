@@ -98,7 +98,7 @@ function servidor_inicial()
     //////////////////////////////////////////////
     // *********** GOOGLE ANALITCS  *********** //
     //////////////////////////////////////////////
-    define('ID_ANALITCS', 'UA-71215942-2');
+    define('ID_ANALITCS', FALSE);
 
 
     include_once('Class/Constantes.class.php');

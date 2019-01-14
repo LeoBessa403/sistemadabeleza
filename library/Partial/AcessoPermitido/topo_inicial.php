@@ -21,32 +21,32 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
     <!-- end: META -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>fonts/style.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/main-responsive.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/main.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/iCheck/skins/all.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/perfect-scrollbar/src/perfect-scrollbar.css">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>css/theme_navy.css" type="text/css" id="skin_color">
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/css3-animation/animations.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>fonts/style.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/main-responsive.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/main.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/iCheck/skins/all.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/perfect-scrollbar/src/perfect-scrollbar.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>css/theme_navy.css" type="text/css" id="skin_color">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/css3-animation/animations.css">
     <!--[if IE 7]>
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/font-awesome/css/font-awesome-ie7.min.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/font-awesome/css/font-awesome-ie7.min.css">
     <![endif]-->
     <!-- start: CSS REQUIRED Gritter -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/gritter/css/jquery.gritter.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/gritter/css/jquery.gritter.css">
     <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-    <link rel="shortcut icon" href="<?= PASTASITE; ?>img/favicon.ico"/>
+    <link rel="shortcut icon" href="<?= PASTA_LIBRARY; ?>img/favicon.ico"/>
     <!-- end: MAIN CSS -->
     <!-- start: CSS REQUIRED FOR SELECT -->
-    <link rel="stylesheet" href="<?= PASTAADMIN; ?>plugins/select2/select2.css">
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/select2/select2.css">
     <!-- start: CSS REQUIRED FOR CHECK -->
     <link rel="stylesheet"
-          href="<?= PASTAADMIN; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
+          href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
     <style>
         body.login.example1 {
-            background: url("<?= PASTAADMIN; ?>images/novas/bg (<?= rand(1,50); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
+            background: url("<?= PASTA_LIBRARY; ?>images/novas/bg (<?= rand(1,50); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
             background-size: auto !important;
         }
     </style>

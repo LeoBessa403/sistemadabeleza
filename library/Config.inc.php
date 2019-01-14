@@ -47,6 +47,7 @@ define('PASTAIMG', INCLUDES . 'imagens/');
 define('PASTASITE', HOME . SITE . '/');
 define('PASTAADMIN', HOME . ADMIN . '/');
 define('PASTABACKUP', PASTA_RAIZ . '/BancoDados/backup/');
+define('PASTA_LIBRARY', HOME . 'library/');
 define('PASTA_ENTIDADES', PASTA_RAIZ . ADMIN . '/Entidade/');
 define('PASTA_MODEL', PASTA_RAIZ . ADMIN . '/Model/');
 define('PASTA_CLASS', PASTA_RAIZ . ADMIN . '/Class/');
@@ -169,7 +170,7 @@ function debug($array, $Exit = false)
  */
 function carregaJs($urlAmigavel)
 {
-    $arquivo = '/js/includes/' . $urlAmigavel::$controller . '/' . $urlAmigavel::$action . '.js';
+    $arquivo = '/js/' . $urlAmigavel::$controller . '/' . $urlAmigavel::$action . '.js';
     if (file_exists(ADMIN . $arquivo)) {
         echo '<script src="' . HOME . ADMIN . $arquivo . '"></script>';
     }

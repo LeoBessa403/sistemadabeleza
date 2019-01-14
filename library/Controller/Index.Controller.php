@@ -112,7 +112,7 @@ class Index extends AbstractController
                     // Variável para validação de Emails Enviados com Sucesso.
                     $retorno = $email->Enviar();
                     if ($retorno == true) {
-                        $msg = 'Sua senha foi enviada para seu email: <b>' . $contato->getDsEmail().'</b>';
+                        $msg = 'Sua senha foi enviada para seu email: <b>' . $contato->getDsEmail() . '</b>';
                         $class = 1;
                     }
                 } else {
@@ -172,7 +172,7 @@ class Index extends AbstractController
                 break;
             case 'S':
                 $msg = 'Sistema Expirado, favor renovar sua assinatura.';
-                $class = 2;
+                $class = 3;
                 break;
         }
         $this->class = $class;
@@ -247,8 +247,6 @@ class Index extends AbstractController
     {
         /** @var AcessoService $acessoService */
         $acessoService = $this->getService(ACESSO_SERVICE);
-        /** @var AssinanteService $assinanteService */
-        $assinanteService = $this->getService(ASSINANTE_SERVICE);
         $acessoService->finalizaAcessos();
         $acessoService->salvarAcesso($coUsuario);
 
@@ -259,17 +257,33 @@ class Index extends AbstractController
             $perfis[] = $perfil->getCoPerfil()->getCoPerfil();
             $no_perfis[] = $perfil->getCoPerfil()->getNoPerfil();
         }
-        if (!empty($user->getCoAssinante())) {
-            /** @var AssinanteEntidade $assinante */
-            $assinante = $assinanteService->getAssinanteLogado($user->getCoAssinante());
-            $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = $assinante->getStDadosComplementares();
-        } else {
-            $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = SimNaoEnum::SIM;
+        if (MODULO_ASSINANTE) {
+            /** @var AssinanteService $assinanteService */
+            $assinanteService = $this->getService(ASSINANTE_SERVICE);
+            if (!empty($user->getCoAssinante())) {
+                /** @var AssinanteEntidade $assinante */
+                $assinante = $assinanteService->getAssinanteLogado($user->getCoAssinante());
+                $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = $assinante->getStDadosComplementares();
+            } else {
+                $usuarioAcesso[ST_DADOS_COMPLEMENTARES] = SimNaoEnum::SIM;
+            }
+            $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
+            $usuarioAcesso[DT_EXPIRACAO] = (!empty($user->getCoPessoa()->getCoAssinante()))
+                ? Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao()) : null;
+
+            $statusSis = (!empty($user->getCoPessoa()->getCoAssinante()))
+                ? Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao()) : null;
+
+            if ($statusSis) {
+                $statusSis = AssinanteService::getStatusAssinante($usuarioAcesso[DT_EXPIRACAO]);
+                if ($statusSis == StatusSistemaEnum::EXPIRADO)
+                    Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/S"));
+            } else {
+                $statusSis = StatusSistemaEnum::ATIVO;
+            }
+            $usuarioAcesso['status_sistema'] = $statusSis;
         }
         $usuarioAcesso[CO_USUARIO] = $user->getCoUsuario();
-        $usuarioAcesso[CO_ASSINANTE] = $user->getCoAssinante();
-        $usuarioAcesso[DT_EXPIRACAO] = (!empty($user->getCoPessoa()->getCoAssinante()))
-            ? Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao()) : null;
         $usuarioAcesso[DS_CAMINHO] = (!empty($user->getCoImagem())) ? $user->getCoImagem()->getDsCaminho() : null;
         $usuarioAcesso[NU_CPF] = $user->getCoPessoa()->getNuCpf();
         $usuarioAcesso[NO_PESSOA] = $user->getCoPessoa()->getNoPessoa();
@@ -278,18 +292,6 @@ class Index extends AbstractController
         $usuarioAcesso[DT_FIM_ACESSO] = $acessoService->geraDataFimAcesso();
         $usuarioAcesso[CAMPO_PERFIL] = implode(',', $perfis);
         $usuarioAcesso['no_perfis'] = implode(', ', $no_perfis);
-
-        $statusSis = (!empty($user->getCoPessoa()->getCoAssinante()))
-            ? Valida::DataShow($user->getCoPessoa()->getCoAssinante()->getDtExpiracao()) : null;
-
-        if ($statusSis) {
-            $statusSis = AssinanteService::getStatusAssinante($usuarioAcesso[DT_EXPIRACAO]);
-            if ($statusSis == StatusSistemaEnum::EXPIRADO)
-                Redireciona(ADMIN . LOGIN . Valida::GeraParametro("acesso/S"));
-        } else {
-            $statusSis = StatusSistemaEnum::ATIVO;
-        }
-        $usuarioAcesso['status_sistema'] = $statusSis;
 
         $session = new Session();
         $session->setUser($usuarioAcesso);
