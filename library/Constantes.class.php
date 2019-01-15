@@ -79,6 +79,7 @@
 	define('ST_EDICAO', 'st_edicao');
 	define('ST_TROCA_SENHA', 'st_troca_senha');
 	define('ST_DADOS_COMPLEMENTARES', 'st_dados_complementares');
+	define('NU_TEL_RESPONSAVEL', 'nu_tel_responsavel');
 
 
 	// SERVICES PADRÃO
