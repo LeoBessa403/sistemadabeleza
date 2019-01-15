@@ -34,6 +34,7 @@
 	define('NU_TEL2', 'nu_tel2');
 	define('NU_TEL3', 'nu_tel3');
 	define('NU_TEL_0800', 'nu_tel_0800');
+    define('NU_TEL_RESPONSAVEL', 'nu_tel_responsavel');
 	define('DS_EMAIL', 'ds_email');
 	define('DS_SITE', 'ds_site');
 	define('DT_CADASTRO', 'dt_cadastro');
@@ -79,7 +80,7 @@
 	define('ST_EDICAO', 'st_edicao');
 	define('ST_TROCA_SENHA', 'st_troca_senha');
 	define('ST_DADOS_COMPLEMENTARES', 'st_dados_complementares');
-	define('NU_TEL_RESPONSAVEL', 'nu_tel_responsavel');
+
 
 
 	// SERVICES PADRÃO
