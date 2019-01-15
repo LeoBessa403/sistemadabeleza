@@ -58,8 +58,8 @@ define('PARTIAL_LIBRARY', PASTA_RAIZ . 'library/Partial/');
 define('PASTA_UPLOADS', HOME . 'uploads/');
 
 // ARQUIVOS PRE DEFINIDOS
-define('TIMTHUMB', HOME . 'library/Helpers/Timthumb.class.php');
-define('SEM_FOTO', HOME . 'library/Imagens/sem-foto.jpg');
+define('TIMTHUMB', PASTA_LIBRARY . 'Helpers/Timthumb.class.php');
+define('SEM_FOTO', PASTA_LIBRARY . 'Imagens/sem-foto.jpg');
 
 
 // DEFINE PARA VALIDAÇÃO DO CADASTRO
@@ -82,7 +82,7 @@ function __autoload($Class)
         './' . ADMIN . '/',
         '../../' . ADMIN . '/',
         './' . SITE . '/',
-       '../../' . SITE . '/'
+        '../../' . SITE . '/'
     );
     $control = false;
 

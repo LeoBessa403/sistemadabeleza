@@ -585,20 +585,20 @@ class FormAssistente
                         <div class="form-group">';
         // Caso ja tenha aba cria o botão de voltar
         if ($ultima) {
-            self::$abas .= '<div class="col-sm-2 pull-right">
-                                <button type="submit" class="btn btn-success btn-block">
+            self::$abas .= '<div class="col-sm-3 pull-right">
+                                <button type="submit" class="btn  btn-success btn-block">
                                     Salvar <i class="fa fa-arrow-circle-right"></i>
                                 </button>
                             </div>';
         } else {
-            self::$abas .= '<div class="col-sm-2 pull-right">
+            self::$abas .= '<div class="col-sm-3 pull-right">
                                 <button id="1" class="btn btn-primary next-step btn-block">
                                     Próximo <i class="fa fa-arrow-circle-right"></i>
                                 </button>
                             </div>';
         }
         if (count(self::$tituloAba) - 1) {
-            self::$abas .= '<div class="col-sm-2 pull-right">
+            self::$abas .= '<div class="col-sm-3 pull-right">
                                 <button class="btn btn-light-grey back-step btn-block">
                                     <i class="fa fa-circle-arrow-left"></i> Voltar
                                 </button>
