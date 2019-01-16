@@ -46,7 +46,7 @@
           href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
     <style>
         body.login.example1 {
-            background: url("<?= PASTA_LIBRARY; ?>images/novas/bg (<?= rand(1,50); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
+            background: url("<?= PASTAADMIN; ?>imagens/bg (<?= rand(1, NUM_BG_IMAGENS); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
             background-size: auto !important;
         }
     </style>

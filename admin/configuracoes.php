@@ -85,6 +85,8 @@ function servidor_inicial()
     define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
     // CONTROLLERS PARA GERAR O SEO DIFERENCIADO
     define('CONTROLLER_SEO', '');
+    // NÚMERO DE IMAGENS DE BACKGROUND DA TELA INICIAL DO SISTEMA
+    define('NUM_BG_IMAGENS', 50);
 
     //////////////////////////////////////////////
     // ******* CONFIGURAÇÕES DE EMAIL ********** //

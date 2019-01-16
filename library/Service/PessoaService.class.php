@@ -22,7 +22,7 @@ class  PessoaService extends AbstractService
         $dados[CO_PESSOA] = $pessoa->getCoPessoa();
         $dados[NU_CPF] = ($pessoa->getNuCpf()) ? Valida::MascaraCpf($pessoa->getNuCpf()) : null;
         $dados[NU_RG] = $pessoa->getNuRg();
-        $dados[DT_NASCIMENTO] = ($pessoa->getDtNascimento()) ? Valida::DataShow($pessoa->getDtNascimento()) : null;
+        $dados[DT_NASCIMENTO] = (!empty($pessoa->getDtNascimento())) ? Valida::DataShow($pessoa->getDtNascimento()) : null;
         $dados[ST_SEXO] = $pessoa->getStSexo();
         $dados[NO_PESSOA] = $pessoa->getNoPessoa();
 
@@ -36,7 +36,7 @@ class  PessoaService extends AbstractService
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
         $pessoa[NO_PESSOA] = strtoupper(trim($dados[NO_PESSOA]));
-        $pessoa[DT_NASCIMENTO] = ($dados[DT_NASCIMENTO]) ? Valida::DataDBDate($dados[DT_NASCIMENTO]) : null;
+        $pessoa[DT_NASCIMENTO] = (!empty($dados[DT_NASCIMENTO])) ? Valida::DataDBDate($dados[DT_NASCIMENTO]) : null;
         $retorno[SUCESSO] = $this->Salva($pessoa, $assinante->getCoPessoa()->getCoPessoa());
 
         return $retorno;

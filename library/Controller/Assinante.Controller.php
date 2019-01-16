@@ -114,7 +114,7 @@ class Assinante extends AbstractController
         if (!empty($_POST)):
             $retorno = $assinanteService->salvaDadosComplementaresAssinante($_POST, $_FILES);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/Index/Index/');
+                Redireciona(UrlAmigavel::$modulo . '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
             }
         endif;
 
