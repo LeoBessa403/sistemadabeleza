@@ -320,3 +320,59 @@ INSERT INTO TB_FUNCIONAMENTO (co_assinante, nu_dia_semana, nu_hora_abertura, nu_
 
 INSERT INTO TB_FUNCIONAMENTO (co_assinante, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("11", "7", "03:44", "14:11");
 
+INSERT INTO TB_ENDERECO (ds_endereco, ds_complemento, ds_bairro, nu_cep, no_cidade, sg_uf) VALUES ("QR 403 Conjunto 10", "", "Samambaia Norte (Samambaia)", "72319111", "Brasília", "DF");
+
+INSERT INTO TB_CONTATO (nu_tel1, nu_tel2, nu_tel3, nu_tel_0800, ds_email, ds_site, ds_facebook, ds_twitter, ds_instagram) VALUES ("61321315165", "", "", "", "ukyuk@yth.com", "", "", "", "");
+
+INSERT INTO TB_PESSOA (nu_cpf, no_pessoa, nu_rg, dt_cadastro, dt_nascimento, st_sexo, co_contato, co_endereco) VALUES ("12345678909", "novo profissional", "", "2019-01-17 13:46:58", "2019-01-09", "M", "83", "97");
+
+INSERT INTO TB_CONTA_BANCARIA (nu_agencia, nu_conta, tp_conta, co_banco) VALUES ("2399", "22982-7", "CC", "104");
+
+INSERT INTO TB_USUARIO (co_assinante, co_pessoa, ds_senha, ds_code, st_status, dt_cadastro) VALUES ("11", "78", "KWA4XDQ4", "UzFkQk5GaEVVVFE9", "I", "2019-01-17 13:46:59");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("novo-profissional-5c40a3742c6af.jpg");
+
+INSERT INTO TB_PROFISSIONAL (dt_cadastro, ds_cor_agenda, st_assistente, ds_sobre, no_apelido, st_agenda, st_agenda_online, st_status, nu_ordem_agenda, tp_contratacao, dt_admissao, dt_demissao, co_imagem, co_pessoa, co_assinante, co_conta_bancaria, co_usuario) VALUES ("2019-01-17 13:46:58", "#D6A5BD", "S", "", "", "N", "N"_online, "A", "2", "3", "2019-01-09", "", "39", "78", "11", "44", "51");
+
+DELETE FROM TB_PROFISSIONAL_CARGO where co_profissional in (22);
+
+INSERT INTO TB_PROFISSIONAL_CARGO (co_profissional, st_status, dt_cadastro, co_cargo) VALUES ("22", "A", "2019-01-17", "34");
+
+INSERT INTO TB_PROFISSIONAL_CARGO (co_profissional, st_status, dt_cadastro, co_cargo) VALUES ("22", "A", "2019-01-17", "31");
+
+INSERT INTO TB_PROFISSIONAL_CARGO (co_profissional, st_status, dt_cadastro, co_cargo) VALUES ("22", "A", "2019-01-17", "3");
+
+DELETE FROM TB_JORNADA_TRABALHO where co_profissional in (22);
+
+INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "2", "05:44", "18:04");
+
+INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "3", "05:44", "18:04");
+
+INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "4", "23:33", "18:11");
+
+UPDATE TB_ENDERECO SET co_endereco = "97", ds_endereco = "QR 403 Conjunto 10", ds_complemento = "", ds_bairro = "Samambaia Norte (Samambaia)", nu_cep = "72319111", no_cidade = "Brasília", sg_uf = "DF" where co_endereco = 97;
+
+UPDATE TB_CONTATO SET co_contato = "83", nu_tel1 = "61321315165", nu_tel2 = "", nu_tel3 = "", nu_tel_0800 = "", ds_email = "ukyuk@yth.com", ds_site = "", ds_facebook = "", ds_twitter = "", ds_instagram = "" where co_contato = 83;
+
+UPDATE TB_PESSOA SET co_pessoa = "78", nu_cpf = "12345678909", no_pessoa = "novo profissional", nu_rg = "", dt_cadastro = "2019-01-17 13:53:34", dt_nascimento = "--", st_sexo = "M", co_contato = "83", co_endereco = "97" where co_pessoa = 78;
+
+UPDATE TB_CONTA_BANCARIA SET co_conta_bancaria = "44", nu_agencia = "2399", nu_conta = "22982-7", tp_conta = "CC", co_banco = "104" where co_conta_bancaria = 44;
+
+UPDATE TB_PROFISSIONAL SET co_profissional = "22", dt_cadastro = "2019-01-17 13:53:34", ds_cor_agenda = "#D6A5BD", st_assistente = "S", ds_sobre = "", no_apelido = "", st_agenda = "N", st_agenda_online = "N"_online, st_status = "", nu_ordem_agenda = "2", tp_contratacao = "3", dt_admissao = "2019-01-09", dt_demissao = "", co_imagem = "39", co_pessoa = "78", co_conta_bancaria = "44" where co_profissional = 22;
+
+DELETE FROM TB_PROFISSIONAL_CARGO where co_profissional in (22);
+
+INSERT INTO TB_PROFISSIONAL_CARGO (co_profissional, st_status, dt_cadastro, co_cargo) VALUES ("22", "A", "2019-01-17", "34");
+
+INSERT INTO TB_PROFISSIONAL_CARGO (co_profissional, st_status, dt_cadastro, co_cargo) VALUES ("22", "A", "2019-01-17", "31");
+
+INSERT INTO TB_PROFISSIONAL_CARGO (co_profissional, st_status, dt_cadastro, co_cargo) VALUES ("22", "A", "2019-01-17", "3");
+
+DELETE FROM TB_JORNADA_TRABALHO where co_profissional in (22);
+
+INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "2", "05:44", "18:04");
+
+INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "3", "05:44", "18:04");
+
+INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "4", "23:33", "18:11");
+
