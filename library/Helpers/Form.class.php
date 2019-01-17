@@ -344,32 +344,7 @@ class Form
                 . ' ' . self::$label . $obrigatoriedade . ''
                 . '</label>';
             self::$form .= $this->verificaIconPlace();
-
-            switch (self::$type) {
-                case TiposCampoEnum::SELECT:
-                    self::$form .= $this->getCampoSelect();
-                    break;
-                case TiposCampoEnum::TEXTAREA:
-                    self::$form .= $this->getCampoTextarea();
-                    break;
-                case TiposCampoEnum::FILE:
-                    self::$form .= $this->getCampoFile();
-                    break;
-                case TiposCampoEnum::SINGLEFILE:
-                    self::$form .= $this->getCampoSingleFile();
-                    break;
-                case TiposCampoEnum::RADIO:
-                case TiposCampoEnum::CHECKBOX:
-                    self::$form .= $this->getCampoCheckRadio();
-                    break;
-                case TiposCampoEnum::COLOR:
-                    self::$form .= $this->getCampoColor();
-                    break;
-                case TiposCampoEnum::TEXT:
-                    self::$form .= $this->getCampoText();
-                    break;
-            }
-
+            self::$form .= $this->montaCampos();
             self::$form .= $this->verificaIconMensagem();
 
             // FECHA O TAMANHO DO INPUT
@@ -385,6 +360,39 @@ class Form
             self::$form .= $this->getCampoHidden();
         endif;
         $this->zeraVariaveis();
+    }
+
+    /**
+     * Monta os campos
+     */
+    protected function montaCampos()
+    {
+        $form = '';
+        switch (self::$type) {
+            case TiposCampoEnum::SELECT:
+                $form .= $this->getCampoSelect();
+                break;
+            case TiposCampoEnum::TEXTAREA:
+                $form .= $this->getCampoTextarea();
+                break;
+            case TiposCampoEnum::FILE:
+                $form .= $this->getCampoFile();
+                break;
+            case TiposCampoEnum::SINGLEFILE:
+                $form .= $this->getCampoSingleFile();
+                break;
+            case TiposCampoEnum::RADIO:
+            case TiposCampoEnum::CHECKBOX:
+                $form .= $this->getCampoCheckRadio();
+                break;
+            case TiposCampoEnum::COLOR:
+                $form .= $this->getCampoColor();
+                break;
+            case TiposCampoEnum::TEXT:
+                $form .= $this->getCampoText();
+                break;
+        }
+        return $form;
     }
 
     /**

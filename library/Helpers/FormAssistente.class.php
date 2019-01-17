@@ -23,32 +23,7 @@ class FormAssistente extends Form
                 <div class="col-sm-' . self::$colDireita . '">';
 
             self::$abas .= $this->verificaIconPlace();
-
-            switch (self::$type) {
-                case TiposCampoEnum::SELECT:
-                    self::$abas .= $this->getCampoSelect();
-                    break;
-                case TiposCampoEnum::TEXTAREA:
-                    self::$abas .= $this->getCampoTextarea();
-                    break;
-                case TiposCampoEnum::FILE:
-                    self::$abas .= $this->getCampoFile();
-                    break;
-                case TiposCampoEnum::SINGLEFILE:
-                    self::$abas .= $this->getCampoSingleFile();
-                    break;
-                case TiposCampoEnum::RADIO:
-                case TiposCampoEnum::CHECKBOX:
-                    self::$abas .= $this->getCampoCheckRadio();
-                    break;
-                case TiposCampoEnum::COLOR:
-                    self::$abas .= $this->getCampoColor();
-                    break;
-                case TiposCampoEnum::TEXT:
-                    self::$abas .= $this->getCampoText();
-                    break;
-            }
-
+            self::$abas .= $this->montaCampos();
             self::$abas .= $this->verificaIconMensagem();
 
             // FECHA O GRUPO DO INPUT
