@@ -172,7 +172,9 @@ class UrlAmigavel
             $menu["Assinante"] = array("clip-user-5", "Listar Assinante", "Cadastro Assinante", "Dados Complementares Assinante");
             $menu["Plano"] = array("clip-banknote", "Listar Plano", "Cadastro Plano");
         }
-        $menu["Visita"] = array("clip-airplane", "Listar Visita");
+        if(TEM_SITE){
+            $menu["Visita"] = array("clip-airplane", "Listar Visita");
+        }
         $menu["Usuario"] = array("fa fa-group", "Meu Perfil Usuario", "Listar Usuario", "Cadastro Usuario", "Troca Senha Usuario");
         $menu["Perfil"] = array("clip-stack-empty", "Listar Perfil", "Cadastro Perfil");
         $menu["Funcionalidade"] = array("fa fa-outdent", "Listar Funcionalidade", "Cadastro Funcionalidade");
