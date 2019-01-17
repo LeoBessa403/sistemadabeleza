@@ -2,7 +2,6 @@ var Funcoes = function () {
     var inicio = function () {
 
 
-
     };
     return {
         init: function () {
@@ -12,7 +11,7 @@ var Funcoes = function () {
             var element = $(".alerta-js");
             element.removeClass("gritter-success,gritter-warning,gritter-info,gritter-danger").addClass("gritter-" + classe);
             $(".alerta-js span.gritter-title").text(titulo);
-            $(".alerta-js span.mensagem-alerta-js").text(msg);
+            $(".alerta-js span.mensagem-alerta-js").html(msg);
             element.show();
             //Função de subir a página ao topo
             $("html, body").animate({
@@ -30,6 +29,9 @@ var Funcoes = function () {
         },
         Erro: function (msg) {
             Funcoes.Modal(msg, "danger", "Erro");
+        },
+        LimiteImagens: function () {
+            Funcoes.Alerta("Quantidade Acima da Permitida! Permitido Somente <b>" + limite + " Foto(s)</b>.")
         },
 
         MSG_CONFIRMACAO: "CONFIRMAÇÃO"
