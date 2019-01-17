@@ -52,7 +52,7 @@ class Usuario extends AbstractController
             } else {
                 $session = new Session();
                 $session->setSession(MENSAGEM, $validador[MSG]);
-                $this->form = PessoaForm::ValidarCPF('Usuario/CadastroUsuario');
+                $this->form = PessoaForm::ValidarCPF('Usuario/CadastroUsuario', 4);
             }
         endif;
 
@@ -96,7 +96,7 @@ class Usuario extends AbstractController
                 $res[NU_CPF] = $_POST[NU_CPF];
                 $this->form = UsuarioForm::Cadastrar($res, false, 6);
             else:
-                $this->form = PessoaForm::ValidarCPF('Usuario/CadastroUsuario', 6);
+                $this->form = PessoaForm::ValidarCPF('Usuario/CadastroUsuario', 4);
             endif;
         endif;
     }

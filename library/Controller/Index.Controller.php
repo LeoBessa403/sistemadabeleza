@@ -59,10 +59,10 @@ class Index extends AbstractController
             } else {
                 $session = new Session();
                 $session->setSession(MENSAGEM, $validador[MSG]);
-                $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar');
+                $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar',4);
             }
         } else {
-            $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar');
+            $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar', 4);
         }
     }
 
