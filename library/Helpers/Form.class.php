@@ -8,34 +8,41 @@
  */
 class Form
 {
-    private static $classes;
-    private static $label;
-    private static $place;
-    private static $info;
-    private static $icon;
-    private static $lado;
-    private static $type;
-    private static $id;
-    private static $values;
-    private static $valor;
-    private static $options;
-    private static $label_options;
-    private static $style;
+    protected static $classes;
+    protected static $label;
+    protected static $place;
+    protected static $info;
+    protected static $icon;
+    protected static $lado;
+    protected static $type;
+    protected static $id;
+    protected static $values;
+    protected static $valor;
+    protected static $options;
+    protected static $label_options;
+    protected static $style;
     private static $tamanhoForm;
-    private static $tamanho;
-    private static $action;
+    protected static $tamanho;
+    protected static $action;
     public static $idForm;
     public static $form;
     public static $botao;
+    protected static $titulo;
+    protected static $colEsquerda;
+    protected static $colDireita;
+    protected static $abas;
+    protected static $tituloAba;
+
 
     /**
      * <b>Form da Pesquisa Avançada:</b> ionicia o formulário e suas configurações
      * @param STRING $idform : atribui o ID para o Formulário
+     * @param STRING $titulo : Título da tela
      * @param STRING $action : Ação a realizar a pesquisa e carregar a GRID
      * @param STRING $botao : Label do Botão
      * @param INT $tamanhoForm : Tamanho do Formulário
      */
-    function __construct($idform, $action = null, $botao = "Salvar", $tamanhoForm = 6)
+    function __construct($idform, $titulo = null, $action = null, $botao = "Salvar", $tamanhoForm = 6)
     {
         self::$idForm = $idform;
         self::$style = "";
@@ -47,6 +54,10 @@ class Form
         self::$tamanho = "";
         self::$action = ($action) ? $action : HOME . UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
         self::$botao = $botao;
+        self::$tituloAba = array();
+        self::$abas = '';
+        self::$tamanho = "";
+        self::$titulo = $titulo;
     }
 
     /**
@@ -234,7 +245,7 @@ class Form
         return $this;
     }
 
-    private function verificaObrigatoriedade()
+    protected function verificaObrigatoriedade()
     {
         if (self::$classes != ""):
             $ob = explode(" ", self::$classes);
@@ -250,7 +261,7 @@ class Form
         return $obrigatoriedade;
     }
 
-    private function verificaInline()
+    protected function verificaInline()
     {
         $inline = array();
         if (self::$classes != ""):
@@ -276,7 +287,7 @@ class Form
         return $inline;
     }
 
-    private function verificaMultiplo()
+    protected function verificaMultiplo()
     {
         if (self::$classes != ""):
             $ob = explode(" ", self::$classes);
@@ -295,7 +306,7 @@ class Form
     }
 
 
-    private function verificaChecked()
+    protected function verificaChecked()
     {
         if (self::$classes != ""):
             $ob = explode(" ", self::$classes);
@@ -320,7 +331,7 @@ class Form
     public function CriaInpunt()
     {
         // VALIDA CAMPOS OCUILTOS
-        if (self::$type != "hidden"):
+        if (self::$type != TiposCampoEnum::HIDDEN):
             // VALIDA TAMANHO DO GRUPO DO INPUT
             if (self::$tamanho != ""):
                 self::$form .= '<div class="col-sm-' . self::$tamanho . '" style="padding:0px 2px;">';
@@ -332,191 +343,34 @@ class Form
                 . '<label for="' . self::$id . '" class="control-label">'
                 . ' ' . self::$label . $obrigatoriedade . ''
                 . '</label>';
-            // VERIFICA SE TEM ÍCONE
-            if (self::$icon != ""):
-                self::$form .= '<div class="input-group ' . self::$id . '">';
-                // VERIFICA O LADO DO ÍCONE
-                if (self::$lado == "esq"):
-                    self::$form .= '<span class="input-group-addon" style="height: 34px;">'
-                        . '<i class="' . self::$icon . '"></i></span>';
-                endif;
-            endif;
-            //VERIFICA SE TEM PLACEHOLDER
-            if (self::$place != ""):
-                self::$place = ' placeholder="' . self::$place . '"';
-            endif;
+            self::$form .= $this->verificaIconPlace();
 
-            //CAMPO TIPO SELECT
-            if (self::$type == "select"):
-                $mutiplo = $this->verificaMultiplo();
-                self::$form .= "<select " . $mutiplo . self::$place . " id='" . self::$id . "' name='" . self::$id . "[]' class='form-control search-select " . self::$classes . "'>";
-                foreach (self::$options as $key => $values):
-                    $checked = "";
-                    if (!empty(self::$valor[self::$id])):
-                        if ($mutiplo):
-                            if (in_array($key, self::$valor[self::$id])):
-                                $checked = 'selected';
-                            endif;
-                        else:
-                            if ($key == self::$valor[self::$id]):
-                                $checked = 'selected';
-                            endif;
-                        endif;
-                    endif;
-                    self::$form .= '<option value="' . $key . '" ' . $checked . '>' . $values . '</option>';
-                endforeach;
-                self::$form .= "</select>";
+            switch (self::$type) {
+                case TiposCampoEnum::SELECT:
+                    self::$form .= $this->getCampoSelect();
+                    break;
+                case TiposCampoEnum::TEXTAREA:
+                    self::$form .= $this->getCampoTextarea();
+                    break;
+                case TiposCampoEnum::FILE:
+                    self::$form .= $this->getCampoFile();
+                    break;
+                case TiposCampoEnum::SINGLEFILE:
+                    self::$form .= $this->getCampoSingleFile();
+                    break;
+                case TiposCampoEnum::RADIO:
+                case TiposCampoEnum::CHECKBOX:
+                    self::$form .= $this->getCampoCheckRadio();
+                    break;
+                case TiposCampoEnum::COLOR:
+                    self::$form .= $this->getCampoColor();
+                    break;
+                case TiposCampoEnum::TEXT:
+                    self::$form .= $this->getCampoText();
+                    break;
+            }
 
-            //CAMPO TIPO TEXTAREA
-            elseif (self::$type == "textarea"):
-                $valor = '';
-                if (is_array(self::$valor) && !empty(self::$valor)):
-                    if (!empty(self::$valor[self::$id])):
-                        $valor = self::$valor[self::$id];
-                    endif;
-                else:
-                    if (!empty(self::$valor)):
-                        $valor = self::$valor;
-                        self::$valor = "";
-                    endif;
-                endif;
-                self::$form .= "<textarea id='" . self::$id . "' name='" . self::$id . "'" . self::$place . " style='resize: none;' class='form-control " . self::$classes . "' >" . $valor . "</textarea>";
-
-            //CAMPO TIPO FILE (ARQUIVO)
-            elseif (self::$type == "file"):
-                $mutiplo = $this->verificaMultiplo();
-                self::$form .= '<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-bottom: 0px;">
-                                    <div class="input-group">
-                                            <div class="form-control uneditable-input">
-                                                    <i class="fa fa-file fileupload-exists"></i>
-                                                    <span class="fileupload-preview"></span>
-                                            </div>
-                                            <div class="input-group-btn">
-                                                    <div class="btn btn-dark-grey btn-file">
-                                                            <span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Abrir Arquivo</span>
-                                                            <span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Trocar</span>
-                                                            <input ' . $mutiplo . ' type="file" class="file-input ' . self::$classes . '" ' . self::$place . ' id="' . self::$id . '" name="' . self::$id . '[]" />
-                                                    </div>
-                                                    <a href="#" class="btn btn-bricky fileupload-exists" data-dismiss="fileupload">
-                                                            <i class="fa fa-trash-o"></i> Remover
-                                                    </a>
-                                            </div>
-                                    </div>
-                            </div>';
-
-            //CAMPO TIPO SIMGLE FILE (SOMENTE PRA UM ARQUIVO)
-            elseif (self::$type == "singlefile"):
-                self::$form .= '<div class="fileupload fileupload-new" data-provides="fileupload">
-                                            <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;">';
-                if (isset(self::$valor[self::$id])) {
-                    self::$form .= Valida::getMiniatura(self::$valor[self::$id], "Pre Carregamento", 150, 150);
-                } else {
-                    self::$form .= '<img src="' . TIMTHUMB . '?src=' . SEM_FOTO . '&w=150&h=150" alt="Pre Carregamento" title="Pre Carregamento"  />';
-                }
-                self::$form .= '</div>
-                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
-                                            <div class="user-edit-image-buttons">
-                                                    <span class="btn btn-dark-grey btn-file"><span class="fileupload-new"><i class="fa fa-folder-open-o"></i> Abrir Arquivo</span>
-                                                    <span class="fileupload-exists"><i class="fa fa-folder-open-o"></i> Trocar</span>
-                                                            <input type="file" class="file-input ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" />
-                                                    </span>
-                                                    <a href="#" class="btn fileupload-exists btn-bricky" data-dismiss="fileupload">
-                                                            <i class="fa fa-trash-o"></i> Remover
-                                                    </a>
-                                            </div>
-                                    </div>';
-
-            // CAMPO TIPO RADIO OU CHECKBOX
-            elseif (self::$type == "radio" || self::$type == "checkbox"):
-
-                self::$form .= "</label><br/>";
-
-                if (self::$type == "checkbox" && !empty(self::$options)):
-                    $cor = array("branco" => "default", "azul" => "primary", "verde" => "success", "vermelho" => "danger", "amarelo" => "warning");
-                    $verifcaChecked = $this->verificaChecked();
-                    self::$form .= '<div id="change-color-switch" class="make-switch" data-on-label="' . self::$options[0] . '" data-off-label="' . self::$options[1] . '" data-on="' . $cor[self::$options[2]] . '" data-off="' . $cor[self::$options[3]] . '">
-                                            <input type="checkbox" ' . $verifcaChecked . ' id="' . self::$id . '" name="' . self::$id . '"  class="' . self::$classes . '"/>
-                                    </div>';
-                else:
-                    foreach (self::$label_options as $key => $op):
-                        $valor = "";
-                        if (is_array(self::$valor) && !empty(self::$valor)):
-                            if (!empty(self::$valor[self::$id])):
-                                $valor = self::$valor[self::$id];
-                            endif;
-                        else:
-                            if (!empty(self::$valor)):
-                                $valor = self::$valor;
-                                self::$valor = "";
-                            endif;
-                        endif;
-
-                        $verifcaInputs = $this->verificaInline();
-
-                        self::$form .= $verifcaInputs['inicio'];
-                        if ($valor == $key):
-                            $verifcaChecked = " checked='checked'";
-                        else:
-                            $verifcaChecked = "";
-                        endif;
-                        self::$form .= " <input id='" . self::$id . "'" . $verifcaChecked . " name='" . self::$id . "' value='" . $key . "'  class='flat-black " . self::$classes . "' type='" . self::$type . "' />"
-                            . $op;
-                        self::$form .= $verifcaInputs['fim'];
-                    endforeach;
-
-                endif;
-            //CAMPO TIPO COLOR
-            elseif (self::$type == "color"):
-                $valor = '';
-                if (!empty(self::$valor[self::$id])):
-                    $valor = self::$valor[self::$id];
-                endif;
-                self::$form .= '<div class="input-group">
-                                        <span style="background: ' . $valor . '" class="input-group-addon color-back"></span>';
-                self::$form .= '<input type="text" disabled="disabled" style="' . self::$style . '"' . self::$place . ' 
-                class="form-control color ' . self::$classes . '" id="' . self::$id . '-input" name="' . self::$id . '-input" value="' . $valor . '"/>';
-                self::$form .= '<span class="btn input-group-addon" data-toggle="dropdown">Cor</span>
-											<ul class="dropdown-menu pull-right center">
-												<li>
-													<div class="color-palette"></div>
-												</li>
-											</ul>
-											<input class="color" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '" type="hidden" />
-                                        </div>';
-            else:
-                //CAMPO TIPO TEXT
-                $valor = '';
-                if (is_array(self::$valor) && !empty(self::$valor)):
-                    if (!empty(self::$valor[self::$id])):
-                        $valor = self::$valor[self::$id];
-                    endif;
-                else:
-                    if (!empty(self::$valor)):
-                        $valor = self::$valor;
-                        self::$valor = "";
-                    endif;
-                endif;
-                self::$form .= '<input type="' . self::$type . '" style="' . self::$style . '"' . self::$place . ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" value="' . $valor . '"/>';
-            endif;
-
-            // VERIFICA SE TEM ÍCONE
-            if (self::$icon != ""):
-                // VERIFICA SE O ÍCONE É DO LADO DIREITO
-                if (self::$lado == "dir"):
-                    self::$form .= '<span class="input-group-addon">'
-                        . '<i class="' . self::$icon . '"></i></span>';
-                endif;
-
-                // FECHA DIV DO ÍCONE
-                self::$form .= '</div>';
-            endif;
-
-            // VERIFICA SE TEM INFORMAÇÃO
-            if (self::$info != ""):
-                self::$form .= '<span class="help-block" id="' . self::$id . '-info"><i class="fa fa-info-circle"></i> ' . self::$info . '</span>';
-            else:
-                self::$form .= '<span class="help-block" id="' . self::$id . '-info">.</span>';
-            endif;
+            self::$form .= $this->verificaIconMensagem();
 
             // FECHA O TAMANHO DO INPUT
             if (self::$tamanho != ""):
@@ -528,9 +382,16 @@ class Form
         else:
 
             // CAMPO TIPO HIDDEN
-            self::$form .= '<input id="' . self::$id . '" name="' . self::$id . '" value="' . self::$values . '" type="hidden" />';
+            self::$form .= $this->getCampoHidden();
         endif;
+        $this->zeraVariaveis();
+    }
 
+    /**
+     * ZERA TODOS OS ATRIBUTOS
+     */
+    protected function zeraVariaveis()
+    {
         // ZERA TODOS OS ATRIBUTOS
         self::$type = "text";
         self::$values = "";
@@ -547,7 +408,285 @@ class Form
     }
 
     /**
+     * Criaos campos selects
+     */
+    protected function verificaIconPlace()
+    {
+        $form = '';
+        // VERIFICA SE TEM ÍCONE
+        if (self::$icon != ""):
+            $form = '<div class="input-group ' . self::$id . '">';
+            // VERIFICA O LADO DO ÍCONE
+            if (self::$lado == "esq"):
+                $form .= '<span class="input-group-addon" style="height: 34px;">'
+                    . '<i class="' . self::$icon . '"></i></span>';
+            endif;
+        endif;
+        //VERIFICA SE TEM PLACEHOLDER
+        if (self::$place != ""):
+            self::$place = ' placeholder="' . self::$place . '"';
+        endif;
+        return $form;
+    }
+
+    /**
+     * Criaos campos selects
+     */
+    protected function verificaIconMensagem()
+    {
+        $form = '';
+        // VERIFICA SE TEM ÍCONE
+        if (self::$icon != ""):
+            // VERIFICA SE O ÍCONE É DO LADO DIREITO
+            if (self::$lado == "dir"):
+                $form .= '<span class="input-group-addon">'
+                    . '<i class="' . self::$icon . '"></i></span>';
+            endif;
+
+            // FECHA DIV DO ÍCONE
+            $form .= '</div>';
+        endif;
+
+        // VERIFICA SE TEM INFORMAÃÃO
+        if (self::$info != ""):
+            $form .= '<span class="help-block" id="' . self::$id . '-info">
+                    <i class="fa fa-info-circle"></i> ' . self::$info . '</span>';
+        else:
+            $form .= '<span class="help-block" id="' . self::$id . '-info">.</span>';
+        endif;
+        return $form;
+    }
+
+    /**
+     * Criaos campos selects
+     */
+    protected function getCampoHidden()
+    {
+        return '<input id="' . self::$id . '" name="' . self::$id . '" value="' . self::$values . '" type="hidden" />';
+    }
+
+    /**
+     * Criaos campos selects
+     */
+    protected function getCampoSelect()
+    {
+        $mutiplo = $this->verificaMultiplo();
+        $form = "<select " . $mutiplo . self::$place . " id='" . self::$id . "' name='" .
+            self::$id . "[]' class='form-control search-select " . self::$classes . "'>";
+        foreach (self::$options as $key => $values):
+            $checked = "";
+            if (!empty(self::$valor[self::$id])):
+                if ($mutiplo):
+                    if (in_array($key, self::$valor[self::$id])):
+                        $checked = 'selected';
+                    endif;
+                else:
+                    if ($key == self::$valor[self::$id]):
+                        $checked = 'selected';
+                    endif;
+                endif;
+            endif;
+            $form .= '<option value="' . $key . '" ' . $checked . '>' . $values . '</option>';
+        endforeach;
+        $form .= "</select>";
+        return $form;
+    }
+
+    /**
+     * Criaos campos TextArea
+     */
+    protected function getCampoTextarea()
+    {
+        $valor = '';
+        if (is_array(self::$valor) && !empty(self::$valor)):
+            if (!empty(self::$valor[self::$id])):
+                $valor = self::$valor[self::$id];
+            endif;
+        else:
+            if (!empty(self::$valor)):
+                $valor = self::$valor;
+                self::$valor = "";
+            endif;
+        endif;
+        $form = "<textarea id='" . self::$id . "' name='" . self::$id . "'" . self::$place .
+            " style='resize: none;' class='form-control " . self::$classes . "' >" . $valor . "</textarea>";
+        return $form;
+    }
+
+    /**
+     * Criaos campos File para (Pode ser multiplos)
+     */
+    protected function getCampoFile()
+    {
+        $mutiplo = $this->verificaMultiplo();
+        $form = '<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-bottom: 0px;">
+                                    <div class="input-group">
+                                            <div class="form-control uneditable-input">
+                                                    <i class="fa fa-file fileupload-exists"></i>
+                                                    <span class="fileupload-preview"></span>
+                                            </div>
+                                            <div class="input-group-btn">
+                                                    <div class="btn btn-dark-grey btn-file">
+                                                            <span class="fileupload-new">
+                                                            <i class="fa fa-folder-open-o"></i> Abrir Arquivo</span>
+                                                            <span class="fileupload-exists">
+                                                            <i class="fa fa-folder-open-o"></i> Trocar</span>
+                                                            <input ' . $mutiplo . ' type="file" class="file-input ' .
+            self::$classes . '" ' . self::$place . ' id="' .
+            self::$id . '" name="' . self::$id . '[]" />
+                                                    </div>
+                                                    <a href="#" class="btn btn-bricky fileupload-exists" 
+                                                    data-dismiss="fileupload">
+                                                            <i class="fa fa-trash-o"></i> Remover
+                                                    </a>
+                                            </div>
+                                    </div>
+                            </div>';
+        return $form;
+    }
+
+    /**
+     * Criaos campos File (Ãnico Arquivo)
+     */
+    protected function getCampoSingleFile()
+    {
+        $form = '<div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="fileupload-new thumbnail" style="width: 150px; height: 150px;">';
+        if (isset(self::$valor[self::$id])) {
+            $form .=
+                Valida::getMiniatura(self::$valor[self::$id], "Pre Carregamento", 150, 150);
+        } else {
+            $form .=
+                '<img src="' . TIMTHUMB . '?src=' . SEM_FOTO . '&w=150&h=150" 
+                alt="Pre Carregamento" title="Pre Carregamento"  />';
+        }
+        $form .= '</div>
+                                            <div class="fileupload-preview fileupload-exists thumbnail" 
+                                            style="max-width: 150px; max-height: 150px; line-height: 20px;"></div>
+                                            <div class="user-edit-image-buttons">
+                                                    <span class="btn btn-dark-grey btn-file">
+                                                    <span class="fileupload-new">
+                                                    <i class="fa fa-folder-open-o"></i> Abrir Arquivo</span>
+                                                    <span class="fileupload-exists">
+                                                    <i class="fa fa-folder-open-o"></i> Trocar</span>
+                                                            <input type="file" class="file-input ' .
+            self::$classes . '" id="' . self::$id . '" name="' . self::$id . '" />
+                                                    </span>
+                                                    <a href="#" class="btn fileupload-exists btn-bricky" 
+                                                    data-dismiss="fileupload">
+                                                            <i class="fa fa-trash-o"></i> Remover
+                                                    </a>
+                                            </div>
+                                    </div>';
+        return $form;
+    }
+
+    /**
+     * Criaos campos Checkbox ou Radio
+     */
+    protected function getCampoCheckRadio()
+    {
+        $form = "</label><br/>";
+
+        if (self::$type == "checkbox" && !empty(self::$options)):
+            $cor = array("branco" => "default", "azul" => "primary",
+                "verde" => "success", "vermelho" => "danger", "amarelo" => "warning");
+            $verifcaChecked = $this->verificaChecked();
+            $form .= '<div id="change-color-switch" class="make-switch" data-on-label="' .
+                self::$options[0] . '" data-off-label="' . self::$options[1] . '" data-on="' .
+                $cor[self::$options[2]] . '" data-off="' . $cor[self::$options[3]] . '">
+                                            <input type="checkbox" ' . $verifcaChecked . ' id="' .
+                self::$id . '" name="' . self::$id . '"  class="' . self::$classes . '"/>
+                                    </div>';
+        else:
+            foreach (self::$label_options as $key => $op):
+                $valor = "";
+                if (is_array(self::$valor) && !empty(self::$valor)):
+                    if (!empty(self::$valor[self::$id])):
+                        $valor = self::$valor[self::$id];
+                    endif;
+                else:
+                    if (!empty(self::$valor)):
+                        $valor = self::$valor;
+                        self::$valor = "";
+                    endif;
+                endif;
+
+                $verifcaInputs = $this->verificaInline();
+
+                $form .= $verifcaInputs['inicio'];
+                if ($valor == $key):
+                    $verifcaChecked = " checked='checked'";
+                else:
+                    $verifcaChecked = "";
+                endif;
+                $form .= " <input id='" . self::$id . "'" . $verifcaChecked . " name='" .
+                    self::$id . "' value='" . $key . "'  class='flat-black " . self::$classes .
+                    "' type='" . self::$type . "' />"
+                    . $op;
+                $form .= $verifcaInputs['fim'];
+            endforeach;
+        endif;
+        return $form;
+    }
+
+    /**
+     * Criaos campos Checkbox ou Radio
+     */
+    protected function getCampoColor()
+    {
+        $valor = '';
+        if (!empty(self::$valor[self::$id])):
+            $valor = self::$valor[self::$id];
+        endif;
+        $form = '<div class="input-group">
+                                        <span style="background: ' . $valor .
+            '" class="input-group-addon color-back"></span>';
+        $form .= '<input type="text" disabled="disabled" style="' .
+            self::$style . '"' . self::$place . ' 
+                class="form-control color ' . self::$classes . '" id="' . self::$id .
+            '-input" name="' . self::$id . '-input" value="' . $valor . '"/>';
+        $form .= '<span class="btn input-group-addon" data-toggle="dropdown">Cor</span>
+											<ul class="dropdown-menu pull-right center">
+												<li>
+													<div class="color-palette"></div>
+												</li>
+											</ul>
+											<input class="color" id="' . self::$id . '" name="' .
+            self::$id . '" value="' . $valor . '" type="hidden" />
+                                        </div>';
+        return $form;
+    }
+
+    /**
+     * Criaos campos Checkbox ou Radio
+     */
+    protected function getCampoText()
+    {
+        //CAMPO TIPO TEXT
+        $valor = '';
+        if (is_array(self::$valor) && !empty(self::$valor)):
+            if (!empty(self::$valor[self::$id])):
+                $valor = self::$valor[self::$id];
+            endif;
+        else:
+            if (!empty(self::$valor)):
+                $valor = self::$valor;
+                self::$valor = "";
+            endif;
+        endif;
+        $form = '<input type="' . self::$type . '" style="' . self::$style . '"' . self::$place .
+            ' class="form-control ' . self::$classes . '" id="' . self::$id . '" name="' .
+            self::$id . '" value="' . $valor . '"/>';
+        return $form;
+    }
+
+
+    /**
      * <b>finalizaForm:</b> Fecha o formulário
+     * @param bool $link
+     * @param bool $btnVoltar
+     * @param null $titulo
      * @return STRING com o fechamento do FORM.
      */
     public function finalizaForm($link = false, $btnVoltar = true, $titulo = null)
