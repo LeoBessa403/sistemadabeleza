@@ -50,6 +50,7 @@ class FormAssistente
         self::$tamanho = "";
         self::$titulo = $titulo;
         self::$action = ($action) ? $action : HOME . UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
+
     }
 
     /**
