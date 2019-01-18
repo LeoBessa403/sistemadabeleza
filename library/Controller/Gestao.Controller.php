@@ -10,6 +10,7 @@ class Gestao extends AbstractController
         if (!empty($_POST)) {
             new GerarEntidades($_POST[NO_TABELA]);
             Notificacoes::geraMensagem('Arquivos Gerados com Sucesso.',TiposMensagemEnum::SUCESSO);
+            Redireciona(ADMIN . "/" . CONTROLLER_INICIAL_ADMIN . "/" . ACTION_INICIAL_ADMIN);
         }
         $this->form = GestaoForm::Gerar();
     }
