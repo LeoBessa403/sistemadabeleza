@@ -49,7 +49,7 @@
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
                             $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
-                            $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
+                            $grid->setColunas(Valida::StatusLabel($res->getStStatus()), 2);
                             $grid->setColunas($acao, 1);
                             $grid->criaLinha($res->getCoAssinante());
                         endforeach;

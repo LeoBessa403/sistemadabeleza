@@ -74,7 +74,7 @@
                             $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
                             $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
                             $grid->setColunas(implode(', ', $cargos));
-                            $grid->setColunas(FuncoesSistema::SituacaoSimNao($res->getStAssistente()), 2);
+                            $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
                             $grid->setColunas($acao, 2);
                             $grid->criaLinha($res->getCoProfissional());
                         endforeach;

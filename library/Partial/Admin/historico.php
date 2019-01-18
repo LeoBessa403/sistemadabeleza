@@ -3,8 +3,8 @@
     <div class="timeline">
         <div class="spine"></div>
         <?php
-        $cores = FuncoesSistema::getCoresHistorico();
-        $mes_extenso = FuncoesSistema::getMesesHistorico();
+        $cores = Valida::getCoresHistorico();
+        $mes_extenso = Valida::getMesesHistorico();
         $historicos = array_reverse($historicos);
 
         $meses = '';

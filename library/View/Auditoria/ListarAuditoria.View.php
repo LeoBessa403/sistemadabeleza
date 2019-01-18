@@ -73,7 +73,7 @@
                                                         <li class="">
                                                             <a href="#panel_tab<?php echo $auditoriaTabela->getCoAuditoriaTabela(); ?>"
                                                                data-toggle="tab">
-                                                            <span class="badge badge-<?= FuncoesSistema::getBadgeLabel($auditoriaTabela->getTpOperacao()); ?>">
+                                                            <span class="badge badge-<?= Valida::getBadgeLabel($auditoriaTabela->getTpOperacao()); ?>">
                                                             <?php echo str_replace(array('TB_', 'tb_'), '',
                                                                 $auditoriaTabela->getNoTabela()); ?></span>
                                                             </a>
@@ -113,7 +113,7 @@
                                                                 /** @var AuditoriaItensEntidade $item */
                                                                 foreach ($auditoriaTabela->getCoAuditoriaItens() as $item):
                                                                     $grid->setColunas(
-                                                                        FuncoesSistema::getDsCampoLabel($item->getDsCampo())
+                                                                        Valida::getDsCampoLabel($item->getDsCampo())
                                                                     );
                                                                     $grid->setColunas($item->getDsItemAtual());
                                                                     $grid->setColunas($item->getDsItemAnterior());

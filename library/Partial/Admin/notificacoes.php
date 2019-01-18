@@ -19,7 +19,7 @@
                                 <a href="javascript:">
                                     <div class="clearfix">
                                         <div class="thread-image">
-                                            <?= FuncoesSistema::getImgSistema(); ?>
+                                            <?= Valida::getImgSistema(); ?>
                                         </div>
                                         <div class="thread-content">
                                             <span class="author">Renovação da Assinatura</span>
@@ -40,7 +40,7 @@
                             <a href="javascript:">
                                 <div class="clearfix">
                                     <div class="thread-image">
-                                        <?= FuncoesSistema::getImgSistema(); ?>
+                                        <?= Valida::getImgSistema(); ?>
                                     </div>
                                     <div class="thread-content">
                                         <span class="author">Dados Complementares</span>

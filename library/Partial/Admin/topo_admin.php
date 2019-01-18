@@ -104,7 +104,7 @@ $user = $us->getUser();
             <!-- end: RESPONSIVE MENU TOGGLER -->
             <!-- start: LOGO -->
             <a  style="color: white; text-shadow: 1px 1px 2px #fefefe; font-size: 30px;" class="navbar-brand" href="<?= PASTAADMIN; ?>Index/Index">
-                <?= FuncoesSistema::getImgSistema(35) . DESC_SIS; ?>
+                <?= Valida::getImgSistema(35) . DESC_SIS; ?>
             </a>
             <!-- end: LOGO -->
         </div>

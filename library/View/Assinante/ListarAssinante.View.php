@@ -73,9 +73,9 @@
                             $grid->setColunas($empresa);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($res->getCoPessoa()->getCoContato()->getDsEmail());
-                            $grid->setColunas(FuncoesSistema::StatusLabel($res->getStStatus()), 2);
+                            $grid->setColunas(Valida::StatusLabel($res->getStStatus()), 2);
                             $grid->setColunas(Valida::DataShow($res->getDtExpiracao()), 2);
-                            $grid->setColunas(FuncoesSistema::getLabelStatusPlano($statusSis), 2);
+                            $grid->setColunas(Valida::getLabelStatusPlano($statusSis), 2);
                             $grid->setColunas($acao, 4);
                             $grid->criaLinha($res->getCoAssinante());
                         endforeach;

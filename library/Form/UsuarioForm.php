@@ -25,7 +25,7 @@ class UsuarioForm extends AbstractController
             if (in_array(1, $meusPerfis) || in_array(2, $meusPerfis)) {
                 $res[CAMPO_PERFIL] = PerfilService::montaArrayPerfil($usuario);
             } else {
-                $res[ST_STATUS] = FuncoesSistema::SituacaoUsuarioLabel($res[ST_STATUS]);
+                $res[ST_STATUS] = Valida::SituacaoUsuarioLabel($res[ST_STATUS]);
                 $res[CAMPO_PERFIL] = implode(', ', PerfilService::montaComboPerfil($usuario));
             }
         endif;

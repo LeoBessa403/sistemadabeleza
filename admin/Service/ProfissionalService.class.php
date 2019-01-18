@@ -63,9 +63,9 @@ class  ProfissionalService extends AbstractService
             $pessoa[DT_NASCIMENTO] = Valida::DataDBDate($dados[DT_NASCIMENTO]);
             $conta = $this->getDados($dados, ContaBancariaEntidade::ENTIDADE);
             $profissional = $this->getDados($dados, ProfissionalEntidade::ENTIDADE);
-            $profissional[ST_AGENDA] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA);
-            $profissional[ST_AGENDA_ONLINE] = FuncoesSistema::retornoCheckbox($dados, ST_AGENDA_ONLINE);
-            $profissional[ST_ASSISTENTE] = FuncoesSistema::retornoCheckbox($dados, ST_ASSISTENTE);
+            $profissional[ST_AGENDA] = Valida::retornoCheckbox($dados, ST_AGENDA);
+            $profissional[ST_AGENDA_ONLINE] = Valida::retornoCheckbox($dados, ST_AGENDA_ONLINE);
+            $profissional[ST_ASSISTENTE] = Valida::retornoCheckbox($dados, ST_ASSISTENTE);
             $profissional[DT_ADMISSAO] = ($profissional[DT_ADMISSAO])
                 ? Valida::DataDBDate($profissional[DT_ADMISSAO]) : null;
             $coProfissional = null;

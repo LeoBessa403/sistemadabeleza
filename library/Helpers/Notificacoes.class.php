@@ -13,7 +13,7 @@ class Notificacoes
         echo '<div class="gritter-notice-wrapper top-right gritter-' . $dados['tipo'] . ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
-            FuncoesSistema::getImgSistema()
+            Valida::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">' . $dados['titulo'] . '</span>
                         ' . $dados['mensagem'] . '
                     </div>
@@ -28,7 +28,7 @@ class Notificacoes
         echo '<div class="gritter-notice-wrapper top-right gritter-success fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item">' .
-            FuncoesSistema::getImgSistema()
+            Valida::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Cadastrado com Sucesso!</span>
                         <p>' . Mensagens::OK_SALVO . '</p>
                     </div>
@@ -42,7 +42,7 @@ class Notificacoes
     {
         echo '<div class="gritter-notice-wrapper top-right gritter-info fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
-                <div class="gritter-item">' . FuncoesSistema::getImgSistema()
+                <div class="gritter-item">' . Valida::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Atualizado com Sucesso!</span>
                          <p>' . Mensagens::OK_ATUALIZADO . '</p>
                     </div>
@@ -56,7 +56,7 @@ class Notificacoes
     {
         echo '<div class="gritter-notice-wrapper top-right gritter-success fadeIn gritter-aviso">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
-                <div class="gritter-item">' . FuncoesSistema::getImgSistema()
+                <div class="gritter-item">' . Valida::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">Deletado com Sucesso!</span>
                          <p>' . Mensagens::OK_DELETADO . '</p>
                     </div>
@@ -73,7 +73,7 @@ class Notificacoes
         echo '<div class="gritter-notice-wrapper top-right gritter-' . $class . ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
-            FuncoesSistema::getImgSistema()
+            Valida::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title">' . $label . '</span>
                         ' . $dados . '
                     </div>
@@ -88,7 +88,7 @@ class Notificacoes
         echo '<div class="gritter-notice-wrapper top-right alerta-js fadeIn gritter-notificacao no-display">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
-            FuncoesSistema::getImgSistema()
+            Valida::getImgSistema()
             . '<div class="gritter-with-image"><span class="gritter-title"></span>
                         <span class="mensagem-alerta-js"></span>
                     </div>

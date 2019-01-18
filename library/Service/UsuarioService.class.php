@@ -299,7 +299,7 @@ class  UsuarioService extends AbstractService
     {
         $usuario[CO_ASSINANTE] = ($coAssinante) ? $coAssinante : AssinanteService::getCoAssinanteLogado();
         $usuario[CO_PESSOA] = $coPessoa;
-        $usuario[DS_SENHA] = trim(FuncoesSistema::GeraCodigo());
+        $usuario[DS_SENHA] = trim(Valida::GeraCodigo());
         $usuario[DS_CODE] = base64_encode(base64_encode($usuario[DS_SENHA]));
         $usuario[ST_STATUS] = StatusUsuarioEnum::INATIVO;
         $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
