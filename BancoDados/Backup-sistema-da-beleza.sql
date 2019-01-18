@@ -1,4 +1,4 @@
--- Atualizado em: 18/01/2019 13:27:10
+-- Atualizado em: 18/01/2019 13:44:12
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -93,7 +93,7 @@ INSERT INTO tb_acesso VALUES("34","eq7iu344l6pht078svt9t4g7o7","2019-01-17 16:07
 
 INSERT INTO tb_acesso VALUES("35","eq7iu344l6pht078svt9t4g7o7","2019-01-18 10:53:26","2019-01-18 12:36:28","F","1","50");
 
-INSERT INTO tb_acesso VALUES("36","eq7iu344l6pht078svt9t4g7o7","2019-01-18 13:01:13","2019-01-18 13:57:10","A","1","51");
+INSERT INTO tb_acesso VALUES("36","eq7iu344l6pht078svt9t4g7o7","2019-01-18 13:01:13","2019-01-18 14:14:12","A","1","51");
 
 
 
@@ -3281,6 +3281,20 @@ INSERT INTO tb_taxa_cartao VALUES("32","7.89","9.99","2018-10-24 16:22:44","8");
 INSERT INTO tb_taxa_cartao VALUES("33","0.87","0.95","2018-10-24 16:22:44","9");
 
 INSERT INTO tb_taxa_cartao VALUES("34","0.04","5.69","2018-10-24 16:22:44","10");
+
+
+
+
+DROP TABLE IF EXISTS tb_teste;
+
+
+CREATE TABLE `tb_teste` (
+  `co_teste` int(11) NOT NULL AUTO_INCREMENT,
+  `no_teste` varchar(45) DEFAULT NULL,
+  `co_motivo_desconto` int(11) NOT NULL,
+  PRIMARY KEY (`co_teste`,`co_motivo_desconto`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 

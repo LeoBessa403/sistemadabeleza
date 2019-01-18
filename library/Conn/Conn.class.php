@@ -79,7 +79,7 @@ abstract class Conn
             if($co_registro){
                 $sql = str_replace(':codigo',  $co_registro , $sql);
             }
-            $AtualizaArqBanco = fopen('BancoDados/Atualizacao.sql', "a+");
+            $AtualizaArqBanco = fopen(PASTABACKUP . 'Atualizacao.sql', "a+");
             fwrite($AtualizaArqBanco, $sql . ";\n\n");
             fclose($AtualizaArqBanco);
         }

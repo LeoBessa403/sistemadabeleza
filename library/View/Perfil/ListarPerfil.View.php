@@ -50,7 +50,7 @@
                                 if ($res->getCoPerfil() > 3)  :
                                     $acao .= ' '
                                         . '<a data-toggle="modal" role="button" class="btn btn-bricky 
-                                        tooltips deleta" id="' . $res->getCoPerfil() . '" data-msg-restricao="MSG01"
+                                        tooltips deleta" id="' . $res->getCoPerfil() . '"
                                            href="#Perfil" data-original-title="Excluir Registro" data-placement="top">
                                             <i class="fa fa-trash-o"></i>
                                         </a>';
