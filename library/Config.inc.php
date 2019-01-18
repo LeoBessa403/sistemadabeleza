@@ -67,6 +67,7 @@ define('CADASTRADO', "cadastrado");
 define('ATUALIZADO', "atualizado");
 define('DELETADO', "deletado");
 define('MENSAGEM', "mensagem");
+define('TIPO', "tipo");
 define('PESQUISA_AVANCADA', "pesquisa_avancada");
 
 

@@ -158,7 +158,8 @@ class UrlAmigavel
             include "library/" . $arquivo_include;
         else:
             Notificacoes::mesagens("A View <b>" . self::$modulo . "/" . self::$controller . "/" .
-                $action . ".View.php</b> não foi encontrada!", 4);
+                $action . ".View.php</b> não foi encontrada!",
+                TiposMensagemEnum::ERRO);
         endif;
     }
 
@@ -180,6 +181,7 @@ class UrlAmigavel
         $menu["Funcionalidade"] = array("fa fa-outdent", "Listar Funcionalidade", "Cadastro Funcionalidade");
         $menu["Acesso"] = array("clip-connection-2", "Listar Acesso");
         $menu["Auditoria"] = array("fa fa-crosshairs", "Listar Auditoria");
+        $menu["Gestao"] = array("fa fa-crosshairs", "Gerar Entidades Gestao");
 
         $ativo = UrlAmigavel::$controller;
 

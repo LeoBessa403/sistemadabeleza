@@ -10,7 +10,7 @@ class ProfissionalForm
     {
         $id = "cadastroProfissional";
 
-        $formulario = new FormAssistente($id, "Cadastro de profissionais");
+        $formulario = new FormAssistente($id, null, null, null, "Cadastro de profissionais");
         $formulario->setValor($res);
 
         // Aba 1
@@ -282,7 +282,7 @@ class ProfissionalForm
 
         // Aba 6
         $formulario
-            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional",8);
+            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional", 8);
 
         $grid = new GridAssistente();
         $arrColunas = array('Atende', 'Dia da Semana', 'Inicio', 'Termino');
@@ -294,9 +294,9 @@ class ProfissionalForm
             $check = null;
             $abertura = null;
             $fechamento = null;
-            if($jornadas){
+            if ($jornadas) {
                 /** @var JornadaTrabalhoEntidade $jornada */
-                foreach ($jornadas as $jornada){
+                foreach ($jornadas as $jornada) {
                     if ($jornada->getNuDiaSemana() == $numero) {
                         $check = ' checked="checked"';
                         $abertura = $jornada->getNuHoraAbertura();

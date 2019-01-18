@@ -37,12 +37,12 @@ class Form
     /**
      * <b>Form da Pesquisa Avançada:</b> ionicia o formulário e suas configurações
      * @param STRING $idform : atribui o ID para o Formulário
-     * @param STRING $titulo : Título da tela
      * @param STRING $action : Ação a realizar a pesquisa e carregar a GRID
      * @param STRING $botao : Label do Botão
      * @param INT $tamanhoForm : Tamanho do Formulário
+     * @param STRING $titulo : Título da tela
      */
-    function __construct($idform, $titulo = null, $action = null, $botao = "Salvar", $tamanhoForm = 6)
+    function __construct($idform, $action = null, $botao = null, $tamanhoForm = null, $titulo = null)
     {
         self::$idForm = $idform;
         self::$style = "";
@@ -50,10 +50,10 @@ class Form
         self::$options = array();
         self::$label_options = array();
         self::$form = "";
-        self::$tamanhoForm = $tamanhoForm;
+        self::$tamanhoForm = ($tamanhoForm) ? $tamanhoForm : 6;
         self::$tamanho = "";
-        self::$action = ($action) ? $action : HOME . UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
-        self::$botao = $botao;
+        self::$action = ($action) ? $action : ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action;
+        self::$botao = ($botao) ? $botao : "Salvar";
         self::$tituloAba = array();
         self::$abas = '';
         self::$tamanho = "";

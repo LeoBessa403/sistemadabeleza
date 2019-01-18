@@ -115,7 +115,9 @@ class Session
         if ($this->CheckSession($name)):
             unset($_SESSION[$name]);
         else:
-            Notificacoes::mesagens("A Sessão <big><b>$name</b></big> não existe!",4);
+            Notificacoes::mesagens(
+                "A Sessão <big><b>$name</b></big> não existe!",
+                TiposMensagemEnum::ERRO);
         endif;
     }
 
@@ -167,7 +169,9 @@ class Session
         if (self::CheckCookie($name)):
             setcookie($name);
         else:
-            Notificacoes::mesagens("O Cookie <big><b>$name</b></big> não existe!", 4);
+            Notificacoes::mesagens(
+                "O Cookie <big><b>$name</b></big> não existe!",
+                TiposMensagemEnum::ERRO);
         endif;
     }
 

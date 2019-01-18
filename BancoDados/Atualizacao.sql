@@ -376,3 +376,9 @@ INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertur
 
 INSERT INTO TB_JORNADA_TRABALHO (co_profissional, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento) VALUES ("22", "4", "23:33", "18:11");
 
+INSERT INTO TB_PERFIL (no_perfil) VALUES ("rth tr ht");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("21", "21");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("21", "8");
+

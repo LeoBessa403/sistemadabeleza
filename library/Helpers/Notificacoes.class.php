@@ -10,7 +10,7 @@ class Notificacoes
 {
     public static function notificacao($dados)
     {
-        echo '<div class="gritter-notice-wrapper top-right gritter-' . $dados['tipo'] . ' fadeIn gritter-notificacao">
+        echo '<div class="gritter-notice-wrapper top-right gritter-' . TiposMensagemEnum::$classes[$dados['tipo']] . ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
             Valida::getImgSistema()
@@ -66,16 +66,16 @@ class Notificacoes
         </div>';
     }
 
-    public static function mesagens($dados, $typo = 3)
+    public static function mesagens($msg, $typo = 3)
     {
-        $class = ($typo == 1 ? "success" : ($typo == 2 ? "info" : ($typo == 3 ? "warning" : "danger")));
-        $label = ($typo == 1 ? "SUCESSO" : ($typo == 2 ? "INFORMATIVO" : ($typo == 3 ? "ALERTA" : "ERRO")));
-        echo '<div class="gritter-notice-wrapper top-right gritter-' . $class . ' fadeIn gritter-notificacao">
+        echo '<div class="gritter-notice-wrapper top-right gritter-' . TiposMensagemEnum::$classes[$typo] .
+            ' fadeIn gritter-notificacao">
             <div class="gritter-item-wrapper my-sticky-class" role="alert">
                 <div class="gritter-item"><a class="gritter-close circle-img" href="#">X</a>' .
             Valida::getImgSistema()
-            . '<div class="gritter-with-image"><span class="gritter-title">' . $label . '</span>
-                        ' . $dados . '
+            . '<div class="gritter-with-image"><span class="gritter-title">' . TiposMensagemEnum::$descricao[$typo] .
+            '</span>
+                        ' . $msg . '
                     </div>
                     <div style="clear:both"></div>
                 </div>
@@ -96,5 +96,12 @@ class Notificacoes
                 </div>
             </div>
         </div>';
+    }
+
+    public static function geraMensagem($msg, $tipo = null)
+    {
+        $session = new Session();
+        $session->setSession(MENSAGEM, $msg);
+        $session->setSession(TIPO, $tipo);
     }
 }

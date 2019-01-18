@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GerarEntidades.class [ HELPER ]
+ * Gestao.class [ HELPER ]
  * Reponsável por realizar o backup do Banco de Dados!
  *
  * @copyright (c) 2015, Leonardo Bessa
@@ -17,7 +17,9 @@ class GerarEntidades
     protected static $CLASS_PADRAO = [
         'tb_acesso', 'tb_auditoria', 'tb_auditoria_itens', 'tb_auditoria_tabela', 'tb_contato', 'tb_endereco',
         'tb_funcionalidade', 'tb_imagem', 'tb_pagina', 'tb_pagina_visita', 'tb_perfil_funcionalidade',
-        'tb_perfil', 'tb_pessoa', 'tb_trafego', 'tb_usuario_perfil', 'tb_usuario', 'tb_visita'
+        'tb_perfil', 'tb_pessoa', 'tb_trafego', 'tb_usuario_perfil', 'tb_usuario', 'tb_visita',
+        'tb_assinante', 'tb_assinante_filial', 'tb_assinante_matriz', 'tb_imagem_assinante', 'tb_modulo',
+        'tb_plano', 'tb_plano_assinante', 'tb_plano_assinante_assinatura'
     ];
 
     public function __construct($tabelas = array())
@@ -123,15 +125,22 @@ class GerarEntidades
 
     private function geraClassRelacionamento($relacionamentos)
     {
-        $ArquivoRelacionamento = "<?php\n
+        $ArquivoRelacionamento = '';
+        if (!$this->constantes) {
+
+            $ArquivoRelacionamento .= "<?php\n
 /**
  * Relacionamentos.class [ RELACIONAMENTOS DO BANCO ]
  * @copyright (c) " . date('Y') . ", Leo Bessa
  */\n
 class Relacionamentos
 {\n\n";
-        $ArquivoRelacionamento .= "\tpublic static function getRelacionamentos(){
+            $ArquivoRelacionamento .= "\tpublic static function getRelacionamentos(){
     \t\treturn array(\n";
+        } else {
+            $ArquivoRelacionamento .= "\n\n\n\n\n\n";
+        }
+
         foreach ($relacionamentos as $tabela => $valor) {
             $ArquivoRelacionamento .= "\t\t\t(" . $this->getEntidade($tabela) . "Entidade::TABELA) => Array(\n";
             $i = 0;
@@ -144,7 +153,9 @@ class Relacionamentos
             }
             $ArquivoRelacionamento .= "\t\t\t),\n";
         }
-        $ArquivoRelacionamento .= "\t\t);\n}\n}";
+        if (!$this->constantes)
+            $ArquivoRelacionamento .= "\t\t);\n}\n}";
+
 
         $this->saveRelacionamentos($ArquivoRelacionamento);
     }
@@ -153,7 +164,7 @@ class Relacionamentos
     {
         if (!$ArquivoRelacionamento) return false;
         try {
-            $handle = fopen(PASTA_CLASS . '/Relacionamentos.class.php', 'w+');
+            $handle = fopen(PASTA_CLASS . '/Relacionamentos.class.php', 'a+');
             fwrite($handle, $ArquivoRelacionamento);
             fclose($handle);
         } catch (Exception $e) {
@@ -348,14 +359,14 @@ class  {$Entidade}Model extends AbstractModel
  * @copyright (c) " . date('Y') . ", Leo Bessa
  */ \n";
             foreach ($constantes as $indice => $res) {
-                $ArquivoConstante .= "\tdefine('" . $indice . "', '" . $res . "');\n";
+                $ArquivoConstante .= "define('" . $indice . "', '" . $res . "');\n";
             }
             $ArquivoConstante .= "\n";
             $this->saveConstantes($ArquivoConstante, 'w+');
         } else {
-            $ArquivoConstante = '\n\n';
+            $ArquivoConstante = "\n\n\n";
             foreach ($constantes as $indice => $res) {
-                $ArquivoConstante .= "\tdefine('" . $indice . "', '" . $res . "');\n";
+                $ArquivoConstante .= "define('" . $indice . "', '" . $res . "');\n";
             }
             $this->saveConstantes($ArquivoConstante, 'a+');
         }
