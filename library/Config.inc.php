@@ -46,7 +46,7 @@ define('INCLUDES_PLUGINS', HOME . 'library/plugins/');
 define('PASTAIMG', INCLUDES . 'imagens/');
 define('PASTASITE', HOME . SITE . '/');
 define('PASTAADMIN', HOME . ADMIN . '/');
-define('PASTABACKUP', PASTA_RAIZ . '/BancoDados/backup/');
+define('PASTABACKUP', PASTA_RAIZ . '/BancoDados/');
 define('PASTA_LIBRARY', HOME . 'library/');
 define('PASTA_ENTIDADES', PASTA_RAIZ . ADMIN . '/Entidade/');
 define('PASTA_MODEL', PASTA_RAIZ . ADMIN . '/Model/');

@@ -13,25 +13,22 @@ class Backup
 
     /**
      * Constructor initializes database
+     * Backup constructor.
+     * @param $validar
      */
-    function Backup()
+    function __construct($validar = true)
     {
-        $backup = fopen('BancoDados/Backup.txt', "a+");
-        $backupDate = fgets($backup);
-        $dias = Valida::CalculaDiferencaDiasData(date("d/m/Y"), Valida::DataShow($backupDate));
+        if($validar){
+            $backup = fopen('BancoDados/Backup.txt', "a+");
+            $backupDate = fgets($backup);
+            $dias = Valida::CalculaDiferencaDiasData(date("d/m/Y"), Valida::DataShow($backupDate));
 
-        if ($dias < 1):
-            $novaData = Valida::CalculaData(date("d/m/Y"), BACKUP, "+");
-            $backupCheck = fopen('BancoDados/Backup.txt', "w");
-            fwrite($backupCheck, Valida::DataDBDate($novaData));
-            fclose($backupCheck);
-            $this->limpaArquivoAtualizacaoBanco();
-            $this->charset = 'utf8';
-            $this->controleVersao();
-            $conn = new ObjetoPDO();
-            $this->conn = $conn->inicializarConexao();
-            $this->RealizarBackup();
-        endif;
+            if ($dias < 1):
+                $this->gerarBackup();
+            endif;
+        }else{
+            $this->gerarBackup();
+        }
     }
 
     /**
@@ -56,8 +53,8 @@ class Backup
                 $tables = is_array($tables) ? $tables : explode(',', $tables);
             }
 
-            $sql = '-- AMBIENTE: ' . HOME . ' / BANCO: ' . DBSA . ";\n\n";
-            $sql = 'CREATE DATABASE IF NOT EXISTS ' . DBSA . ";\n\n";
+            $sql = "-- Atualizado em: " . Valida::DataAtual() . "\n-- AMBIENTE: " . HOME . "\n-- BANCO: " . DBSA ."\n\n";
+            $sql .= 'CREATE DATABASE IF NOT EXISTS ' . DBSA . ";\n\n";
             $sql .= 'USE ' . DBSA . ";\n\n";
 
             /**
@@ -113,8 +110,8 @@ class Backup
     {
         if (!$sql) return false;
         try {
-            $handle = fopen(PASTABACKUP . 'Backup-' . Valida::ValNome(DESC) . '.sql', 'w');
-            fwrite($handle, "-- Atualizado em: " . Valida::DataAtual() . "\n\n" . $sql);
+            $handle = fopen(PASTABACKUP . 'Backup-' . Valida::ValNome(DESC) . '.sql', 'w+');
+            fwrite($handle,  $sql);
             fclose($handle);
         } catch (Exception $e) {
             var_dump($e->getMessage());
@@ -148,5 +145,30 @@ class Backup
         $AtualizaArqBanco = fopen('BancoDados/Atualizacao.sql', "w");
         fwrite($AtualizaArqBanco,  "");
         fclose($AtualizaArqBanco);
+    }
+
+    /**
+     * Realiza o controle da versão
+     */
+    private function limpaArquivoBackup()
+    {
+        $novaData = Valida::CalculaData(date("d/m/Y"), BACKUP, "+");
+        $backupCheck = fopen('BancoDados/Backup.txt', "w");
+        fwrite($backupCheck, Valida::DataDBDate($novaData));
+        fclose($backupCheck);
+    }
+
+    /**
+     * Realiza o BackUp
+     */
+    private function gerarBackup()
+    {
+        $this->limpaArquivoBackup();
+        $this->limpaArquivoAtualizacaoBanco();
+        $this->charset = 'utf8';
+        $this->controleVersao();
+        $conn = new ObjetoPDO();
+        $this->conn = $conn->inicializarConexao();
+        $this->RealizarBackup();
     }
 }
