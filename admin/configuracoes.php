@@ -36,71 +36,73 @@ function servidor_inicial()
     // ******* CONFIGURAÇÕES DO SITE ********** //
     //////////////////////////////////////////////
 
-    // PROJETO POSSUI SITE
-    define('TEM_SITE', FALSE);
-    // PROJETO POSSUI MODULO ASSINANTE
-    define('MODULO_ASSINANTE', TRUE);
-    // LOGAR COM EMAIL OU CPF
-    define('LOGAR_EMAIL', TRUE);
-    // Título do Site
-    define('DESC', 'Sistema da Beleza');
-    // CONTROLLER INICIAL DO SITE
-    define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
-    // AÇÃO INICIAL DO SITE
-    define('ACTION_INICIAL_SITE', 'Index');
-    // CONTROLLER INICIAL DO ADMIN
-    define('CONTROLLER_INICIAL_ADMIN', 'Index');
-    // AÇÃO INICIAL DO ADMIN
-    define('ACTION_INICIAL_ADMIN', 'Index');
-    // Título do Sistema
-    define('DESC_SIS', 'SisBela');
-    // Tabela de pesquisa de usuário para validação
-    define('TABLE_USER', 'tb_usuario');
-    // Campo de login na Tabela de pesquisa de usuário para validação
-    define('CAMPO_USER', 'ds_login');
-    // Campo da senha na Tabela de pesquisa de usuário para validação
-    define('CAMPO_PASS', 'ds_code');
-    // Campo do ID (Chave Primaria) na Tabela de pesquisa de usuário para validação
-    define('CAMPO_ID', 'co_usuario');
-    // Campo do Perfil na Tabela de pesquisa de usuário para validação dos perfis 
-    // (Ex.: cadastrante, administrador, pesquisador) Sepmre separados por (, )
-    define('CAMPO_PERFIL', 'ds_perfil');
-    // Atribui o nome da Sessão do usuario Logado no sitema
-    define('SESSION_USER', 'user_sistema_beleza');
-    // Tempo de Inativadade Máximo em Minutos, aceito para deslogar do Sistema.
-    define('INATIVO', 30);
-    // A frequencia em dias para realizar o BACKUP NO BANCO DE DADOS
-    define('BACKUP', 5);
-    // TAMANHO PADRÃO DO WIDTH DAS IAMGENS A SEREM CARREGADAS
-    define('TAMANHO', 800);
-    // PASTA DE ARMAZENAMENTO DE UPLOADS
-    define('PASTAUPLOADS', 'uploads/');
-    // TABELA PARA ARMAZENAR OS DADOS PARA AUDITORIA
-    define('TABELA_AUDITORIA', AuditoriaEntidade::TABELA);
-    // NÚMERO PADRÃO DE ENVIO DO WHATSAPP
-    define('WHATSAPP', '5561993704240');
-    // DESCRIÇÃO PADRÃO DO SITE
-    define('DESC_SITE', 'Sistema de gestão do ramo de beleza');
-    // TÍTULO PADRÃO DO SITE
-    define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
-    // CONTROLLERS PARA GERAR O SEO DIFERENCIADO
-    define('CONTROLLER_SEO', '');
-    // NÚMERO DE IMAGENS DE BACKGROUND DA TELA INICIAL DO SISTEMA
-    define('NUM_BG_IMAGENS', 50);
+    include_once 'library/Config.Padrao.php';
 
-    //////////////////////////////////////////////
-    // ******* CONFIGURAÇÕES DE EMAIL ********** //
-    //////////////////////////////////////////////
+    if (defined('TEM_SITE') == false) {
+        // PROJETO POSSUI SITE
+        define('TEM_SITE', FALSE);
+        // PROJETO POSSUI MODULO ASSINANTE
+        define('MODULO_ASSINANTE', TRUE);
+        // LOGAR COM EMAIL OU CPF
+        define('LOGAR_EMAIL', TRUE);
+        // TABELA PARA ARMAZENAR OS DADOS PARA AUDITORIA
+        define('TABELA_AUDITORIA', TRUE);
+        // Título do Site
+        define('DESC', 'Sistema da Beleza');
+        // CONTROLLER INICIAL DO SITE
+        define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
+        // AÇÃO INICIAL DO SITE
+        define('ACTION_INICIAL_SITE', 'Index');
+        // CONTROLLER INICIAL DO ADMIN
+        define('CONTROLLER_INICIAL_ADMIN', 'Index');
+        // AÇÃO INICIAL DO ADMIN
+        define('ACTION_INICIAL_ADMIN', 'Index');
+        // Título do Sistema
+        define('DESC_SIS', 'SisBela');
+        // Tabela de pesquisa de usuário para validação
+        define('TABLE_USER', 'tb_usuario');
+        // Campo de login na Tabela de pesquisa de usuário para validação
+        define('CAMPO_USER', 'ds_login');
+        // Campo da senha na Tabela de pesquisa de usuário para validação
+        define('CAMPO_PASS', 'ds_code');
+        // Campo do ID (Chave Primaria) na Tabela de pesquisa de usuário para validação
+        define('CAMPO_ID', 'co_usuario');
+        // Campo do Perfil na Tabela de pesquisa de usuário para validação dos perfis
+        // (Ex.: cadastrante, administrador, pesquisador) Sepmre separados por (, )
+        define('CAMPO_PERFIL', 'ds_perfil');
+        // Atribui o nome da Sessão do usuario Logado no sitema
+        define('SESSION_USER', 'user_sistema_beleza');
+        // Tempo de Inativadade Máximo em Minutos, aceito para deslogar do Sistema.
+        define('INATIVO', 30);
+        // A frequencia em dias para realizar o BACKUP NO BANCO DE DADOS
+        define('BACKUP', 5);
+        // TAMANHO PADRÃO DO WIDTH DAS IAMGENS A SEREM CARREGADAS
+        define('TAMANHO', 800);
+        // NÚMERO PADRÃO DE ENVIO DO WHATSAPP
+        define('WHATSAPP', '5561993704240');
+        // DESCRIÇÃO PADRÃO DO SITE
+        define('DESC_SITE', 'Sistema de gestão do ramo de beleza');
+        // TÍTULO PADRÃO DO SITE
+        define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
+        // CONTROLLERS PARA GERAR O SEO DIFERENCIADO
+        define('CONTROLLER_SEO', '');
+        // NÚMERO DE IMAGENS DE BACKGROUND DA TELA INICIAL DO SISTEMA
+        define('NUM_BG_IMAGENS', 50);
 
-    define('HOST_EMAIL', 'mail.bicalhorefrigeracao.com');
-    define('PORTA_EMAIL', 25);
-    define('USER_EMAIL', 'contato@bicalhorefrigeracao.com');
-    define('PASS_EMAIL', 'bicalho10*');
+        //////////////////////////////////////////////
+        // ******* CONFIGURAÇÕES DE EMAIL ********** //
+        //////////////////////////////////////////////
 
-    //////////////////////////////////////////////
-    // *********** GOOGLE ANALITCS  *********** //
-    //////////////////////////////////////////////
-    define('ID_ANALITCS', FALSE);
+        define('HOST_EMAIL', 'mail.bicalhorefrigeracao.com');
+        define('PORTA_EMAIL', 25);
+        define('USER_EMAIL', 'contato@bicalhorefrigeracao.com');
+        define('PASS_EMAIL', 'bicalho10*');
+
+        //////////////////////////////////////////////
+        // *********** GOOGLE ANALITCS  *********** //
+        //////////////////////////////////////////////
+        define('ID_ANALITCS', FALSE);
+    }
 
 
     include_once('Class/Constantes.class.php');

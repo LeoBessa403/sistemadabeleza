@@ -244,7 +244,10 @@ class  AssinanteService extends AbstractService
         $combo = [
             '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
         ];
-        $nuProf = $assinante->getUltimoCoPlanoAssinante()->getNuProfissionais();
+        $nuProf = 0;
+        if (!empty($assinante)) {
+            $nuProf = $assinante->getUltimoCoPlanoAssinante()->getNuProfissionais();
+        }
         for ($i = 1; $i <= $nuProf; $i++) {
             $combo[$i] = $i;
         }

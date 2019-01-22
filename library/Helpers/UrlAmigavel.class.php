@@ -181,7 +181,7 @@ class UrlAmigavel
         $menu["Funcionalidade"] = array("fa fa-outdent", "Listar Funcionalidade", "Cadastro Funcionalidade");
         $menu["Acesso"] = array("clip-connection-2", "Listar Acesso");
         $menu["Auditoria"] = array("fa fa-crosshairs", "Listar Auditoria");
-        $menu["Gestao"] = array("clip-data", "Gerar Entidades Gestao", "Gerar Backup Gestao");
+        $menu["Gestao"] = array("clip-data", "Gerar Entidades Gestao", "Gerar Backup Gestao", "Config Gestao");
 
         $ativo = UrlAmigavel::$controller;
 

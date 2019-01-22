@@ -32,5 +32,13 @@ class Gestao extends AbstractController
         $this->form = GestaoForm::GerarBackup();
     }
 
+    function ConfigGestao()
+    {
+        if (!empty($_POST)) {
+            debug($_POST);
+        }
+        $this->form = GestaoForm::Config();
+    }
+
 
 }

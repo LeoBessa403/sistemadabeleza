@@ -56,6 +56,7 @@ define('PARTIAL_SITE', PASTA_RAIZ . SITE . '/partial/');
 define('PARTIAL_ADMIN', PASTA_RAIZ . ADMIN . '/partial/');
 define('PARTIAL_LIBRARY', PASTA_RAIZ . 'library/Partial/');
 define('PASTA_UPLOADS', HOME . 'uploads/');
+define('PASTAUPLOADS', HOME . 'uploads/');
 
 // ARQUIVOS PRE DEFINIDOS
 define('TIMTHUMB', PASTA_LIBRARY . 'Helpers/Timthumb.class.php');

@@ -603,9 +603,9 @@ class Form
             $form .= '<div id="change-color-switch" class="make-switch" data-on-label="' .
                 self::$options[0] . '" data-off-label="' . self::$options[1] . '" data-on="' .
                 $cor[self::$options[2]] . '" data-off="' . $cor[self::$options[3]] . '">
-                                            <input type="checkbox" ' . $verifcaChecked . ' id="' .
-                self::$id . '" name="' . self::$id . '"  class="' . self::$classes . '"/>
-                                    </div>';
+                                            <input type="checkbox" ' . $verifcaChecked . ' 
+                  id="' .self::$id . '" name="' . self::$id . '"  class="' . self::$classes . '" />
+                </div>';
         else:
             foreach (self::$label_options as $key => $op):
                 $valor = "";

@@ -39,7 +39,7 @@ class Auditar extends Conn
         endif;
 
         if (!static::$coAuditoria) {
-            $this->tabela = TABELA_AUDITORIA;
+            $this->tabela = AuditoriaEntidade::TABELA;
             if (count($user)):
                 $dadosAuditoria[DS_PERFIL_USUARIO] = $user[md5('no_perfis')];
                 $dadosAuditoria[CO_USUARIO] = $user[md5(CAMPO_ID)];
