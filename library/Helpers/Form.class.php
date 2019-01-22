@@ -708,13 +708,13 @@ class Form
                             <div class="col-md-12"">' .
             self::$form
             . '<div class="col-md-12" style="display: block; padding: 0;">
-                 <button data-style="zoom-out" class="btn btn-success ladda-button" type="submit" 
-                 value="' . self::$idForm . '" name="' . self::$idForm . '" style="margin-top: 10px;">
+                        <button data-style="zoom-out" class="btn btn-success pull-right ladda-button" type="submit" 
+                 value="' . self::$idForm . '" name="' . self::$idForm . '" style="margin-top: 10px; margin-left: 10px;">
                             <span class="ladda-label"> ' . self::$botao . ' </span>
                             <i class="fa fa-save"></i>
                             <span class="ladda-spinner"></span>
                         </button>
-                        <button data-style="expand-right" class="btn btn-danger ladda-button" type="reset" style="margin-top: 10px;">
+                        <button data-style="expand-right" class="btn btn-danger ladda-button pull-right" type="reset" style="margin-top: 10px;">
                             <span class="ladda-label"> Limpar </span>
                             <i class="fa fa-ban"></i>
                             <span class="ladda-spinner"></span>
@@ -729,8 +729,8 @@ class Form
                 $link = UrlAmigavel::$modulo . '/' . $link;
             }
             self::$form .= '<a href="' . HOME . $link . '"
-                           class="btn btn-primary tooltips" data-original-title="Voltar" data-placement="top"
-                           style="float: right; margin-top: 10px;">
+                           class="btn pull-left btn-primary tooltips" data-original-title="Voltar" data-placement="top"
+                           style="-margin-top: 10px;">
                             Voltar <i class="clip-arrow-right-2"></i>
                          </a>';
         }
