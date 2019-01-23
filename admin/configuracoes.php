@@ -49,6 +49,8 @@ function servidor_inicial()
         define('TABELA_AUDITORIA', TRUE);
         // Título do Site
         define('DESC', 'Sistema da Beleza');
+        // Título do Sistema
+        define('DESC_SIS', 'SisBela');
         // CONTROLLER INICIAL DO SITE
         define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
         // AÇÃO INICIAL DO SITE
@@ -57,12 +59,8 @@ function servidor_inicial()
         define('CONTROLLER_INICIAL_ADMIN', 'Index');
         // AÇÃO INICIAL DO ADMIN
         define('ACTION_INICIAL_ADMIN', 'Index');
-        // Título do Sistema
-        define('DESC_SIS', 'SisBela');
         // Tabela de pesquisa de usuário para validação
         define('TABLE_USER', 'tb_usuario');
-        // Campo de login na Tabela de pesquisa de usuário para validação
-        define('CAMPO_USER', 'ds_login');
         // Campo da senha na Tabela de pesquisa de usuário para validação
         define('CAMPO_PASS', 'ds_code');
         // Campo do ID (Chave Primaria) na Tabela de pesquisa de usuário para validação
