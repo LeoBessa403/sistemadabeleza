@@ -52,6 +52,7 @@ class  FuncionalidadeService extends AbstractService
                 $session->setSession(MENSAGEM, ATUALIZADO);
             endif;
         else:
+            $funcionalidade[ST_STATUS] = StatusAcessoEnum::ATIVO;
             $coFuncionalidade = $this->Salva($funcionalidade);
             if ($coFuncionalidade):
                 $session->setSession(MENSAGEM, CADASTRADO);
