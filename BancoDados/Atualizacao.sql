@@ -42,3 +42,9 @@ INSERT INTO TB_AUSENCIA (dt_inicio, dt_fim, tp_ausencia, ds_observacao, dt_cadas
 
 INSERT INTO TB_AUSENCIA (dt_inicio, dt_fim, tp_ausencia, ds_observacao, dt_cadastro, co_profissional, co_usuario) VALUES ("2019-01-01 06:00:00", "2019-01-01 20:00:00", "5", "so pra ver essa folga", "2019-01-25 13:48:03", "16", "8");
 
+INSERT INTO TB_AUSENCIA (dt_inicio, dt_fim, tp_ausencia, ds_observacao, dt_cadastro, co_profissional, co_usuario) VALUES ("2019-01-02 06:00:00", "2019-01-07 10:00:00", "4", "ta de férias", "2019-01-25 13:56:24", "9", "8");
+
+INSERT INTO TB_AUSENCIA (dt_inicio, dt_fim, tp_ausencia, ds_observacao, dt_cadastro, co_profissional, co_usuario) VALUES ("2019-01-16 06:00:00", "2019-01-27 10:00:00", "2", "quebrou o braço", "2019-01-25 13:59:26", "15", "8");
+
+DELETE FROM TB_AUSENCIA where co_ausencia = "4";
+

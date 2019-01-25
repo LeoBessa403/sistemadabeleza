@@ -40,10 +40,10 @@ class  AusenciaService extends AbstractService
 
             if (!empty($result[CO_AUSENCIA])) {
                 $retorno[SUCESSO] = $this->Salva($dados, $result[CO_AUSENCIA]);
-                $session->setSession(ATUALIZADO, "OK");
+                $session->setSession(MENSAGEM, ATUALIZADO);
             } else {
                 $retorno[SUCESSO] = $this->Salva($dados);
-                $session->setSession(CADASTRADO, "OK");
+                $session->setSession(MENSAGEM, CADASTRADO);
             }
         } else {
             $session->setSession(MENSAGEM, $validador[MSG]);

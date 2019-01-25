@@ -7,16 +7,16 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Profissional
+                            Ausência Profissional
                         </a>
                     </li>
                     <li class="active">
-                        Ausência
+                        Listar Ausência
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Profissional
-                        <small>Ausência Profissional</small>
+                    <h1>Ausência Profissional
+                        <small>Listar Ausência</small>
                         <?php Valida::geraBtnNovo('Criar Ausência', 'CadastroAusenciaProfissional'); ?>
                     </h1>
                 </div>
@@ -33,50 +33,32 @@
                     <div class="panel-body">
                         <?php
                         Modal::load();
-                        Modal::confirmacao("confirma_Profissional");
-                        $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
+                        Modal::deletaRegistro("Ausencia");
+                        Modal::confirmacao("confirma_Ausencia");
+                        $arrColunas = array('Profissional', 'Periodo', 'Tipo Ausência', 'Observação', 'Responsável', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var ProfissionalEntidade $res */
+                        /** @var AusenciaEntidade $res */
                         foreach ($result as $res):
-                            $acao = '<a href="' . PASTAADMIN . 'Profissional/CadastroProfissional/' .
-                                Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '" class="btn btn-primary tooltips" 
+                            $acao = '<a href="' . PASTAADMIN . 'Profissional/CadastroAusenciaProfissional/' .
+                                Valida::GeraParametro(CO_AUSENCIA . "/" . $res->getCoAusencia()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            $cargos = [];
-                            /** @var ProfissionalCargoEntidade $cargoProf */
-                            foreach ($res->getCoProfissionalCargo() as $cargoProf) {
-                                $cargos[] = $cargoProf->getCoCargo()->getNoCargo();
-                            }
-                            $tamanhoImg = 60;
-                            $noPessoa = Valida::ValNome($res->getCoPessoa()->getNoPessoa());
-                            if ($res->getCoImagem() && (file_exists(PASTA_RAIZ . "uploads/usuarios/" . $res->getCoImagem()->getDsCaminho()))){
-                                    $imagem = Valida::GetMiniatura(
-                                        'usuarios/' . $res->getCoImagem()->getDsCaminho(),
-                                        $noPessoa, $tamanhoImg, $tamanhoImg, "circle-img"
-                                    );
-                            }else{
-                                if ($res->getCoPessoa()->getStSexo() == "M"):
-                                    $fotoPerfil = "avatar-homem.jpg";
-                                else:
-                                    $fotoPerfil = "avatar-mulher.jpg";
-                                endif;
-
-                                $imagem = '<img src="' . TIMTHUMB . '?src=' . HOME .
-                                    'library/Imagens/' . $fotoPerfil . '&w=' . $tamanhoImg . '&h=' . $tamanhoImg . '" 
-                                alt="' . $noPessoa . '" title="' . $noPessoa . '" 
-                                class="circle-img" />';
-                            }
-                            $grid->setColunas($imagem, 1);
-                            $grid->setColunas($res->getCoPessoa()->getNoPessoa());
-                            $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
-                            $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
-                            $grid->setColunas(implode(', ', $cargos));
-                            $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
+                            $acao .= ' <a data-toggle="modal" role="button" class="btn btn-bricky tooltips deleta" id="' .
+                                $res->getCoAusencia() . '" 
+                                   href="#Ausencia" data-original-title="Excluir Registro" data-placement="top">
+                                    <i class="fa fa-trash-o"></i>
+                                </a>';
+                            $grid->setColunas($res->getCoProfissional()->getCoPessoa()->getNoPessoa());
+                            $grid->setColunas(Valida::DataShow($res->getDtInicio(),'d/m/Y H:i') .
+                                ' a ' . Valida::DataShow($res->getDtFim(),'d/m/Y H:i') );
+                            $grid->setColunas(TipoAusenciaEnum::getDescricaoValor($res->getTpAusencia()));
+                            $grid->setColunas($res->getDsObservacao());
+                            $grid->setColunas($res->getCoUsuario()->getCoPessoa()->getNoPessoa());
                             $grid->setColunas($acao, 2);
-                            $grid->criaLinha($res->getCoProfissional());
+                            $grid->criaLinha($res->getCoAusencia());
                         endforeach;
                         $grid->finalizaGrid();
                         ?>
