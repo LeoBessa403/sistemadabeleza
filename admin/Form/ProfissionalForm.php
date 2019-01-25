@@ -368,4 +368,85 @@ class ProfissionalForm
 
         return $formulario->finalizaForm();
     }
+
+    public static function CadastrarAusencia($res)
+    {
+        $id = "cadastroAusencia";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Salvar", 6);
+        if ($res):
+            $formulario->setValor($res);
+        endif;
+
+        $profissionais = ProfissionalService::PesquisaProfissionaisCombo();
+        $formulario
+            ->setId(CO_PROFISSIONAL)
+            ->setLabel("Profissional")
+            ->setClasses("ob")
+            ->setType("select")
+            ->setOptions($profissionais)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_INICIO)
+            ->setTamanhoInput(3)
+            ->setClasses("data ob")
+            ->setIcon("clip-calendar-3")
+            ->setLabel("Data de Inicio")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId("hr_inicio")
+            ->setTamanhoInput(3)
+            ->setClasses("horas ob")
+            ->setPlace("Formato 24Hrs")
+            ->setIcon("clip-clock-2", "dir")
+            ->setLabel("Hórario Inicial")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_FIM)
+            ->setTamanhoInput(3)
+            ->setClasses("data ob")
+            ->setIcon("clip-calendar-3")
+            ->setLabel("Data de Termino")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId("hr_fim")
+            ->setTamanhoInput(3)
+            ->setPlace("Formato 24Hrs")
+            ->setClasses("horas ob")
+            ->setIcon("clip-clock-2", "dir")
+            ->setLabel("Hórario Final")
+            ->CriaInpunt();
+
+        $options = TipoAusenciaEnum::$descricao;
+        $formulario
+            ->setId(TP_AUSENCIA)
+            ->setType("select")
+            ->setLabel("Tipo de Ausência")
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_OBSERVACAO)
+            ->setType("textarea")
+            ->setLabel("Obserevação")
+            ->CriaInpunt();
+
+
+        if (!empty($res[CO_AUSENCIA])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_AUSENCIA)
+                ->setValues($res[CO_AUSENCIA])
+                ->CriaInpunt();
+        endif;
+
+
+        return $formulario->finalizaForm('Profissional/AusenciaProfissional');
+    }
 }

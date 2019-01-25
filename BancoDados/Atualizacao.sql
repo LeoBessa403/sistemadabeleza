@@ -38,3 +38,7 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("27"
 
 DELETE FROM TB_PERFIL where co_perfil = "19";
 
+INSERT INTO TB_AUSENCIA (dt_inicio, dt_fim, tp_ausencia, ds_observacao, dt_cadastro, co_profissional, co_usuario) VALUES ("2019-01-01 05:06:00", "2019-01-01 12:00:00", "5", "rth rthrt h trh", "2019-01-25 13:44:29", "20", "8");
+
+INSERT INTO TB_AUSENCIA (dt_inicio, dt_fim, tp_ausencia, ds_observacao, dt_cadastro, co_profissional, co_usuario) VALUES ("2019-01-01 06:00:00", "2019-01-01 20:00:00", "5", "so pra ver essa folga", "2019-01-25 13:48:03", "16", "8");
+

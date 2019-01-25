@@ -15,11 +15,11 @@ class TipoAusenciaEnum extends AbstractEnum
     const OUTROS = 8;
 
     public static $descricao = [
-        TipoAusenciaEnum::ALMOCO => 'Almoço',
-        TipoAusenciaEnum::AUSENCIA_MEDICA => 'Ausência Médica',
+        TipoAusenciaEnum::ALMOCO => 'AlmoÃ§o',
+        TipoAusenciaEnum::AUSENCIA_MEDICA => 'AusÃªncia MÃ©dica',
         TipoAusenciaEnum::FALTA => 'Falta',
-        TipoAusenciaEnum::FERIAS => 'Férias',
-        TipoAusenciaEnum::FOLGA => 'Falga',
+        TipoAusenciaEnum::FERIAS => 'FÃ©rias',
+        TipoAusenciaEnum::FOLGA => 'Folga',
         TipoAusenciaEnum::LANCHE => 'Lanche',
         TipoAusenciaEnum::ESTUDO => 'Estudos',
         TipoAusenciaEnum::OUTROS => 'Outros',

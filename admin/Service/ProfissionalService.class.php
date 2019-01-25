@@ -145,4 +145,21 @@ class  ProfissionalService extends AbstractService
         return $retorno;
     }
 
+
+    public static function PesquisaProfissionaisCombo()
+    {
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = new ProfissionalService();
+        $comboProfissionais = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        $profissionais = $profissionalService->PesquisaTodos();
+        /** @var ProfissionalEntidade $profissional */
+        foreach ($profissionais as $profissional) {
+            $comboProfissionais[$profissional->getCoProfissional()]
+                = Valida::Resumi(strtoupper($profissional->getCoPessoa()->getNoPessoa()), 25);
+        }
+        return $comboProfissionais;
+    }
+
 }

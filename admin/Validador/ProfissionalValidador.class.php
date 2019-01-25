@@ -36,4 +36,22 @@ class  ProfissionalValidador extends AbstractValidador
         );
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarAusencia($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DT_INICIO], AbstractValidador::VALIDACAO_DATA, 'Data de Início'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DT_FIM], AbstractValidador::VALIDACAO_DATA, 'Data de Termino'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
+            $dados[TP_AUSENCIA], 'Tipo de Ausência'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
+            $dados[CO_PROFISSIONAL], 'Profissional'
+        );
+
+        return $this->MontaRetorno($this->retorno);
+    }
 }

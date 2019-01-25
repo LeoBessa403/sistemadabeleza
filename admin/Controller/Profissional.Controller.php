@@ -138,37 +138,32 @@ class Profissional extends AbstractController
 
     public function CadastroAusenciaProfissional()
     {
-        /** @var PlanoService $planoService */
-        $planoService = $this->getService(PLANO_SERVICE);
-        $id = "cadastroPlano";
+        /** @var AusenciaService $ausenciaService */
+        $ausenciaService = $this->getService(AUSENCIA_SERVICE);
+        $id = "cadastroAusencia";
 
         if (!empty($_POST[$id])):
-            $retorno = $planoService->salvaPlano($_POST);
+            $retorno = $ausenciaService->salvaAusenciaProfissional($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarPlano/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AusenciaProfissional/');
             }
         endif;
 
-        $coPlano = UrlAmigavel::PegaParametro(CO_PLANO);
-        $res[ST_STATUS] = "checked";
-        if ($coPlano) {
-            /** @var PlanoEntidade $plano */
-            $plano = $planoService->PesquisaUmRegistro($coPlano);
-            $res[NO_PLANO] = $plano->getNoPlano();
-            $res[NU_MES_ATIVO] = $plano->getNuMesAtivo();
-            $res[DS_OBSERVACAO] = $plano->getCoUltimoPlanoAssinante()->getDsObservacao();
-            $res[NU_VALOR] = Valida::FormataMoeda($plano->getCoUltimoPlanoAssinante()->getNuValor());
-            $modulos = [];
-            /** @var PlanoModuloEntidade $ModuloEntidade */
-            foreach ($plano->getCoPlanoModulo() as $ModuloEntidade) {
-                $modulos[] = $ModuloEntidade->getCoModulo()->getCoModulo();
-            }
-            $res[CO_MODULO] = $modulos;
-            $res[CO_PLANO] = $plano->getCoPlano();
-            $res[ST_STATUS] = ($plano->getStStatus() == 'A')
-                ? 'checked' : '';
+        $coAusencia = UrlAmigavel::PegaParametro(CO_AUSENCIA);
+        $res = [];
+        if ($coAusencia) {
+            /** @var AusenciaEntidade $ausencia */
+            $ausencia = $ausenciaService->PesquisaUmRegistro($coAusencia);
+            $res[CO_PROFISSIONAL] = $ausencia->getCoProfissional()->getCoProfissional();
+            $res[DT_INICIO] = Valida::DataShow($ausencia->getDtInicio());
+            $res['hr_inicio'] = Valida::DataShow($ausencia->getDtInicio(), 'H:i');
+            $res[DT_FIM] = Valida::DataShow($ausencia->getDtFim());
+            $res['hr_fim'] = Valida::DataShow($ausencia->getDtFim(), 'H:i');
+            $res[TP_AUSENCIA] = $ausencia->getTpAusencia();
+            $res[DS_OBSERVACAO] = $ausencia->getDsObservacao();
+            $res[CO_AUSENCIA] = $ausencia->getCoAusencia();
         }
-        $this->form = PlanoForm::Cadastrar($res);
+        $this->form = ProfissionalForm::CadastrarAusencia($res);
     }
 
 }
