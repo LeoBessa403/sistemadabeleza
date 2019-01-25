@@ -16,5 +16,9 @@ class  AusenciaService extends AbstractService
         $this->ObjetoModel = New AusenciaModel();
     }
 
+    public function PesquisaAvancada($Condicoes)
+    {
+        return $this->ObjetoModel->PesquisaAvancada($Condicoes);
+    }
 
 }
