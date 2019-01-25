@@ -34,6 +34,9 @@ class Atualiza extends Conn
     public function Atualizar($Tabela, array $Dados, $Termos, $Valores, $co_registro)
     {
         $this->Tabela = (string)$Tabela;
+        if(!empty($Dados[DT_CADASTRO])){
+            unset($Dados[DT_CADASTRO]);
+        }
         $this->Dados = $Dados;
         $this->Termos = (string)$Termos;
         parse_str($Valores, $this->Places);

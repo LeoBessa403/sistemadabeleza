@@ -709,12 +709,12 @@ class Form
             self::$form
             . '<div class="col-md-12" style="display: block; padding: 0;">
                         <button data-style="zoom-out" class="btn btn-success pull-right ladda-button" type="submit" 
-                 value="' . self::$idForm . '" name="' . self::$idForm . '" style="margin-top: 10px; margin-left: 10px;">
+                 value="' . self::$idForm . '" name="' . self::$idForm . '" style="margin-top: 8px; margin-left: 10px;">
                             <span class="ladda-label"> ' . self::$botao . ' </span>
                             <i class="fa fa-save"></i>
                             <span class="ladda-spinner"></span>
                         </button>
-                        <button data-style="expand-right" class="btn btn-danger ladda-button pull-right" type="reset" style="margin-top: 10px;">
+                        <button data-style="expand-right" class="btn btn-danger ladda-button pull-right" type="reset" style="margin-top: 8px;">
                             <span class="ladda-label"> Limpar </span>
                             <i class="fa fa-ban"></i>
                             <span class="ladda-spinner"></span>
@@ -730,7 +730,7 @@ class Form
             }
             self::$form .= '<a href="' . HOME . $link . '"
                            class="btn pull-left btn-primary tooltips" data-original-title="Voltar" data-placement="top"
-                           style="-margin-top: 10px;">
+                           style="margin-top: 10px;">
                             Voltar <i class="clip-arrow-right-2"></i>
                          </a>';
         }

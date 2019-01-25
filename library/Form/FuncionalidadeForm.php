@@ -18,6 +18,12 @@ class FuncionalidadeForm
             ->setLabel("Funcionalidade")
             ->CriaInpunt();
 
+        $formulario
+            ->setId(DS_ACTION)
+            ->setClasses("ob")
+            ->setLabel("Action da Controller")
+            ->CriaInpunt();
+
         $perfis = PerfilService::montaComboTodosPerfis();
         $formulario
             ->setId(CO_PERFIL)

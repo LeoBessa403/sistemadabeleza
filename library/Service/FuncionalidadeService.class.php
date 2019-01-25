@@ -41,6 +41,7 @@ class  FuncionalidadeService extends AbstractService
         $session = new Session();
 
         $funcionalidade[NO_FUNCIONALIDADE] = trim($dados[NO_FUNCIONALIDADE]);
+        $funcionalidade[DS_ACTION] = trim($dados[DS_ACTION]);
 
         $PDO->beginTransaction();
         if (!empty($_POST[CO_FUNCIONALIDADE])):

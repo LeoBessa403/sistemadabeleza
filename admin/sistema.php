@@ -5,10 +5,10 @@ include_once 'library/Partial/Admin/topo_admin.php';
 <!-- MONTA MENU -->
 <?php
 $menu = array(
-    "Configuracao" => array("clip-settings", "Listar Dia Especial Configuracao", "Cadastro Dia Especial Configuracao",
+    "Configuracao" => array("clip-settings", "Dia Especial Configuracao",
         "Formas De Pagamento Configuracao", "Cliente Configuracao", "Agendamento Configuracao",
         "Motivo Desconto Configuracao"),
-    "Profissional" => array("clip-user", "Listar Profissional", "Cadastro Profissional"),
+    "Profissional" => array("clip-user", "Listar Profissional", "Cadastro Profissional", "Ausencia Profissional"),
 );
 $url->GeraMenu($menu);
 ?>

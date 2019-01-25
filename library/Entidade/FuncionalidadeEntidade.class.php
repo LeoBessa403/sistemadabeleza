@@ -14,6 +14,7 @@ class FuncionalidadeEntidade extends AbstractEntidade
 	private $co_funcionalidade;
 	private $no_funcionalidade;
 	private $st_status;
+	private $ds_action;
 	private $co_perfil_funcionalidade;
 	private $co_ajuda;
 
@@ -25,6 +26,7 @@ class FuncionalidadeEntidade extends AbstractEntidade
 			CO_FUNCIONALIDADE,
 			NO_FUNCIONALIDADE,
 			ST_STATUS,
+			DS_ACTION,
 		];
     }
 
@@ -69,6 +71,22 @@ class FuncionalidadeEntidade extends AbstractEntidade
 	public function setNoFuncionalidade($no_funcionalidade)
     {
         return $this->no_funcionalidade = $no_funcionalidade;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsAction()
+    {
+        return $this->ds_action;
+    }
+
+    /**
+     * @param mixed $ds_action
+     */
+    public function setDsAction($ds_action)
+    {
+        $this->ds_action = $ds_action;
     }
 
 	/**

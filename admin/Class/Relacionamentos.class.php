@@ -121,6 +121,11 @@ class Relacionamentos
                     ('Entidade') => 'ProfissionalEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_AUSENCIA) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'AusenciaEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (FuncionalidadeEntidade::TABELA) => Array(
                 (CO_PERFIL_FUNCIONALIDADE) => Array(
@@ -543,6 +548,11 @@ class Relacionamentos
                     ('Entidade') => 'JornadaTrabalhoEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_AUSENCIA) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'AusenciaEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (ContaBancariaEntidade::TABELA) => Array(
                 (CO_PROFISSIONAL) => Array(
@@ -564,6 +574,24 @@ class Relacionamentos
                 ),
             ),
             (BancoEntidade::TABELA) => Array(),
+            (AusenciaEntidade::TABELA) => Array(
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
         );
     }
 }
+
+
+
+
+
+

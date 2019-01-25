@@ -33,6 +33,7 @@ class Funcionalidade extends AbstractController
             $funcionalidade = $funcionalidadeService->PesquisaUmRegistro($coFuncionalidade);
             $res[NO_FUNCIONALIDADE] = $funcionalidade->getNoFuncionalidade();
             $res[CO_FUNCIONALIDADE] = $funcionalidade->getCoFuncionalidade();
+            $res[DS_ACTION] = $funcionalidade->getDsAction();
             $perfisFunc = [];
             /** @var PerfilFuncionalidadeEntidade $perfilFunc */
             foreach ($funcionalidade->getCoPerfilFuncionalidade() as $perfilFunc){

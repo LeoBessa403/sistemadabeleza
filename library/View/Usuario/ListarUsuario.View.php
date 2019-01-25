@@ -47,10 +47,11 @@
                         $grid->criaGrid();
                         /** @var UsuarioEntidade $res */
                         foreach ($result as $res):
-                            if (Valida::ValPerfil(PermissaoAcessoEnum::CADASTRO_USUARIO)) {
+                            if (Valida::ValPerfil(4)) // 4 - Cadastro de Usuário
+                            {
                                 $acao = '<a href="' . PASTAADMIN . 'Usuario/CadastroUsuario/'
                                     . Valida::GeraParametro(CO_USUARIO . "/" . $res->getCoUsuario()) . '" 
-class="btn btn-primary tooltips" 
+                                class="btn btn-primary tooltips" 
                                 data-original-title="Visualizar Registro" data-placement="top">
                                 <i class="fa fa-clipboard"></i>
                                 </a>

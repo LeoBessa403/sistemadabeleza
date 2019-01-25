@@ -12,7 +12,7 @@ class Configuracao extends AbstractController
     public $motivosDesconto;
     public $motivosDescontoAss;
 
-    public function ListarDiaEspecialConfiguracao()
+    public function DiaEspecialConfiguracao()
     {
         /** @var FeriadoService $feriadoService */
         $feriadoService = $this->getService(FERIADO_SERVICE);
@@ -32,7 +32,7 @@ class Configuracao extends AbstractController
         if (!empty($_POST[$id])):
             $retorno = $diaEspecialService->salvaDiaEspecial($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarDiaEspecialConfiguracao/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/DiaEspecialConfiguracao/');
             }
         endif;
 

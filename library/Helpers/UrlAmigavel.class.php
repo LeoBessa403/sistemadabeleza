@@ -294,10 +294,13 @@ class UrlAmigavel
 
     private static function setActionPermissao($ac)
     {
-        $actions = PermissaoAcessoEnum::$actions;
-        foreach ($actions as $cons => $action) {
-            if ($ac == $action) {
-                return $cons;
+        /** @var FuncionalidadeService $funcionalidadeService */
+        $funcionalidadeService = new FuncionalidadeService();
+        $funcinalidades = $funcionalidadeService->PesquisaTodos();
+        /** @var FuncionalidadeEntidade $funcinalidade */
+        foreach ($funcinalidades as $funcinalidade) {
+            if ($ac == $funcinalidade->getDsAction()) {
+                return $funcinalidade->getCoFuncionalidade();
             }
         }
         return null;

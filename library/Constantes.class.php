@@ -83,6 +83,7 @@
     define('DS_FACEBOOK', 'ds_facebook');
     define('DS_TWITTER', 'ds_twitter');
     define('DS_INSTAGRAM', 'ds_instagram');
+    define('DS_ACTION', 'ds_action');
 
 
 

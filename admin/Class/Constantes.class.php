@@ -94,6 +94,10 @@ define('TP_CONTA', 'tp_conta');
 define('CO_JORNADA_TRABALHO', 'co_jornada_trabalho');
 define('CO_BANCO', 'co_banco');
 define('NO_BANCO', 'no_banco');
+define('CO_AUSENCIA', 'co_ausencia');
+define('DT_INICIO', 'dt_inicio');
+define('DT_FIM', 'dt_fim');
+define('TP_AUSENCIA', 'tp_ausencia');
 
 
 
@@ -130,3 +134,4 @@ define('PROFISSIONAL_SERVICE', 'ProfissionalService');
 define('CONTA_BANCARIA_SERVICE', 'ContaBancariaService');
 define('JORNADA_TRABALHO_SERVICE', 'JornadaTrabalhoService');
 define('BANCO_SERVICE', 'BancoService');
+define('AUSENCIA_SERVICE', 'AusenciaService');

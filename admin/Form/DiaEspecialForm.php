@@ -58,7 +58,7 @@ class DiaEspecialForm
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm('Configuracao/ListarDiaEspecialConfiguracao');
+        return $formulario->finalizaForm('Configuracao/DiaEspecialConfiguracao');
     }
 
 

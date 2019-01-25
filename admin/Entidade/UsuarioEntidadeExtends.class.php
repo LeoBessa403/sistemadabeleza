@@ -9,6 +9,7 @@ class UsuarioEntidadeExtends extends AbstractEntidade
 {
     private $co_assinante;
     private $co_profissional;
+    private $co_ausencia;
 
     /**
      * @return AssinanteEntidade $co_assinante
@@ -44,4 +45,19 @@ class UsuarioEntidadeExtends extends AbstractEntidade
         $this->co_profissional = $co_profissional;
     }
 
+    /**
+     * @return AusenciaEntidade $co_ausencia
+     */
+    public function getCoAusencia()
+    {
+        return $this->co_ausencia;
+    }
+
+    /**
+     * @param mixed $co_ausencia
+     */
+    public function setCoAusencia($co_ausencia)
+    {
+        $this->co_ausencia = $co_ausencia;
+    }
 }

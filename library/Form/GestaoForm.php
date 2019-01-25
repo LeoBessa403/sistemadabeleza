@@ -195,6 +195,7 @@ class GestaoForm
         $formulario
             ->setId('CONTROLLER_SEO')
             ->setLabel("Controllers para gerar o seo diferenciado")
+            ->setInfo('Separador por vírguila')
             ->CriaInpunt();
 
         return $formulario->finalizaForm();

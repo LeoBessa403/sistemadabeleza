@@ -36,7 +36,13 @@ function servidor_inicial()
     // ******* CONFIGURAÇÕES DO SITE ********** //
     //////////////////////////////////////////////
 
-    include_once 'library/Config.Padrao.php';
+    if (file_exists( "library/Config.Padrao.php")):
+        include  "library/Config.Padrao.php";
+    elseif (file_exists("../library/Config.Padrao.php")):
+        include "../library/Config.Padrao.php";
+    else:
+        include "../../library/Config.Padrao.php";
+    endif;
 
     if (defined('TEM_SITE') == false) {
         // PROJETO POSSUI SITE

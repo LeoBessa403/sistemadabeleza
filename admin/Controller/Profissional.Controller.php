@@ -127,5 +127,10 @@ class Profissional extends AbstractController
         $this->form = ProfissionalForm::Cadastrar($res, $comboProfissionais);
     }
 
+    public function AusenciaProfissional()
+    {
+        debug(10);
+    }
+
 }
    
