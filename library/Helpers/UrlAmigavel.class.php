@@ -80,8 +80,7 @@ class UrlAmigavel
         $erro_404 = false;
         if (self::$modulo != SITE && self::$action != ACTION_INICIAL_ADMIN &&
             self::$controller != CONTROLLER_INICIAL_ADMIN):
-            $ac = $this->setActionPermissao(self::$action);
-            if (!Valida::ValPerfil($ac, self::$action)):
+            if (!Valida::ValPerfil(self::$action)):
                 self::$action = ACTION_INICIAL_ADMIN;
                 self::$controller = CONTROLLER_INICIAL_ADMIN;
                 $erro_404 = true;
@@ -128,8 +127,7 @@ class UrlAmigavel
 
         if (self::$modulo == ADMIN && !$erro_404):
             // VALIDAÇÃO POR PERFIL REFAZER PRA NOVA ENTIDADE
-            $act = $this->setActionPermissao(self::$action);
-            if (!Valida::ValPerfil($act, self::$action) && !in_array(self::$action, self::$ACESSO_PERMITIDO)) :
+            if (!Valida::ValPerfil(self::$action) && !in_array(self::$action, self::$ACESSO_PERMITIDO)) :
                 self::$action = ACTION_INICIAL_ADMIN;
                 $erro_404 = true;
             endif;
@@ -169,11 +167,11 @@ class UrlAmigavel
      */
     public function GeraMenu(array $menu)
     {
-        if(MODULO_ASSINANTE){
+        if (MODULO_ASSINANTE) {
             $menu["Assinante"] = array("clip-user-5", "Listar Assinante", "Cadastro Assinante", "Dados Complementares Assinante");
             $menu["Plano"] = array("clip-banknote", "Listar Plano", "Cadastro Plano");
         }
-        if(TEM_SITE){
+        if (TEM_SITE) {
             $menu["Visita"] = array("clip-airplane", "Listar Visita");
         }
         $menu["Usuario"] = array("fa fa-group", "Meu Perfil Usuario", "Listar Usuario", "Cadastro Usuario", "Troca Senha Usuario");
@@ -195,7 +193,7 @@ class UrlAmigavel
                                    <span class="title"> PÁGINA INICIAL  </span><span class="selected"></span>
                            </a>
                    </li>';
-        if(TEM_SITE){
+        if (TEM_SITE) {
             echo '<li>
                            <a href="' . HOME . '" target="_blank"><i class="clip-cog-2"></i>
                                    <span class="title"> SITE </span><span class="selected"></span>
@@ -209,8 +207,7 @@ class UrlAmigavel
             foreach ($montando[$key] as $res) :
                 if ($controle > 0):
                     $res = str_replace(' ', '', $res);
-                    $ac = $this->setActionPermissao($res);
-                    if (Valida::ValPerfil($ac, $res)) :
+                    if (Valida::ValPerfil($res)) :
                         $tem = true;
                     endif;
                 endif;
@@ -233,8 +230,7 @@ class UrlAmigavel
                     if ($cout > 0):
                         $titulo_menu = str_replace($titulo[0], "", $result);
                         $result = str_replace(' ', '', $result);
-                        $act = $this->setActionPermissao($result);
-                        if (Valida::ValPerfil($act, $result)):
+                        if (Valida::ValPerfil($result)):
                             echo '<li>
                                     <a href="' . PASTAADMIN . $titulo[0] . '/' . $result . '">
                                             <span class="title"> ' . $titulo_menu . ' </span>
@@ -290,20 +286,6 @@ class UrlAmigavel
         $ac = (!isset(self::$explode[2]) || self::$explode[2] == null || self::$explode[2] == $act
             ? $act : self::$explode[2]);
         self::$action = $ac;
-    }
-
-    private static function setActionPermissao($ac)
-    {
-        /** @var FuncionalidadeService $funcionalidadeService */
-        $funcionalidadeService = new FuncionalidadeService();
-        $funcinalidades = $funcionalidadeService->PesquisaTodos();
-        /** @var FuncionalidadeEntidade $funcinalidade */
-        foreach ($funcinalidades as $funcinalidade) {
-            if ($ac == $funcinalidade->getDsAction()) {
-                return $funcinalidade->getCoFuncionalidade();
-            }
-        }
-        return null;
     }
 
     private static function setParams()

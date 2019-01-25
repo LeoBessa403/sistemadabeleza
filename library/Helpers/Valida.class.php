@@ -430,11 +430,10 @@ class Valida
     }
 
     /**
-     * @param $act
-     * @param $action
+     * @param $action (Action a ser validada)
      * @return bool
      */
-    public static function ValPerfil($act, $action = null)
+    public static function ValPerfil($action)
     {
         if (Session::CheckSession(SESSION_USER)):
             if (Session::getSession(SESSION_USER, CAMPO_PERFIL)):
@@ -464,7 +463,7 @@ class Valida
                 }
 
                 $funcionalidadeModel = new FuncionalidadeModel();
-                $data[CO_FUNCIONALIDADE] = $act;
+                $data[DS_ACTION] = $action;
                 /** @var FuncionalidadeEntidade $funcionalidade */
                 $funcionalidade = $funcionalidadeModel->PesquisaUmQuando($data);
 

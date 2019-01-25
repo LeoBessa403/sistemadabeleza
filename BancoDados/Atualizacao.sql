@@ -8,3 +8,7 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("26"
 
 INSERT INTO TB_DIA_ESPECIAL (dt_dia, nu_dia_semana, nu_hora_abertura, nu_hora_fechamento, ds_motivo, co_assinante) VALUES ("2019-01-31", "4", "09:00", "14:00", "Dia especial", "11");
 
+INSERT INTO TB_PERFIL (no_perfil) VALUES ("mEU pERFIL");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("19", "23");
+
