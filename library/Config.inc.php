@@ -14,6 +14,92 @@ else:
 endif;
 servidor_inicial();
 
+if (file_exists( "library/Config.Padrao.php")):
+    include  "library/Config.Padrao.php";
+elseif (file_exists("../library/Config.Padrao.php")):
+    include "../library/Config.Padrao.php";
+else:
+    include "../../library/Config.Padrao.php";
+endif;
+
+if (file_exists(ADMIN . "/Class/Constantes.class.php")):
+    include ADMIN . "/Class/Constantes.class.php";
+elseif (file_exists("../" . ADMIN . "/Class/Constantes.class.php")):
+    include "../" . ADMIN . "/Class/Constantes.class.php";
+else:
+    include "../../" . ADMIN . "/Class/Constantes.class.php";
+endif;
+
+if (file_exists('library/Constantes.class.php')):
+    include_once "library/Constantes.class.php";
+else:
+    include_once "../../library/Constantes.class.php";
+endif;
+
+if (defined('TEM_SITE') == false) {
+    // PROJETO POSSUI SITE
+    define('TEM_SITE', FALSE);
+    // PROJETO POSSUI MODULO ASSINANTE
+    define('MODULO_ASSINANTE', FALSE);
+    // LOGAR COM EMAIL OU CPF
+    define('LOGAR_EMAIL', TRUE);
+    // TABELA PARA ARMAZENAR OS DADOS PARA AUDITORIA
+    define('TABELA_AUDITORIA', TRUE);
+    // Título do Site
+    define('DESC', 'Descrição do Sistema');
+    // Título do Sistema
+    define('DESC_SIS', 'SisNovo');
+    // CONTROLLER INICIAL DO SITE
+    define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
+    // AÇÃO INICIAL DO SITE
+    define('ACTION_INICIAL_SITE', 'Index');
+    // CONTROLLER INICIAL DO ADMIN
+    define('CONTROLLER_INICIAL_ADMIN', 'Index');
+    // AÇÃO INICIAL DO ADMIN
+    define('ACTION_INICIAL_ADMIN', 'Index');
+    // Tabela de pesquisa de usuário para validação
+    define('TABLE_USER', 'tb_usuario');
+    // Campo da senha na Tabela de pesquisa de usuário para validação
+    define('CAMPO_PASS', 'ds_code');
+    // Campo do ID (Chave Primaria) na Tabela de pesquisa de usuário para validação
+    define('CAMPO_ID', 'co_usuario');
+    // Campo do Perfil na Tabela de pesquisa de usuário para validação dos perfis
+    // (Ex.: cadastrante, administrador, pesquisador) Sepmre separados por (, )
+    define('CAMPO_PERFIL', 'ds_perfil');
+    // Atribui o nome da Sessão do usuario Logado no sitema
+    define('SESSION_USER', 'user_sistema_novinho');
+    // Tempo de Inativadade Máximo em Minutos, aceito para deslogar do Sistema.
+    define('INATIVO', 30);
+    // A frequencia em dias para realizar o BACKUP NO BANCO DE DADOS
+    define('BACKUP', 5);
+    // TAMANHO PADRÃO DO WIDTH DAS IAMGENS A SEREM CARREGADAS
+    define('TAMANHO', 800);
+    // NÚMERO PADRÃO DE ENVIO DO WHATSAPP
+    define('WHATSAPP', '');
+    // DESCRIÇÃO PADRÃO DO SITE
+    define('DESC_SITE', 'Sistema de gestão novo');
+    // TÍTULO PADRÃO DO SITE
+    define('TITULO_SITE', 'Sistema de gestão novo');
+    // CONTROLLERS PARA GERAR O SEO DIFERENCIADO
+    define('CONTROLLER_SEO', '');
+    // NÚMERO DE IMAGENS DE BACKGROUND DA TELA INICIAL DO SISTEMA
+    define('NUM_BG_IMAGENS', 1);
+
+    //////////////////////////////////////////////
+    // ******* CONFIGURAÇÕES DE EMAIL ********** //
+    //////////////////////////////////////////////
+
+    define('HOST_EMAIL', '');
+    define('PORTA_EMAIL', FALSE);
+    define('USER_EMAIL', '');
+    define('PASS_EMAIL', '');
+
+    //////////////////////////////////////////////
+    // *********** GOOGLE ANALITCS  *********** //
+    //////////////////////////////////////////////
+    define('ID_ANALITCS', FALSE);
+}
+
 //*************************************//
 //* CONFIGURAÇÕES DE LOGIN DO SISTEMA *//
 //*************************************//

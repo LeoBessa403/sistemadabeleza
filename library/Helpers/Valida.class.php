@@ -642,6 +642,19 @@ class Valida
     }
 
     /**
+     * @param $descricao
+     * @param $action
+     * @param $class
+     */
+    public static function geraBtn($descricao, $action, $class)
+    {
+        echo '<a href="' . $action . '"
+               class="btn ' . $class . ' tooltips" data-original-title="' . $descricao . '" data-placement="top">
+               <i class="fa fa-plus"></i> ' . $descricao . '
+            </a>';
+    }
+
+    /**
      * @param $mensagem
      * @param array $parametros
      * @param string $whatsapp

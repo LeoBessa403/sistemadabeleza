@@ -40,16 +40,18 @@ class GestaoForm
         return $formulario->finalizaForm();
     }
 
-    public static function Config()
+    public static function Config($res)
     {
         $id = "GerarBackup";
 
         $formulario = new Form($id, null, 'Gerar');
+        $formulario->setValor($res);
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
             ->setLabel("Projeto possui site?")
             ->setId('TEM_SITE')
+            ->setClasses($res['TEM_SITE'])
             ->setType("checkbox")
             ->setTamanhoInput(3)
             ->setOptions($label_options2)
@@ -59,6 +61,7 @@ class GestaoForm
         $formulario
             ->setLabel("Modulo assinante?")
             ->setId('MODULO_ASSINANTE')
+            ->setClasses($res['MODULO_ASSINANTE'])
             ->setType("checkbox")
             ->setTamanhoInput(3)
             ->setOptions($label_options2)
@@ -68,6 +71,7 @@ class GestaoForm
         $formulario
             ->setLabel("Logar com email?")
             ->setId('LOGAR_EMAIL')
+            ->setClasses($res['LOGAR_EMAIL'])
             ->setType("checkbox")
             ->setTamanhoInput(3)
             ->setOptions($label_options2)
@@ -77,6 +81,7 @@ class GestaoForm
         $formulario
             ->setLabel("Tabela para auditoria?")
             ->setId('TABELA_AUDITORIA')
+            ->setClasses($res['TABELA_AUDITORIA'])
             ->setType("checkbox")
             ->setTamanhoInput(3)
             ->setOptions($label_options2)
@@ -85,107 +90,128 @@ class GestaoForm
         $formulario
             ->setId('DESC')
             ->setLabel("Nome do Sistema")
-            ->setTamanhoInput(6)
+            ->setTamanhoInput(3)
             ->CriaInpunt();
 
         $formulario
             ->setId('DESC_SIS')
+            ->setClasses('ob')
             ->setLabel("Sigla do Sistema")
+            ->setTamanhoInput(3)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('TITULO_SITE')
+            ->setClasses('ob')
+            ->setLabel("Título padrão do site")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
+            ->setType('textarea')
+            ->setId('DESC_SITE')
+            ->setClasses('ob')
+            ->setLabel("Descrição padrão do site")
+            ->CriaInpunt();
+
+        $formulario
             ->setId('CONTROLLER_INICIAL_ADMIN')
+            ->setClasses('ob')
             ->setLabel("Controller inicial do admin")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('ACTION_INICIAL_ADMIN')
+            ->setClasses('ob')
             ->setLabel("Ação inicial do admin")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('CONTROLLER_INICIAL_SITE')
+            ->setClasses('ob')
             ->setLabel("Controller inicial do site")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('ACTION_INICIAL_SITE')
+            ->setClasses('ob')
             ->setLabel("Ação inicial do site")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('TABLE_USER')
+            ->setClasses('ob')
             ->setLabel("Tabela de usuário para validação")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('CAMPO_PASS')
+            ->setClasses('ob')
             ->setLabel("Campo da senha na Tabela")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('CAMPO_ID')
+            ->setClasses('ob')
             ->setLabel("Chave Primaria na Tabela de usuário")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('CAMPO_PERFIL')
+            ->setClasses('ob')
             ->setLabel("Campo do Perfil na Tabela de usuário")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('SESSION_USER')
+            ->setClasses('ob')
             ->setLabel("Nome da Sessão do usuário Logado")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('INATIVO')
+            ->setClasses('ob')
+            ->setClasses('numero')
             ->setLabel("Tempo de Inativadade Máximo em Minutos")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('BACKUP')
+            ->setClasses('ob')
+            ->setClasses('numero')
             ->setLabel("Dias para realizar o BACKUP NO BANCO")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('TAMANHO')
+            ->setClasses('ob')
+            ->setClasses('numero')
             ->setLabel("Tamanho padrão do width das iamgens")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
             ->setId('WHATSAPP')
+            ->setClasses('ob')
+            ->setClasses('tel')
             ->setLabel("Número padrão de envio do WhatsApp")
             ->setTamanhoInput(6)
             ->CriaInpunt();
 
         $formulario
-            ->setId('DESC_SITE')
-            ->setLabel("Descrição padrão do site")
-            ->setTamanhoInput(6)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId('TITULO_SITE')
-            ->setLabel("Título padrão do site")
-            ->setTamanhoInput(6)
-            ->CriaInpunt();
-
-        $formulario
             ->setId('NUM_BG_IMAGENS')
+            ->setClasses('ob')
             ->setLabel("Número de imagens")
             ->setClasses('numero')
             ->setTamanhoInput(6)

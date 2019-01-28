@@ -19,6 +19,7 @@
                 <div class="page-header">
                     <h1>Gestão
                         <small>Arquivo de Configuração Padrão</small>
+                        <?php Valida::geraBtn('Reset Config', 'ResetConfigGestao' , 'btn-info'); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->

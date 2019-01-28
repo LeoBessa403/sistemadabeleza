@@ -139,14 +139,13 @@ class UrlAmigavel
         endif;
 
         extract((array)$app);
+        $actAux = self::$action;
 
         if ($erro_404):
             $module = (self::$modulo == SITE) ? CONTROLLER_INICIAL_SITE : CONTROLLER_INICIAL_ADMIN;
             $arquivo_include = 'View/' . $module . '/' . ERRO_404 . '.View.php';
-            $action = ERRO_404;
         else:
             $arquivo_include = 'View/' . self::$controller . "/" . self::$action . '.View.php';
-            $action = self::$action;
         endif;
         if (file_exists($arquivo_include) && !is_dir($arquivo_include)):
             include $arquivo_include;
@@ -156,7 +155,7 @@ class UrlAmigavel
             include "library/" . $arquivo_include;
         else:
             Notificacoes::mesagens("A View <b>" . self::$modulo . "/" . self::$controller . "/" .
-                $action . ".View.php</b> não foi encontrada!",
+                $actAux . ".View.php</b> não foi encontrada!",
                 TiposMensagemEnum::ERRO);
         endif;
     }
