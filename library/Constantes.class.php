@@ -84,7 +84,10 @@
     define('DS_TWITTER', 'ds_twitter');
     define('DS_INSTAGRAM', 'ds_instagram');
     define('DS_ACTION', 'ds_action');
-
+    define('CO_CONTROLLER', 'co_controller');
+    define('NO_CONTROLLER', 'no_controller');
+    define('ST_MENU', 'st_menu');
+    define('DS_CLASS_ICON', 'ds_class_icon');
 
 
 	// SERVICES PADRÃO
@@ -105,7 +108,7 @@
     define('PAGINA_SERVICE', 'PaginaService');
     define('VISITA_SERVICE', 'VisitaService');
     define('PAGINA_VISITA_SERVICE', 'PaginaVisitaService');
-
+    define('CONTROLLER_SERVICE', 'ControllerService');
 
 
     // CONSTANTES

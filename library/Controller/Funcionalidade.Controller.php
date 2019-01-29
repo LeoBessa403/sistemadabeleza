@@ -21,23 +21,30 @@ class Funcionalidade extends AbstractController
 
         if (!empty($_POST[$id])):
             $retorno = $funcionalidadeService->salvaFuncionalidade($_POST);
-            if($retorno[SUCESSO]){
-                Redireciona(UrlAmigavel::$modulo.'/'.UrlAmigavel::$controller.'/ListarFuncionalidade/');
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarFuncionalidade/');
             }
         endif;
 
         $coFuncionalidade = UrlAmigavel::PegaParametro("fun");
-        $res = array();
+        $res[ST_MENU] = '';
         if ($coFuncionalidade):
             /** @var FuncionalidadeEntidade $funcionalidade */
             $funcionalidade = $funcionalidadeService->PesquisaUmRegistro($coFuncionalidade);
             $res[NO_FUNCIONALIDADE] = $funcionalidade->getNoFuncionalidade();
             $res[CO_FUNCIONALIDADE] = $funcionalidade->getCoFuncionalidade();
             $res[DS_ACTION] = $funcionalidade->getDsAction();
+            $res[ST_MENU] = ($funcionalidade->getStMenu() == 'S')
+                ? 'checked' : '';
+            $res['nova_controller'] = '';
+            $res[CO_CONTROLLER] = (!empty($funcionalidade->getCoController()))
+                ? $funcionalidade->getCoController()->getCoController() : NULL;
             $perfisFunc = [];
-            /** @var PerfilFuncionalidadeEntidade $perfilFunc */
-            foreach ($funcionalidade->getCoPerfilFuncionalidade() as $perfilFunc){
-                $perfisFunc[] = $perfilFunc->getCoPerfil()->getCoPerfil();
+            if (!empty($funcionalidade->getCoPerfilFuncionalidade())) {
+                /** @var PerfilFuncionalidadeEntidade $perfilFunc */
+                foreach ($funcionalidade->getCoPerfilFuncionalidade() as $perfilFunc) {
+                    $perfisFunc[] = $perfilFunc->getCoPerfil()->getCoPerfil();
+                }
             }
             $res[CO_PERFIL] = $perfisFunc;
         endif;

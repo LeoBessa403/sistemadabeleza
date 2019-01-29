@@ -12,6 +12,50 @@ class FuncionalidadeForm
             $formulario->setValor($res);
         endif;
 
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Apresentar no Menu?")
+            ->setClasses($res[ST_MENU])
+            ->setId(ST_MENU)
+            ->setType("checkbox")
+            ->setTamanhoInput(6)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Nova Controller?")
+            ->setClasses($res['nova_controller'])
+            ->setId('nova_controller')
+            ->setType("checkbox")
+            ->setTamanhoInput(6)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(CO_CONTROLLER)
+            ->setAutocomplete(
+                ControllerEntidade::TABELA,
+                NO_CONTROLLER,
+                ControllerEntidade::CHAVE
+            )
+            ->setType("select")
+            ->setLabel("Controller da Action")
+            ->setClasses("ob")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_CONTROLLER)
+            ->setClasses("ob")
+            ->setLabel("Nome Nova Controller")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_CLASS_ICON)
+            ->setClasses("ob")
+            ->setLabel("Classe do Ícone")
+            ->CriaInpunt();
+
         $formulario
             ->setId(NO_FUNCIONALIDADE)
             ->setClasses("ob")
@@ -28,14 +72,13 @@ class FuncionalidadeForm
         $formulario
             ->setId(CO_PERFIL)
             ->setLabel("Perfis")
-            ->setClasses("multipla ob")
+            ->setClasses("multipla")
             ->setInfo("Perfis que podem acessar a funcionalidade.")
             ->setType("select")
             ->setOptions($perfis)
             ->CriaInpunt();
 
-
-        if ($res):
+        if (!empty($res[CO_FUNCIONALIDADE])):
             $formulario
                 ->setType("hidden")
                 ->setId(CO_FUNCIONALIDADE)

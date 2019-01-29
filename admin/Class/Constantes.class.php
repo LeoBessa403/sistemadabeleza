@@ -135,3 +135,5 @@ define('CONTA_BANCARIA_SERVICE', 'ContaBancariaService');
 define('JORNADA_TRABALHO_SERVICE', 'JornadaTrabalhoService');
 define('BANCO_SERVICE', 'BancoService');
 define('AUSENCIA_SERVICE', 'AusenciaService');
+
+

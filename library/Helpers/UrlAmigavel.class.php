@@ -162,10 +162,15 @@ class UrlAmigavel
 
     /**
      * <b>Usada para Gerar o Menu da Aplicação</b>
-     * @param array $menu
      */
-    public function GeraMenu(array $menu)
+    public function GeraMenu()
     {
+        /** @var FuncionalidadeService $funcService */
+        $funcService = new FuncionalidadeService();
+        $funcionalidades = $funcService->PesquisaTodos([
+           ST_MENU => SimNaoEnum::SIM
+        ]);
+        debug($funcionalidades);
         if (MODULO_ASSINANTE) {
             $menu["Assinante"] = array("clip-user-5", "Listar Assinante", "Cadastro Assinante", "Dados Complementares Assinante");
             $menu["Plano"] = array("clip-banknote", "Listar Plano", "Cadastro Plano");

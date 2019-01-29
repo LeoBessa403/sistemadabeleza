@@ -1,7 +1,26 @@
 var Funcoes = function () {
     var inicio = function () {
 
+        // CADASTRO De Retiro de Carnaval
+        function disabilitaCamposnovaController() {
+            if ($("#nova_controller").prop('checked')) {
+                $("#co_controller").parent(".form-group").hide();
+                $("#no_controller").parent(".form-group").show();
+                $("#ds_class_icon").parent(".form-group").show();
+                $("#co_controller").removeClass('ob');
+            } else {
+                $("#co_controller").parent(".form-group").show();
+                $("#no_controller").parent(".form-group").hide();
+                $("#ds_class_icon").parent(".form-group").hide();
+                $("#no_controller").removeClass('ob');
+                $("#ds_class_icon").removeClass('ob');
+            }
+        }
+        disabilitaCamposnovaController();
 
+        $("#nova_controller").change(function () {
+            disabilitaCamposnovaController();
+        });
     };
     return {
         init: function () {

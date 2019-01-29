@@ -133,6 +133,11 @@ class Relacionamentos
                     ('Entidade') => 'PerfilFuncionalidadeEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_CONTROLLER) => Array(
+                    ('Campo') => CO_CONTROLLER,
+                    ('Entidade') => 'ControllerEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (AuditoriaEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -302,6 +307,13 @@ class Relacionamentos
                 (CO_PLANO_ASSINANTE) => Array(
                     ('Campo') => CO_PLANO,
                     ('Entidade') => 'PlanoAssinanteEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (ControllerEntidade::TABELA) => Array(
+                (CO_FUNCIONALIDADE) => Array(
+                    ('Campo') => CO_CONTROLLER,
+                    ('Entidade') => 'FuncionalidadeEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -589,9 +601,4 @@ class Relacionamentos
         );
     }
 }
-
-
-
-
-
 
