@@ -50,98 +50,30 @@ class Modal
             </div>';
     }
 
-    public static function desativaProduto($id)
+    public static function modelConfirmacao($id, $msg, $codigo, $action)
     {
-        echo '<div class="modal fade in modal-overflow produto_model" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-header btn-bricky">
-                        <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">
-                                X
-                        </button>
-                        <h4 class="modal-title">Desativar Produto</h4>
-                </div>
-                <div class="modal-body">
-                        <b>Deseja Realmente Desativar esse Produto?</b>
-                </div>
-                <div class="modal-footer">
-                        <button aria-hidden="true" data-dismiss="modal" class="btn btn-bricky cancelar">
-                                Fechar
-                        </button>
-                        <button class="btn btn-success" data-dismiss="modal" id="" data-url-action="">
-                                OK
-                        </button>
-                </div>
-            </div>';
-    }
-
-    public static function ativaProduto($id)
-    {
-        echo '<div class="modal fade in modal-overflow produto_model" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
+        echo '<div class="modal fade in modal-overflow model_confirmacao" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-header btn-success">
                         <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">
                                 X
                         </button>
-                        <h4 class="modal-title">Ativar Produto</h4>
+                        <h4 class="modal-title">Confirmação</h4>
                 </div>
                 <div class="modal-body">
-                        <b>Deseja Realmente Ativar esse Produto?</b>
+                        <b>' . $msg . '</b>
                 </div>
                 <div class="modal-footer">
                         <button aria-hidden="true" data-dismiss="modal" class="btn btn-bricky cancelar">
                                 Fechar
                         </button>
-                        <button class="btn btn-success" data-dismiss="modal" id="" data-url-action="">
+                        <button class="btn btn-success" data-dismiss="modal" id="btn-success-' . $id . '" data-url-action="' . $action . '">
                                 OK
                         </button>
+                        <input type="hidden" name="codigo" id="codigo" value="' . $codigo . '" />
                 </div>
             </div>';
+        echo '<a data-toggle="modal" role="button" href="#' . $id . '" id="model_confirmacao"></a>';
     }
-
-    public static function desativaDestaque($id)
-    {
-        echo '<div class="modal fade in modal-overflow produto_model" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-header btn-bricky">
-                        <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">
-                                X
-                        </button>
-                        <h4 class="modal-title">Desativar Destaque do Produto</h4>
-                </div>
-                <div class="modal-body">
-                        <b>Deseja Realmente Desativar o Destaque desse Produto?</b>
-                </div>
-                <div class="modal-footer">
-                        <button aria-hidden="true" data-dismiss="modal" class="btn btn-bricky cancelar">
-                                Fechar
-                        </button>
-                        <button class="btn btn-success" data-dismiss="modal" id="" data-url-action="">
-                                OK
-                        </button>
-                </div>
-            </div>';
-    }
-
-    public static function ativaDestaque($id)
-    {
-        echo '<div class="modal fade in modal-overflow produto_model" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-header btn-success">
-                        <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">
-                                X
-                        </button>
-                        <h4 class="modal-title">Ativar Destaque do Produto</h4>
-                </div>
-                <div class="modal-body">
-                        <b>Deseja Realmente Ativar o Destaque desse Produto?</b>
-                </div>
-                <div class="modal-footer">
-                        <button aria-hidden="true" data-dismiss="modal" class="btn btn-bricky cancelar">
-                                Fechar
-                        </button>
-                        <button class="btn btn-success" data-dismiss="modal" id="" data-url-action="">
-                                OK
-                        </button>
-                </div>
-            </div>';
-    }
-
 
     public static function confirmacao($id)
     {

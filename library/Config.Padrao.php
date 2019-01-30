@@ -1,18 +1,18 @@
-<?php 
+<?php
 
 /**
  * Config.Padrao [ HELPER ]
- * Constantes padr�o gerados do sistema
+ * Constantes padrão gerados do sistema
  *
  * @copyright (c) 2019, Leo Bessa
- */ 
+ */
 define('MODULO_ASSINANTE', '1');
 define('LOGAR_EMAIL', '1');
 define('TABELA_AUDITORIA', '1');
 define('DESC', 'Sistema da Beleza');
 define('DESC_SIS', 'SisBela');
-define('TITULO_SITE', 'Sistema de gestão do ramo de beleza');
-define('DESC_SITE', 'Sistema de gestão do ramo de beleza');
+define('TITULO_SITE', 'Sistema de gestÃ£o do ramo de beleza');
+define('DESC_SITE', 'Sistema de gestÃ£o do ramo de beleza');
 define('CONTROLLER_INICIAL_ADMIN', 'Index');
 define('ACTION_INICIAL_ADMIN', 'Index');
 define('CONTROLLER_INICIAL_SITE', 'IndexWeb');
@@ -34,4 +34,3 @@ define('HOST_EMAIL', '');
 define('PORTA_EMAIL', '');
 define('ID_ANALITCS', '');
 define('TEM_SITE', '');
-

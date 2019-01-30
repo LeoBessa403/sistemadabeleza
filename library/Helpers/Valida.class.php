@@ -646,9 +646,9 @@ class Valida
      * @param $action
      * @param $class
      */
-    public static function geraBtn($descricao, $action, $class)
+    public static function geraBtn($descricao, $action, $class, $id)
     {
-        echo '<a href="' . $action . '"
+        echo '<a href="' . $action . '" id="' . $id . '"
                class="btn ' . $class . ' tooltips" data-original-title="' . $descricao . '" data-placement="top">
                <i class="fa fa-plus"></i> ' . $descricao . '
             </a>';

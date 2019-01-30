@@ -21,6 +21,16 @@ var Funcoes = function () {
         $("#nova_controller").change(function () {
             disabilitaCamposnovaController();
         });
+
+        // Botão Reset
+        $('#config').click(function () {
+           $("#model_confirmacao").click();
+           return false;
+        });
+
+        $('#btn-success-Config').click(function () {
+            location.href=$('#config').attr('href');
+        });
     };
     return {
         init: function () {
