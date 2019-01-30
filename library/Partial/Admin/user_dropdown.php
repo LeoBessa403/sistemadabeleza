@@ -31,7 +31,7 @@
         <li>
             <a href="<?= PASTAADMIN; ?>Usuario/MeuPerfilUsuario">
                 <i class="clip-user-3"></i>
-                &nbsp;Meu Usuário
+                &nbsp;Meu Perfil
             </a>
         </li>
     </ul>

@@ -102,7 +102,6 @@ class Configuracao extends AbstractController
         $facilidadePagamentoService = $this->getService(FACILIDADE_PAGAMENTO_SERVICE);
         /** @var AssinanteEntidade $assinante */
         $assinante = $assinanteService->getAssinanteLogado();
-        $session = new Session();
 
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
         $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
@@ -165,8 +164,9 @@ class Configuracao extends AbstractController
         }
         if (!$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_CREDITO] &&
             !$dadosTipoPagamento[TipoPagamentoEnum::CARTAO_DEBITO]) {
-            $session->setSession(MENSAGEM,
-                'Inclusão apenas de taxas para tipos de pagamento aceito com Cartões de Débito e/ou Crédito');
+            Notificacoes::geraMensagem(
+                'Inclusão apenas de taxas para tipos de pagamento aceito com Cartões de Débito e/ou Crédito',
+                TiposMensagemEnum::ALERTA);
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/FormasDePagamentoConfiguracao/');
         }
 

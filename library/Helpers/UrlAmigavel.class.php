@@ -165,25 +165,9 @@ class UrlAmigavel
      */
     public function GeraMenu()
     {
-        /** @var FuncionalidadeService $funcService */
-        $funcService = new FuncionalidadeService();
-        $funcionalidades = $funcService->PesquisaTodos([
-           ST_MENU => SimNaoEnum::SIM
-        ]);
-        debug($funcionalidades);
-        if (MODULO_ASSINANTE) {
-            $menu["Assinante"] = array("clip-user-5", "Listar Assinante", "Cadastro Assinante", "Dados Complementares Assinante");
-            $menu["Plano"] = array("clip-banknote", "Listar Plano", "Cadastro Plano");
-        }
-        if (TEM_SITE) {
-            $menu["Visita"] = array("clip-airplane", "Listar Visita");
-        }
-        $menu["Usuario"] = array("fa fa-group", "Meu Perfil Usuario", "Listar Usuario", "Cadastro Usuario", "Troca Senha Usuario");
-        $menu["Perfil"] = array("clip-stack-empty", "Listar Perfil", "Cadastro Perfil");
-        $menu["Funcionalidade"] = array("fa fa-outdent", "Listar Funcionalidade", "Cadastro Funcionalidade");
-        $menu["Acesso"] = array("clip-connection-2", "Listar Acesso");
-        $menu["Auditoria"] = array("fa fa-crosshairs", "Listar Auditoria");
-        $menu["Gestao"] = array("clip-data", "Config Gestao", "Gerar Entidades Gestao", "Gerar Backup Gestao");
+        /** @var ControllerService $controllerService */
+        $controllerService = new ControllerService();
+        $controllers = $controllerService->PesquisaTodos();
 
         $ativo = UrlAmigavel::$controller;
 
@@ -204,45 +188,48 @@ class UrlAmigavel
                            </a>
                    </li>';
         }
-        foreach ($menu as $key => $value) {
-            $montando[$key] = $value;
+        /** @var ControllerEntidade $controller */
+        foreach ($controllers as $controller) {
+            $titulo = $controller->getNoController();
             $tem = false;
-            $controle = 0;
-            foreach ($montando[$key] as $res) :
-                if ($controle > 0):
-                    $res = str_replace(' ', '', $res);
-                    if (Valida::ValPerfil($res)) :
-                        $tem = true;
+            if (!empty($controller->getCoFuncionalidade())) {
+                /** @var FuncionalidadeEntidade $func */
+                foreach ($controller->getCoFuncionalidade() as $func) :
+                    if ($func->getStMenu() == SimNaoEnum::SIM):
+                        if (Valida::ValPerfil($func->getDsAction())) :
+                            $tem = true;
+                            break;
+                        endif;
                     endif;
-                endif;
-                $controle++;
-            endforeach;
+                endforeach;
+            }
+            if(($titulo == 'Assinante' || $titulo == 'Plano') && (!MODULO_ASSINANTE)){
+                $tem = false;
+            }
+            if($titulo == 'Visita' && !TEM_SITE){
+                $tem = false;
+            }
             if ($tem):
-                $titulo = array_keys($montando, $montando[$key]);
-                if ($ativo == $titulo[0]):
+                if ($ativo == $titulo):
                     echo '<li class="active">';
                 else:
                     echo '<li>';
                 endif;
-                echo '<a href="javascript:void(0)"><i class="' . $montando[$key][0] . '"></i>
-                                       <span class="title"> ' . $titulo[0] . ' </span><i class="icon-arrow"></i>
+                echo '<a href="javascript:void(0)"><i class="' . $controller->getDsClassIcon() . '"></i>
+                                       <span class="title"> ' . $titulo . ' </span><i class="icon-arrow"></i>
                                        <span class="selected"></span>
                                </a>
                                <ul class="sub-menu" style="display: none;">';
-                $cout = 0;
-                foreach ($montando[$key] as $result) {
-                    if ($cout > 0):
-                        $titulo_menu = str_replace($titulo[0], "", $result);
-                        $result = str_replace(' ', '', $result);
-                        if (Valida::ValPerfil($result)):
-                            echo '<li>
-                                    <a href="' . PASTAADMIN . $titulo[0] . '/' . $result . '">
+                /** @var FuncionalidadeEntidade $func */
+                foreach ($controller->getCoFuncionalidade() as $func) {
+                    $titulo_menu = str_replace($titulo, "", $func->getNoFuncionalidade());
+                    if (Valida::ValPerfil($func->getDsAction()) && $func->getStMenu() == SimNaoEnum::SIM):
+                        echo '<li>
+                                    <a href="' . PASTAADMIN . $titulo . '/' . $func->getDsAction() . '">
                                             <span class="title"> ' . $titulo_menu . ' </span>
                                     </a>
                                  </li>';
-                        endif;
                     endif;
-                    $cout++;
                 }
                 echo '</ul>
                        </li>';

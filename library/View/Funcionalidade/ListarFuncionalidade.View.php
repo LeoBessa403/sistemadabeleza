@@ -35,7 +35,7 @@
                         Modal::load();
                         Modal::deletaRegistro("Funcionalidade");
                         Modal::confirmacao("confirma_Funcionalidade");
-                        $arrColunas = array('Nome', 'Perfis', 'Ações');
+                        $arrColunas = array('Nome', 'Action', 'Controller', 'Perfis', 'Apresentar Menu', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -61,7 +61,10 @@
                                     <i class="fa fa-trash-o"></i>
                                 </a>';
                                 $grid->setColunas($res->getNoFuncionalidade());
+                                $grid->setColunas($res->getDsAction());
+                                $grid->setColunas($controller = $res->getCoController()->getNoController());
                                 $grid->setColunas(implode(', ', $perfis));
+                                $grid->setColunas(Valida::SituacaoSimNao($res->getStMenu()));
                                 $grid->setColunas($acao, 2);
                                 $grid->criaLinha($res->getCoFuncionalidade());
                             endif;

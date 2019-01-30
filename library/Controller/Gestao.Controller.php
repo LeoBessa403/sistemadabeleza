@@ -76,6 +76,11 @@ class Gestao extends AbstractController
         $res['WHATSAPP'] = str_replace('55', '', WHATSAPP);
         $res['NUM_BG_IMAGENS'] = NUM_BG_IMAGENS;
         $res['CONTROLLER_SEO'] = CONTROLLER_SEO;
+        $res['USER_EMAIL'] = USER_EMAIL;
+        $res['PASS_EMAIL'] = PASS_EMAIL;
+        $res['HOST_EMAIL'] = HOST_EMAIL;
+        $res['PORTA_EMAIL'] = PORTA_EMAIL;
+        $res['ID_ANALITCS'] = ID_ANALITCS;
 
         $this->form = GestaoForm::Config($res);
     }

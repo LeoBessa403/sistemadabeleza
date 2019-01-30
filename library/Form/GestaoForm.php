@@ -224,6 +224,42 @@ class GestaoForm
             ->setInfo('Separador por vírguila')
             ->CriaInpunt();
 
+        $formulario
+            ->setId('USER_EMAIL')
+            ->setLabel("Email")
+            ->setClasses('email')
+            ->setTamanhoInput(8)
+            ->setInfo('E-mail padrão para envio do sistema')
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('PASS_EMAIL')
+            ->setLabel("Senha")
+            ->setTamanhoInput(4)
+            ->setInfo('Senha do email')
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('HOST_EMAIL')
+            ->setLabel("Host E-mail")
+            ->setInfo('Host de configuração do email')
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('PORTA_EMAIL')
+            ->setLabel("Porta E-mail")
+            ->setClasses('numero')
+            ->setTamanhoInput(6)
+            ->setInfo('Porta de configuração do email')
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('ID_ANALITCS')
+            ->setTamanhoInput(6)
+            ->setLabel("Id Analitcs")
+            ->setInfo('Código identificador do analitics')
+            ->CriaInpunt();
+
         return $formulario->finalizaForm();
     }
 }

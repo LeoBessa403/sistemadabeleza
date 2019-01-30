@@ -28,5 +28,10 @@ define('TAMANHO', '800');
 define('WHATSAPP', '5561993704240');
 define('NUM_BG_IMAGENS', '50');
 define('CONTROLLER_SEO', '');
+define('USER_EMAIL', '');
+define('PASS_EMAIL', '');
+define('HOST_EMAIL', '');
+define('PORTA_EMAIL', '');
+define('ID_ANALITCS', '');
 define('TEM_SITE', '');
 

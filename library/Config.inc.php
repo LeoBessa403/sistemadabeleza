@@ -90,7 +90,7 @@ if (defined('TEM_SITE') == false) {
     //////////////////////////////////////////////
 
     define('HOST_EMAIL', '');
-    define('PORTA_EMAIL', FALSE);
+    define('PORTA_EMAIL', '');
     define('USER_EMAIL', '');
     define('PASS_EMAIL', '');
 
@@ -113,7 +113,8 @@ define('LOGADO', '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
 define('ERRO_404', '404');
 // CONTROLLERS PARA NÃO SEGUIR PARA A AUDITORIA
 define('SEM_AUDITORIA', AcessoEntidade::TABELA . ', ' . TrafegoEntidade::TABELA . ', ' .
-    PaginaVisitaEntidade::TABELA . ', ' . PaginaEntidade::TABELA . ', ' . VisitaEntidade::TABELA);
+    PaginaVisitaEntidade::TABELA . ', ' . PaginaEntidade::TABELA . ', ' . VisitaEntidade::TABELA. ', ' .
+    FuncionalidadeEntidade::TABELA);
 // Action do primeiro acesso
 define('PRIMEIRO_ACESSO', '/' . CONTROLLER_INICIAL_ADMIN . '/' . ACTION_INICIAL_ADMIN);
 

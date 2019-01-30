@@ -27,7 +27,8 @@ class Funcionalidade extends AbstractController
         endif;
 
         $coFuncionalidade = UrlAmigavel::PegaParametro("fun");
-        $res[ST_MENU] = '';
+        $res[ST_MENU] = 'checked';
+        $res['nova_controller'] = '';
         if ($coFuncionalidade):
             /** @var FuncionalidadeEntidade $funcionalidade */
             $funcionalidade = $funcionalidadeService->PesquisaUmRegistro($coFuncionalidade);
@@ -36,7 +37,6 @@ class Funcionalidade extends AbstractController
             $res[DS_ACTION] = $funcionalidade->getDsAction();
             $res[ST_MENU] = ($funcionalidade->getStMenu() == 'S')
                 ? 'checked' : '';
-            $res['nova_controller'] = '';
             $res[CO_CONTROLLER] = (!empty($funcionalidade->getCoController()))
                 ? $funcionalidade->getCoController()->getCoController() : NULL;
             $perfisFunc = [];
