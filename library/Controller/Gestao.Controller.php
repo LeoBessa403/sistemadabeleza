@@ -103,7 +103,10 @@ class Gestao extends AbstractController
             fwrite($handle, $ArquivoConstante);
             fclose($handle);
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error ao gerar as constantes do arquivo de configuração padrão. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
         return true;
@@ -120,9 +123,10 @@ class Gestao extends AbstractController
             $session->setSession(MENSAGEM, ATUALIZADO);
             Redireciona(ADMIN . "/" . UrlAmigavel::$controller . "/ConfigGestao");
         } catch (Exception $e) {
-            var_dump($e->getMessage());
             Notificacoes::geraMensagem(
-                'Error ao resetar o arquivo de configuração padrão.', TiposMensagemEnum::ERRO);
+                'Error ao resetar o arquivo de configuração padrão. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
         }
     }
 
