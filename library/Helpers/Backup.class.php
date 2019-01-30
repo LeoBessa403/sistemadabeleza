@@ -114,7 +114,10 @@ class Backup
             fwrite($handle,  $sql);
             fclose($handle);
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error ao gerar o arquivo de backup. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
         return true;

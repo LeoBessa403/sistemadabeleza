@@ -19,7 +19,7 @@ class GerarEntidades
         'tb_funcionalidade', 'tb_imagem', 'tb_pagina', 'tb_pagina_visita', 'tb_perfil_funcionalidade',
         'tb_perfil', 'tb_pessoa', 'tb_trafego', 'tb_usuario_perfil', 'tb_usuario', 'tb_visita',
         'tb_assinante', 'tb_assinante_filial', 'tb_assinante_matriz', 'tb_imagem_assinante', 'tb_modulo',
-        'tb_plano', 'tb_plano_assinante', 'tb_plano_assinante_assinatura'
+        'tb_plano', 'tb_plano_assinante', 'tb_plano_assinante_assinatura', 'tb_controller'
     ];
 
     public function __construct($tabelas = array())
@@ -108,7 +108,10 @@ class GerarEntidades
                 }
             }
         } catch (Exception $e) {
-            debug($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error Gerar Entidade. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
         return true;
@@ -168,7 +171,10 @@ class Relacionamentos
             fwrite($handle, $ArquivoRelacionamento);
             fclose($handle);
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error Gerar Entidade. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
         return true;
@@ -305,7 +311,10 @@ class {$Entidade}Entidade extends AbstractEntidade
                 fclose($handle);
             }
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error Gerar Entidade. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
 
@@ -340,7 +349,10 @@ class  {$Entidade}Model extends AbstractModel
                 fclose($handle);
             }
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error Gerar Entidade. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
 
@@ -380,7 +392,10 @@ class  {$Entidade}Model extends AbstractModel
             fwrite($handle, $ArquivoConstante);
             fclose($handle);
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error Gerar Entidade. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
         return true;
@@ -416,7 +431,10 @@ class  {$Entidade}Service extends AbstractService
                 fclose($handle);
             }
         } catch (Exception $e) {
-            var_dump($e->getMessage());
+            Notificacoes::geraMensagem(
+                'Error Gerar Entidade. ' . $e->getMessage(),
+                TiposMensagemEnum::ERRO
+            );
             return false;
         }
 
