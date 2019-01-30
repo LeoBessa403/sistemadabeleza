@@ -25,7 +25,7 @@ class Gestao extends AbstractController
                     DESC . ' gerado com Sucesso.', TiposMensagemEnum::SUCESSO);
                 Redireciona(ADMIN . "/" . CONTROLLER_INICIAL_ADMIN . "/" . ACTION_INICIAL_ADMIN);
             } else {
-                Notificacoes::geraMensagem('… preciso sinalizar com SIM para realizar o BackUp do banco do ' .
+                Notificacoes::geraMensagem('√â preciso sinalizar com SIM para realizar o BackUp do banco do ' .
                     DESC_SIS . '.', TiposMensagemEnum::ALERTA);
             }
         }
@@ -50,7 +50,7 @@ class Gestao extends AbstractController
                 Redireciona(ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action);
             } else {
                 Notificacoes::geraMensagem(
-                    'Error ao salvar o arquivo de configuraÁ„o padr„o.', TiposMensagemEnum::ERRO);
+                    'Error ao salvar o arquivo de configura√ß√£o padr√£o.', TiposMensagemEnum::ERRO);
             }
         }
         $res['TEM_SITE'] = (TEM_SITE) ? 'checked' : null;
@@ -90,7 +90,7 @@ class Gestao extends AbstractController
         $ArquivoConstante = "<?php \n
 /**
  * Config.Padrao [ HELPER ]
- * Constantes padr„o gerados do sistema
+ * Constantes padr√£o gerados do sistema
  *
  * @copyright (c) " . date('Y') . ", Leo Bessa
  */ \n";
@@ -104,7 +104,7 @@ class Gestao extends AbstractController
             fclose($handle);
         } catch (Exception $e) {
             Notificacoes::geraMensagem(
-                'Error ao gerar as constantes do arquivo de configuraÁ„o padr„o. ' . $e->getMessage(),
+                'Error ao gerar as constantes do arquivo de configura√ß√£o padr√£o. ' . $e->getMessage(),
                 TiposMensagemEnum::ERRO
             );
             return false;
@@ -124,7 +124,7 @@ class Gestao extends AbstractController
             Redireciona(ADMIN . "/" . UrlAmigavel::$controller . "/ConfigGestao");
         } catch (Exception $e) {
             Notificacoes::geraMensagem(
-                'Error ao resetar o arquivo de configuraÁ„o padr„o. ' . $e->getMessage(),
+                'Error ao resetar o arquivo de configura√ß√£o padr√£o. ' . $e->getMessage(),
                 TiposMensagemEnum::ERRO
             );
         }
