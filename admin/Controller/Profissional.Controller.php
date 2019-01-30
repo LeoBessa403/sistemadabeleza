@@ -103,7 +103,7 @@ class Profissional extends AbstractController
             $res['jornada'] = $profissional->getCoJornadaTrabalho();
 
 
-            // Inicia parametros para edição
+            // Inicia parametros para ediÃ§Ã£o
             $res[CO_PROFISSIONAL] = $profissional->getCoProfissional();
             $res[CO_ENDERECO] = $profissional->getCoPessoa()->getCoEndereco()->getCoEndereco();
             $res[CO_CONTATO] = $profissional->getCoPessoa()->getCoContato()->getCoContato();
