@@ -4,7 +4,7 @@
  * ModuloService.class [ SEVICE ]
  * @copyright (c) 2018, Leo Bessa
  */
-class  ModuloService extends AbstractService
+class  PacoteService extends AbstractService
 {
 
     private $ObjetoModel;
@@ -12,21 +12,21 @@ class  ModuloService extends AbstractService
 
     public function __construct()
     {
-        parent::__construct(ModuloEntidade::ENTIDADE);
-        $this->ObjetoModel = New ModuloModel();
+        parent::__construct(PacoteEntidade::ENTIDADE);
+        $this->ObjetoModel = New PacoteModel();
     }
 
     public static function montaComboModulos()
     {
-        /** @var ModuloService $moduloService */
-        $moduloService = new ModuloService();
+        /** @var PacoteService $pacoteService */
+        $pacoteService = new PacoteService();
 
-        $modulos = $moduloService->PesquisaTodos();
-        $todosMds = array();
-        /** @var ModuloEntidade $modulo */
-        foreach ($modulos as $modulo) :
-            $todosMds[$modulo->getCoModulo()] = $modulo->getNoModulo();
+        $pacotes = $pacoteService->PesquisaTodos();
+        $todosPcts = array();
+        /** @var PacoteEntidade $pacote */
+        foreach ($pacotes as $pacote) :
+            $todosPcts[$pacote->getCoPacote()] = $pacote->getNoPacote();
         endforeach;
-        return $todosMds;
+        return $todosPcts;
     }
 }

@@ -284,6 +284,56 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (AnotacaoEntidade::TABELA) => Array(
+                (CO_HISTORIA) => Array(
+                    ('Campo') => CO_HISTORIA,
+                    ('Entidade') => 'HistoriaEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (HistoriaEntidade::TABELA) => Array(
+                (CO_ANOTACAO) => Array(
+                    ('Campo') => CO_HISTORIA,
+                    ('Entidade') => 'AnotacaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_SESSAO) => Array(
+                    ('Campo') => CO_SESSAO,
+                    ('Entidade') => 'SessaoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (SessaoEntidade::TABELA) => Array(
+                (CO_HISTORIA) => Array(
+                    ('Campo') => CO_SESSAO,
+                    ('Entidade') => 'HistoriaEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_MODULO) => Array(
+                    ('Campo') => CO_MODULO,
+                    ('Entidade') => 'ModuloEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ModuloEntidade::TABELA) => Array(
+                (CO_PROJETO) => Array(
+                    ('Campo') => CO_PROJETO,
+                    ('Entidade') => 'ProjetoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_SESSAO) => Array(
+                    ('Campo') => CO_MODULO,
+                    ('Entidade') => 'SessaoEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (ProjetoEntidade::TABELA) => Array(
+                (CO_MODULO) => Array(
+                    ('Campo') => CO_PROJETO,
+                    ('Entidade') => 'ModuloEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
             (TrafegoEntidade::TABELA) => Array(),
             (FeriadoEntidade::TABELA) => Array(),
             (PlanoPacoteEntidade::TABELA) => Array(

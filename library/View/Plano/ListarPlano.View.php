@@ -54,7 +54,7 @@
                                  </a>';
                                 $modulos = [];
                                 /** @var PlanoPacoteEntidade $planoPacote */
-                                foreach ($res->getCoPlanoModulo() as $planoPacote) {
+                                foreach ($res->getCoPlanoPacote() as $planoPacote) {
                                     $modulos[] = $planoPacote->getCoPacote()->getNoPacote();
                                 }
 

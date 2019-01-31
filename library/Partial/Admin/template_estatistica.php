@@ -1,5 +1,5 @@
 <?php
-$estatisticas = FuncoesSistema::getDadosEstatistica($dados);
+$estatisticas = Valida::getDadosEstatistica($dados);
 ?>
 <div class="col-sm-12">
     <?= $estatisticas['barra']; ?>

@@ -51,14 +51,14 @@ class  PlanoService extends AbstractService
                 $session->setSession(MENSAGEM, CADASTRADO);
             endif;
 
-            $planoModulo[CO_PLANO] = $coPlano;
+            $planoPacote[CO_PLANO] = $coPlano;
             $planoAssinante[CO_PLANO] = $coPlano;
-            $ok = $PlanoPacoteService->DeletaQuando($planoModulo);
+            $ok = $PlanoPacoteService->DeletaQuando($planoPacote);
             if ($ok) {
                 if (!empty($dados[CO_PACOTE])) {
                     foreach ($dados[CO_PACOTE] as $modulo) {
-                        $planoModulo[CO_PACOTE] = $modulo;
-                        $PlanoPacoteService->Salva($planoModulo);
+                        $planoPacote[CO_PACOTE] = $modulo;
+                        $PlanoPacoteService->Salva($planoPacote);
                     }
                 }
             }

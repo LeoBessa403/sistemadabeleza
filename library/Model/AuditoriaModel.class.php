@@ -52,4 +52,24 @@ class  AuditoriaModel extends AbstractModel
         return $auditorias;
     }
 
+    public function PesquisaEvolucaoEsforco($Condicoes)
+    {
+        $tabela = AuditoriaEntidade::TABELA . " aud" .
+            " inner join " . AuditoriaTabelaEntidade::TABELA . " audTab" .
+            " on audTab." . AuditoriaEntidade::CHAVE . " = aud." . AuditoriaEntidade::CHAVE .
+            " inner join " . AuditoriaItensEntidade::TABELA . " audIte" .
+            " on audIte." . AuditoriaTabelaEntidade::CHAVE . " = audTab." . AuditoriaTabelaEntidade::CHAVE;
+
+        $campos = "dt_realizado, ds_item_anterior, ds_item_atual, ds_campo, co_registro";
+        $pesquisa = new Pesquisa();
+        $where = 'where 1 = 1';
+        if (!empty($Condicoes[CO_REGISTRO])) {
+            $where = $where . " and " . CO_REGISTRO . " in ('" . implode("', '", $Condicoes[CO_REGISTRO]) . "')";
+        }
+        $where = $where . " and (audIte.ds_campo = '" . NU_ESFORCO . "' OR audIte.ds_campo = '" . NU_ESFORCO_RESTANTE . "')";
+
+        $pesquisa->Pesquisar($tabela, $where, null, $campos);
+        return $pesquisa->getResult();
+    }
+
 }
