@@ -17,7 +17,9 @@
                 <div class="page-header">
                     <h1>Modulo
                         <small>Listar Modulo</small>
-                        <?php Valida::geraBtnNovo(Valida::GeraParametro(CO_PROJETO . '/' . $coProjeto)); ?>
+                        <?php Valida::geraBtnNovo(null,
+                            'Cadastro' . UrlAmigavel::$controller . '/' .
+                            Valida::GeraParametro(CO_PROJETO . '/' . $coProjeto)); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -62,7 +64,7 @@
                             // Monta Barra de Progresso
                             $dados['esforco'] = 0;
                             $dados['esforcoRestante'] = 0;
-                            if($res->getCoSessao()){
+                            if ($res->getCoSessao()) {
                                 /** @var SessaoEntidade $sessao */
                                 foreach ($res->getCoSessao() as $sessao) {
                                     /** @var HistoriaEntidade $historia */
@@ -72,7 +74,7 @@
                                     }
                                 }
                             }
-                            $barra = FuncoesSistema::getBarraProgresso($dados);
+                            $barra = Valida::getBarraProgresso($dados);
                             $barra = $barra['barra'];
 
                             $grid->setColunas($res->getNoModulo());
@@ -87,7 +89,7 @@
                 </div>
                 <div class="pull-right">
                     <!-- end: DYNAMIC TABLE PANEL -->
-                    <?php Valida::geraBtnVoltar('Projeto/ListarProjeto'); ?>
+                    <?php Valida::geraBtnVoltar('Gestao/PreProjetoGestao'); ?>
                 </div>
                 <br><br><br>
                 <!-- end: DYNAMIC TABLE PANEL -->

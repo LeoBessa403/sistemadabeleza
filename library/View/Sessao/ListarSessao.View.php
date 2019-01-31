@@ -17,7 +17,9 @@
                 <div class="page-header">
                     <h1>Sessao
                         <small>Listar Sessao</small>
-                        <?php Valida::geraBtnNovo(Valida::GeraParametro(CO_MODULO . '/' . $coModulo)); ?>
+                        <?php Valida::geraBtnNovo(null,
+                            'Cadastro' . UrlAmigavel::$controller . '/' .
+                            Valida::GeraParametro(CO_MODULO . '/' . $coModulo)); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -69,7 +71,7 @@
                                     $dados['esforcoRestante'] = $dados['esforcoRestante'] + $historia->getNuEsforcoRestante();
                                 }
                             }
-                            $barra = FuncoesSistema::getBarraProgresso($dados);
+                            $barra = Valida::getBarraProgresso($dados);
                             $barra = $barra['barra'];
 
                             $grid->setColunas($res->getNoSessao());

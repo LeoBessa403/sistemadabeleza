@@ -30,7 +30,9 @@
                 <div class="page-header">
                     <h1>Historia
                         <small>Listar Historia</small>
-                        <?php Valida::geraBtnNovo(Valida::GeraParametro(CO_SESSAO . '/' . $coSessao)); ?>
+                        <?php Valida::geraBtnNovo(null,
+                            'Cadastro' . UrlAmigavel::$controller . '/' .
+                            Valida::GeraParametro(CO_SESSAO . '/' . $coSessao)); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -71,12 +73,12 @@
                                  </a>';
                             $dados['esforco'] = $res->getNuEsforco();
                             $dados['esforcoRestante'] = $res->getNuEsforcoRestante();
-                            $barra = FuncoesSistema::getBarraProgresso($dados);
+                            $barra = Valida::getBarraProgresso($dados);
                             $barra = $barra['barra'];
 
                             $grid->setColunas($res->getDsTitulo());
                             $grid->setColunas(Valida::DataShow($res->getDtAtualizado(),'d/m/Y H:i'));
-                            $grid->setColunas(FuncoesSistema::SituacaoHistoria($res->getStSituacao()));
+                            $grid->setColunas(Valida::SituacaoHistoria($res->getStSituacao()));
                             $grid->setColunas($res->getNuEsforco());
                             $grid->setColunas($res->getNuEsforcoRestante());
                             $grid->setColunas($barra);

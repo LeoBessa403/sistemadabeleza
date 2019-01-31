@@ -29,7 +29,7 @@
                         Dados Extimados restantes
                     </div>
                     <div class="panel-body">
-                        <?php include_once PASTA_RAIZ . ADMIN . '/partial/template_estatistica.php'; ?>
+                        <?php include_once PARTIAL_LIBRARY . 'Admin/template_estatistica.php'; ?>
                     </div>
                 </div>
                 <div class="pull-right">

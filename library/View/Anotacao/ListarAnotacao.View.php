@@ -17,7 +17,9 @@
                 <div class="page-header">
                     <h1>Anotacao
                         <small>Listar Anotacao</small>
-                        <?php Valida::geraBtnNovo(Valida::GeraParametro(CO_HISTORIA . '/' . $coHistoria)); ?>
+                        <?php Valida::geraBtnNovo(null,
+                            'Cadastro' . UrlAmigavel::$controller . '/' .
+                            Valida::GeraParametro(CO_HISTORIA . '/' . $coHistoria)); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -55,10 +57,13 @@
                         ?>
                     </div>
                 </div>
-                <!-- end: DYNAMIC TABLE PANEL -->
-                <?php Valida::geraBtnVoltar('Historia/ListarHistoria/' . Valida::GeraParametro(
-                        CO_SESSAO . "/" . $coSessao)); ?>
+                <div class="pull-right">
+                    <!-- end: DYNAMIC TABLE PANEL -->
+                    <?php Valida::geraBtnVoltar('Historia/ListarHistoria/' . Valida::GeraParametro(
+                            CO_SESSAO . "/" . $coSessao)); ?>
+                </div>
                 <br><br><br>
+                <!-- end: DYNAMIC TABLE PANEL -->
             </div>
         </div>
         <!-- end: PAGE CONTENT-->

@@ -168,4 +168,9 @@ class Gestao extends AbstractController
         $this->dados = $dados;
     }
 
+    public function AcompanharProjetoGestao()
+    {
+        Redireciona(ADMIN . "/Modulo/ListarModulo");
+    }
+
 }

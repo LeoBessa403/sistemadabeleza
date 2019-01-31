@@ -15,7 +15,12 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Projeto <?= DESC_SIS; ?></h1>
+                    <h1>Projeto <?= DESC_SIS; ?>
+                        <?php Valida::geraBtn(
+                            'Acompanhar Projeto', 'AcompanharProjetoGestao',
+                            'btn-success', 'configProjeto'
+                        ); ?>
+                    </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>

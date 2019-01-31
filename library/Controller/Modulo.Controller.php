@@ -9,7 +9,7 @@ class Modulo extends AbstractController
 
     public function ListarModulo()
     {
-        $this->coProjeto = UrlAmigavel::PegaParametro(CO_PROJETO);
+        $this->coProjeto = 1;
         /** @var ModuloService $moduloService */
         $moduloService = $this->getService(MODULO_SERVICE);
         $this->result = $moduloService->PesquisaTodos([
@@ -63,6 +63,7 @@ class Modulo extends AbstractController
         /** @var ModuloService $moduloService */
         $moduloService = $this->getService(MODULO_SERVICE);
         $coModulo = UrlAmigavel::PegaParametro(CO_MODULO);
+        $Condicoes = [];
         /** @var ProjetoEntidade $projeto */
         $modulo = $moduloService->PesquisaUmRegistro($coModulo);
         /** @var ModuloEntidade $modulo */
