@@ -35,11 +35,11 @@ class Plano extends AbstractController
             $res[DS_OBSERVACAO] = $plano->getCoUltimoPlanoAssinante()->getDsObservacao();
             $res[NU_VALOR] = Valida::FormataMoeda($plano->getCoUltimoPlanoAssinante()->getNuValor());
             $modulos = [];
-            /** @var PlanoModuloEntidade $ModuloEntidade */
-            foreach ($plano->getCoPlanoModulo() as $ModuloEntidade) {
-                $modulos[] = $ModuloEntidade->getCoModulo()->getCoModulo();
+            /** @var PlanoPacoteEntidade $pacoteEntidade */
+            foreach ($plano->getCoPlanoPacote() as $pacoteEntidade) {
+                $modulos[] = $pacoteEntidade->getCoPacote()->getCoPacote();
             }
-            $res[CO_MODULO] = $modulos;
+            $res[CO_PACOTE] = $modulos;
             $res[CO_PLANO] = $plano->getCoPlano();
             $res[ST_STATUS] = ($plano->getStStatus() == 'A')
                 ? 'checked' : '';

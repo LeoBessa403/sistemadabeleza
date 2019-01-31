@@ -1,19 +1,19 @@
 <?php
 
 /**
- * PlanoModulo.Entidade [ ENTIDADE ]
+ * PlanoPacote.Entidade [ ENTIDADE ]
  * @copyright (c) 2018, Leo Bessa
  */
 
-class PlanoModuloEntidade extends AbstractEntidade
+class PlanoPacoteEntidade extends AbstractEntidade
 {
-	const TABELA = 'TB_PLANO_MODULO';
-	const ENTIDADE = 'PlanoModuloEntidade';
-	const CHAVE = CO_PLANO_MODULO;
+	const TABELA = 'TB_PLANO_PACOTE';
+	const ENTIDADE = 'PlanoPacoteEntidade';
+	const CHAVE = CO_PLANO_PACOTE;
 
-	private $co_plano_modulo;
+	private $co_plano_pacote;
 	private $co_plano;
-	private $co_modulo;
+	private $co_pacote;
 
 
 	/**
@@ -22,9 +22,9 @@ class PlanoModuloEntidade extends AbstractEntidade
 	public static function getCampos() 
     {
     	return [
-			CO_PLANO_MODULO,
+			CO_PLANO_PACOTE,
 			CO_PLANO,
-			CO_MODULO,
+			CO_PACOTE,
 		];
     }
 
@@ -39,20 +39,20 @@ class PlanoModuloEntidade extends AbstractEntidade
 
 
 	/**
-	* @return int $co_plano_modulo
+	* @return int $co_plano_pacote
     */
-	public function getCoPlanoModulo()
+	public function getCoPlanoPacote()
     {
-        return $this->co_plano_modulo;
+        return $this->co_plano_pacote;
     }
 
 	/**
-	* @param $co_plano_modulo
+	* @param $co_plano_pacote
     * @return mixed
     */
-	public function setCoPlanoModulo($co_plano_modulo)
+	public function setCoPlanoPacote($co_plano_pacote)
     {
-        return $this->co_plano_modulo = $co_plano_modulo;
+        return $this->co_plano_pacote = $co_plano_pacote;
     }
 
 	/**
@@ -73,20 +73,20 @@ class PlanoModuloEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return ModuloEntidade $co_modulo
+	* @return PacoteEntidade $co_pacote
     */
-	public function getCoModulo()
+	public function getCoPacote()
     {
-        return $this->co_modulo;
+        return $this->co_pacote;
     }
 
 	/**
-	* @param $co_modulo
+	* @param $co_pacote
     * @return mixed
     */
-	public function setCoModulo($co_modulo)
+	public function setCoPacote($co_pacote)
     {
-        return $this->co_modulo = $co_modulo;
+        return $this->co_pacote = $co_pacote;
     }
 
 }

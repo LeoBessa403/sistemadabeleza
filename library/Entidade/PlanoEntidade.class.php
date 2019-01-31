@@ -130,20 +130,20 @@ class PlanoEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return PlanoModuloEntidade $co_plano_modulo
+	* @return PlanoPacoteEntidade $co_plano_pacote
      */
-	public function getCoPlanoModulo()
+	public function getCoPlanoPacote()
     {
-        return $this->co_plano_modulo;
+        return $this->co_plano_pacote;
     }
 
 	/**
-     * @param $co_plano_modulo
+     * @param $co_plano_pacote
      * @return mixed
      */
-	public function setCoPlanoModulo($co_plano_modulo)
+	public function setCoPlanoPacote($co_plano_pacote)
     {
-        return $this->co_plano_modulo = $co_plano_modulo;
+        return $this->co_plano_pacote = $co_plano_pacote;
     }
 
 	/**

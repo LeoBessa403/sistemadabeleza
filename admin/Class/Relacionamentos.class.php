@@ -286,22 +286,22 @@ class Relacionamentos
             ),
             (TrafegoEntidade::TABELA) => Array(),
             (FeriadoEntidade::TABELA) => Array(),
-            (PlanoModuloEntidade::TABELA) => Array(
+            (PlanoPacoteEntidade::TABELA) => Array(
                 (CO_PLANO) => Array(
                     ('Campo') => CO_PLANO,
                     ('Entidade') => 'PlanoEntidade',
                     ('Tipo') => '1',
                 ),
-                (CO_MODULO) => Array(
-                    ('Campo') => CO_MODULO,
-                    ('Entidade') => 'ModuloEntidade',
+                (CO_PACOTE) => Array(
+                    ('Campo') => CO_PACOTE,
+                    ('Entidade') => 'PacoteEntidade',
                     ('Tipo') => '1',
                 ),
             ),
             (PlanoEntidade::TABELA) => Array(
-                (CO_PLANO_MODULO) => Array(
+                (CO_PLANO_PACOTE) => Array(
                     ('Campo') => CO_PLANO,
-                    ('Entidade') => 'PlanoModuloEntidade',
+                    ('Entidade') => 'PlanoPacoteEntidade',
                     ('Tipo') => '2',
                 ),
                 (CO_PLANO_ASSINANTE) => Array(
@@ -317,10 +317,10 @@ class Relacionamentos
                     ('Tipo') => '2',
                 ),
             ),
-            (ModuloEntidade::TABELA) => Array(
-                (CO_PLANO_MODULO) => Array(
-                    ('Campo') => CO_MODULO,
-                    ('Entidade') => 'PlanoModuloEntidade',
+            (PacoteEntidade::TABELA) => Array(
+                (CO_PLANO_PACOTE) => Array(
+                    ('Campo') => CO_PACOTE,
+                    ('Entidade') => 'PlanoPacoteEntidade',
                     ('Tipo') => '2',
                 ),
             ),

@@ -13,10 +13,9 @@ class ModuloEntidade extends AbstractEntidade
 
 	private $co_modulo;
 	private $no_modulo;
-	private $ds_descricao;
 	private $dt_cadastro;
-	private $dt_lancamento;
-	private $co_plano_modulo;
+	private $co_projeto;
+	private $co_sessao;
 
 
 	/**
@@ -27,9 +26,8 @@ class ModuloEntidade extends AbstractEntidade
     	return [
 			CO_MODULO,
 			NO_MODULO,
-			DS_DESCRICAO,
 			DT_CADASTRO,
-			DT_LANCAMENTO,
+			CO_PROJETO,
 		];
     }
 
@@ -78,23 +76,6 @@ class ModuloEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return mixed $ds_descricao
-    */
-	public function getDsDescricao()
-    {
-        return $this->ds_descricao;
-    }
-
-	/**
-	* @param $ds_descricao
-    * @return mixed
-    */
-	public function setDsDescricao($ds_descricao)
-    {
-        return $this->ds_descricao = $ds_descricao;
-    }
-
-	/**
 	* @return mixed $dt_cadastro
     */
 	public function getDtCadastro()
@@ -112,37 +93,37 @@ class ModuloEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return mixed $dt_lancamento
+	* @return ProjetoEntidade $co_projeto
     */
-	public function getDtLancamento()
+	public function getCoProjeto()
     {
-        return $this->dt_lancamento;
+        return $this->co_projeto;
     }
 
 	/**
-	* @param $dt_lancamento
+	* @param $co_projeto
     * @return mixed
     */
-	public function setDtLancamento($dt_lancamento)
+	public function setCoProjeto($co_projeto)
     {
-        return $this->dt_lancamento = $dt_lancamento;
+        return $this->co_projeto = $co_projeto;
     }
 
 	/**
-	* @return PlanoModuloEntidade $co_plano_modulo
+	* @return SessaoEntidade $co_sessao
      */
-	public function getCoPlanoModulo()
+	public function getCoSessao()
     {
-        return $this->co_plano_modulo;
+        return $this->co_sessao;
     }
 
 	/**
-     * @param $co_plano_modulo
+     * @param $co_sessao
      * @return mixed
      */
-	public function setCoPlanoModulo($co_plano_modulo)
+	public function setCoSessao($co_sessao)
     {
-        return $this->co_plano_modulo = $co_plano_modulo;
+        return $this->co_sessao = $co_sessao;
     }
 
 }

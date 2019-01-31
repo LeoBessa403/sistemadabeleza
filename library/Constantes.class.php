@@ -88,6 +88,42 @@
     define('NO_CONTROLLER', 'no_controller');
     define('ST_MENU', 'st_menu');
     define('DS_CLASS_ICON', 'ds_class_icon');
+    define('CO_EMPRESA', 'co_empresa');
+    define('NO_EMPRESA', 'no_empresa');
+    define('NO_FANTASIA', 'no_fantasia');
+    define('NU_CNPJ', 'nu_cnpj');
+    define('NU_INSC_ESTADUAL', 'nu_insc_estadual');
+    define('DS_OBSERVACAO', 'ds_observacao');
+    define('CO_PACOTE', 'co_pacote');
+    define('NO_PACOTE', 'no_pacote');
+    define('DT_LANCAMENTO', 'dt_lancamento');
+    define('CO_PLANO', 'co_plano');
+    define('NO_PLANO', 'no_plano');
+    define('NU_MES_ATIVO', 'nu_mes_ativo');
+    define('CO_PLANO_ASSINANTE', 'co_plano_assinante');
+    define('NU_VALOR', 'nu_valor');
+    define('CO_PLANO_PACOTE', 'co_plano_pacote');
+    define('CO_PLANO_ASSINANTE_ASSINATURA', 'co_plano_assinante_assinatura');
+    define('DT_EXPIRACAO', 'dt_expiracao');
+    define('NU_VALOR_ASSINATURA', 'nu_valor_assinatura');
+    define('NU_PROFISSIONAIS', 'nu_profissionais');
+    define('CO_ASSINANTE', 'co_assinante');
+    define('CO_ASSINANTE_MATRIZ', 'co_assinante_matriz');
+    define('CO_ASSINANTE_FILIAL', 'co_assinante_filial');
+    define('TP_ASSINANTE', 'tp_assinante');
+    define('NU_FILIAIS', 'nu_filiais');
+    define('CO_ANOTACAO', 'co_anotacao');
+    define('CO_HISTORIA', 'co_historia');
+    define('ST_SITUACAO', 'st_situacao');
+    define('NU_ESFORCO', 'nu_esforco');
+    define('NU_ESFORCO_RESTANTE', 'nu_esforco_restante');
+    define('CO_SESSAO', 'co_sessao');
+    define('CO_MODULO', 'co_modulo');
+    define('NO_MODULO', 'no_modulo');
+    define('CO_PROJETO', 'co_projeto');
+    define('NO_PROJETO', 'no_projeto');
+    define('NO_SESSAO', 'no_sessao');
+    define('DS_TITULO', 'ds_titulo');
 
 
 	// SERVICES PADRÃO
@@ -109,6 +145,21 @@
     define('VISITA_SERVICE', 'VisitaService');
     define('PAGINA_VISITA_SERVICE', 'PaginaVisitaService');
     define('CONTROLLER_SERVICE', 'ControllerService');
+    define('ANOTACAO_SERVICE', 'AnotacaoService');
+    define('HISTORIA_SERVICE', 'HistoriaService');
+    define('MODULO_SERVICE', 'ModuloService');
+    define('PROJETO_SERVICE', 'ProjetoService');
+    define('SESSAO_SERVICE', 'SessaoService');
+    define('EMPRESA_SERVICE', 'EmpresaService');
+    define('PACOTE_SERVICE', 'PacoteService');
+    define('PLANO_SERVICE', 'PlanoService');
+    define('PLANO_ASSINANTE_SERVICE', 'PlanoAssinanteService');
+    define('PLANO_PACOTE_SERVICE', 'PlanoPacoteService');
+    define('PLANO_ASSINANTE_ASSINATURA_SERVICE', 'PlanoAssinanteAssinaturaService');
+    define('ASSINANTE_SERVICE', 'AssinanteService');
+    define('ASSINANTE_MATRIZ_SERVICE', 'AssinanteMatrizService');
+    define('ASSINANTE_FILIAL_SERVICE', 'AssinanteFilialService');
+    define('IMAGEM_ASSINANTE_SERVICE', 'ImagemAssinanteService');
 
 
     // CONSTANTES

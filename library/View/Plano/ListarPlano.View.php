@@ -53,9 +53,9 @@
                                      <i class="clip-folder-open"></i>
                                  </a>';
                                 $modulos = [];
-                                /** @var PlanoModuloEntidade $planoModulo */
-                                foreach ($res->getCoPlanoModulo() as $planoModulo) {
-                                    $modulos[] = $planoModulo->getCoModulo()->getNoModulo();
+                                /** @var PlanoPacoteEntidade $planoPacote */
+                                foreach ($res->getCoPlanoModulo() as $planoPacote) {
+                                    $modulos[] = $planoPacote->getCoPacote()->getNoPacote();
                                 }
 
                                 $grid->setColunas($res->getNoPlano());

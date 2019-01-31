@@ -18,8 +18,8 @@ class  PlanoService extends AbstractService
 
     public function salvaPlano($dados)
     {
-        /** @var PlanoModuloService $PlanoModuloService */
-        $PlanoModuloService = $this->getService(PLANO_MODULO_SERVICE);
+        /** @var PlanoPacoteService $PlanoPacoteService */
+        $PlanoPacoteService = $this->getService(PLANO_PACOTE_SERVICE);
         /** @var PlanoAssinanteService $PlanoAssinanteService */
         $PlanoAssinanteService = $this->getService(PLANO_ASSINANTE_SERVICE);
         /** @var PDO $PDO */
@@ -53,12 +53,12 @@ class  PlanoService extends AbstractService
 
             $planoModulo[CO_PLANO] = $coPlano;
             $planoAssinante[CO_PLANO] = $coPlano;
-            $ok = $PlanoModuloService->DeletaQuando($planoModulo);
+            $ok = $PlanoPacoteService->DeletaQuando($planoModulo);
             if ($ok) {
-                if (!empty($dados[CO_MODULO])) {
-                    foreach ($dados[CO_MODULO] as $modulo) {
-                        $planoModulo[CO_MODULO] = $modulo;
-                        $PlanoModuloService->Salva($planoModulo);
+                if (!empty($dados[CO_PACOTE])) {
+                    foreach ($dados[CO_PACOTE] as $modulo) {
+                        $planoModulo[CO_PACOTE] = $modulo;
+                        $PlanoPacoteService->Salva($planoModulo);
                     }
                 }
             }

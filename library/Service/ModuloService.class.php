@@ -16,17 +16,31 @@ class  ModuloService extends AbstractService
         $this->ObjetoModel = New ModuloModel();
     }
 
-    public static function montaComboModulos()
+    public function salvaModulo($dados)
     {
-        /** @var ModuloService $moduloService */
-        $moduloService = new ModuloService();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+        $moduloValidador = new ModuloValidador();
+        /** @var ModuloValidador $validador */
+        $validador = $moduloValidador->validarModulo($dados);
+        if ($validador[SUCESSO]) {
+            $modulo[NO_MODULO] = trim($dados[NO_MODULO]);
+            $modulo[CO_PROJETO] = $dados[CO_PROJETO];
 
-        $modulos = $moduloService->PesquisaTodos();
-        $todosMds = array();
-        /** @var ModuloEntidade $modulo */
-        foreach ($modulos as $modulo) :
-            $todosMds[$modulo->getCoModulo()] = $modulo->getNoModulo();
-        endforeach;
-        return $todosMds;
+            if (!empty($_POST[CO_MODULO])):
+                $coModulo = $dados[CO_MODULO];
+                $retorno[SUCESSO] = $this->Salva($modulo, $coModulo);
+            else:
+                $modulo[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $retorno[SUCESSO] = $this->Salva($modulo);
+            endif;
+        } else {
+            $session = new Session();
+            $session->setSession(MENSAGEM, $validador[MSG]);
+            $retorno = $validador;
+        }
+        return $retorno;
     }
 }
