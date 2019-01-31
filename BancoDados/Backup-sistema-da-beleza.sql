@@ -1,4 +1,4 @@
--- Atualizado em: 31/01/2019 14:03:40
+-- Atualizado em: 31/01/2019 16:18:10
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -207,7 +207,7 @@ INSERT INTO tb_acesso VALUES("91","5m2jck287v566utlo77c655460","2019-01-31 11:57
 
 INSERT INTO tb_acesso VALUES("92","5m2jck287v566utlo77c655460","2019-01-31 11:57:28","2019-01-31 12:53:00","F","1","111");
 
-INSERT INTO tb_acesso VALUES("93","5m2jck287v566utlo77c655460","2019-01-31 13:33:57","2019-01-31 14:33:40","A","1","112");
+INSERT INTO tb_acesso VALUES("93","5m2jck287v566utlo77c655460","2019-01-31 13:33:57","2019-01-31 16:48:10","A","1","112");
 
 
 
@@ -329,7 +329,7 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=415 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=420 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria VALUES("11","2018-07-24 15:28:56","Master","1");
@@ -872,6 +872,16 @@ INSERT INTO tb_auditoria VALUES("413","2019-01-25 11:56:43","Master","1");
 
 INSERT INTO tb_auditoria VALUES("414","2019-01-25 14:03:01","Master","1");
 
+INSERT INTO tb_auditoria VALUES("415","2019-01-31 14:35:46","Master","1");
+
+INSERT INTO tb_auditoria VALUES("416","2019-01-31 14:36:53","Master","1");
+
+INSERT INTO tb_auditoria VALUES("417","2019-01-31 14:38:18","Master","1");
+
+INSERT INTO tb_auditoria VALUES("418","2019-01-31 14:45:18","Master","1");
+
+INSERT INTO tb_auditoria VALUES("419","2019-01-31 14:46:33","Master","1");
+
 
 
 
@@ -886,7 +896,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=3077 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3085 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_itens VALUES("34","","3","nu_esforco","11");
@@ -1969,6 +1979,22 @@ INSERT INTO tb_auditoria_itens VALUES("3075","5","8","nu_esforco","414");
 
 INSERT INTO tb_auditoria_itens VALUES("3076","3","","nu_esforco_restante","414");
 
+INSERT INTO tb_auditoria_itens VALUES("3077","5","","co_modulo","418");
+
+INSERT INTO tb_auditoria_itens VALUES("3078","Lançamento do Sistema Da Beleaza","Lançamento do Sistema Da Beleza","no_modulo","418");
+
+INSERT INTO tb_auditoria_itens VALUES("3079","2018-07-26 17:42:45","","dt_cadastro","418");
+
+INSERT INTO tb_auditoria_itens VALUES("3080","1","1","co_projeto","418");
+
+INSERT INTO tb_auditoria_itens VALUES("3081","5","","co_modulo","419");
+
+INSERT INTO tb_auditoria_itens VALUES("3082","Lançamento do Sistema Da Beleza","Lançamento do SisBela","no_modulo","419");
+
+INSERT INTO tb_auditoria_itens VALUES("3083","2018-07-26 17:42:45","","dt_cadastro","419");
+
+INSERT INTO tb_auditoria_itens VALUES("3084","1","1","co_projeto","419");
+
 
 
 
@@ -1983,7 +2009,7 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=415 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=420 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_tabela VALUES("11","TB_HISTORIA","I","1","11");
@@ -2525,6 +2551,16 @@ INSERT INTO tb_auditoria_tabela VALUES("360","TB_HISTORIA","I","140","360");
 INSERT INTO tb_auditoria_tabela VALUES("413","TB_HISTORIA","U","17","413");
 
 INSERT INTO tb_auditoria_tabela VALUES("414","TB_HISTORIA","U","17","414");
+
+INSERT INTO tb_auditoria_tabela VALUES("415","TB_PERFIL_FUNCIONALIDADE","D","","415");
+
+INSERT INTO tb_auditoria_tabela VALUES("416","TB_PERFIL_FUNCIONALIDADE","D","","416");
+
+INSERT INTO tb_auditoria_tabela VALUES("417","TB_PERFIL_FUNCIONALIDADE","D","","417");
+
+INSERT INTO tb_auditoria_tabela VALUES("418","TB_MODULO","U","5","418");
+
+INSERT INTO tb_auditoria_tabela VALUES("419","TB_MODULO","U","5","419");
 
 
 
@@ -3562,7 +3598,7 @@ CREATE TABLE `tb_funcionalidade` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_funcionalidade VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -3634,6 +3670,8 @@ INSERT INTO tb_funcionalidade VALUES("36","Listar Assinante","ListarAssinante","
 INSERT INTO tb_funcionalidade VALUES("37","Cadastro Assinante","CadastroAssinante","A","S","9");
 
 INSERT INTO tb_funcionalidade VALUES("38","Pre Projeto Gestao","PreProjetoGestao","A","S","1");
+
+INSERT INTO tb_funcionalidade VALUES("39","Acompanhar Projeto Gestao","AcompanharProjetoGestao","A","N","1");
 
 
 
@@ -4123,7 +4161,7 @@ INSERT INTO tb_modulo VALUES("3","Criar Histórias","2018-07-26 11:45:42","1");
 
 INSERT INTO tb_modulo VALUES("4","Site","2018-07-26 17:35:18","1");
 
-INSERT INTO tb_modulo VALUES("5","Lançamento do Sistema Da Beleaza","2018-07-26 17:42:45","1");
+INSERT INTO tb_modulo VALUES("5","Lançamento do SisBela","2018-07-26 17:42:45","1");
 
 
 
@@ -4727,7 +4765,7 @@ CREATE TABLE `tb_projeto` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_projeto VALUES("1","Sistema Da Beleza","2018-07-25 11:07:40");
+INSERT INTO tb_projeto VALUES("1","SisBela","2018-07-25 11:07:40");
 
 
 
