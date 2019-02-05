@@ -6,6 +6,7 @@ class Sessao extends AbstractController
     public $coModulo;
     public $coProjeto;
     public $noSessao;
+    public $dados;
 
     public function ListarSessao()
     {
@@ -69,21 +70,22 @@ class Sessao extends AbstractController
         $historiaService = $this->getService(HISTORIA_SERVICE);
         /** @var SessaoService $sessaoService */
         $sessaoService = $this->getService(SESSAO_SERVICE);
+        /** @var HistoricoHistoriaService $historicoHistoriaService */
+        $historicoHistoriaService = $this->getService(HISTORICO_HISTORIA_SERVICE);
         $coSessao = UrlAmigavel::PegaParametro(CO_SESSAO);
         /** @var SessaoEntidade $sessao */
         $sessao = $sessaoService->PesquisaUmRegistro($coSessao);
-        if (!empty($sessao->getCoHistoria())) {
-            /** @var HistoriaEntidade $historia */
-            foreach ($sessao->getCoHistoria() as $historia) {
-                $dados['esforco'] = $dados['esforco'] + $historia->getNuEsforco();
-                $dados['esforcoRestante'] = $dados['esforcoRestante'] + $historia->getNuEsforcoRestante();
-                $Condicoes[CO_REGISTRO][] = $historia->getCoHistoria();
-            }
-        }
-        $historiaService->motaGraficoEvolucao($Condicoes);
+
+        $histHistorias = $historicoHistoriaService->PesquisaAvancada([
+            CO_SESSAO => $coSessao
+        ]);
+
+        $historiaService->motaGraficoEvolucao($histHistorias);
+
+        $this->dados = $historiaService::$dados;
         $this->coModulo = $sessao->getCoModulo()->getCoModulo();
-        $this->dados = $dados;
         $this->noSessao = $sessao->getNoSessao();
+
     }
 
 }

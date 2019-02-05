@@ -21,6 +21,7 @@ class HistoriaEntidade extends AbstractEntidade
 	private $nu_esforco_restante;
 	private $co_sessao;
 	private $co_anotacao;
+	private $co_historico_historia;
 
 
 	/**
@@ -171,7 +172,7 @@ class HistoriaEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return NuEsforrestanteEntidade $nu_esforco_restante
+	* @return mixed $nu_esforco_restante
     */
 	public function getNuEsforcoRestante()
     {
@@ -219,6 +220,23 @@ class HistoriaEntidade extends AbstractEntidade
 	public function setCoAnotacao($co_anotacao)
     {
         return $this->co_anotacao = $co_anotacao;
+    }
+
+    /**
+     * @return HistoricoHistoriaEntidade $co_historico_historia
+     */
+    public function getCoHistoricoHistoria()
+    {
+        return $this->co_historico_historia;
+    }
+
+    /**
+     * @param $co_historico_historia
+     * @return mixed
+     */
+    public function setCoHistoricoHistoria($co_historico_historia)
+    {
+        $this->co_historico_historia = $co_historico_historia;
     }
 
 }

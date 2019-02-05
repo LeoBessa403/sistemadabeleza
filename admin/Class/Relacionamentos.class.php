@@ -302,6 +302,11 @@ class Relacionamentos
                     ('Entidade') => 'SessaoEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_HISTORICO_HISTORIA) => Array(
+                    ('Campo') => CO_HISTORIA,
+                    ('Entidade') => 'HistoricoHistoriaEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (SessaoEntidade::TABELA) => Array(
                 (CO_HISTORIA) => Array(
@@ -648,7 +653,13 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (HistoricoHistoriaEntidade::TABELA) => Array(
+                (CO_HISTORIA) => Array(
+                    ('Campo') => CO_HISTORIA,
+                    ('Entidade') => 'HistoriaEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
         );
     }
 }
-

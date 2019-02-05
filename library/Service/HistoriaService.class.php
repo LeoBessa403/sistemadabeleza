@@ -8,6 +8,7 @@ class  HistoriaService extends AbstractService
 {
 
     private $ObjetoModel;
+    static $dados;
 
 
     public function __construct()
@@ -82,37 +83,46 @@ class  HistoriaService extends AbstractService
         return $sit;
     }
 
-    public function motaGraficoEvolucao($Condicoes)
+    public function motaGraficoEvolucao($evolucao)
     {
-        /** @var AuditoriaService $auditoriaService */
-        $auditoriaService = $this->getService(AUDITORIA_SERVICE);
-        $evolucao = $auditoriaService->PesquisaEvolucaoEsforco($Condicoes);
         $graficoEvolucao = [];
         $esforcoHistoria = [];
         $esforcoRestanteHistoria = [];
+        $priEsf = true;
+        $priEsfRes = true;
         $esforco = 0;
         $esforcoRestante = 0;
         foreach ($evolucao as $item) {
-            if ($item[DS_CAMPO] == NU_ESFORCO) {
-                if ($item[DS_ITEM_ANTERIOR] == '') {
-                    $esforco = $esforco + $item[DS_ITEM_ATUAL];
-                    $esforcoHistoria[$item[CO_REGISTRO]] = $item[DS_ITEM_ATUAL];
-                } elseif ($esforcoHistoria[$item[CO_REGISTRO]] != $item[DS_ITEM_ATUAL]) {
-                    $esforco = $esforco + $item[DS_ITEM_ATUAL] - $esforcoHistoria[$item[CO_REGISTRO]];
-                    $esforcoHistoria[$item[CO_REGISTRO]] = $item[DS_ITEM_ATUAL];
-                }
-                $graficoEvolucao[Valida::DataShow($item[DT_REALIZADO])][NU_ESFORCO] = $esforco;
-            } else {
-                if ($item[DS_ITEM_ANTERIOR] == '') {
-                    $esforcoRestante = $esforcoRestante + $item[DS_ITEM_ATUAL];
-                    $esforcoRestanteHistoria[$item[CO_REGISTRO]] = $item[DS_ITEM_ATUAL];
-                } elseif ($esforcoRestanteHistoria[$item[CO_REGISTRO]] != $item[DS_ITEM_ATUAL]) {
-                    $esforcoRestante = $esforcoRestante + $item[DS_ITEM_ATUAL] - $esforcoRestanteHistoria[$item[CO_REGISTRO]];
-                    $esforcoRestanteHistoria[$item[CO_REGISTRO]] = $item[DS_ITEM_ATUAL];
-                }
-                $graficoEvolucao[Valida::DataShow($item[DT_REALIZADO])][NU_ESFORCO_RESTANTE] = $esforcoRestante;
+            if(empty($esforcoHistoria[$item[CO_HISTORIA]])){
+                $priEsf = true;
+                $priEsfRes = true;
             }
+
+            if ($priEsf) {
+                $esforco = $esforco + $item[NU_ESFORCO];
+                $esforcoHistoria[$item[CO_HISTORIA]] = $item[NU_ESFORCO];
+                $priEsf = false;
+            } elseif ($esforcoHistoria[$item[CO_HISTORIA]] != $item[NU_ESFORCO]) {
+                $esforco = $esforco + $item[NU_ESFORCO] - $esforcoHistoria[$item[CO_HISTORIA]];
+                $esforcoHistoria[$item[CO_HISTORIA]] = $item[NU_ESFORCO];
+            }
+            $graficoEvolucao[Valida::DataShow($item[DT_CADASTRO])][NU_ESFORCO] = $esforco;
+
+
+            if ($priEsfRes) {
+                $esforcoRestante = $esforcoRestante + $item[NU_ESFORCO_RESTANTE];
+                $esforcoRestanteHistoria[$item[CO_HISTORIA]] = $item[NU_ESFORCO_RESTANTE];
+                $priEsfRes = false;
+            } elseif ($esforcoRestanteHistoria[$item[CO_HISTORIA]] != $item[NU_ESFORCO_RESTANTE]) {
+                $esforcoRestante = $esforcoRestante + $item[NU_ESFORCO_RESTANTE] - $esforcoRestanteHistoria[$item[CO_HISTORIA]];
+                $esforcoRestanteHistoria[$item[CO_HISTORIA]] = $item[NU_ESFORCO_RESTANTE];
+            }
+            $graficoEvolucao[Valida::DataShow($item[DT_CADASTRO])][NU_ESFORCO_RESTANTE] = $esforcoRestante;
+
         }
+        self::$dados['esforco'] = $esforco;
+        self::$dados['esforcoRestante'] = $esforcoRestante;
+
         $graficoEvolucaoEsforco = array("['Data','Esforço','Esforço Restante']");
         foreach ($graficoEvolucao as $data => $esforcos) {
             $graficoEvolucaoEsforco[] = "['" . $data . "'," . $esforcos[NU_ESFORCO] . "," . $esforcos[NU_ESFORCO_RESTANTE] . "]";

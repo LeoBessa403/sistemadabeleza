@@ -124,6 +124,7 @@
     define('NO_PROJETO', 'no_projeto');
     define('NO_SESSAO', 'no_sessao');
     define('DS_TITULO', 'ds_titulo');
+    define('CO_HISTORICO_HISTORIA', 'co_historico_historia');
 
 
 	// SERVICES PADRÃO
@@ -160,6 +161,7 @@
     define('ASSINANTE_MATRIZ_SERVICE', 'AssinanteMatrizService');
     define('ASSINANTE_FILIAL_SERVICE', 'AssinanteFilialService');
     define('IMAGEM_ASSINANTE_SERVICE', 'ImagemAssinanteService');
+    define('HISTORICO_HISTORIA_SERVICE', 'HistoricoHistoriaService');
 
 
     // CONSTANTES

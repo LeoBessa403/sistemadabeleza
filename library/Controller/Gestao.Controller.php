@@ -136,36 +136,16 @@ class Gestao extends AbstractController
 
     public function PreProjetoGestao()
     {
-        $dados['esforco'] = 0;
-        $dados['esforcoRestante'] = 0;
         /** @var HistoriaService $historiaService */
         $historiaService = $this->getService(HISTORIA_SERVICE);
-        /** @var ModuloService $moduloService */
-        $moduloService = $this->getService(MODULO_SERVICE);
+        /** @var HistoricoHistoriaService $historicoHistoriaService */
+        $historicoHistoriaService = $this->getService(HISTORICO_HISTORIA_SERVICE);
 
-        $modulos = $moduloService->PesquisaTodos([
-            CO_PROJETO => 1
-        ]);
-        $Condicoes = [];
-        /** @var ModuloEntidade $modulo */
-        foreach ($modulos as $modulo) {
-            if (!empty($modulo->getCoSessao())) {
-                /** @var SessaoEntidade $sessao */
-                foreach ($modulo->getCoSessao() as $sessao) {
-                    if (!empty($sessao->getCoHistoria())) {
-                        /** @var HistoriaEntidade $historia */
-                        foreach ($sessao->getCoHistoria() as $historia) {
-                            $dados['esforco'] = $dados['esforco'] + $historia->getNuEsforco();
-                            $dados['esforcoRestante'] = $dados['esforcoRestante'] + $historia->getNuEsforcoRestante();
-                            $Condicoes[CO_REGISTRO][] = $historia->getCoHistoria();
-                        }
-                    }
-                }
-            }
-        }
-        $historiaService->motaGraficoEvolucao($Condicoes);
+        $histHistorias = $historicoHistoriaService->PesquisaAvancada([]);
 
-        $this->dados = $dados;
+        $historiaService->motaGraficoEvolucao($histHistorias);
+
+        $this->dados = $historiaService::$dados;
     }
 
     public function AcompanharProjetoGestao()

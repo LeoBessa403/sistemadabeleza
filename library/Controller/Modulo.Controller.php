@@ -6,6 +6,7 @@ class Modulo extends AbstractController
     public $coProjeto;
     public $coModulo;
     public $noModulo;
+    public $dados;
 
     public function ListarModulo()
     {
@@ -56,33 +57,23 @@ class Modulo extends AbstractController
 
     public function EstatisticaModulo()
     {
-        $dados['esforco'] = 0;
-        $dados['esforcoRestante'] = 0;
         /** @var HistoriaService $historiaService */
         $historiaService = $this->getService(HISTORIA_SERVICE);
         /** @var ModuloService $moduloService */
         $moduloService = $this->getService(MODULO_SERVICE);
+        /** @var HistoricoHistoriaService $historicoHistoriaService */
+        $historicoHistoriaService = $this->getService(HISTORICO_HISTORIA_SERVICE);
         $coModulo = UrlAmigavel::PegaParametro(CO_MODULO);
-        $Condicoes = [];
+
         /** @var ProjetoEntidade $projeto */
         $modulo = $moduloService->PesquisaUmRegistro($coModulo);
-        /** @var ModuloEntidade $modulo */
-        if (!empty($modulo->getCoSessao())) {
-            /** @var SessaoEntidade $sessao */
-            foreach ($modulo->getCoSessao() as $sessao) {
-                if (!empty($sessao->getCoHistoria())) {
-                    /** @var HistoriaEntidade $historia */
-                    foreach ($sessao->getCoHistoria() as $historia) {
-                        $dados['esforco'] = $dados['esforco'] + $historia->getNuEsforco();
-                        $dados['esforcoRestante'] = $dados['esforcoRestante'] + $historia->getNuEsforcoRestante();
-                        $Condicoes[CO_REGISTRO][] = $historia->getCoHistoria();
-                    }
-                }
-            }
-        }
-        $historiaService->motaGraficoEvolucao($Condicoes);
+        $histHistorias = $historicoHistoriaService->PesquisaAvancada([
+            CO_MODULO => $coModulo
+        ]);
+        $historiaService->motaGraficoEvolucao($histHistorias);
+
+        $this->dados = $historiaService::$dados;
         $this->coProjeto = $modulo->getCoProjeto()->getCoProjeto();
-        $this->dados = $dados;
         $this->noModulo = $modulo->getNoModulo();
     }
 
