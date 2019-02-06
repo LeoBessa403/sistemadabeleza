@@ -71,16 +71,18 @@
                                     data-original-title="Anotação da Historia" data-placement="top">
                                      <i class="clip-stack-empty"></i>
                                  </a>';
-                            $dados['esforco'] = $res->getNuEsforco();
-                            $dados['esforcoRestante'] = $res->getNuEsforcoRestante();
+                            $dados['esforco'] = $res->getCoUltimoHistoricoHistoria()->getNuEsforco();
+                            $dados['esforcoRestante'] = $res->getCoUltimoHistoricoHistoria()->getNuEsforcoRestante();
                             $barra = Valida::getBarraProgresso($dados);
                             $barra = $barra['barra'];
 
                             $grid->setColunas($res->getDsTitulo());
                             $grid->setColunas(Valida::DataShow($res->getDtAtualizado(),'d/m/Y H:i'));
                             $grid->setColunas(Valida::SituacaoHistoria($res->getStSituacao()));
-                            $grid->setColunas($res->getNuEsforco());
-                            $grid->setColunas($res->getNuEsforcoRestante());
+                            $grid->setColunas($res->getCoUltimoHistoricoHistoria()->getNuEsforco());
+                            $grid->setColunas(($res->getCoUltimoHistoricoHistoria()->getNuEsforcoRestante())
+                                ? $res->getCoUltimoHistoricoHistoria()->getNuEsforcoRestante() : 0
+                            );
                             $grid->setColunas($barra);
                             $grid->setColunas($res->getCoSessao()->getNoSessao());
                             $grid->setColunas($acao, 2);

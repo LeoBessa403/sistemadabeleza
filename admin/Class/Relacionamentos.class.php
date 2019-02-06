@@ -291,6 +291,13 @@ class Relacionamentos
                     ('Tipo') => '1',
                 ),
             ),
+            (HistoricoHistoriaEntidade::TABELA) => Array(
+                (CO_HISTORIA) => Array(
+                    ('Campo') => CO_HISTORIA,
+                    ('Entidade') => 'HistoriaEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
             (HistoriaEntidade::TABELA) => Array(
                 (CO_ANOTACAO) => Array(
                     ('Campo') => CO_HISTORIA,
@@ -650,13 +657,6 @@ class Relacionamentos
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'UsuarioEntidade',
-                    ('Tipo') => '1',
-                ),
-            ),
-            (HistoricoHistoriaEntidade::TABELA) => Array(
-                (CO_HISTORIA) => Array(
-                    ('Campo') => CO_HISTORIA,
-                    ('Entidade') => 'HistoriaEntidade',
                     ('Tipo') => '1',
                 ),
             ),

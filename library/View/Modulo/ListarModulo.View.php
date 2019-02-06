@@ -41,6 +41,9 @@
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
+                        /** @var HistoriaService $historiaService */
+                        $historiaService = new HistoriaService();
+
                         /** @var ModuloEntidade $res */
                         foreach ($result as $res):
                             $acao = '<a href="' . PASTAADMIN . 'Modulo/CadastroModulo/' .
@@ -69,8 +72,12 @@
                                 foreach ($res->getCoSessao() as $sessao) {
                                     /** @var HistoriaEntidade $historia */
                                     foreach ($sessao->getCoHistoria() as $historia) {
-                                        $dados['esforco'] = $dados['esforco'] + $historia->getNuEsforco();
-                                        $dados['esforcoRestante'] = $dados['esforcoRestante'] + $historia->getNuEsforcoRestante();
+                                        /** @var HistoriaEntidade $historia */
+                                        $historia = $historiaService->PesquisaUmRegistro($historia->getCoHistoria());
+                                        $dados['esforco'] = $dados['esforco'] +
+                                            $historia->getCoUltimoHistoricoHistoria()->getNuEsforco();
+                                        $dados['esforcoRestante'] = $dados['esforcoRestante'] +
+                                            $historia->getCoUltimoHistoricoHistoria()->getNuEsforcoRestante();
                                     }
                                 }
                             }

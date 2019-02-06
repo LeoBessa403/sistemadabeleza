@@ -67,8 +67,10 @@
                             if($res->getCoHistoria()){
                                 /** @var HistoriaEntidade $historia */
                                 foreach ($res->getCoHistoria() as $historia) {
-                                    $dados['esforco'] = $dados['esforco'] + $historia->getNuEsforco();
-                                    $dados['esforcoRestante'] = $dados['esforcoRestante'] + $historia->getNuEsforcoRestante();
+                                    $dados['esforco'] = $dados['esforco'] +
+                                        $historia->getCoUltimoHistoricoHistoria()->getNuEsforco();
+                                    $dados['esforcoRestante'] = $dados['esforcoRestante'] +
+                                        $historia->getCoUltimoHistoricoHistoria()->getNuEsforcoRestante();
                                 }
                             }
                             $barra = Valida::getBarraProgresso($dados);

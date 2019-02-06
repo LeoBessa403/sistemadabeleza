@@ -1,4 +1,4 @@
--- Atualizado em: 04/02/2019 14:51:32
+-- Atualizado em: 05/02/2019 18:14:38
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,7 +20,7 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_acesso VALUES("1","au886dq4kojafm6uua4vtlccc5","2018-12-20 16:58:38","2018-12-20 17:22:29","F","8","1");
@@ -213,7 +213,15 @@ INSERT INTO tb_acesso VALUES("94","g37vj5fi2cd712n6271m4bk8h7","2019-02-01 10:50
 
 INSERT INTO tb_acesso VALUES("95","g37vj5fi2cd712n6271m4bk8h7","2019-02-01 14:59:38","2019-02-01 15:29:56","F","1","114");
 
-INSERT INTO tb_acesso VALUES("96","efi49bfhkf5g8c8595c87vq166","2019-02-04 14:27:40","2019-02-04 15:21:32","A","1","115");
+INSERT INTO tb_acesso VALUES("96","efi49bfhkf5g8c8595c87vq166","2019-02-04 14:27:40","2019-02-04 17:36:29","F","1","115");
+
+INSERT INTO tb_acesso VALUES("97","efi49bfhkf5g8c8595c87vq166","2019-02-04 17:36:48","2019-02-04 18:26:06","F","1","116");
+
+INSERT INTO tb_acesso VALUES("98","kt7a4a15uuusshkt6fb8uppqq6","2019-02-05 10:23:23","2019-02-05 12:43:21","F","1","117");
+
+INSERT INTO tb_acesso VALUES("99","kt7a4a15uuusshkt6fb8uppqq6","2019-02-05 12:48:41","2019-02-05 17:55:44","F","1","118");
+
+INSERT INTO tb_acesso VALUES("100","kt7a4a15uuusshkt6fb8uppqq6","2019-02-05 17:55:54","2019-02-05 18:44:38","A","1","119");
 
 
 
@@ -4001,6 +4009,1103 @@ INSERT INTO tb_historia VALUES("140","Mudar Status","<p>Mudar Status Ativo e ina
 
 
 
+DROP TABLE IF EXISTS tb_historico_historia;
+
+
+CREATE TABLE `tb_historico_historia` (
+  `co_historico_historia` int(11) NOT NULL AUTO_INCREMENT,
+  `nu_esforco` int(2) DEFAULT NULL,
+  `nu_esforco_restante` int(2) DEFAULT NULL,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `co_historia` int(11) NOT NULL,
+  PRIMARY KEY (`co_historico_historia`,`co_historia`),
+  KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
+) ENGINE=InnoDB AUTO_INCREMENT=541 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
+
+INSERT INTO tb_historico_historia VALUES("2","3","3","2018-07-24 15:28:56","1");
+
+INSERT INTO tb_historico_historia VALUES("3","8","7","2018-07-24 16:58:01","1");
+
+INSERT INTO tb_historico_historia VALUES("4","8","7","2018-07-24 16:58:01","1");
+
+INSERT INTO tb_historico_historia VALUES("5","8","7","2018-07-24 17:03:25","1");
+
+INSERT INTO tb_historico_historia VALUES("6","8","7","2018-07-24 17:03:25","1");
+
+INSERT INTO tb_historico_historia VALUES("7","8","1","2018-07-24 17:03:43","1");
+
+INSERT INTO tb_historico_historia VALUES("8","8","1","2018-07-24 17:03:43","1");
+
+INSERT INTO tb_historico_historia VALUES("9","8","","2018-07-24 17:04:01","1");
+
+INSERT INTO tb_historico_historia VALUES("10","8","","2018-07-24 17:04:01","1");
+
+INSERT INTO tb_historico_historia VALUES("11","8","8","2018-07-24 17:04:16","1");
+
+INSERT INTO tb_historico_historia VALUES("12","8","8","2018-07-24 17:04:16","1");
+
+INSERT INTO tb_historico_historia VALUES("13","8","8","2018-07-24 17:05:48","1");
+
+INSERT INTO tb_historico_historia VALUES("14","8","8","2018-07-24 17:05:48","1");
+
+INSERT INTO tb_historico_historia VALUES("15","8","","2018-07-24 22:36:04","1");
+
+INSERT INTO tb_historico_historia VALUES("16","8","","2018-07-24 22:36:04","1");
+
+INSERT INTO tb_historico_historia VALUES("17","8","8","2018-07-24 22:36:59","1");
+
+INSERT INTO tb_historico_historia VALUES("18","8","8","2018-07-24 22:36:59","1");
+
+INSERT INTO tb_historico_historia VALUES("19","3","3","2018-07-25 11:03:37","1");
+
+INSERT INTO tb_historico_historia VALUES("20","3","3","2018-07-25 11:03:37","1");
+
+INSERT INTO tb_historico_historia VALUES("21","8","8","2018-07-25 11:05:18","1");
+
+INSERT INTO tb_historico_historia VALUES("22","8","8","2018-07-25 11:05:18","1");
+
+INSERT INTO tb_historico_historia VALUES("23","8","8","2018-07-25 11:06:56","1");
+
+INSERT INTO tb_historico_historia VALUES("24","8","8","2018-07-25 11:06:56","1");
+
+INSERT INTO tb_historico_historia VALUES("25","13","13","2018-07-25 11:09:26","1");
+
+INSERT INTO tb_historico_historia VALUES("26","13","13","2018-07-25 11:09:26","1");
+
+INSERT INTO tb_historico_historia VALUES("27","13","13","2018-07-25 11:24:23","2");
+
+INSERT INTO tb_historico_historia VALUES("28","13","13","2018-07-25 11:24:23","2");
+
+INSERT INTO tb_historico_historia VALUES("29","5","5","2018-07-25 11:37:35","3");
+
+INSERT INTO tb_historico_historia VALUES("30","5","5","2018-07-25 11:37:35","3");
+
+INSERT INTO tb_historico_historia VALUES("31","20","20","2018-07-25 11:42:55","4");
+
+INSERT INTO tb_historico_historia VALUES("32","20","20","2018-07-25 11:42:55","4");
+
+INSERT INTO tb_historico_historia VALUES("33","20","20","2018-07-25 11:43:19","4");
+
+INSERT INTO tb_historico_historia VALUES("34","20","20","2018-07-25 11:43:19","4");
+
+INSERT INTO tb_historico_historia VALUES("35","8","8","2018-07-25 12:11:05","6");
+
+INSERT INTO tb_historico_historia VALUES("36","8","8","2018-07-25 12:11:05","6");
+
+INSERT INTO tb_historico_historia VALUES("37","5","5","2018-07-25 12:19:44","7");
+
+INSERT INTO tb_historico_historia VALUES("38","5","5","2018-07-25 12:19:44","7");
+
+INSERT INTO tb_historico_historia VALUES("39","8","8","2018-07-25 12:21:30","8");
+
+INSERT INTO tb_historico_historia VALUES("40","8","8","2018-07-25 12:21:30","8");
+
+INSERT INTO tb_historico_historia VALUES("41","13","13","2018-07-25 12:27:26","9");
+
+INSERT INTO tb_historico_historia VALUES("42","13","13","2018-07-25 12:27:26","9");
+
+INSERT INTO tb_historico_historia VALUES("43","5","5","2018-07-25 12:28:51","10");
+
+INSERT INTO tb_historico_historia VALUES("44","5","5","2018-07-25 12:28:51","10");
+
+INSERT INTO tb_historico_historia VALUES("45","5","5","2018-07-25 12:29:10","10");
+
+INSERT INTO tb_historico_historia VALUES("46","5","5","2018-07-25 12:29:10","10");
+
+INSERT INTO tb_historico_historia VALUES("47","20","20","2018-07-25 14:38:19","11");
+
+INSERT INTO tb_historico_historia VALUES("48","20","20","2018-07-25 14:38:19","11");
+
+INSERT INTO tb_historico_historia VALUES("49","20","20","2018-07-25 14:39:47","11");
+
+INSERT INTO tb_historico_historia VALUES("50","20","20","2018-07-25 14:39:47","11");
+
+INSERT INTO tb_historico_historia VALUES("51","3","3","2018-07-25 14:43:03","12");
+
+INSERT INTO tb_historico_historia VALUES("52","3","3","2018-07-25 14:43:03","12");
+
+INSERT INTO tb_historico_historia VALUES("53","13","13","2018-07-25 14:54:36","13");
+
+INSERT INTO tb_historico_historia VALUES("54","13","13","2018-07-25 14:54:36","13");
+
+INSERT INTO tb_historico_historia VALUES("55","3","3","2018-07-25 15:13:38","14");
+
+INSERT INTO tb_historico_historia VALUES("56","3","3","2018-07-25 15:13:38","14");
+
+INSERT INTO tb_historico_historia VALUES("57","3","3","2018-07-25 15:15:19","15");
+
+INSERT INTO tb_historico_historia VALUES("58","3","3","2018-07-25 15:15:19","15");
+
+INSERT INTO tb_historico_historia VALUES("59","13","13","2018-07-25 15:56:08","16");
+
+INSERT INTO tb_historico_historia VALUES("60","13","13","2018-07-25 15:56:08","16");
+
+INSERT INTO tb_historico_historia VALUES("61","5","5","2018-07-25 15:59:43","17");
+
+INSERT INTO tb_historico_historia VALUES("62","5","5","2018-07-25 15:59:43","17");
+
+INSERT INTO tb_historico_historia VALUES("63","5","5","2018-07-25 16:12:20","18");
+
+INSERT INTO tb_historico_historia VALUES("64","5","5","2018-07-25 16:12:20","18");
+
+INSERT INTO tb_historico_historia VALUES("65","8","8","2018-07-25 16:16:48","19");
+
+INSERT INTO tb_historico_historia VALUES("66","8","8","2018-07-25 16:16:48","19");
+
+INSERT INTO tb_historico_historia VALUES("67","13","13","2018-07-25 16:17:12","19");
+
+INSERT INTO tb_historico_historia VALUES("68","13","13","2018-07-25 16:17:12","19");
+
+INSERT INTO tb_historico_historia VALUES("69","3","3","2018-07-25 16:19:34","20");
+
+INSERT INTO tb_historico_historia VALUES("70","3","3","2018-07-25 16:19:34","20");
+
+INSERT INTO tb_historico_historia VALUES("71","5","5","2018-07-25 16:21:25","21");
+
+INSERT INTO tb_historico_historia VALUES("72","5","5","2018-07-25 16:21:25","21");
+
+INSERT INTO tb_historico_historia VALUES("73","13","13","2018-07-25 16:23:07","22");
+
+INSERT INTO tb_historico_historia VALUES("74","13","13","2018-07-25 16:23:07","22");
+
+INSERT INTO tb_historico_historia VALUES("75","5","5","2018-07-25 16:26:14","23");
+
+INSERT INTO tb_historico_historia VALUES("76","5","5","2018-07-25 16:26:14","23");
+
+INSERT INTO tb_historico_historia VALUES("77","13","13","2018-07-25 16:30:26","24");
+
+INSERT INTO tb_historico_historia VALUES("78","13","13","2018-07-25 16:30:26","24");
+
+INSERT INTO tb_historico_historia VALUES("79","5","5","2018-07-25 17:12:39","25");
+
+INSERT INTO tb_historico_historia VALUES("80","5","5","2018-07-25 17:12:39","25");
+
+INSERT INTO tb_historico_historia VALUES("81","3","3","2018-07-25 17:14:29","26");
+
+INSERT INTO tb_historico_historia VALUES("82","3","3","2018-07-25 17:14:29","26");
+
+INSERT INTO tb_historico_historia VALUES("83","8","8","2018-07-25 17:23:18","27");
+
+INSERT INTO tb_historico_historia VALUES("84","8","8","2018-07-25 17:23:18","27");
+
+INSERT INTO tb_historico_historia VALUES("85","8","8","2018-07-25 17:32:10","28");
+
+INSERT INTO tb_historico_historia VALUES("86","8","8","2018-07-25 17:32:10","28");
+
+INSERT INTO tb_historico_historia VALUES("87","13","13","2018-07-25 17:32:34","28");
+
+INSERT INTO tb_historico_historia VALUES("88","13","13","2018-07-25 17:32:34","28");
+
+INSERT INTO tb_historico_historia VALUES("89","40","40","2018-07-25 17:44:09","29");
+
+INSERT INTO tb_historico_historia VALUES("90","40","40","2018-07-25 17:44:09","29");
+
+INSERT INTO tb_historico_historia VALUES("91","40","40","2018-07-25 17:44:46","30");
+
+INSERT INTO tb_historico_historia VALUES("92","40","40","2018-07-25 17:44:46","30");
+
+INSERT INTO tb_historico_historia VALUES("93","13","13","2018-07-25 17:49:26","31");
+
+INSERT INTO tb_historico_historia VALUES("94","13","13","2018-07-25 17:49:26","31");
+
+INSERT INTO tb_historico_historia VALUES("95","20","20","2018-07-25 17:50:48","28");
+
+INSERT INTO tb_historico_historia VALUES("96","20","20","2018-07-25 17:50:48","28");
+
+INSERT INTO tb_historico_historia VALUES("97","5","5","2018-07-25 17:52:20","32");
+
+INSERT INTO tb_historico_historia VALUES("98","5","5","2018-07-25 17:52:20","32");
+
+INSERT INTO tb_historico_historia VALUES("99","8","8","2018-07-25 17:55:21","33");
+
+INSERT INTO tb_historico_historia VALUES("100","8","8","2018-07-25 17:55:21","33");
+
+INSERT INTO tb_historico_historia VALUES("101","13","13","2018-07-25 17:56:16","28");
+
+INSERT INTO tb_historico_historia VALUES("102","13","13","2018-07-25 17:56:16","28");
+
+INSERT INTO tb_historico_historia VALUES("103","8","8","2018-07-25 17:57:19","34");
+
+INSERT INTO tb_historico_historia VALUES("104","8","8","2018-07-25 17:57:19","34");
+
+INSERT INTO tb_historico_historia VALUES("105","3","3","2018-07-25 17:57:52","35");
+
+INSERT INTO tb_historico_historia VALUES("106","3","3","2018-07-25 17:57:52","35");
+
+INSERT INTO tb_historico_historia VALUES("107","5","5","2018-07-25 17:58:43","36");
+
+INSERT INTO tb_historico_historia VALUES("108","5","5","2018-07-25 17:58:43","36");
+
+INSERT INTO tb_historico_historia VALUES("109","8","8","2018-07-25 17:59:03","36");
+
+INSERT INTO tb_historico_historia VALUES("110","8","8","2018-07-25 17:59:03","36");
+
+INSERT INTO tb_historico_historia VALUES("111","13","13","2018-07-25 18:12:12","37");
+
+INSERT INTO tb_historico_historia VALUES("112","13","13","2018-07-25 18:12:12","37");
+
+INSERT INTO tb_historico_historia VALUES("113","8","8","2018-07-25 18:13:09","38");
+
+INSERT INTO tb_historico_historia VALUES("114","8","8","2018-07-25 18:13:09","38");
+
+INSERT INTO tb_historico_historia VALUES("115","8","8","2018-07-25 18:16:22","39");
+
+INSERT INTO tb_historico_historia VALUES("116","8","8","2018-07-25 18:16:22","39");
+
+INSERT INTO tb_historico_historia VALUES("117","8","8","2018-07-25 18:24:58","40");
+
+INSERT INTO tb_historico_historia VALUES("118","8","8","2018-07-25 18:24:58","40");
+
+INSERT INTO tb_historico_historia VALUES("119","8","8","2018-07-25 18:25:44","41");
+
+INSERT INTO tb_historico_historia VALUES("120","8","8","2018-07-25 18:25:44","41");
+
+INSERT INTO tb_historico_historia VALUES("121","13","13","2018-07-25 18:27:03","42");
+
+INSERT INTO tb_historico_historia VALUES("122","13","13","2018-07-25 18:27:03","42");
+
+INSERT INTO tb_historico_historia VALUES("123","13","13","2018-07-25 18:29:25","37");
+
+INSERT INTO tb_historico_historia VALUES("124","13","13","2018-07-25 18:29:25","37");
+
+INSERT INTO tb_historico_historia VALUES("125","8","8","2018-07-25 18:40:36","43");
+
+INSERT INTO tb_historico_historia VALUES("126","8","8","2018-07-25 18:40:36","43");
+
+INSERT INTO tb_historico_historia VALUES("127","8","8","2018-07-25 18:42:35","44");
+
+INSERT INTO tb_historico_historia VALUES("128","8","8","2018-07-25 18:42:35","44");
+
+INSERT INTO tb_historico_historia VALUES("129","20","20","2018-07-25 18:43:26","45");
+
+INSERT INTO tb_historico_historia VALUES("130","20","20","2018-07-25 18:43:26","45");
+
+INSERT INTO tb_historico_historia VALUES("131","8","8","2018-07-25 18:44:48","43");
+
+INSERT INTO tb_historico_historia VALUES("132","8","8","2018-07-25 18:44:48","43");
+
+INSERT INTO tb_historico_historia VALUES("133","8","8","2018-07-25 18:45:49","43");
+
+INSERT INTO tb_historico_historia VALUES("134","8","8","2018-07-25 18:45:49","43");
+
+INSERT INTO tb_historico_historia VALUES("135","8","8","2018-07-25 18:55:44","46");
+
+INSERT INTO tb_historico_historia VALUES("136","8","8","2018-07-25 18:55:44","46");
+
+INSERT INTO tb_historico_historia VALUES("137","8","8","2018-07-25 19:11:25","47");
+
+INSERT INTO tb_historico_historia VALUES("138","8","8","2018-07-25 19:11:25","47");
+
+INSERT INTO tb_historico_historia VALUES("139","8","8","2018-07-25 19:11:54","47");
+
+INSERT INTO tb_historico_historia VALUES("140","8","8","2018-07-25 19:11:54","47");
+
+INSERT INTO tb_historico_historia VALUES("141","8","8","2018-07-25 19:17:02","48");
+
+INSERT INTO tb_historico_historia VALUES("142","8","8","2018-07-25 19:17:02","48");
+
+INSERT INTO tb_historico_historia VALUES("143","8","8","2018-07-25 19:17:37","49");
+
+INSERT INTO tb_historico_historia VALUES("144","8","8","2018-07-25 19:17:37","49");
+
+INSERT INTO tb_historico_historia VALUES("145","8","8","2018-07-25 19:20:30","50");
+
+INSERT INTO tb_historico_historia VALUES("146","8","8","2018-07-25 19:20:30","50");
+
+INSERT INTO tb_historico_historia VALUES("147","8","8","2018-07-25 19:21:41","51");
+
+INSERT INTO tb_historico_historia VALUES("148","8","8","2018-07-25 19:21:41","51");
+
+INSERT INTO tb_historico_historia VALUES("149","5","5","2018-07-25 19:22:51","52");
+
+INSERT INTO tb_historico_historia VALUES("150","5","5","2018-07-25 19:22:51","52");
+
+INSERT INTO tb_historico_historia VALUES("151","8","8","2018-07-25 19:24:05","53");
+
+INSERT INTO tb_historico_historia VALUES("152","8","8","2018-07-25 19:24:05","53");
+
+INSERT INTO tb_historico_historia VALUES("153","8","8","2018-07-25 19:24:33","54");
+
+INSERT INTO tb_historico_historia VALUES("154","8","8","2018-07-25 19:24:33","54");
+
+INSERT INTO tb_historico_historia VALUES("155","8","8","2018-07-25 19:25:05","55");
+
+INSERT INTO tb_historico_historia VALUES("156","8","8","2018-07-25 19:25:05","55");
+
+INSERT INTO tb_historico_historia VALUES("157","8","8","2018-07-25 19:25:36","56");
+
+INSERT INTO tb_historico_historia VALUES("158","8","8","2018-07-25 19:25:36","56");
+
+INSERT INTO tb_historico_historia VALUES("159","8","8","2018-07-25 19:26:05","57");
+
+INSERT INTO tb_historico_historia VALUES("160","8","8","2018-07-25 19:26:05","57");
+
+INSERT INTO tb_historico_historia VALUES("161","8","8","2018-07-25 19:26:53","58");
+
+INSERT INTO tb_historico_historia VALUES("162","8","8","2018-07-25 19:26:53","58");
+
+INSERT INTO tb_historico_historia VALUES("163","8","8","2018-07-25 19:27:25","59");
+
+INSERT INTO tb_historico_historia VALUES("164","8","8","2018-07-25 19:27:25","59");
+
+INSERT INTO tb_historico_historia VALUES("165","8","8","2018-07-25 19:27:58","60");
+
+INSERT INTO tb_historico_historia VALUES("166","8","8","2018-07-25 19:27:58","60");
+
+INSERT INTO tb_historico_historia VALUES("167","40","25","2018-07-26 11:46:54","61");
+
+INSERT INTO tb_historico_historia VALUES("168","40","25","2018-07-26 11:46:54","61");
+
+INSERT INTO tb_historico_historia VALUES("169","40","40","2018-07-26 17:36:50","62");
+
+INSERT INTO tb_historico_historia VALUES("170","40","40","2018-07-26 17:36:50","62");
+
+INSERT INTO tb_historico_historia VALUES("171","40","40","2018-07-26 17:38:31","63");
+
+INSERT INTO tb_historico_historia VALUES("172","40","40","2018-07-26 17:38:31","63");
+
+INSERT INTO tb_historico_historia VALUES("173","20","20","2018-07-26 17:39:10","64");
+
+INSERT INTO tb_historico_historia VALUES("174","20","20","2018-07-26 17:39:10","64");
+
+INSERT INTO tb_historico_historia VALUES("175","40","40","2018-07-26 17:40:01","65");
+
+INSERT INTO tb_historico_historia VALUES("176","40","40","2018-07-26 17:40:01","65");
+
+INSERT INTO tb_historico_historia VALUES("177","20","20","2018-07-26 17:40:37","66");
+
+INSERT INTO tb_historico_historia VALUES("178","20","20","2018-07-26 17:40:37","66");
+
+INSERT INTO tb_historico_historia VALUES("179","40","40","2018-07-26 17:45:02","67");
+
+INSERT INTO tb_historico_historia VALUES("180","40","40","2018-07-26 17:45:02","67");
+
+INSERT INTO tb_historico_historia VALUES("181","40","40","2018-07-26 17:45:23","67");
+
+INSERT INTO tb_historico_historia VALUES("182","40","40","2018-07-26 17:45:23","67");
+
+INSERT INTO tb_historico_historia VALUES("183","40","40","2018-07-26 17:46:23","68");
+
+INSERT INTO tb_historico_historia VALUES("184","40","40","2018-07-26 17:46:23","68");
+
+INSERT INTO tb_historico_historia VALUES("185","20","20","2018-07-26 17:47:24","69");
+
+INSERT INTO tb_historico_historia VALUES("186","20","20","2018-07-26 17:47:24","69");
+
+INSERT INTO tb_historico_historia VALUES("187","40","40","2018-07-26 17:55:15","70");
+
+INSERT INTO tb_historico_historia VALUES("188","40","40","2018-07-26 17:55:15","70");
+
+INSERT INTO tb_historico_historia VALUES("189","40","40","2018-07-26 17:58:04","67");
+
+INSERT INTO tb_historico_historia VALUES("190","40","40","2018-07-26 17:58:04","67");
+
+INSERT INTO tb_historico_historia VALUES("191","13","13","2018-07-26 18:00:07","71");
+
+INSERT INTO tb_historico_historia VALUES("192","13","13","2018-07-26 18:00:07","71");
+
+INSERT INTO tb_historico_historia VALUES("193","40","40","2018-07-26 18:01:36","72");
+
+INSERT INTO tb_historico_historia VALUES("194","40","40","2018-07-26 18:01:36","72");
+
+INSERT INTO tb_historico_historia VALUES("195","20","20","2018-07-26 18:02:18","73");
+
+INSERT INTO tb_historico_historia VALUES("196","20","20","2018-07-26 18:02:18","73");
+
+INSERT INTO tb_historico_historia VALUES("197","20","3","2018-07-26 18:13:56","74");
+
+INSERT INTO tb_historico_historia VALUES("198","20","3","2018-07-26 18:13:56","74");
+
+INSERT INTO tb_historico_historia VALUES("199","13","3","2018-07-26 18:15:35","74");
+
+INSERT INTO tb_historico_historia VALUES("200","13","3","2018-07-26 18:15:35","74");
+
+INSERT INTO tb_historico_historia VALUES("201","30","30","2018-07-26 18:40:29","75");
+
+INSERT INTO tb_historico_historia VALUES("202","30","30","2018-07-26 18:40:29","75");
+
+INSERT INTO tb_historico_historia VALUES("203","20","20","2018-07-26 18:41:34","37");
+
+INSERT INTO tb_historico_historia VALUES("204","20","20","2018-07-26 18:41:34","37");
+
+INSERT INTO tb_historico_historia VALUES("205","40","40","2018-07-26 18:45:07","62");
+
+INSERT INTO tb_historico_historia VALUES("206","40","40","2018-07-26 18:45:07","62");
+
+INSERT INTO tb_historico_historia VALUES("207","40","20","2018-07-26 18:47:00","61");
+
+INSERT INTO tb_historico_historia VALUES("208","40","20","2018-07-26 18:47:00","61");
+
+INSERT INTO tb_historico_historia VALUES("209","8","8","2018-07-26 18:49:20","76");
+
+INSERT INTO tb_historico_historia VALUES("210","8","8","2018-07-26 18:49:20","76");
+
+INSERT INTO tb_historico_historia VALUES("211","40","40","2018-07-26 18:51:32","79");
+
+INSERT INTO tb_historico_historia VALUES("212","40","40","2018-07-26 18:51:32","79");
+
+INSERT INTO tb_historico_historia VALUES("213","8","8","2018-07-26 18:53:05","80");
+
+INSERT INTO tb_historico_historia VALUES("214","8","8","2018-07-26 18:53:05","80");
+
+INSERT INTO tb_historico_historia VALUES("215","20","20","2018-07-26 18:55:02","83");
+
+INSERT INTO tb_historico_historia VALUES("216","20","20","2018-07-26 18:55:02","83");
+
+INSERT INTO tb_historico_historia VALUES("217","30","30","2018-07-26 22:16:38","84");
+
+INSERT INTO tb_historico_historia VALUES("218","30","30","2018-07-26 22:16:38","84");
+
+INSERT INTO tb_historico_historia VALUES("219","20","20","2018-07-26 22:19:03","85");
+
+INSERT INTO tb_historico_historia VALUES("220","20","20","2018-07-26 22:19:03","85");
+
+INSERT INTO tb_historico_historia VALUES("221","20","20","2018-07-26 22:21:00","86");
+
+INSERT INTO tb_historico_historia VALUES("222","20","20","2018-07-26 22:21:00","86");
+
+INSERT INTO tb_historico_historia VALUES("223","20","20","2018-07-26 22:23:39","87");
+
+INSERT INTO tb_historico_historia VALUES("224","20","20","2018-07-26 22:23:39","87");
+
+INSERT INTO tb_historico_historia VALUES("225","20","20","2018-07-26 22:25:10","88");
+
+INSERT INTO tb_historico_historia VALUES("226","20","20","2018-07-26 22:25:10","88");
+
+INSERT INTO tb_historico_historia VALUES("227","20","20","2018-07-26 22:27:22","89");
+
+INSERT INTO tb_historico_historia VALUES("228","20","20","2018-07-26 22:27:22","89");
+
+INSERT INTO tb_historico_historia VALUES("229","40","40","2018-07-26 22:28:33","89");
+
+INSERT INTO tb_historico_historia VALUES("230","40","40","2018-07-26 22:28:33","89");
+
+INSERT INTO tb_historico_historia VALUES("231","40","8","2018-07-27 14:57:21","61");
+
+INSERT INTO tb_historico_historia VALUES("232","40","8","2018-07-27 14:57:21","61");
+
+INSERT INTO tb_historico_historia VALUES("233","40","20","2018-07-27 14:59:44","61");
+
+INSERT INTO tb_historico_historia VALUES("234","40","20","2018-07-27 14:59:44","61");
+
+INSERT INTO tb_historico_historia VALUES("235","40","8","2018-07-27 15:00:17","61");
+
+INSERT INTO tb_historico_historia VALUES("236","40","8","2018-07-27 15:00:17","61");
+
+INSERT INTO tb_historico_historia VALUES("237","8","8","2018-07-27 15:02:27","90");
+
+INSERT INTO tb_historico_historia VALUES("238","8","8","2018-07-27 15:02:27","90");
+
+INSERT INTO tb_historico_historia VALUES("239","40","40","2018-07-27 17:19:07","91");
+
+INSERT INTO tb_historico_historia VALUES("240","40","40","2018-07-27 17:19:07","91");
+
+INSERT INTO tb_historico_historia VALUES("241","40","40","2018-07-27 17:22:59","11");
+
+INSERT INTO tb_historico_historia VALUES("242","40","40","2018-07-27 17:22:59","11");
+
+INSERT INTO tb_historico_historia VALUES("243","8","8","2018-07-27 17:37:41","92");
+
+INSERT INTO tb_historico_historia VALUES("244","8","8","2018-07-27 17:37:41","92");
+
+INSERT INTO tb_historico_historia VALUES("245","8","8","2018-07-27 17:38:44","93");
+
+INSERT INTO tb_historico_historia VALUES("246","8","8","2018-07-27 17:38:44","93");
+
+INSERT INTO tb_historico_historia VALUES("247","8","8","2018-07-27 17:39:05","92");
+
+INSERT INTO tb_historico_historia VALUES("248","8","8","2018-07-27 17:39:05","92");
+
+INSERT INTO tb_historico_historia VALUES("249","8","8","2018-07-27 17:40:17","94");
+
+INSERT INTO tb_historico_historia VALUES("250","8","8","2018-07-27 17:40:17","94");
+
+INSERT INTO tb_historico_historia VALUES("251","8","8","2018-07-27 17:41:17","95");
+
+INSERT INTO tb_historico_historia VALUES("252","8","8","2018-07-27 17:41:17","95");
+
+INSERT INTO tb_historico_historia VALUES("253","20","20","2018-07-27 17:41:42","95");
+
+INSERT INTO tb_historico_historia VALUES("254","20","20","2018-07-27 17:41:42","95");
+
+INSERT INTO tb_historico_historia VALUES("255","8","8","2018-07-27 17:43:01","96");
+
+INSERT INTO tb_historico_historia VALUES("256","8","8","2018-07-27 17:43:01","96");
+
+INSERT INTO tb_historico_historia VALUES("257","13","13","2018-07-27 17:45:36","92");
+
+INSERT INTO tb_historico_historia VALUES("258","13","13","2018-07-27 17:45:36","92");
+
+INSERT INTO tb_historico_historia VALUES("259","13","13","2018-07-27 17:46:02","93");
+
+INSERT INTO tb_historico_historia VALUES("260","13","13","2018-07-27 17:46:02","93");
+
+INSERT INTO tb_historico_historia VALUES("261","13","13","2018-07-27 17:46:32","94");
+
+INSERT INTO tb_historico_historia VALUES("262","13","13","2018-07-27 17:46:32","94");
+
+INSERT INTO tb_historico_historia VALUES("263","30","30","2018-07-27 17:46:55","95");
+
+INSERT INTO tb_historico_historia VALUES("264","30","30","2018-07-27 17:46:55","95");
+
+INSERT INTO tb_historico_historia VALUES("265","13","13","2018-07-27 17:47:20","96");
+
+INSERT INTO tb_historico_historia VALUES("266","13","13","2018-07-27 17:47:20","96");
+
+INSERT INTO tb_historico_historia VALUES("267","30","30","2018-07-27 17:47:48","95");
+
+INSERT INTO tb_historico_historia VALUES("268","30","30","2018-07-27 17:47:48","95");
+
+INSERT INTO tb_historico_historia VALUES("269","13","13","2018-07-27 17:49:20","97");
+
+INSERT INTO tb_historico_historia VALUES("270","13","13","2018-07-27 17:49:20","97");
+
+INSERT INTO tb_historico_historia VALUES("271","13","13","2018-07-27 17:50:16","98");
+
+INSERT INTO tb_historico_historia VALUES("272","13","13","2018-07-27 17:50:16","98");
+
+INSERT INTO tb_historico_historia VALUES("273","13","13","2018-07-27 17:51:05","99");
+
+INSERT INTO tb_historico_historia VALUES("274","13","13","2018-07-27 17:51:05","99");
+
+INSERT INTO tb_historico_historia VALUES("275","13","13","2018-07-27 17:51:49","100");
+
+INSERT INTO tb_historico_historia VALUES("276","13","13","2018-07-27 17:51:49","100");
+
+INSERT INTO tb_historico_historia VALUES("277","13","13","2018-07-27 17:53:27","101");
+
+INSERT INTO tb_historico_historia VALUES("278","13","13","2018-07-27 17:53:27","101");
+
+INSERT INTO tb_historico_historia VALUES("279","13","13","2018-07-27 17:54:38","102");
+
+INSERT INTO tb_historico_historia VALUES("280","13","13","2018-07-27 17:54:38","102");
+
+INSERT INTO tb_historico_historia VALUES("281","20","20","2018-07-27 17:55:41","103");
+
+INSERT INTO tb_historico_historia VALUES("282","20","20","2018-07-27 17:55:41","103");
+
+INSERT INTO tb_historico_historia VALUES("283","40","3","2018-07-27 17:57:45","61");
+
+INSERT INTO tb_historico_historia VALUES("284","40","3","2018-07-27 17:57:45","61");
+
+INSERT INTO tb_historico_historia VALUES("285","20","20","2018-07-27 18:06:37","104");
+
+INSERT INTO tb_historico_historia VALUES("286","20","20","2018-07-27 18:06:37","104");
+
+INSERT INTO tb_historico_historia VALUES("287","20","20","2018-07-27 18:07:01","102");
+
+INSERT INTO tb_historico_historia VALUES("288","20","20","2018-07-27 18:07:01","102");
+
+INSERT INTO tb_historico_historia VALUES("289","20","20","2018-07-27 18:07:54","105");
+
+INSERT INTO tb_historico_historia VALUES("290","20","20","2018-07-27 18:07:54","105");
+
+INSERT INTO tb_historico_historia VALUES("291","30","30","2018-07-27 18:09:40","106");
+
+INSERT INTO tb_historico_historia VALUES("292","30","30","2018-07-27 18:09:40","106");
+
+INSERT INTO tb_historico_historia VALUES("293","20","20","2018-07-27 18:10:55","107");
+
+INSERT INTO tb_historico_historia VALUES("294","20","20","2018-07-27 18:10:55","107");
+
+INSERT INTO tb_historico_historia VALUES("295","13","13","2018-07-27 18:12:06","108");
+
+INSERT INTO tb_historico_historia VALUES("296","13","13","2018-07-27 18:12:06","108");
+
+INSERT INTO tb_historico_historia VALUES("297","13","13","2018-07-27 18:12:44","109");
+
+INSERT INTO tb_historico_historia VALUES("298","13","13","2018-07-27 18:12:44","109");
+
+INSERT INTO tb_historico_historia VALUES("299","13","13","2018-07-27 18:13:22","110");
+
+INSERT INTO tb_historico_historia VALUES("300","13","13","2018-07-27 18:13:22","110");
+
+INSERT INTO tb_historico_historia VALUES("301","8","8","2018-07-27 18:14:26","111");
+
+INSERT INTO tb_historico_historia VALUES("302","8","8","2018-07-27 18:14:26","111");
+
+INSERT INTO tb_historico_historia VALUES("303","8","8","2018-07-27 18:15:07","112");
+
+INSERT INTO tb_historico_historia VALUES("304","8","8","2018-07-27 18:15:07","112");
+
+INSERT INTO tb_historico_historia VALUES("305","20","20","2018-07-27 18:17:28","111");
+
+INSERT INTO tb_historico_historia VALUES("306","20","20","2018-07-27 18:17:28","111");
+
+INSERT INTO tb_historico_historia VALUES("307","13","13","2018-07-27 18:19:02","112");
+
+INSERT INTO tb_historico_historia VALUES("308","13","13","2018-07-27 18:19:02","112");
+
+INSERT INTO tb_historico_historia VALUES("309","13","13","2018-07-27 18:19:26","111");
+
+INSERT INTO tb_historico_historia VALUES("310","13","13","2018-07-27 18:19:26","111");
+
+INSERT INTO tb_historico_historia VALUES("311","13","13","2018-07-27 18:20:43","113");
+
+INSERT INTO tb_historico_historia VALUES("312","13","13","2018-07-27 18:20:43","113");
+
+INSERT INTO tb_historico_historia VALUES("313","13","13","2018-07-27 18:22:34","114");
+
+INSERT INTO tb_historico_historia VALUES("314","13","13","2018-07-27 18:22:34","114");
+
+INSERT INTO tb_historico_historia VALUES("315","13","13","2018-07-27 18:23:56","115");
+
+INSERT INTO tb_historico_historia VALUES("316","13","13","2018-07-27 18:23:56","115");
+
+INSERT INTO tb_historico_historia VALUES("317","13","13","2018-07-27 18:24:36","114");
+
+INSERT INTO tb_historico_historia VALUES("318","13","13","2018-07-27 18:24:36","114");
+
+INSERT INTO tb_historico_historia VALUES("319","13","13","2018-07-27 18:25:16","116");
+
+INSERT INTO tb_historico_historia VALUES("320","13","13","2018-07-27 18:25:16","116");
+
+INSERT INTO tb_historico_historia VALUES("321","13","13","2018-07-27 18:49:49","117");
+
+INSERT INTO tb_historico_historia VALUES("322","13","13","2018-07-27 18:49:49","117");
+
+INSERT INTO tb_historico_historia VALUES("323","13","13","2018-07-27 18:52:04","118");
+
+INSERT INTO tb_historico_historia VALUES("324","13","13","2018-07-27 18:52:04","118");
+
+INSERT INTO tb_historico_historia VALUES("325","13","13","2018-07-27 18:53:06","119");
+
+INSERT INTO tb_historico_historia VALUES("326","13","13","2018-07-27 18:53:06","119");
+
+INSERT INTO tb_historico_historia VALUES("327","13","13","2018-07-27 18:54:22","119");
+
+INSERT INTO tb_historico_historia VALUES("328","13","13","2018-07-27 18:54:22","119");
+
+INSERT INTO tb_historico_historia VALUES("329","13","13","2018-07-27 18:56:13","118");
+
+INSERT INTO tb_historico_historia VALUES("330","13","13","2018-07-27 18:56:13","118");
+
+INSERT INTO tb_historico_historia VALUES("331","5","5","2018-07-27 19:00:55","76");
+
+INSERT INTO tb_historico_historia VALUES("332","5","5","2018-07-27 19:00:55","76");
+
+INSERT INTO tb_historico_historia VALUES("333","20","20","2018-07-27 19:01:27","79");
+
+INSERT INTO tb_historico_historia VALUES("334","20","20","2018-07-27 19:01:27","79");
+
+INSERT INTO tb_historico_historia VALUES("335","20","20","2018-07-27 19:02:44","80");
+
+INSERT INTO tb_historico_historia VALUES("336","20","20","2018-07-27 19:02:44","80");
+
+INSERT INTO tb_historico_historia VALUES("337","5","5","2018-07-27 19:03:12","83");
+
+INSERT INTO tb_historico_historia VALUES("338","5","5","2018-07-27 19:03:12","83");
+
+INSERT INTO tb_historico_historia VALUES("339","13","13","2018-07-27 19:08:38","120");
+
+INSERT INTO tb_historico_historia VALUES("340","13","13","2018-07-27 19:08:38","120");
+
+INSERT INTO tb_historico_historia VALUES("341","13","13","2018-07-27 19:09:29","121");
+
+INSERT INTO tb_historico_historia VALUES("342","13","13","2018-07-27 19:09:29","121");
+
+INSERT INTO tb_historico_historia VALUES("343","20","20","2018-07-27 19:12:19","122");
+
+INSERT INTO tb_historico_historia VALUES("344","20","20","2018-07-27 19:12:19","122");
+
+INSERT INTO tb_historico_historia VALUES("345","13","13","2018-07-30 10:32:17","123");
+
+INSERT INTO tb_historico_historia VALUES("346","13","13","2018-07-30 10:32:17","123");
+
+INSERT INTO tb_historico_historia VALUES("347","8","1","2018-07-30 11:10:26","123");
+
+INSERT INTO tb_historico_historia VALUES("348","8","1","2018-07-30 11:10:26","123");
+
+INSERT INTO tb_historico_historia VALUES("349","5","5","2018-07-30 11:11:11","124");
+
+INSERT INTO tb_historico_historia VALUES("350","5","5","2018-07-30 11:11:11","124");
+
+INSERT INTO tb_historico_historia VALUES("351","20","20","2018-07-30 11:30:50","124");
+
+INSERT INTO tb_historico_historia VALUES("352","20","20","2018-07-30 11:30:50","124");
+
+INSERT INTO tb_historico_historia VALUES("353","8","3","2018-07-30 11:31:12","123");
+
+INSERT INTO tb_historico_historia VALUES("354","8","3","2018-07-30 11:31:12","123");
+
+INSERT INTO tb_historico_historia VALUES("355","8","","2018-07-30 11:37:21","123");
+
+INSERT INTO tb_historico_historia VALUES("356","8","","2018-07-30 11:37:21","123");
+
+INSERT INTO tb_historico_historia VALUES("357","20","20","2018-07-30 12:29:08","1");
+
+INSERT INTO tb_historico_historia VALUES("358","20","20","2018-07-30 12:29:08","1");
+
+INSERT INTO tb_historico_historia VALUES("359","13","13","2018-07-30 12:29:34","1");
+
+INSERT INTO tb_historico_historia VALUES("360","13","13","2018-07-30 12:29:34","1");
+
+INSERT INTO tb_historico_historia VALUES("361","13","13","2018-07-30 12:32:42","1");
+
+INSERT INTO tb_historico_historia VALUES("362","13","13","2018-07-30 12:32:42","1");
+
+INSERT INTO tb_historico_historia VALUES("363","13","10","2018-07-30 12:43:28","1");
+
+INSERT INTO tb_historico_historia VALUES("364","13","10","2018-07-30 12:43:28","1");
+
+INSERT INTO tb_historico_historia VALUES("365","13","1","2018-07-31 12:10:59","1");
+
+INSERT INTO tb_historico_historia VALUES("366","13","1","2018-07-31 12:10:59","1");
+
+INSERT INTO tb_historico_historia VALUES("367","13","","2018-07-31 15:05:13","1");
+
+INSERT INTO tb_historico_historia VALUES("368","13","","2018-07-31 15:05:13","1");
+
+INSERT INTO tb_historico_historia VALUES("369","30","30","2018-07-31 15:26:40","2");
+
+INSERT INTO tb_historico_historia VALUES("370","30","30","2018-07-31 15:26:40","2");
+
+INSERT INTO tb_historico_historia VALUES("371","30","26","2018-07-31 15:27:03","2");
+
+INSERT INTO tb_historico_historia VALUES("372","30","26","2018-07-31 15:27:03","2");
+
+INSERT INTO tb_historico_historia VALUES("373","30","30","2018-07-31 15:30:22","124");
+
+INSERT INTO tb_historico_historia VALUES("374","30","30","2018-07-31 15:30:22","124");
+
+INSERT INTO tb_historico_historia VALUES("375","30","24","2018-07-31 18:05:29","2");
+
+INSERT INTO tb_historico_historia VALUES("376","30","24","2018-07-31 18:05:29","2");
+
+INSERT INTO tb_historico_historia VALUES("377","30","20","2018-07-31 20:12:44","2");
+
+INSERT INTO tb_historico_historia VALUES("378","30","20","2018-07-31 20:12:44","2");
+
+INSERT INTO tb_historico_historia VALUES("379","30","8","2018-07-31 22:41:38","2");
+
+INSERT INTO tb_historico_historia VALUES("380","30","8","2018-07-31 22:41:38","2");
+
+INSERT INTO tb_historico_historia VALUES("381","13","13","2018-07-31 22:45:16","2");
+
+INSERT INTO tb_historico_historia VALUES("382","13","13","2018-07-31 22:45:16","2");
+
+INSERT INTO tb_historico_historia VALUES("383","13","","2018-07-31 22:45:39","2");
+
+INSERT INTO tb_historico_historia VALUES("384","13","","2018-07-31 22:45:39","2");
+
+INSERT INTO tb_historico_historia VALUES("385","8","5","2018-08-01 00:01:18","3");
+
+INSERT INTO tb_historico_historia VALUES("386","8","5","2018-08-01 00:01:18","3");
+
+INSERT INTO tb_historico_historia VALUES("387","13","1","2018-08-03 19:12:14","3");
+
+INSERT INTO tb_historico_historia VALUES("388","13","1","2018-08-03 19:12:14","3");
+
+INSERT INTO tb_historico_historia VALUES("389","13","2","2018-08-03 19:12:38","3");
+
+INSERT INTO tb_historico_historia VALUES("390","13","2","2018-08-03 19:12:38","3");
+
+INSERT INTO tb_historico_historia VALUES("391","13","1","2018-08-03 19:31:35","2");
+
+INSERT INTO tb_historico_historia VALUES("392","13","1","2018-08-03 19:31:35","2");
+
+INSERT INTO tb_historico_historia VALUES("393","30","20","2018-08-03 19:34:31","4");
+
+INSERT INTO tb_historico_historia VALUES("394","30","20","2018-08-03 19:34:31","4");
+
+INSERT INTO tb_historico_historia VALUES("395","13","","2018-08-13 12:05:19","3");
+
+INSERT INTO tb_historico_historia VALUES("396","13","","2018-08-13 12:05:19","3");
+
+INSERT INTO tb_historico_historia VALUES("397","20","","2018-08-13 17:32:58","4");
+
+INSERT INTO tb_historico_historia VALUES("398","20","","2018-08-13 17:32:58","4");
+
+INSERT INTO tb_historico_historia VALUES("399","13","13","2018-08-13 17:33:25","125");
+
+INSERT INTO tb_historico_historia VALUES("400","13","13","2018-08-13 17:33:25","125");
+
+INSERT INTO tb_historico_historia VALUES("401","13","13","2018-08-13 17:56:16","126");
+
+INSERT INTO tb_historico_historia VALUES("402","13","13","2018-08-13 17:56:16","126");
+
+INSERT INTO tb_historico_historia VALUES("403","8","8","2018-08-13 17:56:39","126");
+
+INSERT INTO tb_historico_historia VALUES("404","8","8","2018-08-13 17:56:39","126");
+
+INSERT INTO tb_historico_historia VALUES("405","13","3","2018-08-13 18:02:23","2");
+
+INSERT INTO tb_historico_historia VALUES("406","13","3","2018-08-13 18:02:23","2");
+
+INSERT INTO tb_historico_historia VALUES("407","30","30","2018-08-13 18:04:13","124");
+
+INSERT INTO tb_historico_historia VALUES("408","30","30","2018-08-13 18:04:13","124");
+
+INSERT INTO tb_historico_historia VALUES("409","20","5","2018-08-13 18:05:02","2");
+
+INSERT INTO tb_historico_historia VALUES("410","20","5","2018-08-13 18:05:02","2");
+
+INSERT INTO tb_historico_historia VALUES("411","20","","2018-08-13 23:02:29","2");
+
+INSERT INTO tb_historico_historia VALUES("412","20","","2018-08-13 23:02:29","2");
+
+INSERT INTO tb_historico_historia VALUES("413","30","10","2018-08-14 12:45:44","124");
+
+INSERT INTO tb_historico_historia VALUES("414","30","10","2018-08-14 12:45:44","124");
+
+INSERT INTO tb_historico_historia VALUES("415","20","8","2018-08-14 12:51:01","124");
+
+INSERT INTO tb_historico_historia VALUES("416","20","8","2018-08-14 12:51:01","124");
+
+INSERT INTO tb_historico_historia VALUES("417","20","3","2018-08-14 17:31:36","124");
+
+INSERT INTO tb_historico_historia VALUES("418","20","3","2018-08-14 17:31:36","124");
+
+INSERT INTO tb_historico_historia VALUES("419","13","13","2018-08-15 11:16:04","127");
+
+INSERT INTO tb_historico_historia VALUES("420","13","13","2018-08-15 11:16:04","127");
+
+INSERT INTO tb_historico_historia VALUES("421","30","10","2018-08-15 20:30:34","124");
+
+INSERT INTO tb_historico_historia VALUES("422","30","10","2018-08-15 20:30:34","124");
+
+INSERT INTO tb_historico_historia VALUES("423","20","18","2018-08-17 15:57:25","127");
+
+INSERT INTO tb_historico_historia VALUES("424","20","18","2018-08-17 15:57:25","127");
+
+INSERT INTO tb_historico_historia VALUES("425","20","20","2018-08-17 16:12:02","124");
+
+INSERT INTO tb_historico_historia VALUES("426","20","20","2018-08-17 16:12:02","124");
+
+INSERT INTO tb_historico_historia VALUES("427","20","","2018-08-17 16:12:24","124");
+
+INSERT INTO tb_historico_historia VALUES("428","20","","2018-08-17 16:12:24","124");
+
+INSERT INTO tb_historico_historia VALUES("429","20","","2018-08-17 16:12:59","124");
+
+INSERT INTO tb_historico_historia VALUES("430","20","","2018-08-17 16:12:59","124");
+
+INSERT INTO tb_historico_historia VALUES("431","13","5","2018-08-17 16:13:28","125");
+
+INSERT INTO tb_historico_historia VALUES("432","13","5","2018-08-17 16:13:28","125");
+
+INSERT INTO tb_historico_historia VALUES("433","13","","2018-08-17 18:09:18","125");
+
+INSERT INTO tb_historico_historia VALUES("434","13","","2018-08-17 18:09:18","125");
+
+INSERT INTO tb_historico_historia VALUES("435","20","","2018-08-28 11:25:01","127");
+
+INSERT INTO tb_historico_historia VALUES("436","20","","2018-08-28 11:25:01","127");
+
+INSERT INTO tb_historico_historia VALUES("437","20","15","2018-08-28 18:49:22","6");
+
+INSERT INTO tb_historico_historia VALUES("438","20","15","2018-08-28 18:49:22","6");
+
+INSERT INTO tb_historico_historia VALUES("439","8","5","2018-08-30 10:57:06","130");
+
+INSERT INTO tb_historico_historia VALUES("440","8","5","2018-08-30 10:57:06","130");
+
+INSERT INTO tb_historico_historia VALUES("441","8","5","2018-08-30 10:58:04","8");
+
+INSERT INTO tb_historico_historia VALUES("442","8","5","2018-08-30 10:58:04","8");
+
+INSERT INTO tb_historico_historia VALUES("443","8","5","2018-08-30 10:58:26","7");
+
+INSERT INTO tb_historico_historia VALUES("444","8","5","2018-08-30 10:58:26","7");
+
+INSERT INTO tb_historico_historia VALUES("445","20","12","2018-08-30 10:58:57","6");
+
+INSERT INTO tb_historico_historia VALUES("446","20","12","2018-08-30 10:58:57","6");
+
+INSERT INTO tb_historico_historia VALUES("447","20","5","2018-09-18 08:43:04","6");
+
+INSERT INTO tb_historico_historia VALUES("448","20","5","2018-09-18 08:43:04","6");
+
+INSERT INTO tb_historico_historia VALUES("449","8","3","2018-09-18 08:43:40","130");
+
+INSERT INTO tb_historico_historia VALUES("450","8","3","2018-09-18 08:43:40","130");
+
+INSERT INTO tb_historico_historia VALUES("451","8","3","2018-09-18 08:44:10","7");
+
+INSERT INTO tb_historico_historia VALUES("452","8","3","2018-09-18 08:44:10","7");
+
+INSERT INTO tb_historico_historia VALUES("453","8","3","2018-09-18 08:44:33","8");
+
+INSERT INTO tb_historico_historia VALUES("454","8","3","2018-09-18 08:44:33","8");
+
+INSERT INTO tb_historico_historia VALUES("455","8","","2018-09-21 22:08:20","130");
+
+INSERT INTO tb_historico_historia VALUES("456","8","","2018-09-21 22:08:20","130");
+
+INSERT INTO tb_historico_historia VALUES("457","8","","2018-09-21 22:08:49","8");
+
+INSERT INTO tb_historico_historia VALUES("458","8","","2018-09-21 22:08:49","8");
+
+INSERT INTO tb_historico_historia VALUES("459","8","","2018-09-21 22:09:17","7");
+
+INSERT INTO tb_historico_historia VALUES("460","8","","2018-09-21 22:09:17","7");
+
+INSERT INTO tb_historico_historia VALUES("461","20","","2018-09-21 22:09:40","6");
+
+INSERT INTO tb_historico_historia VALUES("462","20","","2018-09-21 22:09:40","6");
+
+INSERT INTO tb_historico_historia VALUES("463","13","","2018-09-24 20:33:36","10");
+
+INSERT INTO tb_historico_historia VALUES("464","13","","2018-09-24 20:33:36","10");
+
+INSERT INTO tb_historico_historia VALUES("465","5","","2018-09-24 20:34:02","9");
+
+INSERT INTO tb_historico_historia VALUES("466","5","","2018-09-24 20:34:02","9");
+
+INSERT INTO tb_historico_historia VALUES("467","13","13","2018-09-25 14:23:14","11");
+
+INSERT INTO tb_historico_historia VALUES("468","13","13","2018-09-25 14:23:14","11");
+
+INSERT INTO tb_historico_historia VALUES("469","13","13","2018-09-25 14:26:26","131");
+
+INSERT INTO tb_historico_historia VALUES("470","13","13","2018-09-25 14:26:26","131");
+
+INSERT INTO tb_historico_historia VALUES("471","8","8","2018-09-25 14:27:18","132");
+
+INSERT INTO tb_historico_historia VALUES("472","8","8","2018-09-25 14:27:18","132");
+
+INSERT INTO tb_historico_historia VALUES("473","5","5","2018-09-25 14:28:00","12");
+
+INSERT INTO tb_historico_historia VALUES("474","5","5","2018-09-25 14:28:00","12");
+
+INSERT INTO tb_historico_historia VALUES("475","8","8","2018-09-25 14:31:36","133");
+
+INSERT INTO tb_historico_historia VALUES("476","8","8","2018-09-25 14:31:36","133");
+
+INSERT INTO tb_historico_historia VALUES("477","13","13","2018-09-25 14:31:59","133");
+
+INSERT INTO tb_historico_historia VALUES("478","13","13","2018-09-25 14:31:59","133");
+
+INSERT INTO tb_historico_historia VALUES("479","13","10","2018-10-18 20:24:57","11");
+
+INSERT INTO tb_historico_historia VALUES("480","13","10","2018-10-18 20:24:57","11");
+
+INSERT INTO tb_historico_historia VALUES("481","13","3","2018-10-19 11:26:45","11");
+
+INSERT INTO tb_historico_historia VALUES("482","13","3","2018-10-19 11:26:45","11");
+
+INSERT INTO tb_historico_historia VALUES("483","8","","2018-10-19 11:32:01","11");
+
+INSERT INTO tb_historico_historia VALUES("484","8","","2018-10-19 11:32:01","11");
+
+INSERT INTO tb_historico_historia VALUES("485","20","20","2018-10-19 11:32:32","131");
+
+INSERT INTO tb_historico_historia VALUES("486","20","20","2018-10-19 11:32:32","131");
+
+INSERT INTO tb_historico_historia VALUES("487","20","","2018-10-26 20:28:56","131");
+
+INSERT INTO tb_historico_historia VALUES("488","20","","2018-10-26 20:28:56","131");
+
+INSERT INTO tb_historico_historia VALUES("489","8","","2018-10-26 20:29:19","132");
+
+INSERT INTO tb_historico_historia VALUES("490","8","","2018-10-26 20:29:19","132");
+
+INSERT INTO tb_historico_historia VALUES("491","5","4","2018-10-26 20:35:47","12");
+
+INSERT INTO tb_historico_historia VALUES("492","5","4","2018-10-26 20:35:47","12");
+
+INSERT INTO tb_historico_historia VALUES("493","13","13","2018-10-26 20:45:05","13");
+
+INSERT INTO tb_historico_historia VALUES("494","13","13","2018-10-26 20:45:05","13");
+
+INSERT INTO tb_historico_historia VALUES("495","5","","2018-11-14 16:07:41","12");
+
+INSERT INTO tb_historico_historia VALUES("496","5","","2018-11-14 16:07:41","12");
+
+INSERT INTO tb_historico_historia VALUES("497","13","","2018-11-19 17:37:31","13");
+
+INSERT INTO tb_historico_historia VALUES("498","13","","2018-11-19 17:37:31","13");
+
+INSERT INTO tb_historico_historia VALUES("499","8","","2018-11-19 17:37:56","13");
+
+INSERT INTO tb_historico_historia VALUES("500","8","","2018-11-19 17:37:56","13");
+
+INSERT INTO tb_historico_historia VALUES("501","13","13","2018-11-22 16:03:43","133");
+
+INSERT INTO tb_historico_historia VALUES("502","13","13","2018-11-22 16:03:43","133");
+
+INSERT INTO tb_historico_historia VALUES("503","1","1","2018-11-22 16:22:54","15");
+
+INSERT INTO tb_historico_historia VALUES("504","1","1","2018-11-22 16:22:54","15");
+
+INSERT INTO tb_historico_historia VALUES("505","5","5","2018-11-22 16:23:19","14");
+
+INSERT INTO tb_historico_historia VALUES("506","5","5","2018-11-22 16:23:19","14");
+
+INSERT INTO tb_historico_historia VALUES("507","1","","2018-11-23 17:55:10","15");
+
+INSERT INTO tb_historico_historia VALUES("508","1","","2018-11-23 17:55:10","15");
+
+INSERT INTO tb_historico_historia VALUES("509","5","3","2018-11-23 17:55:38","14");
+
+INSERT INTO tb_historico_historia VALUES("510","5","3","2018-11-23 17:55:38","14");
+
+INSERT INTO tb_historico_historia VALUES("511","5","","2018-11-26 17:29:23","14");
+
+INSERT INTO tb_historico_historia VALUES("512","5","","2018-11-26 17:29:23","14");
+
+INSERT INTO tb_historico_historia VALUES("513","8","8","2018-11-27 13:45:17","134");
+
+INSERT INTO tb_historico_historia VALUES("514","8","8","2018-11-27 13:45:17","134");
+
+INSERT INTO tb_historico_historia VALUES("515","13","11","2018-11-27 14:53:46","16");
+
+INSERT INTO tb_historico_historia VALUES("516","13","11","2018-11-27 14:53:46","16");
+
+INSERT INTO tb_historico_historia VALUES("517","30","26","2018-11-27 18:13:21","16");
+
+INSERT INTO tb_historico_historia VALUES("518","30","26","2018-11-27 18:13:21","16");
+
+INSERT INTO tb_historico_historia VALUES("519","40","36","2018-11-27 18:23:03","16");
+
+INSERT INTO tb_historico_historia VALUES("520","40","36","2018-11-27 18:23:03","16");
+
+INSERT INTO tb_historico_historia VALUES("521","40","33","2018-12-03 11:54:01","16");
+
+INSERT INTO tb_historico_historia VALUES("522","40","33","2018-12-03 11:54:01","16");
+
+INSERT INTO tb_historico_historia VALUES("523","40","28","2018-12-10 16:51:54","16");
+
+INSERT INTO tb_historico_historia VALUES("524","40","28","2018-12-10 16:51:54","16");
+
+INSERT INTO tb_historico_historia VALUES("525","8","8","2018-12-10 16:52:48","46");
+
+INSERT INTO tb_historico_historia VALUES("526","8","8","2018-12-10 16:52:48","46");
+
+INSERT INTO tb_historico_historia VALUES("527","40","25","2018-12-11 14:07:07","16");
+
+INSERT INTO tb_historico_historia VALUES("528","40","25","2018-12-11 14:07:07","16");
+
+INSERT INTO tb_historico_historia VALUES("529","40","15","2018-12-13 17:10:50","16");
+
+INSERT INTO tb_historico_historia VALUES("530","40","15","2018-12-13 17:10:50","16");
+
+INSERT INTO tb_historico_historia VALUES("531","40","10","2018-12-13 17:56:07","16");
+
+INSERT INTO tb_historico_historia VALUES("532","40","10","2018-12-13 17:56:07","16");
+
+INSERT INTO tb_historico_historia VALUES("533","40","","2018-12-20 13:39:20","16");
+
+INSERT INTO tb_historico_historia VALUES("534","40","","2018-12-20 13:39:20","16");
+
+INSERT INTO tb_historico_historia VALUES("535","5","5","2018-12-20 13:42:59","140");
+
+INSERT INTO tb_historico_historia VALUES("536","5","5","2018-12-20 13:42:59","140");
+
+INSERT INTO tb_historico_historia VALUES("537","5","3","2019-01-25 11:56:43","17");
+
+INSERT INTO tb_historico_historia VALUES("538","5","3","2019-01-25 11:56:43","17");
+
+INSERT INTO tb_historico_historia VALUES("539","8","","2019-01-25 14:03:01","17");
+
+INSERT INTO tb_historico_historia VALUES("540","8","","2019-01-25 14:03:01","17");
+
+
+
+
 DROP TABLE IF EXISTS tb_imagem;
 
 
@@ -4945,7 +6050,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("1","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
@@ -5169,6 +6274,14 @@ INSERT INTO tb_trafego VALUES("113","127.0.0.1","Desconhecido","Desconhecida","D
 INSERT INTO tb_trafego VALUES("114","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 INSERT INTO tb_trafego VALUES("115","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("116","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("117","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("118","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("119","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

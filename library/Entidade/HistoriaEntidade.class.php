@@ -17,8 +17,6 @@ class HistoriaEntidade extends AbstractEntidade
 	private $dt_cadastro;
 	private $dt_atualizado;
 	private $st_situacao;
-	private $nu_esforco;
-	private $nu_esforco_restante;
 	private $co_sessao;
 	private $co_anotacao;
 	private $co_historico_historia;
@@ -36,8 +34,6 @@ class HistoriaEntidade extends AbstractEntidade
 			DT_CADASTRO,
 			DT_ATUALIZADO,
 			ST_SITUACAO,
-			NU_ESFORCO,
-			NU_ESFORCO_RESTANTE,
 			CO_SESSAO,
 		];
     }
@@ -155,40 +151,6 @@ class HistoriaEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return mixed $nu_esforco
-    */
-	public function getNuEsforco()
-    {
-        return $this->nu_esforco;
-    }
-
-	/**
-	* @param $nu_esforco
-    * @return mixed
-    */
-	public function setNuEsforco($nu_esforco)
-    {
-        return $this->nu_esforco = $nu_esforco;
-    }
-
-	/**
-	* @return mixed $nu_esforco_restante
-    */
-	public function getNuEsforcoRestante()
-    {
-        return $this->nu_esforco_restante;
-    }
-
-	/**
-	* @param $nu_esforco_restante
-    * @return mixed
-    */
-	public function setNuEsforcoRestante($nu_esforco_restante)
-    {
-        return $this->nu_esforco_restante = $nu_esforco_restante;
-    }
-
-	/**
 	* @return SessaoEntidade $co_sessao
     */
 	public function getCoSessao()
@@ -237,6 +199,14 @@ class HistoriaEntidade extends AbstractEntidade
     public function setCoHistoricoHistoria($co_historico_historia)
     {
         $this->co_historico_historia = $co_historico_historia;
+    }
+
+    /**
+     * @return HistoricoHistoriaEntidade $co_historico_historia
+     */
+    public function getCoUltimoHistoricoHistoria()
+    {
+        return $this->ultimo($this->getCoHistoricoHistoria());
     }
 
 }

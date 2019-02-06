@@ -41,6 +41,8 @@ class  HistoriaService extends AbstractService
 
     public function salvaHistoria($dados)
     {
+        /** @var HistoricoHistoriaService $historicoHistoriaService */
+        $historicoHistoriaService = $this->getService(HISTORICO_HISTORIA_SERVICE);
         $retorno = [
             SUCESSO => false,
             MSG => null
@@ -53,17 +55,24 @@ class  HistoriaService extends AbstractService
             $historia[DS_OBSERVACAO] = trim($dados[DS_OBSERVACAO]);
             $historia[CO_SESSAO] = $dados[CO_SESSAO];
             $historia[ST_SITUACAO] = $this->getSituacaoHistoria($dados);
-            $historia[NU_ESFORCO] = $dados[NU_ESFORCO][0];
-            $historia[NU_ESFORCO_RESTANTE] = $dados[NU_ESFORCO_RESTANTE];
             $historia[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
+
+            $historicoHistoria[NU_ESFORCO] = $dados[NU_ESFORCO][0];
+            $historicoHistoria[NU_ESFORCO_RESTANTE] = $dados[NU_ESFORCO_RESTANTE];
+            $historicoHistoria[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+
 
             if (!empty($_POST[CO_HISTORIA])):
                 $coHistoria = $dados[CO_HISTORIA];
                 $retorno[SUCESSO] = $this->Salva($historia, $coHistoria);
             else:
                 $historia[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $retorno[SUCESSO] = $this->Salva($historia);
+                $coHistoria = $this->Salva($historia);
+                $retorno[SUCESSO] = $coHistoria;
             endif;
+            $historicoHistoria[CO_HISTORIA] = $coHistoria;
+            $historicoHistoriaService->Salva($historicoHistoria);
+
         } else {
             $session = new Session();
             $session->setSession(MENSAGEM, $validador[MSG]);
