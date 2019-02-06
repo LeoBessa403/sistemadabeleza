@@ -42,7 +42,7 @@
                         <span class="timeline_date"></span>
                     </div>
                     <?php
-                    $arquivoHistorico = PARTIAL_ADMIN . 'Historicos/' . UrlAmigavel::$action . '.php';
+                    $arquivoHistorico = PARTIAL_LIBRARY . 'Historicos/' . UrlAmigavel::$action . '.php';
                     if (file_exists($arquivoHistorico))
                         require $arquivoHistorico;
                     ?>
