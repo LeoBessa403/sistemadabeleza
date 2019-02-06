@@ -5,6 +5,8 @@ class Historia extends AbstractController
     public $result;
     public $coSessao;
     public $coModulo;
+    public $form;
+    public $historia;
 
     public function ListarHistoria()
     {
@@ -60,7 +62,20 @@ class Historia extends AbstractController
             $res[NO_SESSAO] = $sessao->getNoSessao();
         }
         $this->form = HistoriaForm::Cadastrar($res);
+    }
 
+    public function HistoricoHistoria()
+    {
+        /** @var HistoriaService $historiaService */
+        $historiaService = $this->getService(HISTORIA_SERVICE);
+
+        $coHistoria = UrlAmigavel::PegaParametro(CO_HISTORIA);
+        if ($coHistoria) {
+            /** @var PlanoEntidade $plano */
+            $this->historia = $historiaService->PesquisaUmRegistro($coHistoria);
+        } else {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/HistoriaNaoEncontrado/');
+        }
     }
 
 }
