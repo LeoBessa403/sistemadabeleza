@@ -65,6 +65,12 @@
                             if (!empty($res->getCoAnotacao())) {
                                 $acao .= ' <span class="qtd badge badge-danger"> '.count($res->getCoAnotacao()).' </span>';
                             }
+                            $acao .= ' <a href="' . PASTAADMIN . 'Historia/HistoricoHistoria/' .
+                                Valida::GeraParametro(CO_HISTORIA . "/" . $res->getCoHistoria()) . '" 
+                                class="btn btn-med-grey tooltips" 
+                                    data-original-title="Histórico da História" data-placement="top">
+                                     <i class="clip-folder-open"></i>
+                                 </a>';
                             $acao .= ' <a href="' . PASTAADMIN . 'Anotacao/ListarAnotacao/' .
                                 Valida::GeraParametro(CO_HISTORIA . "/" . $res->getCoHistoria()) . '" 
                                 class="btn btn-dark-grey tooltips" 
@@ -85,7 +91,7 @@
                             );
                             $grid->setColunas($barra);
                             $grid->setColunas($res->getCoSessao()->getNoSessao());
-                            $grid->setColunas($acao, 2);
+                            $grid->setColunas($acao, 3);
                             $grid->criaLinha($res->getCoHistoria());
                         endforeach;
                         $grid->finalizaGrid();
