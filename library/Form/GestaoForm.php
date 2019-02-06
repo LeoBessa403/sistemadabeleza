@@ -262,6 +262,38 @@ class GestaoForm
 
         return $formulario->finalizaForm();
     }
+
+    public static function LimparBanco()
+    {
+        $id = "LimparBanco";
+
+        $formulario = new Form($id, null, 'Limpar Banco',6);
+
+        $tabelas = [
+            1 => 'Acesso',
+            2 => 'Auditoria',
+//            3 => 'Visita e trafego'
+        ];
+        $formulario
+            ->setId('tp_dados')
+            ->setLabel("Tabelas do Banco")
+            ->setClasses("multipla")
+            ->setInfo("Pode selecionar várias TABELAS.")
+            ->setType("select")
+            ->setOptions($tabelas)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('dt_fim')
+            ->setIcon("clip-calendar-3")
+            ->setTamanhoInput(3)
+            ->setClasses("data ob")
+            ->setLabel("Até o dia")
+            ->setValor(date('d/m/Y'))
+            ->CriaInpunt();
+
+        return $formulario->finalizaForm();
+    }
 }
 ?>
    

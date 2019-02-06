@@ -153,4 +153,37 @@ class Gestao extends AbstractController
         Redireciona(ADMIN . "/Modulo/ListarModulo");
     }
 
+
+    public function LimparBancoGestao()
+    {
+        $retorno = false;
+        if (!empty($_POST)) {
+            unset($_POST['LimparBanco']);
+            if (empty($_POST['tp_dados'])) {
+                Notificacoes::geraMensagem(
+                    'O Campo Tabelas do Banco é obrigatório.', TiposMensagemEnum::ALERTA);
+            } else {
+                if (in_array(1, $_POST['tp_dados'])) {
+                    /** @var AcessoService $acessoService */
+                    $acessoService = $this->getService(ACESSO_SERVICE);
+                    $retorno = $acessoService->limpaDadosAcessos($_POST['dt_fim']);
+                }
+                if (in_array(2, $_POST['tp_dados'])) {
+                    /** @var AuditoriaService $auditoriaService */
+                    $auditoriaService = $this->getService(AUDITORIA_SERVICE);
+                    $retorno = $auditoriaService->limpaDadosAuditoria($_POST['dt_fim']);
+                }
+                if ($retorno) {
+                    Notificacoes::geraMensagem(
+                        'Dados Apagados com SUCESSO!.', TiposMensagemEnum::SUCESSO);
+                    Redireciona(ADMIN . "/" . CONTROLLER_INICIAL_ADMIN . "/" . ACTION_INICIAL_ADMIN);
+                } else {
+                    Notificacoes::geraMensagem(
+                        'Error ao Apagados dados do Banco.', TiposMensagemEnum::ALERTA);
+                }
+            }
+        }
+        $this->form = GestaoForm::LimparBanco();
+    }
+
 }

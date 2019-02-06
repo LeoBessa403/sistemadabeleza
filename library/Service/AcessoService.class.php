@@ -29,7 +29,7 @@ class  AcessoService extends AbstractService
     {
         /** @var TrafegoService $trafegoService */
         $trafegoService = $this->getService(TRAFEGO_SERVICE);
-        if($trafegoService->validaPaisTrafego()){
+        if ($trafegoService->validaPaisTrafego()) {
             $acesso[DS_SESSION_ID] = session_id();
             $acesso[CO_USUARIO] = $coUsuario;
             $acesso[TP_SITUACAO] = StatusAcessoEnum::ATIVO;
@@ -102,12 +102,14 @@ class  AcessoService extends AbstractService
         return $permitido;
     }
 
-    /**
-     *
-     */
     public function finalizaAcessos()
     {
         return $this->ObjetoModel->finalizaAcessos();
+    }
+
+    public function limpaDadosAcessos($data)
+    {
+        return $this->ObjetoModel->limpaDadosAcessos($data);
     }
 
 }
