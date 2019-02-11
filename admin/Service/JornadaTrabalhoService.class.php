@@ -33,6 +33,10 @@ class  JornadaTrabalhoService extends AbstractService
                 $jornadaTrabalho[NU_DIA_SEMANA] = $dia;
                 $jornadaTrabalho[NU_HORA_ABERTURA] = $dados[NU_HORA_ABERTURA][$dia];
                 $jornadaTrabalho[NU_HORA_FECHAMENTO] = $dados[NU_HORA_FECHAMENTO][$dia];
+                $jornadaTrabalho[NU_ALMOCO_INICIO] = $dados[NU_ALMOCO_INICIO][$dia];
+                $jornadaTrabalho[NU_ALMOCO_FINAL] = $dados[NU_ALMOCO_FINAL][$dia];
+                $jornadaTrabalho[NU_INTERVALO_INICIO] = $dados[NU_INTERVALO_INICIO][$dia];
+                $jornadaTrabalho[NU_INTERVALO_FINAL] = $dados[NU_INTERVALO_FINAL][$dia];
                 $retorno[SUCESSO] = $this->Salva($jornadaTrabalho);
             }
         }

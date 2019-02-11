@@ -15,6 +15,10 @@ class JornadaTrabalhoEntidade extends AbstractEntidade
     private $nu_dia_semana;
     private $nu_hora_abertura;
     private $nu_hora_fechamento;
+    private $nu_almoco_inicio;
+    private $nu_almoco_final;
+    private $nu_intervalo_inicio;
+    private $nu_intervalo_final;
     private $co_profissional;
 
 
@@ -28,6 +32,10 @@ class JornadaTrabalhoEntidade extends AbstractEntidade
             NU_DIA_SEMANA,
             NU_HORA_ABERTURA,
             NU_HORA_FECHAMENTO,
+            NU_ALMOCO_INICIO,
+            NU_ALMOCO_FINAL,
+            NU_INTERVALO_INICIO,
+            NU_INTERVALO_FINAL
         ];
     }
 
@@ -107,6 +115,70 @@ class JornadaTrabalhoEntidade extends AbstractEntidade
     public function setNuHoraFechamento($nu_hora_fechamento)
     {
         return $this->nu_hora_fechamento = $nu_hora_fechamento;
+    }
+
+    /**
+     * @return mixed$ nu_almoco_inicio
+     */
+    public function getNuAlmocoInicio()
+    {
+        return $this->nu_almoco_inicio;
+    }
+
+    /**
+     * @param mixed $nu_almoco_inicio
+     */
+    public function setNuAlmocoInicio($nu_almoco_inicio)
+    {
+        $this->nu_almoco_inicio = $nu_almoco_inicio;
+    }
+
+    /**
+     * @return mixed $nu_almoco_final
+     */
+    public function getNuAlmocoFinal()
+    {
+        return $this->nu_almoco_final;
+    }
+
+    /**
+     * @param mixed $nu_almoco_final
+     */
+    public function setNuAlmocoFinal($nu_almoco_final)
+    {
+        $this->nu_almoco_final = $nu_almoco_final;
+    }
+
+    /**
+     * @return mixed $nu_intervalo_inicio
+     */
+    public function getNuIntervaloInicio()
+    {
+        return $this->nu_intervalo_inicio;
+    }
+
+    /**
+     * @param mixed $nu_intervalo_inicio
+     */
+    public function setNuIntervaloInicio($nu_intervalo_inicio)
+    {
+        $this->nu_intervalo_inicio = $nu_intervalo_inicio;
+    }
+
+    /**
+     * @return mixed $nu_intervalo_final
+     */
+    public function getNuIntervaloFinal()
+    {
+        return $this->nu_intervalo_final;
+    }
+
+    /**
+     * @param mixed $nu_intervalo_final
+     */
+    public function setNuIntervaloFinal($nu_intervalo_final)
+    {
+        $this->nu_intervalo_final = $nu_intervalo_final;
     }
 
     /**

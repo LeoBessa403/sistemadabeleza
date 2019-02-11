@@ -1,4 +1,4 @@
--- Atualizado em: 05/02/2019 18:14:38
+-- Atualizado em: 11/02/2019 17:29:27
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,208 +20,28 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_acesso VALUES("1","au886dq4kojafm6uua4vtlccc5","2018-12-20 16:58:38","2018-12-20 17:22:29","F","8","1");
+INSERT INTO tb_acesso VALUES("106","kt7a4a15uuusshkt6fb8uppqq6","2019-02-06 12:59:39","2019-02-06 13:43:57","F","1","125");
 
-INSERT INTO tb_acesso VALUES("2","au886dq4kojafm6uua4vtlccc5","2018-12-20 17:22:36","2018-12-20 17:38:40","F","1","2");
+INSERT INTO tb_acesso VALUES("107","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 15:58:46","2019-02-11 16:00:16","F","8","126");
 
-INSERT INTO tb_acesso VALUES("3","au886dq4kojafm6uua4vtlccc5","2018-12-20 17:38:47","2018-12-20 18:26:14","F","8","3");
+INSERT INTO tb_acesso VALUES("108","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 16:00:45","2019-02-11 16:03:04","F","1","127");
 
-INSERT INTO tb_acesso VALUES("4","au886dq4kojafm6uua4vtlccc5","2018-12-21 12:00:18","2018-12-21 12:31:18","F","8","4");
+INSERT INTO tb_acesso VALUES("109","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 16:03:11","2019-02-11 16:33:30","F","8","128");
 
-INSERT INTO tb_acesso VALUES("5","h062pgepun9rplcatp5kp3l804","2018-12-26 17:06:07","2018-12-26 17:37:52","F","8","5");
+INSERT INTO tb_acesso VALUES("110","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 16:53:35","2019-02-11 16:58:02","F","8","129");
 
-INSERT INTO tb_acesso VALUES("6","h062pgepun9rplcatp5kp3l804","2018-12-27 12:13:59","2018-12-27 12:20:32","F","8","6");
+INSERT INTO tb_acesso VALUES("111","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 16:58:09","2019-02-11 17:00:24","F","1","130");
 
-INSERT INTO tb_acesso VALUES("7","qc3ln4doacb0v64ifvfjuuhc85","2019-01-04 10:31:41","2019-01-04 11:01:54","F","8","7");
+INSERT INTO tb_acesso VALUES("112","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 17:00:33","2019-02-11 17:03:37","F","8","131");
 
-INSERT INTO tb_acesso VALUES("8","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 10:15:40","2019-01-10 10:15:52","F","8","8");
+INSERT INTO tb_acesso VALUES("113","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 17:03:44","2019-02-11 17:04:11","F","1","132");
 
-INSERT INTO tb_acesso VALUES("9","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 10:33:06","2019-01-10 10:33:15","F","8","9");
+INSERT INTO tb_acesso VALUES("114","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 17:04:18","2019-02-11 17:25:41","F","8","133");
 
-INSERT INTO tb_acesso VALUES("10","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 10:39:15","2019-01-10 10:44:00","F","1","10");
-
-INSERT INTO tb_acesso VALUES("11","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 11:00:26","2019-01-10 11:00:37","F","8","11");
-
-INSERT INTO tb_acesso VALUES("12","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 11:06:30","2019-01-10 11:46:03","F","1","12");
-
-INSERT INTO tb_acesso VALUES("13","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 12:11:23","2019-01-10 12:11:47","F","1","13");
-
-INSERT INTO tb_acesso VALUES("14","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 12:20:53","2019-01-10 12:23:31","F","1","14");
-
-INSERT INTO tb_acesso VALUES("15","lvt7ecbn9bqg4u6q3mh38djne1","2019-01-10 12:53:55","2019-01-10 12:54:01","F","1","15");
-
-INSERT INTO tb_acesso VALUES("16","eq7iu344l6pht078svt9t4g7o7","2019-01-14 11:59:46","2019-01-14 12:33:41","F","1","16");
-
-INSERT INTO tb_acesso VALUES("17","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:14:31","2019-01-14 14:15:19","F","1","17");
-
-INSERT INTO tb_acesso VALUES("18","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:15:26","2019-01-14 14:17:11","F","8","18");
-
-INSERT INTO tb_acesso VALUES("19","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:17:18","2019-01-14 14:30:21","F","1","19");
-
-INSERT INTO tb_acesso VALUES("20","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:30:28","2019-01-14 14:31:03","F","1","20");
-
-INSERT INTO tb_acesso VALUES("21","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:31:10","2019-01-14 14:53:32","F","1","21");
-
-INSERT INTO tb_acesso VALUES("22","eq7iu344l6pht078svt9t4g7o7","2019-01-14 14:55:21","2019-01-14 15:09:10","F","8","22");
-
-INSERT INTO tb_acesso VALUES("23","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:09:19","2019-01-14 15:26:06","F","1","23");
-
-INSERT INTO tb_acesso VALUES("24","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:28:33","2019-01-14 15:48:11","F","8","24");
-
-INSERT INTO tb_acesso VALUES("25","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:48:21","2019-01-14 15:49:31","F","8","25");
-
-INSERT INTO tb_acesso VALUES("26","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:49:44","2019-01-14 15:50:54","F","1","26");
-
-INSERT INTO tb_acesso VALUES("27","eq7iu344l6pht078svt9t4g7o7","2019-01-14 15:51:01","2019-01-14 16:21:01","F","11","27");
-
-INSERT INTO tb_acesso VALUES("28","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:48:05","2019-01-14 16:50:50","F","1","44");
-
-INSERT INTO tb_acesso VALUES("29","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:51:00","2019-01-14 16:58:03","F","8","45");
-
-INSERT INTO tb_acesso VALUES("30","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:51:00","2019-01-14 18:02:51","F","8","45");
-
-INSERT INTO tb_acesso VALUES("31","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:51:00","2019-01-14 17:21:00","F","8","45");
-
-INSERT INTO tb_acesso VALUES("32","eq7iu344l6pht078svt9t4g7o7","2019-01-14 16:58:09","2019-01-14 17:04:46","F","1","47");
-
-INSERT INTO tb_acesso VALUES("33","eq7iu344l6pht078svt9t4g7o7","2019-01-17 16:07:17","2019-01-17 16:07:33","F","1","48");
-
-INSERT INTO tb_acesso VALUES("34","eq7iu344l6pht078svt9t4g7o7","2019-01-17 16:07:39","2019-01-17 18:12:57","F","8","49");
-
-INSERT INTO tb_acesso VALUES("35","eq7iu344l6pht078svt9t4g7o7","2019-01-18 10:53:26","2019-01-18 12:36:28","F","1","50");
-
-INSERT INTO tb_acesso VALUES("36","eq7iu344l6pht078svt9t4g7o7","2019-01-18 13:01:13","2019-01-18 15:49:17","F","1","51");
-
-INSERT INTO tb_acesso VALUES("37","eq7iu344l6pht078svt9t4g7o7","2019-01-18 15:49:35","2019-01-18 16:55:48","F","1","52");
-
-INSERT INTO tb_acesso VALUES("38","21kubq6khf4fjne7tv68refih0","2019-01-22 11:52:15","2019-01-22 13:00:24","F","1","53");
-
-INSERT INTO tb_acesso VALUES("39","21kubq6khf4fjne7tv68refih0","2019-01-22 13:10:13","2019-01-22 13:10:20","F","1","54");
-
-INSERT INTO tb_acesso VALUES("40","21kubq6khf4fjne7tv68refih0","2019-01-22 13:12:34","2019-01-22 14:48:46","F","1","55");
-
-INSERT INTO tb_acesso VALUES("41","21kubq6khf4fjne7tv68refih0","2019-01-22 14:55:40","2019-01-22 14:56:07","F","8","56");
-
-INSERT INTO tb_acesso VALUES("42","21kubq6khf4fjne7tv68refih0","2019-01-22 14:56:18","2019-01-22 15:05:23","F","1","57");
-
-INSERT INTO tb_acesso VALUES("43","21kubq6khf4fjne7tv68refih0","2019-01-22 15:05:30","2019-01-22 15:35:53","F","8","58");
-
-INSERT INTO tb_acesso VALUES("44","21kubq6khf4fjne7tv68refih0","2019-01-23 17:29:17","2019-01-23 18:16:14","F","1","59");
-
-INSERT INTO tb_acesso VALUES("45","21kubq6khf4fjne7tv68refih0","2019-01-24 09:20:56","2019-01-24 09:53:15","F","1","60");
-
-INSERT INTO tb_acesso VALUES("46","21kubq6khf4fjne7tv68refih0","2019-01-24 10:23:17","2019-01-24 10:53:46","F","1","61");
-
-INSERT INTO tb_acesso VALUES("47","21kubq6khf4fjne7tv68refih0","2019-01-24 11:00:43","2019-01-24 11:51:29","F","1","62");
-
-INSERT INTO tb_acesso VALUES("48","21kubq6khf4fjne7tv68refih0","2019-01-24 16:16:31","2019-01-24 16:34:44","F","8","63");
-
-INSERT INTO tb_acesso VALUES("49","21kubq6khf4fjne7tv68refih0","2019-01-24 16:34:51","2019-01-24 16:36:37","F","8","64");
-
-INSERT INTO tb_acesso VALUES("50","21kubq6khf4fjne7tv68refih0","2019-01-24 16:36:44","2019-01-24 16:37:11","F","8","65");
-
-INSERT INTO tb_acesso VALUES("51","21kubq6khf4fjne7tv68refih0","2019-01-24 16:37:18","2019-01-24 16:37:33","F","8","66");
-
-INSERT INTO tb_acesso VALUES("52","21kubq6khf4fjne7tv68refih0","2019-01-24 16:38:27","2019-01-24 16:57:23","F","1","67");
-
-INSERT INTO tb_acesso VALUES("53","21kubq6khf4fjne7tv68refih0","2019-01-24 16:57:27","2019-01-24 16:57:39","F","8","68");
-
-INSERT INTO tb_acesso VALUES("54","21kubq6khf4fjne7tv68refih0","2019-01-24 16:57:46","2019-01-24 17:00:01","F","1","69");
-
-INSERT INTO tb_acesso VALUES("55","21kubq6khf4fjne7tv68refih0","2019-01-24 17:00:11","2019-01-24 17:06:02","F","8","70");
-
-INSERT INTO tb_acesso VALUES("56","21kubq6khf4fjne7tv68refih0","2019-01-24 17:06:09","2019-01-24 18:01:28","F","8","71");
-
-INSERT INTO tb_acesso VALUES("57","21kubq6khf4fjne7tv68refih0","2019-01-25 09:10:05","2019-01-25 09:12:33","F","8","72");
-
-INSERT INTO tb_acesso VALUES("58","21kubq6khf4fjne7tv68refih0","2019-01-25 09:12:40","2019-01-25 09:16:27","F","8","73");
-
-INSERT INTO tb_acesso VALUES("59","21kubq6khf4fjne7tv68refih0","2019-01-25 09:16:33","2019-01-25 09:17:31","F","8","74");
-
-INSERT INTO tb_acesso VALUES("60","21kubq6khf4fjne7tv68refih0","2019-01-25 09:17:37","2019-01-25 09:25:50","F","1","75");
-
-INSERT INTO tb_acesso VALUES("61","21kubq6khf4fjne7tv68refih0","2019-01-25 09:25:57","2019-01-25 09:27:35","F","8","76");
-
-INSERT INTO tb_acesso VALUES("62","21kubq6khf4fjne7tv68refih0","2019-01-25 09:27:43","2019-01-25 11:54:52","F","1","77");
-
-INSERT INTO tb_acesso VALUES("63","21kubq6khf4fjne7tv68refih0","2019-01-25 11:57:03","2019-01-25 12:11:45","F","8","78");
-
-INSERT INTO tb_acesso VALUES("64","21kubq6khf4fjne7tv68refih0","2019-01-25 12:11:51","2019-01-25 12:12:49","F","8","79");
-
-INSERT INTO tb_acesso VALUES("65","21kubq6khf4fjne7tv68refih0","2019-01-25 12:12:55","2019-01-25 12:15:29","F","1","80");
-
-INSERT INTO tb_acesso VALUES("66","21kubq6khf4fjne7tv68refih0","2019-01-25 12:15:36","2019-01-25 14:31:02","F","8","81");
-
-INSERT INTO tb_acesso VALUES("67","5m2jck287v566utlo77c655460","2019-01-28 11:36:45","2019-01-28 11:37:56","F","8","82");
-
-INSERT INTO tb_acesso VALUES("68","5m2jck287v566utlo77c655460","2019-01-28 11:38:02","2019-01-28 12:48:21","F","1","83");
-
-INSERT INTO tb_acesso VALUES("69","5m2jck287v566utlo77c655460","2019-01-28 12:48:28","2019-01-28 12:48:46","F","8","84");
-
-INSERT INTO tb_acesso VALUES("70","5m2jck287v566utlo77c655460","2019-01-28 12:48:52","2019-01-28 12:49:56","F","1","85");
-
-INSERT INTO tb_acesso VALUES("71","5m2jck287v566utlo77c655460","2019-01-28 12:50:04","2019-01-28 12:54:06","F","1","86");
-
-INSERT INTO tb_acesso VALUES("72","5m2jck287v566utlo77c655460","2019-01-28 12:58:27","2019-01-28 12:59:34","F","8","87");
-
-INSERT INTO tb_acesso VALUES("73","5m2jck287v566utlo77c655460","2019-01-28 12:59:41","2019-01-28 13:13:09","F","8","88");
-
-INSERT INTO tb_acesso VALUES("74","5m2jck287v566utlo77c655460","2019-01-28 13:13:17","2019-01-28 13:14:04","F","1","89");
-
-INSERT INTO tb_acesso VALUES("75","5m2jck287v566utlo77c655460","2019-01-28 13:14:10","2019-01-28 13:45:04","F","8","90");
-
-INSERT INTO tb_acesso VALUES("76","5m2jck287v566utlo77c655460","2019-01-28 14:24:52","2019-01-28 14:25:07","F","8","91");
-
-INSERT INTO tb_acesso VALUES("77","5m2jck287v566utlo77c655460","2019-01-29 17:17:45","2019-01-29 17:38:42","F","1","92");
-
-INSERT INTO tb_acesso VALUES("78","5m2jck287v566utlo77c655460","2019-01-29 17:38:46","2019-01-30 08:56:06","F","1","93");
-
-INSERT INTO tb_acesso VALUES("79","5m2jck287v566utlo77c655460","2019-01-30 08:56:24","2019-01-30 09:13:32","F","1","94");
-
-INSERT INTO tb_acesso VALUES("80","5m2jck287v566utlo77c655460","2019-01-30 09:13:36","2019-01-30 09:13:58","F","1","95");
-
-INSERT INTO tb_acesso VALUES("81","5m2jck287v566utlo77c655460","2019-01-30 09:14:02","2019-01-30 09:14:20","F","8","96");
-
-INSERT INTO tb_acesso VALUES("82","5m2jck287v566utlo77c655460","2019-01-30 09:14:24","2019-01-30 09:22:24","F","1","97");
-
-INSERT INTO tb_acesso VALUES("83","5m2jck287v566utlo77c655460","2019-01-30 09:22:27","2019-01-30 09:42:49","F","1","98");
-
-INSERT INTO tb_acesso VALUES("84","5m2jck287v566utlo77c655460","2019-01-30 09:42:53","2019-01-30 09:46:43","F","8","99");
-
-INSERT INTO tb_acesso VALUES("85","5m2jck287v566utlo77c655460","2019-01-30 09:46:46","2019-01-30 12:12:05","F","1","100");
-
-INSERT INTO tb_acesso VALUES("86","5m2jck287v566utlo77c655460","2019-01-30 12:12:14","2019-01-30 13:07:03","F","1","105");
-
-INSERT INTO tb_acesso VALUES("87","5m2jck287v566utlo77c655460","2019-01-30 14:23:21","2019-01-31 10:31:33","F","1","106");
-
-INSERT INTO tb_acesso VALUES("88","5m2jck287v566utlo77c655460","2019-01-31 11:49:15","2019-01-31 11:55:46","F","1","107");
-
-INSERT INTO tb_acesso VALUES("89","5m2jck287v566utlo77c655460","2019-01-31 11:55:50","2019-01-31 11:56:20","F","8","108");
-
-INSERT INTO tb_acesso VALUES("90","5m2jck287v566utlo77c655460","2019-01-31 11:56:23","2019-01-31 11:56:59","F","1","109");
-
-INSERT INTO tb_acesso VALUES("91","5m2jck287v566utlo77c655460","2019-01-31 11:57:04","2019-01-31 11:57:24","F","8","110");
-
-INSERT INTO tb_acesso VALUES("92","5m2jck287v566utlo77c655460","2019-01-31 11:57:28","2019-01-31 12:53:00","F","1","111");
-
-INSERT INTO tb_acesso VALUES("93","5m2jck287v566utlo77c655460","2019-01-31 13:33:57","2019-01-31 16:48:11","F","1","112");
-
-INSERT INTO tb_acesso VALUES("94","g37vj5fi2cd712n6271m4bk8h7","2019-02-01 10:50:51","2019-02-01 11:21:03","F","1","113");
-
-INSERT INTO tb_acesso VALUES("95","g37vj5fi2cd712n6271m4bk8h7","2019-02-01 14:59:38","2019-02-01 15:29:56","F","1","114");
-
-INSERT INTO tb_acesso VALUES("96","efi49bfhkf5g8c8595c87vq166","2019-02-04 14:27:40","2019-02-04 17:36:29","F","1","115");
-
-INSERT INTO tb_acesso VALUES("97","efi49bfhkf5g8c8595c87vq166","2019-02-04 17:36:48","2019-02-04 18:26:06","F","1","116");
-
-INSERT INTO tb_acesso VALUES("98","kt7a4a15uuusshkt6fb8uppqq6","2019-02-05 10:23:23","2019-02-05 12:43:21","F","1","117");
-
-INSERT INTO tb_acesso VALUES("99","kt7a4a15uuusshkt6fb8uppqq6","2019-02-05 12:48:41","2019-02-05 17:55:44","F","1","118");
-
-INSERT INTO tb_acesso VALUES("100","kt7a4a15uuusshkt6fb8uppqq6","2019-02-05 17:55:54","2019-02-05 18:44:38","A","1","119");
+INSERT INTO tb_acesso VALUES("115","2tfpgp5ig57jaj83hjer8assg2","2019-02-11 17:25:52","2019-02-11 17:59:27","A","1","134");
 
 
 
@@ -344,558 +164,26 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=420 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_auditoria VALUES("11","2018-07-24 15:28:56","Master","1");
+INSERT INTO tb_auditoria VALUES("1","2019-02-11 16:00:01","Gestor, Colaborador","8");
 
-INSERT INTO tb_auditoria VALUES("12","2018-07-24 16:58:01","Master","1");
+INSERT INTO tb_auditoria VALUES("2","2019-02-11 16:01:36","Master","1");
 
-INSERT INTO tb_auditoria VALUES("13","2018-07-24 17:03:25","Master","1");
+INSERT INTO tb_auditoria VALUES("3","2019-02-11 16:02:30","Master","1");
 
-INSERT INTO tb_auditoria VALUES("14","2018-07-24 17:03:43","Master","1");
+INSERT INTO tb_auditoria VALUES("4","2019-02-11 16:02:42","Master","1");
 
-INSERT INTO tb_auditoria VALUES("15","2018-07-24 17:04:01","Master","1");
+INSERT INTO tb_auditoria VALUES("5","2019-02-11 16:02:55","Master","1");
 
-INSERT INTO tb_auditoria VALUES("16","2018-07-24 17:04:16","Master","1");
+INSERT INTO tb_auditoria VALUES("6","2019-02-11 17:24:33","Gestor, Colaborador","8");
 
-INSERT INTO tb_auditoria VALUES("17","2018-07-24 17:05:48","Master","1");
+INSERT INTO tb_auditoria VALUES("7","2019-02-11 17:25:28","Gestor, Colaborador","8");
 
-INSERT INTO tb_auditoria VALUES("23","2018-07-24 22:36:04","Master","1");
+INSERT INTO tb_auditoria VALUES("8","2019-02-11 17:27:48","Master","1");
 
-INSERT INTO tb_auditoria VALUES("24","2018-07-24 22:36:59","Master","1");
-
-INSERT INTO tb_auditoria VALUES("25","2018-07-25 11:03:37","Master","1");
-
-INSERT INTO tb_auditoria VALUES("26","2018-07-25 11:05:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("27","2018-07-25 11:06:56","Master","1");
-
-INSERT INTO tb_auditoria VALUES("29","2018-07-25 11:09:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("30","2018-07-25 11:24:23","Master","1");
-
-INSERT INTO tb_auditoria VALUES("32","2018-07-25 11:37:35","Master","1");
-
-INSERT INTO tb_auditoria VALUES("33","2018-07-25 11:42:55","Master","1");
-
-INSERT INTO tb_auditoria VALUES("34","2018-07-25 11:43:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("40","2018-07-25 12:11:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("41","2018-07-25 12:19:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("42","2018-07-25 12:21:30","Master","1");
-
-INSERT INTO tb_auditoria VALUES("44","2018-07-25 12:27:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("45","2018-07-25 12:28:51","Master","1");
-
-INSERT INTO tb_auditoria VALUES("46","2018-07-25 12:29:10","Master","1");
-
-INSERT INTO tb_auditoria VALUES("49","2018-07-25 14:38:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("50","2018-07-25 14:39:47","Master","1");
-
-INSERT INTO tb_auditoria VALUES("52","2018-07-25 14:43:03","Master","1");
-
-INSERT INTO tb_auditoria VALUES("54","2018-07-25 14:54:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("56","2018-07-25 15:13:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("57","2018-07-25 15:15:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("59","2018-07-25 15:56:08","Master","1");
-
-INSERT INTO tb_auditoria VALUES("60","2018-07-25 15:59:43","Master","1");
-
-INSERT INTO tb_auditoria VALUES("62","2018-07-25 16:12:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("64","2018-07-25 16:16:48","Master","1");
-
-INSERT INTO tb_auditoria VALUES("65","2018-07-25 16:17:12","Master","1");
-
-INSERT INTO tb_auditoria VALUES("67","2018-07-25 16:19:34","Master","1");
-
-INSERT INTO tb_auditoria VALUES("68","2018-07-25 16:21:25","Master","1");
-
-INSERT INTO tb_auditoria VALUES("69","2018-07-25 16:23:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("70","2018-07-25 16:26:14","Master","1");
-
-INSERT INTO tb_auditoria VALUES("72","2018-07-25 16:30:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("74","2018-07-25 17:12:39","Master","1");
-
-INSERT INTO tb_auditoria VALUES("76","2018-07-25 17:14:29","Master","1");
-
-INSERT INTO tb_auditoria VALUES("78","2018-07-25 17:23:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("80","2018-07-25 17:32:10","Master","1");
-
-INSERT INTO tb_auditoria VALUES("81","2018-07-25 17:32:34","Master","1");
-
-INSERT INTO tb_auditoria VALUES("82","2018-07-25 17:44:09","Master","1");
-
-INSERT INTO tb_auditoria VALUES("83","2018-07-25 17:44:46","Master","1");
-
-INSERT INTO tb_auditoria VALUES("84","2018-07-25 17:49:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("85","2018-07-25 17:50:48","Master","1");
-
-INSERT INTO tb_auditoria VALUES("86","2018-07-25 17:52:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("87","2018-07-25 17:55:21","Master","1");
-
-INSERT INTO tb_auditoria VALUES("88","2018-07-25 17:56:16","Master","1");
-
-INSERT INTO tb_auditoria VALUES("89","2018-07-25 17:57:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("90","2018-07-25 17:57:52","Master","1");
-
-INSERT INTO tb_auditoria VALUES("91","2018-07-25 17:58:43","Master","1");
-
-INSERT INTO tb_auditoria VALUES("92","2018-07-25 17:59:03","Master","1");
-
-INSERT INTO tb_auditoria VALUES("93","2018-07-25 18:12:12","Master","1");
-
-INSERT INTO tb_auditoria VALUES("94","2018-07-25 18:13:09","Master","1");
-
-INSERT INTO tb_auditoria VALUES("96","2018-07-25 18:16:22","Master","1");
-
-INSERT INTO tb_auditoria VALUES("97","2018-07-25 18:24:58","Master","1");
-
-INSERT INTO tb_auditoria VALUES("98","2018-07-25 18:25:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("99","2018-07-25 18:27:03","Master","1");
-
-INSERT INTO tb_auditoria VALUES("100","2018-07-25 18:29:25","Master","1");
-
-INSERT INTO tb_auditoria VALUES("101","2018-07-25 18:40:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("102","2018-07-25 18:42:35","Master","1");
-
-INSERT INTO tb_auditoria VALUES("103","2018-07-25 18:43:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("104","2018-07-25 18:44:48","Master","1");
-
-INSERT INTO tb_auditoria VALUES("105","2018-07-25 18:45:49","Master","1");
-
-INSERT INTO tb_auditoria VALUES("106","2018-07-25 18:55:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("107","2018-07-25 19:11:25","Master","1");
-
-INSERT INTO tb_auditoria VALUES("108","2018-07-25 19:11:54","Master","1");
-
-INSERT INTO tb_auditoria VALUES("109","2018-07-25 19:17:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("110","2018-07-25 19:17:37","Master","1");
-
-INSERT INTO tb_auditoria VALUES("111","2018-07-25 19:20:30","Master","1");
-
-INSERT INTO tb_auditoria VALUES("112","2018-07-25 19:21:41","Master","1");
-
-INSERT INTO tb_auditoria VALUES("113","2018-07-25 19:22:51","Master","1");
-
-INSERT INTO tb_auditoria VALUES("114","2018-07-25 19:24:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("115","2018-07-25 19:24:33","Master","1");
-
-INSERT INTO tb_auditoria VALUES("116","2018-07-25 19:25:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("117","2018-07-25 19:25:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("118","2018-07-25 19:26:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("119","2018-07-25 19:26:53","Master","1");
-
-INSERT INTO tb_auditoria VALUES("120","2018-07-25 19:27:25","Master","1");
-
-INSERT INTO tb_auditoria VALUES("121","2018-07-25 19:27:58","Master","1");
-
-INSERT INTO tb_auditoria VALUES("124","2018-07-26 11:46:54","Master","1");
-
-INSERT INTO tb_auditoria VALUES("127","2018-07-26 17:36:50","Master","1");
-
-INSERT INTO tb_auditoria VALUES("129","2018-07-26 17:38:31","Master","1");
-
-INSERT INTO tb_auditoria VALUES("130","2018-07-26 17:39:10","Master","1");
-
-INSERT INTO tb_auditoria VALUES("131","2018-07-26 17:40:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("132","2018-07-26 17:40:37","Master","1");
-
-INSERT INTO tb_auditoria VALUES("137","2018-07-26 17:45:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("138","2018-07-26 17:45:23","Master","1");
-
-INSERT INTO tb_auditoria VALUES("139","2018-07-26 17:46:23","Master","1");
-
-INSERT INTO tb_auditoria VALUES("140","2018-07-26 17:47:24","Master","1");
-
-INSERT INTO tb_auditoria VALUES("143","2018-07-26 17:55:15","Master","1");
-
-INSERT INTO tb_auditoria VALUES("145","2018-07-26 17:58:04","Master","1");
-
-INSERT INTO tb_auditoria VALUES("147","2018-07-26 18:00:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("148","2018-07-26 18:01:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("149","2018-07-26 18:02:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("152","2018-07-26 18:13:56","Master","1");
-
-INSERT INTO tb_auditoria VALUES("153","2018-07-26 18:15:35","Master","1");
-
-INSERT INTO tb_auditoria VALUES("155","2018-07-26 18:40:29","Master","1");
-
-INSERT INTO tb_auditoria VALUES("156","2018-07-26 18:41:34","Master","1");
-
-INSERT INTO tb_auditoria VALUES("157","2018-07-26 18:45:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("158","2018-07-26 18:47:00","Master","1");
-
-INSERT INTO tb_auditoria VALUES("160","2018-07-26 18:49:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("164","2018-07-26 18:51:32","Master","1");
-
-INSERT INTO tb_auditoria VALUES("166","2018-07-26 18:53:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("169","2018-07-26 18:55:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("179","2018-07-26 22:16:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("181","2018-07-26 22:19:03","Master","1");
-
-INSERT INTO tb_auditoria VALUES("182","2018-07-26 22:21:00","Master","1");
-
-INSERT INTO tb_auditoria VALUES("183","2018-07-26 22:23:39","Master","1");
-
-INSERT INTO tb_auditoria VALUES("184","2018-07-26 22:25:10","Master","1");
-
-INSERT INTO tb_auditoria VALUES("186","2018-07-26 22:27:22","Master","1");
-
-INSERT INTO tb_auditoria VALUES("187","2018-07-26 22:28:33","Master","1");
-
-INSERT INTO tb_auditoria VALUES("189","2018-07-27 14:57:21","Master","1");
-
-INSERT INTO tb_auditoria VALUES("190","2018-07-27 14:59:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("191","2018-07-27 15:00:17","Master","1");
-
-INSERT INTO tb_auditoria VALUES("192","2018-07-27 15:02:27","Master","1");
-
-INSERT INTO tb_auditoria VALUES("193","2018-07-27 17:19:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("194","2018-07-27 17:22:59","Master","1");
-
-INSERT INTO tb_auditoria VALUES("195","2018-07-27 17:37:41","Master","1");
-
-INSERT INTO tb_auditoria VALUES("196","2018-07-27 17:38:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("197","2018-07-27 17:39:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("198","2018-07-27 17:40:17","Master","1");
-
-INSERT INTO tb_auditoria VALUES("199","2018-07-27 17:41:17","Master","1");
-
-INSERT INTO tb_auditoria VALUES("200","2018-07-27 17:41:42","Master","1");
-
-INSERT INTO tb_auditoria VALUES("201","2018-07-27 17:43:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("202","2018-07-27 17:45:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("203","2018-07-27 17:46:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("204","2018-07-27 17:46:32","Master","1");
-
-INSERT INTO tb_auditoria VALUES("205","2018-07-27 17:46:55","Master","1");
-
-INSERT INTO tb_auditoria VALUES("206","2018-07-27 17:47:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("207","2018-07-27 17:47:48","Master","1");
-
-INSERT INTO tb_auditoria VALUES("208","2018-07-27 17:49:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("209","2018-07-27 17:50:16","Master","1");
-
-INSERT INTO tb_auditoria VALUES("210","2018-07-27 17:51:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("211","2018-07-27 17:51:49","Master","1");
-
-INSERT INTO tb_auditoria VALUES("212","2018-07-27 17:53:27","Master","1");
-
-INSERT INTO tb_auditoria VALUES("213","2018-07-27 17:54:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("214","2018-07-27 17:55:41","Master","1");
-
-INSERT INTO tb_auditoria VALUES("215","2018-07-27 17:57:45","Master","1");
-
-INSERT INTO tb_auditoria VALUES("216","2018-07-27 18:06:37","Master","1");
-
-INSERT INTO tb_auditoria VALUES("217","2018-07-27 18:07:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("218","2018-07-27 18:07:54","Master","1");
-
-INSERT INTO tb_auditoria VALUES("219","2018-07-27 18:09:40","Master","1");
-
-INSERT INTO tb_auditoria VALUES("220","2018-07-27 18:10:55","Master","1");
-
-INSERT INTO tb_auditoria VALUES("221","2018-07-27 18:12:06","Master","1");
-
-INSERT INTO tb_auditoria VALUES("222","2018-07-27 18:12:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("223","2018-07-27 18:13:22","Master","1");
-
-INSERT INTO tb_auditoria VALUES("224","2018-07-27 18:14:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("225","2018-07-27 18:15:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("226","2018-07-27 18:17:28","Master","1");
-
-INSERT INTO tb_auditoria VALUES("227","2018-07-27 18:19:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("228","2018-07-27 18:19:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("229","2018-07-27 18:20:43","Master","1");
-
-INSERT INTO tb_auditoria VALUES("230","2018-07-27 18:22:34","Master","1");
-
-INSERT INTO tb_auditoria VALUES("231","2018-07-27 18:23:56","Master","1");
-
-INSERT INTO tb_auditoria VALUES("232","2018-07-27 18:24:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("233","2018-07-27 18:25:16","Master","1");
-
-INSERT INTO tb_auditoria VALUES("234","2018-07-27 18:49:49","Master","1");
-
-INSERT INTO tb_auditoria VALUES("235","2018-07-27 18:52:04","Master","1");
-
-INSERT INTO tb_auditoria VALUES("236","2018-07-27 18:53:06","Master","1");
-
-INSERT INTO tb_auditoria VALUES("237","2018-07-27 18:54:22","Master","1");
-
-INSERT INTO tb_auditoria VALUES("238","2018-07-27 18:56:13","Master","1");
-
-INSERT INTO tb_auditoria VALUES("239","2018-07-27 19:00:55","Master","1");
-
-INSERT INTO tb_auditoria VALUES("240","2018-07-27 19:01:27","Master","1");
-
-INSERT INTO tb_auditoria VALUES("241","2018-07-27 19:02:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("242","2018-07-27 19:03:12","Master","1");
-
-INSERT INTO tb_auditoria VALUES("243","2018-07-27 19:08:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("244","2018-07-27 19:09:29","Master","1");
-
-INSERT INTO tb_auditoria VALUES("245","2018-07-27 19:12:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("246","2018-07-30 10:32:17","Master","1");
-
-INSERT INTO tb_auditoria VALUES("247","2018-07-30 11:10:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("248","2018-07-30 11:11:11","Master","1");
-
-INSERT INTO tb_auditoria VALUES("249","2018-07-30 11:30:50","Master","1");
-
-INSERT INTO tb_auditoria VALUES("250","2018-07-30 11:31:12","Master","1");
-
-INSERT INTO tb_auditoria VALUES("251","2018-07-30 11:37:21","Master","1");
-
-INSERT INTO tb_auditoria VALUES("252","2018-07-30 12:29:08","Master","1");
-
-INSERT INTO tb_auditoria VALUES("253","2018-07-30 12:29:34","Master","1");
-
-INSERT INTO tb_auditoria VALUES("254","2018-07-30 12:32:42","Master","1");
-
-INSERT INTO tb_auditoria VALUES("255","2018-07-30 12:43:28","Master","1");
-
-INSERT INTO tb_auditoria VALUES("256","2018-07-31 12:10:59","Master","1");
-
-INSERT INTO tb_auditoria VALUES("257","2018-07-31 15:05:13","Master","1");
-
-INSERT INTO tb_auditoria VALUES("258","2018-07-31 15:26:40","Master","1");
-
-INSERT INTO tb_auditoria VALUES("259","2018-07-31 15:27:03","Master","1");
-
-INSERT INTO tb_auditoria VALUES("260","2018-07-31 15:30:22","Master","1");
-
-INSERT INTO tb_auditoria VALUES("261","2018-07-31 18:05:29","Master","1");
-
-INSERT INTO tb_auditoria VALUES("262","2018-07-31 20:12:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("263","2018-07-31 22:41:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("264","2018-07-31 22:45:16","Master","1");
-
-INSERT INTO tb_auditoria VALUES("265","2018-07-31 22:45:39","Master","1");
-
-INSERT INTO tb_auditoria VALUES("266","2018-08-01 00:01:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("267","2018-08-03 19:12:14","Master","1");
-
-INSERT INTO tb_auditoria VALUES("268","2018-08-03 19:12:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("271","2018-08-03 19:31:35","Master","1");
-
-INSERT INTO tb_auditoria VALUES("272","2018-08-03 19:34:31","Master","1");
-
-INSERT INTO tb_auditoria VALUES("276","2018-08-13 12:05:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("277","2018-08-13 17:32:58","Master","1");
-
-INSERT INTO tb_auditoria VALUES("278","2018-08-13 17:33:25","Master","1");
-
-INSERT INTO tb_auditoria VALUES("279","2018-08-13 17:56:16","Master","1");
-
-INSERT INTO tb_auditoria VALUES("280","2018-08-13 17:56:39","Master","1");
-
-INSERT INTO tb_auditoria VALUES("282","2018-08-13 18:02:23","Master","1");
-
-INSERT INTO tb_auditoria VALUES("283","2018-08-13 18:04:13","Master","1");
-
-INSERT INTO tb_auditoria VALUES("284","2018-08-13 18:05:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("285","2018-08-13 23:02:29","Master","1");
-
-INSERT INTO tb_auditoria VALUES("287","2018-08-14 12:45:44","Master","1");
-
-INSERT INTO tb_auditoria VALUES("288","2018-08-14 12:51:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("289","2018-08-14 17:31:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("290","2018-08-15 11:16:04","Master","1");
-
-INSERT INTO tb_auditoria VALUES("291","2018-08-15 20:30:34","Master","1");
-
-INSERT INTO tb_auditoria VALUES("292","2018-08-17 15:57:25","Master","1");
-
-INSERT INTO tb_auditoria VALUES("295","2018-08-17 16:12:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("296","2018-08-17 16:12:24","Master","1");
-
-INSERT INTO tb_auditoria VALUES("297","2018-08-17 16:12:59","Master","1");
-
-INSERT INTO tb_auditoria VALUES("298","2018-08-17 16:13:28","Master","1");
-
-INSERT INTO tb_auditoria VALUES("299","2018-08-17 18:09:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("301","2018-08-28 11:25:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("302","2018-08-28 18:49:22","Master","1");
-
-INSERT INTO tb_auditoria VALUES("303","2018-08-30 10:57:06","Master","1");
-
-INSERT INTO tb_auditoria VALUES("304","2018-08-30 10:58:04","Master","1");
-
-INSERT INTO tb_auditoria VALUES("305","2018-08-30 10:58:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("306","2018-08-30 10:58:57","Master","1");
-
-INSERT INTO tb_auditoria VALUES("307","2018-09-18 08:43:04","Master","1");
-
-INSERT INTO tb_auditoria VALUES("308","2018-09-18 08:43:40","Master","1");
-
-INSERT INTO tb_auditoria VALUES("309","2018-09-18 08:44:10","Master","1");
-
-INSERT INTO tb_auditoria VALUES("310","2018-09-18 08:44:33","Master","1");
-
-INSERT INTO tb_auditoria VALUES("311","2018-09-21 22:08:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("312","2018-09-21 22:08:49","Master","1");
-
-INSERT INTO tb_auditoria VALUES("313","2018-09-21 22:09:17","Master","1");
-
-INSERT INTO tb_auditoria VALUES("314","2018-09-21 22:09:40","Master","1");
-
-INSERT INTO tb_auditoria VALUES("315","2018-09-24 20:33:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("316","2018-09-24 20:34:02","Master","1");
-
-INSERT INTO tb_auditoria VALUES("317","2018-09-25 14:23:14","Master","1");
-
-INSERT INTO tb_auditoria VALUES("318","2018-09-25 14:26:26","Master","1");
-
-INSERT INTO tb_auditoria VALUES("319","2018-09-25 14:27:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("320","2018-09-25 14:28:00","Master","1");
-
-INSERT INTO tb_auditoria VALUES("321","2018-09-25 14:31:36","Master","1");
-
-INSERT INTO tb_auditoria VALUES("322","2018-09-25 14:31:59","Master","1");
-
-INSERT INTO tb_auditoria VALUES("323","2018-10-18 20:24:57","Master","1");
-
-INSERT INTO tb_auditoria VALUES("324","2018-10-19 11:26:45","Master","1");
-
-INSERT INTO tb_auditoria VALUES("325","2018-10-19 11:32:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("326","2018-10-19 11:32:32","Master","1");
-
-INSERT INTO tb_auditoria VALUES("327","2018-10-26 20:28:56","Master","1");
-
-INSERT INTO tb_auditoria VALUES("328","2018-10-26 20:29:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("329","2018-10-26 20:35:47","Master","1");
-
-INSERT INTO tb_auditoria VALUES("330","2018-10-26 20:45:05","Master","1");
-
-INSERT INTO tb_auditoria VALUES("331","2018-11-14 16:07:41","Master","1");
-
-INSERT INTO tb_auditoria VALUES("332","2018-11-19 17:37:31","Master","1");
-
-INSERT INTO tb_auditoria VALUES("333","2018-11-19 17:37:56","Master","1");
-
-INSERT INTO tb_auditoria VALUES("334","2018-11-22 16:03:43","Master","1");
-
-INSERT INTO tb_auditoria VALUES("335","2018-11-22 16:22:54","Master","1");
-
-INSERT INTO tb_auditoria VALUES("336","2018-11-22 16:23:19","Master","1");
-
-INSERT INTO tb_auditoria VALUES("337","2018-11-23 17:55:10","Master","1");
-
-INSERT INTO tb_auditoria VALUES("338","2018-11-23 17:55:38","Master","1");
-
-INSERT INTO tb_auditoria VALUES("339","2018-11-26 17:29:23","Master","1");
-
-INSERT INTO tb_auditoria VALUES("340","2018-11-27 13:45:17","Master","1");
-
-INSERT INTO tb_auditoria VALUES("341","2018-11-27 14:53:46","Master","1");
-
-INSERT INTO tb_auditoria VALUES("342","2018-11-27 18:13:21","Master","1");
-
-INSERT INTO tb_auditoria VALUES("343","2018-11-27 18:23:03","Master","1");
-
-INSERT INTO tb_auditoria VALUES("344","2018-12-03 11:54:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("345","2018-12-10 16:51:54","Master","1");
-
-INSERT INTO tb_auditoria VALUES("346","2018-12-10 16:52:48","Master","1");
-
-INSERT INTO tb_auditoria VALUES("347","2018-12-11 14:07:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("348","2018-12-13 17:10:50","Master","1");
-
-INSERT INTO tb_auditoria VALUES("349","2018-12-13 17:56:07","Master","1");
-
-INSERT INTO tb_auditoria VALUES("359","2018-12-20 13:39:20","Master","1");
-
-INSERT INTO tb_auditoria VALUES("360","2018-12-20 13:42:59","Master","1");
-
-INSERT INTO tb_auditoria VALUES("413","2019-01-25 11:56:43","Master","1");
-
-INSERT INTO tb_auditoria VALUES("414","2019-01-25 14:03:01","Master","1");
-
-INSERT INTO tb_auditoria VALUES("415","2019-01-31 14:35:46","Master","1");
-
-INSERT INTO tb_auditoria VALUES("416","2019-01-31 14:36:53","Master","1");
-
-INSERT INTO tb_auditoria VALUES("417","2019-01-31 14:38:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("418","2019-01-31 14:45:18","Master","1");
-
-INSERT INTO tb_auditoria VALUES("419","2019-01-31 14:46:33","Master","1");
+INSERT INTO tb_auditoria VALUES("9","2019-02-11 17:27:48","Master","1");
 
 
 
@@ -911,1104 +199,616 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=3085 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=305 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_auditoria_itens VALUES("34","","3","nu_esforco","11");
+INSERT INTO tb_auditoria_itens VALUES("1","","2019-02-07 10:00:00","dt_inicio","1");
 
-INSERT INTO tb_auditoria_itens VALUES("35","","3","nu_esforco_restante","11");
+INSERT INTO tb_auditoria_itens VALUES("2","","2019-02-07 12:00:00","dt_fim","1");
 
-INSERT INTO tb_auditoria_itens VALUES("44","3","8","nu_esforco","12");
+INSERT INTO tb_auditoria_itens VALUES("3","","2","tp_ausencia","1");
 
-INSERT INTO tb_auditoria_itens VALUES("45","3","7","nu_esforco_restante","12");
+INSERT INTO tb_auditoria_itens VALUES("4","","Consulta nova","ds_observacao","1");
 
-INSERT INTO tb_auditoria_itens VALUES("53","8","8","nu_esforco","13");
+INSERT INTO tb_auditoria_itens VALUES("5","","2019-02-11 16:00:01","dt_cadastro","1");
 
-INSERT INTO tb_auditoria_itens VALUES("54","7","7","nu_esforco_restante","13");
+INSERT INTO tb_auditoria_itens VALUES("6","","20","co_profissional","1");
 
-INSERT INTO tb_auditoria_itens VALUES("62","8","8","nu_esforco","14");
+INSERT INTO tb_auditoria_itens VALUES("7","","8","co_usuario","1");
 
-INSERT INTO tb_auditoria_itens VALUES("63","7","1","nu_esforco_restante","14");
+INSERT INTO tb_auditoria_itens VALUES("8","","41","co_funcionalidade","2");
 
-INSERT INTO tb_auditoria_itens VALUES("71","8","8","nu_esforco","15");
+INSERT INTO tb_auditoria_itens VALUES("9","","3","co_perfil","2");
 
-INSERT INTO tb_auditoria_itens VALUES("72","1","","nu_esforco_restante","15");
+INSERT INTO tb_auditoria_itens VALUES("10","","41","co_funcionalidade","3");
 
-INSERT INTO tb_auditoria_itens VALUES("80","8","8","nu_esforco","16");
+INSERT INTO tb_auditoria_itens VALUES("11","","2","co_perfil","3");
 
-INSERT INTO tb_auditoria_itens VALUES("81","0","8","nu_esforco_restante","16");
+INSERT INTO tb_auditoria_itens VALUES("12","","42","co_funcionalidade","4");
 
-INSERT INTO tb_auditoria_itens VALUES("89","8","8","nu_esforco","17");
+INSERT INTO tb_auditoria_itens VALUES("13","","2","co_perfil","4");
 
-INSERT INTO tb_auditoria_itens VALUES("90","8","8","nu_esforco_restante","17");
+INSERT INTO tb_auditoria_itens VALUES("14","196","","co_perfil_funcionalidade","5");
 
-INSERT INTO tb_auditoria_itens VALUES("112","8","8","nu_esforco","23");
+INSERT INTO tb_auditoria_itens VALUES("15","2","","co_perfil","5");
 
-INSERT INTO tb_auditoria_itens VALUES("113","5","","nu_esforco_restante","23");
+INSERT INTO tb_auditoria_itens VALUES("16","42","","co_funcionalidade","5");
 
-INSERT INTO tb_auditoria_itens VALUES("121","8","8","nu_esforco","24");
+INSERT INTO tb_auditoria_itens VALUES("17","","42","co_funcionalidade","6");
 
-INSERT INTO tb_auditoria_itens VALUES("122","0","8","nu_esforco_restante","24");
+INSERT INTO tb_auditoria_itens VALUES("18","","2","co_perfil","6");
 
-INSERT INTO tb_auditoria_itens VALUES("130","8","3","nu_esforco","25");
+INSERT INTO tb_auditoria_itens VALUES("19","194","","co_perfil_funcionalidade","7");
 
-INSERT INTO tb_auditoria_itens VALUES("131","8","3","nu_esforco_restante","25");
+INSERT INTO tb_auditoria_itens VALUES("20","3","","co_perfil","7");
 
-INSERT INTO tb_auditoria_itens VALUES("139","3","8","nu_esforco","26");
+INSERT INTO tb_auditoria_itens VALUES("21","41","","co_funcionalidade","7");
 
-INSERT INTO tb_auditoria_itens VALUES("140","3","8","nu_esforco_restante","26");
+INSERT INTO tb_auditoria_itens VALUES("22","195","","co_perfil_funcionalidade","7");
 
-INSERT INTO tb_auditoria_itens VALUES("148","8","8","nu_esforco","27");
+INSERT INTO tb_auditoria_itens VALUES("23","2","","co_perfil","7");
 
-INSERT INTO tb_auditoria_itens VALUES("149","8","8","nu_esforco_restante","27");
+INSERT INTO tb_auditoria_itens VALUES("24","41","","co_funcionalidade","7");
 
-INSERT INTO tb_auditoria_itens VALUES("160","8","13","nu_esforco","29");
+INSERT INTO tb_auditoria_itens VALUES("25","","41","co_funcionalidade","8");
 
-INSERT INTO tb_auditoria_itens VALUES("161","8","13","nu_esforco_restante","29");
+INSERT INTO tb_auditoria_itens VALUES("26","","3","co_perfil","8");
 
-INSERT INTO tb_auditoria_itens VALUES("167","","13","nu_esforco","30");
+INSERT INTO tb_auditoria_itens VALUES("27","","41","co_funcionalidade","9");
 
-INSERT INTO tb_auditoria_itens VALUES("168","","13","nu_esforco_restante","30");
+INSERT INTO tb_auditoria_itens VALUES("28","","2","co_perfil","9");
 
-INSERT INTO tb_auditoria_itens VALUES("179","","5","nu_esforco","32");
+INSERT INTO tb_auditoria_itens VALUES("29","96","96","co_endereco","10");
 
-INSERT INTO tb_auditoria_itens VALUES("180","","5","nu_esforco_restante","32");
+INSERT INTO tb_auditoria_itens VALUES("30","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","10");
 
-INSERT INTO tb_auditoria_itens VALUES("187","","20","nu_esforco","33");
+INSERT INTO tb_auditoria_itens VALUES("31","","","ds_complemento","10");
 
-INSERT INTO tb_auditoria_itens VALUES("188","","20","nu_esforco_restante","33");
+INSERT INTO tb_auditoria_itens VALUES("32","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","10");
 
-INSERT INTO tb_auditoria_itens VALUES("197","20","20","nu_esforco","34");
+INSERT INTO tb_auditoria_itens VALUES("33","72319111","72319111","nu_cep","10");
 
-INSERT INTO tb_auditoria_itens VALUES("198","20","20","nu_esforco_restante","34");
+INSERT INTO tb_auditoria_itens VALUES("34","Brasília","Brasília","no_cidade","10");
 
-INSERT INTO tb_auditoria_itens VALUES("224","","8","nu_esforco","40");
+INSERT INTO tb_auditoria_itens VALUES("35","DF","DF","sg_uf","10");
 
-INSERT INTO tb_auditoria_itens VALUES("225","","8","nu_esforco_restante","40");
+INSERT INTO tb_auditoria_itens VALUES("36","82","82","co_contato","11");
 
-INSERT INTO tb_auditoria_itens VALUES("232","","5","nu_esforco","41");
+INSERT INTO tb_auditoria_itens VALUES("37","6546546131","6546546131","nu_tel1","11");
 
-INSERT INTO tb_auditoria_itens VALUES("233","","5","nu_esforco_restante","41");
+INSERT INTO tb_auditoria_itens VALUES("38","43536436436","43536436436","nu_tel2","11");
 
-INSERT INTO tb_auditoria_itens VALUES("240","","8","nu_esforco","42");
+INSERT INTO tb_auditoria_itens VALUES("39","","","nu_tel3","11");
 
-INSERT INTO tb_auditoria_itens VALUES("241","","8","nu_esforco_restante","42");
+INSERT INTO tb_auditoria_itens VALUES("40","","","nu_tel_0800","11");
 
-INSERT INTO tb_auditoria_itens VALUES("251","","13","nu_esforco","44");
+INSERT INTO tb_auditoria_itens VALUES("41","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","11");
 
-INSERT INTO tb_auditoria_itens VALUES("252","","13","nu_esforco_restante","44");
+INSERT INTO tb_auditoria_itens VALUES("42","","","ds_site","11");
 
-INSERT INTO tb_auditoria_itens VALUES("259","","5","nu_esforco","45");
+INSERT INTO tb_auditoria_itens VALUES("43","","","ds_facebook","11");
 
-INSERT INTO tb_auditoria_itens VALUES("260","","5","nu_esforco_restante","45");
+INSERT INTO tb_auditoria_itens VALUES("44","","","ds_twitter","11");
 
-INSERT INTO tb_auditoria_itens VALUES("269","5","5","nu_esforco","46");
+INSERT INTO tb_auditoria_itens VALUES("45","","","ds_instagram","11");
 
-INSERT INTO tb_auditoria_itens VALUES("270","5","5","nu_esforco_restante","46");
+INSERT INTO tb_auditoria_itens VALUES("46","77","77","co_pessoa","12");
 
-INSERT INTO tb_auditoria_itens VALUES("283","","20","nu_esforco","49");
+INSERT INTO tb_auditoria_itens VALUES("47","12345678909","12345678909","nu_cpf","12");
 
-INSERT INTO tb_auditoria_itens VALUES("284","","20","nu_esforco_restante","49");
+INSERT INTO tb_auditoria_itens VALUES("48","Seu Biga ","Seu Biga ","no_pessoa","12");
 
-INSERT INTO tb_auditoria_itens VALUES("293","20","20","nu_esforco","50");
+INSERT INTO tb_auditoria_itens VALUES("49","1111111111111","1111111111111","nu_rg","12");
 
-INSERT INTO tb_auditoria_itens VALUES("294","20","20","nu_esforco_restante","50");
+INSERT INTO tb_auditoria_itens VALUES("50","2019-01-14 17:05:48","","dt_cadastro","12");
 
-INSERT INTO tb_auditoria_itens VALUES("303","","3","nu_esforco","52");
+INSERT INTO tb_auditoria_itens VALUES("51","2018-09-10","2018-09-10","dt_nascimento","12");
 
-INSERT INTO tb_auditoria_itens VALUES("304","","3","nu_esforco_restante","52");
+INSERT INTO tb_auditoria_itens VALUES("52","M","M","st_sexo","12");
 
-INSERT INTO tb_auditoria_itens VALUES("314","","13","nu_esforco","54");
+INSERT INTO tb_auditoria_itens VALUES("53","96","96","co_endereco","12");
 
-INSERT INTO tb_auditoria_itens VALUES("315","","13","nu_esforco_restante","54");
+INSERT INTO tb_auditoria_itens VALUES("54","82","82","co_contato","12");
 
-INSERT INTO tb_auditoria_itens VALUES("325","","3","nu_esforco","56");
+INSERT INTO tb_auditoria_itens VALUES("55","0","","co_imagem","12");
 
-INSERT INTO tb_auditoria_itens VALUES("326","","3","nu_esforco_restante","56");
+INSERT INTO tb_auditoria_itens VALUES("56","43","43","co_conta_bancaria","13");
 
-INSERT INTO tb_auditoria_itens VALUES("333","","3","nu_esforco","57");
+INSERT INTO tb_auditoria_itens VALUES("57","2399","2399","nu_agencia","13");
 
-INSERT INTO tb_auditoria_itens VALUES("334","","3","nu_esforco_restante","57");
+INSERT INTO tb_auditoria_itens VALUES("58","22982-7","22982-7","nu_conta","13");
 
-INSERT INTO tb_auditoria_itens VALUES("344","","13","nu_esforco","59");
+INSERT INTO tb_auditoria_itens VALUES("59","CC","CC","tp_conta","13");
 
-INSERT INTO tb_auditoria_itens VALUES("345","","13","nu_esforco_restante","59");
+INSERT INTO tb_auditoria_itens VALUES("60","1","1","co_banco","13");
 
-INSERT INTO tb_auditoria_itens VALUES("352","","5","nu_esforco","60");
+INSERT INTO tb_auditoria_itens VALUES("61","21","21","co_profissional","14");
 
-INSERT INTO tb_auditoria_itens VALUES("353","","5","nu_esforco_restante","60");
+INSERT INTO tb_auditoria_itens VALUES("62","2019-01-14 17:05:48","","dt_cadastro","14");
 
-INSERT INTO tb_auditoria_itens VALUES("363","","5","nu_esforco","62");
+INSERT INTO tb_auditoria_itens VALUES("63","#A54A7B","#A54A7B","ds_cor_agenda","14");
 
-INSERT INTO tb_auditoria_itens VALUES("364","","5","nu_esforco_restante","62");
+INSERT INTO tb_auditoria_itens VALUES("64","S","S","st_assistente","14");
 
-INSERT INTO tb_auditoria_itens VALUES("374","","8","nu_esforco","64");
+INSERT INTO tb_auditoria_itens VALUES("65","","","ds_sobre","14");
 
-INSERT INTO tb_auditoria_itens VALUES("375","","8","nu_esforco_restante","64");
+INSERT INTO tb_auditoria_itens VALUES("66","meu apelido","meu apelido","no_apelido","14");
 
-INSERT INTO tb_auditoria_itens VALUES("384","8","13","nu_esforco","65");
+INSERT INTO tb_auditoria_itens VALUES("67","S","S","st_agenda","14");
 
-INSERT INTO tb_auditoria_itens VALUES("385","8","13","nu_esforco_restante","65");
+INSERT INTO tb_auditoria_itens VALUES("68","S","S","st_agenda_online","14");
 
-INSERT INTO tb_auditoria_itens VALUES("394","","3","nu_esforco","67");
+INSERT INTO tb_auditoria_itens VALUES("69","","","st_status","14");
 
-INSERT INTO tb_auditoria_itens VALUES("395","","3","nu_esforco_restante","67");
+INSERT INTO tb_auditoria_itens VALUES("70","0","","nu_ordem_agenda","14");
 
-INSERT INTO tb_auditoria_itens VALUES("402","","5","nu_esforco","68");
+INSERT INTO tb_auditoria_itens VALUES("71","1","1","tp_contratacao","14");
 
-INSERT INTO tb_auditoria_itens VALUES("403","","5","nu_esforco_restante","68");
+INSERT INTO tb_auditoria_itens VALUES("72","1983-12-06","1983-12-06","dt_admissao","14");
 
-INSERT INTO tb_auditoria_itens VALUES("410","","13","nu_esforco","69");
+INSERT INTO tb_auditoria_itens VALUES("73","","","dt_demissao","14");
 
-INSERT INTO tb_auditoria_itens VALUES("411","","13","nu_esforco_restante","69");
+INSERT INTO tb_auditoria_itens VALUES("74","38","38","co_imagem","14");
 
-INSERT INTO tb_auditoria_itens VALUES("418","","5","nu_esforco","70");
+INSERT INTO tb_auditoria_itens VALUES("75","77","77","co_pessoa","14");
 
-INSERT INTO tb_auditoria_itens VALUES("419","","5","nu_esforco_restante","70");
+INSERT INTO tb_auditoria_itens VALUES("76","50","","co_usuario","14");
 
-INSERT INTO tb_auditoria_itens VALUES("429","","13","nu_esforco","72");
+INSERT INTO tb_auditoria_itens VALUES("77","11","","co_assinante","14");
 
-INSERT INTO tb_auditoria_itens VALUES("430","","13","nu_esforco_restante","72");
+INSERT INTO tb_auditoria_itens VALUES("78","43","43","co_conta_bancaria","14");
 
-INSERT INTO tb_auditoria_itens VALUES("440","","5","nu_esforco","74");
+INSERT INTO tb_auditoria_itens VALUES("79","57","","co_profissional_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("441","","5","nu_esforco_restante","74");
+INSERT INTO tb_auditoria_itens VALUES("80","32","","co_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("451","","3","nu_esforco","76");
+INSERT INTO tb_auditoria_itens VALUES("81","21","","co_profissional","15");
 
-INSERT INTO tb_auditoria_itens VALUES("452","","3","nu_esforco_restante","76");
+INSERT INTO tb_auditoria_itens VALUES("82","2019-02-06 00:00:00","","dt_cadastro","15");
 
-INSERT INTO tb_auditoria_itens VALUES("462","","8","nu_esforco","78");
+INSERT INTO tb_auditoria_itens VALUES("83","A","","st_status","15");
 
-INSERT INTO tb_auditoria_itens VALUES("463","","8","nu_esforco_restante","78");
+INSERT INTO tb_auditoria_itens VALUES("84","58","","co_profissional_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("473","","8","nu_esforco","80");
+INSERT INTO tb_auditoria_itens VALUES("85","31","","co_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("474","","8","nu_esforco_restante","80");
+INSERT INTO tb_auditoria_itens VALUES("86","21","","co_profissional","15");
 
-INSERT INTO tb_auditoria_itens VALUES("483","8","13","nu_esforco","81");
+INSERT INTO tb_auditoria_itens VALUES("87","2019-02-06 00:00:00","","dt_cadastro","15");
 
-INSERT INTO tb_auditoria_itens VALUES("484","8","13","nu_esforco_restante","81");
+INSERT INTO tb_auditoria_itens VALUES("88","A","","st_status","15");
 
-INSERT INTO tb_auditoria_itens VALUES("490","","40","nu_esforco","82");
+INSERT INTO tb_auditoria_itens VALUES("89","59","","co_profissional_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("491","","40","nu_esforco_restante","82");
+INSERT INTO tb_auditoria_itens VALUES("90","30","","co_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("498","","40","nu_esforco","83");
+INSERT INTO tb_auditoria_itens VALUES("91","21","","co_profissional","15");
 
-INSERT INTO tb_auditoria_itens VALUES("499","","40","nu_esforco_restante","83");
+INSERT INTO tb_auditoria_itens VALUES("92","2019-02-06 00:00:00","","dt_cadastro","15");
 
-INSERT INTO tb_auditoria_itens VALUES("506","","13","nu_esforco","84");
+INSERT INTO tb_auditoria_itens VALUES("93","A","","st_status","15");
 
-INSERT INTO tb_auditoria_itens VALUES("507","","13","nu_esforco_restante","84");
+INSERT INTO tb_auditoria_itens VALUES("94","60","","co_profissional_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("516","13","20","nu_esforco","85");
+INSERT INTO tb_auditoria_itens VALUES("95","27","","co_cargo","15");
 
-INSERT INTO tb_auditoria_itens VALUES("517","13","20","nu_esforco_restante","85");
+INSERT INTO tb_auditoria_itens VALUES("96","21","","co_profissional","15");
 
-INSERT INTO tb_auditoria_itens VALUES("523","","5","nu_esforco","86");
+INSERT INTO tb_auditoria_itens VALUES("97","2019-02-06 00:00:00","","dt_cadastro","15");
 
-INSERT INTO tb_auditoria_itens VALUES("524","","5","nu_esforco_restante","86");
+INSERT INTO tb_auditoria_itens VALUES("98","A","","st_status","15");
 
-INSERT INTO tb_auditoria_itens VALUES("531","","8","nu_esforco","87");
+INSERT INTO tb_auditoria_itens VALUES("99","","21","co_profissional","16");
 
-INSERT INTO tb_auditoria_itens VALUES("532","","8","nu_esforco_restante","87");
+INSERT INTO tb_auditoria_itens VALUES("100","","A","st_status","16");
 
-INSERT INTO tb_auditoria_itens VALUES("541","20","13","nu_esforco","88");
+INSERT INTO tb_auditoria_itens VALUES("101","","2019-02-11","dt_cadastro","16");
 
-INSERT INTO tb_auditoria_itens VALUES("542","20","13","nu_esforco_restante","88");
+INSERT INTO tb_auditoria_itens VALUES("102","","32","co_cargo","16");
 
-INSERT INTO tb_auditoria_itens VALUES("548","","8","nu_esforco","89");
+INSERT INTO tb_auditoria_itens VALUES("103","","21","co_profissional","17");
 
-INSERT INTO tb_auditoria_itens VALUES("549","","8","nu_esforco_restante","89");
+INSERT INTO tb_auditoria_itens VALUES("104","","A","st_status","17");
 
-INSERT INTO tb_auditoria_itens VALUES("556","","3","nu_esforco","90");
+INSERT INTO tb_auditoria_itens VALUES("105","","2019-02-11","dt_cadastro","17");
 
-INSERT INTO tb_auditoria_itens VALUES("557","","3","nu_esforco_restante","90");
+INSERT INTO tb_auditoria_itens VALUES("106","","31","co_cargo","17");
 
-INSERT INTO tb_auditoria_itens VALUES("564","","5","nu_esforco","91");
+INSERT INTO tb_auditoria_itens VALUES("107","","21","co_profissional","18");
 
-INSERT INTO tb_auditoria_itens VALUES("565","","5","nu_esforco_restante","91");
+INSERT INTO tb_auditoria_itens VALUES("108","","A","st_status","18");
 
-INSERT INTO tb_auditoria_itens VALUES("574","5","8","nu_esforco","92");
+INSERT INTO tb_auditoria_itens VALUES("109","","2019-02-11","dt_cadastro","18");
 
-INSERT INTO tb_auditoria_itens VALUES("575","5","8","nu_esforco_restante","92");
+INSERT INTO tb_auditoria_itens VALUES("110","","30","co_cargo","18");
 
-INSERT INTO tb_auditoria_itens VALUES("581","","13","nu_esforco","93");
+INSERT INTO tb_auditoria_itens VALUES("111","","21","co_profissional","19");
 
-INSERT INTO tb_auditoria_itens VALUES("582","","13","nu_esforco_restante","93");
+INSERT INTO tb_auditoria_itens VALUES("112","","A","st_status","19");
 
-INSERT INTO tb_auditoria_itens VALUES("589","","8","nu_esforco","94");
+INSERT INTO tb_auditoria_itens VALUES("113","","2019-02-11","dt_cadastro","19");
 
-INSERT INTO tb_auditoria_itens VALUES("590","","8","nu_esforco_restante","94");
+INSERT INTO tb_auditoria_itens VALUES("114","","27","co_cargo","19");
 
-INSERT INTO tb_auditoria_itens VALUES("600","","8","nu_esforco","96");
+INSERT INTO tb_auditoria_itens VALUES("115","59","","co_jornada_trabalho","20");
 
-INSERT INTO tb_auditoria_itens VALUES("601","","8","nu_esforco_restante","96");
+INSERT INTO tb_auditoria_itens VALUES("116","2","","nu_dia_semana","20");
 
-INSERT INTO tb_auditoria_itens VALUES("608","","8","nu_esforco","97");
+INSERT INTO tb_auditoria_itens VALUES("117","05:00","","nu_hora_abertura","20");
 
-INSERT INTO tb_auditoria_itens VALUES("609","","8","nu_esforco_restante","97");
+INSERT INTO tb_auditoria_itens VALUES("118","18:11","","nu_hora_fechamento","20");
 
-INSERT INTO tb_auditoria_itens VALUES("616","","8","nu_esforco","98");
+INSERT INTO tb_auditoria_itens VALUES("119","","","nu_almoco_inicio","20");
 
-INSERT INTO tb_auditoria_itens VALUES("617","","8","nu_esforco_restante","98");
+INSERT INTO tb_auditoria_itens VALUES("120","","","nu_almoco_final","20");
 
-INSERT INTO tb_auditoria_itens VALUES("624","","13","nu_esforco","99");
+INSERT INTO tb_auditoria_itens VALUES("121","","","nu_intervalo_inicio","20");
 
-INSERT INTO tb_auditoria_itens VALUES("625","","13","nu_esforco_restante","99");
+INSERT INTO tb_auditoria_itens VALUES("122","","","nu_intervalo_final","20");
 
-INSERT INTO tb_auditoria_itens VALUES("634","13","13","nu_esforco","100");
+INSERT INTO tb_auditoria_itens VALUES("123","21","","co_profissional","20");
 
-INSERT INTO tb_auditoria_itens VALUES("635","13","13","nu_esforco_restante","100");
+INSERT INTO tb_auditoria_itens VALUES("124","60","","co_jornada_trabalho","20");
 
-INSERT INTO tb_auditoria_itens VALUES("641","","8","nu_esforco","101");
+INSERT INTO tb_auditoria_itens VALUES("125","3","","nu_dia_semana","20");
 
-INSERT INTO tb_auditoria_itens VALUES("642","","8","nu_esforco_restante","101");
+INSERT INTO tb_auditoria_itens VALUES("126","05:00","","nu_hora_abertura","20");
 
-INSERT INTO tb_auditoria_itens VALUES("649","","8","nu_esforco","102");
+INSERT INTO tb_auditoria_itens VALUES("127","18:04","","nu_hora_fechamento","20");
 
-INSERT INTO tb_auditoria_itens VALUES("650","","8","nu_esforco_restante","102");
+INSERT INTO tb_auditoria_itens VALUES("128","","","nu_almoco_inicio","20");
 
-INSERT INTO tb_auditoria_itens VALUES("657","","20","nu_esforco","103");
+INSERT INTO tb_auditoria_itens VALUES("129","","","nu_almoco_final","20");
 
-INSERT INTO tb_auditoria_itens VALUES("658","","20","nu_esforco_restante","103");
+INSERT INTO tb_auditoria_itens VALUES("130","","","nu_intervalo_inicio","20");
 
-INSERT INTO tb_auditoria_itens VALUES("667","8","8","nu_esforco","104");
+INSERT INTO tb_auditoria_itens VALUES("131","","","nu_intervalo_final","20");
 
-INSERT INTO tb_auditoria_itens VALUES("668","8","8","nu_esforco_restante","104");
+INSERT INTO tb_auditoria_itens VALUES("132","21","","co_profissional","20");
 
-INSERT INTO tb_auditoria_itens VALUES("676","8","8","nu_esforco","105");
+INSERT INTO tb_auditoria_itens VALUES("133","","21","co_profissional","21");
 
-INSERT INTO tb_auditoria_itens VALUES("677","8","8","nu_esforco_restante","105");
+INSERT INTO tb_auditoria_itens VALUES("134","","2","nu_dia_semana","21");
 
-INSERT INTO tb_auditoria_itens VALUES("683","","8","nu_esforco","106");
+INSERT INTO tb_auditoria_itens VALUES("135","","05:00","nu_hora_abertura","21");
 
-INSERT INTO tb_auditoria_itens VALUES("684","","8","nu_esforco_restante","106");
+INSERT INTO tb_auditoria_itens VALUES("136","","18:11","nu_hora_fechamento","21");
 
-INSERT INTO tb_auditoria_itens VALUES("691","","8","nu_esforco","107");
+INSERT INTO tb_auditoria_itens VALUES("137","","","nu_almoco_inicio","21");
 
-INSERT INTO tb_auditoria_itens VALUES("692","","8","nu_esforco_restante","107");
+INSERT INTO tb_auditoria_itens VALUES("138","","","nu_almoco_final","21");
 
-INSERT INTO tb_auditoria_itens VALUES("701","8","8","nu_esforco","108");
+INSERT INTO tb_auditoria_itens VALUES("139","","16:00","nu_intervalo_inicio","21");
 
-INSERT INTO tb_auditoria_itens VALUES("702","8","8","nu_esforco_restante","108");
+INSERT INTO tb_auditoria_itens VALUES("140","","16:10","nu_intervalo_final","21");
 
-INSERT INTO tb_auditoria_itens VALUES("708","","8","nu_esforco","109");
+INSERT INTO tb_auditoria_itens VALUES("141","","21","co_profissional","22");
 
-INSERT INTO tb_auditoria_itens VALUES("709","","8","nu_esforco_restante","109");
+INSERT INTO tb_auditoria_itens VALUES("142","","3","nu_dia_semana","22");
 
-INSERT INTO tb_auditoria_itens VALUES("716","","8","nu_esforco","110");
+INSERT INTO tb_auditoria_itens VALUES("143","","05:00","nu_hora_abertura","22");
 
-INSERT INTO tb_auditoria_itens VALUES("717","","8","nu_esforco_restante","110");
+INSERT INTO tb_auditoria_itens VALUES("144","","18:04","nu_hora_fechamento","22");
 
-INSERT INTO tb_auditoria_itens VALUES("724","","8","nu_esforco","111");
+INSERT INTO tb_auditoria_itens VALUES("145","","12:00","nu_almoco_inicio","22");
 
-INSERT INTO tb_auditoria_itens VALUES("725","","8","nu_esforco_restante","111");
+INSERT INTO tb_auditoria_itens VALUES("146","","12:30","nu_almoco_final","22");
 
-INSERT INTO tb_auditoria_itens VALUES("732","","8","nu_esforco","112");
+INSERT INTO tb_auditoria_itens VALUES("147","","","nu_intervalo_inicio","22");
 
-INSERT INTO tb_auditoria_itens VALUES("733","","8","nu_esforco_restante","112");
+INSERT INTO tb_auditoria_itens VALUES("148","","","nu_intervalo_final","22");
 
-INSERT INTO tb_auditoria_itens VALUES("740","","5","nu_esforco","113");
+INSERT INTO tb_auditoria_itens VALUES("149","","21","co_profissional","23");
 
-INSERT INTO tb_auditoria_itens VALUES("741","","5","nu_esforco_restante","113");
+INSERT INTO tb_auditoria_itens VALUES("150","","6","nu_dia_semana","23");
 
-INSERT INTO tb_auditoria_itens VALUES("748","","8","nu_esforco","114");
+INSERT INTO tb_auditoria_itens VALUES("151","","03:00","nu_hora_abertura","23");
 
-INSERT INTO tb_auditoria_itens VALUES("749","","8","nu_esforco_restante","114");
+INSERT INTO tb_auditoria_itens VALUES("152","","19:11","nu_hora_fechamento","23");
 
-INSERT INTO tb_auditoria_itens VALUES("756","","8","nu_esforco","115");
+INSERT INTO tb_auditoria_itens VALUES("153","","12:00","nu_almoco_inicio","23");
 
-INSERT INTO tb_auditoria_itens VALUES("757","","8","nu_esforco_restante","115");
+INSERT INTO tb_auditoria_itens VALUES("154","","12:30","nu_almoco_final","23");
 
-INSERT INTO tb_auditoria_itens VALUES("764","","8","nu_esforco","116");
+INSERT INTO tb_auditoria_itens VALUES("155","","16:00","nu_intervalo_inicio","23");
 
-INSERT INTO tb_auditoria_itens VALUES("765","","8","nu_esforco_restante","116");
+INSERT INTO tb_auditoria_itens VALUES("156","","16:15","nu_intervalo_final","23");
 
-INSERT INTO tb_auditoria_itens VALUES("772","","8","nu_esforco","117");
+INSERT INTO tb_auditoria_itens VALUES("157","96","96","co_endereco","24");
 
-INSERT INTO tb_auditoria_itens VALUES("773","","8","nu_esforco_restante","117");
+INSERT INTO tb_auditoria_itens VALUES("158","QR 403 Conjunto 10","QR 403 Conjunto 10","ds_endereco","24");
 
-INSERT INTO tb_auditoria_itens VALUES("780","","8","nu_esforco","118");
+INSERT INTO tb_auditoria_itens VALUES("159","","","ds_complemento","24");
 
-INSERT INTO tb_auditoria_itens VALUES("781","","8","nu_esforco_restante","118");
+INSERT INTO tb_auditoria_itens VALUES("160","Samambaia Norte (Samambaia)","Samambaia Norte (Samambaia)","ds_bairro","24");
 
-INSERT INTO tb_auditoria_itens VALUES("788","","8","nu_esforco","119");
+INSERT INTO tb_auditoria_itens VALUES("161","72319111","72319111","nu_cep","24");
 
-INSERT INTO tb_auditoria_itens VALUES("789","","8","nu_esforco_restante","119");
+INSERT INTO tb_auditoria_itens VALUES("162","Brasília","Brasília","no_cidade","24");
 
-INSERT INTO tb_auditoria_itens VALUES("796","","8","nu_esforco","120");
+INSERT INTO tb_auditoria_itens VALUES("163","DF","DF","sg_uf","24");
 
-INSERT INTO tb_auditoria_itens VALUES("797","","8","nu_esforco_restante","120");
+INSERT INTO tb_auditoria_itens VALUES("164","82","82","co_contato","25");
 
-INSERT INTO tb_auditoria_itens VALUES("804","","8","nu_esforco","121");
+INSERT INTO tb_auditoria_itens VALUES("165","6546546131","6546546131","nu_tel1","25");
 
-INSERT INTO tb_auditoria_itens VALUES("805","","8","nu_esforco_restante","121");
+INSERT INTO tb_auditoria_itens VALUES("166","43536436436","43536436436","nu_tel2","25");
 
-INSERT INTO tb_auditoria_itens VALUES("818","","40","nu_esforco","124");
+INSERT INTO tb_auditoria_itens VALUES("167","","","nu_tel3","25");
 
-INSERT INTO tb_auditoria_itens VALUES("819","","25","nu_esforco_restante","124");
+INSERT INTO tb_auditoria_itens VALUES("168","","","nu_tel_0800","25");
 
-INSERT INTO tb_auditoria_itens VALUES("832","","40","nu_esforco","127");
+INSERT INTO tb_auditoria_itens VALUES("169","leonardomcbessa@gmail.com","leonardomcbessa@gmail.com","ds_email","25");
 
-INSERT INTO tb_auditoria_itens VALUES("833","","40","nu_esforco_restante","127");
+INSERT INTO tb_auditoria_itens VALUES("170","","","ds_site","25");
 
-INSERT INTO tb_auditoria_itens VALUES("843","","40","nu_esforco","129");
+INSERT INTO tb_auditoria_itens VALUES("171","","","ds_facebook","25");
 
-INSERT INTO tb_auditoria_itens VALUES("844","","40","nu_esforco_restante","129");
+INSERT INTO tb_auditoria_itens VALUES("172","","","ds_twitter","25");
 
-INSERT INTO tb_auditoria_itens VALUES("851","","20","nu_esforco","130");
+INSERT INTO tb_auditoria_itens VALUES("173","","","ds_instagram","25");
 
-INSERT INTO tb_auditoria_itens VALUES("852","","20","nu_esforco_restante","130");
+INSERT INTO tb_auditoria_itens VALUES("174","77","77","co_pessoa","26");
 
-INSERT INTO tb_auditoria_itens VALUES("859","","40","nu_esforco","131");
+INSERT INTO tb_auditoria_itens VALUES("175","12345678909","12345678909","nu_cpf","26");
 
-INSERT INTO tb_auditoria_itens VALUES("860","","40","nu_esforco_restante","131");
+INSERT INTO tb_auditoria_itens VALUES("176","Seu Biga ","Seu Biga ","no_pessoa","26");
 
-INSERT INTO tb_auditoria_itens VALUES("867","","20","nu_esforco","132");
+INSERT INTO tb_auditoria_itens VALUES("177","1111111111111","1111111111111","nu_rg","26");
 
-INSERT INTO tb_auditoria_itens VALUES("868","","20","nu_esforco_restante","132");
+INSERT INTO tb_auditoria_itens VALUES("178","2019-01-14 17:05:48","","dt_cadastro","26");
 
-INSERT INTO tb_auditoria_itens VALUES("889","","40","nu_esforco","137");
+INSERT INTO tb_auditoria_itens VALUES("179","2018-09-10","2018-09-10","dt_nascimento","26");
 
-INSERT INTO tb_auditoria_itens VALUES("890","","40","nu_esforco_restante","137");
+INSERT INTO tb_auditoria_itens VALUES("180","M","M","st_sexo","26");
 
-INSERT INTO tb_auditoria_itens VALUES("899","40","40","nu_esforco","138");
+INSERT INTO tb_auditoria_itens VALUES("181","96","96","co_endereco","26");
 
-INSERT INTO tb_auditoria_itens VALUES("900","40","40","nu_esforco_restante","138");
+INSERT INTO tb_auditoria_itens VALUES("182","82","82","co_contato","26");
 
-INSERT INTO tb_auditoria_itens VALUES("906","","40","nu_esforco","139");
+INSERT INTO tb_auditoria_itens VALUES("183","0","","co_imagem","26");
 
-INSERT INTO tb_auditoria_itens VALUES("907","","40","nu_esforco_restante","139");
+INSERT INTO tb_auditoria_itens VALUES("184","43","43","co_conta_bancaria","27");
 
-INSERT INTO tb_auditoria_itens VALUES("914","","20","nu_esforco","140");
+INSERT INTO tb_auditoria_itens VALUES("185","2399","2399","nu_agencia","27");
 
-INSERT INTO tb_auditoria_itens VALUES("915","","20","nu_esforco_restante","140");
+INSERT INTO tb_auditoria_itens VALUES("186","22982-7","22982-7","nu_conta","27");
 
-INSERT INTO tb_auditoria_itens VALUES("928","","40","nu_esforco","143");
+INSERT INTO tb_auditoria_itens VALUES("187","CC","CC","tp_conta","27");
 
-INSERT INTO tb_auditoria_itens VALUES("929","","40","nu_esforco_restante","143");
+INSERT INTO tb_auditoria_itens VALUES("188","1","1","co_banco","27");
 
-INSERT INTO tb_auditoria_itens VALUES("942","40","40","nu_esforco","145");
+INSERT INTO tb_auditoria_itens VALUES("189","21","21","co_profissional","28");
 
-INSERT INTO tb_auditoria_itens VALUES("943","40","40","nu_esforco_restante","145");
+INSERT INTO tb_auditoria_itens VALUES("190","2019-01-14 17:05:48","","dt_cadastro","28");
 
-INSERT INTO tb_auditoria_itens VALUES("953","","13","nu_esforco","147");
+INSERT INTO tb_auditoria_itens VALUES("191","#A54A7B","#A54A7B","ds_cor_agenda","28");
 
-INSERT INTO tb_auditoria_itens VALUES("954","","13","nu_esforco_restante","147");
+INSERT INTO tb_auditoria_itens VALUES("192","S","S","st_assistente","28");
 
-INSERT INTO tb_auditoria_itens VALUES("961","","40","nu_esforco","148");
+INSERT INTO tb_auditoria_itens VALUES("193","","","ds_sobre","28");
 
-INSERT INTO tb_auditoria_itens VALUES("962","","40","nu_esforco_restante","148");
+INSERT INTO tb_auditoria_itens VALUES("194","meu apelido","meu apelido","no_apelido","28");
 
-INSERT INTO tb_auditoria_itens VALUES("969","","20","nu_esforco","149");
+INSERT INTO tb_auditoria_itens VALUES("195","S","S","st_agenda","28");
 
-INSERT INTO tb_auditoria_itens VALUES("970","","20","nu_esforco_restante","149");
+INSERT INTO tb_auditoria_itens VALUES("196","S","S","st_agenda_online","28");
 
-INSERT INTO tb_auditoria_itens VALUES("984","","20","nu_esforco","152");
+INSERT INTO tb_auditoria_itens VALUES("197","","","st_status","28");
 
-INSERT INTO tb_auditoria_itens VALUES("985","","3","nu_esforco_restante","152");
+INSERT INTO tb_auditoria_itens VALUES("198","0","","nu_ordem_agenda","28");
 
-INSERT INTO tb_auditoria_itens VALUES("994","20","13","nu_esforco","153");
+INSERT INTO tb_auditoria_itens VALUES("199","1","1","tp_contratacao","28");
 
-INSERT INTO tb_auditoria_itens VALUES("995","3","3","nu_esforco_restante","153");
+INSERT INTO tb_auditoria_itens VALUES("200","1983-12-06","1983-12-06","dt_admissao","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1004","","30","nu_esforco","155");
+INSERT INTO tb_auditoria_itens VALUES("201","","","dt_demissao","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1005","","30","nu_esforco_restante","155");
+INSERT INTO tb_auditoria_itens VALUES("202","38","38","co_imagem","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1014","13","20","nu_esforco","156");
+INSERT INTO tb_auditoria_itens VALUES("203","77","77","co_pessoa","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1015","13","20","nu_esforco_restante","156");
+INSERT INTO tb_auditoria_itens VALUES("204","50","","co_usuario","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1023","40","40","nu_esforco","157");
+INSERT INTO tb_auditoria_itens VALUES("205","11","","co_assinante","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1024","40","40","nu_esforco_restante","157");
+INSERT INTO tb_auditoria_itens VALUES("206","43","43","co_conta_bancaria","28");
 
-INSERT INTO tb_auditoria_itens VALUES("1032","40","40","nu_esforco","158");
+INSERT INTO tb_auditoria_itens VALUES("207","61","","co_profissional_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1033","25","20","nu_esforco_restante","158");
+INSERT INTO tb_auditoria_itens VALUES("208","32","","co_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1042","","8","nu_esforco","160");
+INSERT INTO tb_auditoria_itens VALUES("209","21","","co_profissional","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1043","","8","nu_esforco_restante","160");
+INSERT INTO tb_auditoria_itens VALUES("210","2019-02-11 00:00:00","","dt_cadastro","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1075","","40","nu_esforco","164");
+INSERT INTO tb_auditoria_itens VALUES("211","A","","st_status","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1076","","40","nu_esforco_restante","164");
+INSERT INTO tb_auditoria_itens VALUES("212","62","","co_profissional_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1086","","8","nu_esforco","166");
+INSERT INTO tb_auditoria_itens VALUES("213","31","","co_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1087","","8","nu_esforco_restante","166");
+INSERT INTO tb_auditoria_itens VALUES("214","21","","co_profissional","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1110","","20","nu_esforco","169");
+INSERT INTO tb_auditoria_itens VALUES("215","2019-02-11 00:00:00","","dt_cadastro","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1111","","20","nu_esforco_restante","169");
+INSERT INTO tb_auditoria_itens VALUES("216","A","","st_status","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1153","","30","nu_esforco","179");
+INSERT INTO tb_auditoria_itens VALUES("217","63","","co_profissional_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1154","","30","nu_esforco_restante","179");
+INSERT INTO tb_auditoria_itens VALUES("218","30","","co_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1164","","20","nu_esforco","181");
+INSERT INTO tb_auditoria_itens VALUES("219","21","","co_profissional","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1165","","20","nu_esforco_restante","181");
+INSERT INTO tb_auditoria_itens VALUES("220","2019-02-11 00:00:00","","dt_cadastro","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1172","","20","nu_esforco","182");
+INSERT INTO tb_auditoria_itens VALUES("221","A","","st_status","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1173","","20","nu_esforco_restante","182");
+INSERT INTO tb_auditoria_itens VALUES("222","64","","co_profissional_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1180","","20","nu_esforco","183");
+INSERT INTO tb_auditoria_itens VALUES("223","27","","co_cargo","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1181","","20","nu_esforco_restante","183");
+INSERT INTO tb_auditoria_itens VALUES("224","21","","co_profissional","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1188","","20","nu_esforco","184");
+INSERT INTO tb_auditoria_itens VALUES("225","2019-02-11 00:00:00","","dt_cadastro","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1189","","20","nu_esforco_restante","184");
+INSERT INTO tb_auditoria_itens VALUES("226","A","","st_status","29");
 
-INSERT INTO tb_auditoria_itens VALUES("1199","","20","nu_esforco","186");
+INSERT INTO tb_auditoria_itens VALUES("227","","21","co_profissional","30");
 
-INSERT INTO tb_auditoria_itens VALUES("1200","","20","nu_esforco_restante","186");
+INSERT INTO tb_auditoria_itens VALUES("228","","A","st_status","30");
 
-INSERT INTO tb_auditoria_itens VALUES("1209","20","40","nu_esforco","187");
+INSERT INTO tb_auditoria_itens VALUES("229","","2019-02-11","dt_cadastro","30");
 
-INSERT INTO tb_auditoria_itens VALUES("1210","20","40","nu_esforco_restante","187");
+INSERT INTO tb_auditoria_itens VALUES("230","","32","co_cargo","30");
 
-INSERT INTO tb_auditoria_itens VALUES("1221","40","40","nu_esforco","189");
+INSERT INTO tb_auditoria_itens VALUES("231","","21","co_profissional","31");
 
-INSERT INTO tb_auditoria_itens VALUES("1222","20","8","nu_esforco_restante","189");
+INSERT INTO tb_auditoria_itens VALUES("232","","A","st_status","31");
 
-INSERT INTO tb_auditoria_itens VALUES("1230","40","40","nu_esforco","190");
+INSERT INTO tb_auditoria_itens VALUES("233","","2019-02-11","dt_cadastro","31");
 
-INSERT INTO tb_auditoria_itens VALUES("1231","8","20","nu_esforco_restante","190");
+INSERT INTO tb_auditoria_itens VALUES("234","","31","co_cargo","31");
 
-INSERT INTO tb_auditoria_itens VALUES("1239","40","40","nu_esforco","191");
+INSERT INTO tb_auditoria_itens VALUES("235","","21","co_profissional","32");
 
-INSERT INTO tb_auditoria_itens VALUES("1240","20","8","nu_esforco_restante","191");
+INSERT INTO tb_auditoria_itens VALUES("236","","A","st_status","32");
 
-INSERT INTO tb_auditoria_itens VALUES("1246","","8","nu_esforco","192");
+INSERT INTO tb_auditoria_itens VALUES("237","","2019-02-11","dt_cadastro","32");
 
-INSERT INTO tb_auditoria_itens VALUES("1247","","8","nu_esforco_restante","192");
+INSERT INTO tb_auditoria_itens VALUES("238","","30","co_cargo","32");
 
-INSERT INTO tb_auditoria_itens VALUES("1254","","40","nu_esforco","193");
+INSERT INTO tb_auditoria_itens VALUES("239","","21","co_profissional","33");
 
-INSERT INTO tb_auditoria_itens VALUES("1255","","40","nu_esforco_restante","193");
+INSERT INTO tb_auditoria_itens VALUES("240","","A","st_status","33");
 
-INSERT INTO tb_auditoria_itens VALUES("1264","20","40","nu_esforco","194");
+INSERT INTO tb_auditoria_itens VALUES("241","","2019-02-11","dt_cadastro","33");
 
-INSERT INTO tb_auditoria_itens VALUES("1265","20","40","nu_esforco_restante","194");
+INSERT INTO tb_auditoria_itens VALUES("242","","27","co_cargo","33");
 
-INSERT INTO tb_auditoria_itens VALUES("1271","","8","nu_esforco","195");
+INSERT INTO tb_auditoria_itens VALUES("243","61","","co_jornada_trabalho","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1272","","8","nu_esforco_restante","195");
+INSERT INTO tb_auditoria_itens VALUES("244","2","","nu_dia_semana","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1279","","8","nu_esforco","196");
+INSERT INTO tb_auditoria_itens VALUES("245","05:00","","nu_hora_abertura","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1280","","8","nu_esforco_restante","196");
+INSERT INTO tb_auditoria_itens VALUES("246","18:11","","nu_hora_fechamento","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1289","8","8","nu_esforco","197");
+INSERT INTO tb_auditoria_itens VALUES("247","","","nu_almoco_inicio","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1290","8","8","nu_esforco_restante","197");
+INSERT INTO tb_auditoria_itens VALUES("248","","","nu_almoco_final","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1296","","8","nu_esforco","198");
+INSERT INTO tb_auditoria_itens VALUES("249","16:00","","nu_intervalo_inicio","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1297","","8","nu_esforco_restante","198");
+INSERT INTO tb_auditoria_itens VALUES("250","16:10","","nu_intervalo_final","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1304","","8","nu_esforco","199");
+INSERT INTO tb_auditoria_itens VALUES("251","21","","co_profissional","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1305","","8","nu_esforco_restante","199");
+INSERT INTO tb_auditoria_itens VALUES("252","62","","co_jornada_trabalho","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1314","8","20","nu_esforco","200");
+INSERT INTO tb_auditoria_itens VALUES("253","3","","nu_dia_semana","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1315","8","20","nu_esforco_restante","200");
+INSERT INTO tb_auditoria_itens VALUES("254","05:00","","nu_hora_abertura","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1321","","8","nu_esforco","201");
+INSERT INTO tb_auditoria_itens VALUES("255","18:04","","nu_hora_fechamento","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1322","","8","nu_esforco_restante","201");
+INSERT INTO tb_auditoria_itens VALUES("256","12:00","","nu_almoco_inicio","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1331","8","13","nu_esforco","202");
+INSERT INTO tb_auditoria_itens VALUES("257","12:30","","nu_almoco_final","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1332","8","13","nu_esforco_restante","202");
+INSERT INTO tb_auditoria_itens VALUES("258","","","nu_intervalo_inicio","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1340","8","13","nu_esforco","203");
+INSERT INTO tb_auditoria_itens VALUES("259","","","nu_intervalo_final","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1341","8","13","nu_esforco_restante","203");
+INSERT INTO tb_auditoria_itens VALUES("260","21","","co_profissional","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1349","8","13","nu_esforco","204");
+INSERT INTO tb_auditoria_itens VALUES("261","63","","co_jornada_trabalho","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1350","8","13","nu_esforco_restante","204");
+INSERT INTO tb_auditoria_itens VALUES("262","6","","nu_dia_semana","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1358","20","30","nu_esforco","205");
+INSERT INTO tb_auditoria_itens VALUES("263","03:00","","nu_hora_abertura","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1359","20","30","nu_esforco_restante","205");
+INSERT INTO tb_auditoria_itens VALUES("264","19:11","","nu_hora_fechamento","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1367","8","13","nu_esforco","206");
+INSERT INTO tb_auditoria_itens VALUES("265","12:00","","nu_almoco_inicio","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1368","8","13","nu_esforco_restante","206");
+INSERT INTO tb_auditoria_itens VALUES("266","12:30","","nu_almoco_final","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1376","30","30","nu_esforco","207");
+INSERT INTO tb_auditoria_itens VALUES("267","16:00","","nu_intervalo_inicio","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1377","30","30","nu_esforco_restante","207");
+INSERT INTO tb_auditoria_itens VALUES("268","16:15","","nu_intervalo_final","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1383","","13","nu_esforco","208");
+INSERT INTO tb_auditoria_itens VALUES("269","21","","co_profissional","34");
 
-INSERT INTO tb_auditoria_itens VALUES("1384","","13","nu_esforco_restante","208");
+INSERT INTO tb_auditoria_itens VALUES("270","","21","co_profissional","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1391","","13","nu_esforco","209");
+INSERT INTO tb_auditoria_itens VALUES("271","","2","nu_dia_semana","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1392","","13","nu_esforco_restante","209");
+INSERT INTO tb_auditoria_itens VALUES("272","","05:00","nu_hora_abertura","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1399","","13","nu_esforco","210");
+INSERT INTO tb_auditoria_itens VALUES("273","","18:11","nu_hora_fechamento","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1400","","13","nu_esforco_restante","210");
+INSERT INTO tb_auditoria_itens VALUES("274","","","nu_almoco_inicio","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1407","","13","nu_esforco","211");
+INSERT INTO tb_auditoria_itens VALUES("275","","","nu_almoco_final","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1408","","13","nu_esforco_restante","211");
+INSERT INTO tb_auditoria_itens VALUES("276","","16:00","nu_intervalo_inicio","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1415","","13","nu_esforco","212");
+INSERT INTO tb_auditoria_itens VALUES("277","","16:10","nu_intervalo_final","35");
 
-INSERT INTO tb_auditoria_itens VALUES("1416","","13","nu_esforco_restante","212");
+INSERT INTO tb_auditoria_itens VALUES("278","","21","co_profissional","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1423","","13","nu_esforco","213");
+INSERT INTO tb_auditoria_itens VALUES("279","","3","nu_dia_semana","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1424","","13","nu_esforco_restante","213");
+INSERT INTO tb_auditoria_itens VALUES("280","","05:00","nu_hora_abertura","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1431","","20","nu_esforco","214");
+INSERT INTO tb_auditoria_itens VALUES("281","","18:04","nu_hora_fechamento","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1432","","20","nu_esforco_restante","214");
+INSERT INTO tb_auditoria_itens VALUES("282","","12:00","nu_almoco_inicio","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1441","40","40","nu_esforco","215");
+INSERT INTO tb_auditoria_itens VALUES("283","","12:30","nu_almoco_final","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1442","8","3","nu_esforco_restante","215");
+INSERT INTO tb_auditoria_itens VALUES("284","","","nu_intervalo_inicio","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1448","","20","nu_esforco","216");
+INSERT INTO tb_auditoria_itens VALUES("285","","","nu_intervalo_final","36");
 
-INSERT INTO tb_auditoria_itens VALUES("1449","","20","nu_esforco_restante","216");
+INSERT INTO tb_auditoria_itens VALUES("286","","21","co_profissional","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1458","13","20","nu_esforco","217");
+INSERT INTO tb_auditoria_itens VALUES("287","","6","nu_dia_semana","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1459","13","20","nu_esforco_restante","217");
+INSERT INTO tb_auditoria_itens VALUES("288","","03:00","nu_hora_abertura","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1465","","20","nu_esforco","218");
+INSERT INTO tb_auditoria_itens VALUES("289","","19:11","nu_hora_fechamento","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1466","","20","nu_esforco_restante","218");
+INSERT INTO tb_auditoria_itens VALUES("290","","12:00","nu_almoco_inicio","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1473","","30","nu_esforco","219");
+INSERT INTO tb_auditoria_itens VALUES("291","","12:30","nu_almoco_final","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1474","","30","nu_esforco_restante","219");
+INSERT INTO tb_auditoria_itens VALUES("292","","16:00","nu_intervalo_inicio","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1481","","20","nu_esforco","220");
+INSERT INTO tb_auditoria_itens VALUES("293","","16:15","nu_intervalo_final","37");
 
-INSERT INTO tb_auditoria_itens VALUES("1482","","20","nu_esforco_restante","220");
+INSERT INTO tb_auditoria_itens VALUES("294","46","","co_historia","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1489","","13","nu_esforco","221");
+INSERT INTO tb_auditoria_itens VALUES("295","Manter intervalos do profissional","Manter intervalos do profissional","ds_titulo","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1490","","13","nu_esforco_restante","221");
+INSERT INTO tb_auditoria_itens VALUES("296","<p>Manter intervalos do profissional</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Horario do Profissional de refei&ccedil;&otilde;es e intervalos.</p>","<p>Manter almo&ccedil;os e&nbsp; intervalos do profissional (Cadastro Profissional)</p>\n\n<p>&nbsp;</p>","ds_observacao","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1497","","13","nu_esforco","222");
+INSERT INTO tb_auditoria_itens VALUES("297","2018-07-25 18:55:44","","dt_cadastro","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1498","","13","nu_esforco_restante","222");
+INSERT INTO tb_auditoria_itens VALUES("298","2018-12-10 16:52:48","2019-02-11 17:27:48","dt_atualizado","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1505","","13","nu_esforco","223");
+INSERT INTO tb_auditoria_itens VALUES("299","N","C","st_situacao","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1506","","13","nu_esforco_restante","223");
+INSERT INTO tb_auditoria_itens VALUES("300","9","9","co_sessao","38");
 
-INSERT INTO tb_auditoria_itens VALUES("1513","","8","nu_esforco","224");
+INSERT INTO tb_auditoria_itens VALUES("301","","3","nu_esforco","39");
 
-INSERT INTO tb_auditoria_itens VALUES("1514","","8","nu_esforco_restante","224");
+INSERT INTO tb_auditoria_itens VALUES("302","","0","nu_esforco_restante","39");
 
-INSERT INTO tb_auditoria_itens VALUES("1521","","8","nu_esforco","225");
+INSERT INTO tb_auditoria_itens VALUES("303","","2019-02-11 17:27:48","dt_cadastro","39");
 
-INSERT INTO tb_auditoria_itens VALUES("1522","","8","nu_esforco_restante","225");
-
-INSERT INTO tb_auditoria_itens VALUES("1531","8","20","nu_esforco","226");
-
-INSERT INTO tb_auditoria_itens VALUES("1532","8","20","nu_esforco_restante","226");
-
-INSERT INTO tb_auditoria_itens VALUES("1540","8","13","nu_esforco","227");
-
-INSERT INTO tb_auditoria_itens VALUES("1541","8","13","nu_esforco_restante","227");
-
-INSERT INTO tb_auditoria_itens VALUES("1549","20","13","nu_esforco","228");
-
-INSERT INTO tb_auditoria_itens VALUES("1550","20","13","nu_esforco_restante","228");
-
-INSERT INTO tb_auditoria_itens VALUES("1556","","13","nu_esforco","229");
-
-INSERT INTO tb_auditoria_itens VALUES("1557","","13","nu_esforco_restante","229");
-
-INSERT INTO tb_auditoria_itens VALUES("1564","","13","nu_esforco","230");
-
-INSERT INTO tb_auditoria_itens VALUES("1565","","13","nu_esforco_restante","230");
-
-INSERT INTO tb_auditoria_itens VALUES("1572","","13","nu_esforco","231");
-
-INSERT INTO tb_auditoria_itens VALUES("1573","","13","nu_esforco_restante","231");
-
-INSERT INTO tb_auditoria_itens VALUES("1582","13","13","nu_esforco","232");
-
-INSERT INTO tb_auditoria_itens VALUES("1583","13","13","nu_esforco_restante","232");
-
-INSERT INTO tb_auditoria_itens VALUES("1589","","13","nu_esforco","233");
-
-INSERT INTO tb_auditoria_itens VALUES("1590","","13","nu_esforco_restante","233");
-
-INSERT INTO tb_auditoria_itens VALUES("1597","","13","nu_esforco","234");
-
-INSERT INTO tb_auditoria_itens VALUES("1598","","13","nu_esforco_restante","234");
-
-INSERT INTO tb_auditoria_itens VALUES("1605","","13","nu_esforco","235");
-
-INSERT INTO tb_auditoria_itens VALUES("1606","","13","nu_esforco_restante","235");
-
-INSERT INTO tb_auditoria_itens VALUES("1613","","13","nu_esforco","236");
-
-INSERT INTO tb_auditoria_itens VALUES("1614","","13","nu_esforco_restante","236");
-
-INSERT INTO tb_auditoria_itens VALUES("1623","13","13","nu_esforco","237");
-
-INSERT INTO tb_auditoria_itens VALUES("1624","13","13","nu_esforco_restante","237");
-
-INSERT INTO tb_auditoria_itens VALUES("1632","13","13","nu_esforco","238");
-
-INSERT INTO tb_auditoria_itens VALUES("1633","13","13","nu_esforco_restante","238");
-
-INSERT INTO tb_auditoria_itens VALUES("1641","8","5","nu_esforco","239");
-
-INSERT INTO tb_auditoria_itens VALUES("1642","8","5","nu_esforco_restante","239");
-
-INSERT INTO tb_auditoria_itens VALUES("1650","40","20","nu_esforco","240");
-
-INSERT INTO tb_auditoria_itens VALUES("1651","40","20","nu_esforco_restante","240");
-
-INSERT INTO tb_auditoria_itens VALUES("1659","8","20","nu_esforco","241");
-
-INSERT INTO tb_auditoria_itens VALUES("1660","8","20","nu_esforco_restante","241");
-
-INSERT INTO tb_auditoria_itens VALUES("1668","20","5","nu_esforco","242");
-
-INSERT INTO tb_auditoria_itens VALUES("1669","20","5","nu_esforco_restante","242");
-
-INSERT INTO tb_auditoria_itens VALUES("1675","","13","nu_esforco","243");
-
-INSERT INTO tb_auditoria_itens VALUES("1676","","13","nu_esforco_restante","243");
-
-INSERT INTO tb_auditoria_itens VALUES("1683","","13","nu_esforco","244");
-
-INSERT INTO tb_auditoria_itens VALUES("1684","","13","nu_esforco_restante","244");
-
-INSERT INTO tb_auditoria_itens VALUES("1691","","20","nu_esforco","245");
-
-INSERT INTO tb_auditoria_itens VALUES("1692","","20","nu_esforco_restante","245");
-
-INSERT INTO tb_auditoria_itens VALUES("1699","","13","nu_esforco","246");
-
-INSERT INTO tb_auditoria_itens VALUES("1700","","13","nu_esforco_restante","246");
-
-INSERT INTO tb_auditoria_itens VALUES("1709","13","8","nu_esforco","247");
-
-INSERT INTO tb_auditoria_itens VALUES("1710","13","1","nu_esforco_restante","247");
-
-INSERT INTO tb_auditoria_itens VALUES("1716","","5","nu_esforco","248");
-
-INSERT INTO tb_auditoria_itens VALUES("1717","","5","nu_esforco_restante","248");
-
-INSERT INTO tb_auditoria_itens VALUES("1726","5","20","nu_esforco","249");
-
-INSERT INTO tb_auditoria_itens VALUES("1727","5","20","nu_esforco_restante","249");
-
-INSERT INTO tb_auditoria_itens VALUES("1735","8","8","nu_esforco","250");
-
-INSERT INTO tb_auditoria_itens VALUES("1736","1","3","nu_esforco_restante","250");
-
-INSERT INTO tb_auditoria_itens VALUES("1744","8","8","nu_esforco","251");
-
-INSERT INTO tb_auditoria_itens VALUES("1745","3","","nu_esforco_restante","251");
-
-INSERT INTO tb_auditoria_itens VALUES("1753","13","20","nu_esforco","252");
-
-INSERT INTO tb_auditoria_itens VALUES("1754","13","20","nu_esforco_restante","252");
-
-INSERT INTO tb_auditoria_itens VALUES("1762","20","13","nu_esforco","253");
-
-INSERT INTO tb_auditoria_itens VALUES("1763","20","13","nu_esforco_restante","253");
-
-INSERT INTO tb_auditoria_itens VALUES("1771","13","13","nu_esforco","254");
-
-INSERT INTO tb_auditoria_itens VALUES("1772","13","13","nu_esforco_restante","254");
-
-INSERT INTO tb_auditoria_itens VALUES("1780","13","13","nu_esforco","255");
-
-INSERT INTO tb_auditoria_itens VALUES("1781","13","10","nu_esforco_restante","255");
-
-INSERT INTO tb_auditoria_itens VALUES("1789","13","13","nu_esforco","256");
-
-INSERT INTO tb_auditoria_itens VALUES("1790","10","1","nu_esforco_restante","256");
-
-INSERT INTO tb_auditoria_itens VALUES("1798","13","13","nu_esforco","257");
-
-INSERT INTO tb_auditoria_itens VALUES("1799","1","","nu_esforco_restante","257");
-
-INSERT INTO tb_auditoria_itens VALUES("1807","13","30","nu_esforco","258");
-
-INSERT INTO tb_auditoria_itens VALUES("1808","13","30","nu_esforco_restante","258");
-
-INSERT INTO tb_auditoria_itens VALUES("1816","30","30","nu_esforco","259");
-
-INSERT INTO tb_auditoria_itens VALUES("1817","30","26","nu_esforco_restante","259");
-
-INSERT INTO tb_auditoria_itens VALUES("1825","20","30","nu_esforco","260");
-
-INSERT INTO tb_auditoria_itens VALUES("1826","20","30","nu_esforco_restante","260");
-
-INSERT INTO tb_auditoria_itens VALUES("1834","30","30","nu_esforco","261");
-
-INSERT INTO tb_auditoria_itens VALUES("1835","26","24","nu_esforco_restante","261");
-
-INSERT INTO tb_auditoria_itens VALUES("1843","30","30","nu_esforco","262");
-
-INSERT INTO tb_auditoria_itens VALUES("1844","24","20","nu_esforco_restante","262");
-
-INSERT INTO tb_auditoria_itens VALUES("1852","30","30","nu_esforco","263");
-
-INSERT INTO tb_auditoria_itens VALUES("1853","20","8","nu_esforco_restante","263");
-
-INSERT INTO tb_auditoria_itens VALUES("1861","30","13","nu_esforco","264");
-
-INSERT INTO tb_auditoria_itens VALUES("1862","8","13","nu_esforco_restante","264");
-
-INSERT INTO tb_auditoria_itens VALUES("1870","13","13","nu_esforco","265");
-
-INSERT INTO tb_auditoria_itens VALUES("1871","13","","nu_esforco_restante","265");
-
-INSERT INTO tb_auditoria_itens VALUES("1879","5","8","nu_esforco","266");
-
-INSERT INTO tb_auditoria_itens VALUES("1880","5","5","nu_esforco_restante","266");
-
-INSERT INTO tb_auditoria_itens VALUES("1888","8","13","nu_esforco","267");
-
-INSERT INTO tb_auditoria_itens VALUES("1889","5","1","nu_esforco_restante","267");
-
-INSERT INTO tb_auditoria_itens VALUES("1897","13","13","nu_esforco","268");
-
-INSERT INTO tb_auditoria_itens VALUES("1898","1","2","nu_esforco_restante","268");
-
-INSERT INTO tb_auditoria_itens VALUES("1914","13","13","nu_esforco","271");
-
-INSERT INTO tb_auditoria_itens VALUES("1915","0","1","nu_esforco_restante","271");
-
-INSERT INTO tb_auditoria_itens VALUES("1923","20","30","nu_esforco","272");
-
-INSERT INTO tb_auditoria_itens VALUES("1924","20","20","nu_esforco_restante","272");
-
-INSERT INTO tb_auditoria_itens VALUES("1946","13","13","nu_esforco","276");
-
-INSERT INTO tb_auditoria_itens VALUES("1947","2","","nu_esforco_restante","276");
-
-INSERT INTO tb_auditoria_itens VALUES("1955","30","20","nu_esforco","277");
-
-INSERT INTO tb_auditoria_itens VALUES("1956","20","","nu_esforco_restante","277");
-
-INSERT INTO tb_auditoria_itens VALUES("1962","","13","nu_esforco","278");
-
-INSERT INTO tb_auditoria_itens VALUES("1963","","13","nu_esforco_restante","278");
-
-INSERT INTO tb_auditoria_itens VALUES("1970","","13","nu_esforco","279");
-
-INSERT INTO tb_auditoria_itens VALUES("1971","","13","nu_esforco_restante","279");
-
-INSERT INTO tb_auditoria_itens VALUES("1980","13","8","nu_esforco","280");
-
-INSERT INTO tb_auditoria_itens VALUES("1981","13","8","nu_esforco_restante","280");
-
-INSERT INTO tb_auditoria_itens VALUES("1993","13","13","nu_esforco","282");
-
-INSERT INTO tb_auditoria_itens VALUES("1994","1","3","nu_esforco_restante","282");
-
-INSERT INTO tb_auditoria_itens VALUES("2002","30","30","nu_esforco","283");
-
-INSERT INTO tb_auditoria_itens VALUES("2003","30","30","nu_esforco_restante","283");
-
-INSERT INTO tb_auditoria_itens VALUES("2011","13","20","nu_esforco","284");
-
-INSERT INTO tb_auditoria_itens VALUES("2012","3","5","nu_esforco_restante","284");
-
-INSERT INTO tb_auditoria_itens VALUES("2020","20","20","nu_esforco","285");
-
-INSERT INTO tb_auditoria_itens VALUES("2021","5","","nu_esforco_restante","285");
-
-INSERT INTO tb_auditoria_itens VALUES("2032","30","30","nu_esforco","287");
-
-INSERT INTO tb_auditoria_itens VALUES("2033","30","10","nu_esforco_restante","287");
-
-INSERT INTO tb_auditoria_itens VALUES("2041","30","20","nu_esforco","288");
-
-INSERT INTO tb_auditoria_itens VALUES("2042","10","8","nu_esforco_restante","288");
-
-INSERT INTO tb_auditoria_itens VALUES("2050","20","20","nu_esforco","289");
-
-INSERT INTO tb_auditoria_itens VALUES("2051","8","3","nu_esforco_restante","289");
-
-INSERT INTO tb_auditoria_itens VALUES("2057","","13","nu_esforco","290");
-
-INSERT INTO tb_auditoria_itens VALUES("2058","","13","nu_esforco_restante","290");
-
-INSERT INTO tb_auditoria_itens VALUES("2067","20","30","nu_esforco","291");
-
-INSERT INTO tb_auditoria_itens VALUES("2068","3","10","nu_esforco_restante","291");
-
-INSERT INTO tb_auditoria_itens VALUES("2076","13","20","nu_esforco","292");
-
-INSERT INTO tb_auditoria_itens VALUES("2077","13","18","nu_esforco_restante","292");
-
-INSERT INTO tb_auditoria_itens VALUES("2096","30","20","nu_esforco","295");
-
-INSERT INTO tb_auditoria_itens VALUES("2097","10","20","nu_esforco_restante","295");
-
-INSERT INTO tb_auditoria_itens VALUES("2105","20","20","nu_esforco","296");
-
-INSERT INTO tb_auditoria_itens VALUES("2106","20","","nu_esforco_restante","296");
-
-INSERT INTO tb_auditoria_itens VALUES("2114","20","20","nu_esforco","297");
-
-INSERT INTO tb_auditoria_itens VALUES("2115","0","","nu_esforco_restante","297");
-
-INSERT INTO tb_auditoria_itens VALUES("2123","13","13","nu_esforco","298");
-
-INSERT INTO tb_auditoria_itens VALUES("2124","13","5","nu_esforco_restante","298");
-
-INSERT INTO tb_auditoria_itens VALUES("2132","13","13","nu_esforco","299");
-
-INSERT INTO tb_auditoria_itens VALUES("2133","5","","nu_esforco_restante","299");
-
-INSERT INTO tb_auditoria_itens VALUES("2149","20","20","nu_esforco","301");
-
-INSERT INTO tb_auditoria_itens VALUES("2150","18","","nu_esforco_restante","301");
-
-INSERT INTO tb_auditoria_itens VALUES("2158","8","20","nu_esforco","302");
-
-INSERT INTO tb_auditoria_itens VALUES("2159","8","15","nu_esforco_restante","302");
-
-INSERT INTO tb_auditoria_itens VALUES("2165","","8","nu_esforco","303");
-
-INSERT INTO tb_auditoria_itens VALUES("2166","","5","nu_esforco_restante","303");
-
-INSERT INTO tb_auditoria_itens VALUES("2175","8","8","nu_esforco","304");
-
-INSERT INTO tb_auditoria_itens VALUES("2176","8","5","nu_esforco_restante","304");
-
-INSERT INTO tb_auditoria_itens VALUES("2184","5","8","nu_esforco","305");
-
-INSERT INTO tb_auditoria_itens VALUES("2185","5","5","nu_esforco_restante","305");
-
-INSERT INTO tb_auditoria_itens VALUES("2193","20","20","nu_esforco","306");
-
-INSERT INTO tb_auditoria_itens VALUES("2194","15","12","nu_esforco_restante","306");
-
-INSERT INTO tb_auditoria_itens VALUES("2202","20","20","nu_esforco","307");
-
-INSERT INTO tb_auditoria_itens VALUES("2203","12","5","nu_esforco_restante","307");
-
-INSERT INTO tb_auditoria_itens VALUES("2211","8","8","nu_esforco","308");
-
-INSERT INTO tb_auditoria_itens VALUES("2212","5","3","nu_esforco_restante","308");
-
-INSERT INTO tb_auditoria_itens VALUES("2220","8","8","nu_esforco","309");
-
-INSERT INTO tb_auditoria_itens VALUES("2221","5","3","nu_esforco_restante","309");
-
-INSERT INTO tb_auditoria_itens VALUES("2229","8","8","nu_esforco","310");
-
-INSERT INTO tb_auditoria_itens VALUES("2230","5","3","nu_esforco_restante","310");
-
-INSERT INTO tb_auditoria_itens VALUES("2238","8","8","nu_esforco","311");
-
-INSERT INTO tb_auditoria_itens VALUES("2239","3","","nu_esforco_restante","311");
-
-INSERT INTO tb_auditoria_itens VALUES("2247","8","8","nu_esforco","312");
-
-INSERT INTO tb_auditoria_itens VALUES("2248","3","","nu_esforco_restante","312");
-
-INSERT INTO tb_auditoria_itens VALUES("2256","8","8","nu_esforco","313");
-
-INSERT INTO tb_auditoria_itens VALUES("2257","3","","nu_esforco_restante","313");
-
-INSERT INTO tb_auditoria_itens VALUES("2265","20","20","nu_esforco","314");
-
-INSERT INTO tb_auditoria_itens VALUES("2266","5","","nu_esforco_restante","314");
-
-INSERT INTO tb_auditoria_itens VALUES("2274","5","13","nu_esforco","315");
-
-INSERT INTO tb_auditoria_itens VALUES("2275","5","","nu_esforco_restante","315");
-
-INSERT INTO tb_auditoria_itens VALUES("2283","13","5","nu_esforco","316");
-
-INSERT INTO tb_auditoria_itens VALUES("2284","13","","nu_esforco_restante","316");
-
-INSERT INTO tb_auditoria_itens VALUES("2292","40","13","nu_esforco","317");
-
-INSERT INTO tb_auditoria_itens VALUES("2293","40","13","nu_esforco_restante","317");
-
-INSERT INTO tb_auditoria_itens VALUES("2299","","13","nu_esforco","318");
-
-INSERT INTO tb_auditoria_itens VALUES("2300","","13","nu_esforco_restante","318");
-
-INSERT INTO tb_auditoria_itens VALUES("2307","","8","nu_esforco","319");
-
-INSERT INTO tb_auditoria_itens VALUES("2308","","8","nu_esforco_restante","319");
-
-INSERT INTO tb_auditoria_itens VALUES("2317","3","5","nu_esforco","320");
-
-INSERT INTO tb_auditoria_itens VALUES("2318","3","5","nu_esforco_restante","320");
-
-INSERT INTO tb_auditoria_itens VALUES("2324","","8","nu_esforco","321");
-
-INSERT INTO tb_auditoria_itens VALUES("2325","","8","nu_esforco_restante","321");
-
-INSERT INTO tb_auditoria_itens VALUES("2334","8","13","nu_esforco","322");
-
-INSERT INTO tb_auditoria_itens VALUES("2335","8","13","nu_esforco_restante","322");
-
-INSERT INTO tb_auditoria_itens VALUES("2343","13","13","nu_esforco","323");
-
-INSERT INTO tb_auditoria_itens VALUES("2344","13","10","nu_esforco_restante","323");
-
-INSERT INTO tb_auditoria_itens VALUES("2352","13","13","nu_esforco","324");
-
-INSERT INTO tb_auditoria_itens VALUES("2353","10","3","nu_esforco_restante","324");
-
-INSERT INTO tb_auditoria_itens VALUES("2361","13","8","nu_esforco","325");
-
-INSERT INTO tb_auditoria_itens VALUES("2362","3","","nu_esforco_restante","325");
-
-INSERT INTO tb_auditoria_itens VALUES("2370","13","20","nu_esforco","326");
-
-INSERT INTO tb_auditoria_itens VALUES("2371","13","20","nu_esforco_restante","326");
-
-INSERT INTO tb_auditoria_itens VALUES("2379","20","20","nu_esforco","327");
-
-INSERT INTO tb_auditoria_itens VALUES("2380","20","","nu_esforco_restante","327");
-
-INSERT INTO tb_auditoria_itens VALUES("2388","8","8","nu_esforco","328");
-
-INSERT INTO tb_auditoria_itens VALUES("2389","8","","nu_esforco_restante","328");
-
-INSERT INTO tb_auditoria_itens VALUES("2397","5","5","nu_esforco","329");
-
-INSERT INTO tb_auditoria_itens VALUES("2398","5","4","nu_esforco_restante","329");
-
-INSERT INTO tb_auditoria_itens VALUES("2406","13","13","nu_esforco","330");
-
-INSERT INTO tb_auditoria_itens VALUES("2407","13","13","nu_esforco_restante","330");
-
-INSERT INTO tb_auditoria_itens VALUES("2415","5","5","nu_esforco","331");
-
-INSERT INTO tb_auditoria_itens VALUES("2416","4","","nu_esforco_restante","331");
-
-INSERT INTO tb_auditoria_itens VALUES("2424","13","13","nu_esforco","332");
-
-INSERT INTO tb_auditoria_itens VALUES("2425","13","","nu_esforco_restante","332");
-
-INSERT INTO tb_auditoria_itens VALUES("2433","13","8","nu_esforco","333");
-
-INSERT INTO tb_auditoria_itens VALUES("2434","0","","nu_esforco_restante","333");
-
-INSERT INTO tb_auditoria_itens VALUES("2442","13","13","nu_esforco","334");
-
-INSERT INTO tb_auditoria_itens VALUES("2443","13","13","nu_esforco_restante","334");
-
-INSERT INTO tb_auditoria_itens VALUES("2451","3","1","nu_esforco","335");
-
-INSERT INTO tb_auditoria_itens VALUES("2452","3","1","nu_esforco_restante","335");
-
-INSERT INTO tb_auditoria_itens VALUES("2460","3","5","nu_esforco","336");
-
-INSERT INTO tb_auditoria_itens VALUES("2461","3","5","nu_esforco_restante","336");
-
-INSERT INTO tb_auditoria_itens VALUES("2469","1","1","nu_esforco","337");
-
-INSERT INTO tb_auditoria_itens VALUES("2470","1","","nu_esforco_restante","337");
-
-INSERT INTO tb_auditoria_itens VALUES("2478","5","5","nu_esforco","338");
-
-INSERT INTO tb_auditoria_itens VALUES("2479","5","3","nu_esforco_restante","338");
-
-INSERT INTO tb_auditoria_itens VALUES("2487","5","5","nu_esforco","339");
-
-INSERT INTO tb_auditoria_itens VALUES("2488","3","","nu_esforco_restante","339");
-
-INSERT INTO tb_auditoria_itens VALUES("2494","","8","nu_esforco","340");
-
-INSERT INTO tb_auditoria_itens VALUES("2495","","8","nu_esforco_restante","340");
-
-INSERT INTO tb_auditoria_itens VALUES("2504","13","13","nu_esforco","341");
-
-INSERT INTO tb_auditoria_itens VALUES("2505","13","11","nu_esforco_restante","341");
-
-INSERT INTO tb_auditoria_itens VALUES("2513","13","30","nu_esforco","342");
-
-INSERT INTO tb_auditoria_itens VALUES("2514","11","26","nu_esforco_restante","342");
-
-INSERT INTO tb_auditoria_itens VALUES("2522","30","40","nu_esforco","343");
-
-INSERT INTO tb_auditoria_itens VALUES("2523","26","36","nu_esforco_restante","343");
-
-INSERT INTO tb_auditoria_itens VALUES("2531","40","40","nu_esforco","344");
-
-INSERT INTO tb_auditoria_itens VALUES("2532","36","33","nu_esforco_restante","344");
-
-INSERT INTO tb_auditoria_itens VALUES("2540","40","40","nu_esforco","345");
-
-INSERT INTO tb_auditoria_itens VALUES("2541","33","28","nu_esforco_restante","345");
-
-INSERT INTO tb_auditoria_itens VALUES("2549","8","8","nu_esforco","346");
-
-INSERT INTO tb_auditoria_itens VALUES("2550","8","8","nu_esforco_restante","346");
-
-INSERT INTO tb_auditoria_itens VALUES("2558","40","40","nu_esforco","347");
-
-INSERT INTO tb_auditoria_itens VALUES("2559","28","25","nu_esforco_restante","347");
-
-INSERT INTO tb_auditoria_itens VALUES("2567","40","40","nu_esforco","348");
-
-INSERT INTO tb_auditoria_itens VALUES("2568","25","15","nu_esforco_restante","348");
-
-INSERT INTO tb_auditoria_itens VALUES("2576","40","40","nu_esforco","349");
-
-INSERT INTO tb_auditoria_itens VALUES("2577","15","10","nu_esforco_restante","349");
-
-INSERT INTO tb_auditoria_itens VALUES("2644","40","40","nu_esforco","359");
-
-INSERT INTO tb_auditoria_itens VALUES("2645","10","","nu_esforco_restante","359");
-
-INSERT INTO tb_auditoria_itens VALUES("2651","","5","nu_esforco","360");
-
-INSERT INTO tb_auditoria_itens VALUES("2652","","5","nu_esforco_restante","360");
-
-INSERT INTO tb_auditoria_itens VALUES("3066","5","5","nu_esforco","413");
-
-INSERT INTO tb_auditoria_itens VALUES("3067","5","3","nu_esforco_restante","413");
-
-INSERT INTO tb_auditoria_itens VALUES("3075","5","8","nu_esforco","414");
-
-INSERT INTO tb_auditoria_itens VALUES("3076","3","","nu_esforco_restante","414");
-
-INSERT INTO tb_auditoria_itens VALUES("3077","5","","co_modulo","418");
-
-INSERT INTO tb_auditoria_itens VALUES("3078","Lançamento do Sistema Da Beleaza","Lançamento do Sistema Da Beleza","no_modulo","418");
-
-INSERT INTO tb_auditoria_itens VALUES("3079","2018-07-26 17:42:45","","dt_cadastro","418");
-
-INSERT INTO tb_auditoria_itens VALUES("3080","1","1","co_projeto","418");
-
-INSERT INTO tb_auditoria_itens VALUES("3081","5","","co_modulo","419");
-
-INSERT INTO tb_auditoria_itens VALUES("3082","Lançamento do Sistema Da Beleza","Lançamento do SisBela","no_modulo","419");
-
-INSERT INTO tb_auditoria_itens VALUES("3083","2018-07-26 17:42:45","","dt_cadastro","419");
-
-INSERT INTO tb_auditoria_itens VALUES("3084","1","1","co_projeto","419");
+INSERT INTO tb_auditoria_itens VALUES("304","","46","co_historia","39");
 
 
 
@@ -2024,558 +824,86 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=420 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_auditoria_tabela VALUES("11","TB_HISTORIA","I","1","11");
+INSERT INTO tb_auditoria_tabela VALUES("1","TB_AUSENCIA","I","1","1");
 
-INSERT INTO tb_auditoria_tabela VALUES("12","TB_HISTORIA","U","1","12");
+INSERT INTO tb_auditoria_tabela VALUES("2","TB_PERFIL_FUNCIONALIDADE","I","194","2");
 
-INSERT INTO tb_auditoria_tabela VALUES("13","TB_HISTORIA","U","1","13");
+INSERT INTO tb_auditoria_tabela VALUES("3","TB_PERFIL_FUNCIONALIDADE","I","195","2");
 
-INSERT INTO tb_auditoria_tabela VALUES("14","TB_HISTORIA","U","1","14");
+INSERT INTO tb_auditoria_tabela VALUES("4","TB_PERFIL_FUNCIONALIDADE","I","196","3");
 
-INSERT INTO tb_auditoria_tabela VALUES("15","TB_HISTORIA","U","1","15");
+INSERT INTO tb_auditoria_tabela VALUES("5","TB_PERFIL_FUNCIONALIDADE","D","","4");
 
-INSERT INTO tb_auditoria_tabela VALUES("16","TB_HISTORIA","U","1","16");
+INSERT INTO tb_auditoria_tabela VALUES("6","TB_PERFIL_FUNCIONALIDADE","I","197","4");
 
-INSERT INTO tb_auditoria_tabela VALUES("17","TB_HISTORIA","U","1","17");
+INSERT INTO tb_auditoria_tabela VALUES("7","TB_PERFIL_FUNCIONALIDADE","D","","5");
 
-INSERT INTO tb_auditoria_tabela VALUES("23","TB_HISTORIA","U","1","23");
+INSERT INTO tb_auditoria_tabela VALUES("8","TB_PERFIL_FUNCIONALIDADE","I","198","5");
 
-INSERT INTO tb_auditoria_tabela VALUES("24","TB_HISTORIA","U","1","24");
+INSERT INTO tb_auditoria_tabela VALUES("9","TB_PERFIL_FUNCIONALIDADE","I","199","5");
 
-INSERT INTO tb_auditoria_tabela VALUES("25","TB_HISTORIA","U","1","25");
+INSERT INTO tb_auditoria_tabela VALUES("10","TB_ENDERECO","U","96","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("26","TB_HISTORIA","U","1","26");
+INSERT INTO tb_auditoria_tabela VALUES("11","TB_CONTATO","U","82","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("27","TB_HISTORIA","U","1","27");
+INSERT INTO tb_auditoria_tabela VALUES("12","TB_PESSOA","U","77","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("29","TB_HISTORIA","U","1","29");
+INSERT INTO tb_auditoria_tabela VALUES("13","TB_CONTA_BANCARIA","U","43","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("30","TB_HISTORIA","I","2","30");
+INSERT INTO tb_auditoria_tabela VALUES("14","TB_PROFISSIONAL","U","21","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("32","TB_HISTORIA","I","3","32");
+INSERT INTO tb_auditoria_tabela VALUES("15","TB_PROFISSIONAL_CARGO","D","","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("33","TB_HISTORIA","I","4","33");
+INSERT INTO tb_auditoria_tabela VALUES("16","TB_PROFISSIONAL_CARGO","I","61","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("34","TB_HISTORIA","U","4","34");
+INSERT INTO tb_auditoria_tabela VALUES("17","TB_PROFISSIONAL_CARGO","I","62","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("40","TB_HISTORIA","I","6","40");
+INSERT INTO tb_auditoria_tabela VALUES("18","TB_PROFISSIONAL_CARGO","I","63","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("41","TB_HISTORIA","I","7","41");
+INSERT INTO tb_auditoria_tabela VALUES("19","TB_PROFISSIONAL_CARGO","I","64","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("42","TB_HISTORIA","I","8","42");
+INSERT INTO tb_auditoria_tabela VALUES("20","TB_JORNADA_TRABALHO","D","","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("44","TB_HISTORIA","I","9","44");
+INSERT INTO tb_auditoria_tabela VALUES("21","TB_JORNADA_TRABALHO","I","61","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("45","TB_HISTORIA","I","10","45");
+INSERT INTO tb_auditoria_tabela VALUES("22","TB_JORNADA_TRABALHO","I","62","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("46","TB_HISTORIA","U","10","46");
+INSERT INTO tb_auditoria_tabela VALUES("23","TB_JORNADA_TRABALHO","I","63","6");
 
-INSERT INTO tb_auditoria_tabela VALUES("49","TB_HISTORIA","I","11","49");
+INSERT INTO tb_auditoria_tabela VALUES("24","TB_ENDERECO","U","96","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("50","TB_HISTORIA","U","11","50");
+INSERT INTO tb_auditoria_tabela VALUES("25","TB_CONTATO","U","82","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("52","TB_HISTORIA","I","12","52");
+INSERT INTO tb_auditoria_tabela VALUES("26","TB_PESSOA","U","77","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("54","TB_HISTORIA","I","13","54");
+INSERT INTO tb_auditoria_tabela VALUES("27","TB_CONTA_BANCARIA","U","43","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("56","TB_HISTORIA","I","14","56");
+INSERT INTO tb_auditoria_tabela VALUES("28","TB_PROFISSIONAL","U","21","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("57","TB_HISTORIA","I","15","57");
+INSERT INTO tb_auditoria_tabela VALUES("29","TB_PROFISSIONAL_CARGO","D","","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("59","TB_HISTORIA","I","16","59");
+INSERT INTO tb_auditoria_tabela VALUES("30","TB_PROFISSIONAL_CARGO","I","65","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("60","TB_HISTORIA","I","17","60");
+INSERT INTO tb_auditoria_tabela VALUES("31","TB_PROFISSIONAL_CARGO","I","66","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("62","TB_HISTORIA","I","18","62");
+INSERT INTO tb_auditoria_tabela VALUES("32","TB_PROFISSIONAL_CARGO","I","67","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("64","TB_HISTORIA","I","19","64");
+INSERT INTO tb_auditoria_tabela VALUES("33","TB_PROFISSIONAL_CARGO","I","68","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("65","TB_HISTORIA","U","19","65");
+INSERT INTO tb_auditoria_tabela VALUES("34","TB_JORNADA_TRABALHO","D","","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("67","TB_HISTORIA","I","20","67");
+INSERT INTO tb_auditoria_tabela VALUES("35","TB_JORNADA_TRABALHO","I","64","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("68","TB_HISTORIA","I","21","68");
+INSERT INTO tb_auditoria_tabela VALUES("36","TB_JORNADA_TRABALHO","I","65","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("69","TB_HISTORIA","I","22","69");
+INSERT INTO tb_auditoria_tabela VALUES("37","TB_JORNADA_TRABALHO","I","66","7");
 
-INSERT INTO tb_auditoria_tabela VALUES("70","TB_HISTORIA","I","23","70");
+INSERT INTO tb_auditoria_tabela VALUES("38","TB_HISTORIA","U","46","8");
 
-INSERT INTO tb_auditoria_tabela VALUES("72","TB_HISTORIA","I","24","72");
-
-INSERT INTO tb_auditoria_tabela VALUES("74","TB_HISTORIA","I","25","74");
-
-INSERT INTO tb_auditoria_tabela VALUES("76","TB_HISTORIA","I","26","76");
-
-INSERT INTO tb_auditoria_tabela VALUES("78","TB_HISTORIA","I","27","78");
-
-INSERT INTO tb_auditoria_tabela VALUES("80","TB_HISTORIA","I","28","80");
-
-INSERT INTO tb_auditoria_tabela VALUES("81","TB_HISTORIA","U","28","81");
-
-INSERT INTO tb_auditoria_tabela VALUES("82","TB_HISTORIA","I","29","82");
-
-INSERT INTO tb_auditoria_tabela VALUES("83","TB_HISTORIA","I","30","83");
-
-INSERT INTO tb_auditoria_tabela VALUES("84","TB_HISTORIA","I","31","84");
-
-INSERT INTO tb_auditoria_tabela VALUES("85","TB_HISTORIA","U","28","85");
-
-INSERT INTO tb_auditoria_tabela VALUES("86","TB_HISTORIA","I","32","86");
-
-INSERT INTO tb_auditoria_tabela VALUES("87","TB_HISTORIA","I","33","87");
-
-INSERT INTO tb_auditoria_tabela VALUES("88","TB_HISTORIA","U","28","88");
-
-INSERT INTO tb_auditoria_tabela VALUES("89","TB_HISTORIA","I","34","89");
-
-INSERT INTO tb_auditoria_tabela VALUES("90","TB_HISTORIA","I","35","90");
-
-INSERT INTO tb_auditoria_tabela VALUES("91","TB_HISTORIA","I","36","91");
-
-INSERT INTO tb_auditoria_tabela VALUES("92","TB_HISTORIA","U","36","92");
-
-INSERT INTO tb_auditoria_tabela VALUES("93","TB_HISTORIA","I","37","93");
-
-INSERT INTO tb_auditoria_tabela VALUES("94","TB_HISTORIA","I","38","94");
-
-INSERT INTO tb_auditoria_tabela VALUES("96","TB_HISTORIA","I","39","96");
-
-INSERT INTO tb_auditoria_tabela VALUES("97","TB_HISTORIA","I","40","97");
-
-INSERT INTO tb_auditoria_tabela VALUES("98","TB_HISTORIA","I","41","98");
-
-INSERT INTO tb_auditoria_tabela VALUES("99","TB_HISTORIA","I","42","99");
-
-INSERT INTO tb_auditoria_tabela VALUES("100","TB_HISTORIA","U","37","100");
-
-INSERT INTO tb_auditoria_tabela VALUES("101","TB_HISTORIA","I","43","101");
-
-INSERT INTO tb_auditoria_tabela VALUES("102","TB_HISTORIA","I","44","102");
-
-INSERT INTO tb_auditoria_tabela VALUES("103","TB_HISTORIA","I","45","103");
-
-INSERT INTO tb_auditoria_tabela VALUES("104","TB_HISTORIA","U","43","104");
-
-INSERT INTO tb_auditoria_tabela VALUES("105","TB_HISTORIA","U","43","105");
-
-INSERT INTO tb_auditoria_tabela VALUES("106","TB_HISTORIA","I","46","106");
-
-INSERT INTO tb_auditoria_tabela VALUES("107","TB_HISTORIA","I","47","107");
-
-INSERT INTO tb_auditoria_tabela VALUES("108","TB_HISTORIA","U","47","108");
-
-INSERT INTO tb_auditoria_tabela VALUES("109","TB_HISTORIA","I","48","109");
-
-INSERT INTO tb_auditoria_tabela VALUES("110","TB_HISTORIA","I","49","110");
-
-INSERT INTO tb_auditoria_tabela VALUES("111","TB_HISTORIA","I","50","111");
-
-INSERT INTO tb_auditoria_tabela VALUES("112","TB_HISTORIA","I","51","112");
-
-INSERT INTO tb_auditoria_tabela VALUES("113","TB_HISTORIA","I","52","113");
-
-INSERT INTO tb_auditoria_tabela VALUES("114","TB_HISTORIA","I","53","114");
-
-INSERT INTO tb_auditoria_tabela VALUES("115","TB_HISTORIA","I","54","115");
-
-INSERT INTO tb_auditoria_tabela VALUES("116","TB_HISTORIA","I","55","116");
-
-INSERT INTO tb_auditoria_tabela VALUES("117","TB_HISTORIA","I","56","117");
-
-INSERT INTO tb_auditoria_tabela VALUES("118","TB_HISTORIA","I","57","118");
-
-INSERT INTO tb_auditoria_tabela VALUES("119","TB_HISTORIA","I","58","119");
-
-INSERT INTO tb_auditoria_tabela VALUES("120","TB_HISTORIA","I","59","120");
-
-INSERT INTO tb_auditoria_tabela VALUES("121","TB_HISTORIA","I","60","121");
-
-INSERT INTO tb_auditoria_tabela VALUES("124","TB_HISTORIA","I","61","124");
-
-INSERT INTO tb_auditoria_tabela VALUES("127","TB_HISTORIA","I","62","127");
-
-INSERT INTO tb_auditoria_tabela VALUES("129","TB_HISTORIA","I","63","129");
-
-INSERT INTO tb_auditoria_tabela VALUES("130","TB_HISTORIA","I","64","130");
-
-INSERT INTO tb_auditoria_tabela VALUES("131","TB_HISTORIA","I","65","131");
-
-INSERT INTO tb_auditoria_tabela VALUES("132","TB_HISTORIA","I","66","132");
-
-INSERT INTO tb_auditoria_tabela VALUES("137","TB_HISTORIA","I","67","137");
-
-INSERT INTO tb_auditoria_tabela VALUES("138","TB_HISTORIA","U","67","138");
-
-INSERT INTO tb_auditoria_tabela VALUES("139","TB_HISTORIA","I","68","139");
-
-INSERT INTO tb_auditoria_tabela VALUES("140","TB_HISTORIA","I","69","140");
-
-INSERT INTO tb_auditoria_tabela VALUES("143","TB_HISTORIA","I","70","143");
-
-INSERT INTO tb_auditoria_tabela VALUES("145","TB_HISTORIA","U","67","145");
-
-INSERT INTO tb_auditoria_tabela VALUES("147","TB_HISTORIA","I","71","147");
-
-INSERT INTO tb_auditoria_tabela VALUES("148","TB_HISTORIA","I","72","148");
-
-INSERT INTO tb_auditoria_tabela VALUES("149","TB_HISTORIA","I","73","149");
-
-INSERT INTO tb_auditoria_tabela VALUES("152","TB_HISTORIA","I","74","152");
-
-INSERT INTO tb_auditoria_tabela VALUES("153","TB_HISTORIA","U","74","153");
-
-INSERT INTO tb_auditoria_tabela VALUES("155","TB_HISTORIA","I","75","155");
-
-INSERT INTO tb_auditoria_tabela VALUES("156","TB_HISTORIA","U","37","156");
-
-INSERT INTO tb_auditoria_tabela VALUES("157","TB_HISTORIA","U","62","157");
-
-INSERT INTO tb_auditoria_tabela VALUES("158","TB_HISTORIA","U","61","158");
-
-INSERT INTO tb_auditoria_tabela VALUES("160","TB_HISTORIA","I","76","160");
-
-INSERT INTO tb_auditoria_tabela VALUES("164","TB_HISTORIA","I","79","164");
-
-INSERT INTO tb_auditoria_tabela VALUES("166","TB_HISTORIA","I","80","166");
-
-INSERT INTO tb_auditoria_tabela VALUES("169","TB_HISTORIA","I","83","169");
-
-INSERT INTO tb_auditoria_tabela VALUES("179","TB_HISTORIA","I","84","179");
-
-INSERT INTO tb_auditoria_tabela VALUES("181","TB_HISTORIA","I","85","181");
-
-INSERT INTO tb_auditoria_tabela VALUES("182","TB_HISTORIA","I","86","182");
-
-INSERT INTO tb_auditoria_tabela VALUES("183","TB_HISTORIA","I","87","183");
-
-INSERT INTO tb_auditoria_tabela VALUES("184","TB_HISTORIA","I","88","184");
-
-INSERT INTO tb_auditoria_tabela VALUES("186","TB_HISTORIA","I","89","186");
-
-INSERT INTO tb_auditoria_tabela VALUES("187","TB_HISTORIA","U","89","187");
-
-INSERT INTO tb_auditoria_tabela VALUES("189","TB_HISTORIA","U","61","189");
-
-INSERT INTO tb_auditoria_tabela VALUES("190","TB_HISTORIA","U","61","190");
-
-INSERT INTO tb_auditoria_tabela VALUES("191","TB_HISTORIA","U","61","191");
-
-INSERT INTO tb_auditoria_tabela VALUES("192","TB_HISTORIA","I","90","192");
-
-INSERT INTO tb_auditoria_tabela VALUES("193","TB_HISTORIA","I","91","193");
-
-INSERT INTO tb_auditoria_tabela VALUES("194","TB_HISTORIA","U","11","194");
-
-INSERT INTO tb_auditoria_tabela VALUES("195","TB_HISTORIA","I","92","195");
-
-INSERT INTO tb_auditoria_tabela VALUES("196","TB_HISTORIA","I","93","196");
-
-INSERT INTO tb_auditoria_tabela VALUES("197","TB_HISTORIA","U","92","197");
-
-INSERT INTO tb_auditoria_tabela VALUES("198","TB_HISTORIA","I","94","198");
-
-INSERT INTO tb_auditoria_tabela VALUES("199","TB_HISTORIA","I","95","199");
-
-INSERT INTO tb_auditoria_tabela VALUES("200","TB_HISTORIA","U","95","200");
-
-INSERT INTO tb_auditoria_tabela VALUES("201","TB_HISTORIA","I","96","201");
-
-INSERT INTO tb_auditoria_tabela VALUES("202","TB_HISTORIA","U","92","202");
-
-INSERT INTO tb_auditoria_tabela VALUES("203","TB_HISTORIA","U","93","203");
-
-INSERT INTO tb_auditoria_tabela VALUES("204","TB_HISTORIA","U","94","204");
-
-INSERT INTO tb_auditoria_tabela VALUES("205","TB_HISTORIA","U","95","205");
-
-INSERT INTO tb_auditoria_tabela VALUES("206","TB_HISTORIA","U","96","206");
-
-INSERT INTO tb_auditoria_tabela VALUES("207","TB_HISTORIA","U","95","207");
-
-INSERT INTO tb_auditoria_tabela VALUES("208","TB_HISTORIA","I","97","208");
-
-INSERT INTO tb_auditoria_tabela VALUES("209","TB_HISTORIA","I","98","209");
-
-INSERT INTO tb_auditoria_tabela VALUES("210","TB_HISTORIA","I","99","210");
-
-INSERT INTO tb_auditoria_tabela VALUES("211","TB_HISTORIA","I","100","211");
-
-INSERT INTO tb_auditoria_tabela VALUES("212","TB_HISTORIA","I","101","212");
-
-INSERT INTO tb_auditoria_tabela VALUES("213","TB_HISTORIA","I","102","213");
-
-INSERT INTO tb_auditoria_tabela VALUES("214","TB_HISTORIA","I","103","214");
-
-INSERT INTO tb_auditoria_tabela VALUES("215","TB_HISTORIA","U","61","215");
-
-INSERT INTO tb_auditoria_tabela VALUES("216","TB_HISTORIA","I","104","216");
-
-INSERT INTO tb_auditoria_tabela VALUES("217","TB_HISTORIA","U","102","217");
-
-INSERT INTO tb_auditoria_tabela VALUES("218","TB_HISTORIA","I","105","218");
-
-INSERT INTO tb_auditoria_tabela VALUES("219","TB_HISTORIA","I","106","219");
-
-INSERT INTO tb_auditoria_tabela VALUES("220","TB_HISTORIA","I","107","220");
-
-INSERT INTO tb_auditoria_tabela VALUES("221","TB_HISTORIA","I","108","221");
-
-INSERT INTO tb_auditoria_tabela VALUES("222","TB_HISTORIA","I","109","222");
-
-INSERT INTO tb_auditoria_tabela VALUES("223","TB_HISTORIA","I","110","223");
-
-INSERT INTO tb_auditoria_tabela VALUES("224","TB_HISTORIA","I","111","224");
-
-INSERT INTO tb_auditoria_tabela VALUES("225","TB_HISTORIA","I","112","225");
-
-INSERT INTO tb_auditoria_tabela VALUES("226","TB_HISTORIA","U","111","226");
-
-INSERT INTO tb_auditoria_tabela VALUES("227","TB_HISTORIA","U","112","227");
-
-INSERT INTO tb_auditoria_tabela VALUES("228","TB_HISTORIA","U","111","228");
-
-INSERT INTO tb_auditoria_tabela VALUES("229","TB_HISTORIA","I","113","229");
-
-INSERT INTO tb_auditoria_tabela VALUES("230","TB_HISTORIA","I","114","230");
-
-INSERT INTO tb_auditoria_tabela VALUES("231","TB_HISTORIA","I","115","231");
-
-INSERT INTO tb_auditoria_tabela VALUES("232","TB_HISTORIA","U","114","232");
-
-INSERT INTO tb_auditoria_tabela VALUES("233","TB_HISTORIA","I","116","233");
-
-INSERT INTO tb_auditoria_tabela VALUES("234","TB_HISTORIA","I","117","234");
-
-INSERT INTO tb_auditoria_tabela VALUES("235","TB_HISTORIA","I","118","235");
-
-INSERT INTO tb_auditoria_tabela VALUES("236","TB_HISTORIA","I","119","236");
-
-INSERT INTO tb_auditoria_tabela VALUES("237","TB_HISTORIA","U","119","237");
-
-INSERT INTO tb_auditoria_tabela VALUES("238","TB_HISTORIA","U","118","238");
-
-INSERT INTO tb_auditoria_tabela VALUES("239","TB_HISTORIA","U","76","239");
-
-INSERT INTO tb_auditoria_tabela VALUES("240","TB_HISTORIA","U","79","240");
-
-INSERT INTO tb_auditoria_tabela VALUES("241","TB_HISTORIA","U","80","241");
-
-INSERT INTO tb_auditoria_tabela VALUES("242","TB_HISTORIA","U","83","242");
-
-INSERT INTO tb_auditoria_tabela VALUES("243","TB_HISTORIA","I","120","243");
-
-INSERT INTO tb_auditoria_tabela VALUES("244","TB_HISTORIA","I","121","244");
-
-INSERT INTO tb_auditoria_tabela VALUES("245","TB_HISTORIA","I","122","245");
-
-INSERT INTO tb_auditoria_tabela VALUES("246","TB_HISTORIA","I","123","246");
-
-INSERT INTO tb_auditoria_tabela VALUES("247","TB_HISTORIA","U","123","247");
-
-INSERT INTO tb_auditoria_tabela VALUES("248","TB_HISTORIA","I","124","248");
-
-INSERT INTO tb_auditoria_tabela VALUES("249","TB_HISTORIA","U","124","249");
-
-INSERT INTO tb_auditoria_tabela VALUES("250","TB_HISTORIA","U","123","250");
-
-INSERT INTO tb_auditoria_tabela VALUES("251","TB_HISTORIA","U","123","251");
-
-INSERT INTO tb_auditoria_tabela VALUES("252","TB_HISTORIA","U","1","252");
-
-INSERT INTO tb_auditoria_tabela VALUES("253","TB_HISTORIA","U","1","253");
-
-INSERT INTO tb_auditoria_tabela VALUES("254","TB_HISTORIA","U","1","254");
-
-INSERT INTO tb_auditoria_tabela VALUES("255","TB_HISTORIA","U","1","255");
-
-INSERT INTO tb_auditoria_tabela VALUES("256","TB_HISTORIA","U","1","256");
-
-INSERT INTO tb_auditoria_tabela VALUES("257","TB_HISTORIA","U","1","257");
-
-INSERT INTO tb_auditoria_tabela VALUES("258","TB_HISTORIA","U","2","258");
-
-INSERT INTO tb_auditoria_tabela VALUES("259","TB_HISTORIA","U","2","259");
-
-INSERT INTO tb_auditoria_tabela VALUES("260","TB_HISTORIA","U","124","260");
-
-INSERT INTO tb_auditoria_tabela VALUES("261","TB_HISTORIA","U","2","261");
-
-INSERT INTO tb_auditoria_tabela VALUES("262","TB_HISTORIA","U","2","262");
-
-INSERT INTO tb_auditoria_tabela VALUES("263","TB_HISTORIA","U","2","263");
-
-INSERT INTO tb_auditoria_tabela VALUES("264","TB_HISTORIA","U","2","264");
-
-INSERT INTO tb_auditoria_tabela VALUES("265","TB_HISTORIA","U","2","265");
-
-INSERT INTO tb_auditoria_tabela VALUES("266","TB_HISTORIA","U","3","266");
-
-INSERT INTO tb_auditoria_tabela VALUES("267","TB_HISTORIA","U","3","267");
-
-INSERT INTO tb_auditoria_tabela VALUES("268","TB_HISTORIA","U","3","268");
-
-INSERT INTO tb_auditoria_tabela VALUES("271","TB_HISTORIA","U","2","271");
-
-INSERT INTO tb_auditoria_tabela VALUES("272","TB_HISTORIA","U","4","272");
-
-INSERT INTO tb_auditoria_tabela VALUES("276","TB_HISTORIA","U","3","276");
-
-INSERT INTO tb_auditoria_tabela VALUES("277","TB_HISTORIA","U","4","277");
-
-INSERT INTO tb_auditoria_tabela VALUES("278","TB_HISTORIA","I","125","278");
-
-INSERT INTO tb_auditoria_tabela VALUES("279","TB_HISTORIA","I","126","279");
-
-INSERT INTO tb_auditoria_tabela VALUES("280","TB_HISTORIA","U","126","280");
-
-INSERT INTO tb_auditoria_tabela VALUES("282","TB_HISTORIA","U","2","282");
-
-INSERT INTO tb_auditoria_tabela VALUES("283","TB_HISTORIA","U","124","283");
-
-INSERT INTO tb_auditoria_tabela VALUES("284","TB_HISTORIA","U","2","284");
-
-INSERT INTO tb_auditoria_tabela VALUES("285","TB_HISTORIA","U","2","285");
-
-INSERT INTO tb_auditoria_tabela VALUES("287","TB_HISTORIA","U","124","287");
-
-INSERT INTO tb_auditoria_tabela VALUES("288","TB_HISTORIA","U","124","288");
-
-INSERT INTO tb_auditoria_tabela VALUES("289","TB_HISTORIA","U","124","289");
-
-INSERT INTO tb_auditoria_tabela VALUES("290","TB_HISTORIA","I","127","290");
-
-INSERT INTO tb_auditoria_tabela VALUES("291","TB_HISTORIA","U","124","291");
-
-INSERT INTO tb_auditoria_tabela VALUES("292","TB_HISTORIA","U","127","292");
-
-INSERT INTO tb_auditoria_tabela VALUES("295","TB_HISTORIA","U","124","295");
-
-INSERT INTO tb_auditoria_tabela VALUES("296","TB_HISTORIA","U","124","296");
-
-INSERT INTO tb_auditoria_tabela VALUES("297","TB_HISTORIA","U","124","297");
-
-INSERT INTO tb_auditoria_tabela VALUES("298","TB_HISTORIA","U","125","298");
-
-INSERT INTO tb_auditoria_tabela VALUES("299","TB_HISTORIA","U","125","299");
-
-INSERT INTO tb_auditoria_tabela VALUES("301","TB_HISTORIA","U","127","301");
-
-INSERT INTO tb_auditoria_tabela VALUES("302","TB_HISTORIA","U","6","302");
-
-INSERT INTO tb_auditoria_tabela VALUES("303","TB_HISTORIA","I","130","303");
-
-INSERT INTO tb_auditoria_tabela VALUES("304","TB_HISTORIA","U","8","304");
-
-INSERT INTO tb_auditoria_tabela VALUES("305","TB_HISTORIA","U","7","305");
-
-INSERT INTO tb_auditoria_tabela VALUES("306","TB_HISTORIA","U","6","306");
-
-INSERT INTO tb_auditoria_tabela VALUES("307","TB_HISTORIA","U","6","307");
-
-INSERT INTO tb_auditoria_tabela VALUES("308","TB_HISTORIA","U","130","308");
-
-INSERT INTO tb_auditoria_tabela VALUES("309","TB_HISTORIA","U","7","309");
-
-INSERT INTO tb_auditoria_tabela VALUES("310","TB_HISTORIA","U","8","310");
-
-INSERT INTO tb_auditoria_tabela VALUES("311","TB_HISTORIA","U","130","311");
-
-INSERT INTO tb_auditoria_tabela VALUES("312","TB_HISTORIA","U","8","312");
-
-INSERT INTO tb_auditoria_tabela VALUES("313","TB_HISTORIA","U","7","313");
-
-INSERT INTO tb_auditoria_tabela VALUES("314","TB_HISTORIA","U","6","314");
-
-INSERT INTO tb_auditoria_tabela VALUES("315","TB_HISTORIA","U","10","315");
-
-INSERT INTO tb_auditoria_tabela VALUES("316","TB_HISTORIA","U","9","316");
-
-INSERT INTO tb_auditoria_tabela VALUES("317","TB_HISTORIA","U","11","317");
-
-INSERT INTO tb_auditoria_tabela VALUES("318","TB_HISTORIA","I","131","318");
-
-INSERT INTO tb_auditoria_tabela VALUES("319","TB_HISTORIA","I","132","319");
-
-INSERT INTO tb_auditoria_tabela VALUES("320","TB_HISTORIA","U","12","320");
-
-INSERT INTO tb_auditoria_tabela VALUES("321","TB_HISTORIA","I","133","321");
-
-INSERT INTO tb_auditoria_tabela VALUES("322","TB_HISTORIA","U","133","322");
-
-INSERT INTO tb_auditoria_tabela VALUES("323","TB_HISTORIA","U","11","323");
-
-INSERT INTO tb_auditoria_tabela VALUES("324","TB_HISTORIA","U","11","324");
-
-INSERT INTO tb_auditoria_tabela VALUES("325","TB_HISTORIA","U","11","325");
-
-INSERT INTO tb_auditoria_tabela VALUES("326","TB_HISTORIA","U","131","326");
-
-INSERT INTO tb_auditoria_tabela VALUES("327","TB_HISTORIA","U","131","327");
-
-INSERT INTO tb_auditoria_tabela VALUES("328","TB_HISTORIA","U","132","328");
-
-INSERT INTO tb_auditoria_tabela VALUES("329","TB_HISTORIA","U","12","329");
-
-INSERT INTO tb_auditoria_tabela VALUES("330","TB_HISTORIA","U","13","330");
-
-INSERT INTO tb_auditoria_tabela VALUES("331","TB_HISTORIA","U","12","331");
-
-INSERT INTO tb_auditoria_tabela VALUES("332","TB_HISTORIA","U","13","332");
-
-INSERT INTO tb_auditoria_tabela VALUES("333","TB_HISTORIA","U","13","333");
-
-INSERT INTO tb_auditoria_tabela VALUES("334","TB_HISTORIA","U","133","334");
-
-INSERT INTO tb_auditoria_tabela VALUES("335","TB_HISTORIA","U","15","335");
-
-INSERT INTO tb_auditoria_tabela VALUES("336","TB_HISTORIA","U","14","336");
-
-INSERT INTO tb_auditoria_tabela VALUES("337","TB_HISTORIA","U","15","337");
-
-INSERT INTO tb_auditoria_tabela VALUES("338","TB_HISTORIA","U","14","338");
-
-INSERT INTO tb_auditoria_tabela VALUES("339","TB_HISTORIA","U","14","339");
-
-INSERT INTO tb_auditoria_tabela VALUES("340","TB_HISTORIA","I","134","340");
-
-INSERT INTO tb_auditoria_tabela VALUES("341","TB_HISTORIA","U","16","341");
-
-INSERT INTO tb_auditoria_tabela VALUES("342","TB_HISTORIA","U","16","342");
-
-INSERT INTO tb_auditoria_tabela VALUES("343","TB_HISTORIA","U","16","343");
-
-INSERT INTO tb_auditoria_tabela VALUES("344","TB_HISTORIA","U","16","344");
-
-INSERT INTO tb_auditoria_tabela VALUES("345","TB_HISTORIA","U","16","345");
-
-INSERT INTO tb_auditoria_tabela VALUES("346","TB_HISTORIA","U","46","346");
-
-INSERT INTO tb_auditoria_tabela VALUES("347","TB_HISTORIA","U","16","347");
-
-INSERT INTO tb_auditoria_tabela VALUES("348","TB_HISTORIA","U","16","348");
-
-INSERT INTO tb_auditoria_tabela VALUES("349","TB_HISTORIA","U","16","349");
-
-INSERT INTO tb_auditoria_tabela VALUES("359","TB_HISTORIA","U","16","359");
-
-INSERT INTO tb_auditoria_tabela VALUES("360","TB_HISTORIA","I","140","360");
-
-INSERT INTO tb_auditoria_tabela VALUES("413","TB_HISTORIA","U","17","413");
-
-INSERT INTO tb_auditoria_tabela VALUES("414","TB_HISTORIA","U","17","414");
-
-INSERT INTO tb_auditoria_tabela VALUES("415","TB_PERFIL_FUNCIONALIDADE","D","","415");
-
-INSERT INTO tb_auditoria_tabela VALUES("416","TB_PERFIL_FUNCIONALIDADE","D","","416");
-
-INSERT INTO tb_auditoria_tabela VALUES("417","TB_PERFIL_FUNCIONALIDADE","D","","417");
-
-INSERT INTO tb_auditoria_tabela VALUES("418","TB_MODULO","U","5","418");
-
-INSERT INTO tb_auditoria_tabela VALUES("419","TB_MODULO","U","5","419");
+INSERT INTO tb_auditoria_tabela VALUES("39","TB_HISTORICO_HISTORIA","I","542","9");
 
 
 
@@ -2587,7 +915,7 @@ CREATE TABLE `tb_ausencia` (
   `co_ausencia` int(11) NOT NULL AUTO_INCREMENT,
   `dt_inicio` datetime DEFAULT NULL,
   `dt_fim` datetime DEFAULT NULL,
-  `tp_ausencia` int(1) DEFAULT NULL,
+  `tp_ausencia` int(1) DEFAULT NULL COMMENT '1 - Almoço  / 2 - Ausência Médica / 3 - Falta / 4 - Férias / 5 - Folga / 6 - Lanche / 7 - Estudos / 8 - Outros',
   `ds_observacao` text,
   `dt_cadastro` datetime DEFAULT NULL,
   `co_profissional` int(11) NOT NULL,
@@ -2595,8 +923,10 @@ CREATE TABLE `tb_ausencia` (
   PRIMARY KEY (`co_ausencia`,`co_profissional`,`co_usuario`),
   KEY `fk_TB_AUSENCIA_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_AUSENCIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO tb_ausencia VALUES("1","2019-02-07 10:00:00","2019-02-07 12:00:00","2","Consulta nova","2019-02-11 16:00:01","20","8");
 
 
 
@@ -3336,7 +1666,7 @@ INSERT INTO tb_contato VALUES("79","11111111111","22222222222","","","leo@mail.c
 
 INSERT INTO tb_contato VALUES("81","61993003405","","","","leonardomcbessa@gmail.com","","","","");
 
-INSERT INTO tb_contato VALUES("82","6546546131","","","","leonardomcbessa@gmail.com","","","","");
+INSERT INTO tb_contato VALUES("82","6546546131","43536436436","","","leonardomcbessa@gmail.com","","","","");
 
 
 
@@ -3613,7 +1943,7 @@ CREATE TABLE `tb_funcionalidade` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_funcionalidade VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -3688,6 +2018,8 @@ INSERT INTO tb_funcionalidade VALUES("38","Pre Projeto Gestao","PreProjetoGestao
 
 INSERT INTO tb_funcionalidade VALUES("39","Acompanhar Projeto Gestao","AcompanharProjetoGestao","A","N","1");
 
+INSERT INTO tb_funcionalidade VALUES("40","Limpar Banco Gestao","LimparBancoGestao","A","S","1");
+
 
 
 
@@ -3742,269 +2074,267 @@ CREATE TABLE `tb_historia` (
   `dt_cadastro` datetime DEFAULT NULL,
   `dt_atualizado` datetime DEFAULT NULL,
   `st_situacao` varchar(1) DEFAULT 'N' COMMENT 'N - Não iniciada / I - Iniciada / C - Concluida',
-  `nu_esforco` int(3) DEFAULT NULL COMMENT 'Esforço total da História',
-  `nu_esforco_restante` int(3) DEFAULT NULL COMMENT 'Esforço restante para comclusão da História',
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
 ) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_historia VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","13","0","1");
+INSERT INTO tb_historia VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","1");
 
-INSERT INTO tb_historia VALUES("2","Manter Assinante","<p>Manter assinante do sistema e com data de expira&ccedil;&atilde;o do sistema para o assinante, criar contato, criar pessoa, envio de email de confirma&ccedil;&atilde;o com senha gerada</p>\n\n\n\n\n\n\n\n<p>Criar o usu&aacute;rio quando criar o assinante, plano assinado</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Assinante (Jun&ccedil;&atilde;o de pessoa, contato, usuario, data de expira&ccedil;&atilde;o, status)</p>","2018-07-25 11:24:23","2018-08-13 23:02:29","C","20","0","1");
+INSERT INTO tb_historia VALUES("2","Manter Assinante","<p>Manter assinante do sistema e com data de expira&ccedil;&atilde;o do sistema para o assinante, criar contato, criar pessoa, envio de email de confirma&ccedil;&atilde;o com senha gerada</p>\n\n\n\n\n\n\n\n<p>Criar o usu&aacute;rio quando criar o assinante, plano assinado</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Assinante (Jun&ccedil;&atilde;o de pessoa, contato, usuario, data de expira&ccedil;&atilde;o, status)</p>","2018-07-25 11:24:23","2018-08-13 23:02:29","C","1");
 
-INSERT INTO tb_historia VALUES("3","Manter Filial","<p>Manter filial</p>\n\n\n\n\n\n\n\n<p>Modelagem: Filial (FK assinante)</p>","2018-07-25 11:37:35","2018-08-13 12:05:19","C","13","0","1");
+INSERT INTO tb_historia VALUES("3","Manter Filial","<p>Manter filial</p>\n\n\n\n\n\n\n\n<p>Modelagem: Filial (FK assinante)</p>","2018-07-25 11:37:35","2018-08-13 12:05:19","C","1");
 
-INSERT INTO tb_historia VALUES("4","Gestão de pagamentos dos assinantes","<p>Dar baixas no pagamento, e atualizar o prazo de expira&ccedil;&atilde;o do assiante e suas filias</p>\n\n\n\n\n\n\n\n<p>Criar hist&oacute;rico dos pagamentos</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Pagamento assinante (Ligada com plano e assinante)</p>","2018-07-25 11:42:55","2018-08-13 17:32:58","C","20","0","1");
+INSERT INTO tb_historia VALUES("4","Gestão de pagamentos dos assinantes","<p>Dar baixas no pagamento, e atualizar o prazo de expira&ccedil;&atilde;o do assiante e suas filias</p>\n\n\n\n\n\n\n\n<p>Criar hist&oacute;rico dos pagamentos</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Pagamento assinante (Ligada com plano e assinante)</p>","2018-07-25 11:42:55","2018-08-13 17:32:58","C","1");
 
-INSERT INTO tb_historia VALUES("6","Dados complementares básicos","<p>Manter dados: (Endere&ccedil;o, telefone, CNPJ, fantasia, raz&atilde;o e outros)</p>\n\n\n\n\n\n\n\n<p>Modelagem: Contato, endere&ccedil;o e empresa ou pessoa</p>","2018-07-25 12:11:05","2018-09-21 22:09:40","C","20","0","2");
+INSERT INTO tb_historia VALUES("6","Dados complementares básicos","<p>Manter dados: (Endere&ccedil;o, telefone, CNPJ, fantasia, raz&atilde;o e outros)</p>\n\n\n\n\n\n\n\n<p>Modelagem: Contato, endere&ccedil;o e empresa ou pessoa</p>","2018-07-25 12:11:05","2018-09-21 22:09:40","C","2");
 
-INSERT INTO tb_historia VALUES("7","Manter Horário de funcionamento padrão","<p>Manter hor&aacute;rio de funcionamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Funcionamento (Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 12:19:44","2018-09-21 22:09:17","C","8","0","2");
+INSERT INTO tb_historia VALUES("7","Manter Horário de funcionamento padrão","<p>Manter hor&aacute;rio de funcionamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Funcionamento (Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 12:19:44","2018-09-21 22:09:17","C","2");
 
-INSERT INTO tb_historia VALUES("8","Manter Fotos do Estabelecimento","<p>Manter Fotos do Estabelecimento para o Site</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Imagem (FK Assinante)</p>","2018-07-25 12:21:30","2018-09-21 22:08:49","C","8","0","2");
+INSERT INTO tb_historia VALUES("8","Manter Fotos do Estabelecimento","<p>Manter Fotos do Estabelecimento para o Site</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Imagem (FK Assinante)</p>","2018-07-25 12:21:30","2018-09-21 22:08:49","C","2");
 
-INSERT INTO tb_historia VALUES("9","Manter Feriados","<p>Manter Feriados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tabela base Feriados nacionais, Feriados (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:27:26","2018-09-24 20:34:02","C","5","0","4");
+INSERT INTO tb_historia VALUES("9","Manter Feriados","<p>Manter Feriados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tabela base Feriados nacionais, Feriados (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:27:26","2018-09-24 20:34:02","C","4");
 
-INSERT INTO tb_historia VALUES("10","Manter Dias Especiais","<p>Manter Dias Especiais n&atilde;o recorrente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: dias especiais (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:28:51","2018-09-24 20:33:36","C","13","0","4");
+INSERT INTO tb_historia VALUES("10","Manter Dias Especiais","<p>Manter Dias Especiais n&atilde;o recorrente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: dias especiais (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:28:51","2018-09-24 20:33:36","C","4");
 
-INSERT INTO tb_historia VALUES("11","Formas de pagamento","<p>Forma de pagamento aceitas</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante),&nbsp; Tabela base Formas de pagamento, Tabela base bandeira cartao</p>","2018-07-25 14:38:19","2018-10-19 11:32:01","C","8","0","5");
+INSERT INTO tb_historia VALUES("11","Formas de pagamento","<p>Forma de pagamento aceitas</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante),&nbsp; Tabela base Formas de pagamento, Tabela base bandeira cartao</p>","2018-07-25 14:38:19","2018-10-19 11:32:01","C","5");
 
-INSERT INTO tb_historia VALUES("12","Configuração do cliente","<p>Cliente Marcar Servi&ccedil;o S / N, quantidade de aus&ecirc;ncia para que o cliente n&atilde;o marque mais servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:43:02","2018-11-14 16:07:41","C","5","0","5");
+INSERT INTO tb_historia VALUES("12","Configuração do cliente","<p>Cliente Marcar Servi&ccedil;o S / N, quantidade de aus&ecirc;ncia para que o cliente n&atilde;o marque mais servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:43:02","2018-11-14 16:07:41","C","5");
 
-INSERT INTO tb_historia VALUES("13","Configuração de agendamento","<p>Confirma&ccedil;&atilde;o do agendamento e Regras de agendamento, agendamento recorrente, Horas de antecedencia do agendamento, Agendamento online, intervalo de agendamento dos clientes</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:54:36","2018-11-19 17:37:56","C","8","0","5");
+INSERT INTO tb_historia VALUES("13","Configuração de agendamento","<p>Confirma&ccedil;&atilde;o do agendamento e Regras de agendamento, agendamento recorrente, Horas de antecedencia do agendamento, Agendamento online, intervalo de agendamento dos clientes</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:54:36","2018-11-19 17:37:56","C","5");
 
-INSERT INTO tb_historia VALUES("14","Manter Motivo desconto","<p>Manter Motivo desconto</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Motivo desconto (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 15:13:38","2018-11-26 17:29:23","C","5","0","8");
+INSERT INTO tb_historia VALUES("14","Manter Motivo desconto","<p>Manter Motivo desconto</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Motivo desconto (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 15:13:38","2018-11-26 17:29:23","C","8");
 
-INSERT INTO tb_historia VALUES("15","Tabela base Motivo Desconto","<p>Modelagem: Tabela base Motivo Desconto</p>","2018-07-25 15:15:19","2018-11-23 17:55:10","C","1","0","8");
+INSERT INTO tb_historia VALUES("15","Tabela base Motivo Desconto","<p>Modelagem: Tabela base Motivo Desconto</p>","2018-07-25 15:15:19","2018-11-23 17:55:10","C","8");
 
-INSERT INTO tb_historia VALUES("16","Manter profissional","<p>Manter profissional</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Profissional (FK Assinante, pessoa, usuario, endere&ccedil;o, dados banc&aacute;rios, configura&ccedil;&atilde;o, jornada de trabalho e contato)</p>","2018-07-25 15:56:07","2018-12-20 13:39:20","C","40","0","9");
+INSERT INTO tb_historia VALUES("16","Manter profissional","<p>Manter profissional</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Profissional (FK Assinante, pessoa, usuario, endere&ccedil;o, dados banc&aacute;rios, configura&ccedil;&atilde;o, jornada de trabalho e contato)</p>","2018-07-25 15:56:07","2018-12-20 13:39:20","C","9");
 
-INSERT INTO tb_historia VALUES("17","Manter ausência","<p>Manter aus&ecirc;ncia</p>\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n<p>Modelagem: Aus&ecirc;ncia Profissional (FK Profissional)</p>","2018-07-25 15:59:43","2019-01-25 14:03:01","C","8","0","9");
+INSERT INTO tb_historia VALUES("17","Manter ausência","<p>Manter aus&ecirc;ncia</p>\n\n<p>&nbsp;</p>\n\n<p>Modelagem: Aus&ecirc;ncia Profissional (FK Profissional)</p>","2018-07-25 15:59:43","2019-02-06 08:44:05","C","9");
 
-INSERT INTO tb_historia VALUES("18","Manter Bloqueio por profissional","<p>Bloqueio de hor&aacute;rio para o profissional</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Bloqueio hor&aacute;rio (FK profissional, motivo)</p>","2018-07-25 16:12:20","2018-07-25 16:12:20","N","5","5","10");
+INSERT INTO tb_historia VALUES("18","Manter Bloqueio por profissional","<p>Bloqueio de hor&aacute;rio para o profissional</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Bloqueio hor&aacute;rio (FK profissional, motivo)</p>","2018-07-25 16:12:20","2018-07-25 16:12:20","N","10");
 
-INSERT INTO tb_historia VALUES("19","Manter Cliente","<p>Manter Cliente, Clientes recebem SMS com lembrete do hor&aacute;rio agendado, Integra&ccedil;&atilde;o com WhatsApp,</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Cliente (FK Assinante, pessoa, contato, endere&ccedil;o, foto)</p>","2018-07-25 16:16:48","2018-07-25 16:17:12","N","13","13","11");
+INSERT INTO tb_historia VALUES("19","Manter Cliente","<p>Manter Cliente, Clientes recebem SMS com lembrete do hor&aacute;rio agendado, Integra&ccedil;&atilde;o com WhatsApp,</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Cliente (FK Assinante, pessoa, contato, endere&ccedil;o, foto)</p>","2018-07-25 16:16:48","2018-07-25 16:17:12","N","11");
 
-INSERT INTO tb_historia VALUES("20","Manter Categorias do Serviço","<p>Manter Categorias do Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Cat. servico (FK Assinante)</p>","2018-07-25 16:19:34","2018-07-25 16:19:34","N","3","3","12");
+INSERT INTO tb_historia VALUES("20","Manter Categorias do Serviço","<p>Manter Categorias do Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Cat. servico (FK Assinante)</p>","2018-07-25 16:19:34","2018-07-25 16:19:34","N","12");
 
-INSERT INTO tb_historia VALUES("21","Tabela base Categorias serviços","<p>Tabela base Categorias servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tabela base Categorias servi&ccedil;os</p>","2018-07-25 16:21:25","2018-07-25 16:21:25","N","5","5","12");
+INSERT INTO tb_historia VALUES("21","Tabela base Categorias serviços","<p>Tabela base Categorias servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tabela base Categorias servi&ccedil;os</p>","2018-07-25 16:21:25","2018-07-25 16:21:25","N","12");
 
-INSERT INTO tb_historia VALUES("22","Edição rápida de serviços","<p>Edi&ccedil;&atilde;o r&aacute;pida de servi&ccedil;os todos eles (Comiss&atilde;o, categoria, pre&ccedil;o)</p>","2018-07-25 16:23:07","2018-07-25 16:23:07","N","13","13","12");
+INSERT INTO tb_historia VALUES("22","Edição rápida de serviços","<p>Edi&ccedil;&atilde;o r&aacute;pida de servi&ccedil;os todos eles (Comiss&atilde;o, categoria, pre&ccedil;o)</p>","2018-07-25 16:23:07","2018-07-25 16:23:07","N","12");
 
-INSERT INTO tb_historia VALUES("23","Profissionais que atende o serviço","<p>Profissionais que atende o servi&ccedil;o, comiss&atilde;o padr&atilde;o pra todos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tab tern&aacute;ria Profissional e Servi&ccedil;o (Comiss&atilde;o individual)</p>","2018-07-25 16:26:14","2018-07-25 16:26:14","N","5","5","12");
+INSERT INTO tb_historia VALUES("23","Profissionais que atende o serviço","<p>Profissionais que atende o servi&ccedil;o, comiss&atilde;o padr&atilde;o pra todos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tab tern&aacute;ria Profissional e Servi&ccedil;o (Comiss&atilde;o individual)</p>","2018-07-25 16:26:14","2018-07-25 16:26:14","N","12");
 
-INSERT INTO tb_historia VALUES("24","Manter Pacote","<p>Manter Pacote</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pacote (FK Assinante), Pacote Servi&ccedil;os (FK Pacote e servi&ccedil;o)</p>","2018-07-25 16:30:25","2018-07-25 16:30:25","N","13","13","13");
+INSERT INTO tb_historia VALUES("24","Manter Pacote","<p>Manter Pacote</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pacote (FK Assinante), Pacote Servi&ccedil;os (FK Pacote e servi&ccedil;o)</p>","2018-07-25 16:30:25","2018-07-25 16:30:25","N","13");
 
-INSERT INTO tb_historia VALUES("25","Manter promoção","<p>Manter promo&ccedil;&atilde;o dias e hor&aacute;rios a ser ultilizado per&iacute;odo v&aacute;lido</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Promocao (FK Servi&ccedil;o)</p>","2018-07-25 17:12:39","2018-07-25 17:12:39","N","5","5","14");
+INSERT INTO tb_historia VALUES("25","Manter promoção","<p>Manter promo&ccedil;&atilde;o dias e hor&aacute;rios a ser ultilizado per&iacute;odo v&aacute;lido</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Promocao (FK Servi&ccedil;o)</p>","2018-07-25 17:12:39","2018-07-25 17:12:39","N","14");
 
-INSERT INTO tb_historia VALUES("26","Manter cortesia","<p>Manter cortesia, validade da cortesia, per&iacute;odo de uso dia e hora</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem (FK cliente, servico)</p>","2018-07-25 17:14:29","2018-07-25 17:14:29","N","3","3","15");
+INSERT INTO tb_historia VALUES("26","Manter cortesia","<p>Manter cortesia, validade da cortesia, per&iacute;odo de uso dia e hora</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem (FK cliente, servico)</p>","2018-07-25 17:14:29","2018-07-25 17:14:29","N","15");
 
-INSERT INTO tb_historia VALUES("27","Manter Vale presente","<p>Manter Vale presente, gerar c&oacute;digo pra passar para o cliente que ira usar, validade e periodo de uso</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Vale presente e valepresente servicos (FK Servicos e vale presente)</p>","2018-07-25 17:23:18","2018-07-25 17:23:18","N","8","8","16");
+INSERT INTO tb_historia VALUES("27","Manter Vale presente","<p>Manter Vale presente, gerar c&oacute;digo pra passar para o cliente que ira usar, validade e periodo de uso</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Vale presente e valepresente servicos (FK Servicos e vale presente)</p>","2018-07-25 17:23:18","2018-07-25 17:23:18","N","16");
 
-INSERT INTO tb_historia VALUES("28","Cadastrar Agendamento","<p>Cadastrar Agendamento (Op&ccedil;&atilde;o da recorr&ecirc;ncia)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: (FK cliente, Servi&ccedil;o, Profissional)</p>","2018-07-25 17:32:10","2018-07-25 17:56:16","N","13","13","17");
+INSERT INTO tb_historia VALUES("28","Cadastrar Agendamento","<p>Cadastrar Agendamento (Op&ccedil;&atilde;o da recorr&ecirc;ncia)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: (FK cliente, Servi&ccedil;o, Profissional)</p>","2018-07-25 17:32:10","2018-07-25 17:56:16","N","17");
 
-INSERT INTO tb_historia VALUES("29","Agenda","<p>Mostrar a agenda (Filtros por profissional)</p>","2018-07-25 17:44:09","2018-07-25 17:44:09","N","40","40","17");
+INSERT INTO tb_historia VALUES("29","Agenda","<p>Mostrar a agenda (Filtros por profissional)</p>","2018-07-25 17:44:09","2018-07-25 17:44:09","N","17");
 
-INSERT INTO tb_historia VALUES("30","Agenda CSS (Responsivo)","<p>Agenda CSS (Responsivo)</p>","2018-07-25 17:44:46","2018-07-25 17:44:46","N","40","40","17");
+INSERT INTO tb_historia VALUES("30","Agenda CSS (Responsivo)","<p>Agenda CSS (Responsivo)</p>","2018-07-25 17:44:46","2018-07-25 17:44:46","N","17");
 
-INSERT INTO tb_historia VALUES("31","Consulta agendamentos","<p>Pesquisa de agendamento &nbsp;por per&iacute;odo, status, profissional, servi&ccedil;o</p>","2018-07-25 17:49:26","2018-07-25 17:49:26","N","13","13","17");
+INSERT INTO tb_historia VALUES("31","Consulta agendamentos","<p>Pesquisa de agendamento &nbsp;por per&iacute;odo, status, profissional, servi&ccedil;o</p>","2018-07-25 17:49:26","2018-07-25 17:49:26","N","17");
 
-INSERT INTO tb_historia VALUES("32","Alterar Status do agendamento","<p>Alterar Status do agendamento</p>","2018-07-25 17:52:20","2018-07-25 17:52:20","N","5","5","17");
+INSERT INTO tb_historia VALUES("32","Alterar Status do agendamento","<p>Alterar Status do agendamento</p>","2018-07-25 17:52:20","2018-07-25 17:52:20","N","17");
 
-INSERT INTO tb_historia VALUES("33","Acrescentar serviço","<p>Acrescentar servi&ccedil;o (Duplicar agendamento com a mudan&ccedil;a de servi&ccedil;o e profissional se for preciso)</p>","2018-07-25 17:55:21","2018-07-25 17:55:21","N","8","8","17");
+INSERT INTO tb_historia VALUES("33","Acrescentar serviço","<p>Acrescentar servi&ccedil;o (Duplicar agendamento com a mudan&ccedil;a de servi&ccedil;o e profissional se for preciso)</p>","2018-07-25 17:55:21","2018-07-25 17:55:21","N","17");
 
-INSERT INTO tb_historia VALUES("34","Gerar Menu do Agendamento","<p>Gerar Menu do Agendamento para a edi&ccedil;&atilde;o do mesmo</p>","2018-07-25 17:57:19","2018-07-25 17:57:19","N","8","8","17");
+INSERT INTO tb_historia VALUES("34","Gerar Menu do Agendamento","<p>Gerar Menu do Agendamento para a edi&ccedil;&atilde;o do mesmo</p>","2018-07-25 17:57:19","2018-07-25 17:57:19","N","17");
 
-INSERT INTO tb_historia VALUES("35","Exclusão do agendamento","<p>Exclus&atilde;o do agendamento</p>","2018-07-25 17:57:52","2018-07-25 17:57:52","N","3","3","17");
+INSERT INTO tb_historia VALUES("35","Exclusão do agendamento","<p>Exclus&atilde;o do agendamento</p>","2018-07-25 17:57:52","2018-07-25 17:57:52","N","17");
 
-INSERT INTO tb_historia VALUES("36","Editar o agendamento","<p>Editar o agendamento</p>","2018-07-25 17:58:43","2018-07-25 17:59:03","N","8","8","17");
+INSERT INTO tb_historia VALUES("36","Editar o agendamento","<p>Editar o agendamento</p>","2018-07-25 17:58:43","2018-07-25 17:59:03","N","17");
 
-INSERT INTO tb_historia VALUES("37","Fechamento de conta no agendamento","<p>Fechamento de conta no agendamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Transformar troco em cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pagamento (FK agendamento, FK Caixa)</p>","2018-07-25 18:12:12","2018-07-26 18:41:34","N","20","20","18");
+INSERT INTO tb_historia VALUES("37","Fechamento de conta no agendamento","<p>Fechamento de conta no agendamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Transformar troco em cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pagamento (FK agendamento, FK Caixa)</p>","2018-07-25 18:12:12","2018-07-26 18:41:34","N","18");
 
-INSERT INTO tb_historia VALUES("38","Manter Fotos agendamento","<p>Manter Fotos agendamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Agendamento Imagem (FK imagem, FK agendamento)</p>","2018-07-25 18:13:09","2018-07-25 18:13:09","N","8","8","17");
+INSERT INTO tb_historia VALUES("38","Manter Fotos agendamento","<p>Manter Fotos agendamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Agendamento Imagem (FK imagem, FK agendamento)</p>","2018-07-25 18:13:09","2018-07-25 18:13:09","N","17");
 
-INSERT INTO tb_historia VALUES("39","Abertura de caixa","<p>Abertura de caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Caixa (FK Assinante)</p>","2018-07-25 18:16:22","2018-07-25 18:16:22","N","8","8","18");
+INSERT INTO tb_historia VALUES("39","Abertura de caixa","<p>Abertura de caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Caixa (FK Assinante)</p>","2018-07-25 18:16:22","2018-07-25 18:16:22","N","18");
 
-INSERT INTO tb_historia VALUES("40","Retirada / Sangria","<p>Retirada / Sangria (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Sangria caixa (FK Caixa)</p>","2018-07-25 18:24:58","2018-07-25 18:24:58","N","8","8","18");
+INSERT INTO tb_historia VALUES("40","Retirada / Sangria","<p>Retirada / Sangria (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Sangria caixa (FK Caixa)</p>","2018-07-25 18:24:58","2018-07-25 18:24:58","N","18");
 
-INSERT INTO tb_historia VALUES("41","Recebimentos","<p>Recebimentos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Recebimento caixa (FK Caixa)</p>","2018-07-25 18:25:44","2018-07-25 18:25:44","N","8","8","18");
+INSERT INTO tb_historia VALUES("41","Recebimentos","<p>Recebimentos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Recebimento caixa (FK Caixa)</p>","2018-07-25 18:25:44","2018-07-25 18:25:44","N","18");
 
-INSERT INTO tb_historia VALUES("42","Gerar cupom não fiscal","<p>Gerar cupom n&atilde;o fiscal no fechamento de conta</p>","2018-07-25 18:27:03","2018-07-25 18:27:03","N","13","13","18");
+INSERT INTO tb_historia VALUES("42","Gerar cupom não fiscal","<p>Gerar cupom n&atilde;o fiscal no fechamento de conta</p>","2018-07-25 18:27:03","2018-07-25 18:27:03","N","18");
 
-INSERT INTO tb_historia VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2018-07-25 18:45:49","N","8","8","5");
+INSERT INTO tb_historia VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2018-07-25 18:45:49","N","5");
 
-INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante)</p>","2018-07-25 18:42:35","2018-07-25 18:42:35","N","8","8","12");
+INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante)</p>","2018-07-25 18:42:35","2018-07-25 18:42:35","N","12");
 
-INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;os Base</p>","2018-07-25 18:43:26","2018-07-25 18:43:26","N","20","20","12");
+INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;os Base</p>","2018-07-25 18:43:26","2018-07-25 18:43:26","N","12");
 
-INSERT INTO tb_historia VALUES("46","Manter intervalos do profissional","<p>Manter intervalos do profissional</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Horario do Profissional de refei&ccedil;&otilde;es e intervalos.</p>","2018-07-25 18:55:44","2018-12-10 16:52:48","N","8","8","9");
+INSERT INTO tb_historia VALUES("46","Manter intervalos do profissional","<p>Manter almo&ccedil;os e&nbsp; intervalos do profissional (Cadastro Profissional)</p>\n\n<p>&nbsp;</p>","2018-07-25 18:55:44","2019-02-11 17:27:48","C","9");
 
-INSERT INTO tb_historia VALUES("47","Histórico de comissões","<p>Hist&oacute;rico de comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:11:25","2018-07-25 19:11:54","N","8","8","9");
+INSERT INTO tb_historia VALUES("47","Histórico de comissões","<p>Hist&oacute;rico de comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:11:25","2018-07-25 19:11:54","N","9");
 
-INSERT INTO tb_historia VALUES("48","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>pendencia: manter agendamento</p>","2018-07-25 19:17:02","2018-07-25 19:17:02","N","8","8","9");
+INSERT INTO tb_historia VALUES("48","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>pendencia: manter agendamento</p>","2018-07-25 19:17:02","2018-07-25 19:17:02","N","9");
 
-INSERT INTO tb_historia VALUES("49","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:17:37","2018-07-25 19:17:37","N","8","8","9");
+INSERT INTO tb_historia VALUES("49","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:17:37","2018-07-25 19:17:37","N","9");
 
-INSERT INTO tb_historia VALUES("50","Histórico de vale/adiantamento","<p>Hist&oacute;rico de vale/adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter vale/adiantamento (Financeiro)</p>","2018-07-25 19:20:30","2018-07-25 19:20:30","N","8","8","9");
+INSERT INTO tb_historia VALUES("50","Histórico de vale/adiantamento","<p>Hist&oacute;rico de vale/adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter vale/adiantamento (Financeiro)</p>","2018-07-25 19:20:30","2018-07-25 19:20:30","N","9");
 
-INSERT INTO tb_historia VALUES("51","Relatório de comissões","<p>Relat&oacute;rio de comiss&otilde;es (Filtros)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:21:41","2018-07-25 19:21:41","N","8","8","9");
+INSERT INTO tb_historia VALUES("51","Relatório de comissões","<p>Relat&oacute;rio de comiss&otilde;es (Filtros)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:21:41","2018-07-25 19:21:41","N","9");
 
-INSERT INTO tb_historia VALUES("52","Acesso da agenda","<p>Acesso da agenda (Visualiza&ccedil;&atilde;o)</p>","2018-07-25 19:22:51","2018-07-25 19:22:51","N","5","5","9");
+INSERT INTO tb_historia VALUES("52","Acesso da agenda","<p>Acesso da agenda (Visualiza&ccedil;&atilde;o)</p>","2018-07-25 19:22:51","2018-07-25 19:22:51","N","9");
 
-INSERT INTO tb_historia VALUES("53","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:05","2018-07-25 19:24:05","N","8","8","11");
+INSERT INTO tb_historia VALUES("53","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:05","2018-07-25 19:24:05","N","11");
 
-INSERT INTO tb_historia VALUES("54","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:33","2018-07-25 19:24:33","N","8","8","11");
+INSERT INTO tb_historia VALUES("54","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:33","2018-07-25 19:24:33","N","11");
 
-INSERT INTO tb_historia VALUES("55","Histórico de Pacotes","<p>Hist&oacute;rico de Pacotes</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:05","2018-07-25 19:25:05","N","8","8","11");
+INSERT INTO tb_historia VALUES("55","Histórico de Pacotes","<p>Hist&oacute;rico de Pacotes</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:05","2018-07-25 19:25:05","N","11");
 
-INSERT INTO tb_historia VALUES("56","Histórico de Débitos","<p>Hist&oacute;rico de D&eacute;bitos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:36","2018-07-25 19:25:36","N","8","8","11");
+INSERT INTO tb_historia VALUES("56","Histórico de Débitos","<p>Hist&oacute;rico de D&eacute;bitos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:36","2018-07-25 19:25:36","N","11");
 
-INSERT INTO tb_historia VALUES("57","Histórico de crédito","<p>Hist&oacute;rico de cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:05","2018-07-25 19:26:05","N","8","8","11");
+INSERT INTO tb_historia VALUES("57","Histórico de crédito","<p>Hist&oacute;rico de cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:05","2018-07-25 19:26:05","N","11");
 
-INSERT INTO tb_historia VALUES("58","Histórico de Vale presente","<p>Hist&oacute;rico de Vale presente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:52","2018-07-25 19:26:52","N","8","8","11");
+INSERT INTO tb_historia VALUES("58","Histórico de Vale presente","<p>Hist&oacute;rico de Vale presente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:52","2018-07-25 19:26:52","N","11");
 
-INSERT INTO tb_historia VALUES("59","Histórico de Sms","<p>Hist&oacute;rico de Sms</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter Sms</p>","2018-07-25 19:27:25","2018-07-25 19:27:25","N","8","8","11");
+INSERT INTO tb_historia VALUES("59","Histórico de Sms","<p>Hist&oacute;rico de Sms</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter Sms</p>","2018-07-25 19:27:25","2018-07-25 19:27:25","N","11");
 
-INSERT INTO tb_historia VALUES("60","Histórico de E-mail","<p>Hist&oacute;rico de E-mail</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter E-mail</p>","2018-07-25 19:27:58","2018-07-25 19:27:58","N","8","8","11");
+INSERT INTO tb_historia VALUES("60","Histórico de E-mail","<p>Hist&oacute;rico de E-mail</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter E-mail</p>","2018-07-25 19:27:58","2018-07-25 19:27:58","N","11");
 
-INSERT INTO tb_historia VALUES("61","Criar Histórias Módulos Principal e assinante","<p>Criar Hist&oacute;rias M&oacute;dulos Principal e assinante</p>","2018-07-26 11:46:54","2018-07-27 17:57:45","I","40","3","19");
+INSERT INTO tb_historia VALUES("61","Criar Histórias Módulos Principal e assinante","<p>Criar Hist&oacute;rias M&oacute;dulos Principal e assinante</p>","2018-07-26 11:46:54","2018-07-27 17:57:45","I","19");
 
-INSERT INTO tb_historia VALUES("62","Página do Assinante","<p>P&aacute;gina do Assinante</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Promova seu sal&atilde;o no sistema da beleza com sua pr&oacute;pria p&aacute;gina customizada e com agendamento on-line</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Utilize sua p&aacute;gina exclusiva para divulgar fotos, servi&ccedil;os e informa&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Ofere&ccedil;a promo&ccedil;&otilde;es e pacotes exclusivos para seus clientes</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>As promo&ccedil;&otilde;es s&atilde;o exibidas e podem ser agendadas com exclusividade na sua p&aacute;gina no Site da empresa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Intera&ccedil;&atilde;o do cliente com o WhatsApp da Empresa</p>","2018-07-26 17:36:50","2018-07-26 18:45:07","N","40","40","20");
+INSERT INTO tb_historia VALUES("62","Página do Assinante","<p>P&aacute;gina do Assinante</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Promova seu sal&atilde;o no sistema da beleza com sua pr&oacute;pria p&aacute;gina customizada e com agendamento on-line</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Utilize sua p&aacute;gina exclusiva para divulgar fotos, servi&ccedil;os e informa&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Ofere&ccedil;a promo&ccedil;&otilde;es e pacotes exclusivos para seus clientes</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>As promo&ccedil;&otilde;es s&atilde;o exibidas e podem ser agendadas com exclusividade na sua p&aacute;gina no Site da empresa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Intera&ccedil;&atilde;o do cliente com o WhatsApp da Empresa</p>","2018-07-26 17:36:50","2018-07-26 18:45:07","N","20");
 
-INSERT INTO tb_historia VALUES("63","Página de captura de cliente","<p>P&aacute;gina de captura de cliente</p>","2018-07-26 17:38:30","2018-07-26 17:38:30","N","40","40","21");
+INSERT INTO tb_historia VALUES("63","Página de captura de cliente","<p>P&aacute;gina de captura de cliente</p>","2018-07-26 17:38:30","2018-07-26 17:38:30","N","21");
 
-INSERT INTO tb_historia VALUES("64","Vídeos para a Página de captura de cliente","<p>V&iacute;deos para a P&aacute;gina de captura de cliente</p>","2018-07-26 17:39:10","2018-07-26 17:39:10","N","20","20","21");
+INSERT INTO tb_historia VALUES("64","Vídeos para a Página de captura de cliente","<p>V&iacute;deos para a P&aacute;gina de captura de cliente</p>","2018-07-26 17:39:10","2018-07-26 17:39:10","N","21");
 
-INSERT INTO tb_historia VALUES("65","Site do Sistema da beleza","<p>Site do Sistema da beleza detalhando tudo sobre para apresenta&ccedil;&atilde;o ao assinante</p>","2018-07-26 17:40:01","2018-07-26 17:40:01","N","40","40","21");
+INSERT INTO tb_historia VALUES("65","Site do Sistema da beleza","<p>Site do Sistema da beleza detalhando tudo sobre para apresenta&ccedil;&atilde;o ao assinante</p>","2018-07-26 17:40:01","2018-07-26 17:40:01","N","21");
 
-INSERT INTO tb_historia VALUES("66","Vídeos para o Site do Sistema da beleza","<p>V&iacute;deos para o Site do Sistema da beleza</p>","2018-07-26 17:40:37","2018-07-26 17:40:37","N","20","20","21");
+INSERT INTO tb_historia VALUES("66","Vídeos para o Site do Sistema da beleza","<p>V&iacute;deos para o Site do Sistema da beleza</p>","2018-07-26 17:40:37","2018-07-26 17:40:37","N","21");
 
-INSERT INTO tb_historia VALUES("67","Material do Pré Lançamento","<p>Produ&ccedil;&atilde;o e Disponibiliza&ccedil;&atilde;o do material para lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Dura&ccedil;&atilde;o de 7 a 10 dias antes do Lan&ccedil;amento de 3 a 4 v&iacute;deos</p>","2018-07-26 17:45:02","2018-07-26 17:58:04","N","40","40","22");
+INSERT INTO tb_historia VALUES("67","Material do Pré Lançamento","<p>Produ&ccedil;&atilde;o e Disponibiliza&ccedil;&atilde;o do material para lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Dura&ccedil;&atilde;o de 7 a 10 dias antes do Lan&ccedil;amento de 3 a 4 v&iacute;deos</p>","2018-07-26 17:45:02","2018-07-26 17:58:04","N","22");
 
-INSERT INTO tb_historia VALUES("68","Criação da Lista de Lead","<p>Cria&ccedil;&atilde;o da Lista de Lead ja trabalhadas nas redes sociais e mais..</p>","2018-07-26 17:46:23","2018-07-26 17:46:23","N","40","40","24");
+INSERT INTO tb_historia VALUES("68","Criação da Lista de Lead","<p>Cria&ccedil;&atilde;o da Lista de Lead ja trabalhadas nas redes sociais e mais..</p>","2018-07-26 17:46:23","2018-07-26 17:46:23","N","24");
 
-INSERT INTO tb_historia VALUES("69","Página de captura de lead","<p>P&aacute;gina de captura de lead</p>","2018-07-26 17:47:24","2018-07-26 17:47:24","N","20","20","21");
+INSERT INTO tb_historia VALUES("69","Página de captura de lead","<p>P&aacute;gina de captura de lead</p>","2018-07-26 17:47:24","2018-07-26 17:47:24","N","21");
 
-INSERT INTO tb_historia VALUES("70","Criar conteúdos e Entregas","<p>Criar conte&uacute;dos para entrega e ir formulando a lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Inicio da divulga&ccedil;&atilde;o para o lan&ccedil;amento.</p>","2018-07-26 17:55:15","2018-07-26 17:55:15","N","40","40","24");
+INSERT INTO tb_historia VALUES("70","Criar conteúdos e Entregas","<p>Criar conte&uacute;dos para entrega e ir formulando a lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Inicio da divulga&ccedil;&atilde;o para o lan&ccedil;amento.</p>","2018-07-26 17:55:15","2018-07-26 17:55:15","N","24");
 
-INSERT INTO tb_historia VALUES("71","Direcionar para o lançamento","<p>&nbsp;Apos Lan&ccedil;amento Direcionar para o lan&ccedil;amento o tr&aacute;fego do PL</p>","2018-07-26 18:00:07","2018-07-26 18:00:07","N","13","13","22");
+INSERT INTO tb_historia VALUES("71","Direcionar para o lançamento","<p>&nbsp;Apos Lan&ccedil;amento Direcionar para o lan&ccedil;amento o tr&aacute;fego do PL</p>","2018-07-26 18:00:07","2018-07-26 18:00:07","N","22");
 
-INSERT INTO tb_historia VALUES("72","Lançamento das Vendas","<p>de 1 a 7 dias de vendas com p&aacute;gina aquecida</p>","2018-07-26 18:01:36","2018-07-26 18:01:36","N","40","40","23");
+INSERT INTO tb_historia VALUES("72","Lançamento das Vendas","<p>de 1 a 7 dias de vendas com p&aacute;gina aquecida</p>","2018-07-26 18:01:36","2018-07-26 18:01:36","N","23");
 
-INSERT INTO tb_historia VALUES("73","Vídeos para lançamento de vendas","<p>produ&ccedil;&atilde;o de V&iacute;deos para lan&ccedil;amento de vendas</p>","2018-07-26 18:02:18","2018-07-26 18:02:18","N","20","20","23");
+INSERT INTO tb_historia VALUES("73","Vídeos para lançamento de vendas","<p>produ&ccedil;&atilde;o de V&iacute;deos para lan&ccedil;amento de vendas</p>","2018-07-26 18:02:18","2018-07-26 18:02:18","N","23");
 
-INSERT INTO tb_historia VALUES("74","Criar Histórias Módulos Lançamento do Sistema Da Beleaza e Site","<p>Criar Hist&oacute;rias M&oacute;dulos Lan&ccedil;amento do Sistema Da Beleaza e Site</p>","2018-07-26 18:13:56","2018-07-26 18:15:35","I","13","3","25");
+INSERT INTO tb_historia VALUES("74","Criar Histórias Módulos Lançamento do Sistema Da Beleaza e Site","<p>Criar Hist&oacute;rias M&oacute;dulos Lan&ccedil;amento do Sistema Da Beleaza e Site</p>","2018-07-26 18:13:56","2018-07-26 18:15:35","I","25");
 
-INSERT INTO tb_historia VALUES("75","Iniciar o sistema com as configurações básicas","<p>Iniciar o sistema com as configura&ccedil;&otilde;es b&aacute;sicas para depois iniciar o painel</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Cadastro de proffisional, cliente, servi&ccedil;os e configura&ccedil;&otilde;es padr&otilde;es</p>","2018-07-26 18:40:29","2018-07-26 18:40:29","N","30","30","26");
+INSERT INTO tb_historia VALUES("75","Iniciar o sistema com as configurações básicas","<p>Iniciar o sistema com as configura&ccedil;&otilde;es b&aacute;sicas para depois iniciar o painel</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Cadastro de proffisional, cliente, servi&ccedil;os e configura&ccedil;&otilde;es padr&otilde;es</p>","2018-07-26 18:40:29","2018-07-26 18:40:29","N","26");
 
-INSERT INTO tb_historia VALUES("76","Regras de E-mail","<p>Regras de E-mail</p>","2018-07-26 18:49:20","2018-07-27 19:00:55","N","5","5","27");
+INSERT INTO tb_historia VALUES("76","Regras de E-mail","<p>Regras de E-mail</p>","2018-07-26 18:49:20","2018-07-27 19:00:55","N","27");
 
-INSERT INTO tb_historia VALUES("79","Criar Templates de Envio","<p>Criar Templates de Envio de email</p>","2018-07-26 18:51:32","2018-07-27 19:01:27","N","20","20","27");
+INSERT INTO tb_historia VALUES("79","Criar Templates de Envio","<p>Criar Templates de Envio de email</p>","2018-07-26 18:51:32","2018-07-27 19:01:27","N","27");
 
-INSERT INTO tb_historia VALUES("80","Regras de SMS","<p>Regras de envio de SMS</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Aprendizagem de envio de SMS</p>","2018-07-26 18:53:05","2018-07-27 19:02:44","N","20","20","28");
+INSERT INTO tb_historia VALUES("80","Regras de SMS","<p>Regras de envio de SMS</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Aprendizagem de envio de SMS</p>","2018-07-26 18:53:05","2018-07-27 19:02:44","N","28");
 
-INSERT INTO tb_historia VALUES("83","Criar Templates de Envio","<p>Criar Templates de Envio de SMS</p>","2018-07-26 18:55:02","2018-07-27 19:03:11","N","5","5","28");
+INSERT INTO tb_historia VALUES("83","Criar Templates de Envio","<p>Criar Templates de Envio de SMS</p>","2018-07-26 18:55:02","2018-07-27 19:03:11","N","28");
 
-INSERT INTO tb_historia VALUES("84","Manter Perfil","<p>Editar as funcionalidades que podem ser acessadas pro perfis</p>","2018-07-26 22:16:38","2018-07-26 22:16:38","N","30","30","29");
+INSERT INTO tb_historia VALUES("84","Manter Perfil","<p>Editar as funcionalidades que podem ser acessadas pro perfis</p>","2018-07-26 22:16:38","2018-07-26 22:16:38","N","29");
 
-INSERT INTO tb_historia VALUES("85","Manter Entrada e saída (Normal e recorrente)","<p>Manter Entrada e sa&iacute;da (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Entrada saida (FK Assinante)</p>","2018-07-26 22:19:03","2018-07-26 22:19:03","N","20","20","30");
+INSERT INTO tb_historia VALUES("85","Manter Entrada e saída (Normal e recorrente)","<p>Manter Entrada e sa&iacute;da (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Entrada saida (FK Assinante)</p>","2018-07-26 22:19:03","2018-07-26 22:19:03","N","30");
 
-INSERT INTO tb_historia VALUES("86","Manter categorias de entrada e saída","<p>Manter categorias de entrada e sa&iacute;da</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: categorias entrada e sa&iacute;da (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela Base categorias entrada e sa&iacute;da</p>","2018-07-26 22:21:00","2018-07-26 22:21:00","N","20","20","30");
+INSERT INTO tb_historia VALUES("86","Manter categorias de entrada e saída","<p>Manter categorias de entrada e sa&iacute;da</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: categorias entrada e sa&iacute;da (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela Base categorias entrada e sa&iacute;da</p>","2018-07-26 22:21:00","2018-07-26 22:21:00","N","30");
 
-INSERT INTO tb_historia VALUES("87","Manter Comissões","<p>Manter Comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: comissao (FK Agendamento)</p>","2018-07-26 22:23:39","2018-07-26 22:23:39","N","20","20","30");
+INSERT INTO tb_historia VALUES("87","Manter Comissões","<p>Manter Comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: comissao (FK Agendamento)</p>","2018-07-26 22:23:39","2018-07-26 22:23:39","N","30");
 
-INSERT INTO tb_historia VALUES("88","Manter vale e adiantamento","<p>Manter vale e adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: vale e adiantamento (FK Profissional)</p>","2018-07-26 22:25:10","2018-07-26 22:25:10","N","20","20","30");
+INSERT INTO tb_historia VALUES("88","Manter vale e adiantamento","<p>Manter vale e adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: vale e adiantamento (FK Profissional)</p>","2018-07-26 22:25:10","2018-07-26 22:25:10","N","30");
 
-INSERT INTO tb_historia VALUES("89","Manter Suporte","<p>Manter Suporte, responder suporte, apresentar resposta</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: suporte (FK Assinante, Categoria Suporte)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela base Categoria Suporte</p>","2018-07-26 22:27:22","2018-07-26 22:28:33","N","40","40","31");
+INSERT INTO tb_historia VALUES("89","Manter Suporte","<p>Manter Suporte, responder suporte, apresentar resposta</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: suporte (FK Assinante, Categoria Suporte)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela base Categoria Suporte</p>","2018-07-26 22:27:22","2018-07-26 22:28:33","N","31");
 
-INSERT INTO tb_historia VALUES("90","Percentual de desconto por Perfil","<p>Percentual de desconto por Perfil no fechamento de conta</p>","2018-07-27 15:02:27","2018-07-27 15:02:27","N","8","8","29");
+INSERT INTO tb_historia VALUES("90","Percentual de desconto por Perfil","<p>Percentual de desconto por Perfil no fechamento de conta</p>","2018-07-27 15:02:27","2018-07-27 15:02:27","N","29");
 
-INSERT INTO tb_historia VALUES("91","Gerar Gráficos em relatórios","<p>Gerar Gr&aacute;ficos em relat&oacute;rios</p>","2018-07-27 17:19:07","2018-07-27 17:19:07","N","40","40","32");
+INSERT INTO tb_historia VALUES("91","Gerar Gráficos em relatórios","<p>Gerar Gr&aacute;ficos em relat&oacute;rios</p>","2018-07-27 17:19:07","2018-07-27 17:19:07","N","32");
 
-INSERT INTO tb_historia VALUES("92","Profissional mostra os serviços realizados","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra os servi&ccedil;os realizados no per&iacute;odo com um Profissional ou auxiliar</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:37:41","2018-07-27 17:45:36","N","13","13","32");
+INSERT INTO tb_historia VALUES("92","Profissional mostra os serviços realizados","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra os servi&ccedil;os realizados no per&iacute;odo com um Profissional ou auxiliar</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:37:41","2018-07-27 17:45:36","N","32");
 
-INSERT INTO tb_historia VALUES("93","Profissional mostra todas as reservas","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as reservas de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:38:44","2018-07-27 17:46:02","N","13","13","32");
+INSERT INTO tb_historia VALUES("93","Profissional mostra todas as reservas","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as reservas de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:38:44","2018-07-27 17:46:02","N","32");
 
-INSERT INTO tb_historia VALUES("94","Profissional mostra todos agendamentos atendidos","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos agendamentos atendidos de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:40:17","2018-07-27 17:46:32","N","13","13","32");
+INSERT INTO tb_historia VALUES("94","Profissional mostra todos agendamentos atendidos","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos agendamentos atendidos de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:40:17","2018-07-27 17:46:32","N","32");
 
-INSERT INTO tb_historia VALUES("95","Profissional o total de comissões","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rio Mostra o total de comiss&otilde;es para todos os profissionais do per&iacute;odo, Comiss&atilde;o por profissional (Principal ou auxiliar)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:41:16","2018-07-27 17:47:48","N","30","30","32");
+INSERT INTO tb_historia VALUES("95","Profissional o total de comissões","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rio Mostra o total de comiss&otilde;es para todos os profissionais do per&iacute;odo, Comiss&atilde;o por profissional (Principal ou auxiliar)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:41:16","2018-07-27 17:47:48","N","32");
 
-INSERT INTO tb_historia VALUES("96","Cliente por profissonal atendido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o profissional e o per&iacute;odo para ver os clientes atendidos por ele</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:43:01","2018-07-27 17:47:20","N","13","13","32");
+INSERT INTO tb_historia VALUES("96","Cliente por profissonal atendido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o profissional e o per&iacute;odo para ver os clientes atendidos por ele</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:43:01","2018-07-27 17:47:20","N","32");
 
-INSERT INTO tb_historia VALUES("97","Cliente Informações básicas","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios com informa&ccedil;&otilde;es como aniversariantes do m&ecirc;s, lista de contatos, atrav&eacute;s de que meio</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:49:20","2018-07-27 17:49:20","N","13","13","32");
+INSERT INTO tb_historia VALUES("97","Cliente Informações básicas","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios com informa&ccedil;&otilde;es como aniversariantes do m&ecirc;s, lista de contatos, atrav&eacute;s de que meio</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:49:20","2018-07-27 17:49:20","N","32");
 
-INSERT INTO tb_historia VALUES("98","Cliente todos agendamentos","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar todos agendamentos por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:50:16","2018-07-27 17:50:16","N","13","13","32");
+INSERT INTO tb_historia VALUES("98","Cliente todos agendamentos","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar todos agendamentos por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:50:16","2018-07-27 17:50:16","N","32");
 
-INSERT INTO tb_historia VALUES("99","Cliente serviços consumido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar servi&ccedil;os consumido por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:05","2018-07-27 17:51:05","N","13","13","32");
+INSERT INTO tb_historia VALUES("99","Cliente serviços consumido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar servi&ccedil;os consumido por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:05","2018-07-27 17:51:05","N","32");
 
-INSERT INTO tb_historia VALUES("100","Clientes cadastrados no periodo","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes foram cadastrados no per&iacute;odo selecionado</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:49","2018-07-27 17:51:49","N","13","13","32");
+INSERT INTO tb_historia VALUES("100","Clientes cadastrados no periodo","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes foram cadastrados no per&iacute;odo selecionado</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:49","2018-07-27 17:51:49","N","32");
 
-INSERT INTO tb_historia VALUES("101","Financeiro débitos e créditos dos clientes","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes possuem d&eacute;bitos e cr&eacute;ditos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:53:27","2018-07-27 17:53:27","N","13","13","32");
+INSERT INTO tb_historia VALUES("101","Financeiro débitos e créditos dos clientes","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes possuem d&eacute;bitos e cr&eacute;ditos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:53:27","2018-07-27 17:53:27","N","32");
 
-INSERT INTO tb_historia VALUES("102","Financeiro entrada e saída","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Financeiro com entradas e sa&iacute;das por per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:54:38","2018-07-27 18:07:01","N","20","20","32");
+INSERT INTO tb_historia VALUES("102","Financeiro entrada e saída","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Financeiro com entradas e sa&iacute;das por per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:54:38","2018-07-27 18:07:01","N","32");
 
-INSERT INTO tb_historia VALUES("103","Financeiro comissões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as comiss&otilde;es pagas em determinado per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:55:41","2018-07-27 17:55:41","N","20","20","32");
+INSERT INTO tb_historia VALUES("103","Financeiro comissões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as comiss&otilde;es pagas em determinado per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:55:41","2018-07-27 17:55:41","N","32");
 
-INSERT INTO tb_historia VALUES("104","Financeiro faturamento por forma de pagamento","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione um per&iacute;odo de datas para gerar o relat&oacute;rio de faturamento por forma de pagamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:06:37","2018-07-27 18:06:37","N","20","20","32");
+INSERT INTO tb_historia VALUES("104","Financeiro faturamento por forma de pagamento","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione um per&iacute;odo de datas para gerar o relat&oacute;rio de faturamento por forma de pagamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:06:37","2018-07-27 18:06:37","N","32");
 
-INSERT INTO tb_historia VALUES("105","Financeiro faturamento diário","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione um Per&iacute;odo para gerar o relat&oacute;rio de faturamento do sal&atilde;o por dia</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:07:54","2018-07-27 18:07:54","N","20","20","32");
+INSERT INTO tb_historia VALUES("105","Financeiro faturamento diário","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione um Per&iacute;odo para gerar o relat&oacute;rio de faturamento do sal&atilde;o por dia</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:07:54","2018-07-27 18:07:54","N","32");
 
-INSERT INTO tb_historia VALUES("106","Financeiro taxas dos cartões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quanto voc&ecirc; ter&aacute; de pagar de taxas de cart&atilde;o de cr&eacute;dito e d&eacute;bito no per&iacute;odo considerando as taxas inseridas na aba configura&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:09:40","2018-07-27 18:09:40","N","30","30","32");
+INSERT INTO tb_historia VALUES("106","Financeiro taxas dos cartões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quanto voc&ecirc; ter&aacute; de pagar de taxas de cart&atilde;o de cr&eacute;dito e d&eacute;bito no per&iacute;odo considerando as taxas inseridas na aba configura&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:09:40","2018-07-27 18:09:40","N","32");
 
-INSERT INTO tb_historia VALUES("107","Financeiro taxas dos cartões pagas por bandeira","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra o total de faturamento por bandeira e total de taxa descontado no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:10:55","2018-07-27 18:10:55","N","20","20","32");
+INSERT INTO tb_historia VALUES("107","Financeiro taxas dos cartões pagas por bandeira","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra o total de faturamento por bandeira e total de taxa descontado no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:10:55","2018-07-27 18:10:55","N","32");
 
-INSERT INTO tb_historia VALUES("108","Caixa Fechados e abertos por periodo","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione o per&iacute;odo e visualize todos os caixas fechados e os seus respectivos hor&aacute;rios de abertura e fechamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:06","2018-07-27 18:12:06","N","13","13","32");
+INSERT INTO tb_historia VALUES("108","Caixa Fechados e abertos por periodo","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione o per&iacute;odo e visualize todos os caixas fechados e os seus respectivos hor&aacute;rios de abertura e fechamento</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:06","2018-07-27 18:12:06","N","32");
 
-INSERT INTO tb_historia VALUES("109","Caixa entrada de pagamento","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as entradas de pagamento no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:44","2018-07-27 18:12:44","N","13","13","32");
+INSERT INTO tb_historia VALUES("109","Caixa entrada de pagamento","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as entradas de pagamento no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:44","2018-07-27 18:12:44","N","32");
 
-INSERT INTO tb_historia VALUES("110","Caixa sangrias","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra as sangrias de caixa no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:13:22","2018-07-27 18:13:22","N","13","13","32");
+INSERT INTO tb_historia VALUES("110","Caixa sangrias","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra as sangrias de caixa no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:13:22","2018-07-27 18:13:22","N","32");
 
-INSERT INTO tb_historia VALUES("111","Vale Presente vendidos","<p>Vale Presente Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Mostra todos os vales presentes que foram vendidos (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:14:26","2018-07-27 18:19:26","N","13","13","32");
+INSERT INTO tb_historia VALUES("111","Vale Presente vendidos","<p>Vale Presente Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Mostra todos os vales presentes que foram vendidos (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:14:26","2018-07-27 18:19:26","N","32");
 
-INSERT INTO tb_historia VALUES("112","Cortesia Dadas","<p>Cortesia Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as cortesias dadas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:15:07","2018-07-27 18:19:02","N","13","13","32");
+INSERT INTO tb_historia VALUES("112","Cortesia Dadas","<p>Cortesia Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as cortesias dadas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:15:07","2018-07-27 18:19:02","N","32");
 
-INSERT INTO tb_historia VALUES("113","Promoções Vendidas","<p>Promo&ccedil;&otilde;es Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as promo&ccedil;&otilde;es vendidas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:20:43","2018-07-27 18:20:43","N","13","13","32");
+INSERT INTO tb_historia VALUES("113","Promoções Vendidas","<p>Promo&ccedil;&otilde;es Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as promo&ccedil;&otilde;es vendidas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:20:43","2018-07-27 18:20:43","N","32");
 
-INSERT INTO tb_historia VALUES("114","Serviço profissionais que realizou","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Profissionais por servi&ccedil;os realizados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:22:34","2018-07-27 18:24:36","N","13","13","32");
+INSERT INTO tb_historia VALUES("114","Serviço profissionais que realizou","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Profissionais por servi&ccedil;os realizados</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:22:34","2018-07-27 18:24:36","N","32");
 
-INSERT INTO tb_historia VALUES("115","Serviço Clientes atendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o servi&ccedil;o e per&iacute;odo e veja os clientes atendidos por aquele servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:23:56","2018-07-27 18:23:56","N","13","13","32");
+INSERT INTO tb_historia VALUES("115","Serviço Clientes atendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o servi&ccedil;o e per&iacute;odo e veja os clientes atendidos por aquele servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:23:56","2018-07-27 18:23:56","N","32");
 
-INSERT INTO tb_historia VALUES("116","Serviços utilizados por categoria","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Servi&ccedil;os mais utilizados por categorias</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:25:16","2018-07-27 18:25:16","N","13","13","32");
+INSERT INTO tb_historia VALUES("116","Serviços utilizados por categoria","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Servi&ccedil;os mais utilizados por categorias</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:25:16","2018-07-27 18:25:16","N","32");
 
-INSERT INTO tb_historia VALUES("117","Pacote Vendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todosos pacotes vendidas (Geral) Filtros: usados, ativos e vencidos&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:49:49","2018-07-27 18:49:49","N","13","13","32");
+INSERT INTO tb_historia VALUES("117","Pacote Vendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todosos pacotes vendidas (Geral) Filtros: usados, ativos e vencidos&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:49:49","2018-07-27 18:49:49","N","32");
 
-INSERT INTO tb_historia VALUES("118","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os clientes que tem servi&ccedil;os ativos realizados e vencidos e seu servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:52:04","2018-07-27 18:56:13","N","13","13","32");
+INSERT INTO tb_historia VALUES("118","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os clientes que tem servi&ccedil;os ativos realizados e vencidos e seu servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:52:04","2018-07-27 18:56:13","N","32");
 
-INSERT INTO tb_historia VALUES("119","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os servi&ccedil;os do pacote &nbsp;ja realizados e ativos e vencidos no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:53:06","2018-07-27 18:54:22","N","13","13","32");
+INSERT INTO tb_historia VALUES("119","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os servi&ccedil;os do pacote &nbsp;ja realizados e ativos e vencidos no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:53:06","2018-07-27 18:54:22","N","32");
 
-INSERT INTO tb_historia VALUES("120","Sms Histórico de envio","<p>Sms Gerar Gr&aacute;ficos e Relat&oacute;rios Sms disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:08:38","2018-07-27 19:08:38","N","13","13","32");
+INSERT INTO tb_historia VALUES("120","Sms Histórico de envio","<p>Sms Gerar Gr&aacute;ficos e Relat&oacute;rios Sms disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:08:38","2018-07-27 19:08:38","N","32");
 
-INSERT INTO tb_historia VALUES("121","E-mail Historico de envio","<p>E-mail Gerar Gr&aacute;ficos e Relat&oacute;rios E-mail disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:09:29","2018-07-27 19:09:29","N","13","13","32");
+INSERT INTO tb_historia VALUES("121","E-mail Historico de envio","<p>E-mail Gerar Gr&aacute;ficos e Relat&oacute;rios E-mail disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:09:29","2018-07-27 19:09:29","N","32");
 
-INSERT INTO tb_historia VALUES("122","Agendamento detalhes","<p>Agendamentos Gerar Gr&aacute;ficos e Relat&oacute;rios de gendamentos por status do agendamento cliente profissional e periodo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:12:19","2018-07-27 19:12:19","N","20","20","32");
+INSERT INTO tb_historia VALUES("122","Agendamento detalhes","<p>Agendamentos Gerar Gr&aacute;ficos e Relat&oacute;rios de gendamentos por status do agendamento cliente profissional e periodo</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:12:19","2018-07-27 19:12:19","N","32");
 
-INSERT INTO tb_historia VALUES("123","Configuração inicial do projeto","<p>Configura&ccedil;&atilde;o inicial do projeto</p>","2018-07-30 10:32:17","2018-07-30 11:37:21","C","8","0","1");
+INSERT INTO tb_historia VALUES("123","Configuração inicial do projeto","<p>Configura&ccedil;&atilde;o inicial do projeto</p>","2018-07-30 10:32:17","2018-07-30 11:37:21","C","1");
 
-INSERT INTO tb_historia VALUES("124","Mudar loguin","<p>Mudar loguin para logar com email tb, recuperar senha e notificar de mudar senha.</p>","2018-07-30 11:11:11","2018-08-17 16:12:59","C","20","0","1");
+INSERT INTO tb_historia VALUES("124","Mudar loguin","<p>Mudar loguin para logar com email tb, recuperar senha e notificar de mudar senha.</p>","2018-07-30 11:11:11","2018-08-17 16:12:59","C","1");
 
-INSERT INTO tb_historia VALUES("125","Criar mensagem de expiração e bloqueio do sistema","<p>Criar mensagem de expira&ccedil;&atilde;o e bloqueio do sistema</p>","2018-08-13 17:33:25","2018-08-17 18:09:18","C","13","0","1");
+INSERT INTO tb_historia VALUES("125","Criar mensagem de expiração e bloqueio do sistema","<p>Criar mensagem de expira&ccedil;&atilde;o e bloqueio do sistema</p>","2018-08-13 17:33:25","2018-08-17 18:09:18","C","1");
 
-INSERT INTO tb_historia VALUES("126","Cadastro pelo site para o assinante","<p>verificar o cadastro pelo site para manter um plano mesmo que que por experi&ecirc;ncia</p>","2018-08-13 17:56:16","2018-08-13 17:56:39","N","8","8","21");
+INSERT INTO tb_historia VALUES("126","Cadastro pelo site para o assinante","<p>verificar o cadastro pelo site para manter um plano mesmo que que por experi&ecirc;ncia</p>","2018-08-13 17:56:16","2018-08-13 17:56:39","N","21");
 
-INSERT INTO tb_historia VALUES("127","Gestão de notificações","<p>Gest&atilde;o de notifica&ccedil;&otilde;es com as mensagens geradas do sistema de sucesso erro e avisos</p>","2018-08-15 11:16:03","2018-08-28 11:25:00","C","20","0","2");
+INSERT INTO tb_historia VALUES("127","Gestão de notificações","<p>Gest&atilde;o de notifica&ccedil;&otilde;es com as mensagens geradas do sistema de sucesso erro e avisos</p>","2018-08-15 11:16:03","2018-08-28 11:25:00","C","2");
 
-INSERT INTO tb_historia VALUES("130","Manter Facilidades e beneficios","<p>Manter Facilidades e beneficios</p>","2018-08-30 10:57:06","2018-09-21 22:08:20","C","8","0","2");
+INSERT INTO tb_historia VALUES("130","Manter Facilidades e beneficios","<p>Manter Facilidades e beneficios</p>","2018-08-30 10:57:06","2018-09-21 22:08:20","C","2");
 
-INSERT INTO tb_historia VALUES("131","Taxas dos cartões","<p>Taxas cobradas dos cart&otilde;es de d&eacute;bito e cr&eacute;dito e taxa de antecipa&ccedil;&atilde;o dos cart&otilde;es de cr&eacute;dito com periodo da taxa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante), Taxas cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:26:26","2018-10-26 20:28:56","C","20","0","5");
+INSERT INTO tb_historia VALUES("131","Taxas dos cartões","<p>Taxas cobradas dos cart&otilde;es de d&eacute;bito e cr&eacute;dito e taxa de antecipa&ccedil;&atilde;o dos cart&otilde;es de cr&eacute;dito com periodo da taxa</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante), Taxas cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:26:26","2018-10-26 20:28:56","C","5");
 
-INSERT INTO tb_historia VALUES("132","Histórico da taxas","<p>hist&oacute;rico da taxas cobradas dos cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:27:18","2018-10-26 20:29:19","C","8","0","5");
+INSERT INTO tb_historia VALUES("132","Histórico da taxas","<p>hist&oacute;rico da taxas cobradas dos cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:27:18","2018-10-26 20:29:19","C","5");
 
-INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas</p>","2018-09-25 14:31:36","2018-11-22 16:03:43","N","13","13","5");
+INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas</p>","2018-09-25 14:31:36","2018-11-22 16:03:43","N","5");
 
-INSERT INTO tb_historia VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2018-11-27 13:45:17","N","8","8","5");
+INSERT INTO tb_historia VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2018-11-27 13:45:17","N","5");
 
-INSERT INTO tb_historia VALUES("140","Mudar Status","<p>Mudar Status Ativo e inativo do Profissional</p>","2018-12-20 13:42:59","2018-12-20 13:42:59","N","5","5","9");
+INSERT INTO tb_historia VALUES("140","Mudar Status","<p>Mudar Status Ativo e inativo do Profissional</p>","2018-12-20 13:42:59","2018-12-20 13:42:59","N","9");
 
 
 
@@ -4020,7 +2350,7 @@ CREATE TABLE `tb_historico_historia` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=541 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=543 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -5103,6 +3433,10 @@ INSERT INTO tb_historico_historia VALUES("539","8","","2019-01-25 14:03:01","17"
 
 INSERT INTO tb_historico_historia VALUES("540","8","","2019-01-25 14:03:01","17");
 
+INSERT INTO tb_historico_historia VALUES("541","8","0","2019-02-06 08:44:05","17");
+
+INSERT INTO tb_historico_historia VALUES("542","3","0","2019-02-11 17:27:48","46");
+
 
 
 
@@ -5168,7 +3502,7 @@ INSERT INTO tb_imagem VALUES("36","leo-bessa-novinho-5c1b8c81725c7.jpg");
 
 INSERT INTO tb_imagem VALUES("37","jose-arnaldo-5c1b94788c0d8.jpg");
 
-INSERT INTO tb_imagem VALUES("38","seu-biga-5c1b955013dfa.jpg");
+INSERT INTO tb_imagem VALUES("38","seu-biga-5c5af209a8223.jpg");
 
 
 
@@ -5203,53 +3537,63 @@ CREATE TABLE `tb_jornada_trabalho` (
   `nu_dia_semana` int(1) DEFAULT NULL COMMENT '1 - Segunda / 2 - Terça / 3 - Terça / 4 - Quarta / 5 - Sexta / 6 - Sábado / 7 - Domingo / 8 - Feriado',
   `nu_hora_abertura` varchar(5) DEFAULT NULL COMMENT 'Horário de inicio de atendimento',
   `nu_hora_fechamento` varchar(5) DEFAULT NULL COMMENT 'Horário de finalização do atendimento',
+  `nu_almoco_inicio` varchar(5) DEFAULT NULL COMMENT 'Horário de inicio de almoço',
+  `nu_almoco_final` varchar(5) DEFAULT NULL COMMENT 'Horário de finalização do Almoço',
+  `nu_intervalo_inicio` varchar(5) DEFAULT NULL COMMENT 'Horário de inicio do intervalo',
+  `nu_intervalo_final` varchar(5) DEFAULT NULL COMMENT 'Horário de finalização do intervalo',
   `co_profissional` int(11) NOT NULL,
   PRIMARY KEY (`co_jornada_trabalho`,`co_profissional`),
   KEY `fk_TB_JORNADA_TRABALHO_TB_PROFISSIONAL1_idx` (`co_profissional`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_jornada_trabalho VALUES("15","1","05:44","18:40","0");
+INSERT INTO tb_jornada_trabalho VALUES("15","1","05:44","18:40","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("16","2","05:44","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("16","2","05:44","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("17","3","05:44","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("17","3","05:44","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("18","4","23:33","18:40","0");
+INSERT INTO tb_jornada_trabalho VALUES("18","4","23:33","18:40","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("19","5","04:00","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("19","5","04:00","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("20","6","03:00","19:11","0");
+INSERT INTO tb_jornada_trabalho VALUES("20","6","03:00","19:11","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("22","1","05:00","18:40","0");
+INSERT INTO tb_jornada_trabalho VALUES("22","1","05:00","18:40","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("23","2","05:44","18:11","0");
+INSERT INTO tb_jornada_trabalho VALUES("23","2","05:44","18:11","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("24","3","05:44","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("24","3","05:44","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("25","4","04:44","18:11","0");
+INSERT INTO tb_jornada_trabalho VALUES("25","4","04:44","18:11","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("26","5","04:00","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("26","5","04:00","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("27","6","03:00","19:11","0");
+INSERT INTO tb_jornada_trabalho VALUES("27","6","03:00","19:11","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("28","7","03:00","14:11","0");
+INSERT INTO tb_jornada_trabalho VALUES("28","7","03:00","14:11","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("35","2","05:00","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("35","2","05:00","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("36","4","23:33","18:40","0");
+INSERT INTO tb_jornada_trabalho VALUES("36","4","23:33","18:40","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("40","1","05:00","18:11","0");
+INSERT INTO tb_jornada_trabalho VALUES("40","1","05:00","18:11","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("41","2","05:44","18:04","0");
+INSERT INTO tb_jornada_trabalho VALUES("41","2","05:44","18:04","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("42","8","02:23","21:23","0");
+INSERT INTO tb_jornada_trabalho VALUES("42","8","02:23","21:23","","","","","0");
 
-INSERT INTO tb_jornada_trabalho VALUES("56","1","05:00","18:40","20");
+INSERT INTO tb_jornada_trabalho VALUES("56","1","05:00","18:40","","","","","20");
 
-INSERT INTO tb_jornada_trabalho VALUES("57","2","05:00","18:04","20");
+INSERT INTO tb_jornada_trabalho VALUES("57","2","05:00","18:04","","","","","20");
 
-INSERT INTO tb_jornada_trabalho VALUES("58","4","04:44","18:11","20");
+INSERT INTO tb_jornada_trabalho VALUES("58","4","04:44","18:11","","","","","20");
+
+INSERT INTO tb_jornada_trabalho VALUES("64","2","05:00","18:11","","","16:00","16:10","21");
+
+INSERT INTO tb_jornada_trabalho VALUES("65","3","05:00","18:04","12:00","12:30","","","21");
+
+INSERT INTO tb_jornada_trabalho VALUES("66","6","03:00","19:11","12:00","12:30","16:00","16:15","21");
 
 
 
@@ -5470,7 +3814,7 @@ CREATE TABLE `tb_perfil_funcionalidade` (
   PRIMARY KEY (`co_perfil_funcionalidade`,`co_perfil`,`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=200 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_perfil_funcionalidade VALUES("1","1","1");
@@ -5529,6 +3873,12 @@ INSERT INTO tb_perfil_funcionalidade VALUES("192","2","6");
 
 INSERT INTO tb_perfil_funcionalidade VALUES("193","2","27");
 
+INSERT INTO tb_perfil_funcionalidade VALUES("197","2","42");
+
+INSERT INTO tb_perfil_funcionalidade VALUES("198","3","41");
+
+INSERT INTO tb_perfil_funcionalidade VALUES("199","2","41");
+
 
 
 
@@ -5581,7 +3931,7 @@ INSERT INTO tb_pessoa VALUES("74","12345678909","LEO BESSA NOVINHO","11111111111
 
 INSERT INTO tb_pessoa VALUES("76","22322191191","Jose Arnaldo","2346","2019-01-14 17:25:21","1959-06-05","M","95","81","0");
 
-INSERT INTO tb_pessoa VALUES("77","","Seu Biga","","2019-01-14 17:05:48","2018-12-04","M","96","82","0");
+INSERT INTO tb_pessoa VALUES("77","12345678909","Seu Biga ","1111111111111","2019-01-14 17:05:48","2018-09-10","M","96","82","0");
 
 
 
@@ -5819,7 +4169,7 @@ INSERT INTO tb_profissional VALUES("19","2018-12-20 10:56:22","#F7C6CE","N","SOb
 
 INSERT INTO tb_profissional VALUES("20","2019-01-14 17:25:21","#397B21","S","Representante comercial da Bartofil","Bigode","S","S","","1","2","2018-12-17","0000-00-00","37","76","49","11","42");
 
-INSERT INTO tb_profissional VALUES("21","2019-01-14 17:05:48","#EFC631","N","","","S","S","","0","1","0000-00-00","0000-00-00","38","77","50","11","43");
+INSERT INTO tb_profissional VALUES("21","2019-01-14 17:05:48","#A54A7B","S","","meu apelido","S","S","","0","1","1983-12-06","","38","77","50","11","43");
 
 
 
@@ -5838,7 +4188,7 @@ CREATE TABLE `tb_profissional_cargo` (
   KEY `fk_TB_PROFISSIONAL_has_TB_CARGO_TB_PROFISSIONAL1_idx` (`co_profissional`),
   CONSTRAINT `fk_TB_PROFISSIONAL_has_TB_CARGO_TB_CARGO1` FOREIGN KEY (`co_cargo`) REFERENCES `tb_cargo` (`co_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_TB_PROFISSIONAL_has_TB_CARGO_TB_PROFISSIONAL1` FOREIGN KEY (`co_profissional`) REFERENCES `tb_profissional` (`co_profissional`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_profissional_cargo VALUES("14","30","15","2018-12-18 00:00:00","A");
@@ -5853,8 +4203,6 @@ INSERT INTO tb_profissional_cargo VALUES("24","6","9","2018-12-19 00:00:00","A")
 
 INSERT INTO tb_profissional_cargo VALUES("37","33","19","2018-12-20 00:00:00","A");
 
-INSERT INTO tb_profissional_cargo VALUES("46","32","21","2019-01-14 00:00:00","A");
-
 INSERT INTO tb_profissional_cargo VALUES("52","34","20","2019-01-14 00:00:00","A");
 
 INSERT INTO tb_profissional_cargo VALUES("53","32","20","2019-01-14 00:00:00","A");
@@ -5864,6 +4212,14 @@ INSERT INTO tb_profissional_cargo VALUES("54","31","16","2019-01-25 00:00:00","A
 INSERT INTO tb_profissional_cargo VALUES("55","26","16","2019-01-25 00:00:00","A");
 
 INSERT INTO tb_profissional_cargo VALUES("56","21","16","2019-01-25 00:00:00","A");
+
+INSERT INTO tb_profissional_cargo VALUES("65","32","21","2019-02-11 00:00:00","A");
+
+INSERT INTO tb_profissional_cargo VALUES("66","31","21","2019-02-11 00:00:00","A");
+
+INSERT INTO tb_profissional_cargo VALUES("67","30","21","2019-02-11 00:00:00","A");
+
+INSERT INTO tb_profissional_cargo VALUES("68","27","21","2019-02-11 00:00:00","A");
 
 
 
@@ -6050,62 +4406,8 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO tb_trafego VALUES("1","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
-
-INSERT INTO tb_trafego VALUES("2","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
-
-INSERT INTO tb_trafego VALUES("3","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
-
-INSERT INTO tb_trafego VALUES("4","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0");
-
-INSERT INTO tb_trafego VALUES("5","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("6","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("7","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("8","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("9","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("10","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("11","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("12","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("13","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("14","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("15","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("16","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("17","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("18","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("19","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("20","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("21","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("22","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("23","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("24","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("25","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("26","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("27","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
@@ -6139,149 +4441,27 @@ INSERT INTO tb_trafego VALUES("42","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO tb_trafego VALUES("43","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("44","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("45","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
 INSERT INTO tb_trafego VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("47","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("125","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("48","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("126","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("49","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("127","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("50","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("128","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("51","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("129","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("52","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("130","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("53","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("131","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("54","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("132","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("55","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("133","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("56","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("57","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("58","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("59","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("60","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("61","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("62","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("63","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("64","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("65","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("66","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("67","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("68","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("69","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("70","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("71","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("72","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("73","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("74","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("75","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("76","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("77","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("78","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("79","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("80","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("81","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("82","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("83","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("84","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("85","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("86","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("87","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("88","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("89","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("90","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("91","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("92","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("93","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("94","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("95","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("96","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("97","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("98","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("99","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("100","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("105","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("106","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("107","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("108","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("109","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("110","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("111","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("112","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("113","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("114","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("115","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("116","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("117","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("118","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO tb_trafego VALUES("119","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("134","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

@@ -282,10 +282,11 @@ class ProfissionalForm
 
         // Aba 6
         $formulario
-            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional", 8);
+            ->criaAba("Jornada de trabalho", "Horários e dias de atendimento do profissional", 10);
 
         $grid = new GridAssistente();
-        $arrColunas = array('Atende', 'Dia da Semana', 'Inicio', 'Termino');
+        $arrColunas = array('Atende', 'Dia da Semana', 'Inicio', 'Termino', 'Almoço Início(Opcional)',
+            'Almoço Termino(Opcional)', 'Intervalo Início(Opcional)', 'Intervalo Final(Opcional)');
         $grid->setColunasIndeces($arrColunas);
         $grid->criaGrid('nova');
 
@@ -294,6 +295,10 @@ class ProfissionalForm
             $check = null;
             $abertura = null;
             $fechamento = null;
+            $almocoInicio = null;
+            $almocoFinal = null;
+            $intervaloInicio = null;
+            $intervaloFinal = null;
             if ($jornadas) {
                 /** @var JornadaTrabalhoEntidade $jornada */
                 foreach ($jornadas as $jornada) {
@@ -301,6 +306,10 @@ class ProfissionalForm
                         $check = ' checked="checked"';
                         $abertura = $jornada->getNuHoraAbertura();
                         $fechamento = $jornada->getNuHoraFechamento();
+                        $almocoInicio = $jornada->getNuAlmocoInicio();
+                        $almocoFinal = $jornada->getNuAlmocoFinal();
+                        $intervaloInicio = $jornada->getNuIntervaloInicio();
+                        $intervaloFinal = $jornada->getNuIntervaloFinal();
                     }
                 }
             }
@@ -322,10 +331,40 @@ class ProfissionalForm
                value="' . $fechamento . '"
                placeholder="Termino do atendimento">';
 
+
+            $campoAlmocoInicio = '<input type="text" class="form-control horas"
+                           id="' . NU_ALMOCO_INICIO . $numero . '"
+                           name="' . NU_ALMOCO_INICIO . '[' . $numero . ']"
+                           value="' . $almocoInicio . '"
+                           placeholder="Início do Almoço">';
+
+            $campoAlmocoFinal = '<input type="text" class="form-control horas"
+               id="' . NU_ALMOCO_FINAL . $numero . '"
+               name="' . NU_ALMOCO_FINAL . '[' . $numero . ']"
+               value="' . $almocoFinal . '"
+               placeholder="Termino do Almoço">';
+
+
+            $campoIntervaloInicio = '<input type="text" class="form-control horas"
+                           id="' . NU_INTERVALO_INICIO . $numero . '"
+                           name="' . NU_INTERVALO_INICIO . '[' . $numero . ']"
+                           value="' . $intervaloInicio . '"
+                           placeholder="Início do Intervalo">';
+
+            $campoIntervaloFinal = '<input type="text" class="form-control horas"
+               id="' . NU_INTERVALO_FINAL . $numero . '"
+               name="' . NU_INTERVALO_FINAL . '[' . $numero . ']"
+               value="' . $intervaloFinal . '"
+               placeholder="Termino do Intervalo">';
+
             $grid->setColunas($campoAtende);
             $grid->setColunas($dia);
             $grid->setColunas($campoAbertura);
             $grid->setColunas($campoFechamento);
+            $grid->setColunas($campoAlmocoInicio);
+            $grid->setColunas($campoAlmocoFinal);
+            $grid->setColunas($campoIntervaloInicio);
+            $grid->setColunas($campoIntervaloFinal);
             $grid->criaLinha($numero);
         }
         $gridAssitente = $grid->finalizaGrid();
