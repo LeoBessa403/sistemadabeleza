@@ -78,6 +78,11 @@ define('CO_AUSENCIA', 'co_ausencia');
 define('DT_INICIO', 'dt_inicio');
 define('DT_FIM', 'dt_fim');
 define('TP_AUSENCIA', 'tp_ausencia');
+define('CO_CLIENTE', 'co_cliente');
+define('ST_LEMBRETE_HORARIO_AGENDAMENTO', 'st_lembrete_horario_agendamento');
+define('ST_SMS_MARKETING', 'st_sms_marketing');
+define('ST_EMAIL_MARKETING', 'st_email_marketing');
+define('NU_COMO_CONHECEU', 'nu_como_conheceu');
 
 
 
@@ -105,5 +110,4 @@ define('CONTA_BANCARIA_SERVICE', 'ContaBancariaService');
 define('JORNADA_TRABALHO_SERVICE', 'JornadaTrabalhoService');
 define('BANCO_SERVICE', 'BancoService');
 define('AUSENCIA_SERVICE', 'AusenciaService');
-
-
+define('CLIENTE_SERVICE', 'ClienteService');

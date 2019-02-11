@@ -77,6 +77,11 @@ class Relacionamentos
                     ('Entidade') => 'ProfissionalEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_CLIENTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ClienteEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -199,6 +204,11 @@ class Relacionamentos
                 (CO_PROFISSIONAL) => Array(
                     ('Campo') => CO_PESSOA,
                     ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_CLIENTE) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'ClienteEntidade',
                     ('Tipo') => '1',
                 ),
             ),
@@ -657,6 +667,18 @@ class Relacionamentos
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ClienteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PESSOA) => Array(
+                    ('Campo') => CO_PESSOA,
+                    ('Entidade') => 'PessoaEntidade',
                     ('Tipo') => '1',
                 ),
             ),

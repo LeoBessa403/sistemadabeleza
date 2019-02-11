@@ -11,6 +11,7 @@ class PessoaEntidadeExtends extends AbstractEntidade
     private $co_imagem;
     private $co_assinante;
     private $co_profissional;
+    private $co_cliente;
 
 
     /**
@@ -78,6 +79,23 @@ class PessoaEntidadeExtends extends AbstractEntidade
     public function setCoProfissional($co_profissional)
     {
         $this->co_profissional = $co_profissional;
+    }
+
+    /**
+     * @return ClienteEntidade $co_cliente
+     */
+    public function getCoCliente()
+    {
+        return $this->co_cliente;
+    }
+
+    /**
+     * @param $co_cliente
+     * @return mixed
+     */
+    public function setCoCliente($co_cliente)
+    {
+        $this->co_cliente = $co_cliente;
     }
 
 }
