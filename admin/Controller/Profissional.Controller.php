@@ -167,4 +167,3 @@ class Profissional extends AbstractController
     }
 
 }
-   
