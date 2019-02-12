@@ -7,7 +7,7 @@
                     <li>
                         <i class="clip-grid-6"></i>
                         <a href="#">
-                            Profissional
+                            Cliente
                         </a>
                     </li>
                     <li class="active">
@@ -15,8 +15,8 @@
                     </li>
                 </ol>
                 <div class="page-header">
-                    <h1>Profissional
-                        <small>Listar Profissional</small>
+                    <h1>Cliente
+                        <small>Listar Cliente</small>
                         <?php Valida::geraBtnNovo(); ?>
                     </h1>
                 </div>
@@ -33,31 +33,28 @@
                     <div class="panel-body">
                         <?php
                         Modal::load();
-                        Modal::confirmacao("confirma_Profissional");
-                        $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
+                        Modal::confirmacao("confirma_Cliente");
+                        $arrColunas = array('Foto', 'Cliente', 'Telefone', 'Nascimento', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var ProfissionalEntidade $res */
+                        /** @var ClienteEntidade $res */
                         foreach ($result as $res):
-                            $acao = '<a href="' . PASTAADMIN . 'Profissional/CadastroProfissional/' .
-                                Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '" class="btn btn-primary tooltips" 
+                            $acao = '<a href="' . PASTAADMIN . 'Cliente/CadastroCliente/' .
+                                Valida::GeraParametro(CO_CLIENTE . "/" . $res->getCoCliente()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                            $cargos = [];
-                            /** @var ProfissionalCargoEntidade $cargoProf */
-                            foreach ($res->getCoProfissionalCargo() as $cargoProf) {
-                                $cargos[] = $cargoProf->getCoCargo()->getNoCargo();
-                            }
+
                             $tamanhoImg = 60;
                             $noPessoa = Valida::ValNome($res->getCoPessoa()->getNoPessoa());
-                            if ($res->getCoImagem() && (file_exists(PASTA_UPLOADS . "usuarios/" . $res->getCoImagem()->getDsCaminho()))){
-                                    $imagem = Valida::GetMiniatura(
-                                        'usuarios/' . $res->getCoImagem()->getDsCaminho(),
-                                        $noPessoa, $tamanhoImg, $tamanhoImg, "circle-img"
-                                    );
-                            }else{
+                            if ($res->getCoPessoa()->getCoImagem() && (file_exists(PASTA_UPLOADS . "clientes/"
+                                    . $res->getCoPessoa()->getCoImagem()->getDsCaminho()))) {
+                                $imagem = Valida::GetMiniatura(
+                                    'clientes/' . $res->getCoPessoa()->getCoImagem()->getDsCaminho(),
+                                    $noPessoa, $tamanhoImg, $tamanhoImg, "circle-img"
+                                );
+                            } else {
                                 if ($res->getCoPessoa()->getStSexo() == "M"):
                                     $fotoPerfil = "avatar-homem.jpg";
                                 else:
@@ -71,12 +68,10 @@
                             }
                             $grid->setColunas($imagem, 1);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
-                            $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
+                            $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 3);
                             $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
-                            $grid->setColunas(implode(', ', $cargos));
-                            $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
                             $grid->setColunas($acao, 2);
-                            $grid->criaLinha($res->getCoProfissional());
+                            $grid->criaLinha($res->getCoCliente());
                         endforeach;
                         $grid->finalizaGrid();
                         ?>

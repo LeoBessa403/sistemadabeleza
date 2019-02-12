@@ -36,6 +36,7 @@ class PessoaEntidade extends PessoaEntidadeExtends
 			ST_SEXO,
 			CO_CONTATO,
 			CO_ENDERECO,
+            CO_IMAGEM,
 		];
     }
 

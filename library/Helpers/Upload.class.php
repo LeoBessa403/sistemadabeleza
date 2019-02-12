@@ -30,7 +30,7 @@ class Upload
      */
     function __construct()
     {
-        self::$BaseDir = PASTAUPLOADS;
+        self::$BaseDir = PASTA_UPLOADS;
         if (!file_exists(self::$BaseDir) && !is_dir(self::$BaseDir)):
             mkdir(self::$BaseDir, 0777);
         endif;
@@ -202,10 +202,12 @@ class Upload
         $Folder = explode("/", $Folder);
         $pasta = "";
         foreach ($Folder as $value) {
-            $pasta .= $value . "/";
-            if (!file_exists(self::$BaseDir . $pasta) && !is_dir(self::$BaseDir . $pasta)):
-                mkdir(self::$BaseDir . $pasta, 0777);
-            endif;
+            if($value){
+                $pasta .= $value . "/";
+                if (!file_exists(self::$BaseDir . $pasta) && !is_dir(self::$BaseDir . $pasta)):
+                    mkdir(self::$BaseDir . $pasta, 0777);
+                endif;
+            }
         }
         $this->Folder = $pasta;
     }
