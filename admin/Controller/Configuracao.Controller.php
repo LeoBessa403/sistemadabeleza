@@ -305,5 +305,38 @@ class Configuracao extends AbstractController
             $this->motivosDescontoAss = [];
         }
     }
+
+    public function ProfissionalConfiguracao()
+    {
+        /** @var ConfigProfissionalService $configProfissionalService */
+        $configProfissionalService = $this->getService(CONFIG_PROFISSIONAL_SERVICE);
+        $id = "configProfissional";
+
+        if (!empty($_POST[$id])):
+            $retorno = $configProfissionalService->salvaConfigProfissional($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ProfissionalConfiguracao/');
+            }
+        endif;
+
+        $res[ST_RECEBE_EMAIL_FATURAMENTO] = 'checked';
+        $res[ST_EDICAO_SERVICOS] = 'checked';
+        $res[ST_EDICAO_ATENDIMENTO] = '';
+        /** @var ConfigProfissionalEntidade $configProfissional */
+        $configProfissional = $configProfissionalService->PesquisaUmQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        if ($configProfissional) {
+            $res[NU_PERIODO_AGENDA] = $configProfissional->getNuPeriodoAgenda();
+            $res[CO_CONFIG_PROFISSIONAL] = $configProfissional->getCoConfigProfissional();
+            $res[ST_RECEBE_EMAIL_FATURAMENTO] = ($configProfissional->getStRecebeEmailFaturamento() == 'S')
+                ? 'checked' : '';
+            $res[ST_EDICAO_SERVICOS] = ($configProfissional->getStEdicaoServicos() == 'S')
+                ? 'checked' : '';
+            $res[ST_EDICAO_ATENDIMENTO] = ($configProfissional->getStEdicaoAtendimento() == 'S')
+                ? 'checked' : '';
+        }
+        $this->form = ConfiguracaoForm::ConfigProfissional($res);
+    }
 }
    

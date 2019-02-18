@@ -83,6 +83,11 @@ define('ST_LEMBRETE_HORARIO_AGENDAMENTO', 'st_lembrete_horario_agendamento');
 define('ST_SMS_MARKETING', 'st_sms_marketing');
 define('ST_EMAIL_MARKETING', 'st_email_marketing');
 define('NU_COMO_CONHECEU', 'nu_como_conheceu');
+define('CO_CONFIG_PROFISSIONAL', 'co_config_profissional');
+define('ST_RECEBE_EMAIL_FATURAMENTO', 'st_recebe_email_faturamento');
+define('NU_PERIODO_AGENDA', 'nu_periodo_agenda');
+define('ST_EDICAO_SERVICOS', 'st_edicao_servicos');
+define('ST_EDICAO_ATENDIMENTO', 'st_edicao_atendimento');
 
 
 
@@ -111,3 +116,4 @@ define('JORNADA_TRABALHO_SERVICE', 'JornadaTrabalhoService');
 define('BANCO_SERVICE', 'BancoService');
 define('AUSENCIA_SERVICE', 'AusenciaService');
 define('CLIENTE_SERVICE', 'ClienteService');
+define('CONFIG_PROFISSIONAL_SERVICE', 'ConfigProfissionalService');

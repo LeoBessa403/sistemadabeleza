@@ -1,4 +1,4 @@
--- Atualizado em: 12/02/2019 12:10:28
+-- Atualizado em: 18/02/2019 17:13:13
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,16 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_acesso VALUES("118","2tfpgp5ig57jaj83hjer8assg2","2019-02-12 12:07:46","2019-02-12 12:40:28","A","1","137");
+INSERT INTO tb_acesso VALUES("118","2tfpgp5ig57jaj83hjer8assg2","2019-02-12 12:07:46","2019-02-12 12:45:35","F","1","137");
+
+INSERT INTO tb_acesso VALUES("119","cuifntt9id1rq6gt6vi2ucvo43","2019-02-18 16:30:10","2019-02-18 17:02:44","F","1","138");
+
+INSERT INTO tb_acesso VALUES("120","cuifntt9id1rq6gt6vi2ucvo43","2019-02-18 17:04:16","2019-02-18 17:12:50","F","8","139");
+
+INSERT INTO tb_acesso VALUES("121","cuifntt9id1rq6gt6vi2ucvo43","2019-02-18 17:12:55","2019-02-18 17:43:13","A","1","140");
 
 
 
@@ -146,12 +152,22 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria VALUES("48","2019-02-12 12:09:39","Master","1");
 
 INSERT INTO tb_auditoria VALUES("49","2019-02-12 12:09:39","Master","1");
+
+INSERT INTO tb_auditoria VALUES("50","2019-02-18 16:42:26","Master","1");
+
+INSERT INTO tb_auditoria VALUES("51","2019-02-18 16:42:26","Master","1");
+
+INSERT INTO tb_auditoria VALUES("52","2019-02-18 16:46:24","Master","1");
+
+INSERT INTO tb_auditoria VALUES("53","2019-02-18 17:11:14","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("54","2019-02-18 17:12:38","Gestor, Colaborador","8");
 
 
 
@@ -167,7 +183,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=1075 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1099 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_itens VALUES("1064","19","","co_historia","141");
@@ -192,6 +208,54 @@ INSERT INTO tb_auditoria_itens VALUES("1073","","2019-02-12 12:09:39","dt_cadast
 
 INSERT INTO tb_auditoria_itens VALUES("1074","","19","co_historia","142");
 
+INSERT INTO tb_auditoria_itens VALUES("1075","134","","co_historia","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1076","Configuração de Profissional","Configuração de Profissional","ds_titulo","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1077","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","ds_observacao","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1078","2018-11-27 13:45:17","","dt_cadastro","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1079","2018-11-27 13:45:17","2019-02-18 16:42:26","dt_atualizado","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1080","N","C","st_situacao","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1081","5","5","co_sessao","143");
+
+INSERT INTO tb_auditoria_itens VALUES("1082","","5","nu_esforco","144");
+
+INSERT INTO tb_auditoria_itens VALUES("1083","","0","nu_esforco_restante","144");
+
+INSERT INTO tb_auditoria_itens VALUES("1084","","2019-02-18 16:42:26","dt_cadastro","144");
+
+INSERT INTO tb_auditoria_itens VALUES("1085","","134","co_historia","144");
+
+INSERT INTO tb_auditoria_itens VALUES("1086","","45","co_funcionalidade","145");
+
+INSERT INTO tb_auditoria_itens VALUES("1087","","2","co_perfil","145");
+
+INSERT INTO tb_auditoria_itens VALUES("1088","","4","nu_periodo_agenda","146");
+
+INSERT INTO tb_auditoria_itens VALUES("1089","","S","st_recebe_email_faturamento","146");
+
+INSERT INTO tb_auditoria_itens VALUES("1090","","S","st_edicao_servicos","146");
+
+INSERT INTO tb_auditoria_itens VALUES("1091","","N","st_edicao_atendimento","146");
+
+INSERT INTO tb_auditoria_itens VALUES("1092","","11","co_assinante","146");
+
+INSERT INTO tb_auditoria_itens VALUES("1093","1","","co_config_profissional","147");
+
+INSERT INTO tb_auditoria_itens VALUES("1094","S","N","st_recebe_email_faturamento","147");
+
+INSERT INTO tb_auditoria_itens VALUES("1095","4","18","nu_periodo_agenda","147");
+
+INSERT INTO tb_auditoria_itens VALUES("1096","S","N","st_edicao_servicos","147");
+
+INSERT INTO tb_auditoria_itens VALUES("1097","N","N","st_edicao_atendimento","147");
+
+INSERT INTO tb_auditoria_itens VALUES("1098","11","11","co_assinante","147");
+
 
 
 
@@ -206,12 +270,22 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=148 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_tabela VALUES("141","TB_HISTORIA","U","19","48");
 
 INSERT INTO tb_auditoria_tabela VALUES("142","TB_HISTORICO_HISTORIA","I","545","49");
+
+INSERT INTO tb_auditoria_tabela VALUES("143","TB_HISTORIA","U","134","50");
+
+INSERT INTO tb_auditoria_tabela VALUES("144","TB_HISTORICO_HISTORIA","I","546","51");
+
+INSERT INTO tb_auditoria_tabela VALUES("145","TB_PERFIL_FUNCIONALIDADE","I","205","52");
+
+INSERT INTO tb_auditoria_tabela VALUES("146","TB_CONFIG_PROFISSIONAL","I","1","53");
+
+INSERT INTO tb_auditoria_tabela VALUES("147","TB_CONFIG_PROFISSIONAL","U","1","54");
 
 
 
@@ -926,6 +1000,25 @@ INSERT INTO tb_config_cliente VALUES("1","S","4","11");
 
 
 
+DROP TABLE IF EXISTS tb_config_profissional;
+
+
+CREATE TABLE `tb_config_profissional` (
+  `co_config_profissional` int(11) NOT NULL AUTO_INCREMENT,
+  `st_recebe_email_faturamento` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não',
+  `nu_periodo_agenda` int(3) DEFAULT NULL COMMENT 'Número de Dias futuros que pode ser marcado serviços.',
+  `st_edicao_servicos` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não',
+  `st_edicao_atendimento` varchar(1) DEFAULT NULL COMMENT 'Se edita Atendimentos Futuros da agenda (S - Sim / N - Não)',
+  `co_assinante` int(11) NOT NULL,
+  PRIMARY KEY (`co_config_profissional`,`co_assinante`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO tb_config_profissional VALUES("1","N","18","N","N","11");
+
+
+
+
 DROP TABLE IF EXISTS tb_conta_bancaria;
 
 
@@ -1284,7 +1377,7 @@ CREATE TABLE `tb_funcionalidade` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_funcionalidade VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -1364,6 +1457,8 @@ INSERT INTO tb_funcionalidade VALUES("40","Limpar Banco Gestao","LimparBancoGest
 INSERT INTO tb_funcionalidade VALUES("43","Cadastro Cliente","CadastroCliente","A","N","14");
 
 INSERT INTO tb_funcionalidade VALUES("44","Listar Cliente","ListarCliente","A","S","14");
+
+INSERT INTO tb_funcionalidade VALUES("45","Configuração de Profissional","ProfissionalConfiguracao","A","S","13");
 
 
 
@@ -1677,7 +1772,7 @@ INSERT INTO tb_historia VALUES("132","Histórico da taxas","<p>hist&oacute;rico 
 
 INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas</p>","2018-09-25 14:31:36","2018-11-22 16:03:43","N","5");
 
-INSERT INTO tb_historia VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2018-11-27 13:45:17","N","5");
+INSERT INTO tb_historia VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2019-02-18 16:42:26","C","5");
 
 INSERT INTO tb_historia VALUES("140","Mudar Status","<p>Mudar Status Ativo e inativo do Profissional</p>","2018-12-20 13:42:59","2018-12-20 13:42:59","N","9");
 
@@ -1695,7 +1790,7 @@ CREATE TABLE `tb_historico_historia` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=546 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=547 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -2788,6 +2883,8 @@ INSERT INTO tb_historico_historia VALUES("544","20","15","2019-02-11 18:11:00","
 
 INSERT INTO tb_historico_historia VALUES("545","20","0","2019-02-12 12:09:39","19");
 
+INSERT INTO tb_historico_historia VALUES("546","5","0","2019-02-18 16:42:26","134");
+
 
 
 
@@ -3175,7 +3272,7 @@ CREATE TABLE `tb_perfil_funcionalidade` (
   PRIMARY KEY (`co_perfil_funcionalidade`,`co_perfil`,`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_perfil_funcionalidade VALUES("1","1","1");
@@ -3241,6 +3338,8 @@ INSERT INTO tb_perfil_funcionalidade VALUES("202","2","44");
 INSERT INTO tb_perfil_funcionalidade VALUES("203","2","43");
 
 INSERT INTO tb_perfil_funcionalidade VALUES("204","2","23");
+
+INSERT INTO tb_perfil_funcionalidade VALUES("205","2","45");
 
 
 
@@ -3771,7 +3870,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -3809,6 +3908,12 @@ INSERT INTO tb_trafego VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 INSERT INTO tb_trafego VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 INSERT INTO tb_trafego VALUES("137","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("138","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("139","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("140","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

@@ -82,6 +82,11 @@ class Relacionamentos
                     ('Entidade') => 'ClienteEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_CONFIG_PROFISSIONAL) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ConfigProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -679,6 +684,13 @@ class Relacionamentos
                 (CO_PESSOA) => Array(
                     ('Campo') => CO_PESSOA,
                     ('Entidade') => 'PessoaEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ConfigProfissionalEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
                 ),
             ),
