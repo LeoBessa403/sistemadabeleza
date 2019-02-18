@@ -45,8 +45,9 @@ include_once 'library/Partial/AcessoPermitido/topo_inicial.php';
                         LOGAR <i class="fa fa-arrow-circle-right"></i>
                     </button>
                 </div>
-                <div class="new-account">
+                <div class="new-account" style="text-align: center;">
                     <?php
+                    include_once 'library/Partial/Site/versao.php';
                     if (!MODULO_ASSINANTE) {
                         ?>
                         Você não tem Conta?

@@ -19,12 +19,13 @@ include_once 'library/Partial/AcessoPermitido/topo_inicial.php';
 								<input type="text" class="form-control email ob" name="ds_email" id="ds_email" placeholder="E-Mail">
 								<i class="fa fa-envelope"></i> </span>
                 </div>
-                <div class="new-account" style="float: left;">
+                <div class="new-account" style="text-align: center;">
+                    <?php
+                    include_once 'library/Partial/Site/versao.php';
+                    ?>
                     <a href="<?= PASTAADMIN; ?>Index/Acessar" class="register">
                         Voltar ao Login
                     </a>
-                </div>
-                <div class="form-actions" style="float: right;">
                     <button type="submit" class="btn btn-success pull-right">
                         Recuperar <i class="fa fa-arrow-circle-right"></i>
                     </button>
