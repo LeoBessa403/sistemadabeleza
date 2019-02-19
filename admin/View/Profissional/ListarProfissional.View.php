@@ -34,17 +34,37 @@
                         <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Profissional");
+                        Modal::DesativarProfissional("DesativarProfissional");
+                        Modal::AtivarProfissional("AtivarProfissional");
                         $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
                         /** @var ProfissionalEntidade $res */
                         foreach ($result as $res):
+
                             $acao = '<a href="' . PASTAADMIN . 'Profissional/CadastroProfissional/' .
                                 Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
+                            if ($res->getStStatus() == StatusAcessoEnum::ATIVO) {
+                                $acao .= ' <a data-toggle="modal" role="button" class="btn btn-danger tooltips acao" 
+                                            id="' . $res->getCoProfissional() . '" data-msg-restricao="MSG03"
+                                           href="#DesativarProfissional" data-original-title="Desativar Profissional" data-placement="top"
+                                           data-url-action="' . PASTAADMIN . 'Profissional/DesativarProfissional/' .
+                                    Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '">
+                                            <i class="fa fa-lock"></i>
+                                        </a>';
+                            } else {
+                                $acao .= ' <a data-toggle="modal" role="button" class="btn btn-green tooltips acao" 
+                                            id="' . $res->getCoProfissional() . '" data-msg-restricao="MSG03"
+                                           href="#AtivarProfissional" data-original-title="Ativar Profissional" data-placement="top"
+                                           data-url-action="' . PASTAADMIN . 'Profissional/AtivarProfissional/' .
+                                    Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '">
+                                            <i class="fa fa-unlock-alt"></i>
+                                        </a>';
+                            }
                             $cargos = [];
                             /** @var ProfissionalCargoEntidade $cargoProf */
                             foreach ($res->getCoProfissionalCargo() as $cargoProf) {
@@ -52,12 +72,12 @@
                             }
                             $tamanhoImg = 60;
                             $noPessoa = Valida::ValNome($res->getCoPessoa()->getNoPessoa());
-                            if ($res->getCoImagem() && (file_exists(PASTA_UPLOADS . "usuarios/" . $res->getCoImagem()->getDsCaminho()))){
-                                    $imagem = Valida::GetMiniatura(
-                                        'usuarios/' . $res->getCoImagem()->getDsCaminho(),
-                                        $noPessoa, $tamanhoImg, $tamanhoImg, "circle-img"
-                                    );
-                            }else{
+                            if ($res->getCoImagem() && (file_exists(PASTA_UPLOADS . "usuarios/" . $res->getCoImagem()->getDsCaminho()))) {
+                                $imagem = Valida::GetMiniatura(
+                                    'usuarios/' . $res->getCoImagem()->getDsCaminho(),
+                                    $noPessoa, $tamanhoImg, $tamanhoImg, "circle-img"
+                                );
+                            } else {
                                 if ($res->getCoPessoa()->getStSexo() == "M"):
                                     $fotoPerfil = "avatar-homem.jpg";
                                 else:

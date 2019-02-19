@@ -16,6 +16,7 @@ class ProfissionalEntidade extends AbstractEntidade
 	private $ds_cor_agenda;
 	private $st_assistente;
 	private $ds_sobre;
+	private $ds_motivo;
 	private $no_apelido;
 	private $st_agenda;
 	private $st_agenda_online;
@@ -45,6 +46,7 @@ class ProfissionalEntidade extends AbstractEntidade
 			DS_COR_AGENDA,
 			ST_ASSISTENTE,
 			DS_SOBRE,
+            DS_MOTIVO,
 			NO_APELIDO,
 			ST_AGENDA,
 			ST_AGENDA_ONLINE,
@@ -154,6 +156,22 @@ class ProfissionalEntidade extends AbstractEntidade
 	public function setDsSobre($ds_sobre)
     {
         return $this->ds_sobre = $ds_sobre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsMotivo()
+    {
+        return $this->ds_motivo;
+    }
+
+    /**
+     * @param mixed $ds_motivo
+     */
+    public function setDsMotivo($ds_motivo)
+    {
+        $this->ds_motivo = $ds_motivo;
     }
 
 	/**

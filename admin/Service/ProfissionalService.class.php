@@ -145,7 +145,6 @@ class  ProfissionalService extends AbstractService
         return $retorno;
     }
 
-
     public static function PesquisaProfissionaisCombo()
     {
         /** @var ProfissionalService $profissionalService */
@@ -160,6 +159,54 @@ class  ProfissionalService extends AbstractService
                 = Valida::Resumi(strtoupper($profissional->getCoPessoa()->getNoPessoa()), 25);
         }
         return $comboProfissionais;
+    }
+
+    /**
+     * @param $coProfissional
+     * @return array
+     */
+    public function desativarProfissional($coProfissional, $motivo)
+    {
+        return $this->mudarStatusProfissional($coProfissional, StatusUsuarioEnum::INATIVO, $motivo);
+    }
+
+    /**
+     * @param $coProfissional
+     * @return array
+     */
+    public function ativarProfissional($coProfissional)
+    {
+        return $this->mudarStatusProfissional($coProfissional, StatusUsuarioEnum::ATIVO, '');
+    }
+
+    /**
+     * @param $coProfissional
+     * @param $stStatus
+     * @param $motivo
+     * @return array
+     */
+    private function mudarStatusProfissional($coProfissional, $stStatus, $motivo)
+    {
+        $session = new Session();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+        $dados = [
+            ST_STATUS => $stStatus,
+            DS_MOTIVO => $motivo,
+        ];
+
+        $coProfissionalEd = $this->Salva($dados, $coProfissional);
+
+        if ($coProfissionalEd) {
+            $session->setSession(MENSAGEM, Mensagens::OK_ATUALIZADO);
+            $retorno[SUCESSO] = true;
+        } else {
+            $session->setSession(MENSAGEM, 'Não foi possível alterar o Produto');
+            $retorno[SUCESSO] = false;
+        }
+        return $retorno;
     }
 
 }

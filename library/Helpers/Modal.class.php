@@ -75,6 +75,61 @@ class Modal
         echo '<a data-toggle="modal" role="button" href="#' . $id . '" id="model_confirmacao"></a>';
     }
 
+
+    public static function DesativarProfissional($id)
+    {
+        echo '<div class="modal fade in modal-overflow profissional_model" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-header btn-bricky">
+                        <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">
+                                X
+                        </button>
+                        <h4 class="modal-title">Desativar Profissional</h4>
+                </div>
+                <div class="modal-body">
+                        <b>Deseja Realmente Desativar essa Profissional?</b>
+                        </br></br>
+                        <div class="form-group">
+                            <label for="ds_observacao" class="control-label"> 
+                            Motivo da Desativação <span class="symbol required"></span>
+                            </label>
+                            <textarea id="ds_observacao" name="ds_observacao" style="resize: none;"
+                             class="form-control ob"></textarea>
+                         </div>
+                </div>
+                <div class="modal-footer">
+                        <button aria-hidden="true" data-dismiss="modal" class="btn btn-bricky cancelar">
+                                Fechar
+                        </button>
+                        <button class="btn btn-success" data-dismiss="modal" id="" data-url-action="">
+                                OK
+                        </button>
+                </div>
+            </div>';
+    }
+
+    public static function AtivarProfissional($id)
+    {
+        echo '<div class="modal fade in modal-overflow profissional_model" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-header btn-success">
+                        <button type="button" class="close cancelar" data-dismiss="modal" aria-hidden="true">
+                                X
+                        </button>
+                        <h4 class="modal-title">Ativar Profissional</h4>
+                </div>
+                <div class="modal-body">
+                        <b>Deseja Realmente Ativar essa Profissional?</b>
+                </div>
+                <div class="modal-footer">
+                        <button aria-hidden="true" data-dismiss="modal" class="btn btn-bricky cancelar">
+                                Fechar
+                        </button>
+                        <button class="btn btn-success" data-dismiss="modal" id="" data-url-action="">
+                                OK
+                        </button>
+                </div>
+            </div>';
+    }
+
     public static function confirmacao($id)
     {
         echo '<div class="modal in modal-overflow fade confirmacao" id="' . $id . '" tabindex="-1" role="dialog" aria-hidden="true">

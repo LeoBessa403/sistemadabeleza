@@ -166,4 +166,29 @@ class Profissional extends AbstractController
         $this->form = ProfissionalForm::CadastrarAusencia($res);
     }
 
+    public function DesativarProfissional()
+    {
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+        $motivo = explode('/', $_GET['url']);
+        $ds_motivo = $motivo[4];
+        $coProfissional = UrlAmigavel::PegaParametro(CO_PROFISSIONAL);
+        $retorno = $profissionalService->desativarProfissional($coProfissional, $ds_motivo);
+        if ($retorno[SUCESSO]) {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
+        }
+    }
+
+    public function AtivarProfissional()
+    {
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+
+        $coProfissional = UrlAmigavel::PegaParametro(CO_PROFISSIONAL);
+        $retorno = $profissionalService->ativarProfissional($coProfissional);
+        if ($retorno[SUCESSO]) {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
+        }
+    }
+
 }
