@@ -13,10 +13,7 @@ class Usuario extends AbstractController
 
     public function MeuPerfilUsuario()
     {
-        /** @var Session $us */
-        $us = $_SESSION[SESSION_USER];
-        $user = $us->getUser();
-        $idUsuario = $user[md5(CO_USUARIO)];
+        $idUsuario = UsuarioService::getCoUsuarioLogado();
         Redireciona('admin/Usuario/CadastroUsuario/' . Valida::GeraParametro(CO_USUARIO . '/' . $idUsuario));
     }
 
@@ -113,10 +110,7 @@ class Usuario extends AbstractController
             }
         endif;
 
-        /** @var Session $us */
-        $us = $_SESSION[SESSION_USER];
-        $user = $us->getUser();
-        $idUsuario = $user[md5(CO_USUARIO)];
+        $idUsuario = UsuarioService::getCoUsuarioLogado();
         $this->form = UsuarioForm::TrocaSenha($idUsuario);
     }
 
