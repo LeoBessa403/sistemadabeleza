@@ -1,4 +1,4 @@
--- Atualizado em: 20/02/2019 17:08:58
+-- Atualizado em: 25/02/2019 15:15:53
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -47,7 +47,7 @@ INSERT INTO tb_acesso VALUES("128","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 14:1
 
 INSERT INTO tb_acesso VALUES("129","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 16:21:47","2019-02-20 17:06:21","F","8","148");
 
-INSERT INTO tb_acesso VALUES("130","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 17:06:27","2019-02-20 17:38:58","A","1","149");
+INSERT INTO tb_acesso VALUES("130","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 17:06:27","2019-02-20 17:41:28","F","1","149");
 
 
 
