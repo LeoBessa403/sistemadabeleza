@@ -35,9 +35,15 @@ if (TEM_SITE) {
 <script type="text/javascript" src="<?= INCLUDES; ?>validacoes.js"></script>
 <script src="<?= PASTA_LIBRARY; ?>plugins/select2/select2.min.js"></script>
 <script src="<?= PASTA_LIBRARY; ?>js/Funcoes.js"></script>
+<!-- Cadastrar Usuário do Sistema -->
+<script src="<?= PASTA_LIBRARY; ?>plugins/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
+<script src="<?= PASTA_LIBRARY; ?>js/form-wizard.js"></script>
+<!-- CARREGAMENTO DE IMAGEM -->
+<script src="<?= PASTA_LIBRARY; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script>
     jQuery(document).ready(function () {
         Funcoes.init();
+        FormWizard.init();
     });
 </script>
 <?php

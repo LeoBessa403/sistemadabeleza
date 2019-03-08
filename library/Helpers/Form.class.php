@@ -389,6 +389,7 @@ class Form
                 $form .= $this->getCampoColor();
                 break;
             case TiposCampoEnum::TEXT:
+            case TiposCampoEnum::PASSWORD:
                 $form .= $this->getCampoText();
                 break;
         }

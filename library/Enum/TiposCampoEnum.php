@@ -18,6 +18,7 @@ class TiposCampoEnum extends AbstractEnum
     const RADIO = 'radio';
     const CHECKBOX = 'checkbox';
     const COLOR = 'color';
+    const PASSWORD = 'password';
 
     protected static $descricao = [
         TiposCampoEnum::TEXT => 'Text',
@@ -29,5 +30,6 @@ class TiposCampoEnum extends AbstractEnum
         TiposCampoEnum::RADIO => 'Radio',
         TiposCampoEnum::CHECKBOX => 'Checkbox',
         TiposCampoEnum::COLOR => 'Color',
+        TiposCampoEnum::PASSWORD => 'password',
     ];
 }

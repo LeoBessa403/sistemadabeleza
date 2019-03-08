@@ -55,7 +55,7 @@ class Index extends AbstractController
                 } else {
                     $res[NU_CPF] = $_POST[NU_CPF];
                 }
-                $this->form = UsuarioForm::Cadastrar($res, true, 12);
+                $this->form = UsuarioForm::CadastroUsuario($res, 25);
             } else {
                 $session = new Session();
                 $session->setSession(MENSAGEM, $validador[MSG]);

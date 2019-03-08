@@ -250,6 +250,186 @@ class UsuarioForm extends AbstractController
         return $formulario->finalizaForm($link);
     }
 
+    public static function CadastroUsuario($res = false, $tamanho = 6)
+    {
+        $id = "CadastroUsuario";
+
+        /** @var FormAssistente $formulario */
+        $formulario = new FormAssistente($id, ADMIN . "/" . UrlAmigavel::$controller
+            . "/" . UrlAmigavel::$action, 'Cadastrar', $tamanho);
+        $res['cpf'] = $res[NU_CPF];
+        $formulario->setValor($res);
+
+        // Aba 1
+        $formulario
+            ->criaAba("Pessoa", "Informações Pessoais",12);
+
+        $formulario
+            ->setId('cpf')
+            ->setClasses("cpf disabilita")
+            ->setTamanhoInput(6)
+            ->setLabel("CPF")
+            ->CriaInpunt();
+
+        $formulario
+            ->setType("hidden")
+            ->setId(NU_CPF)
+            ->setValues($res[NU_CPF])
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_RG)
+            ->setTamanhoInput(6)
+            ->setClasses("numero")
+            ->setLabel("RG")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_PESSOA)
+            ->setClasses("ob nome")
+            ->setInfo("O Nome deve ser Completo Mínimo de 10 Caracteres")
+            ->setLabel("Nome Completo")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_NASCIMENTO)
+            ->setClasses("data ob")
+            ->setLabel("Nascimento")
+            ->setInfo("Data de Nascimento")
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
+        $formulario
+            ->setLabel("Sexo")
+            ->setId(ST_SEXO)
+            ->setClasses("ob")
+            ->setType("select")
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $formulario
+            ->finalizaAba();
+
+        // Aba 2
+        $formulario
+            ->criaAba("Endereço", "Informações de Endereço",12);
+
+        $formulario
+            ->setId(NU_CEP)
+            ->setLabel("CEP")
+            ->setClasses("cep")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_ENDERECO)
+            ->setIcon("clip-home-2")
+            ->setLabel("Endereço")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_COMPLEMENTO)
+            ->setLabel("Complemento")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_BAIRRO)
+            ->setLabel("Bairro")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_CIDADE)
+            ->setLabel("Cidade")
+            ->CriaInpunt();
+
+        $options = EnderecoService::montaComboEstadosDescricao();
+        $formulario
+            ->setId(SG_UF)
+            ->setType("select")
+            ->setLabel("Estado")
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->finalizaAba();
+
+        // Aba 3
+        $formulario
+            ->criaAba("Contatos", "Informações de Contatos",12);
+
+        $formulario
+            ->setId(NU_TEL1)
+            ->setIcon("fa fa-mobile-phone")
+            ->setLabel("Telefone (WhatsApp)")
+            ->setClasses("tel ob")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TEL2)
+            ->setIcon("fa fa-mobile-phone")
+            ->setLabel("Telefone Celular 2")
+            ->setClasses("tel")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_EMAIL)
+            ->setIcon("fa-envelope fa")
+            ->setClasses("email ob")
+            ->setLabel("Email")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_FACEBOOK)
+            ->setIcon("fa-facebook fa")
+            ->setLabel("Facebook")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_INSTAGRAM)
+            ->setIcon("fa-instagram fa")
+            ->setLabel("Instagram")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_TWITTER)
+            ->setIcon("fa-twitter fa")
+            ->setLabel("Twitter")
+            ->CriaInpunt();
+
+        $formulario
+            ->finalizaAba();
+
+        // Aba 2
+        $formulario
+            ->criaAba("Usuário", "Dados do Usuário",12);
+
+        $formulario
+            ->setId(DS_SENHA)
+            ->setClasses("ob senha")
+            ->setTamanhoInput(6)
+            ->setType("password")
+            ->setLabel("Senha")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId("ds_senha_confirma")
+            ->setClasses("ob confirma-senha")
+            ->setTamanhoInput(6)
+            ->setType("password")
+            ->setLabel("Confirmação da Senha")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_CAMINHO)
+            ->setType("singlefile")
+            ->setLabel("Foto de Perfil")
+            ->CriaInpunt();
+
+        $formulario
+            ->finalizaAba(true);
+
+        return $formulario->finalizaForm();
+    }
+
     public static function TrocaSenha($idUsuario)
     {
         $id = "TrocaSenha";

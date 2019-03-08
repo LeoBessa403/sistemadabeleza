@@ -46,6 +46,9 @@
           href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
     <!--  PARA CADASTRAR USUÁRIO  -->
     <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
+    <!-- start: CSS REQUIRED FOR DATAPICKER -->
+    <link rel="stylesheet" href="<?= INCLUDES; ?>Jcalendar.css">
+
     <style>
         body.login.example1 {
             background: url("<?= PASTAADMIN; ?>imagens/bg (<?= rand(1, NUM_BG_IMAGENS); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
