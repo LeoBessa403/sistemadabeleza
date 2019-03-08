@@ -1,12 +1,11 @@
-<?php
+<?php 
 
 /**
  * Config.Padrao [ HELPER ]
  * Constantes padrão gerados do sistema
  *
  * @copyright (c) 2019, Leo Bessa
- */
-define('MODULO_ASSINANTE', '1');
+ */ 
 define('LOGAR_EMAIL', '1');
 define('TABELA_AUDITORIA', '1');
 define('DESC', 'Sistema da Beleza');
@@ -34,3 +33,5 @@ define('HOST_EMAIL', '');
 define('PORTA_EMAIL', '');
 define('ID_ANALITCS', '');
 define('TEM_SITE', '');
+define('MODULO_ASSINANTE', '');
+

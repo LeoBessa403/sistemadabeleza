@@ -1,4 +1,4 @@
--- Atualizado em: 25/02/2019 15:15:53
+-- Atualizado em: 08/03/2019 09:53:39
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,7 +20,7 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_acesso VALUES("118","2tfpgp5ig57jaj83hjer8assg2","2019-02-12 12:07:46","2019-02-12 12:45:35","F","1","137");
@@ -48,6 +48,8 @@ INSERT INTO tb_acesso VALUES("128","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 14:1
 INSERT INTO tb_acesso VALUES("129","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 16:21:47","2019-02-20 17:06:21","F","8","148");
 
 INSERT INTO tb_acesso VALUES("130","cuifntt9id1rq6gt6vi2ucvo43","2019-02-20 17:06:27","2019-02-20 17:41:28","F","1","149");
+
+INSERT INTO tb_acesso VALUES("131","cuifntt9id1rq6gt6vi2ucvo43","2019-02-25 15:16:22","2019-02-25 16:38:45","A","1","150");
 
 
 
@@ -170,7 +172,7 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria VALUES("48","2019-02-12 12:09:39","Master","1");
@@ -259,6 +261,14 @@ INSERT INTO tb_auditoria VALUES("89","2019-02-20 17:07:32","Master","1");
 
 INSERT INTO tb_auditoria VALUES("90","2019-02-20 17:07:33","Master","1");
 
+INSERT INTO tb_auditoria VALUES("91","2019-02-25 16:07:59","Master","1");
+
+INSERT INTO tb_auditoria VALUES("92","2019-02-25 16:08:00","Master","1");
+
+INSERT INTO tb_auditoria VALUES("93","2019-02-25 16:08:44","Master","1");
+
+INSERT INTO tb_auditoria VALUES("94","2019-02-25 16:08:44","Master","1");
+
 
 
 
@@ -273,7 +283,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=1299 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1321 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_itens VALUES("1064","19","","co_historia","141");
@@ -746,6 +756,50 @@ INSERT INTO tb_auditoria_itens VALUES("1297","","2019-02-20 17:07:32","dt_cadast
 
 INSERT INTO tb_auditoria_itens VALUES("1298","","20","co_historia","185");
 
+INSERT INTO tb_auditoria_itens VALUES("1299","45","","co_historia","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1300","Tabela base serviços","Tabela base serviços","ds_titulo","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1301","<p>Tabela base servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;os Base</p>","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o</p>","ds_observacao","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1302","2018-07-25 18:43:26","","dt_cadastro","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1303","2018-07-25 18:43:26","2019-02-25 16:07:59","dt_atualizado","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1304","N","N","st_situacao","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1305","12","12","co_sessao","186");
+
+INSERT INTO tb_auditoria_itens VALUES("1306","","20","nu_esforco","187");
+
+INSERT INTO tb_auditoria_itens VALUES("1307","","20","nu_esforco_restante","187");
+
+INSERT INTO tb_auditoria_itens VALUES("1308","","2019-02-25 16:07:59","dt_cadastro","187");
+
+INSERT INTO tb_auditoria_itens VALUES("1309","","45","co_historia","187");
+
+INSERT INTO tb_auditoria_itens VALUES("1310","45","","co_historia","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1311","Tabela base serviços","Tabela base serviços","ds_titulo","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1312","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o</p>","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","ds_observacao","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1313","2018-07-25 18:43:26","","dt_cadastro","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1314","2019-02-25 16:07:59","2019-02-25 16:08:44","dt_atualizado","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1315","N","I","st_situacao","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1316","12","12","co_sessao","188");
+
+INSERT INTO tb_auditoria_itens VALUES("1317","","30","nu_esforco","189");
+
+INSERT INTO tb_auditoria_itens VALUES("1318","","25","nu_esforco_restante","189");
+
+INSERT INTO tb_auditoria_itens VALUES("1319","","2019-02-25 16:08:44","dt_cadastro","189");
+
+INSERT INTO tb_auditoria_itens VALUES("1320","","45","co_historia","189");
+
 
 
 
@@ -760,7 +814,7 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=186 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=190 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_tabela VALUES("141","TB_HISTORIA","U","19","48");
@@ -852,6 +906,14 @@ INSERT INTO tb_auditoria_tabela VALUES("183","TB_CATEGORIA_SERVICO","U","16","88
 INSERT INTO tb_auditoria_tabela VALUES("184","TB_HISTORIA","U","20","89");
 
 INSERT INTO tb_auditoria_tabela VALUES("185","TB_HISTORICO_HISTORIA","I","551","90");
+
+INSERT INTO tb_auditoria_tabela VALUES("186","TB_HISTORIA","U","45","91");
+
+INSERT INTO tb_auditoria_tabela VALUES("187","TB_HISTORICO_HISTORIA","I","552","92");
+
+INSERT INTO tb_auditoria_tabela VALUES("188","TB_HISTORIA","U","45","93");
+
+INSERT INTO tb_auditoria_tabela VALUES("189","TB_HISTORICO_HISTORIA","I","553","94");
 
 
 
@@ -2229,7 +2291,7 @@ INSERT INTO tb_historia VALUES("43","Valor pago por serviço","<p>Determinar por
 
 INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante)</p>","2018-07-25 18:42:35","2018-07-25 18:42:35","N","12");
 
-INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;os Base</p>","2018-07-25 18:43:26","2018-07-25 18:43:26","N","12");
+INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","2018-07-25 18:43:26","2019-02-25 16:08:44","I","12");
 
 INSERT INTO tb_historia VALUES("46","Manter intervalos do profissional","<p>Manter almo&ccedil;os e&nbsp; intervalos do profissional (Cadastro Profissional)</p>\n\n<p>&nbsp;</p>","2018-07-25 18:55:44","2019-02-11 17:27:48","C","9");
 
@@ -2413,7 +2475,7 @@ CREATE TABLE `tb_historico_historia` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=552 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=554 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3512,6 +3574,10 @@ INSERT INTO tb_historico_historia VALUES("550","8","8","2019-02-20 14:57:53","20
 
 INSERT INTO tb_historico_historia VALUES("551","8","0","2019-02-20 17:07:32","20");
 
+INSERT INTO tb_historico_historia VALUES("552","20","20","2019-02-25 16:07:59","45");
+
+INSERT INTO tb_historico_historia VALUES("553","30","25","2019-02-25 16:08:44","45");
+
 
 
 
@@ -4506,7 +4572,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -4568,6 +4634,8 @@ INSERT INTO tb_trafego VALUES("147","::1","Desconhecido","Desconhecida","Desconh
 INSERT INTO tb_trafego VALUES("148","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 INSERT INTO tb_trafego VALUES("149","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("150","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

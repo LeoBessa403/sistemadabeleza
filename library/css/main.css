@@ -5700,3 +5700,7 @@ td.column-right {
     border-radius: 40px !important;
     font-weight: bolder;
 }
+
+.box-shadow{
+    box-shadow: 2px 2px 20px black !important;
+}

@@ -1,12 +1,86 @@
-UPDATE TB_HISTORIA SET ds_titulo = "Tabela base serviços", ds_observacao = "<p>Tabela base servi&ccedil;os</p>
+INSERT INTO TB_PERFIL (no_perfil) VALUES ("Profissional");
 
-<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o</p>", co_sessao = "12", st_situacao = "N", dt_atualizado = "2019-02-25 16:07:59" where co_historia = 45;
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("4", "12");
 
-INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-02-25 16:07:59", "45");
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("4", "6");
 
-UPDATE TB_HISTORIA SET ds_titulo = "Tabela base serviços", ds_observacao = "<p>Tabela base servi&ccedil;os</p>
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("4", "4");
 
-<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>", co_sessao = "12", st_situacao = "I", dt_atualizado = "2019-02-25 16:08:44" where co_historia = 45;
+UPDATE TB_PERFIL SET no_perfil = "Profissional" where co_perfil = 4;
 
-INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("30", "30"_restante, "2019-02-25 16:08:44", "45");
+DELETE FROM TB_PERFIL_FUNCIONALIDADE where co_perfil in (4);
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("4", "12");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("4", "6");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("4", "4");
+
+UPDATE TB_PERFIL SET no_perfil = "Colaborador" where co_perfil = 3;
+
+DELETE FROM TB_PERFIL_FUNCIONALIDADE where co_perfil in (3);
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("3", "44");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("3", "12");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("3", "6");
+
+UPDATE TB_PERFIL SET no_perfil = "Gestor" where co_perfil = 2;
+
+DELETE FROM TB_PERFIL_FUNCIONALIDADE where co_perfil in (2);
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "49");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "48");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "47");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "46");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "45");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "44");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "43");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "27");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "26");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "24");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "23");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "22");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "21");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "20");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "19");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "18");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "17");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "16");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "15");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "14");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "13");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "12");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "8");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "7");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "6");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "5");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil, co_funcionalidade) VALUES ("2", "4");
 

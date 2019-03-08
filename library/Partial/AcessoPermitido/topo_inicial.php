@@ -44,6 +44,8 @@
     <!-- start: CSS REQUIRED FOR CHECK -->
     <link rel="stylesheet"
           href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
+    <!--  PARA CADASTRAR USUÁRIO  -->
+    <link rel="stylesheet" href="<?= PASTA_LIBRARY; ?>plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
     <style>
         body.login.example1 {
             background: url("<?= PASTAADMIN; ?>imagens/bg (<?= rand(1, NUM_BG_IMAGENS); ?>).jpg") rgba(0, 0, 0, 0) top center !important;
@@ -57,5 +59,5 @@
 <body class="login example1">
 <div class="main-login col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3" style="padding: 20px 50px;">
     <div class="logo">
-        <span class="no_sistema"><?= DESC_SIS; ?></span>
+        <span class="no_sistema box-shadow"><?= DESC_SIS; ?></span>
     </div>

@@ -62,7 +62,7 @@ class Index extends AbstractController
                 $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar',4);
             }
         } else {
-            $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar', 4);
+            $this->form = PessoaForm::ValidarCPF(CONTROLLER_INICIAL_ADMIN . '/Acessar', 30);
         }
     }
 
