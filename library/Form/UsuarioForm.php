@@ -255,7 +255,7 @@ class UsuarioForm extends AbstractController
         $id = "CadastroUsuario";
 
         /** @var FormAssistente $formulario */
-        $formulario = new FormAssistente($id, ADMIN . "/" . UrlAmigavel::$controller
+        $formulario = new FormAssistente($id, UrlAmigavel::$modulo . "/" . UrlAmigavel::$controller
             . "/" . UrlAmigavel::$action, 'Cadastrar', $tamanho);
         $res['cpf'] = $res[NU_CPF];
         $formulario->setValor($res);

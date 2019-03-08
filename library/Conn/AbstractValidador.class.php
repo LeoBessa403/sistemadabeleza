@@ -109,17 +109,30 @@ class AbstractValidador
                 }
                 break;
             case static::VALIDACAO_SENHA:
-                $validadorDado = preg_match('/^[a-zA-Z0-9]+/', $dado);
-                if (!$validadorDado) {
-                    $validadorDado = preg_replace('/[^a-z]/', '', $dado);
-                    if (strlen($validadorDado) == 1) {
-                        $validadorDado = preg_replace('/[^A-Z]/', '', $dado);
-                        if (strlen($validadorDado) == 1) {
-                            if (strlen($dado) >= $qtdCaracteres)
-                                $validador = true;
-                        }
+                $tamanho = strlen($dado);
+                if($tamanho >= $qtdCaracteres) {
+                    $forca = 0;
+                    if (($tamanho >= 4) && ($tamanho <= 7)) {
+                        $forca += 10;
+                    } else if ($tamanho > 7) {
+                        $forca += 25;
                     }
+                    if (preg_replace('/^[a-z]+/', '', $dado)) {
+                        $forca += 10;
+                    }
+                    if (preg_replace('/^[A-Z]+/', '', $dado)) {
+                        $forca += 20;
+                    }
+                    if (preg_replace('/^[0-9]+/', '', $dado)) {
+                        $forca += 20;
+                    }
+                    if (preg_replace('/^[a-zA-Z0-9]+/', '', $dado)) {
+                        $forca += 25;
+                    }
+                    if($forca >= 30)
+                    $validador = true;
                 }
+
                 break;
         }
         if ($validador) {

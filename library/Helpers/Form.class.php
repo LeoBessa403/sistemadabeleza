@@ -369,6 +369,10 @@ class Form
     {
         $form = '';
         switch (self::$type) {
+            case TiposCampoEnum::TEXT:
+            case TiposCampoEnum::PASSWORD:
+                $form .= $this->getCampoText();
+                break;
             case TiposCampoEnum::SELECT:
                 $form .= $this->getCampoSelect();
                 break;
@@ -387,10 +391,6 @@ class Form
                 break;
             case TiposCampoEnum::COLOR:
                 $form .= $this->getCampoColor();
-                break;
-            case TiposCampoEnum::TEXT:
-            case TiposCampoEnum::PASSWORD:
-                $form .= $this->getCampoText();
                 break;
         }
         return $form;
@@ -704,9 +704,10 @@ class Form
                 <div class="panel panel-box">
                         <div class="panel-body">
                  <h2 style="margin: 0 0 15px;"><small>' . $titulo . '</small></h2>
-                            <form action="' . HOME . self::$action . '" role="form" id="'
-            . self::$idForm . '" name="' . self::$idForm . '" method="post"  enctype="multipart/form-data" class="formulario">                                                         
-                            <div class="col-md-12"">' .
+                            <form action="' . HOME . self::$action . '" role="form" 
+                            id="' . self::$idForm . '" name="' . self::$idForm . '" method="post" 
+                            enctype="multipart/form-data" class="formulario">                                                         
+                            <div class="col-md-12">' .
             self::$form
             . '<div class="col-md-12" style="display: block; padding: 0;">
                         <button data-style="zoom-out" class="btn btn-success pull-right ladda-button" type="submit" 

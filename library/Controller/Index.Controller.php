@@ -13,7 +13,7 @@ class Index extends AbstractController
         if (MODULO_ASSINANTE) {
             Redireciona(ADMIN . "/" . CONTROLLER_INICIAL_ADMIN . "/" . ACTION_INICIAL_ADMIN);
         }
-        $id = "CadastroUsuario";
+        $id = "ds_senha_confirma";
         $id2 = "ValidacaoPessoa";
         if (!empty($_POST[$id])) {
             /** @var UsuarioService $usuarioService */

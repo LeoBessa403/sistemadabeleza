@@ -118,6 +118,7 @@ class  UsuarioService extends AbstractService
                 $session->setSession(MENSAGEM, "Já exite usuário cadastro com o mesmo "
                     . implode(", ", $Campo) . ", Favor Verificar.");
             else:
+                debug('Resolver logo o cadastro de Perfis do sistema');
                 $imagem[DS_CAMINHO] = "";
                 if ($foto[DS_CAMINHO]["tmp_name"]):
                     $foto = $_FILES[DS_CAMINHO];
