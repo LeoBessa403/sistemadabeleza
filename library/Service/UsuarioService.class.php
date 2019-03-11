@@ -118,7 +118,6 @@ class  UsuarioService extends AbstractService
                 $session->setSession(MENSAGEM, "Já exite usuário cadastro com o mesmo "
                     . implode(", ", $Campo) . ", Favor Verificar.");
             else:
-                debug('Resolver logo o cadastro de Perfis do sistema');
                 $imagem[DS_CAMINHO] = "";
                 if ($foto[DS_CAMINHO]["tmp_name"]):
                     $foto = $_FILES[DS_CAMINHO];
@@ -159,19 +158,15 @@ class  UsuarioService extends AbstractService
                     $usuarioPerfil[CO_USUARIO] = $idCoUsuario;
                     $ok = $usuarioPerfilService->DeletaQuando($usuarioPerfil);
                     if ($ok):
-                        $membro = false;
                         if (!empty($dados['ds_perfil'])) {
                             foreach ($dados['ds_perfil'] as $perfil) {
-                                if ($perfil == 3)
-                                    $membro = true;
                                 $usuarioPerfil[CO_PERFIL] = $perfil;
                                 $usuarioPerfilService->Salva($usuarioPerfil);
                             }
                         }
-                        if (!$membro) {
-                            $usuarioPerfil[CO_PERFIL] = 3;
-                            $retorno = $usuarioPerfilService->Salva($usuarioPerfil);
-                        }
+
+                        $usuarioPerfil[CO_PERFIL] = 3;
+                        $retorno = $usuarioPerfilService->Salva($usuarioPerfil);
                     endif;
 
                     $session->setSession(ATUALIZADO, "OK");
@@ -314,7 +309,7 @@ class  UsuarioService extends AbstractService
         $usuario[DT_CADASTRO] = Valida::DataHoraAtualBanco();
 
         $coUsuario = $this->Salva($usuario);
-        if($coUsuario){
+        if ($coUsuario) {
             /** @var Email $email */
             $email = new Email();
 

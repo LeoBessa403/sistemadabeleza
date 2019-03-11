@@ -30,3 +30,5 @@ UPDATE TB_HISTORIA SET ds_titulo = "Manter Perfil", ds_observacao = "<p>Editar a
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-03-11 16:34:01", "84");
 
+INSERT INTO TB_ANOTACAO (ds_titulo, co_historia, ds_observacao, dt_cadastro) VALUES ("Criar Perfil de Profissional", "84", "<p>Criar Perfil de Profissional autom&aacute;tico onde ao cadastrar um profissional ele ja vem com o perfil de profissional e ja suas funcionalidades b&aacute;sicas cadastradas</p>", "2019-03-11 16:57:48");
+
