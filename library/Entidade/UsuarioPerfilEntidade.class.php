@@ -97,7 +97,7 @@ class UsuarioPerfilEntidade extends AbstractEntidade
     }
 
     /**
-     * @param mixed $co_perfil_assinante
+     * @param PerfilAssinanteEntidade $co_perfil_assinante
      */
     public function setCoPerfilAssinante($co_perfil_assinante)
     {

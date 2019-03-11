@@ -6,20 +6,32 @@ class Perfil extends AbstractController
 
     function ListarPerfil()
     {
-        /** @var PerfilService $perfilService */
-        $perfilService = $this->getService(PERFIL_SERVICE);
-        $this->result = $perfilService->PesquisaTodos();
+        if(AssinanteService::getCoAssinanteLogado()){
+            /** @var PerfilAssinanteService $perfilAssinanteService */
+            $perfilAssinanteService = $this->getService(PERFIL_ASSINANTE_SERVICE);
+            $this->result = $perfilAssinanteService->PesquisaTodos();
+        }else{
+            /** @var PerfilService $perfilService */
+            $perfilService = $this->getService(PERFIL_SERVICE);
+            $this->result = $perfilService->PesquisaTodos();
+        }
     }
 
     function CadastroPerfil()
     {
         /** @var PerfilService $perfilService */
         $perfilService = $this->getService(PERFIL_SERVICE);
+        /** @var PerfilAssinanteService $perfilAssinanteService */
+        $perfilAssinanteService = $this->getService(PERFIL_ASSINANTE_SERVICE);
 
         $id = "cadastroPerfil";
 
         if (!empty($_POST[$id])):
-            $retorno = $perfilService->salvaPerfil($_POST);
+            if(AssinanteService::getCoAssinanteLogado()){
+                $retorno = $perfilAssinanteService->salvaPerfilAssinante($_POST);
+            }else{
+                $retorno = $perfilService->salvaPerfil($_POST);
+            }
             if($retorno[SUCESSO]){
                 Redireciona(UrlAmigavel::$modulo.'/'.UrlAmigavel::$controller.'/ListarPerfil/');
             }

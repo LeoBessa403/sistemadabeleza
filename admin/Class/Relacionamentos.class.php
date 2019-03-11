@@ -80,7 +80,7 @@ class Relacionamentos
                 (CO_CLIENTE) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'ClienteEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
                 (CO_CONFIG_PROFISSIONAL) => Array(
                     ('Campo') => CO_ASSINANTE,
@@ -95,7 +95,7 @@ class Relacionamentos
                 (CO_PERFIL_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'PerfilAssinanteEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
             ),
             (AcessoEntidade::TABELA) => Array(
@@ -253,6 +253,11 @@ class Relacionamentos
                     ('Entidade') => 'FuncionalidadeEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PERFIL_ASSINANTE) => Array(
+                    ('Campo') => CO_PERFIL_ASSINANTE,
+                    ('Entidade') => 'PerfilAssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (PerfilEntidade::TABELA) => Array(
                 (CO_PERFIL_FUNCIONALIDADE) => Array(
@@ -266,6 +271,23 @@ class Relacionamentos
                     ('Tipo') => '2',
                 ),
             ),
+            (PerfilAssinanteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO_PERFIL) => Array(
+                    ('Campo') => CO_PERFIL_ASSINANTE,
+                    ('Entidade') => 'UsuarioPerfilEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_PERFIL_FUNCIONALIDADE) => Array(
+                    ('Campo') => CO_PERFIL_ASSINANTE,
+                    ('Entidade') => 'PerfilFuncionalidadeEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
             (UsuarioPerfilEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,
@@ -275,6 +297,11 @@ class Relacionamentos
                 (CO_PERFIL) => Array(
                     ('Campo') => CO_PERFIL,
                     ('Entidade') => 'PerfilEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PERFIL_ASSINANTE) => Array(
+                    ('Campo') => CO_PERFIL_ASSINANTE,
+                    ('Entidade') => 'PerfilAssinanteEntidade',
                     ('Tipo') => '1',
                 ),
             ),
@@ -705,13 +732,6 @@ class Relacionamentos
                 ),
             ),
             (CategoriaServicoEntidade::TABELA) => Array(
-                (CO_ASSINANTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'AssinanteEntidade',
-                    ('Tipo') => '1',
-                ),
-            ),
-            (PerfilAssinanteEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',

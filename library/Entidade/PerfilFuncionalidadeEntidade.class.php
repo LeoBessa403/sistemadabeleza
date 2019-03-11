@@ -13,6 +13,7 @@ class PerfilFuncionalidadeEntidade extends AbstractEntidade
 
 	private $co_perfil_funcionalidade;
 	private $co_perfil;
+	private $co_perfil_assinante;
 	private $co_funcionalidade;
 
 	/**
@@ -22,6 +23,7 @@ class PerfilFuncionalidadeEntidade extends AbstractEntidade
     	return [
 			CO_PERFIL_FUNCIONALIDADE,
 			CO_PERFIL,
+			CO_PERFIL_ASSINANTE,
 			CO_FUNCIONALIDADE,
 		];
     }
@@ -84,6 +86,22 @@ class PerfilFuncionalidadeEntidade extends AbstractEntidade
 	public function setCoFuncionalidade($co_funcionalidade)
     {
         return $this->co_funcionalidade = $co_funcionalidade;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoPerfilAssinante()
+    {
+        return $this->co_perfil_assinante;
+    }
+
+    /**
+     * @param PerfilAssinanteEntidade $co_perfil_assinante
+     */
+    public function setCoPerfilAssinante($co_perfil_assinante)
+    {
+        $this->co_perfil_assinante = $co_perfil_assinante;
     }
 
 }
