@@ -6,10 +6,13 @@ class Perfil extends AbstractController
 
     function ListarPerfil()
     {
-        if(AssinanteService::getCoAssinanteLogado()){
+        $coAssinante = AssinanteService::getCoAssinanteLogado();
+        if($coAssinante){
             /** @var PerfilAssinanteService $perfilAssinanteService */
             $perfilAssinanteService = $this->getService(PERFIL_ASSINANTE_SERVICE);
-            $this->result = $perfilAssinanteService->PesquisaTodos();
+            $this->result = $perfilAssinanteService->PesquisaTodos([
+                CO_ASSINANTE => $coAssinante
+            ]);
         }else{
             /** @var PerfilService $perfilService */
             $perfilService = $this->getService(PERFIL_SERVICE);
@@ -23,6 +26,7 @@ class Perfil extends AbstractController
         $perfilService = $this->getService(PERFIL_SERVICE);
         /** @var PerfilAssinanteService $perfilAssinanteService */
         $perfilAssinanteService = $this->getService(PERFIL_ASSINANTE_SERVICE);
+
 
         $id = "cadastroPerfil";
 
@@ -39,11 +43,19 @@ class Perfil extends AbstractController
 
         $coPerfil = UrlAmigavel::PegaParametro("per");
         $res = array();
-        if ($coPerfil):
+        $coAssinante = AssinanteService::getCoAssinanteLogado();
+        if($coAssinante){
+            /** @var PerfilAssinanteEntidade $perfil */
+            $perfil = $perfilAssinanteService->PesquisaUmRegistro($coPerfil);
+            $res[CO_PERFIL] = $perfil->getCoPerfilAssinante();
+        }else{
             /** @var PerfilEntidade $perfil */
             $perfil = $perfilService->PesquisaUmRegistro($coPerfil);
-            $res[NO_PERFIL] = $perfil->getNoPerfil();
             $res[CO_PERFIL] = $perfil->getCoPerfil();
+        }
+
+        if ($coPerfil):
+            $res[NO_PERFIL] = $perfil->getNoPerfil();
             $perfisFunc = [];
             if(!empty($perfil->getCoPerfilFuncionalidade())){
                 /** @var PerfilFuncionalidadeEntidade $perfilFunc */

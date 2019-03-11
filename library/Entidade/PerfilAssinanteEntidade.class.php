@@ -29,8 +29,6 @@ class PerfilAssinanteEntidade extends AbstractEntidade
 			NO_PERFIL,
 			ST_STATUS,
 			CO_ASSINANTE,
-			CO_USUARIO_PERFIL,
-			CO_PERFIL_FUNCIONALIDADE,
 		];
     }
 

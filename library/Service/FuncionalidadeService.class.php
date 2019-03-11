@@ -21,9 +21,17 @@ class  FuncionalidadeService extends AbstractService
 
         $funcionalidades = $funcionalidadeService->PesquisaTodos();
         $todasFunc = array();
+        $bloqueioFunc = array();
+        $coAssinante = AssinanteService::getCoAssinanteLogado();
+        if($coAssinante){
+            $bloqueioFunc = array(0,1,2,3,4,7,8,9);
+        }
         /** @var FuncionalidadeEntidade $func */
         foreach ($funcionalidades as $func) :
-            $todasFunc[$func->getCoFuncionalidade()] = $func->getNoFuncionalidade();
+            $coController = ($func->getCoController()) ? $func->getCoController()->getCoController() : 0;
+            if(!in_array($coController,$bloqueioFunc)){
+                $todasFunc[$func->getCoFuncionalidade()] = $func->getNoFuncionalidade();
+            }
         endforeach;
         return $todasFunc;
     }

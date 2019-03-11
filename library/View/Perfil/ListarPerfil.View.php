@@ -39,22 +39,19 @@
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var PerfilEntidade $res */
-                        foreach ($result as $res):
-                            if ($res->getCoPerfil() > 1):
+                        if(AssinanteService::getCoAssinanteLogado()){
+                            /** @var PerfilAssinanteEntidade $res */
+                            foreach ($result as $res):
                                 $acao = '<a href="' . PASTAADMIN . 'Perfil/CadastroPerfil/' .
-                                    Valida::GeraParametro("per/" . $res->getCoPerfil()) . '" class="btn btn-primary tooltips" 
+                                    Valida::GeraParametro("per/" . $res->getCoPerfilAssinante()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
-                                 </a>';
-                                if ($res->getCoPerfil() > 3)  :
-                                    $acao .= ' '
-                                        . '<a data-toggle="modal" role="button" class="btn btn-bricky 
-                                        tooltips deleta" id="' . $res->getCoPerfil() . '"
+                                 </a>
+                                 <a data-toggle="modal" role="button" class="btn btn-bricky 
+                                        tooltips deleta" id="' . $res->getCoPerfilAssinante() . '"
                                            href="#Perfil" data-original-title="Excluir Registro" data-placement="top">
                                             <i class="fa fa-trash-o"></i>
                                         </a>';
-                                endif;
                                 $funcs = [];
                                 if (count($res->getCoPerfilFuncionalidade())) {
                                     /** @var PerfilFuncionalidadeEntidade $funcPerfil */
@@ -65,9 +62,37 @@
                                 $grid->setColunas($res->getNoPerfil());
                                 $grid->setColunas(implode(', ', $funcs));
                                 $grid->setColunas($acao, 2);
-                                $grid->criaLinha($res->getCoPerfil());
-                            endif;
-                        endforeach;
+                                $grid->criaLinha($res->getCoPerfilAssinante());
+
+                            endforeach;
+                        }else{
+                            /** @var PerfilEntidade $res */
+                            foreach ($result as $res):
+                                if($res->getCoPerfil() != 1){
+                                    $acao = '<a href="' . PASTAADMIN . 'Perfil/CadastroPerfil/' .
+                                        Valida::GeraParametro("per/" . $res->getCoPerfil()) . '" class="btn btn-primary tooltips" 
+                                    data-original-title="Editar Registro" data-placement="top">
+                                     <i class="fa fa-clipboard"></i>
+                                 </a>
+                                 <a data-toggle="modal" role="button" class="btn btn-bricky 
+                                        tooltips deleta" id="' . $res->getCoPerfil() . '"
+                                           href="#Perfil" data-original-title="Excluir Registro" data-placement="top">
+                                            <i class="fa fa-trash-o"></i>
+                                        </a>';
+                                    $funcs = [];
+                                    if (count($res->getCoPerfilFuncionalidade())) {
+                                        /** @var PerfilFuncionalidadeEntidade $funcPerfil */
+                                        foreach ($res->getCoPerfilFuncionalidade() as $funcPerfil) {
+                                            $funcs[] = $funcPerfil->getCoFuncionalidade()->getNoFuncionalidade();
+                                        }
+                                    }
+                                    $grid->setColunas($res->getNoPerfil());
+                                    $grid->setColunas(implode(', ', $funcs));
+                                    $grid->setColunas($acao, 2);
+                                    $grid->criaLinha($res->getCoPerfil());
+                                }
+                            endforeach;
+                        }
                         $grid->finalizaGrid();
                         ?>
                     </div>

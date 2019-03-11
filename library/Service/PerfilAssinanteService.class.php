@@ -29,13 +29,15 @@ class  PerfilAssinanteService extends AbstractService
         $session = new Session();
 
         $perfil[NO_PERFIL] = trim($dados[NO_PERFIL]);
+        $perfil[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        $perfil[ST_STATUS] = StatusUsuarioEnum::ATIVO;
 
         $PDO->beginTransaction();
         if (!empty($_POST[CO_PERFIL])):
             $coPerfil = $dados[CO_PERFIL];
             $atualiza = $this->Salva($perfil, $coPerfil);
             if ($atualiza):
-                $perfilFuncional[CO_PERFIL] = $coPerfil;
+                $perfilFuncional[CO_PERFIL_ASSINANTE] = $coPerfil;
                 $perfilFuncionalidadeService->DeletaQuando($perfilFuncional);
                 $session->setSession(MENSAGEM, ATUALIZADO);
             endif;
@@ -46,10 +48,12 @@ class  PerfilAssinanteService extends AbstractService
             endif;
         endif;
         if ($coPerfil) {
-            $perfilFunc[CO_PERFIL] = $coPerfil;
-            foreach ($dados[CO_FUNCIONALIDADE] as $coFuncionalidade) {
-                $perfilFunc[CO_FUNCIONALIDADE] = $coFuncionalidade;
-                $perfilFuncionalidadeService->Salva($perfilFunc);
+            $perfilFunc[CO_PERFIL_ASSINANTE] = $coPerfil;
+            if($dados[CO_FUNCIONALIDADE]){
+                foreach ($dados[CO_FUNCIONALIDADE] as $coFuncionalidade) {
+                    $perfilFunc[CO_FUNCIONALIDADE] = $coFuncionalidade;
+                    $perfilFuncionalidadeService->Salva($perfilFunc);
+                }
             }
             $retorno[SUCESSO] = true;
         }
