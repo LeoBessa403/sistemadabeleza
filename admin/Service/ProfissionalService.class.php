@@ -42,6 +42,9 @@ class  ProfissionalService extends AbstractService
         $profissionalCargoService = $this->getService(PROFISSIONAL_CARGO_SERVICE);
         /** @var JornadaTrabalhoService $jornadaTrabalhoService */
         $jornadaTrabalhoService = $this->getService(JORNADA_TRABALHO_SERVICE);
+        /** @var UsuarioPerfilService $usuarioPerfilService */
+        $usuarioPerfilService = $this->getService(USUARIO_PERFIL_SERVICE);
+
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
         $session = new Session();
@@ -75,13 +78,13 @@ class  ProfissionalService extends AbstractService
                 $enderecoService->Salva($endereco, $dados[CO_ENDERECO]);
                 $contatoService->Salva($contato, $dados[CO_CONTATO]);
                 $pessoaService->Salva($pessoa, $dados[CO_PESSOA]);
-                // Verifica a existÍncia  conta banc·ria
+                // Verifica a exist√™ncia  conta banc√°ria
                 if (!empty($dados[CO_CONTA_BANCARIA])) {
                     $contaBancariaService->Salva($conta, $dados[CO_CONTA_BANCARIA]);
                 } else {
                     $profissional[CO_CONTA_BANCARIA] = $contaBancariaService->Salva($conta);
                 }
-                // Verifica a existÍncia de uma imagem de perfil
+                // Verifica a exist√™ncia de uma imagem de perfil
                 if (!empty($dados[CO_IMAGEM])) {
                     $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'usuarios/', $dados[CO_IMAGEM]);
                 } else {
@@ -101,7 +104,7 @@ class  ProfissionalService extends AbstractService
                         if ($coPessoa) {
                             $coContaBancaria = $contaBancariaService->Salva($conta);
                             if ($coContaBancaria) {
-                                // Dados para o envio de email com a senha do usu·rio
+                                // Dados para o envio de email com a senha do usu√°rio
                                 $dadosEmail[NO_PESSOA] = $pessoa[NO_PESSOA];
                                 $dadosEmail[DS_EMAIL] = $contato[DS_EMAIL];
                                 $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa, $dadosEmail);
@@ -114,6 +117,10 @@ class  ProfissionalService extends AbstractService
                                     $profissional[CO_USUARIO] = $coUsuario;
                                     $profissional[ST_STATUS] = StatusAcessoEnum::ATIVO;
                                     $coProfissional = $profissionalService->Salva($profissional);
+
+                                    $usuarioPerfil[CO_PERFIL] = 3;
+                                    $usuarioPerfil[CO_USUARIO] = $coUsuario;
+                                    $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
                                 }
                             }
                         }
@@ -203,7 +210,7 @@ class  ProfissionalService extends AbstractService
             $session->setSession(MENSAGEM, Mensagens::OK_ATUALIZADO);
             $retorno[SUCESSO] = true;
         } else {
-            $session->setSession(MENSAGEM, 'N„o foi possÌvel alterar o Produto');
+            $session->setSession(MENSAGEM, 'N√£o foi poss√≠vel alterar o Produto');
             $retorno[SUCESSO] = false;
         }
         return $retorno;

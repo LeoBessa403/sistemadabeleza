@@ -14,3 +14,19 @@ DELETE FROM TB_PERFIL_FUNCIONALIDADE where co_perfil_assinante in (1);
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_perfil_assinante, co_funcionalidade) VALUES ("1", "49");
 
+UPDATE TB_HISTORIA SET ds_titulo = "Manter Perfil", ds_observacao = "<p>Editar as funcionalidades que podem ser acessadas pro perfis</p>
+
+<p>&nbsp;</p>
+
+<p>Tabela Perfil Base</p>", co_sessao = "29", st_situacao = "I", dt_atualizado = "2019-03-11 16:33:47" where co_historia = 84;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("30", "30"_restante, "2019-03-11 16:33:47", "84");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Manter Perfil", ds_observacao = "<p>Editar as funcionalidades que podem ser acessadas pro perfis</p>
+
+<p>&nbsp;</p>
+
+<p>Tabela Perfil Base</p>", co_sessao = "29", st_situacao = "I", dt_atualizado = "2019-03-11 16:34:01" where co_historia = 84;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-03-11 16:34:01", "84");
+
