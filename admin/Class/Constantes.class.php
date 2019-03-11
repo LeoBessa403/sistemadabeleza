@@ -90,6 +90,7 @@ define('ST_EDICAO_SERVICOS', 'st_edicao_servicos');
 define('ST_EDICAO_ATENDIMENTO', 'st_edicao_atendimento');
 define('CO_CATEGORIA_SERVICO', 'co_categoria_servico');
 define('NO_CATEGORIA_SERVICO', 'no_categoria_servico');
+define('CO_PERFIL_ASSINANTE', 'co_perfil_assinante');
 
 
 
@@ -120,3 +121,6 @@ define('AUSENCIA_SERVICE', 'AusenciaService');
 define('CLIENTE_SERVICE', 'ClienteService');
 define('CONFIG_PROFISSIONAL_SERVICE', 'ConfigProfissionalService');
 define('CATEGORIA_SERVICO_SERVICE', 'CategoriaServicoService');
+define('PERFIL_ASSINANTE_SERVICE', 'PerfilAssinanteService');
+
+

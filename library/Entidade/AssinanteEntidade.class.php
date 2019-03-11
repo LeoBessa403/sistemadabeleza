@@ -23,6 +23,7 @@ class AssinanteEntidade extends AssinanteEntidadeExtends
     private $co_assinante_matriz;
     private $co_assinante_filial;
     private $co_imagem_assinante;
+    private $co_perfil_assinante;
 
 
     /**
@@ -314,6 +315,22 @@ class AssinanteEntidade extends AssinanteEntidadeExtends
     public function getUltimoCoPlanoAssinante()
     {
         return $this->ultimo($this->getCoPlanoAssinanteAssinatura());
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoPerfilAssinante()
+    {
+        return $this->co_perfil_assinante;
+    }
+
+    /**
+     * @param mixed $co_perfil_assinante
+     */
+    public function setCoPerfilAssinante($co_perfil_assinante)
+    {
+        $this->co_perfil_assinante = $co_perfil_assinante;
     }
 
 }
