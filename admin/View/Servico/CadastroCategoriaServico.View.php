@@ -32,11 +32,6 @@
             echo $form;
             ?>
         </div>
-        <div class="pull-right">
-            <!-- end: DYNAMIC TABLE PANEL -->
-            <?php Valida::geraBtnVoltar(); ?>
-        </div>
-        <br><br><br>
         <!-- end: PAGE CONTENT-->
     </div>
 </div>
