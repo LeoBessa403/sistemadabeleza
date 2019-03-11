@@ -109,7 +109,12 @@ class  ProfissionalService extends AbstractService
                                 $dadosEmail[DS_EMAIL] = $contato[DS_EMAIL];
                                 $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa, $dadosEmail);
                                 if ($coUsuario) {
+                                    $usuarioPerfil[CO_PERFIL] = 3;
+                                    $usuarioPerfil[CO_USUARIO] = $coUsuario;
+                                    $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
+
                                     $coImagem = $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'usuarios/');
+
                                     $profissional[CO_IMAGEM] = $coImagem;
                                     $profissional[CO_PESSOA] = $coPessoa;
                                     $profissional[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
@@ -117,10 +122,6 @@ class  ProfissionalService extends AbstractService
                                     $profissional[CO_USUARIO] = $coUsuario;
                                     $profissional[ST_STATUS] = StatusAcessoEnum::ATIVO;
                                     $coProfissional = $profissionalService->Salva($profissional);
-
-                                    $usuarioPerfil[CO_PERFIL] = 3;
-                                    $usuarioPerfil[CO_USUARIO] = $coUsuario;
-                                    $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
                                 }
                             }
                         }
