@@ -32,3 +32,13 @@ INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro,
 
 INSERT INTO TB_ANOTACAO (ds_titulo, co_historia, ds_observacao, dt_cadastro) VALUES ("Criar Perfil de Profissional", "84", "<p>Criar Perfil de Profissional autom&aacute;tico onde ao cadastrar um profissional ele ja vem com o perfil de profissional e ja suas funcionalidades b&aacute;sicas cadastradas</p>", "2019-03-11 16:57:48");
 
+INSERT INTO TB_SESSAO (no_sessao, co_modulo, dt_cadastro) VALUES ("Usuário", "2", "2019-03-11 17:06:17");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Manter Usuário Assinante", "<p>Manter Usu&aacute;rio Assinante</p>", "33", "I", "2019-03-11 17:06:50", "2019-03-11 17:06:50");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("13", "13"_restante, "2019-03-11 17:06:50", "141");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Manter Usuário Comum", "<p>Manter Usu&aacute;rio Comum</p>", "33", "I", "2019-03-11 17:07:12", "2019-03-11 17:07:12");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-11 17:07:12", "142");
+

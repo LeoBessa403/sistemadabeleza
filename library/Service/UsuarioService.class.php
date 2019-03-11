@@ -160,7 +160,7 @@ class  UsuarioService extends AbstractService
                     if ($ok):
                         if (!empty($dados['ds_perfil'])) {
                             foreach ($dados['ds_perfil'] as $perfil) {
-                                $usuarioPerfil[CO_PERFIL] = $perfil;
+                                $usuarioPerfil[CO_PERFIL_ASSINANTE] = $perfil;
                                 $usuarioPerfilService->Salva($usuarioPerfil);
                             }
                         }
@@ -221,7 +221,7 @@ class  UsuarioService extends AbstractService
                     if (!$resgistrar):
                         if (!empty($dados['ds_perfil'])) {
                             foreach ($dados['ds_perfil'] as $perfil) {
-                                $usuarioPerfil[CO_PERFIL] = $perfil;
+                                $usuarioPerfil[CO_PERFIL_ASSINANTE] = $perfil;
                                 $usuarioPerfilService->Salva($usuarioPerfil);
                             }
                         }
