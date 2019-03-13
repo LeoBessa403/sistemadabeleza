@@ -45,8 +45,14 @@
                             if(count($res->getCoPerfilFuncionalidade())){
                                 /** @var PerfilFuncionalidadeEntidade $funcPerfil */
                                 foreach ($res->getCoPerfilFuncionalidade() as $funcPerfil) {
-                                    if($funcPerfil->getCoPerfil()->getCoPerfil() > 1)
-                                    $perfis[] = $funcPerfil->getCoPerfil()->getNoPerfil();
+                                    if($funcPerfil->getCoPerfil()){
+                                        if($funcPerfil->getCoPerfil()->getCoPerfil() > 1)
+                                            $perfis[] = $funcPerfil->getCoPerfil()->getNoPerfil();
+                                    }
+                                    if($funcPerfil->getCoPerfilAssinante()){
+                                        if($funcPerfil->getCoPerfilAssinante()->getCoPerfilAssinante() > 1)
+                                            $perfis[] = $funcPerfil->getCoPerfilAssinante()->getNoPerfil();
+                                    }
                                 }
                             }
                             if ($res->getCoFuncionalidade() > 1):

@@ -11,8 +11,10 @@ if (isset($_GET['valida'])) {
 ////////////////////////////////////////////////////////////////////////
 /////////////////// PARTICULARIDADES DO SISTEMA ////////////////////////
 //////////////////////////////////////////////////////////////////////// 
-
-
+        case 'getReferenciaPagamentoAssinante':
+            $coPlano = $_GET[CO_PLANO];
+            echo Assinante::getReferenciaPagamentoAssinante($coPlano);
+            break;
 
     }
 } // FIM SWITCH

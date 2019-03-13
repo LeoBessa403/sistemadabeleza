@@ -77,6 +77,53 @@ class Assinante extends AbstractController
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AssinanteNaoEncontrado/');
         }
     }
+    public static function getReferenciaPagamentoAssinante($coPlano)
+    {
+        /** @var PlanoService $planoService */
+        $planoService = static::getService(PLANO_SERVICE);
+        if ($coPlano) {
+            /** @var PlanoEntidade $plano */
+            $plano = $planoService->PesquisaUmRegistro($coPlano);
+        }else{
+            return null;
+        }
+        /** @var PagSeguro $pag */
+        $pag = new PagSeguro();
+        $dados = [
+            CO_PLANO => $plano->getCoPlano(),
+            NU_VALOR => $plano->getCoUltimoPlanoAssinante()->getNuValor(),
+            DS_DESCRICAO => $plano->getNoPlano()
+        ];
+        return $pag->solicitarPagamento($dados);
+    }
+
+    public function MeuPlanoAssinante()
+    {
+        /** @var AssinanteService $assinanteService */
+        $assinanteService = $this->getService(ASSINANTE_SERVICE);
+        /** @var PlanoAssinanteAssinaturaService $PlanoAssinanteAssinaturaService */
+        $PlanoAssinanteAssinaturaService = $this->getService(PLANO_ASSINANTE_ASSINATURA_SERVICE);
+        $id = "cadastroAssinante";
+
+//        if (!empty($_POST[$id])):
+//            $retorno = $PlanoAssinanteAssinaturaService->salvaPagamentoAssinante($_POST);
+//            if ($retorno[SUCESSO]) {
+//                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarAssinante/');
+//            }
+//        endif;
+
+        $coAssinante = AssinanteService::getCoAssinanteLogado();
+        $res = [];
+        if ($coAssinante) {
+            /** @var AssinanteEntidade $assinante */
+            $assinante = $assinanteService->PesquisaUmRegistro($coAssinante);
+            $res[CO_ASSINANTE] = $coAssinante;
+            $res[DT_EXPIRACAO] = Valida::DataShow($assinante->getDtExpiracao());
+        } else {
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/AssinanteNaoEncontrado/');
+        }
+        $this->form = AssinanteForm::Pagamento($res);
+    }
 
     public function PagamentoAssinante()
     {
