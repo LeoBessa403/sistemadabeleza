@@ -1,4 +1,4 @@
--- Atualizado em: 20/03/2019 10:20:41
+-- Atualizado em: 20/03/2019 17:49:26
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,7 +20,7 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_acesso VALUES("118","2tfpgp5ig57jaj83hjer8assg2","2019-02-12 12:07:46","2019-02-12 12:45:35","F","1","137");
@@ -107,7 +107,17 @@ INSERT INTO tb_acesso VALUES("158","r11s8di90npd9s1omb5s2er9t5","2019-03-20 09:5
 
 INSERT INTO tb_acesso VALUES("159","r11s8di90npd9s1omb5s2er9t5","2019-03-20 10:05:30","2019-03-20 10:09:17","F","8","178");
 
-INSERT INTO tb_acesso VALUES("160","r11s8di90npd9s1omb5s2er9t5","2019-03-20 10:09:22","2019-03-20 10:50:41","A","1","179");
+INSERT INTO tb_acesso VALUES("160","r11s8di90npd9s1omb5s2er9t5","2019-03-20 10:09:22","2019-03-20 10:50:59","F","1","179");
+
+INSERT INTO tb_acesso VALUES("161","r11s8di90npd9s1omb5s2er9t5","2019-03-20 13:30:21","2019-03-20 14:14:04","F","8","180");
+
+INSERT INTO tb_acesso VALUES("162","r11s8di90npd9s1omb5s2er9t5","2019-03-20 14:14:12","2019-03-20 15:15:00","F","1","181");
+
+INSERT INTO tb_acesso VALUES("163","r11s8di90npd9s1omb5s2er9t5","2019-03-20 15:29:32","2019-03-20 16:51:43","F","1","182");
+
+INSERT INTO tb_acesso VALUES("164","r11s8di90npd9s1omb5s2er9t5","2019-03-20 16:51:51","2019-03-20 17:47:21","F","8","183");
+
+INSERT INTO tb_acesso VALUES("165","r11s8di90npd9s1omb5s2er9t5","2019-03-20 17:47:28","2019-03-20 18:19:26","A","1","184");
 
 
 
@@ -232,7 +242,7 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=228 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria VALUES("48","2019-02-12 12:09:39","Master","1");
@@ -379,6 +389,196 @@ INSERT INTO tb_auditoria VALUES("118","2019-03-13 15:53:08","Master","1");
 
 INSERT INTO tb_auditoria VALUES("119","2019-03-13 16:37:08","Master","1");
 
+INSERT INTO tb_auditoria VALUES("120","2019-03-20 13:40:47","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("121","2019-03-20 13:41:43","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("122","2019-03-20 13:41:43","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("123","2019-03-20 13:41:43","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("124","2019-03-20 13:41:44","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("125","2019-03-20 13:41:44","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("126","2019-03-20 13:41:44","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("127","2019-03-20 13:41:45","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("128","2019-03-20 13:41:45","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("129","2019-03-20 13:41:45","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("130","2019-03-20 13:41:46","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("131","2019-03-20 13:41:46","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("132","2019-03-20 13:41:46","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("133","2019-03-20 13:41:46","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("134","2019-03-20 13:41:47","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("135","2019-03-20 13:41:47","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("136","2019-03-20 13:41:48","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("137","2019-03-20 13:41:48","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("138","2019-03-20 13:41:48","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("139","2019-03-20 13:41:49","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("140","2019-03-20 13:41:49","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("141","2019-03-20 13:41:49","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("142","2019-03-20 13:41:49","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("143","2019-03-20 13:41:50","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("144","2019-03-20 13:41:50","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("145","2019-03-20 13:41:50","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("146","2019-03-20 13:41:51","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("147","2019-03-20 13:41:51","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("148","2019-03-20 13:41:51","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("149","2019-03-20 13:41:51","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("150","2019-03-20 13:41:52","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("151","2019-03-20 13:41:52","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("152","2019-03-20 13:41:52","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("153","2019-03-20 13:41:53","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("154","2019-03-20 13:41:53","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("155","2019-03-20 13:41:53","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("156","2019-03-20 13:41:53","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("157","2019-03-20 13:41:53","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("158","2019-03-20 13:41:54","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("159","2019-03-20 13:41:55","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("160","2019-03-20 13:41:56","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("161","2019-03-20 13:41:56","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("162","2019-03-20 13:41:57","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("163","2019-03-20 13:41:57","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("164","2019-03-20 13:41:57","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("165","2019-03-20 13:41:58","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("166","2019-03-20 13:41:58","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("167","2019-03-20 13:41:58","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("168","2019-03-20 13:41:59","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("169","2019-03-20 13:41:59","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("170","2019-03-20 13:42:00","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("171","2019-03-20 13:42:00","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("172","2019-03-20 13:42:01","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("173","2019-03-20 13:42:01","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("174","2019-03-20 13:42:01","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("175","2019-03-20 13:42:02","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("176","2019-03-20 13:42:02","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("177","2019-03-20 13:42:03","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("178","2019-03-20 13:42:03","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("179","2019-03-20 13:42:03","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("180","2019-03-20 13:42:04","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("181","2019-03-20 13:42:04","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("182","2019-03-20 13:42:04","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("183","2019-03-20 13:42:05","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("184","2019-03-20 13:42:05","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("185","2019-03-20 13:42:06","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("186","2019-03-20 13:42:06","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("187","2019-03-20 13:42:07","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("197","2019-03-20 14:08:42","Gestor, Colaborador","8");
+
+INSERT INTO tb_auditoria VALUES("198","2019-03-20 14:14:45","Master","1");
+
+INSERT INTO tb_auditoria VALUES("199","2019-03-20 14:14:45","Master","1");
+
+INSERT INTO tb_auditoria VALUES("200","2019-03-20 14:17:47","Master","1");
+
+INSERT INTO tb_auditoria VALUES("201","2019-03-20 14:17:48","Master","1");
+
+INSERT INTO tb_auditoria VALUES("202","2019-03-20 14:19:52","Master","1");
+
+INSERT INTO tb_auditoria VALUES("203","2019-03-20 14:19:52","Master","1");
+
+INSERT INTO tb_auditoria VALUES("204","2019-03-20 14:22:28","Master","1");
+
+INSERT INTO tb_auditoria VALUES("205","2019-03-20 14:22:29","Master","1");
+
+INSERT INTO tb_auditoria VALUES("206","2019-03-20 14:22:52","Master","1");
+
+INSERT INTO tb_auditoria VALUES("207","2019-03-20 14:22:53","Master","1");
+
+INSERT INTO tb_auditoria VALUES("208","2019-03-20 14:26:33","Master","1");
+
+INSERT INTO tb_auditoria VALUES("209","2019-03-20 14:26:33","Master","1");
+
+INSERT INTO tb_auditoria VALUES("210","2019-03-20 14:27:15","Master","1");
+
+INSERT INTO tb_auditoria VALUES("211","2019-03-20 14:27:15","Master","1");
+
+INSERT INTO tb_auditoria VALUES("212","2019-03-20 14:27:31","Master","1");
+
+INSERT INTO tb_auditoria VALUES("213","2019-03-20 14:27:31","Master","1");
+
+INSERT INTO tb_auditoria VALUES("214","2019-03-20 14:28:42","Master","1");
+
+INSERT INTO tb_auditoria VALUES("215","2019-03-20 14:28:42","Master","1");
+
+INSERT INTO tb_auditoria VALUES("216","2019-03-20 14:34:27","Master","1");
+
+INSERT INTO tb_auditoria VALUES("217","2019-03-20 14:34:27","Master","1");
+
+INSERT INTO tb_auditoria VALUES("218","2019-03-20 14:37:45","Master","1");
+
+INSERT INTO tb_auditoria VALUES("219","2019-03-20 14:37:45","Master","1");
+
+INSERT INTO tb_auditoria VALUES("220","2019-03-20 14:40:07","Master","1");
+
+INSERT INTO tb_auditoria VALUES("221","2019-03-20 14:40:07","Master","1");
+
+INSERT INTO tb_auditoria VALUES("222","2019-03-20 15:30:19","Master","1");
+
+INSERT INTO tb_auditoria VALUES("227","2019-03-20 16:54:46","Gestor, Colaborador","8");
+
 
 
 
@@ -393,7 +593,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=1625 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4933 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_itens VALUES("1064","19","","co_historia","141");
@@ -1518,6 +1718,2608 @@ INSERT INTO tb_auditoria_itens VALUES("1623","","60","co_funcionalidade","257");
 
 INSERT INTO tb_auditoria_itens VALUES("1624","","2","co_perfil","257");
 
+INSERT INTO tb_auditoria_itens VALUES("1625","","2019-03-20 13:40:47","dt_cadastro","258");
+
+INSERT INTO tb_auditoria_itens VALUES("1626","","A","st_status","258");
+
+INSERT INTO tb_auditoria_itens VALUES("1627","","Coloração / Tonalização","no_servico","258");
+
+INSERT INTO tb_auditoria_itens VALUES("1628","","120","nu_duracao","258");
+
+INSERT INTO tb_auditoria_itens VALUES("1629","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","258");
+
+INSERT INTO tb_auditoria_itens VALUES("1630","","1","co_categoria_servico","258");
+
+INSERT INTO tb_auditoria_itens VALUES("1631","","11","co_assinante","259");
+
+INSERT INTO tb_auditoria_itens VALUES("1632","","2019-03-20 13:41:42","dt_cadastro","259");
+
+INSERT INTO tb_auditoria_itens VALUES("1633","","A","st_status","259");
+
+INSERT INTO tb_auditoria_itens VALUES("1634","","Cabelo","no_categoria_servico","259");
+
+INSERT INTO tb_auditoria_itens VALUES("1635","","1","co_categoria_servico","260");
+
+INSERT INTO tb_auditoria_itens VALUES("1636","","2019-03-20 13:41:43","dt_cadastro","260");
+
+INSERT INTO tb_auditoria_itens VALUES("1637","","A","st_status","260");
+
+INSERT INTO tb_auditoria_itens VALUES("1638","","Coloração / Tonalização","no_servico","260");
+
+INSERT INTO tb_auditoria_itens VALUES("1639","","120","nu_duracao","260");
+
+INSERT INTO tb_auditoria_itens VALUES("1640","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","260");
+
+INSERT INTO tb_auditoria_itens VALUES("1641","","2","co_servico","261");
+
+INSERT INTO tb_auditoria_itens VALUES("1642","","2019-03-20 13:41:43","dt_cadastro","261");
+
+INSERT INTO tb_auditoria_itens VALUES("1643","","39.9","nu_valor","261");
+
+INSERT INTO tb_auditoria_itens VALUES("1644","","Serviço Inicial","ds_observacao","261");
+
+INSERT INTO tb_auditoria_itens VALUES("1645","","1","co_categoria_servico","262");
+
+INSERT INTO tb_auditoria_itens VALUES("1646","","2019-03-20 13:41:44","dt_cadastro","262");
+
+INSERT INTO tb_auditoria_itens VALUES("1647","","A","st_status","262");
+
+INSERT INTO tb_auditoria_itens VALUES("1648","","Coloração / Tonalização","no_servico","262");
+
+INSERT INTO tb_auditoria_itens VALUES("1649","","120","nu_duracao","262");
+
+INSERT INTO tb_auditoria_itens VALUES("1650","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","262");
+
+INSERT INTO tb_auditoria_itens VALUES("1651","","3","co_servico","263");
+
+INSERT INTO tb_auditoria_itens VALUES("1652","","2019-03-20 13:41:44","dt_cadastro","263");
+
+INSERT INTO tb_auditoria_itens VALUES("1653","","39.9","nu_valor","263");
+
+INSERT INTO tb_auditoria_itens VALUES("1654","","Serviço Inicial","ds_observacao","263");
+
+INSERT INTO tb_auditoria_itens VALUES("1655","","1","co_categoria_servico","264");
+
+INSERT INTO tb_auditoria_itens VALUES("1656","","2019-03-20 13:41:44","dt_cadastro","264");
+
+INSERT INTO tb_auditoria_itens VALUES("1657","","A","st_status","264");
+
+INSERT INTO tb_auditoria_itens VALUES("1658","","Coloração / Tonalização","no_servico","264");
+
+INSERT INTO tb_auditoria_itens VALUES("1659","","120","nu_duracao","264");
+
+INSERT INTO tb_auditoria_itens VALUES("1660","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","264");
+
+INSERT INTO tb_auditoria_itens VALUES("1661","","4","co_servico","265");
+
+INSERT INTO tb_auditoria_itens VALUES("1662","","2019-03-20 13:41:45","dt_cadastro","265");
+
+INSERT INTO tb_auditoria_itens VALUES("1663","","39.9","nu_valor","265");
+
+INSERT INTO tb_auditoria_itens VALUES("1664","","Serviço Inicial","ds_observacao","265");
+
+INSERT INTO tb_auditoria_itens VALUES("1665","","1","co_categoria_servico","266");
+
+INSERT INTO tb_auditoria_itens VALUES("1666","","2019-03-20 13:41:45","dt_cadastro","266");
+
+INSERT INTO tb_auditoria_itens VALUES("1667","","A","st_status","266");
+
+INSERT INTO tb_auditoria_itens VALUES("1668","","Coloração / Tonalização","no_servico","266");
+
+INSERT INTO tb_auditoria_itens VALUES("1669","","120","nu_duracao","266");
+
+INSERT INTO tb_auditoria_itens VALUES("1670","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","266");
+
+INSERT INTO tb_auditoria_itens VALUES("1671","","5","co_servico","267");
+
+INSERT INTO tb_auditoria_itens VALUES("1672","","2019-03-20 13:41:45","dt_cadastro","267");
+
+INSERT INTO tb_auditoria_itens VALUES("1673","","39.9","nu_valor","267");
+
+INSERT INTO tb_auditoria_itens VALUES("1674","","Serviço Inicial","ds_observacao","267");
+
+INSERT INTO tb_auditoria_itens VALUES("1675","","1","co_categoria_servico","268");
+
+INSERT INTO tb_auditoria_itens VALUES("1676","","2019-03-20 13:41:46","dt_cadastro","268");
+
+INSERT INTO tb_auditoria_itens VALUES("1677","","A","st_status","268");
+
+INSERT INTO tb_auditoria_itens VALUES("1678","","Coloração / Tonalização","no_servico","268");
+
+INSERT INTO tb_auditoria_itens VALUES("1679","","120","nu_duracao","268");
+
+INSERT INTO tb_auditoria_itens VALUES("1680","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","268");
+
+INSERT INTO tb_auditoria_itens VALUES("1681","","6","co_servico","269");
+
+INSERT INTO tb_auditoria_itens VALUES("1682","","2019-03-20 13:41:46","dt_cadastro","269");
+
+INSERT INTO tb_auditoria_itens VALUES("1683","","39.9","nu_valor","269");
+
+INSERT INTO tb_auditoria_itens VALUES("1684","","Serviço Inicial","ds_observacao","269");
+
+INSERT INTO tb_auditoria_itens VALUES("1685","","1","co_categoria_servico","270");
+
+INSERT INTO tb_auditoria_itens VALUES("1686","","2019-03-20 13:41:46","dt_cadastro","270");
+
+INSERT INTO tb_auditoria_itens VALUES("1687","","A","st_status","270");
+
+INSERT INTO tb_auditoria_itens VALUES("1688","","Coloração / Tonalização","no_servico","270");
+
+INSERT INTO tb_auditoria_itens VALUES("1689","","120","nu_duracao","270");
+
+INSERT INTO tb_auditoria_itens VALUES("1690","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","270");
+
+INSERT INTO tb_auditoria_itens VALUES("1691","","7","co_servico","271");
+
+INSERT INTO tb_auditoria_itens VALUES("1692","","2019-03-20 13:41:46","dt_cadastro","271");
+
+INSERT INTO tb_auditoria_itens VALUES("1693","","39.9","nu_valor","271");
+
+INSERT INTO tb_auditoria_itens VALUES("1694","","Serviço Inicial","ds_observacao","271");
+
+INSERT INTO tb_auditoria_itens VALUES("1695","","1","co_categoria_servico","272");
+
+INSERT INTO tb_auditoria_itens VALUES("1696","","2019-03-20 13:41:47","dt_cadastro","272");
+
+INSERT INTO tb_auditoria_itens VALUES("1697","","A","st_status","272");
+
+INSERT INTO tb_auditoria_itens VALUES("1698","","Coloração / Tonalização","no_servico","272");
+
+INSERT INTO tb_auditoria_itens VALUES("1699","","120","nu_duracao","272");
+
+INSERT INTO tb_auditoria_itens VALUES("1700","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","272");
+
+INSERT INTO tb_auditoria_itens VALUES("1701","","8","co_servico","273");
+
+INSERT INTO tb_auditoria_itens VALUES("1702","","2019-03-20 13:41:47","dt_cadastro","273");
+
+INSERT INTO tb_auditoria_itens VALUES("1703","","39.9","nu_valor","273");
+
+INSERT INTO tb_auditoria_itens VALUES("1704","","Serviço Inicial","ds_observacao","273");
+
+INSERT INTO tb_auditoria_itens VALUES("1705","","1","co_categoria_servico","274");
+
+INSERT INTO tb_auditoria_itens VALUES("1706","","2019-03-20 13:41:47","dt_cadastro","274");
+
+INSERT INTO tb_auditoria_itens VALUES("1707","","A","st_status","274");
+
+INSERT INTO tb_auditoria_itens VALUES("1708","","Coloração / Tonalização","no_servico","274");
+
+INSERT INTO tb_auditoria_itens VALUES("1709","","120","nu_duracao","274");
+
+INSERT INTO tb_auditoria_itens VALUES("1710","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","274");
+
+INSERT INTO tb_auditoria_itens VALUES("1711","","9","co_servico","275");
+
+INSERT INTO tb_auditoria_itens VALUES("1712","","2019-03-20 13:41:48","dt_cadastro","275");
+
+INSERT INTO tb_auditoria_itens VALUES("1713","","39.9","nu_valor","275");
+
+INSERT INTO tb_auditoria_itens VALUES("1714","","Serviço Inicial","ds_observacao","275");
+
+INSERT INTO tb_auditoria_itens VALUES("1715","","1","co_categoria_servico","276");
+
+INSERT INTO tb_auditoria_itens VALUES("1716","","2019-03-20 13:41:48","dt_cadastro","276");
+
+INSERT INTO tb_auditoria_itens VALUES("1717","","A","st_status","276");
+
+INSERT INTO tb_auditoria_itens VALUES("1718","","Coloração / Tonalização","no_servico","276");
+
+INSERT INTO tb_auditoria_itens VALUES("1719","","120","nu_duracao","276");
+
+INSERT INTO tb_auditoria_itens VALUES("1720","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","276");
+
+INSERT INTO tb_auditoria_itens VALUES("1721","","10","co_servico","277");
+
+INSERT INTO tb_auditoria_itens VALUES("1722","","2019-03-20 13:41:49","dt_cadastro","277");
+
+INSERT INTO tb_auditoria_itens VALUES("1723","","39.9","nu_valor","277");
+
+INSERT INTO tb_auditoria_itens VALUES("1724","","Serviço Inicial","ds_observacao","277");
+
+INSERT INTO tb_auditoria_itens VALUES("1725","","1","co_categoria_servico","278");
+
+INSERT INTO tb_auditoria_itens VALUES("1726","","2019-03-20 13:41:49","dt_cadastro","278");
+
+INSERT INTO tb_auditoria_itens VALUES("1727","","A","st_status","278");
+
+INSERT INTO tb_auditoria_itens VALUES("1728","","Coloração / Tonalização","no_servico","278");
+
+INSERT INTO tb_auditoria_itens VALUES("1729","","120","nu_duracao","278");
+
+INSERT INTO tb_auditoria_itens VALUES("1730","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","278");
+
+INSERT INTO tb_auditoria_itens VALUES("1731","","11","co_servico","279");
+
+INSERT INTO tb_auditoria_itens VALUES("1732","","2019-03-20 13:41:49","dt_cadastro","279");
+
+INSERT INTO tb_auditoria_itens VALUES("1733","","39.9","nu_valor","279");
+
+INSERT INTO tb_auditoria_itens VALUES("1734","","Serviço Inicial","ds_observacao","279");
+
+INSERT INTO tb_auditoria_itens VALUES("1735","","1","co_categoria_servico","280");
+
+INSERT INTO tb_auditoria_itens VALUES("1736","","2019-03-20 13:41:49","dt_cadastro","280");
+
+INSERT INTO tb_auditoria_itens VALUES("1737","","A","st_status","280");
+
+INSERT INTO tb_auditoria_itens VALUES("1738","","Coloração / Tonalização","no_servico","280");
+
+INSERT INTO tb_auditoria_itens VALUES("1739","","120","nu_duracao","280");
+
+INSERT INTO tb_auditoria_itens VALUES("1740","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","280");
+
+INSERT INTO tb_auditoria_itens VALUES("1741","","12","co_servico","281");
+
+INSERT INTO tb_auditoria_itens VALUES("1742","","2019-03-20 13:41:50","dt_cadastro","281");
+
+INSERT INTO tb_auditoria_itens VALUES("1743","","39.9","nu_valor","281");
+
+INSERT INTO tb_auditoria_itens VALUES("1744","","Serviço Inicial","ds_observacao","281");
+
+INSERT INTO tb_auditoria_itens VALUES("1745","","11","co_assinante","282");
+
+INSERT INTO tb_auditoria_itens VALUES("1746","","2019-03-20 13:41:42","dt_cadastro","282");
+
+INSERT INTO tb_auditoria_itens VALUES("1747","","A","st_status","282");
+
+INSERT INTO tb_auditoria_itens VALUES("1748","","Mãos e Pés","no_categoria_servico","282");
+
+INSERT INTO tb_auditoria_itens VALUES("1749","","2","co_categoria_servico","283");
+
+INSERT INTO tb_auditoria_itens VALUES("1750","","2019-03-20 13:41:50","dt_cadastro","283");
+
+INSERT INTO tb_auditoria_itens VALUES("1751","","A","st_status","283");
+
+INSERT INTO tb_auditoria_itens VALUES("1752","","Corte Tesoura","no_servico","283");
+
+INSERT INTO tb_auditoria_itens VALUES("1753","","30","nu_duracao","283");
+
+INSERT INTO tb_auditoria_itens VALUES("1754","","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","283");
+
+INSERT INTO tb_auditoria_itens VALUES("1755","","13","co_servico","284");
+
+INSERT INTO tb_auditoria_itens VALUES("1756","","2019-03-20 13:41:50","dt_cadastro","284");
+
+INSERT INTO tb_auditoria_itens VALUES("1757","","19.9","nu_valor","284");
+
+INSERT INTO tb_auditoria_itens VALUES("1758","","Serviço Inicial","ds_observacao","284");
+
+INSERT INTO tb_auditoria_itens VALUES("1759","","2","co_categoria_servico","285");
+
+INSERT INTO tb_auditoria_itens VALUES("1760","","2019-03-20 13:41:51","dt_cadastro","285");
+
+INSERT INTO tb_auditoria_itens VALUES("1761","","A","st_status","285");
+
+INSERT INTO tb_auditoria_itens VALUES("1762","","Corte Tesoura","no_servico","285");
+
+INSERT INTO tb_auditoria_itens VALUES("1763","","30","nu_duracao","285");
+
+INSERT INTO tb_auditoria_itens VALUES("1764","","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","285");
+
+INSERT INTO tb_auditoria_itens VALUES("1765","","14","co_servico","286");
+
+INSERT INTO tb_auditoria_itens VALUES("1766","","2019-03-20 13:41:51","dt_cadastro","286");
+
+INSERT INTO tb_auditoria_itens VALUES("1767","","19.9","nu_valor","286");
+
+INSERT INTO tb_auditoria_itens VALUES("1768","","Serviço Inicial","ds_observacao","286");
+
+INSERT INTO tb_auditoria_itens VALUES("1769","","2","co_categoria_servico","287");
+
+INSERT INTO tb_auditoria_itens VALUES("1770","","2019-03-20 13:41:51","dt_cadastro","287");
+
+INSERT INTO tb_auditoria_itens VALUES("1771","","A","st_status","287");
+
+INSERT INTO tb_auditoria_itens VALUES("1772","","Corte Tesoura","no_servico","287");
+
+INSERT INTO tb_auditoria_itens VALUES("1773","","30","nu_duracao","287");
+
+INSERT INTO tb_auditoria_itens VALUES("1774","","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","287");
+
+INSERT INTO tb_auditoria_itens VALUES("1775","","15","co_servico","288");
+
+INSERT INTO tb_auditoria_itens VALUES("1776","","2019-03-20 13:41:52","dt_cadastro","288");
+
+INSERT INTO tb_auditoria_itens VALUES("1777","","19.9","nu_valor","288");
+
+INSERT INTO tb_auditoria_itens VALUES("1778","","Serviço Inicial","ds_observacao","288");
+
+INSERT INTO tb_auditoria_itens VALUES("1779","","2","co_categoria_servico","289");
+
+INSERT INTO tb_auditoria_itens VALUES("1780","","2019-03-20 13:41:52","dt_cadastro","289");
+
+INSERT INTO tb_auditoria_itens VALUES("1781","","A","st_status","289");
+
+INSERT INTO tb_auditoria_itens VALUES("1782","","Corte Tesoura","no_servico","289");
+
+INSERT INTO tb_auditoria_itens VALUES("1783","","30","nu_duracao","289");
+
+INSERT INTO tb_auditoria_itens VALUES("1784","","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","289");
+
+INSERT INTO tb_auditoria_itens VALUES("1785","","16","co_servico","290");
+
+INSERT INTO tb_auditoria_itens VALUES("1786","","2019-03-20 13:41:52","dt_cadastro","290");
+
+INSERT INTO tb_auditoria_itens VALUES("1787","","19.9","nu_valor","290");
+
+INSERT INTO tb_auditoria_itens VALUES("1788","","Serviço Inicial","ds_observacao","290");
+
+INSERT INTO tb_auditoria_itens VALUES("1789","","11","co_assinante","291");
+
+INSERT INTO tb_auditoria_itens VALUES("1790","","2019-03-20 13:41:42","dt_cadastro","291");
+
+INSERT INTO tb_auditoria_itens VALUES("1791","","A","st_status","291");
+
+INSERT INTO tb_auditoria_itens VALUES("1792","","Maquiagem","no_categoria_servico","291");
+
+INSERT INTO tb_auditoria_itens VALUES("1793","","3","co_categoria_servico","292");
+
+INSERT INTO tb_auditoria_itens VALUES("1794","","2019-03-20 13:41:53","dt_cadastro","292");
+
+INSERT INTO tb_auditoria_itens VALUES("1795","","A","st_status","292");
+
+INSERT INTO tb_auditoria_itens VALUES("1796","","Corte Máquina","no_servico","292");
+
+INSERT INTO tb_auditoria_itens VALUES("1797","","30","nu_duracao","292");
+
+INSERT INTO tb_auditoria_itens VALUES("1798","","Corte: O corte na máquina irá deixar você com o visual renovado.","ds_descricao","292");
+
+INSERT INTO tb_auditoria_itens VALUES("1799","","17","co_servico","293");
+
+INSERT INTO tb_auditoria_itens VALUES("1800","","2019-03-20 13:41:53","dt_cadastro","293");
+
+INSERT INTO tb_auditoria_itens VALUES("1801","","29.9","nu_valor","293");
+
+INSERT INTO tb_auditoria_itens VALUES("1802","","Serviço Inicial","ds_observacao","293");
+
+INSERT INTO tb_auditoria_itens VALUES("1803","","11","co_assinante","294");
+
+INSERT INTO tb_auditoria_itens VALUES("1804","","2019-03-20 13:41:42","dt_cadastro","294");
+
+INSERT INTO tb_auditoria_itens VALUES("1805","","A","st_status","294");
+
+INSERT INTO tb_auditoria_itens VALUES("1806","","Sobrancelha","no_categoria_servico","294");
+
+INSERT INTO tb_auditoria_itens VALUES("1807","","4","co_categoria_servico","295");
+
+INSERT INTO tb_auditoria_itens VALUES("1808","","2019-03-20 13:41:53","dt_cadastro","295");
+
+INSERT INTO tb_auditoria_itens VALUES("1809","","A","st_status","295");
+
+INSERT INTO tb_auditoria_itens VALUES("1810","","Corte Feminino","no_servico","295");
+
+INSERT INTO tb_auditoria_itens VALUES("1811","","60","nu_duracao","295");
+
+INSERT INTO tb_auditoria_itens VALUES("1812","","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","ds_descricao","295");
+
+INSERT INTO tb_auditoria_itens VALUES("1813","","18","co_servico","296");
+
+INSERT INTO tb_auditoria_itens VALUES("1814","","2019-03-20 13:41:54","dt_cadastro","296");
+
+INSERT INTO tb_auditoria_itens VALUES("1815","","59.9","nu_valor","296");
+
+INSERT INTO tb_auditoria_itens VALUES("1816","","Serviço Inicial","ds_observacao","296");
+
+INSERT INTO tb_auditoria_itens VALUES("1817","","4","co_categoria_servico","297");
+
+INSERT INTO tb_auditoria_itens VALUES("1818","","2019-03-20 13:41:55","dt_cadastro","297");
+
+INSERT INTO tb_auditoria_itens VALUES("1819","","A","st_status","297");
+
+INSERT INTO tb_auditoria_itens VALUES("1820","","Corte Feminino","no_servico","297");
+
+INSERT INTO tb_auditoria_itens VALUES("1821","","60","nu_duracao","297");
+
+INSERT INTO tb_auditoria_itens VALUES("1822","","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","ds_descricao","297");
+
+INSERT INTO tb_auditoria_itens VALUES("1823","","19","co_servico","298");
+
+INSERT INTO tb_auditoria_itens VALUES("1824","","2019-03-20 13:41:56","dt_cadastro","298");
+
+INSERT INTO tb_auditoria_itens VALUES("1825","","59.9","nu_valor","298");
+
+INSERT INTO tb_auditoria_itens VALUES("1826","","Serviço Inicial","ds_observacao","298");
+
+INSERT INTO tb_auditoria_itens VALUES("1827","","11","co_assinante","299");
+
+INSERT INTO tb_auditoria_itens VALUES("1828","","2019-03-20 13:41:42","dt_cadastro","299");
+
+INSERT INTO tb_auditoria_itens VALUES("1829","","A","st_status","299");
+
+INSERT INTO tb_auditoria_itens VALUES("1830","","Barba","no_categoria_servico","299");
+
+INSERT INTO tb_auditoria_itens VALUES("1831","","5","co_categoria_servico","300");
+
+INSERT INTO tb_auditoria_itens VALUES("1832","","2019-03-20 13:41:57","dt_cadastro","300");
+
+INSERT INTO tb_auditoria_itens VALUES("1833","","A","st_status","300");
+
+INSERT INTO tb_auditoria_itens VALUES("1834","","Hidratação Capilar","no_servico","300");
+
+INSERT INTO tb_auditoria_itens VALUES("1835","","60","nu_duracao","300");
+
+INSERT INTO tb_auditoria_itens VALUES("1836","","Barba","ds_descricao","300");
+
+INSERT INTO tb_auditoria_itens VALUES("1837","","20","co_servico","301");
+
+INSERT INTO tb_auditoria_itens VALUES("1838","","2019-03-20 13:41:57","dt_cadastro","301");
+
+INSERT INTO tb_auditoria_itens VALUES("1839","","49.9","nu_valor","301");
+
+INSERT INTO tb_auditoria_itens VALUES("1840","","Serviço Inicial","ds_observacao","301");
+
+INSERT INTO tb_auditoria_itens VALUES("1841","","11","co_assinante","302");
+
+INSERT INTO tb_auditoria_itens VALUES("1842","","2019-03-20 13:41:42","dt_cadastro","302");
+
+INSERT INTO tb_auditoria_itens VALUES("1843","","A","st_status","302");
+
+INSERT INTO tb_auditoria_itens VALUES("1844","","Estética Facial","no_categoria_servico","302");
+
+INSERT INTO tb_auditoria_itens VALUES("1845","","6","co_categoria_servico","303");
+
+INSERT INTO tb_auditoria_itens VALUES("1846","","2019-03-20 13:41:57","dt_cadastro","303");
+
+INSERT INTO tb_auditoria_itens VALUES("1847","","A","st_status","303");
+
+INSERT INTO tb_auditoria_itens VALUES("1848","","Corte e Higienização dos Fios","no_servico","303");
+
+INSERT INTO tb_auditoria_itens VALUES("1849","","30","nu_duracao","303");
+
+INSERT INTO tb_auditoria_itens VALUES("1850","","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","ds_descricao","303");
+
+INSERT INTO tb_auditoria_itens VALUES("1851","","21","co_servico","304");
+
+INSERT INTO tb_auditoria_itens VALUES("1852","","2019-03-20 13:41:58","dt_cadastro","304");
+
+INSERT INTO tb_auditoria_itens VALUES("1853","","49.9","nu_valor","304");
+
+INSERT INTO tb_auditoria_itens VALUES("1854","","Serviço Inicial","ds_observacao","304");
+
+INSERT INTO tb_auditoria_itens VALUES("1855","","6","co_categoria_servico","305");
+
+INSERT INTO tb_auditoria_itens VALUES("1856","","2019-03-20 13:41:58","dt_cadastro","305");
+
+INSERT INTO tb_auditoria_itens VALUES("1857","","A","st_status","305");
+
+INSERT INTO tb_auditoria_itens VALUES("1858","","Corte e Higienização dos Fios","no_servico","305");
+
+INSERT INTO tb_auditoria_itens VALUES("1859","","30","nu_duracao","305");
+
+INSERT INTO tb_auditoria_itens VALUES("1860","","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","ds_descricao","305");
+
+INSERT INTO tb_auditoria_itens VALUES("1861","","22","co_servico","306");
+
+INSERT INTO tb_auditoria_itens VALUES("1862","","2019-03-20 13:41:59","dt_cadastro","306");
+
+INSERT INTO tb_auditoria_itens VALUES("1863","","49.9","nu_valor","306");
+
+INSERT INTO tb_auditoria_itens VALUES("1864","","Serviço Inicial","ds_observacao","306");
+
+INSERT INTO tb_auditoria_itens VALUES("1865","","6","co_categoria_servico","307");
+
+INSERT INTO tb_auditoria_itens VALUES("1866","","2019-03-20 13:41:59","dt_cadastro","307");
+
+INSERT INTO tb_auditoria_itens VALUES("1867","","A","st_status","307");
+
+INSERT INTO tb_auditoria_itens VALUES("1868","","Corte e Higienização dos Fios","no_servico","307");
+
+INSERT INTO tb_auditoria_itens VALUES("1869","","30","nu_duracao","307");
+
+INSERT INTO tb_auditoria_itens VALUES("1870","","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","ds_descricao","307");
+
+INSERT INTO tb_auditoria_itens VALUES("1871","","23","co_servico","308");
+
+INSERT INTO tb_auditoria_itens VALUES("1872","","2019-03-20 13:42:00","dt_cadastro","308");
+
+INSERT INTO tb_auditoria_itens VALUES("1873","","49.9","nu_valor","308");
+
+INSERT INTO tb_auditoria_itens VALUES("1874","","Serviço Inicial","ds_observacao","308");
+
+INSERT INTO tb_auditoria_itens VALUES("1875","","6","co_categoria_servico","309");
+
+INSERT INTO tb_auditoria_itens VALUES("1876","","2019-03-20 13:42:00","dt_cadastro","309");
+
+INSERT INTO tb_auditoria_itens VALUES("1877","","A","st_status","309");
+
+INSERT INTO tb_auditoria_itens VALUES("1878","","Corte e Higienização dos Fios","no_servico","309");
+
+INSERT INTO tb_auditoria_itens VALUES("1879","","30","nu_duracao","309");
+
+INSERT INTO tb_auditoria_itens VALUES("1880","","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","ds_descricao","309");
+
+INSERT INTO tb_auditoria_itens VALUES("1881","","24","co_servico","310");
+
+INSERT INTO tb_auditoria_itens VALUES("1882","","2019-03-20 13:42:01","dt_cadastro","310");
+
+INSERT INTO tb_auditoria_itens VALUES("1883","","49.9","nu_valor","310");
+
+INSERT INTO tb_auditoria_itens VALUES("1884","","Serviço Inicial","ds_observacao","310");
+
+INSERT INTO tb_auditoria_itens VALUES("1885","","11","co_assinante","311");
+
+INSERT INTO tb_auditoria_itens VALUES("1886","","2019-03-20 13:41:42","dt_cadastro","311");
+
+INSERT INTO tb_auditoria_itens VALUES("1887","","A","st_status","311");
+
+INSERT INTO tb_auditoria_itens VALUES("1888","","Depilação","no_categoria_servico","311");
+
+INSERT INTO tb_auditoria_itens VALUES("1889","","7","co_categoria_servico","312");
+
+INSERT INTO tb_auditoria_itens VALUES("1890","","2019-03-20 13:42:01","dt_cadastro","312");
+
+INSERT INTO tb_auditoria_itens VALUES("1891","","A","st_status","312");
+
+INSERT INTO tb_auditoria_itens VALUES("1892","","Escova Modeladora","no_servico","312");
+
+INSERT INTO tb_auditoria_itens VALUES("1893","","30","nu_duracao","312");
+
+INSERT INTO tb_auditoria_itens VALUES("1894","","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","ds_descricao","312");
+
+INSERT INTO tb_auditoria_itens VALUES("1895","","25","co_servico","313");
+
+INSERT INTO tb_auditoria_itens VALUES("1896","","2019-03-20 13:42:02","dt_cadastro","313");
+
+INSERT INTO tb_auditoria_itens VALUES("1897","","29.9","nu_valor","313");
+
+INSERT INTO tb_auditoria_itens VALUES("1898","","Serviço Inicial","ds_observacao","313");
+
+INSERT INTO tb_auditoria_itens VALUES("1899","","7","co_categoria_servico","314");
+
+INSERT INTO tb_auditoria_itens VALUES("1900","","2019-03-20 13:42:02","dt_cadastro","314");
+
+INSERT INTO tb_auditoria_itens VALUES("1901","","A","st_status","314");
+
+INSERT INTO tb_auditoria_itens VALUES("1902","","Escova Modeladora","no_servico","314");
+
+INSERT INTO tb_auditoria_itens VALUES("1903","","30","nu_duracao","314");
+
+INSERT INTO tb_auditoria_itens VALUES("1904","","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","ds_descricao","314");
+
+INSERT INTO tb_auditoria_itens VALUES("1905","","26","co_servico","315");
+
+INSERT INTO tb_auditoria_itens VALUES("1906","","2019-03-20 13:42:03","dt_cadastro","315");
+
+INSERT INTO tb_auditoria_itens VALUES("1907","","29.9","nu_valor","315");
+
+INSERT INTO tb_auditoria_itens VALUES("1908","","Serviço Inicial","ds_observacao","315");
+
+INSERT INTO tb_auditoria_itens VALUES("1909","","7","co_categoria_servico","316");
+
+INSERT INTO tb_auditoria_itens VALUES("1910","","2019-03-20 13:42:03","dt_cadastro","316");
+
+INSERT INTO tb_auditoria_itens VALUES("1911","","A","st_status","316");
+
+INSERT INTO tb_auditoria_itens VALUES("1912","","Escova Modeladora","no_servico","316");
+
+INSERT INTO tb_auditoria_itens VALUES("1913","","30","nu_duracao","316");
+
+INSERT INTO tb_auditoria_itens VALUES("1914","","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","ds_descricao","316");
+
+INSERT INTO tb_auditoria_itens VALUES("1915","","27","co_servico","317");
+
+INSERT INTO tb_auditoria_itens VALUES("1916","","2019-03-20 13:42:03","dt_cadastro","317");
+
+INSERT INTO tb_auditoria_itens VALUES("1917","","29.9","nu_valor","317");
+
+INSERT INTO tb_auditoria_itens VALUES("1918","","Serviço Inicial","ds_observacao","317");
+
+INSERT INTO tb_auditoria_itens VALUES("1919","","11","co_assinante","318");
+
+INSERT INTO tb_auditoria_itens VALUES("1920","","2019-03-20 13:41:42","dt_cadastro","318");
+
+INSERT INTO tb_auditoria_itens VALUES("1921","","A","st_status","318");
+
+INSERT INTO tb_auditoria_itens VALUES("1922","","Massagem","no_categoria_servico","318");
+
+INSERT INTO tb_auditoria_itens VALUES("1923","","8","co_categoria_servico","319");
+
+INSERT INTO tb_auditoria_itens VALUES("1924","","2019-03-20 13:42:04","dt_cadastro","319");
+
+INSERT INTO tb_auditoria_itens VALUES("1925","","A","st_status","319");
+
+INSERT INTO tb_auditoria_itens VALUES("1926","","Selagem","no_servico","319");
+
+INSERT INTO tb_auditoria_itens VALUES("1927","","60","nu_duracao","319");
+
+INSERT INTO tb_auditoria_itens VALUES("1928","","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","ds_descricao","319");
+
+INSERT INTO tb_auditoria_itens VALUES("1929","","28","co_servico","320");
+
+INSERT INTO tb_auditoria_itens VALUES("1930","","2019-03-20 13:42:04","dt_cadastro","320");
+
+INSERT INTO tb_auditoria_itens VALUES("1931","","59.9","nu_valor","320");
+
+INSERT INTO tb_auditoria_itens VALUES("1932","","Serviço Inicial","ds_observacao","320");
+
+INSERT INTO tb_auditoria_itens VALUES("1933","","8","co_categoria_servico","321");
+
+INSERT INTO tb_auditoria_itens VALUES("1934","","2019-03-20 13:42:05","dt_cadastro","321");
+
+INSERT INTO tb_auditoria_itens VALUES("1935","","A","st_status","321");
+
+INSERT INTO tb_auditoria_itens VALUES("1936","","Selagem","no_servico","321");
+
+INSERT INTO tb_auditoria_itens VALUES("1937","","60","nu_duracao","321");
+
+INSERT INTO tb_auditoria_itens VALUES("1938","","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","ds_descricao","321");
+
+INSERT INTO tb_auditoria_itens VALUES("1939","","29","co_servico","322");
+
+INSERT INTO tb_auditoria_itens VALUES("1940","","2019-03-20 13:42:05","dt_cadastro","322");
+
+INSERT INTO tb_auditoria_itens VALUES("1941","","59.9","nu_valor","322");
+
+INSERT INTO tb_auditoria_itens VALUES("1942","","Serviço Inicial","ds_observacao","322");
+
+INSERT INTO tb_auditoria_itens VALUES("1943","","8","co_categoria_servico","323");
+
+INSERT INTO tb_auditoria_itens VALUES("1944","","2019-03-20 13:42:05","dt_cadastro","323");
+
+INSERT INTO tb_auditoria_itens VALUES("1945","","A","st_status","323");
+
+INSERT INTO tb_auditoria_itens VALUES("1946","","Selagem","no_servico","323");
+
+INSERT INTO tb_auditoria_itens VALUES("1947","","60","nu_duracao","323");
+
+INSERT INTO tb_auditoria_itens VALUES("1948","","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","ds_descricao","323");
+
+INSERT INTO tb_auditoria_itens VALUES("1949","","30","co_servico","324");
+
+INSERT INTO tb_auditoria_itens VALUES("1950","","2019-03-20 13:42:06","dt_cadastro","324");
+
+INSERT INTO tb_auditoria_itens VALUES("1951","","59.9","nu_valor","324");
+
+INSERT INTO tb_auditoria_itens VALUES("1952","","Serviço Inicial","ds_observacao","324");
+
+INSERT INTO tb_auditoria_itens VALUES("1953","","8","co_categoria_servico","325");
+
+INSERT INTO tb_auditoria_itens VALUES("1954","","2019-03-20 13:42:07","dt_cadastro","325");
+
+INSERT INTO tb_auditoria_itens VALUES("1955","","A","st_status","325");
+
+INSERT INTO tb_auditoria_itens VALUES("1956","","Selagem","no_servico","325");
+
+INSERT INTO tb_auditoria_itens VALUES("1957","","60","nu_duracao","325");
+
+INSERT INTO tb_auditoria_itens VALUES("1958","","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","ds_descricao","325");
+
+INSERT INTO tb_auditoria_itens VALUES("3933","","11","co_assinante","737");
+
+INSERT INTO tb_auditoria_itens VALUES("3934","","2019-03-20 14:08:42","dt_cadastro","737");
+
+INSERT INTO tb_auditoria_itens VALUES("3935","","A","st_status","737");
+
+INSERT INTO tb_auditoria_itens VALUES("3936","","Cabelo","no_categoria_servico","737");
+
+INSERT INTO tb_auditoria_itens VALUES("3937","","82","co_categoria_servico","738");
+
+INSERT INTO tb_auditoria_itens VALUES("3938","","2019-03-20 14:08:42","dt_cadastro","738");
+
+INSERT INTO tb_auditoria_itens VALUES("3939","","A","st_status","738");
+
+INSERT INTO tb_auditoria_itens VALUES("3940","","Coloração / Tonalização","no_servico","738");
+
+INSERT INTO tb_auditoria_itens VALUES("3941","","120","nu_duracao","738");
+
+INSERT INTO tb_auditoria_itens VALUES("3942","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","738");
+
+INSERT INTO tb_auditoria_itens VALUES("3943","","166","co_servico","739");
+
+INSERT INTO tb_auditoria_itens VALUES("3944","","2019-03-20 14:08:42","dt_cadastro","739");
+
+INSERT INTO tb_auditoria_itens VALUES("3945","","39.9","nu_valor","739");
+
+INSERT INTO tb_auditoria_itens VALUES("3946","","Serviço Inicial","ds_observacao","739");
+
+INSERT INTO tb_auditoria_itens VALUES("3947","","82","co_categoria_servico","740");
+
+INSERT INTO tb_auditoria_itens VALUES("3948","","2019-03-20 14:08:42","dt_cadastro","740");
+
+INSERT INTO tb_auditoria_itens VALUES("3949","","A","st_status","740");
+
+INSERT INTO tb_auditoria_itens VALUES("3950","","Corte Tesoura","no_servico","740");
+
+INSERT INTO tb_auditoria_itens VALUES("3951","","30","nu_duracao","740");
+
+INSERT INTO tb_auditoria_itens VALUES("3952","","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","740");
+
+INSERT INTO tb_auditoria_itens VALUES("3953","","167","co_servico","741");
+
+INSERT INTO tb_auditoria_itens VALUES("3954","","2019-03-20 14:08:42","dt_cadastro","741");
+
+INSERT INTO tb_auditoria_itens VALUES("3955","","19.9","nu_valor","741");
+
+INSERT INTO tb_auditoria_itens VALUES("3956","","Serviço Inicial","ds_observacao","741");
+
+INSERT INTO tb_auditoria_itens VALUES("3957","","82","co_categoria_servico","742");
+
+INSERT INTO tb_auditoria_itens VALUES("3958","","2019-03-20 14:08:42","dt_cadastro","742");
+
+INSERT INTO tb_auditoria_itens VALUES("3959","","A","st_status","742");
+
+INSERT INTO tb_auditoria_itens VALUES("3960","","Corte Máquina","no_servico","742");
+
+INSERT INTO tb_auditoria_itens VALUES("3961","","30","nu_duracao","742");
+
+INSERT INTO tb_auditoria_itens VALUES("3962","","Corte: O corte na máquina irá deixar você com o visual renovado.","ds_descricao","742");
+
+INSERT INTO tb_auditoria_itens VALUES("3963","","168","co_servico","743");
+
+INSERT INTO tb_auditoria_itens VALUES("3964","","2019-03-20 14:08:42","dt_cadastro","743");
+
+INSERT INTO tb_auditoria_itens VALUES("3965","","29.9","nu_valor","743");
+
+INSERT INTO tb_auditoria_itens VALUES("3966","","Serviço Inicial","ds_observacao","743");
+
+INSERT INTO tb_auditoria_itens VALUES("3967","","82","co_categoria_servico","744");
+
+INSERT INTO tb_auditoria_itens VALUES("3968","","2019-03-20 14:08:42","dt_cadastro","744");
+
+INSERT INTO tb_auditoria_itens VALUES("3969","","A","st_status","744");
+
+INSERT INTO tb_auditoria_itens VALUES("3970","","Corte Feminino","no_servico","744");
+
+INSERT INTO tb_auditoria_itens VALUES("3971","","60","nu_duracao","744");
+
+INSERT INTO tb_auditoria_itens VALUES("3972","","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","ds_descricao","744");
+
+INSERT INTO tb_auditoria_itens VALUES("3973","","169","co_servico","745");
+
+INSERT INTO tb_auditoria_itens VALUES("3974","","2019-03-20 14:08:42","dt_cadastro","745");
+
+INSERT INTO tb_auditoria_itens VALUES("3975","","59.9","nu_valor","745");
+
+INSERT INTO tb_auditoria_itens VALUES("3976","","Serviço Inicial","ds_observacao","745");
+
+INSERT INTO tb_auditoria_itens VALUES("3977","","82","co_categoria_servico","746");
+
+INSERT INTO tb_auditoria_itens VALUES("3978","","2019-03-20 14:08:42","dt_cadastro","746");
+
+INSERT INTO tb_auditoria_itens VALUES("3979","","A","st_status","746");
+
+INSERT INTO tb_auditoria_itens VALUES("3980","","Hidratação Capilar","no_servico","746");
+
+INSERT INTO tb_auditoria_itens VALUES("3981","","60","nu_duracao","746");
+
+INSERT INTO tb_auditoria_itens VALUES("3982","","Barba","ds_descricao","746");
+
+INSERT INTO tb_auditoria_itens VALUES("3983","","170","co_servico","747");
+
+INSERT INTO tb_auditoria_itens VALUES("3984","","2019-03-20 14:08:42","dt_cadastro","747");
+
+INSERT INTO tb_auditoria_itens VALUES("3985","","49.9","nu_valor","747");
+
+INSERT INTO tb_auditoria_itens VALUES("3986","","Serviço Inicial","ds_observacao","747");
+
+INSERT INTO tb_auditoria_itens VALUES("3987","","82","co_categoria_servico","748");
+
+INSERT INTO tb_auditoria_itens VALUES("3988","","2019-03-20 14:08:42","dt_cadastro","748");
+
+INSERT INTO tb_auditoria_itens VALUES("3989","","A","st_status","748");
+
+INSERT INTO tb_auditoria_itens VALUES("3990","","Corte e Higienização dos Fios","no_servico","748");
+
+INSERT INTO tb_auditoria_itens VALUES("3991","","30","nu_duracao","748");
+
+INSERT INTO tb_auditoria_itens VALUES("3992","","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","ds_descricao","748");
+
+INSERT INTO tb_auditoria_itens VALUES("3993","","171","co_servico","749");
+
+INSERT INTO tb_auditoria_itens VALUES("3994","","2019-03-20 14:08:42","dt_cadastro","749");
+
+INSERT INTO tb_auditoria_itens VALUES("3995","","49.9","nu_valor","749");
+
+INSERT INTO tb_auditoria_itens VALUES("3996","","Serviço Inicial","ds_observacao","749");
+
+INSERT INTO tb_auditoria_itens VALUES("3997","","82","co_categoria_servico","750");
+
+INSERT INTO tb_auditoria_itens VALUES("3998","","2019-03-20 14:08:42","dt_cadastro","750");
+
+INSERT INTO tb_auditoria_itens VALUES("3999","","A","st_status","750");
+
+INSERT INTO tb_auditoria_itens VALUES("4000","","Escova Modeladora","no_servico","750");
+
+INSERT INTO tb_auditoria_itens VALUES("4001","","30","nu_duracao","750");
+
+INSERT INTO tb_auditoria_itens VALUES("4002","","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","ds_descricao","750");
+
+INSERT INTO tb_auditoria_itens VALUES("4003","","172","co_servico","751");
+
+INSERT INTO tb_auditoria_itens VALUES("4004","","2019-03-20 14:08:42","dt_cadastro","751");
+
+INSERT INTO tb_auditoria_itens VALUES("4005","","29.9","nu_valor","751");
+
+INSERT INTO tb_auditoria_itens VALUES("4006","","Serviço Inicial","ds_observacao","751");
+
+INSERT INTO tb_auditoria_itens VALUES("4007","","82","co_categoria_servico","752");
+
+INSERT INTO tb_auditoria_itens VALUES("4008","","2019-03-20 14:08:42","dt_cadastro","752");
+
+INSERT INTO tb_auditoria_itens VALUES("4009","","A","st_status","752");
+
+INSERT INTO tb_auditoria_itens VALUES("4010","","Selagem","no_servico","752");
+
+INSERT INTO tb_auditoria_itens VALUES("4011","","60","nu_duracao","752");
+
+INSERT INTO tb_auditoria_itens VALUES("4012","","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","ds_descricao","752");
+
+INSERT INTO tb_auditoria_itens VALUES("4013","","173","co_servico","753");
+
+INSERT INTO tb_auditoria_itens VALUES("4014","","2019-03-20 14:08:42","dt_cadastro","753");
+
+INSERT INTO tb_auditoria_itens VALUES("4015","","59.9","nu_valor","753");
+
+INSERT INTO tb_auditoria_itens VALUES("4016","","Serviço Inicial","ds_observacao","753");
+
+INSERT INTO tb_auditoria_itens VALUES("4017","","82","co_categoria_servico","754");
+
+INSERT INTO tb_auditoria_itens VALUES("4018","","2019-03-20 14:08:42","dt_cadastro","754");
+
+INSERT INTO tb_auditoria_itens VALUES("4019","","A","st_status","754");
+
+INSERT INTO tb_auditoria_itens VALUES("4020","","Escova Progressiva","no_servico","754");
+
+INSERT INTO tb_auditoria_itens VALUES("4021","","60","nu_duracao","754");
+
+INSERT INTO tb_auditoria_itens VALUES("4022","","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a \n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo \n        que adere à superfície do cabelo, selando as cutículas, repo","ds_descricao","754");
+
+INSERT INTO tb_auditoria_itens VALUES("4023","","174","co_servico","755");
+
+INSERT INTO tb_auditoria_itens VALUES("4024","","2019-03-20 14:08:42","dt_cadastro","755");
+
+INSERT INTO tb_auditoria_itens VALUES("4025","","59.9","nu_valor","755");
+
+INSERT INTO tb_auditoria_itens VALUES("4026","","Serviço Inicial","ds_observacao","755");
+
+INSERT INTO tb_auditoria_itens VALUES("4027","","82","co_categoria_servico","756");
+
+INSERT INTO tb_auditoria_itens VALUES("4028","","2019-03-20 14:08:42","dt_cadastro","756");
+
+INSERT INTO tb_auditoria_itens VALUES("4029","","A","st_status","756");
+
+INSERT INTO tb_auditoria_itens VALUES("4030","","Botox Capilar","no_servico","756");
+
+INSERT INTO tb_auditoria_itens VALUES("4031","","60","nu_duracao","756");
+
+INSERT INTO tb_auditoria_itens VALUES("4032","","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. \n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","ds_descricao","756");
+
+INSERT INTO tb_auditoria_itens VALUES("4033","","175","co_servico","757");
+
+INSERT INTO tb_auditoria_itens VALUES("4034","","2019-03-20 14:08:42","dt_cadastro","757");
+
+INSERT INTO tb_auditoria_itens VALUES("4035","","59.9","nu_valor","757");
+
+INSERT INTO tb_auditoria_itens VALUES("4036","","Serviço Inicial","ds_observacao","757");
+
+INSERT INTO tb_auditoria_itens VALUES("4037","","82","co_categoria_servico","758");
+
+INSERT INTO tb_auditoria_itens VALUES("4038","","2019-03-20 14:08:42","dt_cadastro","758");
+
+INSERT INTO tb_auditoria_itens VALUES("4039","","A","st_status","758");
+
+INSERT INTO tb_auditoria_itens VALUES("4040","","Luzes / Mechas","no_servico","758");
+
+INSERT INTO tb_auditoria_itens VALUES("4041","","150","nu_duracao","758");
+
+INSERT INTO tb_auditoria_itens VALUES("4042","","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo \n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","ds_descricao","758");
+
+INSERT INTO tb_auditoria_itens VALUES("4043","","176","co_servico","759");
+
+INSERT INTO tb_auditoria_itens VALUES("4044","","2019-03-20 14:08:42","dt_cadastro","759");
+
+INSERT INTO tb_auditoria_itens VALUES("4045","","79.9","nu_valor","759");
+
+INSERT INTO tb_auditoria_itens VALUES("4046","","Serviço Inicial","ds_observacao","759");
+
+INSERT INTO tb_auditoria_itens VALUES("4047","","11","co_assinante","760");
+
+INSERT INTO tb_auditoria_itens VALUES("4048","","2019-03-20 14:08:42","dt_cadastro","760");
+
+INSERT INTO tb_auditoria_itens VALUES("4049","","A","st_status","760");
+
+INSERT INTO tb_auditoria_itens VALUES("4050","","Mãos e Pés","no_categoria_servico","760");
+
+INSERT INTO tb_auditoria_itens VALUES("4051","","83","co_categoria_servico","761");
+
+INSERT INTO tb_auditoria_itens VALUES("4052","","2019-03-20 14:08:42","dt_cadastro","761");
+
+INSERT INTO tb_auditoria_itens VALUES("4053","","A","st_status","761");
+
+INSERT INTO tb_auditoria_itens VALUES("4054","","Manicure","no_servico","761");
+
+INSERT INTO tb_auditoria_itens VALUES("4055","","30","nu_duracao","761");
+
+INSERT INTO tb_auditoria_itens VALUES("4056","","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas \n        pela cliente.","ds_descricao","761");
+
+INSERT INTO tb_auditoria_itens VALUES("4057","","177","co_servico","762");
+
+INSERT INTO tb_auditoria_itens VALUES("4058","","2019-03-20 14:08:42","dt_cadastro","762");
+
+INSERT INTO tb_auditoria_itens VALUES("4059","","19.9","nu_valor","762");
+
+INSERT INTO tb_auditoria_itens VALUES("4060","","Serviço Inicial","ds_observacao","762");
+
+INSERT INTO tb_auditoria_itens VALUES("4061","","83","co_categoria_servico","763");
+
+INSERT INTO tb_auditoria_itens VALUES("4062","","2019-03-20 14:08:42","dt_cadastro","763");
+
+INSERT INTO tb_auditoria_itens VALUES("4063","","A","st_status","763");
+
+INSERT INTO tb_auditoria_itens VALUES("4064","","Pedicure","no_servico","763");
+
+INSERT INTO tb_auditoria_itens VALUES("4065","","30","nu_duracao","763");
+
+INSERT INTO tb_auditoria_itens VALUES("4066","","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas \n        pela cliente.","ds_descricao","763");
+
+INSERT INTO tb_auditoria_itens VALUES("4067","","178","co_servico","764");
+
+INSERT INTO tb_auditoria_itens VALUES("4068","","2019-03-20 14:08:42","dt_cadastro","764");
+
+INSERT INTO tb_auditoria_itens VALUES("4069","","19.9","nu_valor","764");
+
+INSERT INTO tb_auditoria_itens VALUES("4070","","Serviço Inicial","ds_observacao","764");
+
+INSERT INTO tb_auditoria_itens VALUES("4071","","83","co_categoria_servico","765");
+
+INSERT INTO tb_auditoria_itens VALUES("4072","","2019-03-20 14:08:42","dt_cadastro","765");
+
+INSERT INTO tb_auditoria_itens VALUES("4073","","A","st_status","765");
+
+INSERT INTO tb_auditoria_itens VALUES("4074","","Manicure e Pedicure","no_servico","765");
+
+INSERT INTO tb_auditoria_itens VALUES("4075","","60","nu_duracao","765");
+
+INSERT INTO tb_auditoria_itens VALUES("4076","","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos \n        e dos pés nas cores desejadas pela cliente.","ds_descricao","765");
+
+INSERT INTO tb_auditoria_itens VALUES("4077","","179","co_servico","766");
+
+INSERT INTO tb_auditoria_itens VALUES("4078","","2019-03-20 14:08:42","dt_cadastro","766");
+
+INSERT INTO tb_auditoria_itens VALUES("4079","","29.9","nu_valor","766");
+
+INSERT INTO tb_auditoria_itens VALUES("4080","","Serviço Inicial","ds_observacao","766");
+
+INSERT INTO tb_auditoria_itens VALUES("4081","","83","co_categoria_servico","767");
+
+INSERT INTO tb_auditoria_itens VALUES("4082","","2019-03-20 14:08:42","dt_cadastro","767");
+
+INSERT INTO tb_auditoria_itens VALUES("4083","","A","st_status","767");
+
+INSERT INTO tb_auditoria_itens VALUES("4084","","Manicure e Pedicure","no_servico","767");
+
+INSERT INTO tb_auditoria_itens VALUES("4085","","90","nu_duracao","767");
+
+INSERT INTO tb_auditoria_itens VALUES("4086","","Unhas em Gel: feitas com produto à base de película de poliéster, \n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e \n        são mais finas.","ds_descricao","767");
+
+INSERT INTO tb_auditoria_itens VALUES("4087","","180","co_servico","768");
+
+INSERT INTO tb_auditoria_itens VALUES("4088","","2019-03-20 14:08:42","dt_cadastro","768");
+
+INSERT INTO tb_auditoria_itens VALUES("4089","","59.9","nu_valor","768");
+
+INSERT INTO tb_auditoria_itens VALUES("4090","","Serviço Inicial","ds_observacao","768");
+
+INSERT INTO tb_auditoria_itens VALUES("4091","","11","co_assinante","769");
+
+INSERT INTO tb_auditoria_itens VALUES("4092","","2019-03-20 14:08:42","dt_cadastro","769");
+
+INSERT INTO tb_auditoria_itens VALUES("4093","","A","st_status","769");
+
+INSERT INTO tb_auditoria_itens VALUES("4094","","Maquiagem","no_categoria_servico","769");
+
+INSERT INTO tb_auditoria_itens VALUES("4095","","84","co_categoria_servico","770");
+
+INSERT INTO tb_auditoria_itens VALUES("4096","","2019-03-20 14:08:42","dt_cadastro","770");
+
+INSERT INTO tb_auditoria_itens VALUES("4097","","A","st_status","770");
+
+INSERT INTO tb_auditoria_itens VALUES("4098","","Maquiagem Completa","no_servico","770");
+
+INSERT INTO tb_auditoria_itens VALUES("4099","","120","nu_duracao","770");
+
+INSERT INTO tb_auditoria_itens VALUES("4100","","Desfrute de uma make completa para arrasar em festas, comemorações e \n        casamentos com uma super maquiagem.","ds_descricao","770");
+
+INSERT INTO tb_auditoria_itens VALUES("4101","","181","co_servico","771");
+
+INSERT INTO tb_auditoria_itens VALUES("4102","","2019-03-20 14:08:42","dt_cadastro","771");
+
+INSERT INTO tb_auditoria_itens VALUES("4103","","119.9","nu_valor","771");
+
+INSERT INTO tb_auditoria_itens VALUES("4104","","Serviço Inicial","ds_observacao","771");
+
+INSERT INTO tb_auditoria_itens VALUES("4105","","11","co_assinante","772");
+
+INSERT INTO tb_auditoria_itens VALUES("4106","","2019-03-20 14:08:42","dt_cadastro","772");
+
+INSERT INTO tb_auditoria_itens VALUES("4107","","A","st_status","772");
+
+INSERT INTO tb_auditoria_itens VALUES("4108","","Sobrancelha","no_categoria_servico","772");
+
+INSERT INTO tb_auditoria_itens VALUES("4109","","85","co_categoria_servico","773");
+
+INSERT INTO tb_auditoria_itens VALUES("4110","","2019-03-20 14:08:42","dt_cadastro","773");
+
+INSERT INTO tb_auditoria_itens VALUES("4111","","A","st_status","773");
+
+INSERT INTO tb_auditoria_itens VALUES("4112","","Alongamento de Cílios Fio a Fio","no_servico","773");
+
+INSERT INTO tb_auditoria_itens VALUES("4113","","90","nu_duracao","773");
+
+INSERT INTO tb_auditoria_itens VALUES("4114","","Alongamento de Cílios: a técnica de alongamento de cílios trata-se \n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, \n        fazendo com que os mesmos fiquem alongados, cheios e definidos, c","ds_descricao","773");
+
+INSERT INTO tb_auditoria_itens VALUES("4115","","182","co_servico","774");
+
+INSERT INTO tb_auditoria_itens VALUES("4116","","2019-03-20 14:08:42","dt_cadastro","774");
+
+INSERT INTO tb_auditoria_itens VALUES("4117","","79.9","nu_valor","774");
+
+INSERT INTO tb_auditoria_itens VALUES("4118","","Serviço Inicial","ds_observacao","774");
+
+INSERT INTO tb_auditoria_itens VALUES("4119","","85","co_categoria_servico","775");
+
+INSERT INTO tb_auditoria_itens VALUES("4120","","2019-03-20 14:08:42","dt_cadastro","775");
+
+INSERT INTO tb_auditoria_itens VALUES("4121","","A","st_status","775");
+
+INSERT INTO tb_auditoria_itens VALUES("4122","","Design de Sobrancelhas","no_servico","775");
+
+INSERT INTO tb_auditoria_itens VALUES("4123","","30","nu_duracao","775");
+
+INSERT INTO tb_auditoria_itens VALUES("4124","","Design de Sobrancelhas: além de ser esteticamente essencial, garante \n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. \n        Feito de acordo com o formato do seu rosto. Feito com pinça.","ds_descricao","775");
+
+INSERT INTO tb_auditoria_itens VALUES("4125","","183","co_servico","776");
+
+INSERT INTO tb_auditoria_itens VALUES("4126","","2019-03-20 14:08:42","dt_cadastro","776");
+
+INSERT INTO tb_auditoria_itens VALUES("4127","","24.9","nu_valor","776");
+
+INSERT INTO tb_auditoria_itens VALUES("4128","","Serviço Inicial","ds_observacao","776");
+
+INSERT INTO tb_auditoria_itens VALUES("4129","","11","co_assinante","777");
+
+INSERT INTO tb_auditoria_itens VALUES("4130","","2019-03-20 14:08:42","dt_cadastro","777");
+
+INSERT INTO tb_auditoria_itens VALUES("4131","","A","st_status","777");
+
+INSERT INTO tb_auditoria_itens VALUES("4132","","Barba","no_categoria_servico","777");
+
+INSERT INTO tb_auditoria_itens VALUES("4133","","86","co_categoria_servico","778");
+
+INSERT INTO tb_auditoria_itens VALUES("4134","","2019-03-20 14:08:42","dt_cadastro","778");
+
+INSERT INTO tb_auditoria_itens VALUES("4135","","A","st_status","778");
+
+INSERT INTO tb_auditoria_itens VALUES("4136","","Retoque na Barba","no_servico","778");
+
+INSERT INTO tb_auditoria_itens VALUES("4137","","60","nu_duracao","778");
+
+INSERT INTO tb_auditoria_itens VALUES("4138","","Barba: faça a barba totalmente ou apare com um design a seu gosto para \n        manter a aparência impecável.","ds_descricao","778");
+
+INSERT INTO tb_auditoria_itens VALUES("4139","","184","co_servico","779");
+
+INSERT INTO tb_auditoria_itens VALUES("4140","","2019-03-20 14:08:42","dt_cadastro","779");
+
+INSERT INTO tb_auditoria_itens VALUES("4141","","19.9","nu_valor","779");
+
+INSERT INTO tb_auditoria_itens VALUES("4142","","Serviço Inicial","ds_observacao","779");
+
+INSERT INTO tb_auditoria_itens VALUES("4143","","11","co_assinante","780");
+
+INSERT INTO tb_auditoria_itens VALUES("4144","","2019-03-20 14:08:42","dt_cadastro","780");
+
+INSERT INTO tb_auditoria_itens VALUES("4145","","A","st_status","780");
+
+INSERT INTO tb_auditoria_itens VALUES("4146","","Estética Facial","no_categoria_servico","780");
+
+INSERT INTO tb_auditoria_itens VALUES("4147","","87","co_categoria_servico","781");
+
+INSERT INTO tb_auditoria_itens VALUES("4148","","2019-03-20 14:08:42","dt_cadastro","781");
+
+INSERT INTO tb_auditoria_itens VALUES("4149","","A","st_status","781");
+
+INSERT INTO tb_auditoria_itens VALUES("4150","","Rejuvenescimento Facial","no_servico","781");
+
+INSERT INTO tb_auditoria_itens VALUES("4151","","60","nu_duracao","781");
+
+INSERT INTO tb_auditoria_itens VALUES("4152","","Rejuvenescimento Facial com Luz Pulsada é um procedimento \n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno \n        e a elastina proporcionando assim uma pele mais firme e jovem.","ds_descricao","781");
+
+INSERT INTO tb_auditoria_itens VALUES("4153","","185","co_servico","782");
+
+INSERT INTO tb_auditoria_itens VALUES("4154","","2019-03-20 14:08:42","dt_cadastro","782");
+
+INSERT INTO tb_auditoria_itens VALUES("4155","","19.9","nu_valor","782");
+
+INSERT INTO tb_auditoria_itens VALUES("4156","","Serviço Inicial","ds_observacao","782");
+
+INSERT INTO tb_auditoria_itens VALUES("4157","","87","co_categoria_servico","783");
+
+INSERT INTO tb_auditoria_itens VALUES("4158","","2019-03-20 14:08:42","dt_cadastro","783");
+
+INSERT INTO tb_auditoria_itens VALUES("4159","","A","st_status","783");
+
+INSERT INTO tb_auditoria_itens VALUES("4160","","Microagulhamento com Peeling","no_servico","783");
+
+INSERT INTO tb_auditoria_itens VALUES("4161","","60","nu_duracao","783");
+
+INSERT INTO tb_auditoria_itens VALUES("4162","","Microagulhamento: promove textura mais macia, atenuando cicatrizes \n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling \n        de diamante: entre os principais objetivos do procedimen","ds_descricao","783");
+
+INSERT INTO tb_auditoria_itens VALUES("4163","","186","co_servico","784");
+
+INSERT INTO tb_auditoria_itens VALUES("4164","","2019-03-20 14:08:42","dt_cadastro","784");
+
+INSERT INTO tb_auditoria_itens VALUES("4165","","69.9","nu_valor","784");
+
+INSERT INTO tb_auditoria_itens VALUES("4166","","Serviço Inicial","ds_observacao","784");
+
+INSERT INTO tb_auditoria_itens VALUES("4167","","87","co_categoria_servico","785");
+
+INSERT INTO tb_auditoria_itens VALUES("4168","","2019-03-20 14:08:42","dt_cadastro","785");
+
+INSERT INTO tb_auditoria_itens VALUES("4169","","A","st_status","785");
+
+INSERT INTO tb_auditoria_itens VALUES("4170","","Máscara Acne Control","no_servico","785");
+
+INSERT INTO tb_auditoria_itens VALUES("4171","","60","nu_duracao","785");
+
+INSERT INTO tb_auditoria_itens VALUES("4172","","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a \n        textura e a firmeza da pele.","ds_descricao","785");
+
+INSERT INTO tb_auditoria_itens VALUES("4173","","187","co_servico","786");
+
+INSERT INTO tb_auditoria_itens VALUES("4174","","2019-03-20 14:08:42","dt_cadastro","786");
+
+INSERT INTO tb_auditoria_itens VALUES("4175","","39.9","nu_valor","786");
+
+INSERT INTO tb_auditoria_itens VALUES("4176","","Serviço Inicial","ds_observacao","786");
+
+INSERT INTO tb_auditoria_itens VALUES("4177","","87","co_categoria_servico","787");
+
+INSERT INTO tb_auditoria_itens VALUES("4178","","2019-03-20 14:08:42","dt_cadastro","787");
+
+INSERT INTO tb_auditoria_itens VALUES("4179","","A","st_status","787");
+
+INSERT INTO tb_auditoria_itens VALUES("4180","","Limpeza de Pele","no_servico","787");
+
+INSERT INTO tb_auditoria_itens VALUES("4181","","30","nu_duracao","787");
+
+INSERT INTO tb_auditoria_itens VALUES("4182","","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração \n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","ds_descricao","787");
+
+INSERT INTO tb_auditoria_itens VALUES("4183","","188","co_servico","788");
+
+INSERT INTO tb_auditoria_itens VALUES("4184","","2019-03-20 14:08:42","dt_cadastro","788");
+
+INSERT INTO tb_auditoria_itens VALUES("4185","","29.9","nu_valor","788");
+
+INSERT INTO tb_auditoria_itens VALUES("4186","","Serviço Inicial","ds_observacao","788");
+
+INSERT INTO tb_auditoria_itens VALUES("4187","","11","co_assinante","789");
+
+INSERT INTO tb_auditoria_itens VALUES("4188","","2019-03-20 14:08:42","dt_cadastro","789");
+
+INSERT INTO tb_auditoria_itens VALUES("4189","","A","st_status","789");
+
+INSERT INTO tb_auditoria_itens VALUES("4190","","Depilação","no_categoria_servico","789");
+
+INSERT INTO tb_auditoria_itens VALUES("4191","","88","co_categoria_servico","790");
+
+INSERT INTO tb_auditoria_itens VALUES("4192","","2019-03-20 14:08:42","dt_cadastro","790");
+
+INSERT INTO tb_auditoria_itens VALUES("4193","","A","st_status","790");
+
+INSERT INTO tb_auditoria_itens VALUES("4194","","Depilação a Laser","no_servico","790");
+
+INSERT INTO tb_auditoria_itens VALUES("4195","","30","nu_duracao","790");
+
+INSERT INTO tb_auditoria_itens VALUES("4196","","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, \n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","ds_descricao","790");
+
+INSERT INTO tb_auditoria_itens VALUES("4197","","189","co_servico","791");
+
+INSERT INTO tb_auditoria_itens VALUES("4198","","2019-03-20 14:08:42","dt_cadastro","791");
+
+INSERT INTO tb_auditoria_itens VALUES("4199","","99.9","nu_valor","791");
+
+INSERT INTO tb_auditoria_itens VALUES("4200","","Serviço Inicial","ds_observacao","791");
+
+INSERT INTO tb_auditoria_itens VALUES("4201","","88","co_categoria_servico","792");
+
+INSERT INTO tb_auditoria_itens VALUES("4202","","2019-03-20 14:08:42","dt_cadastro","792");
+
+INSERT INTO tb_auditoria_itens VALUES("4203","","A","st_status","792");
+
+INSERT INTO tb_auditoria_itens VALUES("4204","","Depilação a Cera","no_servico","792");
+
+INSERT INTO tb_auditoria_itens VALUES("4205","","60","nu_duracao","792");
+
+INSERT INTO tb_auditoria_itens VALUES("4206","","Realizada com cera quente, que garante uma maior durabilidade, já que os \n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, \n        sem resíduos e sua pele não fica irritada, como acon","ds_descricao","792");
+
+INSERT INTO tb_auditoria_itens VALUES("4207","","190","co_servico","793");
+
+INSERT INTO tb_auditoria_itens VALUES("4208","","2019-03-20 14:08:42","dt_cadastro","793");
+
+INSERT INTO tb_auditoria_itens VALUES("4209","","29.9","nu_valor","793");
+
+INSERT INTO tb_auditoria_itens VALUES("4210","","Serviço Inicial","ds_observacao","793");
+
+INSERT INTO tb_auditoria_itens VALUES("4211","","88","co_categoria_servico","794");
+
+INSERT INTO tb_auditoria_itens VALUES("4212","","2019-03-20 14:08:42","dt_cadastro","794");
+
+INSERT INTO tb_auditoria_itens VALUES("4213","","A","st_status","794");
+
+INSERT INTO tb_auditoria_itens VALUES("4214","","Depilação a Luz","no_servico","794");
+
+INSERT INTO tb_auditoria_itens VALUES("4215","","30","nu_duracao","794");
+
+INSERT INTO tb_auditoria_itens VALUES("4216","","O método remove os pelos pela destruição do folículo piloso ou \n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até \n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocrom","ds_descricao","794");
+
+INSERT INTO tb_auditoria_itens VALUES("4217","","191","co_servico","795");
+
+INSERT INTO tb_auditoria_itens VALUES("4218","","2019-03-20 14:08:42","dt_cadastro","795");
+
+INSERT INTO tb_auditoria_itens VALUES("4219","","89.9","nu_valor","795");
+
+INSERT INTO tb_auditoria_itens VALUES("4220","","Serviço Inicial","ds_observacao","795");
+
+INSERT INTO tb_auditoria_itens VALUES("4221","","11","co_assinante","796");
+
+INSERT INTO tb_auditoria_itens VALUES("4222","","2019-03-20 14:08:42","dt_cadastro","796");
+
+INSERT INTO tb_auditoria_itens VALUES("4223","","A","st_status","796");
+
+INSERT INTO tb_auditoria_itens VALUES("4224","","Massagem","no_categoria_servico","796");
+
+INSERT INTO tb_auditoria_itens VALUES("4225","","89","co_categoria_servico","797");
+
+INSERT INTO tb_auditoria_itens VALUES("4226","","2019-03-20 14:08:42","dt_cadastro","797");
+
+INSERT INTO tb_auditoria_itens VALUES("4227","","A","st_status","797");
+
+INSERT INTO tb_auditoria_itens VALUES("4228","","Massagem Relaxante","no_servico","797");
+
+INSERT INTO tb_auditoria_itens VALUES("4229","","30","nu_duracao","797");
+
+INSERT INTO tb_auditoria_itens VALUES("4230","","Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.","ds_descricao","797");
+
+INSERT INTO tb_auditoria_itens VALUES("4231","","192","co_servico","798");
+
+INSERT INTO tb_auditoria_itens VALUES("4232","","2019-03-20 14:08:42","dt_cadastro","798");
+
+INSERT INTO tb_auditoria_itens VALUES("4233","","29.9","nu_valor","798");
+
+INSERT INTO tb_auditoria_itens VALUES("4234","","Serviço Inicial","ds_observacao","798");
+
+INSERT INTO tb_auditoria_itens VALUES("4235","","89","co_categoria_servico","799");
+
+INSERT INTO tb_auditoria_itens VALUES("4236","","2019-03-20 14:08:42","dt_cadastro","799");
+
+INSERT INTO tb_auditoria_itens VALUES("4237","","A","st_status","799");
+
+INSERT INTO tb_auditoria_itens VALUES("4238","","Massagem Modeladora","no_servico","799");
+
+INSERT INTO tb_auditoria_itens VALUES("4239","","30","nu_duracao","799");
+
+INSERT INTO tb_auditoria_itens VALUES("4240","","Massagem Modeladora: para quem precisa ativar o metabolismo local, \n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","ds_descricao","799");
+
+INSERT INTO tb_auditoria_itens VALUES("4241","","193","co_servico","800");
+
+INSERT INTO tb_auditoria_itens VALUES("4242","","2019-03-20 14:08:42","dt_cadastro","800");
+
+INSERT INTO tb_auditoria_itens VALUES("4243","","29.9","nu_valor","800");
+
+INSERT INTO tb_auditoria_itens VALUES("4244","","Serviço Inicial","ds_observacao","800");
+
+INSERT INTO tb_auditoria_itens VALUES("4245","","89","co_categoria_servico","801");
+
+INSERT INTO tb_auditoria_itens VALUES("4246","","2019-03-20 14:08:42","dt_cadastro","801");
+
+INSERT INTO tb_auditoria_itens VALUES("4247","","A","st_status","801");
+
+INSERT INTO tb_auditoria_itens VALUES("4248","","Drenagem Linfática","no_servico","801");
+
+INSERT INTO tb_auditoria_itens VALUES("4249","","30","nu_duracao","801");
+
+INSERT INTO tb_auditoria_itens VALUES("4250","","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e \n        toxinas do organismo.","ds_descricao","801");
+
+INSERT INTO tb_auditoria_itens VALUES("4251","","194","co_servico","802");
+
+INSERT INTO tb_auditoria_itens VALUES("4252","","2019-03-20 14:08:42","dt_cadastro","802");
+
+INSERT INTO tb_auditoria_itens VALUES("4253","","29.9","nu_valor","802");
+
+INSERT INTO tb_auditoria_itens VALUES("4254","","Serviço Inicial","ds_observacao","802");
+
+INSERT INTO tb_auditoria_itens VALUES("4255","","89","co_categoria_servico","803");
+
+INSERT INTO tb_auditoria_itens VALUES("4256","","2019-03-20 14:08:42","dt_cadastro","803");
+
+INSERT INTO tb_auditoria_itens VALUES("4257","","A","st_status","803");
+
+INSERT INTO tb_auditoria_itens VALUES("4258","","Day Spa","no_servico","803");
+
+INSERT INTO tb_auditoria_itens VALUES("4259","","120","nu_duracao","803");
+
+INSERT INTO tb_auditoria_itens VALUES("4260","","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de \n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz \n        de levar a um profundo relaxamento e bem estar, ","ds_descricao","803");
+
+INSERT INTO tb_auditoria_itens VALUES("4261","","195","co_servico","804");
+
+INSERT INTO tb_auditoria_itens VALUES("4262","","2019-03-20 14:08:42","dt_cadastro","804");
+
+INSERT INTO tb_auditoria_itens VALUES("4263","","99.9","nu_valor","804");
+
+INSERT INTO tb_auditoria_itens VALUES("4264","","Serviço Inicial","ds_observacao","804");
+
+INSERT INTO tb_auditoria_itens VALUES("4265","","11","co_assinante","805");
+
+INSERT INTO tb_auditoria_itens VALUES("4266","","2019-03-20 14:08:42","dt_cadastro","805");
+
+INSERT INTO tb_auditoria_itens VALUES("4267","","A","st_status","805");
+
+INSERT INTO tb_auditoria_itens VALUES("4268","","Podologia","no_categoria_servico","805");
+
+INSERT INTO tb_auditoria_itens VALUES("4269","","90","co_categoria_servico","806");
+
+INSERT INTO tb_auditoria_itens VALUES("4270","","2019-03-20 14:08:42","dt_cadastro","806");
+
+INSERT INTO tb_auditoria_itens VALUES("4271","","A","st_status","806");
+
+INSERT INTO tb_auditoria_itens VALUES("4272","","Podologia com limpeza dos pés","no_servico","806");
+
+INSERT INTO tb_auditoria_itens VALUES("4273","","60","nu_duracao","806");
+
+INSERT INTO tb_auditoria_itens VALUES("4274","","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","ds_descricao","806");
+
+INSERT INTO tb_auditoria_itens VALUES("4275","","196","co_servico","807");
+
+INSERT INTO tb_auditoria_itens VALUES("4276","","2019-03-20 14:08:42","dt_cadastro","807");
+
+INSERT INTO tb_auditoria_itens VALUES("4277","","39.9","nu_valor","807");
+
+INSERT INTO tb_auditoria_itens VALUES("4278","","Serviço Inicial","ds_observacao","807");
+
+INSERT INTO tb_auditoria_itens VALUES("4279","","11","co_assinante","808");
+
+INSERT INTO tb_auditoria_itens VALUES("4280","","2019-03-20 14:08:42","dt_cadastro","808");
+
+INSERT INTO tb_auditoria_itens VALUES("4281","","A","st_status","808");
+
+INSERT INTO tb_auditoria_itens VALUES("4282","","Terapia","no_categoria_servico","808");
+
+INSERT INTO tb_auditoria_itens VALUES("4283","","91","co_categoria_servico","809");
+
+INSERT INTO tb_auditoria_itens VALUES("4284","","2019-03-20 14:08:43","dt_cadastro","809");
+
+INSERT INTO tb_auditoria_itens VALUES("4285","","A","st_status","809");
+
+INSERT INTO tb_auditoria_itens VALUES("4286","","Bambuterapia","no_servico","809");
+
+INSERT INTO tb_auditoria_itens VALUES("4287","","60","nu_duracao","809");
+
+INSERT INTO tb_auditoria_itens VALUES("4288","","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","ds_descricao","809");
+
+INSERT INTO tb_auditoria_itens VALUES("4289","","197","co_servico","810");
+
+INSERT INTO tb_auditoria_itens VALUES("4290","","2019-03-20 14:08:43","dt_cadastro","810");
+
+INSERT INTO tb_auditoria_itens VALUES("4291","","29.9","nu_valor","810");
+
+INSERT INTO tb_auditoria_itens VALUES("4292","","Serviço Inicial","ds_observacao","810");
+
+INSERT INTO tb_auditoria_itens VALUES("4293","","91","co_categoria_servico","811");
+
+INSERT INTO tb_auditoria_itens VALUES("4294","","2019-03-20 14:08:43","dt_cadastro","811");
+
+INSERT INTO tb_auditoria_itens VALUES("4295","","A","st_status","811");
+
+INSERT INTO tb_auditoria_itens VALUES("4296","","Carboxiterapia","no_servico","811");
+
+INSERT INTO tb_auditoria_itens VALUES("4297","","30","nu_duracao","811");
+
+INSERT INTO tb_auditoria_itens VALUES("4298","","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","ds_descricao","811");
+
+INSERT INTO tb_auditoria_itens VALUES("4299","","198","co_servico","812");
+
+INSERT INTO tb_auditoria_itens VALUES("4300","","2019-03-20 14:08:43","dt_cadastro","812");
+
+INSERT INTO tb_auditoria_itens VALUES("4301","","39.9","nu_valor","812");
+
+INSERT INTO tb_auditoria_itens VALUES("4302","","Serviço Inicial","ds_observacao","812");
+
+INSERT INTO tb_auditoria_itens VALUES("4303","45","","co_historia","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4304","Tabela base serviços","Tabela base serviços","ds_titulo","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4305","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","ds_observacao","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4306","2018-07-25 18:43:26","","dt_cadastro","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4307","2019-02-25 16:08:44","2019-03-20 14:14:45","dt_atualizado","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4308","I","C","st_situacao","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4309","12","12","co_sessao","813");
+
+INSERT INTO tb_auditoria_itens VALUES("4310","","20","nu_esforco","814");
+
+INSERT INTO tb_auditoria_itens VALUES("4311","","0","nu_esforco_restante","814");
+
+INSERT INTO tb_auditoria_itens VALUES("4312","","2019-03-20 14:14:45","dt_cadastro","814");
+
+INSERT INTO tb_auditoria_itens VALUES("4313","","45","co_historia","814");
+
+INSERT INTO tb_auditoria_itens VALUES("4314","44","","co_historia","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4315","Manter Serviço","Manter Serviço","ds_titulo","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4316","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante)</p>","<p>Manter Servi&ccedil;o</p>\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","ds_observacao","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4317","2018-07-25 18:42:35","","dt_cadastro","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4318","2018-07-25 18:42:35","2019-03-20 14:17:47","dt_atualizado","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4319","N","N","st_situacao","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4320","12","12","co_sessao","815");
+
+INSERT INTO tb_auditoria_itens VALUES("4321","","13","nu_esforco","816");
+
+INSERT INTO tb_auditoria_itens VALUES("4322","","13","nu_esforco_restante","816");
+
+INSERT INTO tb_auditoria_itens VALUES("4323","","2019-03-20 14:17:47","dt_cadastro","816");
+
+INSERT INTO tb_auditoria_itens VALUES("4324","","44","co_historia","816");
+
+INSERT INTO tb_auditoria_itens VALUES("4325","","Pesquisa Avançada dos serviços","ds_titulo","817");
+
+INSERT INTO tb_auditoria_itens VALUES("4326","","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional</p>","ds_observacao","817");
+
+INSERT INTO tb_auditoria_itens VALUES("4327","","12","co_sessao","817");
+
+INSERT INTO tb_auditoria_itens VALUES("4328","","N","st_situacao","817");
+
+INSERT INTO tb_auditoria_itens VALUES("4329","","2019-03-20 14:19:52","dt_atualizado","817");
+
+INSERT INTO tb_auditoria_itens VALUES("4330","","2019-03-20 14:19:52","dt_cadastro","817");
+
+INSERT INTO tb_auditoria_itens VALUES("4331","","8","nu_esforco","818");
+
+INSERT INTO tb_auditoria_itens VALUES("4332","","8","nu_esforco_restante","818");
+
+INSERT INTO tb_auditoria_itens VALUES("4333","","2019-03-20 14:19:52","dt_cadastro","818");
+
+INSERT INTO tb_auditoria_itens VALUES("4334","","144","co_historia","818");
+
+INSERT INTO tb_auditoria_itens VALUES("4335","","Promoções do Serviço","ds_titulo","819");
+
+INSERT INTO tb_auditoria_itens VALUES("4336","","<p>Apresentar todas as promo&ccedil;&atilde;oes do servi&ccedil;o</p>","ds_observacao","819");
+
+INSERT INTO tb_auditoria_itens VALUES("4337","","12","co_sessao","819");
+
+INSERT INTO tb_auditoria_itens VALUES("4338","","N","st_situacao","819");
+
+INSERT INTO tb_auditoria_itens VALUES("4339","","2019-03-20 14:22:28","dt_atualizado","819");
+
+INSERT INTO tb_auditoria_itens VALUES("4340","","2019-03-20 14:22:28","dt_cadastro","819");
+
+INSERT INTO tb_auditoria_itens VALUES("4341","","8","nu_esforco","820");
+
+INSERT INTO tb_auditoria_itens VALUES("4342","","8","nu_esforco_restante","820");
+
+INSERT INTO tb_auditoria_itens VALUES("4343","","2019-03-20 14:22:28","dt_cadastro","820");
+
+INSERT INTO tb_auditoria_itens VALUES("4344","","145","co_historia","820");
+
+INSERT INTO tb_auditoria_itens VALUES("4345","","Pacotes do Serviço","ds_titulo","821");
+
+INSERT INTO tb_auditoria_itens VALUES("4346","","<p>apresentar todos os Pacotes do Servi&ccedil;o</p>","ds_observacao","821");
+
+INSERT INTO tb_auditoria_itens VALUES("4347","","12","co_sessao","821");
+
+INSERT INTO tb_auditoria_itens VALUES("4348","","N","st_situacao","821");
+
+INSERT INTO tb_auditoria_itens VALUES("4349","","2019-03-20 14:22:52","dt_atualizado","821");
+
+INSERT INTO tb_auditoria_itens VALUES("4350","","2019-03-20 14:22:52","dt_cadastro","821");
+
+INSERT INTO tb_auditoria_itens VALUES("4351","","8","nu_esforco","822");
+
+INSERT INTO tb_auditoria_itens VALUES("4352","","8","nu_esforco_restante","822");
+
+INSERT INTO tb_auditoria_itens VALUES("4353","","2019-03-20 14:22:52","dt_cadastro","822");
+
+INSERT INTO tb_auditoria_itens VALUES("4354","","146","co_historia","822");
+
+INSERT INTO tb_auditoria_itens VALUES("4355","","Pesquisa Avançada dos Profissionais","ds_titulo","823");
+
+INSERT INTO tb_auditoria_itens VALUES("4356","","<p>Pesquisa Avan&ccedil;ada dos Profissionais por nome, filial, cargo, jornada de tabalho, sexo, cidade e uf, assistente , possui agenda,&nbsp; agenda on line, banco,</p>","ds_observacao","823");
+
+INSERT INTO tb_auditoria_itens VALUES("4357","","9","co_sessao","823");
+
+INSERT INTO tb_auditoria_itens VALUES("4358","","N","st_situacao","823");
+
+INSERT INTO tb_auditoria_itens VALUES("4359","","2019-03-20 14:26:33","dt_atualizado","823");
+
+INSERT INTO tb_auditoria_itens VALUES("4360","","2019-03-20 14:26:33","dt_cadastro","823");
+
+INSERT INTO tb_auditoria_itens VALUES("4361","","20","nu_esforco","824");
+
+INSERT INTO tb_auditoria_itens VALUES("4362","","20","nu_esforco_restante","824");
+
+INSERT INTO tb_auditoria_itens VALUES("4363","","2019-03-20 14:26:33","dt_cadastro","824");
+
+INSERT INTO tb_auditoria_itens VALUES("4364","","147","co_historia","824");
+
+INSERT INTO tb_auditoria_itens VALUES("4365","145","","co_historia","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4366","Promoções do Serviço","Histórico Promoções do Serviço","ds_titulo","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4367","<p>Apresentar todas as promo&ccedil;&atilde;oes do servi&ccedil;o</p>","<p>Apresentar Hist&oacute;rico das promo&ccedil;&atilde;oes do servi&ccedil;o</p>","ds_observacao","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4368","2019-03-20 14:22:28","","dt_cadastro","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4369","2019-03-20 14:22:28","2019-03-20 14:27:15","dt_atualizado","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4370","N","N","st_situacao","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4371","12","12","co_sessao","825");
+
+INSERT INTO tb_auditoria_itens VALUES("4372","","8","nu_esforco","826");
+
+INSERT INTO tb_auditoria_itens VALUES("4373","","8","nu_esforco_restante","826");
+
+INSERT INTO tb_auditoria_itens VALUES("4374","","2019-03-20 14:27:15","dt_cadastro","826");
+
+INSERT INTO tb_auditoria_itens VALUES("4375","","145","co_historia","826");
+
+INSERT INTO tb_auditoria_itens VALUES("4376","146","","co_historia","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4377","Pacotes do Serviço","Histórico Pacotes do Serviço","ds_titulo","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4378","<p>apresentar todos os Pacotes do Servi&ccedil;o</p>","<p>apresentar Hist&oacute;rico os Pacotes do Servi&ccedil;o</p>","ds_observacao","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4379","2019-03-20 14:22:52","","dt_cadastro","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4380","2019-03-20 14:22:52","2019-03-20 14:27:31","dt_atualizado","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4381","N","N","st_situacao","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4382","12","12","co_sessao","827");
+
+INSERT INTO tb_auditoria_itens VALUES("4383","","8","nu_esforco","828");
+
+INSERT INTO tb_auditoria_itens VALUES("4384","","8","nu_esforco_restante","828");
+
+INSERT INTO tb_auditoria_itens VALUES("4385","","2019-03-20 14:27:31","dt_cadastro","828");
+
+INSERT INTO tb_auditoria_itens VALUES("4386","","146","co_historia","828");
+
+INSERT INTO tb_auditoria_itens VALUES("4387","144","","co_historia","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4388","Pesquisa Avançada dos serviços","Pesquisa Avançada dos Serviços","ds_titulo","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4389","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional</p>","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o,</p>","ds_observacao","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4390","2019-03-20 14:19:52","","dt_cadastro","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4391","2019-03-20 14:19:52","2019-03-20 14:28:42","dt_atualizado","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4392","N","N","st_situacao","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4393","12","12","co_sessao","829");
+
+INSERT INTO tb_auditoria_itens VALUES("4394","","8","nu_esforco","830");
+
+INSERT INTO tb_auditoria_itens VALUES("4395","","8","nu_esforco_restante","830");
+
+INSERT INTO tb_auditoria_itens VALUES("4396","","2019-03-20 14:28:42","dt_cadastro","830");
+
+INSERT INTO tb_auditoria_itens VALUES("4397","","144","co_historia","830");
+
+INSERT INTO tb_auditoria_itens VALUES("4398","","Pesquisa Avançada dos Clientes","ds_titulo","831");
+
+INSERT INTO tb_auditoria_itens VALUES("4399","","<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing,&nbsp;</p>","ds_observacao","831");
+
+INSERT INTO tb_auditoria_itens VALUES("4400","","11","co_sessao","831");
+
+INSERT INTO tb_auditoria_itens VALUES("4401","","N","st_situacao","831");
+
+INSERT INTO tb_auditoria_itens VALUES("4402","","2019-03-20 14:34:27","dt_atualizado","831");
+
+INSERT INTO tb_auditoria_itens VALUES("4403","","2019-03-20 14:34:27","dt_cadastro","831");
+
+INSERT INTO tb_auditoria_itens VALUES("4404","","13","nu_esforco","832");
+
+INSERT INTO tb_auditoria_itens VALUES("4405","","13","nu_esforco_restante","832");
+
+INSERT INTO tb_auditoria_itens VALUES("4406","","2019-03-20 14:34:27","dt_cadastro","832");
+
+INSERT INTO tb_auditoria_itens VALUES("4407","","148","co_historia","832");
+
+INSERT INTO tb_auditoria_itens VALUES("4408","","Pesquisa Avançada dos Assinantes","ds_titulo","833");
+
+INSERT INTO tb_auditoria_itens VALUES("4409","","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento</p>","ds_observacao","833");
+
+INSERT INTO tb_auditoria_itens VALUES("4410","","1","co_sessao","833");
+
+INSERT INTO tb_auditoria_itens VALUES("4411","","N","st_situacao","833");
+
+INSERT INTO tb_auditoria_itens VALUES("4412","","2019-03-20 14:37:45","dt_atualizado","833");
+
+INSERT INTO tb_auditoria_itens VALUES("4413","","2019-03-20 14:37:45","dt_cadastro","833");
+
+INSERT INTO tb_auditoria_itens VALUES("4414","","8","nu_esforco","834");
+
+INSERT INTO tb_auditoria_itens VALUES("4415","","8","nu_esforco_restante","834");
+
+INSERT INTO tb_auditoria_itens VALUES("4416","","2019-03-20 14:37:45","dt_cadastro","834");
+
+INSERT INTO tb_auditoria_itens VALUES("4417","","149","co_historia","834");
+
+INSERT INTO tb_auditoria_itens VALUES("4418","149","","co_historia","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4419","Pesquisa Avançada dos Assinantes","Pesquisa Avançada dos Assinantes","ds_titulo","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4420","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento</p>","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento, data de expira&ccedil;&atilde;o (Per&iacute;odo), n&uacut","ds_observacao","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4421","2019-03-20 14:37:45","","dt_cadastro","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4422","2019-03-20 14:37:45","2019-03-20 14:40:07","dt_atualizado","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4423","N","N","st_situacao","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4424","1","1","co_sessao","835");
+
+INSERT INTO tb_auditoria_itens VALUES("4425","","20","nu_esforco","836");
+
+INSERT INTO tb_auditoria_itens VALUES("4426","","20","nu_esforco_restante","836");
+
+INSERT INTO tb_auditoria_itens VALUES("4427","","2019-03-20 14:40:07","dt_cadastro","836");
+
+INSERT INTO tb_auditoria_itens VALUES("4428","","149","co_historia","836");
+
+INSERT INTO tb_auditoria_itens VALUES("4429","","61","co_funcionalidade","837");
+
+INSERT INTO tb_auditoria_itens VALUES("4430","","2","co_perfil","837");
+
+INSERT INTO tb_auditoria_itens VALUES("4464","","11","co_assinante","847");
+
+INSERT INTO tb_auditoria_itens VALUES("4465","","2019-03-20 16:54:46","dt_cadastro","847");
+
+INSERT INTO tb_auditoria_itens VALUES("4466","","A","st_status","847");
+
+INSERT INTO tb_auditoria_itens VALUES("4467","","Cabelo","no_categoria_servico","847");
+
+INSERT INTO tb_auditoria_itens VALUES("4468","","servico_padrao/tonalizante-coloracao02.jpg","ds_caminho","848");
+
+INSERT INTO tb_auditoria_itens VALUES("4469","","5","co_categoria_servico","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4470","","47","co_imagem","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4471","","2019-03-20 16:54:46","dt_cadastro","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4472","","A","st_status","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4473","","Coloração / Tonalização","no_servico","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4474","","120","nu_duracao","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4475","","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","849");
+
+INSERT INTO tb_auditoria_itens VALUES("4476","","3","co_servico","850");
+
+INSERT INTO tb_auditoria_itens VALUES("4477","","2019-03-20 16:54:46","dt_cadastro","850");
+
+INSERT INTO tb_auditoria_itens VALUES("4478","","39.9","nu_valor","850");
+
+INSERT INTO tb_auditoria_itens VALUES("4479","","Serviço Inicial","ds_observacao","850");
+
+INSERT INTO tb_auditoria_itens VALUES("4480","","8","co_usuario","850");
+
+INSERT INTO tb_auditoria_itens VALUES("4481","","servico_padrao/corte-de-cabelo-masculino.jpg","ds_caminho","851");
+
+INSERT INTO tb_auditoria_itens VALUES("4482","","5","co_categoria_servico","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4483","","48","co_imagem","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4484","","2019-03-20 16:54:46","dt_cadastro","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4485","","A","st_status","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4486","","Corte Tesoura","no_servico","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4487","","30","nu_duracao","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4488","","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","852");
+
+INSERT INTO tb_auditoria_itens VALUES("4489","","4","co_servico","853");
+
+INSERT INTO tb_auditoria_itens VALUES("4490","","2019-03-20 16:54:46","dt_cadastro","853");
+
+INSERT INTO tb_auditoria_itens VALUES("4491","","19.9","nu_valor","853");
+
+INSERT INTO tb_auditoria_itens VALUES("4492","","Serviço Inicial","ds_observacao","853");
+
+INSERT INTO tb_auditoria_itens VALUES("4493","","8","co_usuario","853");
+
+INSERT INTO tb_auditoria_itens VALUES("4494","","servico_padrao/qual-a-melhor-máquina-de-cortar-cabelo_1.jpg","ds_caminho","854");
+
+INSERT INTO tb_auditoria_itens VALUES("4495","","5","co_categoria_servico","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4496","","49","co_imagem","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4497","","2019-03-20 16:54:46","dt_cadastro","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4498","","A","st_status","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4499","","Corte Máquina","no_servico","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4500","","30","nu_duracao","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4501","","Corte: O corte na máquina irá deixar você com o visual renovado.","ds_descricao","855");
+
+INSERT INTO tb_auditoria_itens VALUES("4502","","5","co_servico","856");
+
+INSERT INTO tb_auditoria_itens VALUES("4503","","2019-03-20 16:54:46","dt_cadastro","856");
+
+INSERT INTO tb_auditoria_itens VALUES("4504","","29.9","nu_valor","856");
+
+INSERT INTO tb_auditoria_itens VALUES("4505","","Serviço Inicial","ds_observacao","856");
+
+INSERT INTO tb_auditoria_itens VALUES("4506","","8","co_usuario","856");
+
+INSERT INTO tb_auditoria_itens VALUES("4507","","servico_padrao/melhor-fase-da-lua-para-corta-cabelo-em-2019.jpg","ds_caminho","857");
+
+INSERT INTO tb_auditoria_itens VALUES("4508","","5","co_categoria_servico","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4509","","50","co_imagem","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4510","","2019-03-20 16:54:46","dt_cadastro","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4511","","A","st_status","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4512","","Corte Feminino","no_servico","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4513","","60","nu_duracao","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4514","","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","ds_descricao","858");
+
+INSERT INTO tb_auditoria_itens VALUES("4515","","6","co_servico","859");
+
+INSERT INTO tb_auditoria_itens VALUES("4516","","2019-03-20 16:54:46","dt_cadastro","859");
+
+INSERT INTO tb_auditoria_itens VALUES("4517","","59.9","nu_valor","859");
+
+INSERT INTO tb_auditoria_itens VALUES("4518","","Serviço Inicial","ds_observacao","859");
+
+INSERT INTO tb_auditoria_itens VALUES("4519","","8","co_usuario","859");
+
+INSERT INTO tb_auditoria_itens VALUES("4520","","servico_padrao/mascara-de-cabelo-1.jpg","ds_caminho","860");
+
+INSERT INTO tb_auditoria_itens VALUES("4521","","5","co_categoria_servico","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4522","","51","co_imagem","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4523","","2019-03-20 16:54:46","dt_cadastro","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4524","","A","st_status","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4525","","Hidratação Capilar","no_servico","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4526","","60","nu_duracao","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4527","","Hidratação profunda Capilar","ds_descricao","861");
+
+INSERT INTO tb_auditoria_itens VALUES("4528","","7","co_servico","862");
+
+INSERT INTO tb_auditoria_itens VALUES("4529","","2019-03-20 16:54:46","dt_cadastro","862");
+
+INSERT INTO tb_auditoria_itens VALUES("4530","","49.9","nu_valor","862");
+
+INSERT INTO tb_auditoria_itens VALUES("4531","","Serviço Inicial","ds_observacao","862");
+
+INSERT INTO tb_auditoria_itens VALUES("4532","","8","co_usuario","862");
+
+INSERT INTO tb_auditoria_itens VALUES("4533","","servico_padrao/lavagem-1.jpg","ds_caminho","863");
+
+INSERT INTO tb_auditoria_itens VALUES("4534","","5","co_categoria_servico","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4535","","52","co_imagem","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4536","","2019-03-20 16:54:46","dt_cadastro","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4537","","A","st_status","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4538","","Corte e Higienização dos Fios","no_servico","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4539","","30","nu_duracao","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4540","","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","ds_descricao","864");
+
+INSERT INTO tb_auditoria_itens VALUES("4541","","8","co_servico","865");
+
+INSERT INTO tb_auditoria_itens VALUES("4542","","2019-03-20 16:54:46","dt_cadastro","865");
+
+INSERT INTO tb_auditoria_itens VALUES("4543","","49.9","nu_valor","865");
+
+INSERT INTO tb_auditoria_itens VALUES("4544","","Serviço Inicial","ds_observacao","865");
+
+INSERT INTO tb_auditoria_itens VALUES("4545","","8","co_usuario","865");
+
+INSERT INTO tb_auditoria_itens VALUES("4546","","servico_padrao/escova-modeladora-como-escolher-2.jpg","ds_caminho","866");
+
+INSERT INTO tb_auditoria_itens VALUES("4547","","5","co_categoria_servico","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4548","","53","co_imagem","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4549","","2019-03-20 16:54:46","dt_cadastro","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4550","","A","st_status","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4551","","Escova Modeladora","no_servico","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4552","","30","nu_duracao","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4553","","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","ds_descricao","867");
+
+INSERT INTO tb_auditoria_itens VALUES("4554","","9","co_servico","868");
+
+INSERT INTO tb_auditoria_itens VALUES("4555","","2019-03-20 16:54:46","dt_cadastro","868");
+
+INSERT INTO tb_auditoria_itens VALUES("4556","","29.9","nu_valor","868");
+
+INSERT INTO tb_auditoria_itens VALUES("4557","","Serviço Inicial","ds_observacao","868");
+
+INSERT INTO tb_auditoria_itens VALUES("4558","","8","co_usuario","868");
+
+INSERT INTO tb_auditoria_itens VALUES("4559","","servico_padrao/selagem-termica-capilar-2.jpg","ds_caminho","869");
+
+INSERT INTO tb_auditoria_itens VALUES("4560","","5","co_categoria_servico","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4561","","54","co_imagem","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4562","","2019-03-20 16:54:46","dt_cadastro","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4563","","A","st_status","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4564","","Selagem","no_servico","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4565","","60","nu_duracao","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4566","","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","ds_descricao","870");
+
+INSERT INTO tb_auditoria_itens VALUES("4567","","10","co_servico","871");
+
+INSERT INTO tb_auditoria_itens VALUES("4568","","2019-03-20 16:54:46","dt_cadastro","871");
+
+INSERT INTO tb_auditoria_itens VALUES("4569","","59.9","nu_valor","871");
+
+INSERT INTO tb_auditoria_itens VALUES("4570","","Serviço Inicial","ds_observacao","871");
+
+INSERT INTO tb_auditoria_itens VALUES("4571","","8","co_usuario","871");
+
+INSERT INTO tb_auditoria_itens VALUES("4572","","servico_padrao/Escova-progressiva.jpg","ds_caminho","872");
+
+INSERT INTO tb_auditoria_itens VALUES("4573","","5","co_categoria_servico","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4574","","55","co_imagem","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4575","","2019-03-20 16:54:46","dt_cadastro","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4576","","A","st_status","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4577","","Escova Progressiva","no_servico","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4578","","60","nu_duracao","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4579","","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a \n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo \n        que adere à superfície do cabelo, selando as cutículas, repo","ds_descricao","873");
+
+INSERT INTO tb_auditoria_itens VALUES("4580","","11","co_servico","874");
+
+INSERT INTO tb_auditoria_itens VALUES("4581","","2019-03-20 16:54:46","dt_cadastro","874");
+
+INSERT INTO tb_auditoria_itens VALUES("4582","","59.9","nu_valor","874");
+
+INSERT INTO tb_auditoria_itens VALUES("4583","","Serviço Inicial","ds_observacao","874");
+
+INSERT INTO tb_auditoria_itens VALUES("4584","","8","co_usuario","874");
+
+INSERT INTO tb_auditoria_itens VALUES("4585","","servico_padrao/botox-capilar-como-saber-se-e-falso.jpg","ds_caminho","875");
+
+INSERT INTO tb_auditoria_itens VALUES("4586","","5","co_categoria_servico","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4587","","56","co_imagem","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4588","","2019-03-20 16:54:46","dt_cadastro","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4589","","A","st_status","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4590","","Botox Capilar","no_servico","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4591","","60","nu_duracao","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4592","","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. \n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","ds_descricao","876");
+
+INSERT INTO tb_auditoria_itens VALUES("4593","","12","co_servico","877");
+
+INSERT INTO tb_auditoria_itens VALUES("4594","","2019-03-20 16:54:46","dt_cadastro","877");
+
+INSERT INTO tb_auditoria_itens VALUES("4595","","59.9","nu_valor","877");
+
+INSERT INTO tb_auditoria_itens VALUES("4596","","Serviço Inicial","ds_observacao","877");
+
+INSERT INTO tb_auditoria_itens VALUES("4597","","8","co_usuario","877");
+
+INSERT INTO tb_auditoria_itens VALUES("4598","","servico_padrao/luzes-reflexos.jpg","ds_caminho","878");
+
+INSERT INTO tb_auditoria_itens VALUES("4599","","5","co_categoria_servico","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4600","","57","co_imagem","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4601","","2019-03-20 16:54:46","dt_cadastro","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4602","","A","st_status","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4603","","Luzes / Mechas","no_servico","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4604","","150","nu_duracao","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4605","","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo \n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","ds_descricao","879");
+
+INSERT INTO tb_auditoria_itens VALUES("4606","","13","co_servico","880");
+
+INSERT INTO tb_auditoria_itens VALUES("4607","","2019-03-20 16:54:46","dt_cadastro","880");
+
+INSERT INTO tb_auditoria_itens VALUES("4608","","79.9","nu_valor","880");
+
+INSERT INTO tb_auditoria_itens VALUES("4609","","Serviço Inicial","ds_observacao","880");
+
+INSERT INTO tb_auditoria_itens VALUES("4610","","8","co_usuario","880");
+
+INSERT INTO tb_auditoria_itens VALUES("4611","","11","co_assinante","881");
+
+INSERT INTO tb_auditoria_itens VALUES("4612","","2019-03-20 16:54:46","dt_cadastro","881");
+
+INSERT INTO tb_auditoria_itens VALUES("4613","","A","st_status","881");
+
+INSERT INTO tb_auditoria_itens VALUES("4614","","Mãos e Pés","no_categoria_servico","881");
+
+INSERT INTO tb_auditoria_itens VALUES("4615","","servico_padrao/manicure.jpg","ds_caminho","882");
+
+INSERT INTO tb_auditoria_itens VALUES("4616","","6","co_categoria_servico","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4617","","58","co_imagem","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4618","","2019-03-20 16:54:46","dt_cadastro","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4619","","A","st_status","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4620","","Manicure","no_servico","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4621","","30","nu_duracao","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4622","","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas \n        pela cliente.","ds_descricao","883");
+
+INSERT INTO tb_auditoria_itens VALUES("4623","","14","co_servico","884");
+
+INSERT INTO tb_auditoria_itens VALUES("4624","","2019-03-20 16:54:46","dt_cadastro","884");
+
+INSERT INTO tb_auditoria_itens VALUES("4625","","19.9","nu_valor","884");
+
+INSERT INTO tb_auditoria_itens VALUES("4626","","Serviço Inicial","ds_observacao","884");
+
+INSERT INTO tb_auditoria_itens VALUES("4627","","8","co_usuario","884");
+
+INSERT INTO tb_auditoria_itens VALUES("4628","","servico_padrao/spa-pedicure.jpg","ds_caminho","885");
+
+INSERT INTO tb_auditoria_itens VALUES("4629","","6","co_categoria_servico","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4630","","59","co_imagem","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4631","","2019-03-20 16:54:46","dt_cadastro","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4632","","A","st_status","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4633","","Pedicure","no_servico","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4634","","30","nu_duracao","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4635","","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas \n        pela cliente.","ds_descricao","886");
+
+INSERT INTO tb_auditoria_itens VALUES("4636","","15","co_servico","887");
+
+INSERT INTO tb_auditoria_itens VALUES("4637","","2019-03-20 16:54:46","dt_cadastro","887");
+
+INSERT INTO tb_auditoria_itens VALUES("4638","","19.9","nu_valor","887");
+
+INSERT INTO tb_auditoria_itens VALUES("4639","","Serviço Inicial","ds_observacao","887");
+
+INSERT INTO tb_auditoria_itens VALUES("4640","","8","co_usuario","887");
+
+INSERT INTO tb_auditoria_itens VALUES("4641","","servico_padrao/manicure-pedicure.jpg","ds_caminho","888");
+
+INSERT INTO tb_auditoria_itens VALUES("4642","","6","co_categoria_servico","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4643","","60","co_imagem","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4644","","2019-03-20 16:54:46","dt_cadastro","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4645","","A","st_status","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4646","","Manicure e Pedicure","no_servico","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4647","","60","nu_duracao","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4648","","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos \n        e dos pés nas cores desejadas pela cliente.","ds_descricao","889");
+
+INSERT INTO tb_auditoria_itens VALUES("4649","","16","co_servico","890");
+
+INSERT INTO tb_auditoria_itens VALUES("4650","","2019-03-20 16:54:46","dt_cadastro","890");
+
+INSERT INTO tb_auditoria_itens VALUES("4651","","29.9","nu_valor","890");
+
+INSERT INTO tb_auditoria_itens VALUES("4652","","Serviço Inicial","ds_observacao","890");
+
+INSERT INTO tb_auditoria_itens VALUES("4653","","8","co_usuario","890");
+
+INSERT INTO tb_auditoria_itens VALUES("4654","","servico_padrao/banho-de-gel-cristalizacao-unhas-cristalizadas.jpg","ds_caminho","891");
+
+INSERT INTO tb_auditoria_itens VALUES("4655","","6","co_categoria_servico","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4656","","61","co_imagem","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4657","","2019-03-20 16:54:46","dt_cadastro","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4658","","A","st_status","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4659","","Unhas Gel","no_servico","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4660","","90","nu_duracao","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4661","","Unhas em Gel: feitas com produto à base de película de poliéster, \n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e \n        são mais finas.","ds_descricao","892");
+
+INSERT INTO tb_auditoria_itens VALUES("4662","","17","co_servico","893");
+
+INSERT INTO tb_auditoria_itens VALUES("4663","","2019-03-20 16:54:46","dt_cadastro","893");
+
+INSERT INTO tb_auditoria_itens VALUES("4664","","59.9","nu_valor","893");
+
+INSERT INTO tb_auditoria_itens VALUES("4665","","Serviço Inicial","ds_observacao","893");
+
+INSERT INTO tb_auditoria_itens VALUES("4666","","8","co_usuario","893");
+
+INSERT INTO tb_auditoria_itens VALUES("4667","","11","co_assinante","894");
+
+INSERT INTO tb_auditoria_itens VALUES("4668","","2019-03-20 16:54:46","dt_cadastro","894");
+
+INSERT INTO tb_auditoria_itens VALUES("4669","","A","st_status","894");
+
+INSERT INTO tb_auditoria_itens VALUES("4670","","Maquiagem","no_categoria_servico","894");
+
+INSERT INTO tb_auditoria_itens VALUES("4671","","servico_padrao/Makeup-Pic-for-Website.jpg","ds_caminho","895");
+
+INSERT INTO tb_auditoria_itens VALUES("4672","","7","co_categoria_servico","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4673","","62","co_imagem","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4674","","2019-03-20 16:54:46","dt_cadastro","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4675","","A","st_status","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4676","","Maquiagem Completa","no_servico","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4677","","120","nu_duracao","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4678","","Desfrute de uma make completa para arrasar em festas, comemorações e \n        casamentos com uma super maquiagem.","ds_descricao","896");
+
+INSERT INTO tb_auditoria_itens VALUES("4679","","18","co_servico","897");
+
+INSERT INTO tb_auditoria_itens VALUES("4680","","2019-03-20 16:54:46","dt_cadastro","897");
+
+INSERT INTO tb_auditoria_itens VALUES("4681","","119.9","nu_valor","897");
+
+INSERT INTO tb_auditoria_itens VALUES("4682","","Serviço Inicial","ds_observacao","897");
+
+INSERT INTO tb_auditoria_itens VALUES("4683","","8","co_usuario","897");
+
+INSERT INTO tb_auditoria_itens VALUES("4684","","11","co_assinante","898");
+
+INSERT INTO tb_auditoria_itens VALUES("4685","","2019-03-20 16:54:46","dt_cadastro","898");
+
+INSERT INTO tb_auditoria_itens VALUES("4686","","A","st_status","898");
+
+INSERT INTO tb_auditoria_itens VALUES("4687","","Sobrancelha","no_categoria_servico","898");
+
+INSERT INTO tb_auditoria_itens VALUES("4688","","servico_padrao/cilios_fio_a_fio_duo_spa.jpg","ds_caminho","899");
+
+INSERT INTO tb_auditoria_itens VALUES("4689","","8","co_categoria_servico","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4690","","63","co_imagem","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4691","","2019-03-20 16:54:46","dt_cadastro","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4692","","A","st_status","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4693","","Alongamento de Cílios Fio a Fio","no_servico","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4694","","90","nu_duracao","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4695","","Alongamento de Cílios: a técnica de alongamento de cílios trata-se \n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, \n        fazendo com que os mesmos fiquem alongados, cheios e definidos, c","ds_descricao","900");
+
+INSERT INTO tb_auditoria_itens VALUES("4696","","19","co_servico","901");
+
+INSERT INTO tb_auditoria_itens VALUES("4697","","2019-03-20 16:54:46","dt_cadastro","901");
+
+INSERT INTO tb_auditoria_itens VALUES("4698","","79.9","nu_valor","901");
+
+INSERT INTO tb_auditoria_itens VALUES("4699","","Serviço Inicial","ds_observacao","901");
+
+INSERT INTO tb_auditoria_itens VALUES("4700","","8","co_usuario","901");
+
+INSERT INTO tb_auditoria_itens VALUES("4701","","servico_padrao/design-de-sobrancelhas-nilópolis.jpg","ds_caminho","902");
+
+INSERT INTO tb_auditoria_itens VALUES("4702","","8","co_categoria_servico","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4703","","64","co_imagem","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4704","","2019-03-20 16:54:46","dt_cadastro","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4705","","A","st_status","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4706","","Design de Sobrancelhas","no_servico","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4707","","30","nu_duracao","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4708","","Design de Sobrancelhas: além de ser esteticamente essencial, garante \n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. \n        Feito de acordo com o formato do seu rosto. Feito com pinça.","ds_descricao","903");
+
+INSERT INTO tb_auditoria_itens VALUES("4709","","20","co_servico","904");
+
+INSERT INTO tb_auditoria_itens VALUES("4710","","2019-03-20 16:54:46","dt_cadastro","904");
+
+INSERT INTO tb_auditoria_itens VALUES("4711","","24.9","nu_valor","904");
+
+INSERT INTO tb_auditoria_itens VALUES("4712","","Serviço Inicial","ds_observacao","904");
+
+INSERT INTO tb_auditoria_itens VALUES("4713","","8","co_usuario","904");
+
+INSERT INTO tb_auditoria_itens VALUES("4714","","11","co_assinante","905");
+
+INSERT INTO tb_auditoria_itens VALUES("4715","","2019-03-20 16:54:46","dt_cadastro","905");
+
+INSERT INTO tb_auditoria_itens VALUES("4716","","A","st_status","905");
+
+INSERT INTO tb_auditoria_itens VALUES("4717","","Barba","no_categoria_servico","905");
+
+INSERT INTO tb_auditoria_itens VALUES("4718","","servico_padrao/retocar-a-barba-de-seu-amigo_1153-1504.jpg","ds_caminho","906");
+
+INSERT INTO tb_auditoria_itens VALUES("4719","","9","co_categoria_servico","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4720","","65","co_imagem","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4721","","2019-03-20 16:54:46","dt_cadastro","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4722","","A","st_status","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4723","","Retoque na Barba","no_servico","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4724","","60","nu_duracao","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4725","","Barba: faça a barba totalmente ou apare com um design a seu gosto para \n        manter a aparência impecável.","ds_descricao","907");
+
+INSERT INTO tb_auditoria_itens VALUES("4726","","21","co_servico","908");
+
+INSERT INTO tb_auditoria_itens VALUES("4727","","2019-03-20 16:54:46","dt_cadastro","908");
+
+INSERT INTO tb_auditoria_itens VALUES("4728","","19.9","nu_valor","908");
+
+INSERT INTO tb_auditoria_itens VALUES("4729","","Serviço Inicial","ds_observacao","908");
+
+INSERT INTO tb_auditoria_itens VALUES("4730","","8","co_usuario","908");
+
+INSERT INTO tb_auditoria_itens VALUES("4731","","11","co_assinante","909");
+
+INSERT INTO tb_auditoria_itens VALUES("4732","","2019-03-20 16:54:46","dt_cadastro","909");
+
+INSERT INTO tb_auditoria_itens VALUES("4733","","A","st_status","909");
+
+INSERT INTO tb_auditoria_itens VALUES("4734","","Estética Facial","no_categoria_servico","909");
+
+INSERT INTO tb_auditoria_itens VALUES("4735","","servico_padrao/Rejuvenescimento_Facial.jpg","ds_caminho","910");
+
+INSERT INTO tb_auditoria_itens VALUES("4736","","10","co_categoria_servico","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4737","","66","co_imagem","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4738","","2019-03-20 16:54:46","dt_cadastro","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4739","","A","st_status","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4740","","Rejuvenescimento Facial","no_servico","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4741","","60","nu_duracao","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4742","","Rejuvenescimento Facial com Luz Pulsada é um procedimento \n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno \n        e a elastina proporcionando assim uma pele mais firme e jovem.","ds_descricao","911");
+
+INSERT INTO tb_auditoria_itens VALUES("4743","","22","co_servico","912");
+
+INSERT INTO tb_auditoria_itens VALUES("4744","","2019-03-20 16:54:46","dt_cadastro","912");
+
+INSERT INTO tb_auditoria_itens VALUES("4745","","19.9","nu_valor","912");
+
+INSERT INTO tb_auditoria_itens VALUES("4746","","Serviço Inicial","ds_observacao","912");
+
+INSERT INTO tb_auditoria_itens VALUES("4747","","8","co_usuario","912");
+
+INSERT INTO tb_auditoria_itens VALUES("4748","","servico_padrao/Microagulhamento_Peeling.jpg","ds_caminho","913");
+
+INSERT INTO tb_auditoria_itens VALUES("4749","","10","co_categoria_servico","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4750","","67","co_imagem","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4751","","2019-03-20 16:54:46","dt_cadastro","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4752","","A","st_status","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4753","","Microagulhamento com Peeling","no_servico","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4754","","60","nu_duracao","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4755","","Microagulhamento: promove textura mais macia, atenuando cicatrizes \n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling \n        de diamante: entre os principais objetivos do procedimen","ds_descricao","914");
+
+INSERT INTO tb_auditoria_itens VALUES("4756","","23","co_servico","915");
+
+INSERT INTO tb_auditoria_itens VALUES("4757","","2019-03-20 16:54:46","dt_cadastro","915");
+
+INSERT INTO tb_auditoria_itens VALUES("4758","","69.9","nu_valor","915");
+
+INSERT INTO tb_auditoria_itens VALUES("4759","","Serviço Inicial","ds_observacao","915");
+
+INSERT INTO tb_auditoria_itens VALUES("4760","","8","co_usuario","915");
+
+INSERT INTO tb_auditoria_itens VALUES("4761","","servico_padrao/Máscara_Acne_Control.jpg","ds_caminho","916");
+
+INSERT INTO tb_auditoria_itens VALUES("4762","","10","co_categoria_servico","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4763","","68","co_imagem","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4764","","2019-03-20 16:54:46","dt_cadastro","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4765","","A","st_status","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4766","","Máscara Acne Control","no_servico","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4767","","60","nu_duracao","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4768","","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a \n        textura e a firmeza da pele.","ds_descricao","917");
+
+INSERT INTO tb_auditoria_itens VALUES("4769","","24","co_servico","918");
+
+INSERT INTO tb_auditoria_itens VALUES("4770","","2019-03-20 16:54:46","dt_cadastro","918");
+
+INSERT INTO tb_auditoria_itens VALUES("4771","","39.9","nu_valor","918");
+
+INSERT INTO tb_auditoria_itens VALUES("4772","","Serviço Inicial","ds_observacao","918");
+
+INSERT INTO tb_auditoria_itens VALUES("4773","","8","co_usuario","918");
+
+INSERT INTO tb_auditoria_itens VALUES("4774","","servico_padrao/Limpeza_Pele.jpg","ds_caminho","919");
+
+INSERT INTO tb_auditoria_itens VALUES("4775","","10","co_categoria_servico","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4776","","69","co_imagem","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4777","","2019-03-20 16:54:46","dt_cadastro","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4778","","A","st_status","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4779","","Limpeza de Pele","no_servico","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4780","","30","nu_duracao","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4781","","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração \n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","ds_descricao","920");
+
+INSERT INTO tb_auditoria_itens VALUES("4782","","25","co_servico","921");
+
+INSERT INTO tb_auditoria_itens VALUES("4783","","2019-03-20 16:54:46","dt_cadastro","921");
+
+INSERT INTO tb_auditoria_itens VALUES("4784","","29.9","nu_valor","921");
+
+INSERT INTO tb_auditoria_itens VALUES("4785","","Serviço Inicial","ds_observacao","921");
+
+INSERT INTO tb_auditoria_itens VALUES("4786","","8","co_usuario","921");
+
+INSERT INTO tb_auditoria_itens VALUES("4787","","11","co_assinante","922");
+
+INSERT INTO tb_auditoria_itens VALUES("4788","","2019-03-20 16:54:46","dt_cadastro","922");
+
+INSERT INTO tb_auditoria_itens VALUES("4789","","A","st_status","922");
+
+INSERT INTO tb_auditoria_itens VALUES("4790","","Depilação","no_categoria_servico","922");
+
+INSERT INTO tb_auditoria_itens VALUES("4791","","servico_padrao/Depilação_Laser.jpg","ds_caminho","923");
+
+INSERT INTO tb_auditoria_itens VALUES("4792","","11","co_categoria_servico","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4793","","70","co_imagem","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4794","","2019-03-20 16:54:46","dt_cadastro","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4795","","A","st_status","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4796","","Depilação a Laser","no_servico","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4797","","30","nu_duracao","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4798","","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, \n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","ds_descricao","924");
+
+INSERT INTO tb_auditoria_itens VALUES("4799","","26","co_servico","925");
+
+INSERT INTO tb_auditoria_itens VALUES("4800","","2019-03-20 16:54:46","dt_cadastro","925");
+
+INSERT INTO tb_auditoria_itens VALUES("4801","","99.9","nu_valor","925");
+
+INSERT INTO tb_auditoria_itens VALUES("4802","","Serviço Inicial","ds_observacao","925");
+
+INSERT INTO tb_auditoria_itens VALUES("4803","","8","co_usuario","925");
+
+INSERT INTO tb_auditoria_itens VALUES("4804","","servico_padrao/Depilação_Cera.png","ds_caminho","926");
+
+INSERT INTO tb_auditoria_itens VALUES("4805","","11","co_categoria_servico","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4806","","71","co_imagem","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4807","","2019-03-20 16:54:46","dt_cadastro","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4808","","A","st_status","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4809","","Depilação a Cera","no_servico","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4810","","60","nu_duracao","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4811","","Realizada com cera quente, que garante uma maior durabilidade, já que os \n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, \n        sem resíduos e sua pele não fica irritada, como acon","ds_descricao","927");
+
+INSERT INTO tb_auditoria_itens VALUES("4812","","27","co_servico","928");
+
+INSERT INTO tb_auditoria_itens VALUES("4813","","2019-03-20 16:54:46","dt_cadastro","928");
+
+INSERT INTO tb_auditoria_itens VALUES("4814","","29.9","nu_valor","928");
+
+INSERT INTO tb_auditoria_itens VALUES("4815","","Serviço Inicial","ds_observacao","928");
+
+INSERT INTO tb_auditoria_itens VALUES("4816","","8","co_usuario","928");
+
+INSERT INTO tb_auditoria_itens VALUES("4817","","servico_padrao/Depilação_Luz.jpg","ds_caminho","929");
+
+INSERT INTO tb_auditoria_itens VALUES("4818","","11","co_categoria_servico","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4819","","72","co_imagem","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4820","","2019-03-20 16:54:46","dt_cadastro","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4821","","A","st_status","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4822","","Depilação a Luz","no_servico","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4823","","30","nu_duracao","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4824","","O método remove os pelos pela destruição do folículo piloso ou \n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até \n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocrom","ds_descricao","930");
+
+INSERT INTO tb_auditoria_itens VALUES("4825","","28","co_servico","931");
+
+INSERT INTO tb_auditoria_itens VALUES("4826","","2019-03-20 16:54:46","dt_cadastro","931");
+
+INSERT INTO tb_auditoria_itens VALUES("4827","","89.9","nu_valor","931");
+
+INSERT INTO tb_auditoria_itens VALUES("4828","","Serviço Inicial","ds_observacao","931");
+
+INSERT INTO tb_auditoria_itens VALUES("4829","","8","co_usuario","931");
+
+INSERT INTO tb_auditoria_itens VALUES("4830","","11","co_assinante","932");
+
+INSERT INTO tb_auditoria_itens VALUES("4831","","2019-03-20 16:54:46","dt_cadastro","932");
+
+INSERT INTO tb_auditoria_itens VALUES("4832","","A","st_status","932");
+
+INSERT INTO tb_auditoria_itens VALUES("4833","","Massagem","no_categoria_servico","932");
+
+INSERT INTO tb_auditoria_itens VALUES("4834","","servico_padrao/Massagem_Relaxante.jpg","ds_caminho","933");
+
+INSERT INTO tb_auditoria_itens VALUES("4835","","12","co_categoria_servico","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4836","","73","co_imagem","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4837","","2019-03-20 16:54:46","dt_cadastro","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4838","","A","st_status","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4839","","Massagem Relaxante","no_servico","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4840","","30","nu_duracao","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4841","","Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.","ds_descricao","934");
+
+INSERT INTO tb_auditoria_itens VALUES("4842","","29","co_servico","935");
+
+INSERT INTO tb_auditoria_itens VALUES("4843","","2019-03-20 16:54:46","dt_cadastro","935");
+
+INSERT INTO tb_auditoria_itens VALUES("4844","","29.9","nu_valor","935");
+
+INSERT INTO tb_auditoria_itens VALUES("4845","","Serviço Inicial","ds_observacao","935");
+
+INSERT INTO tb_auditoria_itens VALUES("4846","","8","co_usuario","935");
+
+INSERT INTO tb_auditoria_itens VALUES("4847","","servico_padrao/Massagem_Modeladora.jpg","ds_caminho","936");
+
+INSERT INTO tb_auditoria_itens VALUES("4848","","12","co_categoria_servico","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4849","","74","co_imagem","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4850","","2019-03-20 16:54:46","dt_cadastro","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4851","","A","st_status","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4852","","Massagem Modeladora","no_servico","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4853","","30","nu_duracao","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4854","","Massagem Modeladora: para quem precisa ativar o metabolismo local, \n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","ds_descricao","937");
+
+INSERT INTO tb_auditoria_itens VALUES("4855","","30","co_servico","938");
+
+INSERT INTO tb_auditoria_itens VALUES("4856","","2019-03-20 16:54:46","dt_cadastro","938");
+
+INSERT INTO tb_auditoria_itens VALUES("4857","","29.9","nu_valor","938");
+
+INSERT INTO tb_auditoria_itens VALUES("4858","","Serviço Inicial","ds_observacao","938");
+
+INSERT INTO tb_auditoria_itens VALUES("4859","","8","co_usuario","938");
+
+INSERT INTO tb_auditoria_itens VALUES("4860","","servico_padrao/Drenagem_Linfática.jpg","ds_caminho","939");
+
+INSERT INTO tb_auditoria_itens VALUES("4861","","12","co_categoria_servico","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4862","","75","co_imagem","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4863","","2019-03-20 16:54:46","dt_cadastro","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4864","","A","st_status","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4865","","Drenagem Linfática","no_servico","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4866","","30","nu_duracao","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4867","","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e \n        toxinas do organismo.","ds_descricao","940");
+
+INSERT INTO tb_auditoria_itens VALUES("4868","","31","co_servico","941");
+
+INSERT INTO tb_auditoria_itens VALUES("4869","","2019-03-20 16:54:46","dt_cadastro","941");
+
+INSERT INTO tb_auditoria_itens VALUES("4870","","29.9","nu_valor","941");
+
+INSERT INTO tb_auditoria_itens VALUES("4871","","Serviço Inicial","ds_observacao","941");
+
+INSERT INTO tb_auditoria_itens VALUES("4872","","8","co_usuario","941");
+
+INSERT INTO tb_auditoria_itens VALUES("4873","","servico_padrao/Day_Spa.jpg","ds_caminho","942");
+
+INSERT INTO tb_auditoria_itens VALUES("4874","","12","co_categoria_servico","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4875","","76","co_imagem","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4876","","2019-03-20 16:54:46","dt_cadastro","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4877","","A","st_status","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4878","","Day Spa","no_servico","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4879","","120","nu_duracao","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4880","","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de \n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz \n        de levar a um profundo relaxamento e bem estar, ","ds_descricao","943");
+
+INSERT INTO tb_auditoria_itens VALUES("4881","","32","co_servico","944");
+
+INSERT INTO tb_auditoria_itens VALUES("4882","","2019-03-20 16:54:46","dt_cadastro","944");
+
+INSERT INTO tb_auditoria_itens VALUES("4883","","99.9","nu_valor","944");
+
+INSERT INTO tb_auditoria_itens VALUES("4884","","Serviço Inicial","ds_observacao","944");
+
+INSERT INTO tb_auditoria_itens VALUES("4885","","8","co_usuario","944");
+
+INSERT INTO tb_auditoria_itens VALUES("4886","","11","co_assinante","945");
+
+INSERT INTO tb_auditoria_itens VALUES("4887","","2019-03-20 16:54:46","dt_cadastro","945");
+
+INSERT INTO tb_auditoria_itens VALUES("4888","","A","st_status","945");
+
+INSERT INTO tb_auditoria_itens VALUES("4889","","Podologia","no_categoria_servico","945");
+
+INSERT INTO tb_auditoria_itens VALUES("4890","","servico_padrao/Podologia.jpg","ds_caminho","946");
+
+INSERT INTO tb_auditoria_itens VALUES("4891","","13","co_categoria_servico","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4892","","77","co_imagem","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4893","","2019-03-20 16:54:46","dt_cadastro","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4894","","A","st_status","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4895","","Podologia com limpeza dos pés","no_servico","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4896","","60","nu_duracao","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4897","","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","ds_descricao","947");
+
+INSERT INTO tb_auditoria_itens VALUES("4898","","33","co_servico","948");
+
+INSERT INTO tb_auditoria_itens VALUES("4899","","2019-03-20 16:54:46","dt_cadastro","948");
+
+INSERT INTO tb_auditoria_itens VALUES("4900","","39.9","nu_valor","948");
+
+INSERT INTO tb_auditoria_itens VALUES("4901","","Serviço Inicial","ds_observacao","948");
+
+INSERT INTO tb_auditoria_itens VALUES("4902","","8","co_usuario","948");
+
+INSERT INTO tb_auditoria_itens VALUES("4903","","11","co_assinante","949");
+
+INSERT INTO tb_auditoria_itens VALUES("4904","","2019-03-20 16:54:46","dt_cadastro","949");
+
+INSERT INTO tb_auditoria_itens VALUES("4905","","A","st_status","949");
+
+INSERT INTO tb_auditoria_itens VALUES("4906","","Terapia","no_categoria_servico","949");
+
+INSERT INTO tb_auditoria_itens VALUES("4907","","servico_padrao/Bambuterapia.jpg","ds_caminho","950");
+
+INSERT INTO tb_auditoria_itens VALUES("4908","","14","co_categoria_servico","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4909","","78","co_imagem","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4910","","2019-03-20 16:54:46","dt_cadastro","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4911","","A","st_status","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4912","","Bambuterapia","no_servico","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4913","","60","nu_duracao","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4914","","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","ds_descricao","951");
+
+INSERT INTO tb_auditoria_itens VALUES("4915","","34","co_servico","952");
+
+INSERT INTO tb_auditoria_itens VALUES("4916","","2019-03-20 16:54:46","dt_cadastro","952");
+
+INSERT INTO tb_auditoria_itens VALUES("4917","","29.9","nu_valor","952");
+
+INSERT INTO tb_auditoria_itens VALUES("4918","","Serviço Inicial","ds_observacao","952");
+
+INSERT INTO tb_auditoria_itens VALUES("4919","","8","co_usuario","952");
+
+INSERT INTO tb_auditoria_itens VALUES("4920","","servico_padrao/Carboxiterapia.jpg","ds_caminho","953");
+
+INSERT INTO tb_auditoria_itens VALUES("4921","","14","co_categoria_servico","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4922","","79","co_imagem","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4923","","2019-03-20 16:54:46","dt_cadastro","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4924","","A","st_status","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4925","","Carboxiterapia","no_servico","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4926","","30","nu_duracao","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4927","","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","ds_descricao","954");
+
+INSERT INTO tb_auditoria_itens VALUES("4928","","35","co_servico","955");
+
+INSERT INTO tb_auditoria_itens VALUES("4929","","2019-03-20 16:54:46","dt_cadastro","955");
+
+INSERT INTO tb_auditoria_itens VALUES("4930","","39.9","nu_valor","955");
+
+INSERT INTO tb_auditoria_itens VALUES("4931","","Serviço Inicial","ds_observacao","955");
+
+INSERT INTO tb_auditoria_itens VALUES("4932","","8","co_usuario","955");
+
 
 
 
@@ -1532,7 +4334,7 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=956 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_auditoria_tabela VALUES("141","TB_HISTORIA","U","19","48");
@@ -1768,6 +4570,562 @@ INSERT INTO tb_auditoria_tabela VALUES("255","TB_HISTORIA","I","143","117");
 INSERT INTO tb_auditoria_tabela VALUES("256","TB_HISTORICO_HISTORIA","I","560","118");
 
 INSERT INTO tb_auditoria_tabela VALUES("257","TB_PERFIL_FUNCIONALIDADE","I","261","119");
+
+INSERT INTO tb_auditoria_tabela VALUES("258","TB_SERVICO","I","1","120");
+
+INSERT INTO tb_auditoria_tabela VALUES("259","TB_CATEGORIA_SERVICO","I","1","121");
+
+INSERT INTO tb_auditoria_tabela VALUES("260","TB_SERVICO","I","2","122");
+
+INSERT INTO tb_auditoria_tabela VALUES("261","TB_PRECO_SERVICO","I","1","123");
+
+INSERT INTO tb_auditoria_tabela VALUES("262","TB_SERVICO","I","3","124");
+
+INSERT INTO tb_auditoria_tabela VALUES("263","TB_PRECO_SERVICO","I","2","125");
+
+INSERT INTO tb_auditoria_tabela VALUES("264","TB_SERVICO","I","4","126");
+
+INSERT INTO tb_auditoria_tabela VALUES("265","TB_PRECO_SERVICO","I","3","127");
+
+INSERT INTO tb_auditoria_tabela VALUES("266","TB_SERVICO","I","5","128");
+
+INSERT INTO tb_auditoria_tabela VALUES("267","TB_PRECO_SERVICO","I","4","129");
+
+INSERT INTO tb_auditoria_tabela VALUES("268","TB_SERVICO","I","6","130");
+
+INSERT INTO tb_auditoria_tabela VALUES("269","TB_PRECO_SERVICO","I","5","131");
+
+INSERT INTO tb_auditoria_tabela VALUES("270","TB_SERVICO","I","7","132");
+
+INSERT INTO tb_auditoria_tabela VALUES("271","TB_PRECO_SERVICO","I","6","133");
+
+INSERT INTO tb_auditoria_tabela VALUES("272","TB_SERVICO","I","8","134");
+
+INSERT INTO tb_auditoria_tabela VALUES("273","TB_PRECO_SERVICO","I","7","135");
+
+INSERT INTO tb_auditoria_tabela VALUES("274","TB_SERVICO","I","9","136");
+
+INSERT INTO tb_auditoria_tabela VALUES("275","TB_PRECO_SERVICO","I","8","137");
+
+INSERT INTO tb_auditoria_tabela VALUES("276","TB_SERVICO","I","10","138");
+
+INSERT INTO tb_auditoria_tabela VALUES("277","TB_PRECO_SERVICO","I","9","139");
+
+INSERT INTO tb_auditoria_tabela VALUES("278","TB_SERVICO","I","11","140");
+
+INSERT INTO tb_auditoria_tabela VALUES("279","TB_PRECO_SERVICO","I","10","141");
+
+INSERT INTO tb_auditoria_tabela VALUES("280","TB_SERVICO","I","12","142");
+
+INSERT INTO tb_auditoria_tabela VALUES("281","TB_PRECO_SERVICO","I","11","143");
+
+INSERT INTO tb_auditoria_tabela VALUES("282","TB_CATEGORIA_SERVICO","I","2","144");
+
+INSERT INTO tb_auditoria_tabela VALUES("283","TB_SERVICO","I","13","145");
+
+INSERT INTO tb_auditoria_tabela VALUES("284","TB_PRECO_SERVICO","I","12","146");
+
+INSERT INTO tb_auditoria_tabela VALUES("285","TB_SERVICO","I","14","147");
+
+INSERT INTO tb_auditoria_tabela VALUES("286","TB_PRECO_SERVICO","I","13","148");
+
+INSERT INTO tb_auditoria_tabela VALUES("287","TB_SERVICO","I","15","149");
+
+INSERT INTO tb_auditoria_tabela VALUES("288","TB_PRECO_SERVICO","I","14","150");
+
+INSERT INTO tb_auditoria_tabela VALUES("289","TB_SERVICO","I","16","151");
+
+INSERT INTO tb_auditoria_tabela VALUES("290","TB_PRECO_SERVICO","I","15","152");
+
+INSERT INTO tb_auditoria_tabela VALUES("291","TB_CATEGORIA_SERVICO","I","3","153");
+
+INSERT INTO tb_auditoria_tabela VALUES("292","TB_SERVICO","I","17","154");
+
+INSERT INTO tb_auditoria_tabela VALUES("293","TB_PRECO_SERVICO","I","16","155");
+
+INSERT INTO tb_auditoria_tabela VALUES("294","TB_CATEGORIA_SERVICO","I","4","156");
+
+INSERT INTO tb_auditoria_tabela VALUES("295","TB_SERVICO","I","18","157");
+
+INSERT INTO tb_auditoria_tabela VALUES("296","TB_PRECO_SERVICO","I","17","158");
+
+INSERT INTO tb_auditoria_tabela VALUES("297","TB_SERVICO","I","19","159");
+
+INSERT INTO tb_auditoria_tabela VALUES("298","TB_PRECO_SERVICO","I","18","160");
+
+INSERT INTO tb_auditoria_tabela VALUES("299","TB_CATEGORIA_SERVICO","I","5","161");
+
+INSERT INTO tb_auditoria_tabela VALUES("300","TB_SERVICO","I","20","162");
+
+INSERT INTO tb_auditoria_tabela VALUES("301","TB_PRECO_SERVICO","I","19","163");
+
+INSERT INTO tb_auditoria_tabela VALUES("302","TB_CATEGORIA_SERVICO","I","6","164");
+
+INSERT INTO tb_auditoria_tabela VALUES("303","TB_SERVICO","I","21","165");
+
+INSERT INTO tb_auditoria_tabela VALUES("304","TB_PRECO_SERVICO","I","20","166");
+
+INSERT INTO tb_auditoria_tabela VALUES("305","TB_SERVICO","I","22","167");
+
+INSERT INTO tb_auditoria_tabela VALUES("306","TB_PRECO_SERVICO","I","21","168");
+
+INSERT INTO tb_auditoria_tabela VALUES("307","TB_SERVICO","I","23","169");
+
+INSERT INTO tb_auditoria_tabela VALUES("308","TB_PRECO_SERVICO","I","22","170");
+
+INSERT INTO tb_auditoria_tabela VALUES("309","TB_SERVICO","I","24","171");
+
+INSERT INTO tb_auditoria_tabela VALUES("310","TB_PRECO_SERVICO","I","23","172");
+
+INSERT INTO tb_auditoria_tabela VALUES("311","TB_CATEGORIA_SERVICO","I","7","173");
+
+INSERT INTO tb_auditoria_tabela VALUES("312","TB_SERVICO","I","25","174");
+
+INSERT INTO tb_auditoria_tabela VALUES("313","TB_PRECO_SERVICO","I","24","175");
+
+INSERT INTO tb_auditoria_tabela VALUES("314","TB_SERVICO","I","26","176");
+
+INSERT INTO tb_auditoria_tabela VALUES("315","TB_PRECO_SERVICO","I","25","177");
+
+INSERT INTO tb_auditoria_tabela VALUES("316","TB_SERVICO","I","27","178");
+
+INSERT INTO tb_auditoria_tabela VALUES("317","TB_PRECO_SERVICO","I","26","179");
+
+INSERT INTO tb_auditoria_tabela VALUES("318","TB_CATEGORIA_SERVICO","I","8","180");
+
+INSERT INTO tb_auditoria_tabela VALUES("319","TB_SERVICO","I","28","181");
+
+INSERT INTO tb_auditoria_tabela VALUES("320","TB_PRECO_SERVICO","I","27","182");
+
+INSERT INTO tb_auditoria_tabela VALUES("321","TB_SERVICO","I","29","183");
+
+INSERT INTO tb_auditoria_tabela VALUES("322","TB_PRECO_SERVICO","I","28","184");
+
+INSERT INTO tb_auditoria_tabela VALUES("323","TB_SERVICO","I","30","185");
+
+INSERT INTO tb_auditoria_tabela VALUES("324","TB_PRECO_SERVICO","I","29","186");
+
+INSERT INTO tb_auditoria_tabela VALUES("325","TB_SERVICO","I","31","187");
+
+INSERT INTO tb_auditoria_tabela VALUES("737","TB_CATEGORIA_SERVICO","I","82","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("738","TB_SERVICO","I","166","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("739","TB_PRECO_SERVICO","I","166","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("740","TB_SERVICO","I","167","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("741","TB_PRECO_SERVICO","I","167","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("742","TB_SERVICO","I","168","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("743","TB_PRECO_SERVICO","I","168","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("744","TB_SERVICO","I","169","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("745","TB_PRECO_SERVICO","I","169","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("746","TB_SERVICO","I","170","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("747","TB_PRECO_SERVICO","I","170","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("748","TB_SERVICO","I","171","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("749","TB_PRECO_SERVICO","I","171","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("750","TB_SERVICO","I","172","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("751","TB_PRECO_SERVICO","I","172","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("752","TB_SERVICO","I","173","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("753","TB_PRECO_SERVICO","I","173","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("754","TB_SERVICO","I","174","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("755","TB_PRECO_SERVICO","I","174","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("756","TB_SERVICO","I","175","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("757","TB_PRECO_SERVICO","I","175","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("758","TB_SERVICO","I","176","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("759","TB_PRECO_SERVICO","I","176","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("760","TB_CATEGORIA_SERVICO","I","83","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("761","TB_SERVICO","I","177","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("762","TB_PRECO_SERVICO","I","177","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("763","TB_SERVICO","I","178","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("764","TB_PRECO_SERVICO","I","178","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("765","TB_SERVICO","I","179","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("766","TB_PRECO_SERVICO","I","179","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("767","TB_SERVICO","I","180","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("768","TB_PRECO_SERVICO","I","180","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("769","TB_CATEGORIA_SERVICO","I","84","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("770","TB_SERVICO","I","181","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("771","TB_PRECO_SERVICO","I","181","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("772","TB_CATEGORIA_SERVICO","I","85","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("773","TB_SERVICO","I","182","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("774","TB_PRECO_SERVICO","I","182","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("775","TB_SERVICO","I","183","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("776","TB_PRECO_SERVICO","I","183","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("777","TB_CATEGORIA_SERVICO","I","86","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("778","TB_SERVICO","I","184","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("779","TB_PRECO_SERVICO","I","184","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("780","TB_CATEGORIA_SERVICO","I","87","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("781","TB_SERVICO","I","185","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("782","TB_PRECO_SERVICO","I","185","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("783","TB_SERVICO","I","186","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("784","TB_PRECO_SERVICO","I","186","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("785","TB_SERVICO","I","187","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("786","TB_PRECO_SERVICO","I","187","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("787","TB_SERVICO","I","188","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("788","TB_PRECO_SERVICO","I","188","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("789","TB_CATEGORIA_SERVICO","I","88","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("790","TB_SERVICO","I","189","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("791","TB_PRECO_SERVICO","I","189","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("792","TB_SERVICO","I","190","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("793","TB_PRECO_SERVICO","I","190","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("794","TB_SERVICO","I","191","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("795","TB_PRECO_SERVICO","I","191","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("796","TB_CATEGORIA_SERVICO","I","89","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("797","TB_SERVICO","I","192","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("798","TB_PRECO_SERVICO","I","192","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("799","TB_SERVICO","I","193","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("800","TB_PRECO_SERVICO","I","193","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("801","TB_SERVICO","I","194","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("802","TB_PRECO_SERVICO","I","194","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("803","TB_SERVICO","I","195","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("804","TB_PRECO_SERVICO","I","195","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("805","TB_CATEGORIA_SERVICO","I","90","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("806","TB_SERVICO","I","196","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("807","TB_PRECO_SERVICO","I","196","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("808","TB_CATEGORIA_SERVICO","I","91","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("809","TB_SERVICO","I","197","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("810","TB_PRECO_SERVICO","I","197","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("811","TB_SERVICO","I","198","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("812","TB_PRECO_SERVICO","I","198","197");
+
+INSERT INTO tb_auditoria_tabela VALUES("813","TB_HISTORIA","U","45","198");
+
+INSERT INTO tb_auditoria_tabela VALUES("814","TB_HISTORICO_HISTORIA","I","561","199");
+
+INSERT INTO tb_auditoria_tabela VALUES("815","TB_HISTORIA","U","44","200");
+
+INSERT INTO tb_auditoria_tabela VALUES("816","TB_HISTORICO_HISTORIA","I","562","201");
+
+INSERT INTO tb_auditoria_tabela VALUES("817","TB_HISTORIA","I","144","202");
+
+INSERT INTO tb_auditoria_tabela VALUES("818","TB_HISTORICO_HISTORIA","I","563","203");
+
+INSERT INTO tb_auditoria_tabela VALUES("819","TB_HISTORIA","I","145","204");
+
+INSERT INTO tb_auditoria_tabela VALUES("820","TB_HISTORICO_HISTORIA","I","564","205");
+
+INSERT INTO tb_auditoria_tabela VALUES("821","TB_HISTORIA","I","146","206");
+
+INSERT INTO tb_auditoria_tabela VALUES("822","TB_HISTORICO_HISTORIA","I","565","207");
+
+INSERT INTO tb_auditoria_tabela VALUES("823","TB_HISTORIA","I","147","208");
+
+INSERT INTO tb_auditoria_tabela VALUES("824","TB_HISTORICO_HISTORIA","I","566","209");
+
+INSERT INTO tb_auditoria_tabela VALUES("825","TB_HISTORIA","U","145","210");
+
+INSERT INTO tb_auditoria_tabela VALUES("826","TB_HISTORICO_HISTORIA","I","567","211");
+
+INSERT INTO tb_auditoria_tabela VALUES("827","TB_HISTORIA","U","146","212");
+
+INSERT INTO tb_auditoria_tabela VALUES("828","TB_HISTORICO_HISTORIA","I","568","213");
+
+INSERT INTO tb_auditoria_tabela VALUES("829","TB_HISTORIA","U","144","214");
+
+INSERT INTO tb_auditoria_tabela VALUES("830","TB_HISTORICO_HISTORIA","I","569","215");
+
+INSERT INTO tb_auditoria_tabela VALUES("831","TB_HISTORIA","I","148","216");
+
+INSERT INTO tb_auditoria_tabela VALUES("832","TB_HISTORICO_HISTORIA","I","570","217");
+
+INSERT INTO tb_auditoria_tabela VALUES("833","TB_HISTORIA","I","149","218");
+
+INSERT INTO tb_auditoria_tabela VALUES("834","TB_HISTORICO_HISTORIA","I","571","219");
+
+INSERT INTO tb_auditoria_tabela VALUES("835","TB_HISTORIA","U","149","220");
+
+INSERT INTO tb_auditoria_tabela VALUES("836","TB_HISTORICO_HISTORIA","I","572","221");
+
+INSERT INTO tb_auditoria_tabela VALUES("837","TB_PERFIL_FUNCIONALIDADE","I","262","222");
+
+INSERT INTO tb_auditoria_tabela VALUES("847","TB_CATEGORIA_SERVICO","I","5","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("848","TB_IMAGEM","I","47","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("849","TB_SERVICO","I","3","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("850","TB_PRECO_SERVICO","I","1","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("851","TB_IMAGEM","I","48","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("852","TB_SERVICO","I","4","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("853","TB_PRECO_SERVICO","I","2","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("854","TB_IMAGEM","I","49","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("855","TB_SERVICO","I","5","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("856","TB_PRECO_SERVICO","I","3","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("857","TB_IMAGEM","I","50","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("858","TB_SERVICO","I","6","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("859","TB_PRECO_SERVICO","I","4","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("860","TB_IMAGEM","I","51","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("861","TB_SERVICO","I","7","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("862","TB_PRECO_SERVICO","I","5","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("863","TB_IMAGEM","I","52","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("864","TB_SERVICO","I","8","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("865","TB_PRECO_SERVICO","I","6","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("866","TB_IMAGEM","I","53","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("867","TB_SERVICO","I","9","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("868","TB_PRECO_SERVICO","I","7","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("869","TB_IMAGEM","I","54","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("870","TB_SERVICO","I","10","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("871","TB_PRECO_SERVICO","I","8","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("872","TB_IMAGEM","I","55","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("873","TB_SERVICO","I","11","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("874","TB_PRECO_SERVICO","I","9","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("875","TB_IMAGEM","I","56","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("876","TB_SERVICO","I","12","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("877","TB_PRECO_SERVICO","I","10","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("878","TB_IMAGEM","I","57","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("879","TB_SERVICO","I","13","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("880","TB_PRECO_SERVICO","I","11","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("881","TB_CATEGORIA_SERVICO","I","6","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("882","TB_IMAGEM","I","58","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("883","TB_SERVICO","I","14","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("884","TB_PRECO_SERVICO","I","12","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("885","TB_IMAGEM","I","59","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("886","TB_SERVICO","I","15","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("887","TB_PRECO_SERVICO","I","13","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("888","TB_IMAGEM","I","60","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("889","TB_SERVICO","I","16","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("890","TB_PRECO_SERVICO","I","14","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("891","TB_IMAGEM","I","61","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("892","TB_SERVICO","I","17","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("893","TB_PRECO_SERVICO","I","15","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("894","TB_CATEGORIA_SERVICO","I","7","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("895","TB_IMAGEM","I","62","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("896","TB_SERVICO","I","18","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("897","TB_PRECO_SERVICO","I","16","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("898","TB_CATEGORIA_SERVICO","I","8","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("899","TB_IMAGEM","I","63","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("900","TB_SERVICO","I","19","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("901","TB_PRECO_SERVICO","I","17","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("902","TB_IMAGEM","I","64","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("903","TB_SERVICO","I","20","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("904","TB_PRECO_SERVICO","I","18","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("905","TB_CATEGORIA_SERVICO","I","9","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("906","TB_IMAGEM","I","65","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("907","TB_SERVICO","I","21","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("908","TB_PRECO_SERVICO","I","19","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("909","TB_CATEGORIA_SERVICO","I","10","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("910","TB_IMAGEM","I","66","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("911","TB_SERVICO","I","22","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("912","TB_PRECO_SERVICO","I","20","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("913","TB_IMAGEM","I","67","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("914","TB_SERVICO","I","23","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("915","TB_PRECO_SERVICO","I","21","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("916","TB_IMAGEM","I","68","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("917","TB_SERVICO","I","24","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("918","TB_PRECO_SERVICO","I","22","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("919","TB_IMAGEM","I","69","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("920","TB_SERVICO","I","25","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("921","TB_PRECO_SERVICO","I","23","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("922","TB_CATEGORIA_SERVICO","I","11","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("923","TB_IMAGEM","I","70","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("924","TB_SERVICO","I","26","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("925","TB_PRECO_SERVICO","I","24","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("926","TB_IMAGEM","I","71","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("927","TB_SERVICO","I","27","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("928","TB_PRECO_SERVICO","I","25","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("929","TB_IMAGEM","I","72","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("930","TB_SERVICO","I","28","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("931","TB_PRECO_SERVICO","I","26","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("932","TB_CATEGORIA_SERVICO","I","12","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("933","TB_IMAGEM","I","73","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("934","TB_SERVICO","I","29","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("935","TB_PRECO_SERVICO","I","27","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("936","TB_IMAGEM","I","74","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("937","TB_SERVICO","I","30","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("938","TB_PRECO_SERVICO","I","28","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("939","TB_IMAGEM","I","75","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("940","TB_SERVICO","I","31","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("941","TB_PRECO_SERVICO","I","29","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("942","TB_IMAGEM","I","76","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("943","TB_SERVICO","I","32","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("944","TB_PRECO_SERVICO","I","30","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("945","TB_CATEGORIA_SERVICO","I","13","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("946","TB_IMAGEM","I","77","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("947","TB_SERVICO","I","33","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("948","TB_PRECO_SERVICO","I","31","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("949","TB_CATEGORIA_SERVICO","I","14","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("950","TB_IMAGEM","I","78","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("951","TB_SERVICO","I","34","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("952","TB_PRECO_SERVICO","I","32","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("953","TB_IMAGEM","I","79","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("954","TB_SERVICO","I","35","227");
+
+INSERT INTO tb_auditoria_tabela VALUES("955","TB_PRECO_SERVICO","I","33","227");
 
 
 
@@ -2427,40 +5785,28 @@ CREATE TABLE `tb_categoria_servico` (
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_categoria_servico`,`co_assinante`),
   KEY `fk_TB_CATEGORIA_SERVICO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_categoria_servico VALUES("1","Cabelo","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("5","Cabelo","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("2","Mãos e Pés","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("6","Mãos e Pés","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("3","Maquiagem","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("7","Maquiagem","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("4","Sobrancelha","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("8","Sobrancelha","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("5","Barba","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("9","Barba","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("6","Estética Facial","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("10","Estética Facial","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("7","Depilação","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("11","Depilação","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("8","Emagrecimento","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("12","Massagem","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("9","Fisioterapia","2019-02-20 16:22:59","A","11");
+INSERT INTO tb_categoria_servico VALUES("13","Podologia","2019-03-20 16:54:46","A","11");
 
-INSERT INTO tb_categoria_servico VALUES("10","Massagem","2019-02-20 16:22:59","A","11");
-
-INSERT INTO tb_categoria_servico VALUES("11","Podologia","2019-02-20 16:22:59","A","11");
-
-INSERT INTO tb_categoria_servico VALUES("12","Terapia","2019-02-20 16:22:59","A","11");
-
-INSERT INTO tb_categoria_servico VALUES("13","Tratamento","2019-02-20 16:22:59","A","11");
-
-INSERT INTO tb_categoria_servico VALUES("14","Lifting","2019-02-20 16:22:59","A","11");
-
-INSERT INTO tb_categoria_servico VALUES("15","nova catEGORIA NOVINHA","2019-02-20 17:01:04","I","11");
-
-INSERT INTO tb_categoria_servico VALUES("16","100200","2019-02-20 17:01:37","A","11");
+INSERT INTO tb_categoria_servico VALUES("14","Terapia","2019-03-20 16:54:46","A","11");
 
 
 
@@ -2911,7 +6257,7 @@ CREATE TABLE `tb_funcionalidade` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_funcionalidade VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -3004,6 +6350,8 @@ INSERT INTO tb_funcionalidade VALUES("49","Listar Categoria Servico","ListarCate
 
 INSERT INTO tb_funcionalidade VALUES("60","Meu Plano Assinante","MeuPlanoAssinante","A","S","9");
 
+INSERT INTO tb_funcionalidade VALUES("61","Listar Serviço","ListarServico","A","S","15");
+
 
 
 
@@ -3061,7 +6409,7 @@ CREATE TABLE `tb_historia` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=144 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historia VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","1");
@@ -3146,9 +6494,9 @@ INSERT INTO tb_historia VALUES("42","Gerar cupom não fiscal","<p>Gerar cupom n&
 
 INSERT INTO tb_historia VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2018-07-25 18:45:49","N","5");
 
-INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante)</p>","2018-07-25 18:42:35","2018-07-25 18:42:35","N","12");
+INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","2018-07-25 18:42:35","2019-03-20 14:17:47","N","12");
 
-INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","2018-07-25 18:43:26","2019-02-25 16:08:44","I","12");
+INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","2018-07-25 18:43:26","2019-03-20 14:14:45","C","12");
 
 INSERT INTO tb_historia VALUES("46","Manter intervalos do profissional","<p>Manter almo&ccedil;os e&nbsp; intervalos do profissional (Cadastro Profissional)</p>\n\n<p>&nbsp;</p>","2018-07-25 18:55:44","2019-02-11 17:27:48","C","9");
 
@@ -3324,6 +6672,18 @@ INSERT INTO tb_historia VALUES("142","Manter Usuário Comum","<p>Manter Usu&aacu
 
 INSERT INTO tb_historia VALUES("143","Manter Planos do Assinante","<p>Manter Planos do Assinante, alterar seu plano aumentando o plano</p>","2019-03-13 15:53:08","2019-03-13 15:53:08","N","1");
 
+INSERT INTO tb_historia VALUES("144","Pesquisa Avançada dos Serviços","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o,</p>","2019-03-20 14:19:52","2019-03-20 14:28:42","N","12");
+
+INSERT INTO tb_historia VALUES("145","Histórico Promoções do Serviço","<p>Apresentar Hist&oacute;rico das promo&ccedil;&atilde;oes do servi&ccedil;o</p>","2019-03-20 14:22:28","2019-03-20 14:27:15","N","12");
+
+INSERT INTO tb_historia VALUES("146","Histórico Pacotes do Serviço","<p>apresentar Hist&oacute;rico os Pacotes do Servi&ccedil;o</p>","2019-03-20 14:22:52","2019-03-20 14:27:31","N","12");
+
+INSERT INTO tb_historia VALUES("147","Pesquisa Avançada dos Profissionais","<p>Pesquisa Avan&ccedil;ada dos Profissionais por nome, filial, cargo, jornada de tabalho, sexo, cidade e uf, assistente , possui agenda,&nbsp; agenda on line, banco,</p>","2019-03-20 14:26:33","2019-03-20 14:26:33","N","9");
+
+INSERT INTO tb_historia VALUES("148","Pesquisa Avançada dos Clientes","<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing,&nbsp;</p>","2019-03-20 14:34:27","2019-03-20 14:34:27","N","11");
+
+INSERT INTO tb_historia VALUES("149","Pesquisa Avançada dos Assinantes","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento, data de expira&ccedil;&atilde;o (Per&iacute;odo), n&uacute;mero de filiais, valor assinatura atual, n&uacute;mero de profissionais,</p>","2019-03-20 14:37:45","2019-03-20 14:40:07","N","1");
+
 
 
 
@@ -3338,7 +6698,7 @@ CREATE TABLE `tb_historico_historia` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=561 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=573 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -4455,6 +7815,30 @@ INSERT INTO tb_historico_historia VALUES("559","8","5","2019-03-11 17:07:12","14
 
 INSERT INTO tb_historico_historia VALUES("560","13","13","2019-03-13 15:53:08","143");
 
+INSERT INTO tb_historico_historia VALUES("561","20","0","2019-03-20 14:14:45","45");
+
+INSERT INTO tb_historico_historia VALUES("562","13","13","2019-03-20 14:17:47","44");
+
+INSERT INTO tb_historico_historia VALUES("563","8","8","2019-03-20 14:19:52","144");
+
+INSERT INTO tb_historico_historia VALUES("564","8","8","2019-03-20 14:22:28","145");
+
+INSERT INTO tb_historico_historia VALUES("565","8","8","2019-03-20 14:22:52","146");
+
+INSERT INTO tb_historico_historia VALUES("566","20","20","2019-03-20 14:26:33","147");
+
+INSERT INTO tb_historico_historia VALUES("567","8","8","2019-03-20 14:27:15","145");
+
+INSERT INTO tb_historico_historia VALUES("568","8","8","2019-03-20 14:27:31","146");
+
+INSERT INTO tb_historico_historia VALUES("569","8","8","2019-03-20 14:28:42","144");
+
+INSERT INTO tb_historico_historia VALUES("570","13","13","2019-03-20 14:34:27","148");
+
+INSERT INTO tb_historico_historia VALUES("571","8","8","2019-03-20 14:37:45","149");
+
+INSERT INTO tb_historico_historia VALUES("572","20","20","2019-03-20 14:40:07","149");
+
 
 
 
@@ -4465,7 +7849,7 @@ CREATE TABLE `tb_imagem` (
   `co_imagem` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ds_caminho` varchar(150) NOT NULL,
   PRIMARY KEY (`co_imagem`)
-) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_imagem VALUES("1","leonardo-m-c-bessa-56e8920c23ab66.jpg");
@@ -4531,6 +7915,78 @@ INSERT INTO tb_imagem VALUES("41","novo-cliente-p-5c62cf918cc6a.jpg");
 INSERT INTO tb_imagem VALUES("42","novo-cliente-p-5c62d19fd8d73.jpg");
 
 INSERT INTO tb_imagem VALUES("43","novo-cliente-p-5c62d315241d5.jpg");
+
+INSERT INTO tb_imagem VALUES("44","servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO tb_imagem VALUES("45","servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO tb_imagem VALUES("46","servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO tb_imagem VALUES("47","servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO tb_imagem VALUES("48","servico_padrao/corte-de-cabelo-masculino.jpg");
+
+INSERT INTO tb_imagem VALUES("49","servico_padrao/qual-a-melhor-maquina-de-cortar-cabelo_1.jpg");
+
+INSERT INTO tb_imagem VALUES("50","servico_padrao/melhor-fase-da-lua-para-corta-cabelo-em-2019.jpg");
+
+INSERT INTO tb_imagem VALUES("51","servico_padrao/mascara-de-cabelo-1.jpg");
+
+INSERT INTO tb_imagem VALUES("52","servico_padrao/lavagem-1.jpg");
+
+INSERT INTO tb_imagem VALUES("53","servico_padrao/escova-modeladora-como-escolher-2.jpg");
+
+INSERT INTO tb_imagem VALUES("54","servico_padrao/selagem-termica-capilar-2.jpg");
+
+INSERT INTO tb_imagem VALUES("55","servico_padrao/Escova-progressiva.jpg");
+
+INSERT INTO tb_imagem VALUES("56","servico_padrao/botox-capilar-como-saber-se-e-falso.jpg");
+
+INSERT INTO tb_imagem VALUES("57","servico_padrao/luzes-reflexos.jpg");
+
+INSERT INTO tb_imagem VALUES("58","servico_padrao/manicure.jpg");
+
+INSERT INTO tb_imagem VALUES("59","servico_padrao/spa-pedicure.jpg");
+
+INSERT INTO tb_imagem VALUES("60","servico_padrao/manicure-pedicure.jpg");
+
+INSERT INTO tb_imagem VALUES("61","servico_padrao/banho-de-gel-cristalizacao-unhas-cristalizadas.jpg");
+
+INSERT INTO tb_imagem VALUES("62","servico_padrao/Makeup-Pic-for-Website.jpg");
+
+INSERT INTO tb_imagem VALUES("63","servico_padrao/cilios_fio_a_fio_duo_spa.jpg");
+
+INSERT INTO tb_imagem VALUES("64","servico_padrao/design-de-sobrancelhas-nilopolis.jpg");
+
+INSERT INTO tb_imagem VALUES("65","servico_padrao/retocar-a-barba-de-seu-amigo_1153-1504.jpg");
+
+INSERT INTO tb_imagem VALUES("66","servico_padrao/Rejuvenescimento_Facial.jpg");
+
+INSERT INTO tb_imagem VALUES("67","servico_padrao/Microagulhamento_Peeling.jpg");
+
+INSERT INTO tb_imagem VALUES("68","servico_padrao/Mascara_Acne_Control.jpg");
+
+INSERT INTO tb_imagem VALUES("69","servico_padrao/Limpeza_Pele.jpg");
+
+INSERT INTO tb_imagem VALUES("70","servico_padrao/Depilacao_Laser.jpg");
+
+INSERT INTO tb_imagem VALUES("71","servico_padrao/Depilacao_Cera.png");
+
+INSERT INTO tb_imagem VALUES("72","servico_padrao/Depilacao_Luz.jpg");
+
+INSERT INTO tb_imagem VALUES("73","servico_padrao/Massagem_Relaxante.jpg");
+
+INSERT INTO tb_imagem VALUES("74","servico_padrao/Massagem_Modeladora.jpg");
+
+INSERT INTO tb_imagem VALUES("75","servico_padrao/Drenagem_Linfatica.jpg");
+
+INSERT INTO tb_imagem VALUES("76","servico_padrao/Day_Spa.jpg");
+
+INSERT INTO tb_imagem VALUES("77","servico_padrao/Podologia.jpg");
+
+INSERT INTO tb_imagem VALUES("78","servico_padrao/Bambuterapia.jpg");
+
+INSERT INTO tb_imagem VALUES("79","servico_padrao/Carboxiterapia.jpg");
 
 
 
@@ -4862,7 +8318,7 @@ CREATE TABLE `tb_perfil_funcionalidade` (
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_TB_PERFIL_FUNCIONALIDADE_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=262 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_perfil_funcionalidade VALUES("1","1","1","0");
@@ -4934,6 +8390,8 @@ INSERT INTO tb_perfil_funcionalidade VALUES("245","5","2","0");
 INSERT INTO tb_perfil_funcionalidade VALUES("246","4","2","0");
 
 INSERT INTO tb_perfil_funcionalidade VALUES("261","60","2","0");
+
+INSERT INTO tb_perfil_funcionalidade VALUES("262","61","2","0");
 
 
 
@@ -5193,10 +8651,78 @@ CREATE TABLE `tb_preco_servico` (
   `dt_cadastro` datetime DEFAULT NULL,
   `ds_observacao` varchar(120) DEFAULT NULL,
   `co_servico` int(11) NOT NULL,
-  PRIMARY KEY (`co_preco_servico`,`co_servico`),
-  KEY `fk_TB_PRECO_SERVICO_TB_SERVICO1_idx` (`co_servico`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `co_usuario` int(10) NOT NULL,
+  PRIMARY KEY (`co_preco_servico`,`co_servico`,`co_usuario`),
+  KEY `fk_TB_PRECO_SERVICO_TB_SERVICO1_idx` (`co_servico`),
+  KEY `fk_TB_PRECO_SERVICO_TB_USUARIO1_idx` (`co_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO tb_preco_servico VALUES("1","39.90","2019-03-20 16:54:46","Serviço Inicial","3","8");
+
+INSERT INTO tb_preco_servico VALUES("2","19.90","2019-03-20 16:54:46","Serviço Inicial","4","8");
+
+INSERT INTO tb_preco_servico VALUES("3","29.90","2019-03-20 16:54:46","Serviço Inicial","5","8");
+
+INSERT INTO tb_preco_servico VALUES("4","59.90","2019-03-20 16:54:46","Serviço Inicial","6","8");
+
+INSERT INTO tb_preco_servico VALUES("5","49.90","2019-03-20 16:54:46","Serviço Inicial","7","8");
+
+INSERT INTO tb_preco_servico VALUES("6","49.90","2019-03-20 16:54:46","Serviço Inicial","8","8");
+
+INSERT INTO tb_preco_servico VALUES("7","29.90","2019-03-20 16:54:46","Serviço Inicial","9","8");
+
+INSERT INTO tb_preco_servico VALUES("8","59.90","2019-03-20 16:54:46","Serviço Inicial","10","8");
+
+INSERT INTO tb_preco_servico VALUES("9","59.90","2019-03-20 16:54:46","Serviço Inicial","11","8");
+
+INSERT INTO tb_preco_servico VALUES("10","59.90","2019-03-20 16:54:46","Serviço Inicial","12","8");
+
+INSERT INTO tb_preco_servico VALUES("11","79.90","2019-03-20 16:54:46","Serviço Inicial","13","8");
+
+INSERT INTO tb_preco_servico VALUES("12","19.90","2019-03-20 16:54:46","Serviço Inicial","14","8");
+
+INSERT INTO tb_preco_servico VALUES("13","19.90","2019-03-20 16:54:46","Serviço Inicial","15","8");
+
+INSERT INTO tb_preco_servico VALUES("14","29.90","2019-03-20 16:54:46","Serviço Inicial","16","8");
+
+INSERT INTO tb_preco_servico VALUES("15","59.90","2019-03-20 16:54:46","Serviço Inicial","17","8");
+
+INSERT INTO tb_preco_servico VALUES("16","119.90","2019-03-20 16:54:46","Serviço Inicial","18","8");
+
+INSERT INTO tb_preco_servico VALUES("17","79.90","2019-03-20 16:54:46","Serviço Inicial","19","8");
+
+INSERT INTO tb_preco_servico VALUES("18","24.90","2019-03-20 16:54:46","Serviço Inicial","20","8");
+
+INSERT INTO tb_preco_servico VALUES("19","19.90","2019-03-20 16:54:46","Serviço Inicial","21","8");
+
+INSERT INTO tb_preco_servico VALUES("20","19.90","2019-03-20 16:54:46","Serviço Inicial","22","8");
+
+INSERT INTO tb_preco_servico VALUES("21","69.90","2019-03-20 16:54:46","Serviço Inicial","23","8");
+
+INSERT INTO tb_preco_servico VALUES("22","39.90","2019-03-20 16:54:46","Serviço Inicial","24","8");
+
+INSERT INTO tb_preco_servico VALUES("23","29.90","2019-03-20 16:54:46","Serviço Inicial","25","8");
+
+INSERT INTO tb_preco_servico VALUES("24","99.90","2019-03-20 16:54:46","Serviço Inicial","26","8");
+
+INSERT INTO tb_preco_servico VALUES("25","29.90","2019-03-20 16:54:46","Serviço Inicial","27","8");
+
+INSERT INTO tb_preco_servico VALUES("26","89.90","2019-03-20 16:54:46","Serviço Inicial","28","8");
+
+INSERT INTO tb_preco_servico VALUES("27","29.90","2019-03-20 16:54:46","Serviço Inicial","29","8");
+
+INSERT INTO tb_preco_servico VALUES("28","29.90","2019-03-20 16:54:46","Serviço Inicial","30","8");
+
+INSERT INTO tb_preco_servico VALUES("29","29.90","2019-03-20 16:54:46","Serviço Inicial","31","8");
+
+INSERT INTO tb_preco_servico VALUES("30","99.90","2019-03-20 16:54:46","Serviço Inicial","32","8");
+
+INSERT INTO tb_preco_servico VALUES("31","39.90","2019-03-20 16:54:46","Serviço Inicial","33","8");
+
+INSERT INTO tb_preco_servico VALUES("32","29.90","2019-03-20 16:54:46","Serviço Inicial","34","8");
+
+INSERT INTO tb_preco_servico VALUES("33","39.90","2019-03-20 16:54:46","Serviço Inicial","35","8");
 
 
 
@@ -5327,10 +8853,78 @@ CREATE TABLE `tb_servico` (
   `nu_duracao` int(3) DEFAULT NULL,
   `ds_descricao` text,
   `co_categoria_servico` int(11) NOT NULL,
-  PRIMARY KEY (`co_servico`,`co_categoria_servico`),
-  KEY `fk_TB_SERVICO_TB_CATEGORIA_SERVICO1_idx` (`co_categoria_servico`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `co_imagem` int(10) NOT NULL,
+  PRIMARY KEY (`co_servico`,`co_categoria_servico`,`co_imagem`),
+  KEY `fk_TB_SERVICO_TB_CATEGORIA_SERVICO1_idx` (`co_categoria_servico`),
+  KEY `fk_TB_SERVICO_TB_IMAGEM1_idx` (`co_imagem`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO tb_servico VALUES("3","2019-03-20 16:54:46","A","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
+
+INSERT INTO tb_servico VALUES("4","2019-03-20 16:54:46","A","Corte Tesoura","30","Corte: O corte na tesoura irá deixar você com o visual renovado.","5","48");
+
+INSERT INTO tb_servico VALUES("5","2019-03-20 16:54:46","A","Corte Máquina","30","Corte: O corte na máquina irá deixar você com o visual renovado.","5","49");
+
+INSERT INTO tb_servico VALUES("6","2019-03-20 16:54:46","A","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","5","50");
+
+INSERT INTO tb_servico VALUES("7","2019-03-20 16:54:46","A","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
+
+INSERT INTO tb_servico VALUES("8","2019-03-20 16:54:46","A","Corte e Higienização dos Fios","30","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","5","52");
+
+INSERT INTO tb_servico VALUES("9","2019-03-20 16:54:46","A","Escova Modeladora","30","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","5","53");
+
+INSERT INTO tb_servico VALUES("10","2019-03-20 16:54:46","A","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
+
+INSERT INTO tb_servico VALUES("11","2019-03-20 16:54:46","A","Escova Progressiva","60","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a \n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo \n        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. \n        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.","5","55");
+
+INSERT INTO tb_servico VALUES("12","2019-03-20 16:54:46","A","Botox Capilar","60","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. \n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","5","56");
+
+INSERT INTO tb_servico VALUES("13","2019-03-20 16:54:46","A","Luzes / Mechas","150","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo \n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","5","57");
+
+INSERT INTO tb_servico VALUES("14","2019-03-20 16:54:46","A","Manicure","30","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas \n        pela cliente.","6","58");
+
+INSERT INTO tb_servico VALUES("15","2019-03-20 16:54:46","A","Pedicure","30","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas \n        pela cliente.","6","59");
+
+INSERT INTO tb_servico VALUES("16","2019-03-20 16:54:46","A","Manicure e Pedicure","60","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos \n        e dos pés nas cores desejadas pela cliente.","6","60");
+
+INSERT INTO tb_servico VALUES("17","2019-03-20 16:54:46","A","Unhas Gel","90","Unhas em Gel: feitas com produto à base de película de poliéster, \n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e \n        são mais finas.","6","61");
+
+INSERT INTO tb_servico VALUES("18","2019-03-20 16:54:46","A","Maquiagem Completa","120","Desfrute de uma make completa para arrasar em festas, comemorações e \n        casamentos com uma super maquiagem.","7","62");
+
+INSERT INTO tb_servico VALUES("19","2019-03-20 16:54:46","A","Alongamento de Cílios Fio a Fio","90","Alongamento de Cílios: a técnica de alongamento de cílios trata-se \n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, \n        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada \n        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o \n        procedimento estético em questão dura.","8","63");
+
+INSERT INTO tb_servico VALUES("20","2019-03-20 16:54:46","A","Design de Sobrancelhas","30","Design de Sobrancelhas: além de ser esteticamente essencial, garante \n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. \n        Feito de acordo com o formato do seu rosto. Feito com pinça.","8","64");
+
+INSERT INTO tb_servico VALUES("21","2019-03-20 16:54:46","A","Retoque na Barba","60","Barba: faça a barba totalmente ou apare com um design a seu gosto para \n        manter a aparência impecável.","9","65");
+
+INSERT INTO tb_servico VALUES("22","2019-03-20 16:54:46","A","Rejuvenescimento Facial","60","Rejuvenescimento Facial com Luz Pulsada é um procedimento \n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno \n        e a elastina proporcionando assim uma pele mais firme e jovem.","10","66");
+
+INSERT INTO tb_servico VALUES("23","2019-03-20 16:54:46","A","Microagulhamento com Peeling","60","Microagulhamento: promove textura mais macia, atenuando cicatrizes \n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling \n        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na \n        camada mais superficial da pele e a estimulação à produção de colágeno.","10","67");
+
+INSERT INTO tb_servico VALUES("24","2019-03-20 16:54:46","A","Máscara Acne Control","60","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a \n        textura e a firmeza da pele.","10","68");
+
+INSERT INTO tb_servico VALUES("25","2019-03-20 16:54:46","A","Limpeza de Pele","30","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração \n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","10","69");
+
+INSERT INTO tb_servico VALUES("26","2019-03-20 16:54:46","A","Depilação a Laser","30","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, \n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","11","70");
+
+INSERT INTO tb_servico VALUES("27","2019-03-20 16:54:46","A","Depilação a Cera","60","Realizada com cera quente, que garante uma maior durabilidade, já que os \n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, \n        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.","11","71");
+
+INSERT INTO tb_servico VALUES("28","2019-03-20 16:54:46","A","Depilação a Luz","30","O método remove os pelos pela destruição do folículo piloso ou \n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até \n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.","11","72");
+
+INSERT INTO tb_servico VALUES("29","2019-03-20 16:54:46","A","Massagem Relaxante","30","Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.","12","73");
+
+INSERT INTO tb_servico VALUES("30","2019-03-20 16:54:46","A","Massagem Modeladora","30","Massagem Modeladora: para quem precisa ativar o metabolismo local, \n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","12","74");
+
+INSERT INTO tb_servico VALUES("31","2019-03-20 16:54:46","A","Drenagem Linfática","30","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e \n        toxinas do organismo.","12","75");
+
+INSERT INTO tb_servico VALUES("32","2019-03-20 16:54:46","A","Day Spa","120","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de \n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz \n        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras \n        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que \n        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado","12","76");
+
+INSERT INTO tb_servico VALUES("33","2019-03-20 16:54:46","A","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
+
+INSERT INTO tb_servico VALUES("34","2019-03-20 16:54:46","A","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","14","78");
+
+INSERT INTO tb_servico VALUES("35","2019-03-20 16:54:46","A","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","14","79");
 
 
 
@@ -5503,7 +9097,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=185 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -5625,6 +9219,16 @@ INSERT INTO tb_trafego VALUES("177","::1","Desconhecido","Desconhecida","Desconh
 INSERT INTO tb_trafego VALUES("178","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 INSERT INTO tb_trafego VALUES("179","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("180","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("181","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("182","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("183","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+
+INSERT INTO tb_trafego VALUES("184","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 
