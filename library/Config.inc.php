@@ -148,7 +148,7 @@ define('PASTAUPLOADS', HOME . 'uploads/');
 
 // ARQUIVOS PRE DEFINIDOS
 define('TIMTHUMB', PASTA_LIBRARY . 'Helpers/Timthumb.class.php');
-define('SEM_FOTO', PASTA_LIBRARY . 'Imagens/sem-foto.jpg');
+define('SEM_FOTO', PASTAUPLOADS . 'sem-foto.jpg');
 
 
 // DEFINE PARA VALIDAÇÃO DO CADASTRO

@@ -55,10 +55,7 @@
                                         "circle-img", 1
                                     );
                                 } else {
-                                    $imagem = '<img src="' . TIMTHUMB . '?src=' . HOME .
-                                        'uploads/sem-foto.jpg&w=' . $tamanhoImg . '&h=' . $tamanhoImg . '" 
-                                    alt="' . $servico->getNoServico() . '" title="' . $servico->getNoServico() . '" 
-                                    class="circle-img" />';
+                                    $imagem = Valida::getSemImg($tamanhoImg);
                                 }
                                 $grid->setColunas(Valida::SituacaoUsuario($servico->getStStatus()), 2);
                                 $grid->setColunas($imagem, 1);

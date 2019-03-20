@@ -708,6 +708,20 @@ class Valida
     }
 
     /**
+     * Retorna a logo padrão do sistema pelo TimThamb
+     * @param int $tamanho
+     * @return string
+     */
+    public static function getSemImg($tamanho = 50)
+    {
+        return '
+        <img src="' . TIMTHUMB . '?src=' . SEM_FOTO .
+            '&w=' . $tamanho . '&h=' . $tamanho . '"
+                                alt="Sem Imagem" title="Sem Imagem" class="circle-img" />
+        ';
+    }
+
+    /**
      * @param $st
      * @return string
      */
