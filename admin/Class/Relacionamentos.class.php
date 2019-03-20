@@ -737,10 +737,41 @@ class Relacionamentos
                     ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_CATEGORIA_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (PrecoServicoEntidade::TABELA) => Array(
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ServicoEntidade::TABELA) => Array(
+                (CO_PRECO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'PrecoServicoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_CATEGORIA_SERVICO) => Array(
+                    ('Campo') => CO_CATEGORIA_SERVICO,
+                    ('Entidade') => 'CategoriaServicoEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
         );
     }
 }
+
+
+
+
+
+
+
 
 
 

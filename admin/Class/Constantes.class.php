@@ -91,6 +91,11 @@ define('ST_EDICAO_ATENDIMENTO', 'st_edicao_atendimento');
 define('CO_CATEGORIA_SERVICO', 'co_categoria_servico');
 define('NO_CATEGORIA_SERVICO', 'no_categoria_servico');
 define('CO_PERFIL_ASSINANTE', 'co_perfil_assinante');
+define('CO_PRECO_SERVICO', 'co_preco_servico');
+define('CO_SERVICO', 'co_servico');
+define('NO_SERVICO', 'no_servico');
+define('NU_DURACAO', 'nu_duracao');
+
 
 
 
@@ -122,5 +127,5 @@ define('CLIENTE_SERVICE', 'ClienteService');
 define('CONFIG_PROFISSIONAL_SERVICE', 'ConfigProfissionalService');
 define('CATEGORIA_SERVICO_SERVICE', 'CategoriaServicoService');
 define('PERFIL_ASSINANTE_SERVICE', 'PerfilAssinanteService');
-
-
+define('PRECO_SERVICO_SERVICE', 'PreservicoService');
+define('SERVICO_SERVICE', 'ServicoService');

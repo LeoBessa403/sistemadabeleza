@@ -17,7 +17,7 @@
 
                 </ol>
                 <div class="page-header">
-                    <h1>Cliente
+                    <h1>Serviço
                         <small> Cadastro de Categoria de serviço</small>
                     </h1>
                 </div>
