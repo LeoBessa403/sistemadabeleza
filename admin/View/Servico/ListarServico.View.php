@@ -57,7 +57,14 @@
                                 } else {
                                     $imagem = Valida::getSemImg($tamanhoImg);
                                 }
-                                $grid->setColunas(Valida::SituacaoUsuario($servico->getStStatus()), 2);
+                                $check = ($servico->getStStatus() == StatusAcessoEnum::ATIVO)
+                                ? ' checked="checked"' : '';
+
+                                $campoAtende = '<input type="checkbox" ' . $check . '
+                                       class="square-purple"
+                                       value="" id="' . ST_STATUS . $servico->getCoServico() . '"
+                                       name="' . ST_STATUS . '[' . $servico->getCoServico() . ']"/>';
+                                $grid->setColunas($campoAtende, 1);
                                 $grid->setColunas($imagem, 1);
                                 $grid->setColunas($servico->getNoServico());
                                 $grid->setColunas($res->getNoCategoriaServico());

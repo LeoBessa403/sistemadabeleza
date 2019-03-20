@@ -1,8 +1,3 @@
-<style>
-    .icheckbox_square-purple {
-        margin: 0 !important;
-    }
-</style>
 <div class="main-content">
     <div class="container">
         <!-- start: PAGE HEADER -->
