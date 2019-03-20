@@ -16,6 +16,7 @@ class CategoriaServicoEntidade extends AbstractEntidade
 	private $dt_cadastro;
 	private $st_status;
 	private $co_assinante;
+	private $co_servico;
 
 
 	/**
@@ -125,6 +126,23 @@ class CategoriaServicoEntidade extends AbstractEntidade
 	public function setCoAssinante($co_assinante)
     {
         return $this->co_assinante = $co_assinante;
+    }
+
+    /**
+     * @return ServicoEntidade $co_servico
+     */
+    public function getCoServico()
+    {
+        return $this->co_servico;
+    }
+
+    /**
+     * @param $co_servico
+     * @return mixed
+     */
+    public function setCoServico($co_servico)
+    {
+        $this->co_servico = $co_servico;
     }
 
 }

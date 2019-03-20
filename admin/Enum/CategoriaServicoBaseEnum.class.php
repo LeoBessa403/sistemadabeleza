@@ -12,13 +12,9 @@ class CategoriaServicoBaseEnum extends AbstractEnum
     const BARBA = 5;
     const ESTETICA_FACIAL = 6;
     const DEPILACAO = 7;
-    const EMAGRECIMENTO = 8;
-    const FISIOTERAPIA = 9;
-    const MASSAGEM = 10;
-    const PODOLOGIA = 11;
-    const TERAPIA = 12;
-    const TRATAMENTO = 13;
-    const LIFTING = 14;
+    const MASSAGEM = 8;
+    const PODOLOGIA = 9;
+    const TERAPIA = 10;
 
     public static $descricao = [
         CategoriaServicoBaseEnum::CABELO => 'Cabelo',
@@ -28,12 +24,8 @@ class CategoriaServicoBaseEnum extends AbstractEnum
         CategoriaServicoBaseEnum::BARBA => 'Barba',
         CategoriaServicoBaseEnum::ESTETICA_FACIAL => 'Estética Facial',
         CategoriaServicoBaseEnum::DEPILACAO => 'Depilação',
-        CategoriaServicoBaseEnum::EMAGRECIMENTO => 'Emagrecimento',
-        CategoriaServicoBaseEnum::FISIOTERAPIA => 'Fisioterapia',
         CategoriaServicoBaseEnum::MASSAGEM => 'Massagem',
         CategoriaServicoBaseEnum::PODOLOGIA => 'Podologia',
         CategoriaServicoBaseEnum::TERAPIA => 'Terapia',
-        CategoriaServicoBaseEnum::TRATAMENTO => 'Tratamento',
-        CategoriaServicoBaseEnum::LIFTING => 'Lifting',
     ];
 }

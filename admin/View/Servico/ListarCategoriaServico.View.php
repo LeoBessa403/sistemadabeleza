@@ -48,7 +48,7 @@
 
 
                             $grid->setColunas($res->getNoCategoriaServico());
-                            $grid->setColunas(00, 3);
+                            $grid->setColunas(count($res->getCoServico()), 3);
                             $grid->setColunas(Valida::SituacaoUsuario($res->getStStatus()), 2);
                             $grid->setColunas($acao, 2);
                             $grid->criaLinha($res->getCoCategoriaServico());
