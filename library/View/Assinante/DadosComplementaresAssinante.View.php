@@ -1,8 +1,3 @@
-<style>
-    .icheckbox_square-purple {
-        margin: 0 !important;
-    }
-</style>
 <?php
 /** @var AssinanteEntidade $assinanteEdit */
 $assinanteEdit = $assinante;
