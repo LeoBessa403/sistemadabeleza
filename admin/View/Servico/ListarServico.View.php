@@ -56,7 +56,7 @@
                                     );
                                 } else {
                                     $imagem = '<img src="' . TIMTHUMB . '?src=' . HOME .
-                                        'library/uploads/sem-foto.jpg&w=' . $tamanhoImg . '&h=' . $tamanhoImg . '" 
+                                        'uploads/sem-foto.jpg&w=' . $tamanhoImg . '&h=' . $tamanhoImg . '" 
                                     alt="' . $servico->getNoServico() . '" title="' . $servico->getNoServico() . '" 
                                     class="circle-img" />';
                                 }
