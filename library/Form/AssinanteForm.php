@@ -255,7 +255,7 @@ class AssinanteForm
         $formulario
             ->setId(TP_ESTABELECIMENTO)
             ->setType("select")
-            ->setLabel("Tipo de estabelecimento ")
+            ->setLabel("Tipo de estabelecimento")
             ->setOptions($options)
             ->CriaInpunt();
 

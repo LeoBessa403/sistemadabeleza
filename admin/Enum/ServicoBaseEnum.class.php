@@ -82,7 +82,7 @@ class ServicoBaseEnum extends AbstractEnum
         ServicoBaseEnum::CORTE_MASC_MAQUINA => 'Corte: O corte na máquina irá deixar você com o visual renovado.',
         ServicoBaseEnum::CORTE_FEMI => 'Corte: mude o visual ou apare as pontinhas para manter a aparência do 
         cabelo sempre saudável.',
-        ServicoBaseEnum::HIDRATACAO => 'Barba',
+        ServicoBaseEnum::HIDRATACAO => 'Hidratação profunda Capilar',
         ServicoBaseEnum::CORTE_HIGIENIZACAO => 'Corte: mude o visual ou apare as pontinhas para manter a 
         aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas',
         ServicoBaseEnum::ESCOVA => 'Escova: você vai ter uma ajudinha para realinhar os cabelos com um 
@@ -263,5 +263,41 @@ class ServicoBaseEnum extends AbstractEnum
         ServicoBaseEnum::DAY_SPA => 120,
         ServicoBaseEnum::PODOLOGIA_LIMPEZA_GERAL => 60,
         ServicoBaseEnum::CARBOXITERAPIA => 30,
+    ];
+
+    public static $imagem = [
+        ServicoBaseEnum::COLORACAO => 'tonalizante-coloracao02.jpg',
+        ServicoBaseEnum::CORTE_MASC_TESOURA => 'corte-de-cabelo-masculino.jpg',
+        ServicoBaseEnum::CORTE_MASC_MAQUINA => 'qual-a-melhor-maquina-de-cortar-cabelo_1.jpg',
+        ServicoBaseEnum::CORTE_FEMI => 'melhor-fase-da-lua-para-corta-cabelo-em-2019.jpg',
+        ServicoBaseEnum::HIDRATACAO => 'mascara-de-cabelo-1.jpg',
+        ServicoBaseEnum::CORTE_HIGIENIZACAO => 'lavagem-1.jpg',
+        ServicoBaseEnum::ESCOVA => 'escova-modeladora-como-escolher-2.jpg',
+        ServicoBaseEnum::SELAGEM => 'selagem-termica-capilar-2.jpg',
+        ServicoBaseEnum::PROGRESSIVA => 'Escova-progressiva.jpg',
+        ServicoBaseEnum::BOTOX => 'botox-capilar-como-saber-se-e-falso.jpg',
+        ServicoBaseEnum::LUZ_MECHA => 'luzes-reflexos.jpg',
+        ServicoBaseEnum::MANICURE => 'manicure.jpg',
+        ServicoBaseEnum::PEDICURE => 'spa-pedicure.jpg',
+        ServicoBaseEnum::MANICURE_PEDICURE => 'manicure-pedicure.jpg',
+        ServicoBaseEnum::ALONGAMENTO_UNHAS_GEL => 'banho-de-gel-cristalizacao-unhas-cristalizadas.jpg',
+        ServicoBaseEnum::MAKE_COMPLETA => 'Makeup-Pic-for-Website.jpg',
+        ServicoBaseEnum::ALONGAMENTO_CILIOS_FIO => 'cilios_fio_a_fio_duo_spa.jpg',
+        ServicoBaseEnum::DESIGN_SOBRANCELHAS => 'design-de-sobrancelhas-nilopolis.jpg',
+        ServicoBaseEnum::BARBAR_RETOQUE => 'retocar-a-barba-de-seu-amigo_1153-1504.jpg',
+        ServicoBaseEnum::REJUVENESCIMENTO_FACIAL => 'Rejuvenescimento_Facial.jpg',
+        ServicoBaseEnum::MICROAGULHAMENTO_PEELING => 'Microagulhamento_Peeling.jpg',
+        ServicoBaseEnum::MASCARA_ACNE => 'Máscara_Acne_Control.jpg',
+        ServicoBaseEnum::LIMPEZA_PELE => 'Limpeza_Pele.jpg',
+        ServicoBaseEnum::DEPILACAO_LASER => 'Depilacao_Laser.jpg',
+        ServicoBaseEnum::DEPILACAO_CERA => 'Depilacao_Cera.png',
+        ServicoBaseEnum::DEPILACAO_LUZ => 'Depilacao_Luz.jpg',
+        ServicoBaseEnum::MASSAGEM_RELAXANTE => 'Massagem_Relaxante.jpg',
+        ServicoBaseEnum::MASSAGEM_MODELADORA => 'Massagem_Modeladora.jpg',
+        ServicoBaseEnum::DRENAGEM_LINFATICA => 'Drenagem_Linfatica.jpg',
+        ServicoBaseEnum::BAMBUTERAPIA => 'Bambuterapia.jpg',
+        ServicoBaseEnum::DAY_SPA => 'Day_Spa.jpg',
+        ServicoBaseEnum::PODOLOGIA_LIMPEZA_GERAL => 'Podologia.jpg',
+        ServicoBaseEnum::CARBOXITERAPIA => 'Carboxiterapia.jpg',
     ];
 }

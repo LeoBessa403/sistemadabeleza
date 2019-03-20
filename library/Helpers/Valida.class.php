@@ -388,7 +388,7 @@ class Valida
      * uploads. Se existir retorna a imagem redimensionada!
      * @return HTML = imagem redimencionada!
      */
-    public static function GetMiniatura($ImageUrl, $ImageDesc, $ImageW = null, $ImageH = null, $Classe = null)
+    public static function GetMiniatura($ImageUrl, $ImageDesc, $ImageW = null, $ImageH = null, $Classe = null, $zoomCrop = 3)
     {
 
         $classAdd = 'center-block';
@@ -401,7 +401,8 @@ class Valida
             $patch = HOME;
             $tim = TIMTHUMB;
             $imagem = self::$Data;
-            return "<img itemprop=\"image\" src=\"{$tim}?src={$patch}{$imagem}&w={$ImageW}&h={$ImageH}&zc=3\" alt=\"{$ImageDesc}\" title=\"{$ImageDesc}\" class=\"{$classAdd} {$Classe}\" />";
+            return "<img itemprop=\"image\" src=\"{$tim}?src={$patch}{$imagem}&w={$ImageW}&h={$ImageH}&zc={$zoomCrop}\" 
+            alt=\"{$ImageDesc}\" title=\"{$ImageDesc}\" class=\"{$classAdd} {$Classe}\" />";
         else:
             return false;
         endif;
@@ -1096,7 +1097,7 @@ class Valida
         $dataPrevista = Valida::CalculaData(Date('d/m/Y'), $soma, '+');
 
         $estatisticas['barra'] = $dado['barra'];
-        $estatisticas['percentual'] =  $dado['percentual'];
+        $estatisticas['percentual'] = $dado['percentual'];
         $estatisticas['dias'] = Valida::FormataMoeda($dias);
         $estatisticas['horas'] = Valida::FormataMoeda($horas);
         $estatisticas['semanas'] = Valida::FormataMoeda($semanas);

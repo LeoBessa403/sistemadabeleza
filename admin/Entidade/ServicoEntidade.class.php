@@ -19,6 +19,7 @@ class ServicoEntidade extends AbstractEntidade
 	private $ds_descricao;
 	private $co_categoria_servico;
 	private $co_preco_servico;
+    private $co_imagem;
 
 
 	/**
@@ -34,6 +35,7 @@ class ServicoEntidade extends AbstractEntidade
 			NU_DURACAO,
 			DS_DESCRICAO,
 			CO_CATEGORIA_SERVICO,
+			CO_IMAGEM,
 		];
     }
 
@@ -181,6 +183,31 @@ class ServicoEntidade extends AbstractEntidade
 	public function setCoPrecoServico($co_preco_servico)
     {
         return $this->co_preco_servico = $co_preco_servico;
+    }
+
+    /**
+     * @return ImagemEntidade $co_imagem
+     */
+    public function getCoImagem()
+    {
+        return $this->co_imagem;
+    }
+
+    /**
+     * @param $co_imagem
+     * @return mixed
+     */
+    public function setCoImagem($co_imagem)
+    {
+        return $this->co_imagem = $co_imagem;
+    }
+
+    /**
+     * @return PrecoServicoEntidade $co_preco_servico
+     */
+    public function getCoUltimoPrecoServico()
+    {
+        return $this->ultimo($this->getCoPrecoServico());
     }
 
 }

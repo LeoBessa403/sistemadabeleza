@@ -22,6 +22,8 @@ class  CategoriaServicoService extends AbstractService
         $servicoService = $this->getService(SERVICO_SERVICE);
         /** @var PrecoServicoService $precoServicoService */
         $precoServicoService = $this->getService(PRECO_SERVICO_SERVICE);
+        /** @var ImagemService $imagemService */
+        $imagemService = $this->getService(IMAGEM_SERVICE);
 
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
@@ -45,7 +47,10 @@ class  CategoriaServicoService extends AbstractService
 
             foreach (ServicoBaseEnum::$descricao as $chave => $cat) {
                 $nuServico = ServicoBaseEnum::$categoria[$chave];
-                if($nuServico == $value){
+                if ($nuServico == $value) {
+                    $imagem[DS_CAMINHO] = 'servico_padrao/' . ServicoBaseEnum::$imagem[$chave];
+                    $servico[CO_IMAGEM] = $imagemService->Salva($imagem);
+
                     $servico[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                     $servico[ST_STATUS] = StatusAcessoEnum::ATIVO;
                     $servico[NO_SERVICO] = ServicoBaseEnum::$nome[$chave];
@@ -56,6 +61,7 @@ class  CategoriaServicoService extends AbstractService
                     $preco[DT_CADASTRO] = Valida::DataHoraAtualBanco();
                     $preco[NU_VALOR] = ServicoBaseEnum::$preco[$chave];
                     $preco[DS_OBSERVACAO] = 'Serviço Inicial';
+                    $preco[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
                     $retorno[SUCESSO] = $precoServicoService->Salva($preco);
                 }
             }

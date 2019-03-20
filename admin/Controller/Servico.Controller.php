@@ -17,6 +17,12 @@ class Servico extends AbstractController
         }
     }
 
+
+    public function ListarServico()
+    {
+        $this->result = $this->getCategorias();
+    }
+
     public function getCategorias()
     {
         /** @var CategoriaServicoService $categoriaServicoService */

@@ -16,6 +16,7 @@ class PrecoServicoEntidade extends AbstractEntidade
 	private $dt_cadastro;
 	private $ds_observacao;
 	private $co_servico;
+	private $co_usuario;
 
 
 	/**
@@ -127,4 +128,20 @@ class PrecoServicoEntidade extends AbstractEntidade
         return $this->co_servico = $co_servico;
     }
 
+    /**
+     * @return UsuarioEntidade $co_usuario
+     */
+    public function getCoUsuario()
+    {
+        return $this->co_usuario;
+    }
+
+    /**
+     * @param $co_usuario
+     * @return mixed
+     */
+    public function setCoUsuario($co_usuario)
+    {
+        $this->co_usuario = $co_usuario;
+    }
 }

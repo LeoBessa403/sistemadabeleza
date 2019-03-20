@@ -1244,3 +1244,338 @@ INSERT INTO TB_SERVICO (co_categoria_servico, dt_cadastro, st_status, no_servico
 
 INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao) VALUES ("198", "2019-03-20 14:08:43", "39.9", "Serviço Inicial");
 
+UPDATE TB_HISTORIA SET ds_titulo = "Tabela base serviços", ds_observacao = "<p>Tabela base servi&ccedil;os</p>
+
+<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>", co_sessao = "12", st_situacao = "C", dt_atualizado = "2019-03-20 14:14:45" where co_historia = 45;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-03-20 14:14:45", "45");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Manter Serviço", ds_observacao = "<p>Manter Servi&ccedil;o</p>
+
+<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>", co_sessao = "12", st_situacao = "N", dt_atualizado = "2019-03-20 14:17:47" where co_historia = 44;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("13", "13"_restante, "2019-03-20 14:17:47", "44");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Pesquisa Avançada dos serviços", "<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional</p>", "12", "N", "2019-03-20 14:19:52", "2019-03-20 14:19:52");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:19:52", "144");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Promoções do Serviço", "<p>Apresentar todas as promo&ccedil;&atilde;oes do servi&ccedil;o</p>", "12", "N", "2019-03-20 14:22:28", "2019-03-20 14:22:28");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:22:28", "145");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Pacotes do Serviço", "<p>apresentar todos os Pacotes do Servi&ccedil;o</p>", "12", "N", "2019-03-20 14:22:52", "2019-03-20 14:22:52");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:22:52", "146");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Pesquisa Avançada dos Profissionais", "<p>Pesquisa Avan&ccedil;ada dos Profissionais por nome, filial, cargo, jornada de tabalho, sexo, cidade e uf, assistente , possui agenda,&nbsp; agenda on line, banco,</p>", "9", "N", "2019-03-20 14:26:33", "2019-03-20 14:26:33");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-03-20 14:26:33", "147");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Histórico Promoções do Serviço", ds_observacao = "<p>Apresentar Hist&oacute;rico das promo&ccedil;&atilde;oes do servi&ccedil;o</p>", co_sessao = "12", st_situacao = "N", dt_atualizado = "2019-03-20 14:27:15" where co_historia = 145;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:27:15", "145");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Histórico Pacotes do Serviço", ds_observacao = "<p>apresentar Hist&oacute;rico os Pacotes do Servi&ccedil;o</p>", co_sessao = "12", st_situacao = "N", dt_atualizado = "2019-03-20 14:27:31" where co_historia = 146;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:27:31", "146");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Pesquisa Avançada dos Serviços", ds_observacao = "<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o,</p>", co_sessao = "12", st_situacao = "N", dt_atualizado = "2019-03-20 14:28:42" where co_historia = 144;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:28:42", "144");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Pesquisa Avançada dos Clientes", "<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing,&nbsp;</p>", "11", "N", "2019-03-20 14:34:27", "2019-03-20 14:34:27");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("13", "13"_restante, "2019-03-20 14:34:27", "148");
+
+INSERT INTO TB_HISTORIA (ds_titulo, ds_observacao, co_sessao, st_situacao, dt_atualizado, dt_cadastro) VALUES ("Pesquisa Avançada dos Assinantes", "<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento</p>", "1", "N", "2019-03-20 14:37:45", "2019-03-20 14:37:45");
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-03-20 14:37:45", "149");
+
+UPDATE TB_HISTORIA SET ds_titulo = "Pesquisa Avançada dos Assinantes", ds_observacao = "<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento, data de expira&ccedil;&atilde;o (Per&iacute;odo), n&uacute;mero de filiais, valor assinatura atual, n&uacute;mero de profissionais,</p>", co_sessao = "1", st_situacao = "N", dt_atualizado = "2019-03-20 14:40:07" where co_historia = 149;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-03-20 14:40:07", "149");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("61", "2");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:52:13", "A", "Cabelo");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:53:28", "A", "Cabelo");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("2", "44", "2019-03-20 16:53:28", "A", "Coloração / Tonalização", "120", "Tonalização: matiza e deixa os tons dos fios mais naturais.");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:53:47", "A", "Cabelo");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:07", "A", "Cabelo");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("4", "46", "2019-03-20 16:54:07", "A", "Coloração / Tonalização", "120", "Tonalização: matiza e deixa os tons dos fios mais naturais.");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Cabelo");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/tonalizante-coloracao02.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "47", "2019-03-20 16:54:46", "A", "Coloração / Tonalização", "120", "Tonalização: matiza e deixa os tons dos fios mais naturais.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("3", "2019-03-20 16:54:46", "39.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/corte-de-cabelo-masculino.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "48", "2019-03-20 16:54:46", "A", "Corte Tesoura", "30", "Corte: O corte na tesoura irá deixar você com o visual renovado.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("4", "2019-03-20 16:54:46", "19.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/qual-a-melhor-máquina-de-cortar-cabelo_1.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "49", "2019-03-20 16:54:46", "A", "Corte Máquina", "30", "Corte: O corte na máquina irá deixar você com o visual renovado.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("5", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/melhor-fase-da-lua-para-corta-cabelo-em-2019.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "50", "2019-03-20 16:54:46", "A", "Corte Feminino", "60", "Corte: mude o visual ou apare as pontinhas para manter a aparência do 
+        cabelo sempre saudável.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("6", "2019-03-20 16:54:46", "59.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/mascara-de-cabelo-1.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "51", "2019-03-20 16:54:46", "A", "Hidratação Capilar", "60", "Hidratação profunda Capilar");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("7", "2019-03-20 16:54:46", "49.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/lavagem-1.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "52", "2019-03-20 16:54:46", "A", "Corte e Higienização dos Fios", "30", "Corte: mude o visual ou apare as pontinhas para manter a 
+        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("8", "2019-03-20 16:54:46", "49.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/escova-modeladora-como-escolher-2.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "53", "2019-03-20 16:54:46", "A", "Escova Modeladora", "30", "Escova: você vai ter uma ajudinha para realinhar os cabelos com um 
+        caimento perfeito.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("9", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/selagem-termica-capilar-2.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "54", "2019-03-20 16:54:46", "A", "Selagem", "60", "Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição 
+        aos fios, além de ser uma ótima aliada na redução do volume.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("10", "2019-03-20 16:54:46", "59.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Escova-progressiva.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "55", "2019-03-20 16:54:46", "A", "Escova Progressiva", "60", "Progressiva: é um realinhamento tradicional dos fios, que reestrutura a 
+        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo 
+        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. 
+        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("11", "2019-03-20 16:54:46", "59.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/botox-capilar-como-saber-se-e-falso.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "56", "2019-03-20 16:54:46", "A", "Botox Capilar", "60", "Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. 
+        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("12", "2019-03-20 16:54:46", "59.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/luzes-reflexos.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("5", "57", "2019-03-20 16:54:46", "A", "Luzes / Mechas", "150", "Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo 
+        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("13", "2019-03-20 16:54:46", "79.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Mãos e Pés");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/manicure.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("6", "58", "2019-03-20 16:54:46", "A", "Manicure", "30", "Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas 
+        pela cliente.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("14", "2019-03-20 16:54:46", "19.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/spa-pedicure.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("6", "59", "2019-03-20 16:54:46", "A", "Pedicure", "30", "Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas 
+        pela cliente.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("15", "2019-03-20 16:54:46", "19.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/manicure-pedicure.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("6", "60", "2019-03-20 16:54:46", "A", "Manicure e Pedicure", "60", "Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos 
+        e dos pés nas cores desejadas pela cliente.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("16", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/banho-de-gel-cristalizacao-unhas-cristalizadas.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("6", "61", "2019-03-20 16:54:46", "A", "Unhas Gel", "90", "Unhas em Gel: feitas com produto à base de película de poliéster, 
+        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e 
+        são mais finas.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("17", "2019-03-20 16:54:46", "59.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Maquiagem");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Makeup-Pic-for-Website.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("7", "62", "2019-03-20 16:54:46", "A", "Maquiagem Completa", "120", "Desfrute de uma make completa para arrasar em festas, comemorações e 
+        casamentos com uma super maquiagem.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("18", "2019-03-20 16:54:46", "119.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Sobrancelha");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/cilios_fio_a_fio_duo_spa.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("8", "63", "2019-03-20 16:54:46", "A", "Alongamento de Cílios Fio a Fio", "90", "Alongamento de Cílios: a técnica de alongamento de cílios trata-se 
+        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, 
+        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada 
+        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o 
+        procedimento estético em questão dura.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("19", "2019-03-20 16:54:46", "79.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/design-de-sobrancelhas-nilópolis.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("8", "64", "2019-03-20 16:54:46", "A", "Design de Sobrancelhas", "30", "Design de Sobrancelhas: além de ser esteticamente essencial, garante 
+        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. 
+        Feito de acordo com o formato do seu rosto. Feito com pinça.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("20", "2019-03-20 16:54:46", "24.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Barba");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/retocar-a-barba-de-seu-amigo_1153-1504.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("9", "65", "2019-03-20 16:54:46", "A", "Retoque na Barba", "60", "Barba: faça a barba totalmente ou apare com um design a seu gosto para 
+        manter a aparência impecável.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("21", "2019-03-20 16:54:46", "19.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Estética Facial");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Rejuvenescimento_Facial.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("10", "66", "2019-03-20 16:54:46", "A", "Rejuvenescimento Facial", "60", "Rejuvenescimento Facial com Luz Pulsada é um procedimento 
+        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno 
+        e a elastina proporcionando assim uma pele mais firme e jovem.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("22", "2019-03-20 16:54:46", "19.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Microagulhamento_Peeling.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("10", "67", "2019-03-20 16:54:46", "A", "Microagulhamento com Peeling", "60", "Microagulhamento: promove textura mais macia, atenuando cicatrizes 
+        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling 
+        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na 
+        camada mais superficial da pele e a estimulação à produção de colágeno.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("23", "2019-03-20 16:54:46", "69.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Máscara_Acne_Control.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("10", "68", "2019-03-20 16:54:46", "A", "Máscara Acne Control", "60", "Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a 
+        textura e a firmeza da pele.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("24", "2019-03-20 16:54:46", "39.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Limpeza_Pele.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("10", "69", "2019-03-20 16:54:46", "A", "Limpeza de Pele", "30", "Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração 
+        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("25", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Depilação");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Depilação_Laser.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("11", "70", "2019-03-20 16:54:46", "A", "Depilação a Laser", "30", "Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, 
+        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("26", "2019-03-20 16:54:46", "99.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Depilação_Cera.png");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("11", "71", "2019-03-20 16:54:46", "A", "Depilação a Cera", "60", "Realizada com cera quente, que garante uma maior durabilidade, já que os 
+        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, 
+        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("27", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Depilação_Luz.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("11", "72", "2019-03-20 16:54:46", "A", "Depilação a Luz", "30", "O método remove os pelos pela destruição do folículo piloso ou 
+        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até 
+        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("28", "2019-03-20 16:54:46", "89.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Massagem");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Massagem_Relaxante.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("12", "73", "2019-03-20 16:54:46", "A", "Massagem Relaxante", "30", "Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("29", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Massagem_Modeladora.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("12", "74", "2019-03-20 16:54:46", "A", "Massagem Modeladora", "30", "Massagem Modeladora: para quem precisa ativar o metabolismo local, 
+        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("30", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Drenagem_Linfática.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("12", "75", "2019-03-20 16:54:46", "A", "Drenagem Linfática", "30", "Drenagem Linfática: para quem precisa retirar o excesso de líquidos e 
+        toxinas do organismo.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("31", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Day_Spa.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("12", "76", "2019-03-20 16:54:46", "A", "Day Spa", "120", "Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de 
+        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz 
+        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras 
+        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que 
+        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("32", "2019-03-20 16:54:46", "99.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Podologia");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Podologia.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("13", "77", "2019-03-20 16:54:46", "A", "Podologia com limpeza dos pés", "60", "Podologia com limpeza dos pés: corte, polimento, limpeza, 
+        debastamento das calosidades, esfoliação dos pés e hidratação profunda.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("33", "2019-03-20 16:54:46", "39.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_CATEGORIA_SERVICO (co_assinante, dt_cadastro, st_status, no_categoria_servico) VALUES ("11", "2019-03-20 16:54:46", "A", "Terapia");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Bambuterapia.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("14", "78", "2019-03-20 16:54:46", "A", "Bambuterapia", "60", "Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, 
+        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes 
+        e energética.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("34", "2019-03-20 16:54:46", "29.9", "Serviço Inicial", "8");
+
+INSERT INTO TB_IMAGEM (ds_caminho) VALUES ("servico_padrao/Carboxiterapia.jpg");
+
+INSERT INTO TB_SERVICO (co_categoria_servico, co_imagem, dt_cadastro, st_status, no_servico, nu_duracao, ds_descricao) VALUES ("14", "79", "2019-03-20 16:54:46", "A", "Carboxiterapia", "30", "Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a 
+        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite 
+        e flacidez.");
+
+INSERT INTO TB_PRECO_SERVICO (co_servico, dt_cadastro, nu_valor, ds_observacao, co_usuario) VALUES ("35", "2019-03-20 16:54:46", "39.9", "Serviço Inicial", "8");
+

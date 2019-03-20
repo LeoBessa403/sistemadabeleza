@@ -749,6 +749,11 @@ class Relacionamentos
                     ('Entidade') => 'ServicoEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (ServicoEntidade::TABELA) => Array(
                 (CO_PRECO_SERVICO) => Array(
@@ -759,6 +764,11 @@ class Relacionamentos
                 (CO_CATEGORIA_SERVICO) => Array(
                     ('Campo') => CO_CATEGORIA_SERVICO,
                     ('Entidade') => 'CategoriaServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_IMAGEM) => Array(
+                    ('Campo') => CO_IMAGEM,
+                    ('Entidade') => 'ImagemEntidade',
                     ('Tipo') => '1',
                 ),
             ),
