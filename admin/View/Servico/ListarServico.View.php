@@ -40,41 +40,43 @@
                         $grid->criaGrid();
                         /** @var CategoriaServicoEntidade $res */
                         foreach ($result as $res):
-                            /** @var ServicoEntidade $servico */
-                            foreach ($res->getCoServico() as $servico):
-                                $acao = '<a href="' . PASTAADMIN . 'Servico/CadastroServico/' .
-                                    Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" class="btn btn-primary tooltips"
+                            if (!$coCategoriaServico || ($coCategoriaServico && $coCategoriaServico == $res->getCoCategoriaServico())) {
+                                /** @var ServicoEntidade $servico */
+                                foreach ($res->getCoServico() as $servico):
+                                    $acao = '<a href="' . PASTAADMIN . 'Servico/CadastroServico/' .
+                                        Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" class="btn btn-primary tooltips"
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
-                                $tamanhoImg = 85;
-                                if ($servico->getCoImagem() && (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho()))) {
-                                    $imagem = Valida::GetMiniatura(
-                                        $servico->getCoImagem()->getDsCaminho(),
-                                        $servico->getNoServico(), $tamanhoImg, $tamanhoImg,
-                                        "circle-img", 1
-                                    );
-                                } else {
-                                    $imagem = Valida::getSemImg($tamanhoImg);
-                                }
-                                $campoAtende = ($servico->getStStatus() == StatusAcessoEnum::ATIVO)
-                                ? '<a class="btn btn-green servico-ativo" href="#"
+                                    $tamanhoImg = 85;
+                                    if ($servico->getCoImagem() && (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho()))) {
+                                        $imagem = Valida::GetMiniatura(
+                                            $servico->getCoImagem()->getDsCaminho(),
+                                            $servico->getNoServico(), $tamanhoImg, $tamanhoImg,
+                                            "circle-img", 1
+                                        );
+                                    } else {
+                                        $imagem = Valida::getSemImg($tamanhoImg);
+                                    }
+                                    $campoAtende = ($servico->getStStatus() == StatusAcessoEnum::ATIVO)
+                                        ? '<a class="btn btn-green servico-ativo" href="#"
                                     id="' . ST_STATUS . $servico->getCoServico() . '">
                                 <i class="glyphicon glyphicon-ok-sign" ></i></a>'
-                                    : '<a class="btn btn-bricky servico-desativo" href="#"
+                                        : '<a class="btn btn-bricky servico-desativo" href="#"
                                     id="' . ST_STATUS . $servico->getCoServico() . '">
                                 <i class="glyphicon glyphicon-remove-circle" ></i></a>';
 
-                                $grid->setColunas($campoAtende, 1);
-                                $grid->setColunas($imagem, 1);
-                                $grid->setColunas($servico->getNoServico());
-                                $grid->setColunas($res->getNoCategoriaServico());
-                                $grid->setColunas(Valida::Resumi($servico->getDsDescricao(), 300));
-                                $grid->setColunas($servico->getCoUltimoPrecoServico()->getNuValor());
-                                $grid->setColunas($servico->getCoUltimoPrecoServico()->getDsObservacao());
-                                $grid->setColunas($acao, 2);
-                                $grid->criaLinha($servico->getCoServico());
-                            endforeach;
+                                    $grid->setColunas($campoAtende, 1);
+                                    $grid->setColunas($imagem, 1);
+                                    $grid->setColunas($servico->getNoServico());
+                                    $grid->setColunas($res->getNoCategoriaServico());
+                                    $grid->setColunas(Valida::Resumi($servico->getDsDescricao(), 300));
+                                    $grid->setColunas($servico->getCoUltimoPrecoServico()->getNuValor());
+                                    $grid->setColunas($servico->getCoUltimoPrecoServico()->getDsObservacao());
+                                    $grid->setColunas($acao, 2);
+                                    $grid->criaLinha($servico->getCoServico());
+                                endforeach;
+                            }
                         endforeach;
                         $grid->finalizaGrid();
                         ?>

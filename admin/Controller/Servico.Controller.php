@@ -5,6 +5,7 @@ class Servico extends AbstractController
     public $result;
     public $form;
     public $jornada;
+    public $coCategoriaServico;
 
     public function ListarCategoriaServico()
     {
@@ -20,6 +21,7 @@ class Servico extends AbstractController
 
     public function ListarServico()
     {
+        $this->coCategoriaServico = UrlAmigavel::PegaParametro(CO_CATEGORIA_SERVICO);
         $this->result = $this->getCategorias();
     }
 

@@ -44,8 +44,13 @@
                                 Valida::GeraParametro(CO_CATEGORIA_SERVICO . "/" . $res->getCoCategoriaServico()) . '" class="btn btn-primary tooltips"
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
-                                 </a>';
-
+                                 </a> 
+                                  <a href="' . PASTAADMIN . 'Servico/ListarServico/' .
+                                Valida::GeraParametro(CO_CATEGORIA_SERVICO . "/" . $res->getCoCategoriaServico()) . '" 
+                                        class="btn btn-med-grey tooltips" 
+                                            data-original-title="Serviços da Categoria" data-placement="top">
+                                             <i class="clip-folder-open"></i>
+                                         </a>';
 
                             $grid->setColunas($res->getNoCategoriaServico());
                             $grid->setColunas(count($res->getCoServico()), 3);
