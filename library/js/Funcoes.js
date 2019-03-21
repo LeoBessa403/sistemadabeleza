@@ -42,10 +42,6 @@ var Funcoes = function () {
             $(".alerta-js span.gritter-title").text(titulo);
             $(".alerta-js span.mensagem-alerta-js").html(msg);
             element.show();
-            //Função de subir a página ao topo
-            $("html, body").animate({
-                scrollTop: 0
-            }, "slow");
         },
         Sucesso: function (msg) {
             Funcoes.Modal(msg, "success", "SUCESSO");

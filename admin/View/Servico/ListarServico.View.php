@@ -59,12 +59,12 @@
                                         $imagem = Valida::getSemImg($tamanhoImg);
                                     }
                                     $campoAtende = ($servico->getStStatus() == StatusAcessoEnum::ATIVO)
-                                        ? '<a class="btn btn-green servico" href="#" data-acao="DesativarServico"
+                                        ? '<buttom class="btn btn-green servico" href="#" data-acao="DesativarServico"
                                     id="' . ST_STATUS . $servico->getCoServico() . '">
-                                <i class="glyphicon glyphicon-ok-sign" ></i></a>'
-                                        : '<a class="btn btn-bricky servico" href="#"  data-acao="AtivarServico"
+                                <i class="glyphicon glyphicon-ok-sign" ></i></buttom>'
+                                        : '<buttom class="btn btn-bricky servico" href="#"  data-acao="AtivarServico"
                                     id="' . ST_STATUS . $servico->getCoServico() . '">
-                                <i class="glyphicon glyphicon-remove-circle" ></i></a>';
+                                <i class="glyphicon glyphicon-remove-circle" ></i></buttom>';
 
                                     $grid->setColunas($campoAtende, 1);
                                     $grid->setColunas($imagem, 1);
