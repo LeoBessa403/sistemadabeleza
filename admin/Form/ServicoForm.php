@@ -79,7 +79,7 @@ class ServicoForm
         $formulario
             ->setId(NU_DURACAO)
             ->setTamanhoInput(3)
-//            ->setClasses("numero ob")
+            ->setClasses("numero ob")
             ->setInfo("Duração do Serviço em minutos")
             ->setLabel("Duração")
             ->CriaInpunt();
@@ -97,6 +97,7 @@ class ServicoForm
         $formulario
             ->setId(DS_CAMINHO)
             ->setType("singlefile")
+            ->setClasses("ob")
             ->setTamanhoInput(12)
             ->setLabel("Foto do Serviço")
             ->CriaInpunt();
@@ -114,6 +115,12 @@ class ServicoForm
                 ->setType("hidden")
                 ->setId(CO_SERVICO)
                 ->setValues($res[CO_SERVICO])
+                ->CriaInpunt();
+
+        $formulario
+                ->setType("hidden")
+                ->setId(CO_IMAGEM)
+                ->setValues($res[CO_IMAGEM])
                 ->CriaInpunt();
         endif;
 

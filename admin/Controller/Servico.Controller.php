@@ -73,7 +73,7 @@ class Servico extends AbstractController
         $servicoService = $this->getService(SERVICO_SERVICE);
 
         if (!empty($_POST)):
-            $retorno = $servicoService->salvaServico($_POST);
+            $retorno = $servicoService->salvaServico($_POST, $_FILES);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/Servico/ListarServico/');
             }
@@ -97,6 +97,7 @@ class Servico extends AbstractController
             if (!empty($servico->getCoImagem()) &&
                 (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho()))) {
                 $foto =  $servico->getCoImagem()->getDsCaminho();
+                $res[CO_IMAGEM] = $servico->getCoImagem()->getCoImagem();
             }
             $res[DS_CAMINHO] = $foto;
 

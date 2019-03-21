@@ -52,14 +52,15 @@ class  ServicoService extends AbstractService
         return $retorno;
     }
 
-    public function salvaServico($result)
+    public function salvaServico($result, $files)
     {
         /** @var Session $session */
         $session = new Session();
         /** @var ServicoValidador $ServicoValidador */
         $ServicoValidador = new ServicoValidador();
-        $validador = $ServicoValidador->validarServico($result);
+        $validador = $ServicoValidador->validarServico($result, $files);
         if ($validador[SUCESSO]) {
+            debug($result);
             $dados[NO_CATEGORIA_SERVICO] = trim($result[NO_CATEGORIA_SERVICO]);
             $dados[ST_STATUS] = (!empty($result[ST_STATUS])) ? StatusUsuarioEnum::ATIVO : StatusUsuarioEnum::INATIVO;
 

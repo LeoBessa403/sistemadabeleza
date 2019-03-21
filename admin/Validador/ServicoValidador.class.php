@@ -12,7 +12,7 @@ class  ServicoValidador extends AbstractValidador
         DADOS => []
     ];
 
-    public function validarServico($dados)
+    public function validarServico($dados, $files)
     {
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
             $dados[NO_SERVICO], 5, 'Nome Completo'
@@ -29,6 +29,11 @@ class  ServicoValidador extends AbstractValidador
        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
             $dados[DS_DESCRICAO], 5, 'Descrição'
         );
+        if (!empty($dados[CO_IMAGEM])) {
+            $this->retorno[DADOS][] = $this->ValidaCampoArquivo(
+                $files[DS_CAMINHO], 'Foto do Serviço'
+            );
+        }
         return $this->MontaRetorno($this->retorno);
     }
 

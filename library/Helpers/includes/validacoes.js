@@ -179,6 +179,11 @@ $(function () {
         $('#' + id).parent(".form-group").addClass('has-error').removeClass('has-success');
         $('#' + id).parents('#form-group-' + id).addClass('has-error');
         $('span#' + id + '-info').text(msg).prepend('<i class="fa clip-cancel-circle-2"></i> ');
+        if(id == "ds_caminho"){
+            var element = $("label[for='" + id + "']").parent(".form-group");
+            element.addClass('has-error').removeClass('has-success');
+            element.children('.fileupload').children('.thumbnail').addClass('form-control');
+        }
         return false;
     }
 
@@ -186,6 +191,11 @@ $(function () {
         $('#' + id).parent(".form-group").addClass('has-success').removeClass('has-error');
         $('#' + id).parents('#form-group-' + id).addClass('has-success').removeClass('has-error');
         $('span#' + id + '-info').text(msg).prepend('<i class="fa clip-checkmark-circle-2"></i> ');
+        if(id == "ds_caminho"){
+            var element = $("label[for='" + id + "']").parent(".form-group");
+            element.addClass('has-success').removeClass('has-error');
+            element.children('.fileupload').children('.thumbnail').removeClass('form-control');
+        }
         return true;
     }
 
@@ -193,6 +203,11 @@ $(function () {
         $('#' + id).parent(".form-group").removeClass('has-success').removeClass('has-error');
         $('#' + id).parents('#form-group-' + id).removeClass('has-success').removeClass('has-error');
         $('span#' + id + '-info').text(".");
+        if(id == "ds_caminho"){
+            var element = $("label[for='" + id + "']").parent(".form-group");
+            element.removeClass('has-error has-success');
+            element.children('.fileupload').children('.thumbnail').removeClass('form-control');
+        }
         return true;
     }
 
