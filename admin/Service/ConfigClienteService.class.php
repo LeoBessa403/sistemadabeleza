@@ -39,7 +39,10 @@ class  ConfigClienteService extends AbstractService
         if ($retorno[SUCESSO]) {
             $retorno[SUCESSO] = true;
         } else {
-            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+            Notificacoes::geraMensagem(
+                'Não foi possível realizar a ação',
+                TiposMensagemEnum::ALERTA
+            );
             $retorno[SUCESSO] = false;
         }
         return $retorno;

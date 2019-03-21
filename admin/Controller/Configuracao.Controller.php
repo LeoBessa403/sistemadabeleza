@@ -181,7 +181,6 @@ class Configuracao extends AbstractController
 
     public function HistoricoTaxaCartaoDebito()
     {
-        $session = new Session();
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
         $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
 
@@ -190,8 +189,10 @@ class Configuracao extends AbstractController
             /** @var PlanoEntidade $plano */
             $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
         } else {
-            $session->setSession(MENSAGEM,
-                'Não Existe Histórico de taxas para esse Cartões de Débito');
+            Notificacoes::geraMensagem(
+                'Não Existe Histórico de taxas para esse Cartões de Débito',
+                TiposMensagemEnum::ALERTA
+            );
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/BandeiraTaxaConfiguracao/');
         }
     }
@@ -199,7 +200,6 @@ class Configuracao extends AbstractController
 
     public function HistoricoTaxaCartaoCredito()
     {
-        $session = new Session();
         /** @var PagamentoBandeiraCartaoService $pagamentoBandeiraCartaoService */
         $pagamentoBandeiraCartaoService = $this->getService(PAGAMENTO_BANDEIRA_CARTAO_SERVICE);
 
@@ -208,8 +208,10 @@ class Configuracao extends AbstractController
             /** @var PlanoEntidade $plano */
             $this->pagBandCartao = $pagamentoBandeiraCartaoService->PesquisaUmRegistro($coPagBandCartao);
         } else {
-            $session->setSession(MENSAGEM,
-                'Não Existe Histórico de taxas para esse Cartões de Crédito');
+            Notificacoes::geraMensagem(
+                'Não Existe Histórico de taxas para esse Cartões de Crédito',
+                TiposMensagemEnum::ALERTA
+            );
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/BandeiraTaxaConfiguracao/');
         }
     }

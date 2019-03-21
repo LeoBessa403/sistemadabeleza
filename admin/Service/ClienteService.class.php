@@ -101,7 +101,10 @@ class  ClienteService extends AbstractService
             $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {
-            $session->setSession(MENSAGEM, $retorno[MSG]);
+            Notificacoes::geraMensagem(
+                $validador[MSG],
+                TiposMensagemEnum::ALERTA
+            );
             $retorno[SUCESSO] = false;
             $PDO->rollBack();
         }

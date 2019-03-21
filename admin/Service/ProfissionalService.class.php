@@ -109,7 +109,7 @@ class  ProfissionalService extends AbstractService
                                 $dadosEmail[DS_EMAIL] = $contato[DS_EMAIL];
                                 $coUsuario = $usuarioService->salvaUsuarioInicial($coPessoa, $dadosEmail);
                                 if ($coUsuario) {
-                                    $usuarioPerfil[CO_PERFIL] = 3;
+                                    $usuarioPerfil[CO_PERFIL] = 3; // Perfil de Colaborador
                                     $usuarioPerfil[CO_USUARIO] = $coUsuario;
                                     $retorno[SUCESSO] = $usuarioPerfilService->Salva($usuarioPerfil);
 
@@ -145,7 +145,10 @@ class  ProfissionalService extends AbstractService
             $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {
-            $session->setSession(MENSAGEM, $retorno[MSG]);
+            Notificacoes::geraMensagem(
+                $retorno[MSG],
+                TiposMensagemEnum::ALERTA
+            );
             $retorno[SUCESSO] = false;
             $PDO->rollBack();
         }
@@ -211,7 +214,10 @@ class  ProfissionalService extends AbstractService
             $session->setSession(MENSAGEM, Mensagens::OK_ATUALIZADO);
             $retorno[SUCESSO] = true;
         } else {
-            $session->setSession(MENSAGEM, 'Não foi possível alterar o Produto');
+            Notificacoes::geraMensagem(
+                'Não foi possível alterar o Produto',
+                TiposMensagemEnum::ALERTA
+            );
             $retorno[SUCESSO] = false;
         }
         return $retorno;

@@ -46,11 +46,17 @@ class  DiaEspecialService extends AbstractService
             if ($retorno[SUCESSO]) {
                 $retorno[SUCESSO] = true;
             } else {
-                $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+                Notificacoes::geraMensagem(
+                    'Não foi possível realizar a ação',
+                    TiposMensagemEnum::ALERTA
+                );
                 $retorno[SUCESSO] = false;
             }
         } else {
-            $session->setSession(MENSAGEM, $validador[MSG]);
+            Notificacoes::geraMensagem(
+                $validador[MSG],
+                TiposMensagemEnum::ALERTA
+            );
             $retorno = $validador;
         }
         return $retorno;

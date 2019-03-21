@@ -27,8 +27,6 @@ class  CategoriaServicoService extends AbstractService
 
         /** @var PDO $PDO */
         $PDO = $this->getPDO();
-        /** @var Session $session */
-        $session = new Session();
         $retorno = [
             SUCESSO => false,
             MSG => null
@@ -70,7 +68,10 @@ class  CategoriaServicoService extends AbstractService
             $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {
-            $session->setSession(MENSAGEM, 'Não Iniciou corretamente as categorias e serviços');
+            Notificacoes::geraMensagem(
+                'Não Iniciou corretamente as categorias e serviços',
+                TiposMensagemEnum::ALERTA
+            );
             $retorno[SUCESSO] = false;
             $PDO->rollBack();
         }
@@ -98,7 +99,10 @@ class  CategoriaServicoService extends AbstractService
                 $session->setSession(MENSAGEM, CADASTRADO);
             }
         } else {
-            $session->setSession(MENSAGEM, $validador[MSG]);
+            Notificacoes::geraMensagem(
+                $validador[MSG],
+                TiposMensagemEnum::ALERTA
+            );
             $retorno = $validador;
         }
 

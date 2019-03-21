@@ -41,7 +41,7 @@ class  ServicoService extends AbstractService
      */
     private function mudarStatusServico($coServico, $stStatus)
     {
-        $retorno =  false;
+        $retorno = false;
         $dados = [
             ST_STATUS => $stStatus
         ];
@@ -73,7 +73,7 @@ class  ServicoService extends AbstractService
                 $session->setSession(MENSAGEM, CADASTRADO);
             }
         } else {
-            $session->setSession(MENSAGEM, $validador[MSG]);
+            Notificacoes::geraMensagem($validador[MSG], TiposMensagemEnum::ALERTA);
             $retorno = $validador;
         }
 

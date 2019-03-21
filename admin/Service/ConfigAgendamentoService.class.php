@@ -42,7 +42,10 @@ class  ConfigAgendamentoService extends AbstractService
         if ($retorno[SUCESSO]) {
             $retorno[SUCESSO] = true;
         } else {
-            $session->setSession(MENSAGEM, 'Não foi possível realizar a ação');
+            Notificacoes::geraMensagem(
+                'NÃ£o foi possÃ­vel realizar a aÃ§Ã£o',
+                TiposMensagemEnum::ALERTA
+            );
             $retorno[SUCESSO] = false;
         }
         return $retorno;

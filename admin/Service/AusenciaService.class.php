@@ -43,7 +43,10 @@ class  AusenciaService extends AbstractService
                 $session->setSession(MENSAGEM, CADASTRADO);
             }
         } else {
-            $session->setSession(MENSAGEM, $validador[MSG]);
+            Notificacoes::geraMensagem(
+                $validador[MSG],
+                TiposMensagemEnum::ALERTA
+            );
             $retorno = $validador;
         }
 
