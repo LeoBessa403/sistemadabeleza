@@ -109,7 +109,9 @@ class  CategoriaServicoService extends AbstractService
     {
         /** @var CategoriaServicoService $categoriaServicoService */
         $categoriaServicoService = new CategoriaServicoService();
-        $comboCategorias = [];
+        $comboCategorias = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
         $categorias = $categoriaServicoService->PesquisaTodos([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);

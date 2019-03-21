@@ -1,5 +1,5 @@
 $(function () {
-    //VARI¡VEIS GLOBAIS
+    //VARI√ÅVEIS GLOBAIS
     var dados = constantes();
     var home = dados['HOME'];
     var urlValida = home + 'admin/Controller/Ajax.Controller.php';

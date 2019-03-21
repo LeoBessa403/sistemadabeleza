@@ -56,9 +56,9 @@ class  ServicoService extends AbstractService
     {
         /** @var Session $session */
         $session = new Session();
-        /** @var CategoriaServicoValidador $categoriaServicoValidador */
-        $categoriaServicoValidador = new CategoriaServicoValidador();
-        $validador = $categoriaServicoValidador->validarCategoriaServico($result);
+        /** @var ServicoValidador $ServicoValidador */
+        $ServicoValidador = new ServicoValidador();
+        $validador = $ServicoValidador->validarServico($result);
         if ($validador[SUCESSO]) {
             $dados[NO_CATEGORIA_SERVICO] = trim($result[NO_CATEGORIA_SERVICO]);
             $dados[ST_STATUS] = (!empty($result[ST_STATUS])) ? StatusUsuarioEnum::ATIVO : StatusUsuarioEnum::INATIVO;

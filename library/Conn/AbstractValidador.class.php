@@ -16,6 +16,7 @@ class AbstractValidador
     const VALIDACAO_0800 = 10;
     const VALIDACAO_INTERVALO_DATA = 11;
     const VALIDACAO_SENHA = 12;
+    const VALIDACAO_NUMERO = 13;
 
     /**
      * @param $dado
@@ -95,6 +96,15 @@ class AbstractValidador
                 if (strlen($validadorDado) == 0) {
                     $validadorDado = preg_replace('/[^0-9]/', '', $dado);
                     if (strlen($validadorDado) == 4) {
+                        $validador = true;
+                    }
+                }
+                break;
+            case static::VALIDACAO_NUMERO:
+                $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
+                if (strlen($validadorDado) == 0) {
+                    $validadorDado = preg_replace('/[^0-9]/', '', $dado);
+                    if (strlen($validadorDado) == 1) {
                         $validador = true;
                     }
                 }

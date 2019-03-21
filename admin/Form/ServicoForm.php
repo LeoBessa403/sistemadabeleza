@@ -64,22 +64,22 @@ class ServicoForm
 
         $formulario
             ->setId(NO_SERVICO)
-            ->setClasses("ob")
+//            ->setClasses("ob")
             ->setInfo("O Nome para o serviço")
             ->setLabel("Serviço")
             ->CriaInpunt();
 
         $formulario
             ->setId(NU_VALOR)
-            ->setClasses("moeda ob")
-            ->setLabel("Valor R$")
+//            ->setClasses("moeda ob")
+            ->setLabel("Preço R$")
             ->setTamanhoInput(3)
             ->CriaInpunt();
 
         $formulario
             ->setId(NU_DURACAO)
             ->setTamanhoInput(3)
-            ->setClasses("numero")
+//            ->setClasses("numero ob")
             ->setInfo("Duração do Serviço em minutos")
             ->setLabel("Duração")
             ->CriaInpunt();
@@ -88,6 +88,7 @@ class ServicoForm
         $formulario
             ->setId(CO_CATEGORIA_SERVICO)
             ->setType("select")
+//            ->setClasses("ob")
             ->setTamanhoInput(6)
             ->setLabel("Categoria do Serviço")
             ->setOptions($options)
@@ -103,6 +104,7 @@ class ServicoForm
         $formulario
             ->setType("textarea")
             ->setId(DS_DESCRICAO)
+//            ->setClasses("ob")
             ->setTamanhoInput(12)
             ->setLabel("Descrição")
             ->CriaInpunt();
