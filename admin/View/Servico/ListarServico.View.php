@@ -59,10 +59,10 @@
                                         $imagem = Valida::getSemImg($tamanhoImg);
                                     }
                                     $campoAtende = ($servico->getStStatus() == StatusAcessoEnum::ATIVO)
-                                        ? '<a class="btn btn-green servico-ativo" href="#"
+                                        ? '<a class="btn btn-green servico" href="#" data-acao="DesativarServico"
                                     id="' . ST_STATUS . $servico->getCoServico() . '">
                                 <i class="glyphicon glyphicon-ok-sign" ></i></a>'
-                                        : '<a class="btn btn-bricky servico-desativo" href="#"
+                                        : '<a class="btn btn-bricky servico" href="#"  data-acao="AtivarServico"
                                     id="' . ST_STATUS . $servico->getCoServico() . '">
                                 <i class="glyphicon glyphicon-remove-circle" ></i></a>';
 

@@ -14,10 +14,10 @@ $(function () {
         }, function (data) {
            if(data) {
                if(acao == 'DesativarServico'){
-                   element.removeClass('btn-green servico-ativo').addClass('btn-bricky servico-desativo');
+                   element.removeClass('btn-green').addClass('btn-bricky').attr('data-acao','AtivarServico');
                    element.children('i').removeClass('glyphicon-ok-sign').addClass('glyphicon-remove-circle');
                }else{
-                   element.removeClass('btn-bricky servico-desativo').addClass('btn-green servico-ativo');
+                   element.removeClass('btn-bricky').addClass('btn-green').attr('data-acao','DesativarServico');
                    element.children('i').removeClass('glyphicon-remove-circle').addClass('glyphicon-ok-sign');
                }
                Funcoes.Sucesso('Status do Servi\u00e7o alterado com Sucesso.');
@@ -27,14 +27,9 @@ $(function () {
         })
     }
 
-    $(".servico-ativo").click(function () {
+    $(".servico").click(function () {
         var id = $(this).attr("id").replace('st_status','');
-        manterStatusServico('DesativarServico', id, $(this));
+        var acao = $(this).attr("data-acao");
+        manterStatusServico(acao, id, $(this));
     });
-
-    $(".servico-desativo").click(function () {
-        var id = $(this).attr("id").replace('st_status','');
-        manterStatusServico('AtivarServico', id, $(this));
-    });
-
 });
