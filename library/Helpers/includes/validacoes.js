@@ -396,6 +396,9 @@ $(function () {
         }
     }).keyup(function () {
         var valor = $(this).val().replace(/[^0-9]+/g, '');
+        if(valor != '000'){
+            validaOK(id, "Campo Obrigatório OK!");
+        }
         valor = valor.val().replace(/[^,.]+/g, '');
         $(this).val(valor);
     });

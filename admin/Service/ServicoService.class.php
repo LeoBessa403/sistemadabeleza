@@ -54,24 +54,65 @@ class  ServicoService extends AbstractService
 
     public function salvaServico($result, $files)
     {
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $retorno = [
+            SUCESSO => true,
+            MSG => null
+        ];
+
+        /** @var ImagemService $imagemService */
+        $imagemService = $this->getService(IMAGEM_SERVICE);
+        /** @var PrecoServicoService $precoServicoService */
+        $precoServicoService = $this->getService(PRECO_SERVICO_SERVICE);
         /** @var Session $session */
         $session = new Session();
         /** @var ServicoValidador $ServicoValidador */
         $ServicoValidador = new ServicoValidador();
         $validador = $ServicoValidador->validarServico($result, $files);
         if ($validador[SUCESSO]) {
-            debug($result);
-            $dados[NO_CATEGORIA_SERVICO] = trim($result[NO_CATEGORIA_SERVICO]);
-            $dados[ST_STATUS] = (!empty($result[ST_STATUS])) ? StatusUsuarioEnum::ATIVO : StatusUsuarioEnum::INATIVO;
+            $servico[ST_STATUS] = (!empty($result[ST_STATUS])) ? StatusUsuarioEnum::ATIVO : StatusUsuarioEnum::INATIVO;
+            $servico[NO_SERVICO] = trim($result[NO_SERVICO]);
+            $servico[NU_DURACAO] = $result[NU_DURACAO];
+            $servico[DS_DESCRICAO] = trim($result[DS_DESCRICAO]);
+            $servico[CO_CATEGORIA_SERVICO] = $result[CO_CATEGORIA_SERVICO][0];
 
-            if (!empty($result[CO_CATEGORIA_SERVICO])) {
-                $retorno[SUCESSO] = $this->Salva($dados, $result[CO_CATEGORIA_SERVICO]);
+            $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado();
+            $noImagem = Valida::ValNome(strtolower(trim($result[NO_SERVICO])));
+
+            $PDO->beginTransaction();
+
+            // Verifica a existência de uma imagem do serviço
+            if (!empty($dados[CO_IMAGEM])) {
+                $imagemService->salvaImagem($files, $noImagem, $noPasta, $result[CO_IMAGEM]);
+            } else {
+                $coImagem = $imagemService->salvaImagem($files, $noImagem, $noPasta);
+                if($coImagem){
+                    $servico[CO_IMAGEM] = $coImagem;
+                }
+            }
+
+            if (!empty($result[CO_SERVICO])) {
+                $this->Salva($servico, $result[CO_SERVICO]);
+                $precoServico[CO_SERVICO] = $result[CO_SERVICO];
+                $precoServico[DS_OBSERVACAO] = 'Atualizado';
                 $session->setSession(MENSAGEM, ATUALIZADO);
             } else {
-                $dados[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-                $dados[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $retorno[SUCESSO] = $this->Salva($dados);
+                $servico[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $precoServico[CO_SERVICO] = $this->Salva($servico);
+                $precoServico[DS_OBSERVACAO] = 'Cadastrado';
                 $session->setSession(MENSAGEM, CADASTRADO);
+            }
+
+            $precoServico[NU_VALOR] = Valida::FormataMoedaBanco($_POST[NU_VALOR]);
+            $precoServico[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+            $precoServico[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
+            $retorno[SUCESSO] = $precoServicoService->Salva($precoServico);
+            if ($retorno[SUCESSO]) {
+                $PDO->commit();
+            } else {
+                Notificacoes::geraMensagem('Não foi possível Salvar o Serviço', TiposMensagemEnum::ALERTA);
+                $PDO->rollBack();
             }
         } else {
             Notificacoes::geraMensagem($validador[MSG], TiposMensagemEnum::ALERTA);

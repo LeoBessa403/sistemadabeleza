@@ -87,16 +87,20 @@ class Servico extends AbstractController
                 ? 'checked' : '';
             $res[CO_CATEGORIA_SERVICO] = $servico->getCoCategoriaServico()->getCoCategoriaServico();
             $res[NO_SERVICO] = $servico->getNoServico();
-            $res[NU_VALOR] = $servico->getCoUltimoPrecoServico()->getNuValor();
+            $res[NU_VALOR] = Valida::FormataMoeda($servico->getCoUltimoPrecoServico()->getNuValor());
             $res[NU_DURACAO] = $servico->getNuDuracao();
             $res[DS_DESCRICAO] = $servico->getDsDescricao();
             $res[CO_SERVICO] = $servico->getCoServico();
+            $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado().'/';
 
             // Carrega a Imagem do Serviço
             $foto = null;
-            if (!empty($servico->getCoImagem()) &&
-                (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho()))) {
-                $foto =  $servico->getCoImagem()->getDsCaminho();
+            if (!empty($servico->getCoImagem())){
+                if (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho())) {
+                    $foto =  $servico->getCoImagem()->getDsCaminho();
+                }elseif (file_exists(PASTA_UPLOADS . $noPasta . $servico->getCoImagem()->getDsCaminho())) {
+                    $foto =  $noPasta . $servico->getCoImagem()->getDsCaminho();
+                }
                 $res[CO_IMAGEM] = $servico->getCoImagem()->getCoImagem();
             }
             $res[DS_CAMINHO] = $foto;

@@ -104,7 +104,7 @@ class AbstractValidador
                 $validadorDado = preg_replace('/[^a-zA-Z]/', '', $dado);
                 if (strlen($validadorDado) == 0) {
                     $validadorDado = preg_replace('/[^0-9]/', '', $dado);
-                    if (strlen($validadorDado) == 1) {
+                    if (strlen($validadorDado) >= 1) {
                         $validador = true;
                     }
                 }

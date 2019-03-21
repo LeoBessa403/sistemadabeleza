@@ -53,7 +53,7 @@ class ServicoForm
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Status da Categoria")
+            ->setLabel("Status do Serviço")
             ->setClasses($res[ST_STATUS])
             ->setId(ST_STATUS)
             ->setType("checkbox")
@@ -64,14 +64,14 @@ class ServicoForm
 
         $formulario
             ->setId(NO_SERVICO)
-//            ->setClasses("ob")
+            ->setClasses("ob")
             ->setInfo("O Nome para o serviço")
             ->setLabel("Serviço")
             ->CriaInpunt();
 
         $formulario
             ->setId(NU_VALOR)
-//            ->setClasses("moeda ob")
+            ->setClasses("moeda ob")
             ->setLabel("Preço R$")
             ->setTamanhoInput(3)
             ->CriaInpunt();
@@ -88,16 +88,27 @@ class ServicoForm
         $formulario
             ->setId(CO_CATEGORIA_SERVICO)
             ->setType("select")
-//            ->setClasses("ob")
+            ->setClasses("ob")
             ->setTamanhoInput(6)
             ->setLabel("Categoria do Serviço")
             ->setOptions($options)
             ->CriaInpunt();
 
+        $ob = ' ob';
+        if (!empty($res[CO_IMAGEM])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_IMAGEM)
+                ->setValues($res[CO_IMAGEM])
+                ->CriaInpunt();
+
+            $ob = '';
+        endif;
+
         $formulario
             ->setId(DS_CAMINHO)
             ->setType("singlefile")
-            ->setClasses("ob")
+            ->setClasses($ob)
             ->setTamanhoInput(12)
             ->setLabel("Foto do Serviço")
             ->CriaInpunt();
@@ -105,7 +116,7 @@ class ServicoForm
         $formulario
             ->setType("textarea")
             ->setId(DS_DESCRICAO)
-//            ->setClasses("ob")
+            ->setClasses("ob")
             ->setTamanhoInput(12)
             ->setLabel("Descrição")
             ->CriaInpunt();
@@ -115,12 +126,6 @@ class ServicoForm
                 ->setType("hidden")
                 ->setId(CO_SERVICO)
                 ->setValues($res[CO_SERVICO])
-                ->CriaInpunt();
-
-        $formulario
-                ->setType("hidden")
-                ->setId(CO_IMAGEM)
-                ->setValues($res[CO_IMAGEM])
                 ->CriaInpunt();
         endif;
 

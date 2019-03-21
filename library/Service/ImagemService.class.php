@@ -25,11 +25,13 @@ class  ImagemService extends AbstractService
         $up = new Upload();
         $noImagem = Valida::ValNome(strtolower(trim($noImagem)));
 
-        if ($imagem[DS_CAMINHO]["tmp_name"]):
-            $img = $imagem[DS_CAMINHO];
-            $up->UploadImagens($img, $noImagem, $pasta);
-            $imagem[DS_CAMINHO] = $up->getNameImage();
-            return $this->Salva($imagem, $coImagem);
+        if ($imagem):
+            if ($imagem[DS_CAMINHO]["tmp_name"]):
+                $img = $imagem[DS_CAMINHO];
+                $up->UploadImagens($img, $noImagem, $pasta);
+                $imagem[DS_CAMINHO] = $up->getNameImage();
+                return $this->Salva($imagem, $coImagem);
+            endif;
         endif;
         return false;
     }

@@ -29,7 +29,7 @@ class  ServicoValidador extends AbstractValidador
        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
             $dados[DS_DESCRICAO], 5, 'Descrição'
         );
-        if (!empty($dados[CO_IMAGEM])) {
+        if (empty($dados[CO_IMAGEM])) {
             $this->retorno[DADOS][] = $this->ValidaCampoArquivo(
                 $files[DS_CAMINHO], 'Foto do Serviço'
             );

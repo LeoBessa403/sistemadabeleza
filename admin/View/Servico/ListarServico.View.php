@@ -38,6 +38,7 @@
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
+                        $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado().'/';
                         /** @var CategoriaServicoEntidade $res */
                         foreach ($result as $res):
                             if (!$coCategoriaServico || ($coCategoriaServico && $coCategoriaServico == $res->getCoCategoriaServico())) {
@@ -49,9 +50,15 @@
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
                                     $tamanhoImg = 85;
-                                    if ($servico->getCoImagem() && (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho()))) {
+                                    if ($servico->getCoImagem()){
+                                        $caminho = '';
+                                        if (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho())) {
+                                            $caminho =  $servico->getCoImagem()->getDsCaminho();
+                                        }elseif (file_exists(PASTA_UPLOADS . $noPasta . $servico->getCoImagem()->getDsCaminho())) {
+                                            $caminho =  $noPasta . $servico->getCoImagem()->getDsCaminho();
+                                        }
                                         $imagem = Valida::GetMiniatura(
-                                            $servico->getCoImagem()->getDsCaminho(),
+                                            $caminho,
                                             $servico->getNoServico(), $tamanhoImg, $tamanhoImg,
                                             "circle-img", 1
                                         );
