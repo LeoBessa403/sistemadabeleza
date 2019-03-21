@@ -15,6 +15,14 @@ class  UsuarioService extends AbstractService
         $this->ObjetoModel = New UsuarioModel();
     }
 
+    public static function getNoPerfilUsuarioLogado()
+    {
+        /** @var Session $us */
+        $us = $_SESSION[SESSION_USER];
+        $user = $us->getUser();
+        return (!empty($user[md5('no_perfis')])) ? $user[md5('no_perfis')] : null;
+    }
+
     public static function getCoUsuarioLogado()
     {
         /** @var Session $us */

@@ -65,4 +65,18 @@ class Servico extends AbstractController
         $this->form = ServicoForm::Cadastrar($res);
     }
 
+    public static function DesativarServico($coServico)
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = static::getService(SERVICO_SERVICE);
+        return $servicoService->desativarServico($coServico);
+    }
+
+    public static function AtivarServico($coServico)
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = static::getService(SERVICO_SERVICE);
+        return $servicoService->ativarServico($coServico);
+    }
+
 }

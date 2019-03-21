@@ -16,5 +16,40 @@ class  ServicoService extends AbstractService
         $this->ObjetoModel = New ServicoModel();
     }
 
+    /**
+     * @param $coServico
+     * @return bool
+     */
+    public function ativarServico($coServico)
+    {
+        return $this->mudarStatusServico($coServico, StatusUsuarioEnum::ATIVO);
+    }
+
+    /**
+     * @param $coServico
+     * @return bool
+     */
+    public function desativarServico($coServico)
+    {
+        return $this->mudarStatusServico($coServico, StatusUsuarioEnum::INATIVO);
+    }
+
+    /**
+     * @param $coServico
+     * @param $stStatus
+     * @return bool
+     */
+    private function mudarStatusServico($coServico, $stStatus)
+    {
+        $retorno =  false;
+        $dados = [
+            ST_STATUS => $stStatus
+        ];
+        $coServi = $this->Salva($dados, $coServico);
+        if ($coServi) {
+            $retorno = true;
+        }
+        return $retorno;
+    }
 
 }

@@ -15,6 +15,14 @@ if (isset($_GET['valida'])) {
             $coPlano = $_GET[CO_PLANO];
             echo Assinante::getReferenciaPagamentoAssinante($coPlano);
             break;
+        case 'DesativarServico':
+            $coServico = $_GET[CO_SERVICO];
+            echo Servico::DesativarServico($coServico);
+            break;
+        case 'AtivarServico':
+            $coServico = $_GET[CO_SERVICO];
+            echo Servico::AtivarServico($coServico);
+            break;
 
     }
 } // FIM SWITCH

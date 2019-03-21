@@ -30,22 +30,10 @@ class Auditar extends Conn
      */
     public function Audita($tabela, array $dados = null, $operacao, $co_registro = null, $termos = null, $valores = null)
     {
-        if (isset($_SESSION[SESSION_USER]) && (UrlAmigavel::$modulo == ADMIN || $operacao == AuditoriaEnum::DELETE)):
-            /** @var Session $us */
-            $us = $_SESSION[SESSION_USER];
-            $user = $us->getUser();
-        else:
-            $user = array();
-        endif;
-
         if (!static::$coAuditoria) {
             $this->tabela = AuditoriaEntidade::TABELA;
-            if (count($user)):
-                $dadosAuditoria[DS_PERFIL_USUARIO] = $user[md5('no_perfis')];
-                $dadosAuditoria[CO_USUARIO] = $user[md5(CAMPO_ID)];
-            else:
-                $dadosAuditoria[DS_PERFIL_USUARIO] = 'Via Site';
-            endif;
+            $dadosAuditoria[DS_PERFIL_USUARIO] = UsuarioService::getNoPerfilUsuarioLogado();
+            $dadosAuditoria[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
             $dadosAuditoria[DT_REALIZADO] = Valida::DataHoraAtualBanco();
             $this->dados = $dadosAuditoria;
             $this->getSyntax();
