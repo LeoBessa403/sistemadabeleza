@@ -105,5 +105,21 @@ class  CategoriaServicoService extends AbstractService
         return $retorno;
     }
 
+    public static function categoriasServicoCombo()
+    {
+        /** @var CategoriaServicoService $categoriaServicoService */
+        $categoriaServicoService = new CategoriaServicoService();
+        $comboCategorias = [];
+        $categorias = $categoriaServicoService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        /** @var CategoriaServicoEntidade $categoria */
+        foreach ($categorias as $categoria) {
+            $comboCategorias[$categoria->getCoCategoriaServico()]
+                    = $categoria->getNoCategoriaServico();
+        }
+        return $comboCategorias;
+    }
+
 
 }

@@ -6,7 +6,7 @@
  */
 class ServicoForm
 {
-    public static function Cadastrar($res = false)
+    public static function CadastrarCategoria($res = false)
     {
         $id = "CadastroCategoriaServico";
 
@@ -40,5 +40,81 @@ class ServicoForm
         endif;
 
         return $formulario->finalizaForm('Servico/ListarCategoriaServico');
+    }
+
+    public static function Cadastrar($res = false)
+    {
+        $id = "CadastroServico";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Cadastrar", 6);
+        $formulario->setValor($res);
+
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Status da Categoria")
+            ->setClasses($res[ST_STATUS])
+            ->setId(ST_STATUS)
+            ->setType("checkbox")
+            ->setTamanhoInput(12)
+            ->setInfo("Ativo ou Inativo?")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_SERVICO)
+            ->setClasses("ob")
+            ->setInfo("O Nome para o serviço")
+            ->setLabel("Serviço")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_VALOR)
+            ->setClasses("moeda ob")
+            ->setLabel("Valor R$")
+            ->setTamanhoInput(3)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_DURACAO)
+            ->setTamanhoInput(3)
+            ->setClasses("numero")
+            ->setInfo("Duração do Serviço em minutos")
+            ->setLabel("Duração")
+            ->CriaInpunt();
+
+        $options = CategoriaServicoService::categoriasServicoCombo();
+        $formulario
+            ->setId(CO_CATEGORIA_SERVICO)
+            ->setType("select")
+            ->setTamanhoInput(6)
+            ->setLabel("Categoria do Serviço")
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DS_CAMINHO)
+            ->setType("singlefile")
+            ->setTamanhoInput(12)
+            ->setLabel("Foto do Serviço")
+            ->CriaInpunt();
+
+        $formulario
+            ->setType("textarea")
+            ->setId(DS_DESCRICAO)
+            ->setTamanhoInput(12)
+            ->setLabel("Descrição")
+            ->CriaInpunt();
+
+        if (!empty($res[CO_SERVICO])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_SERVICO)
+                ->setValues($res[CO_SERVICO])
+                ->CriaInpunt();
+        endif;
+
+        return $formulario->finalizaForm('Servico/ListarServico');
     }
 }

@@ -80,81 +80,36 @@ class ServicoBaseEnum extends AbstractEnum
         ServicoBaseEnum::COLORACAO => 'Tonalização: matiza e deixa os tons dos fios mais naturais.',
         ServicoBaseEnum::CORTE_MASC_TESOURA => 'Corte: O corte na tesoura irá deixar você com o visual renovado.',
         ServicoBaseEnum::CORTE_MASC_MAQUINA => 'Corte: O corte na máquina irá deixar você com o visual renovado.',
-        ServicoBaseEnum::CORTE_FEMI => 'Corte: mude o visual ou apare as pontinhas para manter a aparência do 
-        cabelo sempre saudável.',
+        ServicoBaseEnum::CORTE_FEMI => 'Corte: mude o visual ou apare as pontinhas para manter a aparência do cabelo sempre saudável.',
         ServicoBaseEnum::HIDRATACAO => 'Hidratação profunda Capilar',
-        ServicoBaseEnum::CORTE_HIGIENIZACAO => 'Corte: mude o visual ou apare as pontinhas para manter a 
-        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas',
-        ServicoBaseEnum::ESCOVA => 'Escova: você vai ter uma ajudinha para realinhar os cabelos com um 
-        caimento perfeito.',
-        ServicoBaseEnum::SELAGEM => 'Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição 
-        aos fios, além de ser uma ótima aliada na redução do volume.',
-        ServicoBaseEnum::PROGRESSIVA => 'Progressiva: é um realinhamento tradicional dos fios, que reestrutura a 
-        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo 
-        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. 
-        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.',
-        ServicoBaseEnum::BOTOX => 'Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. 
-        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.',
-        ServicoBaseEnum::LUZ_MECHA => 'Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo 
-        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.',
-        ServicoBaseEnum::MANICURE => 'Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas 
-        pela cliente.',
-        ServicoBaseEnum::PEDICURE => 'Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas 
-        pela cliente.',
-        ServicoBaseEnum::MANICURE_PEDICURE => 'Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos 
-        e dos pés nas cores desejadas pela cliente.',
-        ServicoBaseEnum::ALONGAMENTO_UNHAS_GEL => 'Unhas em Gel: feitas com produto à base de película de poliéster, 
-        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e 
-        são mais finas.',
-        ServicoBaseEnum::MAKE_COMPLETA => 'Desfrute de uma make completa para arrasar em festas, comemorações e 
-        casamentos com uma super maquiagem.',
-        ServicoBaseEnum::ALONGAMENTO_CILIOS_FIO => 'Alongamento de Cílios: a técnica de alongamento de cílios trata-se 
-        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, 
-        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada 
-        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o 
-        procedimento estético em questão dura.',
-        ServicoBaseEnum::DESIGN_SOBRANCELHAS => 'Design de Sobrancelhas: além de ser esteticamente essencial, garante 
-        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. 
-        Feito de acordo com o formato do seu rosto. Feito com pinça.',
-        ServicoBaseEnum::BARBAR_RETOQUE => 'Barba: faça a barba totalmente ou apare com um design a seu gosto para 
-        manter a aparência impecável.',
-        ServicoBaseEnum::REJUVENESCIMENTO_FACIAL => 'Rejuvenescimento Facial com Luz Pulsada é um procedimento 
-        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno 
-        e a elastina proporcionando assim uma pele mais firme e jovem.',
-        ServicoBaseEnum::MICROAGULHAMENTO_PEELING => 'Microagulhamento: promove textura mais macia, atenuando cicatrizes 
-        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling 
-        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na 
-        camada mais superficial da pele e a estimulação à produção de colágeno.',
-        ServicoBaseEnum::MASCARA_ACNE => 'Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a 
-        textura e a firmeza da pele.',
-        ServicoBaseEnum::LIMPEZA_PELE => 'Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração 
-        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.',
-        ServicoBaseEnum::DEPILACAO_LASER => 'Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, 
-        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.',
-        ServicoBaseEnum::DEPILACAO_CERA => 'Realizada com cera quente, que garante uma maior durabilidade, já que os 
-        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, 
-        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.',
-        ServicoBaseEnum::DEPILACAO_LUZ => 'O método remove os pelos pela destruição do folículo piloso ou 
-        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até 
-        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.',
+        ServicoBaseEnum::CORTE_HIGIENIZACAO => 'Corte: mude o visual ou apare as pontinhas para manter a aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas',
+        ServicoBaseEnum::ESCOVA => 'Escova: você vai ter uma ajudinha para realinhar os cabelos com um caimento perfeito.',
+        ServicoBaseEnum::SELAGEM => 'Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição aos fios, além de ser uma ótima aliada na redução do volume.',
+        ServicoBaseEnum::PROGRESSIVA => 'Progressiva: é um realinhamento tradicional dos fios, que reestrutura a fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.',
+        ServicoBaseEnum::BOTOX => 'Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.',
+        ServicoBaseEnum::LUZ_MECHA => 'Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.',
+        ServicoBaseEnum::MANICURE => 'Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas pela cliente.',
+        ServicoBaseEnum::PEDICURE => 'Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas pela cliente.',
+        ServicoBaseEnum::MANICURE_PEDICURE => 'Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos e dos pés nas cores desejadas pela cliente.',
+        ServicoBaseEnum::ALONGAMENTO_UNHAS_GEL => 'Unhas em Gel: feitas com produto à base de película de poliéster, antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e são mais finas.',
+        ServicoBaseEnum::MAKE_COMPLETA => 'Desfrute de uma make completa para arrasar em festas, comemorações e casamentos com uma super maquiagem.',
+        ServicoBaseEnum::ALONGAMENTO_CILIOS_FIO => 'Alongamento de Cílios: a técnica de alongamento de cílios trata-se de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o procedimento estético em questão dura.',
+        ServicoBaseEnum::DESIGN_SOBRANCELHAS => 'Design de Sobrancelhas: além de ser esteticamente essencial, garante uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. Feito de acordo com o formato do seu rosto. Feito com pinça.',
+        ServicoBaseEnum::BARBAR_RETOQUE => 'Barba: faça a barba totalmente ou apare com um design a seu gosto para manter a aparência impecável.',
+        ServicoBaseEnum::REJUVENESCIMENTO_FACIAL => 'Rejuvenescimento Facial com Luz Pulsada é um procedimento de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno e a elastina proporcionando assim uma pele mais firme e jovem.',
+        ServicoBaseEnum::MICROAGULHAMENTO_PEELING => 'Microagulhamento: promove textura mais macia, atenuando cicatrizes de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na camada mais superficial da pele e a estimulação à produção de colágeno.',
+        ServicoBaseEnum::MASCARA_ACNE => 'Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a textura e a firmeza da pele.',
+        ServicoBaseEnum::LIMPEZA_PELE => 'Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.',
+        ServicoBaseEnum::DEPILACAO_LASER => 'Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.',
+        ServicoBaseEnum::DEPILACAO_CERA => 'Realizada com cera quente, que garante uma maior durabilidade, já que os pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.',
+        ServicoBaseEnum::DEPILACAO_LUZ => 'O método remove os pelos pela destruição do folículo piloso ou de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.',
         ServicoBaseEnum::MASSAGEM_RELAXANTE => 'Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.',
-        ServicoBaseEnum::MASSAGEM_MODELADORA => 'Massagem Modeladora: para quem precisa ativar o metabolismo local, 
-        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.',
-        ServicoBaseEnum::DRENAGEM_LINFATICA => 'Drenagem Linfática: para quem precisa retirar o excesso de líquidos e 
-        toxinas do organismo.',
-        ServicoBaseEnum::BAMBUTERAPIA => 'Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, 
-        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes 
-        e energética.',
-        ServicoBaseEnum::DAY_SPA => 'Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de 
-        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz 
-        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras 
-        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que 
-        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado',
-        ServicoBaseEnum::PODOLOGIA_LIMPEZA_GERAL => 'Podologia com limpeza dos pés: corte, polimento, limpeza, 
-        debastamento das calosidades, esfoliação dos pés e hidratação profunda.',
-        ServicoBaseEnum::CARBOXITERAPIA => 'Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a 
-        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite 
-        e flacidez.',
+        ServicoBaseEnum::MASSAGEM_MODELADORA => 'Massagem Modeladora: para quem precisa ativar o metabolismo local, aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.',
+        ServicoBaseEnum::DRENAGEM_LINFATICA => 'Drenagem Linfática: para quem precisa retirar o excesso de líquidos e toxinas do organismo.',
+        ServicoBaseEnum::BAMBUTERAPIA => 'Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes e energética.',
+        ServicoBaseEnum::DAY_SPA => 'Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado',
+        ServicoBaseEnum::PODOLOGIA_LIMPEZA_GERAL => 'Podologia com limpeza dos pés: corte, polimento, limpeza, debastamento das calosidades, esfoliação dos pés e hidratação profunda.',
+        ServicoBaseEnum::CARBOXITERAPIA => 'Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite e flacidez.',
     ];
 
     public static $preco = [

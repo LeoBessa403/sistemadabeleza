@@ -64,6 +64,48 @@ class Servico extends AbstractController
         }
 
 
+        $this->form = ServicoForm::CadastrarCategoria($res);
+    }
+
+    public function CadastroServico()
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
+
+        if (!empty($_POST)):
+            $retorno = $servicoService->salvaServico($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/Servico/ListarServico/');
+            }
+        endif;
+
+        $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
+        if ($coServico) {
+            /** @var ServicoEntidade $servico */
+            $servico = $servicoService->PesquisaUmRegistro($coServico);
+            $res[ST_STATUS] = ($servico->getStStatus() == StatusUsuarioEnum::ATIVO)
+                ? 'checked' : '';
+            $res[CO_CATEGORIA_SERVICO] = $servico->getCoCategoriaServico()->getCoCategoriaServico();
+            $res[NO_SERVICO] = $servico->getNoServico();
+            $res[NU_VALOR] = $servico->getCoUltimoPrecoServico()->getNuValor();
+            $res[NU_DURACAO] = $servico->getNuDuracao();
+            $res[DS_DESCRICAO] = $servico->getDsDescricao();
+            $res[CO_SERVICO] = $servico->getCoServico();
+
+            // Carrega a Imagem do Serviço
+            $foto = null;
+            if (!empty($servico->getCoImagem()) &&
+                (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho()))) {
+                $foto =  $servico->getCoImagem()->getDsCaminho();
+            }
+            $res[DS_CAMINHO] = $foto;
+
+        } else {
+            // Inicia elementos do Form
+            $res[ST_STATUS] = 'checked';
+        }
+
+
         $this->form = ServicoForm::Cadastrar($res);
     }
 

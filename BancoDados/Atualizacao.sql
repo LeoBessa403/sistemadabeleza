@@ -130,3 +130,21 @@ UPDATE TB_SERVICO SET st_status = "A" where co_servico = 12;
 
 UPDATE TB_SERVICO SET st_status = "I" where co_servico = 12;
 
+UPDATE TB_SERVICO SET st_status = "I" where co_servico = 13;
+
+UPDATE TB_SERVICO SET st_status = "I" where co_servico = 10;
+
+UPDATE TB_SERVICO SET st_status = "A" where co_servico = 10;
+
+UPDATE TB_HISTORIA SET ds_titulo = "Manter Serviço", ds_observacao = "<p>Manter Servi&ccedil;o</p>
+
+<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>", co_sessao = "12", st_situacao = "I", dt_atualizado = "2019-03-21 12:18:10" where co_historia = 44;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("13", "13"_restante, "2019-03-21 12:18:10", "44");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("62", "2");
+
+DELETE FROM TB_PERFIL_FUNCIONALIDADE where co_funcionalidade in (62);
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("62", "2");
+
