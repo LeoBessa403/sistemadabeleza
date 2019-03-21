@@ -1,11 +1,8 @@
 $(function () {
-
     //VARIÁVEIS GLOBAIS
     var dados = constantes();
-
     var home = dados['HOME'];
     var urlValida = home + 'admin/Controller/Ajax.Controller.php';
-
 
     function manterStatusServico(acao, coServico, element) {
         $.get(urlValida, {
