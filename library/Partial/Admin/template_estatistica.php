@@ -17,7 +17,7 @@ $estatisticas = Valida::getDadosEstatistica($dados);
     </div>
 </div>
 <div class="col-sm-3">
-    <div class="alert alert-block alert-success fade in">
+    <div class="alert alert-block alert-info fade in">
         <h4 class="alert-heading"><i class="clip-star-6"></i> Esforço Total</h4>
         <h2><?= $dados['esforco']; ?></h2>
     </div>
@@ -28,19 +28,25 @@ $estatisticas = Valida::getDadosEstatistica($dados);
         <h2><?= $dados['esforcoRestante']; ?></h2>
     </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3">
     <div class="alert alert-block alert-info fade in">
+        <h4 class="alert-heading"><i class="clip-brightness-medium"></i> Média Projeto Pontos / Dia</h4>
+        <h2><?= $estatisticas['pontosDia']; ?></h2>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="alert alert-block alert-danger fade in">
         <h4 class="alert-heading"><i class="clip-clock"></i> Horas</h4>
         <h2><?= $estatisticas['horas']; ?></h2>
     </div>
 </div>
-<div class="col-sm-4">
-    <div class="alert alert-block alert-danger fade in">
+<div class="col-sm-3">
+    <div class="alert alert-block alert-success fade in">
         <h4 class="alert-heading"><i class="clip-calendar"></i> Dias</h4>
         <h2><?= $estatisticas['dias']; ?></h2>
     </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-3">
     <div class="alert alert-block alert-warning fade in">
         <h4 class="alert-heading"><i class="fa fa-moon-o"></i> Semanas</h4>
         <h2><?= $estatisticas['semanas']; ?></h2>

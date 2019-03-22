@@ -29,7 +29,7 @@ class  ImagemService extends AbstractService
             if ($imagem[DS_CAMINHO]["tmp_name"]):
                 $img = $imagem[DS_CAMINHO];
                 $up->UploadImagens($img, $noImagem, $pasta);
-                $imagem[DS_CAMINHO] = $up->getNameImage();
+                $imagem[DS_CAMINHO] = $pasta . $up->getNameImage();
                 return $this->Salva($imagem, $coImagem);
             endif;
         endif;

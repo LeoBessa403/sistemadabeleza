@@ -1095,20 +1095,15 @@ class Valida
 
     public static function getDadosEstatistica($dados)
     {
-
         $dado = self::getBarraProgresso($dados);
-
-        $horas = ($dados['esforcoRestante'] * ConfiguracoesEnum::MINUTOS_ESFORCO) / 60;
-        $semanas = ($horas / (ConfiguracoesEnum::DESENVOLVEDORES * ConfiguracoesEnum::DIAS_TRABALHADOS *
-                ConfiguracoesEnum::HORAS_DIAS));
-        $dias = ($semanas * ConfiguracoesEnum::DIAS_TRABALHADOS);
-        $somaDias = (int)$semanas;
-        $totalDiasPorSemana = $somaDias * ConfiguracoesEnum::DIAS_TRABALHADOS;
-        $totalDiasRestantes = $dias - $totalDiasPorSemana;
-        $somaDias = $somaDias * 7;
-        $totalDiasRestantes = $somaDias + $totalDiasRestantes;
-        $soma = ((int)$totalDiasRestantes == $totalDiasRestantes) ? $totalDiasRestantes : ((int)$totalDiasRestantes + 1);
-        $dataPrevista = Valida::CalculaData(Date('d/m/Y'), $soma, '+');
+        $horas = ($dados['esforcoRestante'] * 20) / 60; // 20 Minutos por ponto de esforço
+        $linhas = fopen('versao.txt', "a+");
+        $versoes = fgets($linhas);
+        $versao = explode('//', $versoes);
+        $mediaDia = $versao[5];
+        $dias = ($dados['esforcoRestante'] / $mediaDia);
+        $semanas = $dias / 7;
+        $dataPrevista = Valida::CalculaData(Date('d/m/Y'), $dias, '+');
 
         $estatisticas['barra'] = $dado['barra'];
         $estatisticas['percentual'] = $dado['percentual'];
@@ -1116,6 +1111,7 @@ class Valida
         $estatisticas['horas'] = Valida::FormataMoeda($horas);
         $estatisticas['semanas'] = Valida::FormataMoeda($semanas);
         $estatisticas['dataPrevista'] = $dataPrevista;
+        $estatisticas['pontosDia'] = Valida::FormataMoeda($mediaDia);
 
         return $estatisticas;
     }

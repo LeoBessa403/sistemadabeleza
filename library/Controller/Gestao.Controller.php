@@ -143,7 +143,7 @@ class Gestao extends AbstractController
 
         $histHistorias = $historicoHistoriaService->PesquisaAvancada([]);
 
-        $historiaService->motaGraficoEvolucao($histHistorias);
+        $historiaService->motaGraficoEvolucao($histHistorias,true);
 
         $this->dados = $historiaService::$dados;
     }
