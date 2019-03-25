@@ -31,7 +31,7 @@ class  VisitaService extends AbstractService
             $PDO->beginTransaction();
             $noCookie = Valida::ValNome(DESC . '-user');
 
-            if (!$session::CheckCookie($noCookie)) {
+            if (!empty($session::CheckCookie($noCookie))) {
                 $coVisita = $session::getCookie($noCookie);
                 /** @var VisitaEntidade $visitaPesquisa */
                 $visitaPesquisa = $this->PesquisaUmRegistro($coVisita);
