@@ -90,7 +90,6 @@ define('ST_EDICAO_SERVICOS', 'st_edicao_servicos');
 define('ST_EDICAO_ATENDIMENTO', 'st_edicao_atendimento');
 define('CO_CATEGORIA_SERVICO', 'co_categoria_servico');
 define('NO_CATEGORIA_SERVICO', 'no_categoria_servico');
-define('CO_PERFIL_ASSINANTE', 'co_perfil_assinante');
 define('CO_PRECO_SERVICO', 'co_preco_servico');
 define('CO_SERVICO', 'co_servico');
 define('NO_SERVICO', 'no_servico');

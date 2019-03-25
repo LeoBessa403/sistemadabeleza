@@ -22,6 +22,7 @@ class UsuarioEntidade extends UsuarioEntidadeExtends
 	private $co_acesso;
 	private $co_auditoria;
 	private $co_usuario_perfil;
+    private $co_assinante;
 
 
 	/**
@@ -234,6 +235,23 @@ class UsuarioEntidade extends UsuarioEntidadeExtends
 	public function setCoUsuarioPerfil($co_usuario_perfil)
     {
         return $this->co_usuario_perfil = $co_usuario_perfil;
+    }
+
+    /**
+     * @return AssinanteEntidade $co_assinante
+     */
+    public function getCoAssinante()
+    {
+        return $this->co_assinante;
+    }
+
+    /**
+     * @param $co_assinante
+     * @return mixed
+     */
+    public function setCoAssinante($co_assinante)
+    {
+        return $this->co_assinante = $co_assinante;
     }
 
 }

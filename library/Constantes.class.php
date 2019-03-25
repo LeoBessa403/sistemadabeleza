@@ -125,6 +125,7 @@
     define('NO_SESSAO', 'no_sessao');
     define('DS_TITULO', 'ds_titulo');
     define('CO_HISTORICO_HISTORIA', 'co_historico_historia');
+    define('CO_PERFIL_ASSINANTE', 'co_perfil_assinante');
 
 
 	// SERVICES PADRÃO

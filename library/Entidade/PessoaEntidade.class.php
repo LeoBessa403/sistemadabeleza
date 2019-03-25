@@ -21,6 +21,8 @@ class PessoaEntidade extends PessoaEntidadeExtends
 	private $co_endereco;
 	private $co_usuario;
     private $co_contato;
+    private $co_imagem;
+    private $co_assinante;
 
     /**
      * @return array
@@ -220,10 +222,35 @@ class PessoaEntidade extends PessoaEntidadeExtends
     }
 
     /**
-     * @return InscricaoEntidade $co_inscricao
+     * @return ImagemEntidade $co_imagem
      */
-    public function getUltimaCoInscricao()
+    public function getCoImagem()
     {
-        return $this->ultimo($this->getCoInscricao());
+        return $this->co_imagem;
+    }
+
+    /**
+     * @param $co_imagem
+     * @return mixed
+     */
+    public function setCoImagem($co_imagem)
+    {
+        return $this->co_imagem = $co_imagem;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCoAssinante()
+    {
+        return $this->co_assinante;
+    }
+
+    /**
+     * @param mixed $co_assinante
+     */
+    public function setCoAssinante($co_assinante)
+    {
+        $this->co_assinante = $co_assinante;
     }
 }
