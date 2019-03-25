@@ -9,14 +9,16 @@ if ($user[md5(ST_TROCA_SENHA)] == SimNaoEnum::NAO && empty($session->CheckSessio
     Notificacoes::notificacao($dados);
 
 }
-if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
-    $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
+if (!empty($user[md5('status_sistema')])) {
+    if ($user[md5('status_sistema')] == StatusSistemaEnum::PENDENTE) {
+        $difDatas = Valida::CalculaDiferencaDiasData(date('d/m/Y'), $user[md5(DT_EXPIRACAO)]);
 
-    $dados['titulo'] = 'Sistema Expirado!';
-    $dados['mensagem'] = '<p>Sua assinatura está expirada em <b>' . $difDatas * -1 . ' Dia(s)</b>, click no link para
+        $dados['titulo'] = 'Sistema Expirado!';
+        $dados['mensagem'] = '<p>Sua assinatura está expirada em <b>' . $difDatas * -1 . ' Dia(s)</b>, click no link para
     renovar sua assinatura. Expirado Em ' . $user[md5(DT_EXPIRACAO)] . '</p>';
-    $dados['tipo'] = TiposMensagemEnum::ERRO;
-    Notificacoes::notificacao($dados);
+        $dados['tipo'] = TiposMensagemEnum::ERRO;
+        Notificacoes::notificacao($dados);
+    }
 }
 if ($session->CheckSession(MENSAGEM)) {
     switch ($session::getSession(MENSAGEM)) {

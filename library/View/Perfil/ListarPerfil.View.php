@@ -43,7 +43,7 @@
                             /** @var PerfilAssinanteEntidade $res */
                             foreach ($result as $res):
                                 $acao = '<a href="' . PASTAADMIN . 'Perfil/CadastroPerfil/' .
-                                    Valida::GeraParametro("per/" . $res->getCoPerfilAssinante()) . '" class="btn btn-primary tooltips" 
+                                    Valida::GeraParametro(CO_PERFIL . "/" . $res->getCoPerfilAssinante()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>
@@ -70,7 +70,7 @@
                             foreach ($result as $res):
                                 if($res->getCoPerfil() != 1){
                                     $acao = '<a href="' . PASTAADMIN . 'Perfil/CadastroPerfil/' .
-                                        Valida::GeraParametro("per/" . $res->getCoPerfil()) . '" class="btn btn-primary tooltips" 
+                                        Valida::GeraParametro(CO_PERFIL . "/" . $res->getCoPerfil()) . '" class="btn btn-primary tooltips" 
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>

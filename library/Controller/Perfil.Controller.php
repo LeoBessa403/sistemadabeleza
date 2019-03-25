@@ -41,7 +41,7 @@ class Perfil extends AbstractController
             }
         endif;
 
-        $coPerfil = UrlAmigavel::PegaParametro("per");
+        $coPerfil = UrlAmigavel::PegaParametro(CO_PERFIL);
         $res = array();
         $res[CO_PERFIL] = null;
         $coAssinante = AssinanteService::getCoAssinanteLogado();
