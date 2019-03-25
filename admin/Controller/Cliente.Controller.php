@@ -51,7 +51,6 @@ class Cliente extends AbstractController
                 $foto = "clientes/" . $cliente->getCoPessoa()->getCoImagem()->getDsCaminho();
             }
             $res[DS_CAMINHO] = $foto;
-            // Carrega os cargos
 
             // Aba 2
             /** @var EnderecoEntidade $endereco */
