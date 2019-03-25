@@ -163,6 +163,7 @@
     define('ASSINANTE_FILIAL_SERVICE', 'AssinanteFilialService');
     define('IMAGEM_ASSINANTE_SERVICE', 'ImagemAssinanteService');
     define('HISTORICO_HISTORIA_SERVICE', 'HistoricoHistoriaService');
+    define('PERFIL_ASSINANTE_SERVICE', 'PerfilAssinanteService');
 
 
     // CONSTANTES

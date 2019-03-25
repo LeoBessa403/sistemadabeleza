@@ -125,6 +125,5 @@ define('AUSENCIA_SERVICE', 'AusenciaService');
 define('CLIENTE_SERVICE', 'ClienteService');
 define('CONFIG_PROFISSIONAL_SERVICE', 'ConfigProfissionalService');
 define('CATEGORIA_SERVICO_SERVICE', 'CategoriaServicoService');
-define('PERFIL_ASSINANTE_SERVICE', 'PerfilAssinanteService');
 define('PRECO_SERVICO_SERVICE', 'PrecoServicoService');
 define('SERVICO_SERVICE', 'ServicoService');
