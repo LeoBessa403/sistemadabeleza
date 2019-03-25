@@ -43,28 +43,26 @@ class Perfil extends AbstractController
 
         $coPerfil = UrlAmigavel::PegaParametro("per");
         $res = array();
+        $res[CO_PERFIL] = null;
         $coAssinante = AssinanteService::getCoAssinanteLogado();
         if($coAssinante){
             /** @var PerfilAssinanteEntidade $perfil */
             $perfil = $perfilAssinanteService->PesquisaUmRegistro($coPerfil);
             $res[CO_PERFIL] = $perfil->getCoPerfilAssinante();
-        }else{
+        }elseif($coPerfil) {
             /** @var PerfilEntidade $perfil */
             $perfil = $perfilService->PesquisaUmRegistro($coPerfil);
             $res[CO_PERFIL] = $perfil->getCoPerfil();
-        }
-
-        if ($coPerfil):
             $res[NO_PERFIL] = $perfil->getNoPerfil();
             $perfisFunc = [];
-            if(!empty($perfil->getCoPerfilFuncionalidade())){
+            if (!empty($perfil->getCoPerfilFuncionalidade())) {
                 /** @var PerfilFuncionalidadeEntidade $perfilFunc */
-                foreach ($perfil->getCoPerfilFuncionalidade() as $perfilFunc){
+                foreach ($perfil->getCoPerfilFuncionalidade() as $perfilFunc) {
                     $perfisFunc[] = $perfilFunc->getCoFuncionalidade()->getCoFuncionalidade();
                 }
             }
             $res[CO_FUNCIONALIDADE] = $perfisFunc;
-        endif;
+        }
 
         $this->form = PerfilForm::Cadastrar($res);
 
