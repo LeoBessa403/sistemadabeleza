@@ -94,7 +94,19 @@ define('CO_PRECO_SERVICO', 'co_preco_servico');
 define('CO_SERVICO', 'co_servico');
 define('NO_SERVICO', 'no_servico');
 define('NU_DURACAO', 'nu_duracao');
-
+define('CO_CONFIG_COMISSAO', 'co_config_comissao');
+define('CO_PERCENTUAL_COMISSAO', 'co_percentual_comissao');
+define('NU_COMISSAO', 'nu_comissao');
+define('NU_TIPO_COMISSAO', 'nu_tipo_comissao');
+define('CO_SERVICO_PROFISSIONAL', 'co_servico_profissional');
+define('CO_HISTORICO_COMISSAO', 'co_historico_comissao');
+define('DT_VALIDO', 'dt_valido');
+define('ST_TAXA_ANTECIPACAO', 'st_taxa_antecipacao');
+define('ST_TAXA_ADMINISTRATIVA', 'st_taxa_administrativa');
+define('ST_TAXA_CARTAO_CREDITO', 'st_taxa_cartao_credito');
+define('ST_TAXA_CARTAO_DEBITO', 'st_taxa_cartao_debito');
+define('ST_RECEBIMENTO_PRE_VENDA', 'st_recebimento_pre_venda');
+define('NU_FORMA_COMISSAO', 'nu_forma_comissao');
 
 
 
@@ -127,3 +139,7 @@ define('CONFIG_PROFISSIONAL_SERVICE', 'ConfigProfissionalService');
 define('CATEGORIA_SERVICO_SERVICE', 'CategoriaServicoService');
 define('PRECO_SERVICO_SERVICE', 'PrecoServicoService');
 define('SERVICO_SERVICE', 'ServicoService');
+define('CONFIG_COMISSAO_SERVICE', 'ConfigComissaoService');
+define('PERCENTUAL_COMISSAO_SERVICE', 'PercentualComissaoService');
+define('SERVICO_PROFISSIONAL_SERVICE', 'ServiprofissionalService');
+define('HISTORICO_COMISSAO_SERVICE', 'HistoricomissaoService');

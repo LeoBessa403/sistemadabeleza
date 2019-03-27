@@ -97,6 +97,11 @@ class Relacionamentos
                     ('Entidade') => 'PerfilAssinanteEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_CONFIG_COMISSAO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ConfigComissaoEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -679,6 +684,16 @@ class Relacionamentos
                     ('Entidade') => 'AusenciaEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PERCENTUAL_COMISSAO) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'PercentualComissaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_SERVICO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ServicoProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ContaBancariaEntidade::TABELA) => Array(
                 (CO_PROFISSIONAL) => Array(
@@ -771,21 +786,80 @@ class Relacionamentos
                     ('Entidade') => 'ImagemEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PERCENTUAL_COMISSAO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'PercentualComissaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_SERVICO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (ConfigComissaoEntidade::TABELA) => Array(
+                (CO_HISTORICO_COMISSAO) => Array(
+                    ('Campo') => CO_CONFIG_COMISSAO,
+                    ('Entidade') => 'HistoricoComissaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (HistoricoComissaoEntidade::TABELA) => Array(
+                (CO_CONFIG_COMISSAO) => Array(
+                    ('Campo') => CO_CONFIG_COMISSAO,
+                    ('Entidade') => 'ConfigComissaoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_HISTORICO_COMISSAO) => Array(
+                    ('Campo') => CO_HISTORICO_COMISSAO,
+                    ('Entidade') => 'PercentualComissaoEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (PercentualComissaoEntidade::TABELA) => Array(
+                (CO_HISTORICO_COMISSAO) => Array(
+                    ('Campo') => CO_HISTORICO_COMISSAO,
+                    ('Entidade') => 'HistoricoComissaoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_SERVICO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_SERVICO_PROFISSIONAL,
+                    ('Entidade') => 'ServicoProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ServicoProfissionalEntidade::TABELA) => Array(
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PERCENTUAL_COMISSAO) => Array(
+                    ('Campo') => CO_SERVICO_PROFISSIONAL,
+                    ('Entidade') => 'PercentualComissaoEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
         );
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
