@@ -340,5 +340,38 @@ class Configuracao extends AbstractController
         }
         $this->form = ConfiguracaoForm::ConfigProfissional($res);
     }
+
+    public function ComissaoConfiguracao()
+    {
+        /** @var ConfigComissaoService $configComissaoService */
+        $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
+        $id = "configComissao";
+
+        if (!empty($_POST[$id])):
+            $retorno = $configComissaoService->salvaConfigComissao($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ProfissionalConfiguracao/');
+            }
+        endif;
+
+        $res[ST_RECEBE_EMAIL_FATURAMENTO] = 'checked';
+        $res[ST_EDICAO_SERVICOS] = 'checked';
+        $res[ST_EDICAO_ATENDIMENTO] = '';
+        /** @var ConfigComissaoEntidade $configComissao */
+        $configComissao = $configComissaoService->PesquisaUmQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        if ($configComissao) {
+            $res[NU_PERIODO_AGENDA] = $configComissao->getNuPeriodoAgenda();
+            $res[CO_CONFIG_PROFISSIONAL] = $configComissao->getCoConfigProfissional();
+            $res[ST_RECEBE_EMAIL_FATURAMENTO] = ($configComissao->getStRecebeEmailFaturamento() == 'S')
+                ? 'checked' : '';
+            $res[ST_EDICAO_SERVICOS] = ($configComissao->getStEdicaoServicos() == 'S')
+                ? 'checked' : '';
+            $res[ST_EDICAO_ATENDIMENTO] = ($configComissao->getStEdicaoAtendimento() == 'S')
+                ? 'checked' : '';
+        }
+        $this->form = ConfiguracaoForm::configComissao($res);
+    }
 }
    

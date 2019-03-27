@@ -1,4 +1,4 @@
--- Atualizado em: 21/03/2019 18:13:19
+-- Atualizado em: 27/03/2019 18:06:21
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,10 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_acesso VALUES("178","r11s8di90npd9s1omb5s2er9t5","2019-03-21 18:12:18","2019-03-21 18:43:19","A","1","197");
+INSERT INTO tb_acesso VALUES("190","rlgisvct9cv78k6rod9ei9lo36","2019-03-27 18:05:52","2019-03-27 18:36:21","A","1","209");
 
 
 
@@ -148,7 +148,7 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=332 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=370 DEFAULT CHARSET=utf8;
 
 
 
@@ -165,7 +165,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=5849 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6065 DEFAULT CHARSET=utf8;
 
 
 
@@ -182,7 +182,7 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1095 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1134 DEFAULT CHARSET=utf8;
 
 
 
@@ -935,6 +935,20 @@ INSERT INTO tb_config_cliente VALUES("1","S","4","11");
 
 
 
+DROP TABLE IF EXISTS tb_config_comissao;
+
+
+CREATE TABLE `tb_config_comissao` (
+  `co_config_comissao` int(11) NOT NULL,
+  `dt_cadastro` datetime NOT NULL,
+  `co_assinante` int(11) NOT NULL,
+  PRIMARY KEY (`co_config_comissao`,`co_assinante`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
 DROP TABLE IF EXISTS tb_config_profissional;
 
 
@@ -1315,7 +1329,7 @@ CREATE TABLE `tb_funcionalidade` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_funcionalidade VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -1412,6 +1426,8 @@ INSERT INTO tb_funcionalidade VALUES("61","Listar Serviço","ListarServico","A",
 
 INSERT INTO tb_funcionalidade VALUES("62","Cadastro Serviço","CadastroServico","A","N","15");
 
+INSERT INTO tb_funcionalidade VALUES("63","Configuração Comissão","ComissaoConfiguracao","A","S","13");
+
 
 
 
@@ -1469,7 +1485,7 @@ CREATE TABLE `tb_historia` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historia VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","1");
@@ -1554,7 +1570,7 @@ INSERT INTO tb_historia VALUES("42","Gerar cupom não fiscal","<p>Gerar cupom n&
 
 INSERT INTO tb_historia VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2018-07-25 18:45:49","N","5");
 
-INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","2018-07-25 18:42:35","2019-03-21 18:12:49","C","12");
+INSERT INTO tb_historia VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","2018-07-25 18:42:35","2019-03-22 11:16:18","C","12");
 
 INSERT INTO tb_historia VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","2018-07-25 18:43:26","2019-03-20 14:14:45","C","12");
 
@@ -1720,7 +1736,7 @@ INSERT INTO tb_historia VALUES("131","Taxas dos cartões","<p>Taxas cobradas dos
 
 INSERT INTO tb_historia VALUES("132","Histórico da taxas","<p>hist&oacute;rico da taxas cobradas dos cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:27:18","2018-10-26 20:29:19","C","5");
 
-INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas</p>","2018-09-25 14:31:36","2018-11-22 16:03:43","N","5");
+INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n<p>&nbsp;</p>\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas, Comiss&atilde;o (&Uacute;nico Profissional, Com Assistente e Assistente) padr&atilde;o geral por servi&ccedil;o ou por profissional ou por Servi&ccedil;i / Profissional</p>","2018-09-25 14:31:36","2019-03-27 17:13:01","I","5");
 
 INSERT INTO tb_historia VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2019-02-18 16:42:26","C","5");
 
@@ -1732,17 +1748,49 @@ INSERT INTO tb_historia VALUES("142","Manter Usuário Comum","<p>Manter Usu&aacu
 
 INSERT INTO tb_historia VALUES("143","Manter Planos do Assinante","<p>Manter Planos do Assinante, alterar seu plano aumentando o plano</p>","2019-03-13 15:53:08","2019-03-13 15:53:08","N","1");
 
-INSERT INTO tb_historia VALUES("144","Pesquisa Avançada dos Serviços","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o,</p>","2019-03-20 14:19:52","2019-03-20 14:28:42","N","12");
+INSERT INTO tb_historia VALUES("144","Pesquisa Avançada dos Serviços","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o, Assistente, promo&ccedil;&atilde;o, pacote</p>","2019-03-20 14:19:52","2019-03-27 14:56:59","N","12");
 
 INSERT INTO tb_historia VALUES("145","Histórico Promoções do Serviço","<p>Apresentar Hist&oacute;rico das promo&ccedil;&atilde;oes do servi&ccedil;o</p>","2019-03-20 14:22:28","2019-03-20 14:27:15","N","12");
 
 INSERT INTO tb_historia VALUES("146","Histórico Pacotes do Serviço","<p>apresentar Hist&oacute;rico os Pacotes do Servi&ccedil;o</p>","2019-03-20 14:22:52","2019-03-20 14:27:31","N","12");
 
-INSERT INTO tb_historia VALUES("147","Pesquisa Avançada dos Profissionais","<p>Pesquisa Avan&ccedil;ada dos Profissionais por nome, filial, cargo, jornada de tabalho, sexo, cidade e uf, assistente , possui agenda,&nbsp; agenda on line, banco,</p>","2019-03-20 14:26:33","2019-03-20 14:26:33","N","9");
+INSERT INTO tb_historia VALUES("147","Pesquisa Avançada dos Profissionais","<p>Pesquisa Avan&ccedil;ada dos Profissionais por nome, filial, cargo, jornada de tabalho, sexo, cidade e uf, assistente , possui agenda,&nbsp; agenda on line, banco, Status Agendamento.</p>","2019-03-20 14:26:33","2019-03-27 14:36:24","N","9");
 
-INSERT INTO tb_historia VALUES("148","Pesquisa Avançada dos Clientes","<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing,&nbsp;</p>","2019-03-20 14:34:27","2019-03-20 14:34:27","N","11");
+INSERT INTO tb_historia VALUES("148","Pesquisa Avançada dos Clientes","<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing, Status de agendamento</p>","2019-03-20 14:34:27","2019-03-27 14:37:30","N","11");
 
 INSERT INTO tb_historia VALUES("149","Pesquisa Avançada dos Assinantes","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento, data de expira&ccedil;&atilde;o (Per&iacute;odo), n&uacute;mero de filiais, valor assinatura atual, n&uacute;mero de profissionais,</p>","2019-03-20 14:37:45","2019-03-20 14:40:07","N","1");
+
+INSERT INTO tb_historia VALUES("150","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o (Profissional / Assistente) levando em conta a configura&ccedil;&atilde;o se for por Profissional</p>","2019-03-27 15:17:19","2019-03-27 15:19:27","N","9");
+
+INSERT INTO tb_historia VALUES("151","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o (Profissional / Assistente) levando em conta a configura&ccedil;&atilde;o se for por Servi&ccedil;o</p>","2019-03-27 15:18:54","2019-03-27 15:18:54","N","12");
+
+INSERT INTO tb_historia VALUES("152","Histórico da Configuração da Comissão","<p>Hist&oacute;rico da Configura&ccedil;&atilde;o da Comiss&atilde;o</p>","2019-03-27 16:39:58","2019-03-27 16:39:58","N","5");
+
+INSERT INTO tb_historia VALUES("153","Histórico de comissões por serviço","<p>Hist&oacute;rico de comiss&otilde;es por servi&ccedil;o</p>","2019-03-27 17:10:10","2019-03-27 17:10:10","N","9");
+
+INSERT INTO tb_historia VALUES("154","Histórico de comissões por profissional","<p>Hist&oacute;rico de comiss&otilde;es por profissional</p>","2019-03-27 17:10:43","2019-03-27 17:10:43","N","12");
+
+
+
+
+DROP TABLE IF EXISTS tb_historico_comissao;
+
+
+CREATE TABLE `tb_historico_comissao` (
+  `co_historico_comissao` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `dt_valido` date DEFAULT NULL COMMENT 'A partir da Data Válida as mudanças serão consideradas',
+  `st_taxa_antecipacao` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não *Considerar ou não as Taxas de antecipação',
+  `st_taxa_administrativa` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não *Considerar ou não as Taxas de administrativa das operados dos cartões',
+  `st_taxa_cartao_credito` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não *Considerar ou não as Taxas de  cartão de crédito',
+  `st_taxa_cartao_debito` varchar(1) DEFAULT 'N' COMMENT 'S - Sim / N - Não *Considerar ou não as Taxas de  cartão de débito',
+  `st_recebimento_pre_venda` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não *Recebi comissão antes de executar o serviço',
+  `nu_forma_comissao` int(1) DEFAULT NULL COMMENT '1 - Geral / 2 -  por serviço / 3 -  por profissional / 4 - por Serviço por Profissional',
+  `co_config_comissao` int(11) NOT NULL,
+  PRIMARY KEY (`co_historico_comissao`,`co_config_comissao`),
+  KEY `fk_TB_HISTORICO_COMISSAO_TB_CONFIG_COMISSAO1_idx` (`co_config_comissao`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 
@@ -1758,7 +1806,7 @@ CREATE TABLE `tb_historico_historia` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=575 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=592 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -2903,6 +2951,40 @@ INSERT INTO tb_historico_historia VALUES("573","13","10","2019-03-21 12:18:10","
 
 INSERT INTO tb_historico_historia VALUES("574","13","0","2019-03-21 18:12:49","44");
 
+INSERT INTO tb_historico_historia VALUES("575","20","0","2019-03-22 11:16:18","44");
+
+INSERT INTO tb_historico_historia VALUES("576","20","20","2019-03-27 14:36:24","147");
+
+INSERT INTO tb_historico_historia VALUES("577","20","20","2019-03-27 14:37:30","148");
+
+INSERT INTO tb_historico_historia VALUES("578","8","8","2019-03-27 14:55:59","144");
+
+INSERT INTO tb_historico_historia VALUES("579","13","13","2019-03-27 14:56:59","144");
+
+INSERT INTO tb_historico_historia VALUES("580","13","13","2019-03-27 15:14:45","133");
+
+INSERT INTO tb_historico_historia VALUES("581","5","5","2019-03-27 15:17:19","150");
+
+INSERT INTO tb_historico_historia VALUES("582","5","5","2019-03-27 15:18:54","151");
+
+INSERT INTO tb_historico_historia VALUES("583","5","5","2019-03-27 15:19:27","150");
+
+INSERT INTO tb_historico_historia VALUES("584","20","13","2019-03-27 15:32:36","133");
+
+INSERT INTO tb_historico_historia VALUES("585","20","13","2019-03-27 15:32:43","133");
+
+INSERT INTO tb_historico_historia VALUES("586","20","20","2019-03-27 15:33:01","133");
+
+INSERT INTO tb_historico_historia VALUES("587","30","25","2019-03-27 16:39:17","133");
+
+INSERT INTO tb_historico_historia VALUES("588","8","8","2019-03-27 16:39:58","152");
+
+INSERT INTO tb_historico_historia VALUES("589","13","13","2019-03-27 17:10:10","153");
+
+INSERT INTO tb_historico_historia VALUES("590","13","13","2019-03-27 17:10:43","154");
+
+INSERT INTO tb_historico_historia VALUES("591","30","20","2019-03-27 17:13:01","133");
+
 
 
 
@@ -3350,6 +3432,30 @@ CREATE TABLE `tb_pagina_visita` (
 
 
 
+DROP TABLE IF EXISTS tb_percentual_comissao;
+
+
+CREATE TABLE `tb_percentual_comissao` (
+  `co_percentual_comissao` int(11) NOT NULL AUTO_INCREMENT,
+  `nu_comissao` int(3) DEFAULT '0' COMMENT 'Percentual da Comissão',
+  `nu_tipo_comissao` int(1) DEFAULT NULL COMMENT '1 - Único Profissional / 2 - Com Assistente / 3 - Assistente',
+  `dt_cadastro` datetime DEFAULT NULL,
+  `dt_atualizado` datetime DEFAULT NULL,
+  `co_historico_comissao` int(11) NOT NULL,
+  `co_servico` int(11) NOT NULL,
+  `co_profissional` int(11) NOT NULL,
+  `co_servico_profissional` int(11) NOT NULL,
+  PRIMARY KEY (`co_percentual_comissao`,`co_historico_comissao`,`co_servico`,`co_profissional`,`co_servico_profissional`),
+  KEY `fk_TB_PERCENTUAL_COMISSAO_TB_HISTORICO_COMISSAO1_idx` (`co_historico_comissao`),
+  KEY `fk_TB_PERCENTUAL_COMISSAO_TB_SERVICO1_idx` (`co_servico`),
+  KEY `fk_TB_PERCENTUAL_COMISSAO_TB_PROFISSIONAL1_idx` (`co_profissional`),
+  KEY `fk_TB_PERCENTUAL_COMISSAO_TB_SERVICO_PROFISSIONAL1_idx` (`co_servico_profissional`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
 DROP TABLE IF EXISTS tb_perfil;
 
 
@@ -3358,7 +3464,7 @@ CREATE TABLE `tb_perfil` (
   `no_perfil` varchar(45) NOT NULL COMMENT 'Nome do Perfil',
   `st_status` varchar(1) NOT NULL DEFAULT 'A' COMMENT '''A - Ativo / I - Inativo''',
   PRIMARY KEY (`co_perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_perfil VALUES("1","Master","A");
@@ -3400,7 +3506,7 @@ CREATE TABLE `tb_perfil_funcionalidade` (
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_TB_PERFIL_FUNCIONALIDADE_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=265 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=266 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO tb_perfil_funcionalidade VALUES("1","1","1","0");
@@ -3476,6 +3582,8 @@ INSERT INTO tb_perfil_funcionalidade VALUES("261","60","2","0");
 INSERT INTO tb_perfil_funcionalidade VALUES("262","61","2","0");
 
 INSERT INTO tb_perfil_funcionalidade VALUES("264","62","2","0");
+
+INSERT INTO tb_perfil_funcionalidade VALUES("265","63","2","0");
 
 
 
@@ -3739,7 +3847,7 @@ CREATE TABLE `tb_preco_servico` (
   PRIMARY KEY (`co_preco_servico`,`co_servico`,`co_usuario`),
   KEY `fk_TB_PRECO_SERVICO_TB_SERVICO1_idx` (`co_servico`),
   KEY `fk_TB_PRECO_SERVICO_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_preco_servico VALUES("1","39.90","2019-03-20 16:54:46","Serviço Inicial","3","8");
@@ -3847,6 +3955,8 @@ INSERT INTO tb_preco_servico VALUES("53","29.90","2019-03-21 18:09:48","Atualiza
 INSERT INTO tb_preco_servico VALUES("54","29.90","2019-03-21 18:10:20","Atualizado","34","8");
 
 INSERT INTO tb_preco_servico VALUES("55","55.44","2019-03-21 18:11:49","Cadastrado","41","8");
+
+INSERT INTO tb_preco_servico VALUES("56","39.90","2019-03-27 14:52:41","Atualizado","33","8");
 
 
 
@@ -3973,6 +4083,7 @@ CREATE TABLE `tb_servico` (
   `co_servico` int(11) NOT NULL AUTO_INCREMENT,
   `dt_cadastro` datetime DEFAULT NULL,
   `st_status` varchar(1) DEFAULT NULL COMMENT 'A - Ativo / I - Inativo',
+  `st_assistente` varchar(1) DEFAULT NULL COMMENT 'S - Sim / N - Não * Se precisa ter um assitente',
   `no_servico` varchar(100) DEFAULT NULL,
   `nu_duracao` int(3) DEFAULT NULL,
   `ds_descricao` text,
@@ -3984,75 +4095,92 @@ CREATE TABLE `tb_servico` (
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_servico VALUES("3","2019-03-20 16:54:46","A","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
+INSERT INTO tb_servico VALUES("3","2019-03-20 16:54:46","A","","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
 
-INSERT INTO tb_servico VALUES("4","2019-03-20 16:54:46","I","Corte Tesoura","30","Corte: O corte na tesoura irá deixar você com o visual renovado.","5","48");
+INSERT INTO tb_servico VALUES("4","2019-03-20 16:54:46","I","","Corte Tesoura","30","Corte: O corte na tesoura irá deixar você com o visual renovado.","5","48");
 
-INSERT INTO tb_servico VALUES("5","2019-03-20 16:54:46","I","Corte Máquina","30","Corte: O corte na máquina irá deixar você com o visual renovado.","5","49");
+INSERT INTO tb_servico VALUES("5","2019-03-20 16:54:46","I","","Corte Máquina","30","Corte: O corte na máquina irá deixar você com o visual renovado.","5","49");
 
-INSERT INTO tb_servico VALUES("6","2019-03-20 16:54:46","A","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","5","50");
+INSERT INTO tb_servico VALUES("6","2019-03-20 16:54:46","A","","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","5","50");
 
-INSERT INTO tb_servico VALUES("7","2019-03-20 16:54:46","A","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
+INSERT INTO tb_servico VALUES("7","2019-03-20 16:54:46","A","","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
 
-INSERT INTO tb_servico VALUES("8","2019-03-20 16:54:46","A","Corte e Higienização dos Fios","30","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","5","52");
+INSERT INTO tb_servico VALUES("8","2019-03-20 16:54:46","A","","Corte e Higienização dos Fios","30","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","5","52");
 
-INSERT INTO tb_servico VALUES("9","2019-03-20 16:54:46","I","Escova Modeladora","30","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","5","53");
+INSERT INTO tb_servico VALUES("9","2019-03-20 16:54:46","I","","Escova Modeladora","30","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","5","53");
 
-INSERT INTO tb_servico VALUES("10","2019-03-20 16:54:46","A","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
+INSERT INTO tb_servico VALUES("10","2019-03-20 16:54:46","A","","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
 
-INSERT INTO tb_servico VALUES("11","2019-03-20 16:54:46","A","Escova Progressiva","60","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a \n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo \n        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. \n        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.","5","55");
+INSERT INTO tb_servico VALUES("11","2019-03-20 16:54:46","A","","Escova Progressiva","60","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a \n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo \n        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. \n        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.","5","55");
 
-INSERT INTO tb_servico VALUES("12","2019-03-20 16:54:46","I","Botox Capilar","60","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. \n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","5","56");
+INSERT INTO tb_servico VALUES("12","2019-03-20 16:54:46","I","","Botox Capilar","60","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade. \n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","5","56");
 
-INSERT INTO tb_servico VALUES("13","2019-03-20 16:54:46","I","Luzes / Mechas","150","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo \n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","5","57");
+INSERT INTO tb_servico VALUES("13","2019-03-20 16:54:46","I","","Luzes / Mechas","150","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo \n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","5","57");
 
-INSERT INTO tb_servico VALUES("14","2019-03-20 16:54:46","A","Manicure","30","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas \n        pela cliente.","6","58");
+INSERT INTO tb_servico VALUES("14","2019-03-20 16:54:46","A","","Manicure","30","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas \n        pela cliente.","6","58");
 
-INSERT INTO tb_servico VALUES("15","2019-03-20 16:54:46","A","Pedicure","30","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas \n        pela cliente.","6","59");
+INSERT INTO tb_servico VALUES("15","2019-03-20 16:54:46","A","","Pedicure","30","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas \n        pela cliente.","6","59");
 
-INSERT INTO tb_servico VALUES("16","2019-03-20 16:54:46","A","Manicure e Pedicure","60","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos \n        e dos pés nas cores desejadas pela cliente.","6","60");
+INSERT INTO tb_servico VALUES("16","2019-03-20 16:54:46","A","","Manicure e Pedicure","60","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos \n        e dos pés nas cores desejadas pela cliente.","6","60");
 
-INSERT INTO tb_servico VALUES("17","2019-03-20 16:54:46","I","Unhas Gel","90","Unhas em Gel: feitas com produto à base de película de poliéster, \n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e \n        são mais finas.","6","61");
+INSERT INTO tb_servico VALUES("17","2019-03-20 16:54:46","I","","Unhas Gel","90","Unhas em Gel: feitas com produto à base de película de poliéster, \n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e \n        são mais finas.","6","61");
 
-INSERT INTO tb_servico VALUES("18","2019-03-20 16:54:46","A","Maquiagem Completa","120","Desfrute de uma make completa para arrasar em festas, comemorações e \n        casamentos com uma super maquiagem.","7","62");
+INSERT INTO tb_servico VALUES("18","2019-03-20 16:54:46","A","","Maquiagem Completa","120","Desfrute de uma make completa para arrasar em festas, comemorações e \n        casamentos com uma super maquiagem.","7","62");
 
-INSERT INTO tb_servico VALUES("19","2019-03-20 16:54:46","A","Alongamento de Cílios Fio a Fio","90","Alongamento de Cílios: a técnica de alongamento de cílios trata-se \n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, \n        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada \n        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o \n        procedimento estético em questão dura.","8","63");
+INSERT INTO tb_servico VALUES("19","2019-03-20 16:54:46","A","","Alongamento de Cílios Fio a Fio","90","Alongamento de Cílios: a técnica de alongamento de cílios trata-se \n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio, \n        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada \n        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o \n        procedimento estético em questão dura.","8","63");
 
-INSERT INTO tb_servico VALUES("20","2019-03-20 16:54:46","A","Design de Sobrancelhas","30","Design de Sobrancelhas: além de ser esteticamente essencial, garante \n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. \n        Feito de acordo com o formato do seu rosto. Feito com pinça.","8","64");
+INSERT INTO tb_servico VALUES("20","2019-03-20 16:54:46","A","","Design de Sobrancelhas","30","Design de Sobrancelhas: além de ser esteticamente essencial, garante \n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto. \n        Feito de acordo com o formato do seu rosto. Feito com pinça.","8","64");
 
-INSERT INTO tb_servico VALUES("21","2019-03-20 16:54:46","A","Retoque na Barba","60","Barba: faça a barba totalmente ou apare com um design a seu gosto para \n        manter a aparência impecável.","9","65");
+INSERT INTO tb_servico VALUES("21","2019-03-20 16:54:46","A","","Retoque na Barba","60","Barba: faça a barba totalmente ou apare com um design a seu gosto para \n        manter a aparência impecável.","9","65");
 
-INSERT INTO tb_servico VALUES("22","2019-03-20 16:54:46","A","Rejuvenescimento Facial","60","Rejuvenescimento Facial com Luz Pulsada é um procedimento \n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno \n        e a elastina proporcionando assim uma pele mais firme e jovem.","10","66");
+INSERT INTO tb_servico VALUES("22","2019-03-20 16:54:46","A","","Rejuvenescimento Facial","60","Rejuvenescimento Facial com Luz Pulsada é um procedimento \n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno \n        e a elastina proporcionando assim uma pele mais firme e jovem.","10","66");
 
-INSERT INTO tb_servico VALUES("23","2019-03-20 16:54:46","A","Microagulhamento com Peeling","60","Microagulhamento: promove textura mais macia, atenuando cicatrizes \n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling \n        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na \n        camada mais superficial da pele e a estimulação à produção de colágeno.","10","67");
+INSERT INTO tb_servico VALUES("23","2019-03-20 16:54:46","A","","Microagulhamento com Peeling","60","Microagulhamento: promove textura mais macia, atenuando cicatrizes \n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling \n        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na \n        camada mais superficial da pele e a estimulação à produção de colágeno.","10","67");
 
-INSERT INTO tb_servico VALUES("24","2019-03-20 16:54:46","A","Máscara Acne Control","60","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a \n        textura e a firmeza da pele.","10","68");
+INSERT INTO tb_servico VALUES("24","2019-03-20 16:54:46","A","","Máscara Acne Control","60","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a \n        textura e a firmeza da pele.","10","68");
 
-INSERT INTO tb_servico VALUES("25","2019-03-20 16:54:46","A","Limpeza de Pele","30","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração \n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","10","69");
+INSERT INTO tb_servico VALUES("25","2019-03-20 16:54:46","A","","Limpeza de Pele","30","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração \n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","10","69");
 
-INSERT INTO tb_servico VALUES("26","2019-03-20 16:54:46","I","Depilação a Laser","30","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, \n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","11","70");
+INSERT INTO tb_servico VALUES("26","2019-03-20 16:54:46","I","","Depilação a Laser","30","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor, \n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","11","70");
 
-INSERT INTO tb_servico VALUES("27","2019-03-20 16:54:46","I","Depilação a Cera","60","Realizada com cera quente, que garante uma maior durabilidade, já que os \n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, \n        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.","11","71");
+INSERT INTO tb_servico VALUES("27","2019-03-20 16:54:46","I","","Depilação a Cera","60","Realizada com cera quente, que garante uma maior durabilidade, já que os \n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida, \n        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.","11","71");
 
-INSERT INTO tb_servico VALUES("28","2019-03-20 16:54:46","I","Depilação a Luz","30","O método remove os pelos pela destruição do folículo piloso ou \n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até \n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.","11","72");
+INSERT INTO tb_servico VALUES("28","2019-03-20 16:54:46","I","","Depilação a Luz","30","O método remove os pelos pela destruição do folículo piloso ou \n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até \n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.","11","72");
 
-INSERT INTO tb_servico VALUES("29","2019-03-20 16:54:46","I","Massagem Relaxante","30","Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.","12","73");
+INSERT INTO tb_servico VALUES("29","2019-03-20 16:54:46","I","","Massagem Relaxante","30","Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.","12","73");
 
-INSERT INTO tb_servico VALUES("30","2019-03-20 16:54:46","A","Massagem Modeladora","10","Massagem Modeladora: para quem precisa ativar o metabolismo local, \n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","12","90");
+INSERT INTO tb_servico VALUES("30","2019-03-20 16:54:46","A","","Massagem Modeladora","10","Massagem Modeladora: para quem precisa ativar o metabolismo local, \n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","12","90");
 
-INSERT INTO tb_servico VALUES("31","2019-03-20 16:54:46","A","Drenagem Linfática","30","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e \n        toxinas do organismo.","12","75");
+INSERT INTO tb_servico VALUES("31","2019-03-20 16:54:46","A","","Drenagem Linfática","30","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e \n        toxinas do organismo.","12","75");
 
-INSERT INTO tb_servico VALUES("32","2019-03-20 16:54:46","I","Day Spa","120","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de \n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz \n        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras \n        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que \n        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado","12","76");
+INSERT INTO tb_servico VALUES("32","2019-03-20 16:54:46","I","","Day Spa","120","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de \n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz \n        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras \n        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que \n        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado","12","76");
 
-INSERT INTO tb_servico VALUES("33","2019-03-20 16:54:46","I","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
+INSERT INTO tb_servico VALUES("33","2019-03-20 16:54:46","I","S","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
 
-INSERT INTO tb_servico VALUES("34","2019-03-20 16:54:46","A","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","14","92");
+INSERT INTO tb_servico VALUES("34","2019-03-20 16:54:46","A","","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","14","92");
 
-INSERT INTO tb_servico VALUES("35","2019-03-20 16:54:46","A","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","14","79");
+INSERT INTO tb_servico VALUES("35","2019-03-20 16:54:46","A","","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","14","79");
 
-INSERT INTO tb_servico VALUES("40","2019-03-21 17:30:34","A","Novidade para o cabelo","30","Novo Teste de Podologia","13","85");
+INSERT INTO tb_servico VALUES("40","2019-03-21 17:30:34","A","","Novidade para o cabelo","30","Novo Teste de Podologia","13","85");
 
-INSERT INTO tb_servico VALUES("41","2019-03-21 18:11:49","A","Novidade para o cabelo 22","30","sh sfd h trh rtjrtj","13","93");
+INSERT INTO tb_servico VALUES("41","2019-03-21 18:11:49","A","","Novidade para o cabelo 22","30","sh sfd h trh rtjrtj","13","93");
+
+
+
+
+DROP TABLE IF EXISTS tb_servico_profissional;
+
+
+CREATE TABLE `tb_servico_profissional` (
+  `co_servico_profissional` int(11) NOT NULL AUTO_INCREMENT,
+  `st_status` varchar(1) DEFAULT 'S' COMMENT 'S - Sim / N - Não * Se o Profissional ainda atende o serviço',
+  `co_profissional` int(11) NOT NULL,
+  `co_servico` int(11) NOT NULL,
+  PRIMARY KEY (`co_servico_profissional`,`co_profissional`,`co_servico`),
+  KEY `fk_TB_SERVICO_has_TB_PROFISSIONAL_TB_PROFISSIONAL1_idx` (`co_profissional`),
+  KEY `fk_TB_SERVICO_has_TB_PROFISSIONAL_TB_SERVICO1_idx` (`co_servico`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 
@@ -4225,7 +4353,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=198 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -4262,7 +4390,7 @@ INSERT INTO tb_trafego VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO tb_trafego VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("197","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("209","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

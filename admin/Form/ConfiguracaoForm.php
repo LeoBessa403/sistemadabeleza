@@ -179,5 +179,65 @@ class ConfiguracaoForm
         return $formulario->finalizaForm();
     }
 
+    public static function ConfigComissao($res = false)
+    {
+        $id = "configComissao";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Cadastrar", 6);
+        $formulario->setValor($res);
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Receber E-mail de Faturamento?")
+            ->setClasses($res[ST_RECEBE_EMAIL_FATURAMENTO])
+            ->setId(ST_RECEBE_EMAIL_FATURAMENTO)
+            ->setType("checkbox")
+            ->setInfo('Receber E-mail de Faturamento diário')
+            ->setTamanhoInput(12)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Edição dos Serviços?")
+            ->setClasses($res[ST_EDICAO_SERVICOS])
+            ->setId(ST_EDICAO_SERVICOS)
+            ->setType("checkbox")
+            ->setInfo('Aceita Edição dos Serviços prestados')
+            ->setTamanhoInput(12)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Edição dos Atendimentos?")
+            ->setClasses($res[ST_EDICAO_ATENDIMENTO])
+            ->setId(ST_EDICAO_ATENDIMENTO)
+            ->setType("checkbox")
+            ->setInfo('Aceita Edição dos atendimentos futuros.')
+            ->setTamanhoInput(12)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_PERIODO_AGENDA)
+            ->setClasses("numero")
+            ->setLabel("Número de dias da agenda")
+            ->setInfo('Dias abertos da agenda futura.')
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        if (!empty($res[CO_CONFIG_PROFISSIONAL])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_CONFIG_PROFISSIONAL)
+                ->setValues($res[CO_CONFIG_PROFISSIONAL])
+                ->CriaInpunt();
+        endif;
+
+        return $formulario->finalizaForm();
+    }
+
 
 }
