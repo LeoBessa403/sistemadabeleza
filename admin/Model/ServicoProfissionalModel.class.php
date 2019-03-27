@@ -12,5 +12,4 @@ class  ServicoProfissionalModel extends AbstractModel
         parent::__construct(ServicoProfissionalEntidade::ENTIDADE);
     }
 
-
 }
