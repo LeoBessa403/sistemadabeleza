@@ -17,6 +17,7 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     private $co_profissional;
     private $co_cliente;
     private $co_categoria_servico;
+    private $co_config_comissao;
 
     /**
      * @return FacilidadeBeneficioEntidade $co_facilidade_beneficio
@@ -184,5 +185,22 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     public function setCoCategoriaServico($co_categoria_servico)
     {
         return $this->co_categoria_servico = $co_categoria_servico;
+    }
+
+    /**
+     * @return ConfigComissaoEntidade $co_config_comissao
+     */
+    public function getCoConfigComissao()
+    {
+        return $this->co_config_comissao;
+    }
+
+    /**
+     * @param $co_config_comissao
+     * @return mixed
+     */
+    public function setCoConfigComissao($co_config_comissao)
+    {
+        return $this->co_config_comissao = $co_config_comissao;
     }
 }

@@ -33,6 +33,8 @@ class ProfissionalEntidade extends AbstractEntidade
 	private $co_profissional_cargo;
 	private $co_jornada_trabalho;
     private $co_ausencia;
+    private $co_percentual_comissao;
+    private $co_servico_profissional;
 
 
 	/**
@@ -445,4 +447,36 @@ class ProfissionalEntidade extends AbstractEntidade
         $this->co_ausencia = $co_ausencia;
     }
 
+    /**
+     * @return PercentualComissaoEntidade $co_percentual_comissao
+     */
+    public function getCoPercentualComissao()
+    {
+        return $this->co_percentual_comissao;
+    }
+
+    /**
+     * @param mixed $co_percentual_comissao
+     */
+    public function setCoPercentualComissao($co_percentual_comissao)
+    {
+        $this->co_percentual_comissao = $co_percentual_comissao;
+    }
+
+    /**
+     * @return ServicoProfissionalEntidade $co_servico_profissional
+     */
+    public function getCoServicoProfissional()
+    {
+        return $this->co_servico_profissional;
+    }
+
+    /**
+     * @param $co_servico_profissional
+     * @return mixed
+     */
+    public function setCoServicoProfissional($co_servico_profissional)
+    {
+        return $this->co_servico_profissional = $co_servico_profissional;
+    }
 }
