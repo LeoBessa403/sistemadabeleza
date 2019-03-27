@@ -34,7 +34,7 @@
                         <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Servico");
-                        $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$', 'Observação', 'Ações');
+                        $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$', 'Assistente', 'Observação', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -79,6 +79,7 @@
                                     $grid->setColunas($res->getNoCategoriaServico());
                                     $grid->setColunas(Valida::Resumi($servico->getDsDescricao(), 300));
                                     $grid->setColunas($servico->getCoUltimoPrecoServico()->getNuValor());
+                                    $grid->setColunas(Valida::SituacaoSimNao($servico->getStAssistente()));
                                     $grid->setColunas($servico->getCoUltimoPrecoServico()->getDsObservacao());
                                     $grid->setColunas($acao, 2);
                                     $grid->criaLinha($servico->getCoServico());

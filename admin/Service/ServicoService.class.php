@@ -76,6 +76,7 @@ class  ServicoService extends AbstractService
             $servico[NU_DURACAO] = $result[NU_DURACAO];
             $servico[DS_DESCRICAO] = trim($result[DS_DESCRICAO]);
             $servico[CO_CATEGORIA_SERVICO] = $result[CO_CATEGORIA_SERVICO][0];
+            $servico[ST_ASSISTENTE] = (!empty($result[ST_ASSISTENTE])) ? SimNaoEnum::SIM : SimNaoEnum::NAO;
 
             $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado();
             $noImagem = Valida::ValNome(strtolower(trim($result[NO_SERVICO])));

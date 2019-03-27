@@ -14,6 +14,7 @@ class ServicoEntidade extends AbstractEntidade
 	private $co_servico;
 	private $dt_cadastro;
 	private $st_status;
+    private $st_assistente;
 	private $no_servico;
 	private $nu_duracao;
 	private $ds_descricao;
@@ -31,6 +32,7 @@ class ServicoEntidade extends AbstractEntidade
 			CO_SERVICO,
 			DT_CADASTRO,
 			ST_STATUS,
+            ST_ASSISTENTE,
 			NO_SERVICO,
 			NU_DURACAO,
 			DS_DESCRICAO,
@@ -98,6 +100,23 @@ class ServicoEntidade extends AbstractEntidade
 	public function setStStatus($st_status)
     {
         return $this->st_status = $st_status;
+    }
+
+    /**
+     * @return mixed $st_assistente
+     */
+    public function getStAssistente()
+    {
+        return $this->st_assistente;
+    }
+
+    /**
+     * @param $st_assistente
+     * @return mixed
+     */
+    public function setStAssistente($st_assistente)
+    {
+        return $this->st_assistente = $st_assistente;
     }
 
 	/**

@@ -85,6 +85,8 @@ class Servico extends AbstractController
             $servico = $servicoService->PesquisaUmRegistro($coServico);
             $res[ST_STATUS] = ($servico->getStStatus() == StatusUsuarioEnum::ATIVO)
                 ? 'checked' : '';
+            $res[ST_ASSISTENTE] = ($servico->getStAssistente() == SimNaoEnum::SIM)
+                ? 'checked' : '';
             $res[CO_CATEGORIA_SERVICO] = $servico->getCoCategoriaServico()->getCoCategoriaServico();
             $res[NO_SERVICO] = $servico->getNoServico();
             $res[NU_VALOR] = Valida::FormataMoeda($servico->getCoUltimoPrecoServico()->getNuValor());
@@ -108,6 +110,7 @@ class Servico extends AbstractController
         } else {
             // Inicia elementos do Form
             $res[ST_STATUS] = 'checked';
+            $res[ST_ASSISTENTE] = '';
         }
 
 

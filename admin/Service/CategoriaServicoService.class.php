@@ -42,15 +42,15 @@ class  CategoriaServicoService extends AbstractService
             $value = CategoriaServicoBaseEnum::getValorDescricao($valor);
             $categoriaServico[NO_CATEGORIA_SERVICO] = $valor;
             $servico[CO_CATEGORIA_SERVICO] = $this->Salva($categoriaServico);
+            $servico[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+            $servico[ST_STATUS] = StatusAcessoEnum::ATIVO;
+            $servico[ST_ASSISTENTE] = SimNaoEnum::NAO;
 
             foreach (ServicoBaseEnum::$descricao as $chave => $cat) {
                 $nuServico = ServicoBaseEnum::$categoria[$chave];
                 if ($nuServico == $value) {
                     $imagem[DS_CAMINHO] = 'servico_padrao/' . ServicoBaseEnum::$imagem[$chave];
                     $servico[CO_IMAGEM] = $imagemService->Salva($imagem);
-
-                    $servico[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                    $servico[ST_STATUS] = StatusAcessoEnum::ATIVO;
                     $servico[NO_SERVICO] = ServicoBaseEnum::$nome[$chave];
                     $servico[NU_DURACAO] = ServicoBaseEnum::$duracao[$chave];
                     $servico[DS_DESCRICAO] = ServicoBaseEnum::$descricao[$chave];
@@ -122,7 +122,7 @@ class  CategoriaServicoService extends AbstractService
         /** @var CategoriaServicoEntidade $categoria */
         foreach ($categorias as $categoria) {
             $comboCategorias[$categoria->getCoCategoriaServico()]
-                    = $categoria->getNoCategoriaServico();
+                = $categoria->getNoCategoriaServico();
         }
         return $comboCategorias;
     }
