@@ -16,5 +16,4 @@ class  HistoricoComissaoService extends AbstractService
         $this->ObjetoModel = New HistoricoComissaoModel();
     }
 
-
 }

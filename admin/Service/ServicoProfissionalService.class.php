@@ -16,5 +16,4 @@ class  ServicoProfissionalService extends AbstractService
         $this->ObjetoModel = New ServicoProfissionalModel();
     }
 
-
 }
