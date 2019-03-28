@@ -1,4 +1,4 @@
--- Atualizado em: 27/03/2019 18:06:21
+-- Atualizado em: 28/03/2019 16:53:11
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,10 @@ CREATE TABLE `tb_acesso` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO tb_acesso VALUES("190","rlgisvct9cv78k6rod9ei9lo36","2019-03-27 18:05:52","2019-03-27 18:36:21","A","1","209");
+INSERT INTO tb_acesso VALUES("196","rlgisvct9cv78k6rod9ei9lo36","2019-03-28 16:52:15","2019-03-28 17:23:11","A","1","215");
 
 
 
@@ -148,7 +148,7 @@ CREATE TABLE `tb_auditoria` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=370 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=380 DEFAULT CHARSET=utf8;
 
 
 
@@ -165,7 +165,7 @@ CREATE TABLE `tb_auditoria_itens` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=6065 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6114 DEFAULT CHARSET=utf8;
 
 
 
@@ -182,7 +182,7 @@ CREATE TABLE `tb_auditoria_tabela` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1134 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1151 DEFAULT CHARSET=utf8;
 
 
 
@@ -1242,7 +1242,7 @@ CREATE TABLE `tb_facilidade_pagamento` (
   PRIMARY KEY (`co_facilidade_pagamento`,`co_tipo_pagamento`,`co_facilidade_beneficio`),
   KEY `fk_TB_FACILIDADE_BENEFICIO_has_TB_TIPO_PAGAMENTO_TB_TIPO_PA_idx` (`co_tipo_pagamento`),
   KEY `fk_TB_FACILIDADE_BENEFICIO_has_TB_TIPO_PAGAMENTO_TB_FACILID_idx` (`co_facilidade_beneficio`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_facilidade_pagamento VALUES("19","1","40");
@@ -1254,6 +1254,10 @@ INSERT INTO tb_facilidade_pagamento VALUES("21","3","40");
 INSERT INTO tb_facilidade_pagamento VALUES("22","4","40");
 
 INSERT INTO tb_facilidade_pagamento VALUES("23","3","42");
+
+INSERT INTO tb_facilidade_pagamento VALUES("24","2","55");
+
+INSERT INTO tb_facilidade_pagamento VALUES("25","3","55");
 
 
 
@@ -1736,7 +1740,7 @@ INSERT INTO tb_historia VALUES("131","Taxas dos cartões","<p>Taxas cobradas dos
 
 INSERT INTO tb_historia VALUES("132","Histórico da taxas","<p>hist&oacute;rico da taxas cobradas dos cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:27:18","2018-10-26 20:29:19","C","5");
 
-INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n<p>&nbsp;</p>\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas, Comiss&atilde;o (&Uacute;nico Profissional, Com Assistente e Assistente) padr&atilde;o geral por servi&ccedil;o ou por profissional ou por Servi&ccedil;i / Profissional</p>","2018-09-25 14:31:36","2019-03-27 17:13:01","I","5");
+INSERT INTO tb_historia VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n<p>&nbsp;</p>\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas, Comiss&atilde;o (&Uacute;nico Profissional, Com Assistente e Assistente) padr&atilde;o geral por servi&ccedil;o ou por profissional ou por Servi&ccedil;i / Profissional</p>","2018-09-25 14:31:36","2019-03-28 16:52:51","I","5");
 
 INSERT INTO tb_historia VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2019-02-18 16:42:26","C","5");
 
@@ -1806,7 +1810,7 @@ CREATE TABLE `tb_historico_historia` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=592 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=593 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_historico_historia VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -2985,6 +2989,8 @@ INSERT INTO tb_historico_historia VALUES("590","13","13","2019-03-27 17:10:43","
 
 INSERT INTO tb_historico_historia VALUES("591","30","20","2019-03-27 17:13:01","133");
 
+INSERT INTO tb_historico_historia VALUES("592","30","15","2019-03-28 16:52:51","133");
+
 
 
 
@@ -3382,7 +3388,7 @@ CREATE TABLE `tb_pagamento_bandeira_cartao` (
   PRIMARY KEY (`co_pagamento_bandeira_cartao`,`co_facilidade_pagamento`,`co_bandeira_cartao`),
   KEY `fk_TB_FACILIDADE_PAGAMENTO_has_TB_BANDEIRA_CARTAO_TB_BANDEI_idx` (`co_bandeira_cartao`),
   KEY `fk_TB_FACILIDADE_PAGAMENTO_has_TB_BANDEIRA_CARTAO_TB_FACILI_idx` (`co_facilidade_pagamento`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_pagamento_bandeira_cartao VALUES("5","20","1");
@@ -3396,6 +3402,10 @@ INSERT INTO tb_pagamento_bandeira_cartao VALUES("8","21","1");
 INSERT INTO tb_pagamento_bandeira_cartao VALUES("9","21","2");
 
 INSERT INTO tb_pagamento_bandeira_cartao VALUES("10","21","4");
+
+INSERT INTO tb_pagamento_bandeira_cartao VALUES("11","24","1");
+
+INSERT INTO tb_pagamento_bandeira_cartao VALUES("12","24","2");
 
 
 
@@ -4266,13 +4276,13 @@ DROP TABLE IF EXISTS tb_taxa_cartao;
 
 CREATE TABLE `tb_taxa_cartao` (
   `co_taxa_cartao` int(10) NOT NULL AUTO_INCREMENT,
-  `nu_taxa_cartao` decimal(3,2) NOT NULL COMMENT 'Taxa Cobrada pelo Cartão (DÉBITO / CRÉDITO)',
-  `nu_taxa_antecipacao` decimal(3,2) DEFAULT NULL COMMENT 'Taxa Mensal de antecipação dos pagamento',
+  `nu_taxa_cartao` decimal(5,2) NOT NULL COMMENT 'Taxa Cobrada pelo Cartão (DÉBITO / CRÉDITO)',
+  `nu_taxa_antecipacao` decimal(5,2) DEFAULT NULL COMMENT 'Taxa Mensal de antecipação dos pagamento',
   `dt_cadastro` datetime NOT NULL,
   `co_pagamento_bandeira_cartao` int(10) NOT NULL,
   PRIMARY KEY (`co_taxa_cartao`,`co_pagamento_bandeira_cartao`),
   KEY `fk_TB_TAXA_CARTAO_TB_PAGAMENTO_BANDEIRA_CARTAO1_idx` (`co_pagamento_bandeira_cartao`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_taxa_cartao VALUES("7","0.11","0.00","2018-10-24 15:38:06","5");
@@ -4302,6 +4312,22 @@ INSERT INTO tb_taxa_cartao VALUES("32","7.89","9.99","2018-10-24 16:22:44","8");
 INSERT INTO tb_taxa_cartao VALUES("33","0.87","0.95","2018-10-24 16:22:44","9");
 
 INSERT INTO tb_taxa_cartao VALUES("34","0.04","5.69","2018-10-24 16:22:44","10");
+
+INSERT INTO tb_taxa_cartao VALUES("35","9.99","","2019-03-28 16:43:21","11");
+
+INSERT INTO tb_taxa_cartao VALUES("36","9.99","","2019-03-28 16:43:21","12");
+
+INSERT INTO tb_taxa_cartao VALUES("37","2.22","","2019-03-28 16:47:47","11");
+
+INSERT INTO tb_taxa_cartao VALUES("38","9.99","","2019-03-28 16:47:47","12");
+
+INSERT INTO tb_taxa_cartao VALUES("39","2.22","","2019-03-28 16:48:24","11");
+
+INSERT INTO tb_taxa_cartao VALUES("40","9.99","","2019-03-28 16:48:24","12");
+
+INSERT INTO tb_taxa_cartao VALUES("43","2.22","","2019-03-28 16:51:00","11");
+
+INSERT INTO tb_taxa_cartao VALUES("44","33.33","","2019-03-28 16:51:00","12");
 
 
 
@@ -4353,7 +4379,7 @@ CREATE TABLE `tb_trafego` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=210 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=216 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO tb_trafego VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -4390,7 +4416,7 @@ INSERT INTO tb_trafego VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO tb_trafego VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO tb_trafego VALUES("209","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO tb_trafego VALUES("215","127.0.0.1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 
