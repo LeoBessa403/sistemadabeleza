@@ -354,9 +354,11 @@ class Configuracao extends AbstractController
             }
         endif;
 
-        $res[ST_RECEBE_EMAIL_FATURAMENTO] = 'checked';
-        $res[ST_EDICAO_SERVICOS] = 'checked';
-        $res[ST_EDICAO_ATENDIMENTO] = '';
+        $res[ST_TAXA_ANTECIPACAO] = '';
+        $res[ST_TAXA_ADMINISTRATIVA] = '';
+        $res[ST_TAXA_CARTAO_CREDITO] = '';
+        $res[ST_TAXA_CARTAO_DEBITO] = '';
+        $res[ST_RECEBIMENTO_PRE_VENDA] = '';
         /** @var ConfigComissaoEntidade $configComissao */
         $configComissao = $configComissaoService->PesquisaUmQuando([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()

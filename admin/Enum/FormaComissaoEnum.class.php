@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class FomraComissaoEnum
+ * Class FormaComissaoEnum
  */
-class FomraComissaoEnum extends AbstractEnum
+class FormaComissaoEnum extends AbstractEnum
 {
     const GERAL = 1;
     const SERVICO = 2;
@@ -11,9 +11,9 @@ class FomraComissaoEnum extends AbstractEnum
     const SERVICO_PROFISSIONAL = 4;
 
     public static $descricao = [
-        FomraComissaoEnum::GERAL => 'Geral',
-        FomraComissaoEnum::SERVICO => 'Por Serviço',
-        FomraComissaoEnum::PROFISSIONAL => 'Por Profissional',
-        FomraComissaoEnum::SERVICO_PROFISSIONAL => 'Por Serviço/Profissional',
+        FormaComissaoEnum::GERAL => 'Geral',
+        FormaComissaoEnum::SERVICO => 'Por Serviço',
+        FormaComissaoEnum::PROFISSIONAL => 'Por Profissional',
+        FormaComissaoEnum::SERVICO_PROFISSIONAL => 'Por Serviço/Profissional',
     ];
 }

@@ -76,7 +76,7 @@
                                             </div>';
 
                                     $taxa = '<div class="col-md-12 input-group">
-                                    <input type="text" class="form-control porcentagem"
+                                    <input type="text" class="form-control porc-decimal"
                                           placeholder="0,00" id="bandeira-taxa-deb-' . $bandeira->getCoBandeiraCartao() . '"
                                           value="' . $valor . '" name="bandeira-taxa-deb[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
@@ -151,13 +151,13 @@
                                             </div>';
 
                                     $taxa = '<div class="col-md-12 input-group">
-                                    <input type="text" class="form-control porcentagem"
+                                    <input type="text" class="form-control porc-decimal"
                                           placeholder="0,00" id="bandeira-taxa-cred-' . $bandeira->getCoBandeiraCartao() . '"
                                           value="' . $valor . '" name="bandeira-taxa-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">
                                     %</span></div>';
                                     $taxaAntec = '<div class="col-md-12 input-group">
-                                    <input type="text" class="form-control porcentagem"
+                                    <input type="text" class="form-control porc-decimal"
                                           placeholder="0,00" id="bandeira-taxaAntec-cred-' . $bandeira->getCoBandeiraCartao() . '"
                                            value="' . $valorAnt . '" name="bandeira-taxaAntec-cred[' . $bandeira->getCoBandeiraCartao() . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">

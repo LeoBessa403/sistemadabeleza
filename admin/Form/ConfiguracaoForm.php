@@ -96,8 +96,10 @@ class ConfiguracaoForm
             ->CriaInpunt();
 
         $status = ["" => Mensagens::MSG_SEM_ITEM_SELECIONADO,
-            StatusAgendamento::AGENDADO => StatusAgendamento::getDescricaoValor(StatusAgendamento::AGENDADO),
-            StatusAgendamento::CONFIRMADO => StatusAgendamento::getDescricaoValor(StatusAgendamento::CONFIRMADO)];
+            StatusAgendamentoEnum::AGENDADO =>
+                StatusAgendamentoEnum::getDescricaoValor(StatusAgendamentoEnum::AGENDADO),
+            StatusAgendamentoEnum::CONFIRMADO =>
+                StatusAgendamentoEnum::getDescricaoValor(StatusAgendamentoEnum::CONFIRMADO)];
         $formulario
             ->setId(ST_STATUS_AGENDAMENTO_SITE)
             ->setLabel("Status Agendamento")
@@ -189,50 +191,104 @@ class ConfiguracaoForm
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Receber E-mail de Faturamento?")
-            ->setClasses($res[ST_RECEBE_EMAIL_FATURAMENTO])
-            ->setId(ST_RECEBE_EMAIL_FATURAMENTO)
+            ->setLabel("Considerar Taxas de antecipação?")
+            ->setClasses($res[ST_TAXA_ANTECIPACAO])
+            ->setId(ST_TAXA_ANTECIPACAO)
             ->setType("checkbox")
-            ->setInfo('Receber E-mail de Faturamento diário')
-            ->setTamanhoInput(12)
-            ->setOptions($label_options2)
-            ->CriaInpunt();
-
-        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
-        $formulario
-            ->setLabel("Edição dos Serviços?")
-            ->setClasses($res[ST_EDICAO_SERVICOS])
-            ->setId(ST_EDICAO_SERVICOS)
-            ->setType("checkbox")
-            ->setInfo('Aceita Edição dos Serviços prestados')
-            ->setTamanhoInput(12)
-            ->setOptions($label_options2)
-            ->CriaInpunt();
-
-        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
-        $formulario
-            ->setLabel("Edição dos Atendimentos?")
-            ->setClasses($res[ST_EDICAO_ATENDIMENTO])
-            ->setId(ST_EDICAO_ATENDIMENTO)
-            ->setType("checkbox")
-            ->setInfo('Aceita Edição dos atendimentos futuros.')
-            ->setTamanhoInput(12)
+            ->setInfo('Desconta as Taxas de antecipação')
+            ->setTamanhoInput(6)
             ->setOptions($label_options2)
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_PERIODO_AGENDA)
-            ->setClasses("numero")
-            ->setLabel("Número de dias da agenda")
-            ->setInfo('Dias abertos da agenda futura.')
+            ->setLabel("Considerar Taxas dos cartões?")
+            ->setClasses($res[ST_TAXA_ADMINISTRATIVA])
+            ->setId(ST_TAXA_ADMINISTRATIVA)
+            ->setType("checkbox")
+            ->setInfo('Considerar ou não as Taxas das administradoras das operados dos cartões')
+            ->setTamanhoInput(6)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setLabel("Considerar Taxas cartão de crédito?")
+            ->setClasses($res[ST_TAXA_CARTAO_CREDITO])
+            ->setId(ST_TAXA_CARTAO_CREDITO)
+            ->setType("checkbox")
+            ->setInfo('Considerar ou não as Taxas de  cartão de crédito')
+            ->setTamanhoInput(6)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setLabel("Considerar Taxas cartão de débito?")
+            ->setClasses($res[ST_TAXA_CARTAO_DEBITO])
+            ->setId(ST_TAXA_CARTAO_DEBITO)
+            ->setType("checkbox")
+            ->setInfo('Considerar ou não as Taxas de  cartão de débito')
+            ->setTamanhoInput(6)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setLabel("Recebi comissão antes?")
+            ->setClasses($res[ST_RECEBIMENTO_PRE_VENDA])
+            ->setId(ST_RECEBIMENTO_PRE_VENDA)
+            ->setType("checkbox")
+            ->setInfo('Recebi comissão antes de executar o serviço')
+            ->setTamanhoInput(6)
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $options = FormaComissaoEnum::$descricao;
+        $formulario
+            ->setType("select")
+            ->setLabel("Forma de comissão")
+            ->setId(NU_FORMA_COMISSAO)
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->setTamanhoInput(6)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL)
+            ->setClasses("porc-int ob")
+            ->setLabel("Único Profissional")
+            ->setIcon("%", 'dir')
+            ->setInfo('Comissão quando for Único Profissional.')
             ->setTamanhoInput(4)
             ->CriaInpunt();
 
-        if (!empty($res[CO_CONFIG_PROFISSIONAL])):
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE)
+            ->setClasses("porc-int ob")
+            ->setIcon("%", 'dir')
+            ->setLabel("Com Assistente")
+            ->setInfo('Comissão quando for Com Assistente.')
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE)
+            ->setClasses("porc-int ob")
+            ->setIcon("%", 'dir')
+            ->setLabel("Assistente")
+            ->setInfo('Comissão quando for Assistente')
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        if (!empty($res[CO_CONFIG_COMISSAO])):
             $formulario
                 ->setType("hidden")
-                ->setId(CO_CONFIG_PROFISSIONAL)
-                ->setValues($res[CO_CONFIG_PROFISSIONAL])
+                ->setId(CO_CONFIG_COMISSAO)
+                ->setValues($res[CO_CONFIG_COMISSAO])
+                ->CriaInpunt();
+
+            // Campo para Validar a mudança para avisar o Usuário que esta modificando todas as comissões ja salvas
+            $formulario
+                ->setType("hidden")
+                ->setId(NU_FORMA_COMISSAO)
+                ->setValues($res[NU_FORMA_COMISSAO])
                 ->CriaInpunt();
         endif;
 
