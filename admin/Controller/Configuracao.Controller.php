@@ -366,13 +366,19 @@ class Configuracao extends AbstractController
         ]);
         if ($configComissao) {
             debug($configComissao);
+            /** @var HistoricoComissaoEntidade $ultHistConfigCom */
+            $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
             $res[NU_PERIODO_AGENDA] = $configComissao->getNuPeriodoAgenda();
             $res[CO_CONFIG_PROFISSIONAL] = $configComissao->getCoConfigProfissional();
-            $res[ST_RECEBE_EMAIL_FATURAMENTO] = ($configComissao->getStRecebeEmailFaturamento() == 'S')
+            $res[ST_TAXA_ANTECIPACAO] = ($configComissao->get() == 'S')
                 ? 'checked' : '';
-            $res[ST_EDICAO_SERVICOS] = ($configComissao->getStEdicaoServicos() == 'S')
+            $res[ST_TAXA_ADMINISTRATIVA] = ($configComissao->getStRecebeEmailFaturamento() == 'S')
                 ? 'checked' : '';
-            $res[ST_EDICAO_ATENDIMENTO] = ($configComissao->getStEdicaoAtendimento() == 'S')
+            $res[ST_TAXA_CARTAO_CREDITO] = ($configComissao->getStRecebeEmailFaturamento() == 'S')
+                ? 'checked' : '';
+            $res[ST_TAXA_CARTAO_DEBITO] = ($configComissao->getStEdicaoServicos() == 'S')
+                ? 'checked' : '';
+            $res[ST_RECEBIMENTO_PRE_VENDA] = ($configComissao->getStEdicaoAtendimento() == 'S')
                 ? 'checked' : '';
         }
         $this->form = ConfiguracaoForm::configComissao($res);
