@@ -136,7 +136,7 @@ class PercentualComissaoEntidade extends AbstractEntidade
     }
 
 	/**
-	* @return HistoricomissaoEntidade $co_historico_comissao
+	* @return HistoricoComissaoService $co_historico_comissao
     */
 	public function getCoHistoricoComissao()
     {

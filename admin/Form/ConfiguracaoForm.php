@@ -240,6 +240,33 @@ class ConfiguracaoForm
             ->setOptions($label_options2)
             ->CriaInpunt();
 
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL)
+            ->setClasses("porc-int ob")
+            ->setLabel("Único Profissional")
+            ->setIcon("%", 'dir')
+            ->setInfo('Comissão quando for Único Profissional.')
+            ->setTamanhoInput(6)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE)
+            ->setClasses("porc-int ob")
+            ->setIcon("%", 'dir')
+            ->setLabel("Com Assistente")
+            ->setInfo('Comissão quando for Com Assistente.')
+            ->setTamanhoInput(6)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE)
+            ->setClasses("porc-int ob")
+            ->setIcon("%", 'dir')
+            ->setLabel("Assistente")
+            ->setInfo('Comissão quando for O Assistente.')
+            ->setTamanhoInput(6)
+            ->CriaInpunt();
+
         $options = FormaComissaoEnum::$descricao;
         $formulario
             ->setType("select")
@@ -251,30 +278,11 @@ class ConfiguracaoForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL)
-            ->setClasses("porc-int ob")
-            ->setLabel("Único Profissional")
-            ->setIcon("%", 'dir')
-            ->setInfo('Comissão quando for Único Profissional.')
-            ->setTamanhoInput(4)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE)
-            ->setClasses("porc-int ob")
-            ->setIcon("%", 'dir')
-            ->setLabel("Com Assistente")
-            ->setInfo('Comissão quando for Com Assistente.')
-            ->setTamanhoInput(4)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE)
-            ->setClasses("porc-int ob")
-            ->setIcon("%", 'dir')
-            ->setLabel("Assistente")
-            ->setInfo('Comissão quando for Assistente')
-            ->setTamanhoInput(4)
+            ->setId(DT_VALIDO)
+            ->setClasses("ob data")
+            ->setLabel("Data Válida")
+            ->setInfo('A partir da data é válido a configuração')
+            ->setTamanhoInput(6)
             ->CriaInpunt();
 
         if (!empty($res[CO_CONFIG_COMISSAO])):

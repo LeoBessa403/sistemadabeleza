@@ -350,7 +350,7 @@ class Configuracao extends AbstractController
         if (!empty($_POST[$id])):
             $retorno = $configComissaoService->salvaConfigComissao($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ProfissionalConfiguracao/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ComissaoConfiguracao/');
             }
         endif;
 
@@ -359,11 +359,13 @@ class Configuracao extends AbstractController
         $res[ST_TAXA_CARTAO_CREDITO] = '';
         $res[ST_TAXA_CARTAO_DEBITO] = '';
         $res[ST_RECEBIMENTO_PRE_VENDA] = '';
+        $res[DT_VALIDO] = Valida::DataAtual('d/m/Y');
         /** @var ConfigComissaoEntidade $configComissao */
         $configComissao = $configComissaoService->PesquisaUmQuando([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         if ($configComissao) {
+            debug($configComissao);
             $res[NU_PERIODO_AGENDA] = $configComissao->getNuPeriodoAgenda();
             $res[CO_CONFIG_PROFISSIONAL] = $configComissao->getCoConfigProfissional();
             $res[ST_RECEBE_EMAIL_FATURAMENTO] = ($configComissao->getStRecebeEmailFaturamento() == 'S')

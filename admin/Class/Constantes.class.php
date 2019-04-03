@@ -141,5 +141,5 @@ define('PRECO_SERVICO_SERVICE', 'PrecoServicoService');
 define('SERVICO_SERVICE', 'ServicoService');
 define('CONFIG_COMISSAO_SERVICE', 'ConfigComissaoService');
 define('PERCENTUAL_COMISSAO_SERVICE', 'PercentualComissaoService');
-define('SERVICO_PROFISSIONAL_SERVICE', 'ServiprofissionalService');
-define('HISTORICO_COMISSAO_SERVICE', 'HistoricomissaoService');
+define('SERVICO_PROFISSIONAL_SERVICE', 'ServicoProfissionalService');
+define('HISTORICO_COMISSAO_SERVICE', 'HistoricoComissaoService');

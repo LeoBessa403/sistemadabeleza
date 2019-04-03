@@ -18,34 +18,71 @@ class  ConfigComissaoService extends AbstractService
 
     public function salvaConfigComissao($dados)
     {
+        /** @var HistoricoComissaoService $historicoComissaoService */
+        $historicoComissaoService = $this->getService(HISTORICO_COMISSAO_SERVICE);
+        /** @var PercentualComissaoService $percentualComissaoService */
+        $percentualComissaoService = $this->getService(PERCENTUAL_COMISSAO_SERVICE);
+
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
         $session = new Session();
         $retorno = [
             SUCESSO => false,
             MSG => null
         ];
-        $configPro[NU_PERIODO_AGENDA] = $dados[NU_PERIODO_AGENDA];
-        $configPro[ST_RECEBE_EMAIL_FATURAMENTO] = (!empty($dados[ST_RECEBE_EMAIL_FATURAMENTO])) ? "S" : "N";
-        $configPro[ST_EDICAO_SERVICOS] = (!empty($dados[ST_EDICAO_SERVICOS])) ? "S" : "N";
-        $configPro[ST_EDICAO_ATENDIMENTO] = (!empty($dados[ST_EDICAO_ATENDIMENTO])) ? "S" : "N";
-        $configPro[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        $configComissaoValidador = new ConfigComissaoValidador();
+        /** @var ConfigComissaoValidador $validador */
+        $validador = $configComissaoValidador->validarConfigComissao($dados);
+        if ($validador[SUCESSO]) {
+            $PDO->beginTransaction();
+            $configCom[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
-        if (!empty($_POST[CO_CONFIG_PROFISSIONAL])):
-            $coConfigPro = $dados[CO_CONFIG_PROFISSIONAL];
-            $retorno[SUCESSO] = $this->Salva($configPro, $coConfigPro);
-            $session->setSession(MENSAGEM, ATUALIZADO);
-        else:
-            $retorno[SUCESSO] = $this->Salva($configPro);
-            $session->setSession(MENSAGEM, CADASTRADO);
-        endif;
+            if (!empty($_POST[CO_CONFIG_COMISSAO])):
+                $histCom[CO_CONFIG_COMISSAO] = $dados[CO_CONFIG_COMISSAO];
+                $session->setSession(MENSAGEM, ATUALIZADO);
+            else:
+                $configCom[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+                $configCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+                $histCom[CO_CONFIG_COMISSAO] = $this->Salva($configCom);
+                $session->setSession(MENSAGEM, CADASTRADO);
+            endif;
 
-        if ($retorno[SUCESSO]) {
-            $retorno[SUCESSO] = true;
+            $histCom[ST_TAXA_ANTECIPACAO] = (!empty($dados[ST_TAXA_ANTECIPACAO])) ? "S" : "N";
+            $histCom[ST_TAXA_ADMINISTRATIVA] = (!empty($dados[ST_TAXA_ADMINISTRATIVA])) ? "S" : "N";
+            $histCom[ST_TAXA_CARTAO_CREDITO] = (!empty($dados[ST_TAXA_CARTAO_CREDITO])) ? "S" : "N";
+            $histCom[ST_TAXA_CARTAO_DEBITO] = (!empty($dados[ST_TAXA_CARTAO_DEBITO])) ? "S" : "N";
+            $histCom[ST_RECEBIMENTO_PRE_VENDA] = (!empty($dados[ST_RECEBIMENTO_PRE_VENDA])) ? "S" : "N";
+            $histCom[NU_FORMA_COMISSAO] = $dados[NU_FORMA_COMISSAO][0];
+            $histCom[DT_VALIDO] = Valida::DataDBDate($dados[DT_VALIDO]);
+            $histCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+
+            $percCom[CO_HISTORICO_COMISSAO] = $historicoComissaoService->Salva($histCom);
+            $percCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+            $percCom[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
+
+            foreach (TipoComissaoEnum::$descricao as $tipoComissao => $descrição){
+                $percCom[NU_TIPO_COMISSAO] = $tipoComissao;
+                $percCom[NU_COMISSAO] = $dados[NU_TIPO_COMISSAO.$tipoComissao];
+                $retorno[SUCESSO] = $percentualComissaoService->Salva($percCom);
+            }
+
+            if ($retorno[SUCESSO]) {
+                $retorno[SUCESSO] = true;
+                $PDO->commit();
+            } else {
+                Notificacoes::geraMensagem(
+                    'Não foi possível realizar a ação',
+                    TiposMensagemEnum::ALERTA
+                );
+                $retorno[SUCESSO] = false;
+                $PDO->rollBack();
+            }
         } else {
             Notificacoes::geraMensagem(
-                'Não foi possível realizar a ação',
+                $validador[MSG],
                 TiposMensagemEnum::ALERTA
             );
-            $retorno[SUCESSO] = false;
+            $retorno = $validador;
         }
         return $retorno;
     }

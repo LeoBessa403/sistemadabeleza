@@ -14,6 +14,7 @@ class ConfigComissaoEntidade extends AbstractEntidade
 	private $co_config_comissao;
 	private $dt_cadastro;
 	private $co_assinante;
+	private $co_historico_comissao;
 
 
 	/**
@@ -87,6 +88,23 @@ class ConfigComissaoEntidade extends AbstractEntidade
 	public function setCoAssinante($co_assinante)
     {
         return $this->co_assinante = $co_assinante;
+    }
+
+    /**
+     * @return HistoricoComissaoService $co_historico_comissao
+     */
+    public function getCoHistoricoComissao()
+    {
+        return $this->co_historico_comissao;
+    }
+
+    /**
+     * @param $co_historico_comissao
+     * @return mixed
+     */
+    public function setCoHistoricoComissao($co_historico_comissao)
+    {
+        return $this->co_historico_comissao = $co_historico_comissao;
     }
 
 }
