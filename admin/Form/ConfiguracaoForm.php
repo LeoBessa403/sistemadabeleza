@@ -295,7 +295,7 @@ class ConfiguracaoForm
             // Campo para Validar a mudança para avisar o Usuário que esta modificando todas as comissões ja salvas
             $formulario
                 ->setType("hidden")
-                ->setId(NU_FORMA_COMISSAO)
+                ->setId(NU_FORMA_COMISSAO.'-valida')
                 ->setValues($res[NU_FORMA_COMISSAO])
                 ->CriaInpunt();
         endif;

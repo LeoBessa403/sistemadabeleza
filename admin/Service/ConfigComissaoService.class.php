@@ -35,18 +35,18 @@ class  ConfigComissaoService extends AbstractService
         $validador = $configComissaoValidador->validarConfigComissao($dados);
         if ($validador[SUCESSO]) {
             $PDO->beginTransaction();
-            $configCom[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
             if (!empty($_POST[CO_CONFIG_COMISSAO])):
-                $histCom[CO_CONFIG_COMISSAO] = $dados[CO_CONFIG_COMISSAO];
+                $coConfigCom = $dados[CO_CONFIG_COMISSAO];
                 $session->setSession(MENSAGEM, ATUALIZADO);
             else:
                 $configCom[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
                 $configCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $histCom[CO_CONFIG_COMISSAO] = $this->Salva($configCom);
+                $coConfigCom = $this->Salva($configCom);
                 $session->setSession(MENSAGEM, CADASTRADO);
             endif;
 
+            $histCom[CO_CONFIG_COMISSAO] = $coConfigCom;
             $histCom[ST_TAXA_ANTECIPACAO] = (!empty($dados[ST_TAXA_ANTECIPACAO])) ? "S" : "N";
             $histCom[ST_TAXA_ADMINISTRATIVA] = (!empty($dados[ST_TAXA_ADMINISTRATIVA])) ? "S" : "N";
             $histCom[ST_TAXA_CARTAO_CREDITO] = (!empty($dados[ST_TAXA_CARTAO_CREDITO])) ? "S" : "N";
@@ -56,11 +56,13 @@ class  ConfigComissaoService extends AbstractService
             $histCom[DT_VALIDO] = Valida::DataDBDate($dados[DT_VALIDO]);
             $histCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
 
-            $percCom[CO_HISTORICO_COMISSAO] = $historicoComissaoService->Salva($histCom);
+
+            $coHistCom = $historicoComissaoService->Salva($histCom);
             $percCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $percCom[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
 
             foreach (TipoComissaoEnum::$descricao as $tipoComissao => $descrição){
+                $percCom[CO_HISTORICO_COMISSAO] = $coHistCom;
                 $percCom[NU_TIPO_COMISSAO] = $tipoComissao;
                 $percCom[NU_COMISSAO] = $dados[NU_TIPO_COMISSAO.$tipoComissao];
                 $retorno[SUCESSO] = $percentualComissaoService->Salva($percCom);

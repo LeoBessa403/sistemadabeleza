@@ -801,7 +801,7 @@ class Relacionamentos
                 (CO_HISTORICO_COMISSAO) => Array(
                     ('Campo') => CO_CONFIG_COMISSAO,
                     ('Entidade') => 'HistoricoComissaoEntidade',
-                    ('Tipo') => '1',
+                    ('Tipo') => '2',
                 ),
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,

@@ -365,21 +365,29 @@ class Configuracao extends AbstractController
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         if ($configComissao) {
-            debug($configComissao);
             /** @var HistoricoComissaoEntidade $ultHistConfigCom */
             $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
-            $res[NU_PERIODO_AGENDA] = $configComissao->getNuPeriodoAgenda();
-            $res[CO_CONFIG_PROFISSIONAL] = $configComissao->getCoConfigProfissional();
-            $res[ST_TAXA_ANTECIPACAO] = ($configComissao->get() == 'S')
+            $percAtul = $ultHistConfigCom->getPercentuaisComissao();
+            $res[NU_FORMA_COMISSAO] = $ultHistConfigCom->getNuFormaComissao();
+            $res[NU_FORMA_COMISSAO.'-valida'] =$ultHistConfigCom->getNuFormaComissao();
+            $res[CO_CONFIG_COMISSAO] = $configComissao->getCoConfigComissao();
+            $res[ST_TAXA_ANTECIPACAO] = ($ultHistConfigCom->getStTaxaAntecipacao() == 'S')
                 ? 'checked' : '';
-            $res[ST_TAXA_ADMINISTRATIVA] = ($configComissao->getStRecebeEmailFaturamento() == 'S')
+            $res[ST_TAXA_ADMINISTRATIVA] = ($ultHistConfigCom->getStTaxaAdministrativa() == 'S')
                 ? 'checked' : '';
-            $res[ST_TAXA_CARTAO_CREDITO] = ($configComissao->getStRecebeEmailFaturamento() == 'S')
+            $res[ST_TAXA_CARTAO_CREDITO] = ($ultHistConfigCom->getStTaxaCartaoCredito() == 'S')
                 ? 'checked' : '';
-            $res[ST_TAXA_CARTAO_DEBITO] = ($configComissao->getStEdicaoServicos() == 'S')
+            $res[ST_TAXA_CARTAO_DEBITO] = ($ultHistConfigCom->getStTaxaCartaoDebito() == 'S')
                 ? 'checked' : '';
-            $res[ST_RECEBIMENTO_PRE_VENDA] = ($configComissao->getStEdicaoAtendimento() == 'S')
+            $res[ST_RECEBIMENTO_PRE_VENDA] = ($ultHistConfigCom->getStRecebimentoPreVenda() == 'S')
                 ? 'checked' : '';
+            $res[DT_VALIDO] = Valida::DataShow($ultHistConfigCom->getDtValido());
+            $res[NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
+            $res[NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
+            $res[NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                = $percAtul[TipoComissaoEnum::ASSISTENTE];
         }
         $this->form = ConfiguracaoForm::configComissao($res);
     }

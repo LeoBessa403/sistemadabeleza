@@ -239,4 +239,17 @@ class HistoricoComissaoEntidade extends AbstractEntidade
     {
         return $this->co_percentual_comissao = $co_percentual_comissao;
     }
+
+    /**
+     * @return array
+     */
+    public function getPercentuaisComissao()
+    {
+        $percAtual = [];
+        /** @var PercentualComissaoEntidade $percCom */
+        foreach ($this->getCoPercentualComissao() as $percCom){
+            $percAtual[$percCom->getNuTipoComissao()] = $percCom->getNuComissao();
+        }
+        return $percAtual;
+    }
 }
