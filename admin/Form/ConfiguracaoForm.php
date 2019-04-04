@@ -231,7 +231,7 @@ class ConfiguracaoForm
             ->CriaInpunt();
 
         $formulario
-            ->setLabel("Recebi comissão antes?")
+            ->setLabel("Recebe comissão antes?")
             ->setClasses($res[ST_RECEBIMENTO_PRE_VENDA])
             ->setId(ST_RECEBIMENTO_PRE_VENDA)
             ->setType("checkbox")

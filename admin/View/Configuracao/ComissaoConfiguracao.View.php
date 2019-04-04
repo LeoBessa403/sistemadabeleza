@@ -17,7 +17,12 @@
 
                             </ol>
                             <div class="page-header">
-                                    <h1>Configuração <small>Comissão</small></h1>
+                                    <h1>Configuração <small>Comissão</small>
+                                <?php Valida::geraBtn(
+                                    'Histórico Configuração de Comissão', 'HistoricoComissao',
+                                    'btn-med-grey', 'configComissao' , 'clip-settings'
+                                ); ?>
+                                    </h1>
                             </div>
                             <!-- end: PAGE TITLE & BREADCRUMB -->
                     </div>

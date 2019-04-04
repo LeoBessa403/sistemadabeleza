@@ -22,6 +22,7 @@ class HistoricoComissaoEntidade extends AbstractEntidade
 	private $nu_forma_comissao;
 	private $co_config_comissao;
     private $co_percentual_comissao;
+    private $co_usuario;
 
 
 	/**
@@ -40,6 +41,7 @@ class HistoricoComissaoEntidade extends AbstractEntidade
 			ST_RECEBIMENTO_PRE_VENDA,
 			NU_FORMA_COMISSAO,
 			CO_CONFIG_COMISSAO,
+			CO_USUARIO,
 		];
     }
 
@@ -252,4 +254,23 @@ class HistoricoComissaoEntidade extends AbstractEntidade
         }
         return $percAtual;
     }
+
+    /**
+     * @return UsuarioEntidade $co_usuario
+     */
+    public function getCoUsuario()
+    {
+        return $this->co_usuario;
+    }
+
+    /**
+     * @param $co_usuario
+     * @return mixed
+     */
+    public function setCoUsuario($co_usuario)
+    {
+        $this->co_usuario = $co_usuario;
+    }
+
+
 }

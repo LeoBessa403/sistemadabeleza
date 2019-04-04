@@ -820,6 +820,11 @@ class Relacionamentos
                     ('Entidade') => 'PercentualComissaoEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
             ),
             (PercentualComissaoEntidade::TABELA) => Array(
                 (CO_HISTORICO_COMISSAO) => Array(

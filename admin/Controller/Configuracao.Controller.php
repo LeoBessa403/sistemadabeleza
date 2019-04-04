@@ -11,6 +11,7 @@ class Configuracao extends AbstractController
     public $pagBandCartao;
     public $motivosDesconto;
     public $motivosDescontoAss;
+    public $configComissao;
 
     public function DiaEspecialConfiguracao()
     {
@@ -390,6 +391,27 @@ class Configuracao extends AbstractController
                 = $percAtul[TipoComissaoEnum::ASSISTENTE];
         }
         $this->form = ConfiguracaoForm::configComissao($res);
+    }
+
+    public function HistoricoComissao()
+    {
+        /** @var ConfigComissaoService $configComissaoService */
+        $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
+
+        /** @var ConfigComissaoEntidade $configComissao */
+        $configComissao = $configComissaoService->PesquisaUmQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        if ($configComissao) {
+            $this->configComissao = $configComissao;
+        } else {
+            Notificacoes::geraMensagem(
+                'Não Existe Histórico de Configuração de Comissão',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ComissaoConfiguracao/');
+        }
+
     }
 }
    

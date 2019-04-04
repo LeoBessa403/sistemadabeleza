@@ -55,6 +55,7 @@ class  ConfigComissaoService extends AbstractService
             $histCom[NU_FORMA_COMISSAO] = $dados[NU_FORMA_COMISSAO][0];
             $histCom[DT_VALIDO] = Valida::DataDBDate($dados[DT_VALIDO]);
             $histCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+            $histCom[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
 
 
             $coHistCom = $historicoComissaoService->Salva($histCom);
