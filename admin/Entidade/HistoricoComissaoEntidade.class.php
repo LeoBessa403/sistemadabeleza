@@ -21,6 +21,7 @@ class HistoricoComissaoEntidade extends AbstractEntidade
 	private $st_recebimento_pre_venda;
 	private $nu_forma_comissao;
 	private $co_config_comissao;
+    private $co_percentual_comissao;
 
 
 	/**
@@ -222,4 +223,20 @@ class HistoricoComissaoEntidade extends AbstractEntidade
         return $this->co_config_comissao = $co_config_comissao;
     }
 
+    /**
+     * @return PercentualComissaoEntidade $co_percentual_comissao
+     */
+    public function getCoPercentualComissao()
+    {
+        return $this->co_percentual_comissao;
+    }
+
+    /**
+     * @param $co_percentual_comissao
+     * @return mixed
+     */
+    public function setCoPercentualComissao($co_percentual_comissao)
+    {
+        return $this->co_percentual_comissao = $co_percentual_comissao;
+    }
 }

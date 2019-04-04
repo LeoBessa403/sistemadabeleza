@@ -801,7 +801,7 @@ class Relacionamentos
                 (CO_HISTORICO_COMISSAO) => Array(
                     ('Campo') => CO_CONFIG_COMISSAO,
                     ('Entidade') => 'HistoricoComissaoEntidade',
-                    ('Tipo') => '2',
+                    ('Tipo') => '1',
                 ),
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,
@@ -815,7 +815,7 @@ class Relacionamentos
                     ('Entidade') => 'ConfigComissaoEntidade',
                     ('Tipo') => '1',
                 ),
-                (CO_HISTORICO_COMISSAO) => Array(
+                (CO_PERCENTUAL_COMISSAO) => Array(
                     ('Campo') => CO_HISTORICO_COMISSAO,
                     ('Entidade') => 'PercentualComissaoEntidade',
                     ('Tipo') => '2',
