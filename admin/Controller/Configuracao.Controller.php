@@ -370,7 +370,7 @@ class Configuracao extends AbstractController
             $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
             $percAtul = $ultHistConfigCom->getPercentuaisComissao();
             $res[NU_FORMA_COMISSAO] = $ultHistConfigCom->getNuFormaComissao();
-            $res[NU_FORMA_COMISSAO.'-valida'] =$ultHistConfigCom->getNuFormaComissao();
+            $res[NU_FORMA_COMISSAO . '-valida'] = $ultHistConfigCom->getNuFormaComissao();
             $res[CO_CONFIG_COMISSAO] = $configComissao->getCoConfigComissao();
             $res[ST_TAXA_ANTECIPACAO] = ($ultHistConfigCom->getStTaxaAntecipacao() == 'S')
                 ? 'checked' : '';
@@ -422,19 +422,26 @@ class Configuracao extends AbstractController
         $configComissao = $configComissaoService->PesquisaUmQuando([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
-        $dados['tipoComissao'] =
-            ($configComissao->getCoUltimoHistoricoComissao()->getNuFormaComissao() == $formaComissao)
-                ? true : false;
-        if($dados['tipoComissao']){
+        switch ($configComissao->getCoUltimoHistoricoComissao()->getNuFormaComissao()) {
+            case FormaComissaoEnum::SERVICO_PROFISSIONAL:
+                $dados['tipoComissao'] = FormaComissaoEnum::$descricao[FormaComissaoEnum::SERVICO_PROFISSIONAL];
+                break;
+            case $formaComissao:
+                $dados['tipoComissao'] = $formaComissao;
+                break;
+            default:
+                $dados['tipoComissao'] = false;
+                break;
+        }
+        if ($dados['tipoComissao']) {
             $perc = $configComissao->getCoUltimoHistoricoComissao()->getCoPercentualComissao();
             $comissao = [];
             /** @var PercentualComissaoEntidade $percent */
-            foreach ($perc as $percent){
+            foreach ($perc as $percent) {
                 $comissao[$percent->getNuTipoComissao()] = $percent->getNuComissao();
             }
             $dados['comissao'] = $comissao;
         }
-
         return $dados;
     }
 }

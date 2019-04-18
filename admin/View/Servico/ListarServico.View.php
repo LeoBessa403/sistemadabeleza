@@ -32,7 +32,7 @@
                     </div>
                     <div class="panel-body">
                         <?php
-                        if ($tipoComissao) { ?>
+                        if ($tipoComissao == FormaComissaoEnum::SERVICO) { ?>
                             <div class="alert alert-block alert-warning fade in col-md-3">
                                 <h4 class="alert-heading"><i class="fa fa-calendar"></i> Legenda</h4>
                                 <b>UP: Comissão quando for Único Profissional.</b><br>
@@ -45,7 +45,7 @@
                         Modal::confirmacao("confirma_Servico");
                         $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
                             'Assistente', 'Observação', 'Ações');
-                        if ($tipoComissao) {
+                        if ($tipoComissao == FormaComissaoEnum::SERVICO) {
                             $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
                                 'Comissão', 'Assistente', 'Observação', 'Ações');
                         }
@@ -61,29 +61,42 @@
                                     $acao = '<a href="' . PASTAADMIN . 'Servico/CadastroServico/' .
                                         Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" class="btn btn-primary tooltips"
                                     data-original-title="Editar Registro" data-placement="top">
-                                     <i class="fa fa-clipboard"></i>
-                                 </a>';
+                                     <i class="fa fa-clipboard"></i></a>';
                                     $botao = 1;
                                     if ($tipoComissao) {
                                         $botao = 2;
-                                        $acao .= ' <a href="' . PASTAADMIN . 'Servico/ComissaoServico/' .
-                                            Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" 
-                                                class="btn btn-success tooltips" data-original-title="Comissão do Serviço" 
-                                                data-placement="top"> <i class="fa fa-money"></i> </a>';
-                                        $comiss = '';
-                                        if ($servico->getCoPercentualComissao()) {
-                                            $comissao2 = [];
-                                            /** @var PercentualComissaoEntidade $percent */
-                                            foreach ($servico->getCoPercentualComissao() as $percent) {
-                                                $comissao2[$percent->getNuTipoComissao()] = $percent->getNuComissao();
-                                            }
-                                            $comiss = 'UP: <b>' . $comissao2[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
-                                            $comiss .= 'CA: <b>' . $comissao2[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
-                                            $comiss .= 'OA: <b>' . $comissao2[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+
+                                        if ($tipoComissao ==
+                                            FormaComissaoEnum::$descricao[FormaComissaoEnum::SERVICO_PROFISSIONAL]) {
+                                            $comiss = '';
+
+                                            $acao .= ' <a href="' . PASTAADMIN . 'Servico/ComissaoServicoProfissional/' .
+                                                Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" 
+                                                class="btn btn-success tooltips" data-original-title="Comissões dos Profissional para o Serviço" 
+                                                data-placement="top"> <i class="fa fa-money"></i></a>';
+
                                         } else {
-                                            $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
-                                            $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
-                                            $comiss .= 'OA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                            $acao .= ' <a href="' . PASTAADMIN . 'Servico/ComissaoServico/' .
+                                                Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" 
+                                                class="btn btn-success tooltips" data-original-title="Comissão do Serviço" 
+                                                data-placement="top"> <i class="fa fa-money"></i></a>';
+
+                                            $comiss = '';
+                                            if ($servico->getCoPercentualComissao()) {
+                                                $comissao2 = [];
+                                                /** @var PercentualComissaoEntidade $percent */
+                                                foreach ($servico->getCoPercentualComissao() as $percent) {
+                                                    $comissao2[$percent->getNuTipoComissao()] = $percent->getNuComissao();
+                                                }
+                                                $comiss = 'UP: <b>' . $comissao2[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                                $comiss .= 'CA: <b>' . $comissao2[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                                $comiss .= 'OA: <b>' . $comissao2[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                            } else {
+                                                $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                                $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                                $comiss .= 'OA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                            }
+
                                         }
                                     }
                                     $tamanhoImg = 85;
@@ -116,7 +129,7 @@
                                     $grid->setColunas($res->getNoCategoriaServico());
                                     $grid->setColunas(Valida::Resumi($servico->getDsDescricao(), 300));
                                     $grid->setColunas($servico->getCoUltimoPrecoServico()->getNuValor());
-                                    if ($tipoComissao) {
+                                    if ($tipoComissao == FormaComissaoEnum::SERVICO) {
                                         $grid->setColunas($comiss);
                                     }
                                     $grid->setColunas(Valida::SituacaoSimNao($servico->getStAssistente()));
