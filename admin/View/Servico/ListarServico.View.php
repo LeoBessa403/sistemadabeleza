@@ -37,13 +37,14 @@
                                 <h4 class="alert-heading"><i class="fa fa-calendar"></i> Legenda</h4>
                                 <b>UP: Comissão quando for Único Profissional.</b><br>
                                 <b>CA: Comissão quando for Com Assistente.</b><br>
-                                <b>FA: Comissão quando for O Assistente.</b><br>
+                                <b>OA: Comissão quando for O Assistente.</b><br>
                             </div>
                             <?php
                         }
                         Modal::load();
                         Modal::confirmacao("confirma_Servico");
-                        $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$', 'Assistente', 'Observação', 'Ações');
+                        $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
+                            'Assistente', 'Observação', 'Ações');
                         if ($tipoComissao) {
                             $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
                                 'Comissão', 'Assistente', 'Observação', 'Ações');
@@ -73,16 +74,16 @@
                                         if ($servico->getCoPercentualComissao()) {
                                             $comissao2 = [];
                                             /** @var PercentualComissaoEntidade $percent */
-                                            foreach ($servico->getCoPercentualComissao() as $percent){
+                                            foreach ($servico->getCoPercentualComissao() as $percent) {
                                                 $comissao2[$percent->getNuTipoComissao()] = $percent->getNuComissao();
                                             }
                                             $comiss = 'UP: <b>' . $comissao2[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
                                             $comiss .= 'CA: <b>' . $comissao2[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
-                                            $comiss .= 'FA: <b>' . $comissao2[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                            $comiss .= 'OA: <b>' . $comissao2[TipoComissaoEnum::ASSISTENTE] . '%</b>';
                                         } else {
                                             $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
                                             $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
-                                            $comiss .= 'FA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                            $comiss .= 'OA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
                                         }
                                     }
                                     $tamanhoImg = 85;

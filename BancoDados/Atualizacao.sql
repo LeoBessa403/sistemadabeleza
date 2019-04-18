@@ -18,3 +18,11 @@ INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico, dt_cadastro, dt_atualizado, nu_t
 
 INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("31", "2019-04-18 14:03:10", "2019-04-18 14:03:10", "3", "12");
 
+UPDATE TB_HISTORIA SET ds_titulo = "Manter Percentual de comissão", ds_observacao = "<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>
+
+<p>Por Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>
+
+<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>", co_sessao = "12", st_situacao = "I", dt_atualizado = "2019-04-18 14:09:26" where co_historia = 151;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-04-18 14:09:26", "151");
+
