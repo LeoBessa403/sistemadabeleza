@@ -184,6 +184,7 @@ class Servico extends AbstractController
                 = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
             $res[NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                 = $percAtul[TipoComissaoEnum::ASSISTENTE];
+            $res[CO_SERVICO] = $coServico;
         }
         $this->form = ServicoForm::ComissaoServico($res);
     }

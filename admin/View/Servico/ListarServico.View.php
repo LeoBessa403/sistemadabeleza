@@ -71,15 +71,14 @@
                                                 data-placement="top"> <i class="fa fa-money"></i> </a>';
                                         $comiss = '';
                                         if ($servico->getCoPercentualComissao()) {
-                                            debug($servico->getCoPercentualComissao());
-                                            $comissao = [];
+                                            $comissao2 = [];
                                             /** @var PercentualComissaoEntidade $percent */
                                             foreach ($servico->getCoPercentualComissao() as $percent){
-                                                $comissao[$percent->getNuTipoComissao()] = $percent->getNuComissao();
+                                                $comissao2[$percent->getNuTipoComissao()] = $percent->getNuComissao();
                                             }
-                                            $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
-                                            $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
-                                            $comiss .= 'FA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                            $comiss = 'UP: <b>' . $comissao2[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                            $comiss .= 'CA: <b>' . $comissao2[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                            $comiss .= 'FA: <b>' . $comissao2[TipoComissaoEnum::ASSISTENTE] . '%</b>';
                                         } else {
                                             $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
                                             $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';

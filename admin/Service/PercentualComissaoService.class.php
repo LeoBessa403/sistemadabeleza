@@ -23,20 +23,20 @@ class  PercentualComissaoService extends AbstractService
             SUCESSO => false,
             MSG => null
         ];
-        $configComissaoValidador = new ConfigComissaoValidador();
+        $servicoValidador = new ServicoValidador();
         /** @var ConfigComissaoValidador $validador */
-        $validador = $configComissaoValidador->validarConfigComissao($dados);
+        $validador = $servicoValidador->validarComissaoServico($dados);
         if ($validador[SUCESSO]) {
-
-            foreach (TipoComissaoEnum::$descricao as $tipoComissao => $descrição) {
-                $percCom[NU_TIPO_COMISSAO] = $tipoComissao;
-                $percCom[NU_COMISSAO] = $dados[NU_TIPO_COMISSAO . $tipoComissao];
-            }
             $percCom[CO_SERVICO] = $dados[CO_SERVICO];
             $percCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $percCom[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
 
-            $retorno[SUCESSO] = $this->Salva($percCom);
+            foreach (TipoComissaoEnum::$descricao as $tipoComissao => $descrição) {
+                $percCom[NU_TIPO_COMISSAO] = $tipoComissao;
+                $percCom[NU_COMISSAO] = $dados[NU_TIPO_COMISSAO . $tipoComissao];
+                $retorno[SUCESSO] = $this->Salva($percCom);
+            }
+
             $session->setSession(MENSAGEM, ATUALIZADO);
 
             if ($retorno[SUCESSO]) {
