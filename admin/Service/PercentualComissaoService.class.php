@@ -16,18 +16,23 @@ class  PercentualComissaoService extends AbstractService
         $this->ObjetoModel = New PercentualComissaoModel();
     }
 
-    public function salvaComissaoServico($dados)
+    public function salvaComissao($dados)
     {
         $session = new Session();
         $retorno = [
             SUCESSO => false,
             MSG => null
         ];
-        $servicoValidador = new ServicoValidador();
+        $configComissaoValidador = new ConfigComissaoValidador();
         /** @var ConfigComissaoValidador $validador */
-        $validador = $servicoValidador->validarComissaoServico($dados);
+        $validador = $configComissaoValidador->validarComissao($dados);
         if ($validador[SUCESSO]) {
-            $percCom[CO_SERVICO] = $dados[CO_SERVICO];
+            if (!empty($_POST[CO_SERVICO])){
+                $percCom[CO_SERVICO] = $dados[CO_SERVICO];
+            }
+            if (!empty($_POST[CO_PROFISSIONAL])){
+                $percCom[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
+            }
             $percCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $percCom[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
 

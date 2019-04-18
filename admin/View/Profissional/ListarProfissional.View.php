@@ -32,11 +32,24 @@
                     </div>
                     <div class="panel-body">
                         <?php
+                        if ($tipoComissao) { ?>
+                            <div class="alert alert-block alert-warning fade in col-md-3">
+                                <h4 class="alert-heading"><i class="fa fa-calendar"></i> Legenda</h4>
+                                <b>UP: Comissão quando for Único Profissional.</b><br>
+                                <b>CA: Comissão quando for Com Assistente.</b><br>
+                                <b>OA: Comissão quando for O Assistente.</b><br>
+                            </div>
+                            <?php
+                        }
                         Modal::load();
                         Modal::confirmacao("confirma_Profissional");
                         Modal::DesativarProfissional("DesativarProfissional");
                         Modal::AtivarProfissional("AtivarProfissional");
                         $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
+                        if ($tipoComissao) {
+                            $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo',
+                                'Comissão', 'Assistente', 'Ações');
+                        }
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -64,6 +77,29 @@
                                     Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '">
                                             <i class="fa fa-unlock-alt"></i>
                                         </a>';
+                            }
+                            $botao = 2;
+                            if ($tipoComissao) {
+                                $botao = 3;
+                                $acao .= ' <a href="' . PASTAADMIN . 'Profissional/ComissaoProfissional/' .
+                                    Valida::GeraParametro(CO_PROFISSIONAL . "/" . $res->getCoProfissional()) . '" 
+                                                class="btn btn-success tooltips" data-original-title="Comissão do Profissional" 
+                                                data-placement="top"> <i class="fa fa-money"></i> </a>';
+                                $comiss = '';
+                                if ($res->getCoPercentualComissao()) {
+                                    $comissao2 = [];
+                                    /** @var PercentualComissaoEntidade $percent */
+                                    foreach ($res->getCoPercentualComissao() as $percent) {
+                                        $comissao2[$percent->getNuTipoComissao()] = $percent->getNuComissao();
+                                    }
+                                    $comiss = 'UP: <b>' . $comissao2[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                    $comiss .= 'CA: <b>' . $comissao2[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                    $comiss .= 'OA: <b>' . $comissao2[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                } else {
+                                    $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                    $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                    $comiss .= 'OA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                }
                             }
                             $cargos = [];
                             /** @var ProfissionalCargoEntidade $cargoProf */
@@ -94,8 +130,11 @@
                             $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
                             $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
                             $grid->setColunas(implode(', ', $cargos));
+                            if ($tipoComissao) {
+                                $grid->setColunas($comiss);
+                            }
                             $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
-                            $grid->setColunas($acao, 2);
+                            $grid->setColunas($acao, $botao);
                             $grid->criaLinha($res->getCoProfissional());
                         endforeach;
                         $grid->finalizaGrid();

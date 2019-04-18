@@ -1,4 +1,4 @@
--- Atualizado em: 18/04/2019 10:58:32
+-- Atualizado em: 18/04/2019 15:36:59
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,20 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=208 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("202","0epvkf37megp1ci742rv5t9tl5","2019-04-04 17:55:17","2019-04-04 18:08:42","F","1","221");
-
-INSERT INTO TB_ACESSO VALUES("203","0epvkf37megp1ci742rv5t9tl5","2019-04-04 18:08:47","2019-04-04 18:12:09","F","8","222");
-
-INSERT INTO TB_ACESSO VALUES("204","0epvkf37megp1ci742rv5t9tl5","2019-04-04 18:12:12","2019-04-04 18:12:58","F","1","223");
-
-INSERT INTO TB_ACESSO VALUES("205","0epvkf37megp1ci742rv5t9tl5","2019-04-04 18:13:02","2019-04-04 18:18:17","F","8","224");
-
-INSERT INTO TB_ACESSO VALUES("206","0epvkf37megp1ci742rv5t9tl5","2019-04-04 18:18:51","2019-04-04 18:55:18","F","8","225");
-
-INSERT INTO TB_ACESSO VALUES("207","0epvkf37megp1ci742rv5t9tl5","2019-04-04 18:55:21","2019-04-04 19:26:13","F","1","226");
+INSERT INTO TB_ACESSO VALUES("219","sgh01o2gi5s0m0l5nnm23eg484","2019-04-18 15:36:30","2019-04-18 16:06:59","A","1","238");
 
 
 
@@ -158,20 +148,8 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA VALUES("25","2019-04-04 18:12:47","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("26","2019-04-04 18:12:54","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("27","2019-04-04 18:51:34","Gestor, Colaborador","8");
-
-INSERT INTO TB_AUDITORIA VALUES("28","2019-04-04 18:54:24","Gestor, Colaborador","8");
-
-INSERT INTO TB_AUDITORIA VALUES("29","2019-04-04 18:55:48","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("30","2019-04-04 18:55:48","Master","1");
 
 
 
@@ -187,144 +165,8 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=387 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=715 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("319","","64","co_funcionalidade","60");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("320","","2","co_perfil","60");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("321","266","","co_perfil_funcionalidade","61");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("322","64","","co_funcionalidade","61");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("323","2","","co_perfil","61");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("324","0","","co_perfil_assinante","61");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("325","","64","co_funcionalidade","62");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("326","","2","co_perfil","62");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("327","","1","co_config_comissao","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("328","","N","st_taxa_antecipacao","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("329","","S","st_taxa_administrativa","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("330","","S","st_taxa_cartao_credito","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("331","","S","st_taxa_cartao_debito","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("332","","S","st_recebimento_pre_venda","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("333","","2","nu_forma_comissao","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("334","","2008-04-02","dt_valido","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("335","","2019-04-04 18:51:34","dt_cadastro","63");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("336","","2019-04-04 18:51:35","dt_cadastro","64");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("337","","2019-04-04 18:51:35","dt_atualizado","64");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("338","","4","co_historico_comissao","64");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("339","","1","nu_tipo_comissao","64");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("340","","30","nu_comissao","64");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("341","","2019-04-04 18:51:35","dt_cadastro","65");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("342","","2019-04-04 18:51:35","dt_atualizado","65");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("343","","4","co_historico_comissao","65");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("344","","2","nu_tipo_comissao","65");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("345","","18","nu_comissao","65");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("346","","2019-04-04 18:51:35","dt_cadastro","66");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("347","","2019-04-04 18:51:35","dt_atualizado","66");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("348","","4","co_historico_comissao","66");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("349","","3","nu_tipo_comissao","66");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("350","","7","nu_comissao","66");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("351","","1","co_config_comissao","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("352","","N","st_taxa_antecipacao","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("353","","S","st_taxa_administrativa","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("354","","S","st_taxa_cartao_credito","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("355","","S","st_taxa_cartao_debito","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("356","","S","st_recebimento_pre_venda","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("357","","2","nu_forma_comissao","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("358","","2008-04-02","dt_valido","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("359","","2019-04-04 18:54:24","dt_cadastro","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("360","","8","co_usuario","67");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("361","","2019-04-04 18:54:24","dt_cadastro","68");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("362","","2019-04-04 18:54:24","dt_atualizado","68");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("363","","5","co_historico_comissao","68");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("364","","1","nu_tipo_comissao","68");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("365","","30","nu_comissao","68");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("366","","2019-04-04 18:54:24","dt_cadastro","69");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("367","","2019-04-04 18:54:24","dt_atualizado","69");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("368","","5","co_historico_comissao","69");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("369","","2","nu_tipo_comissao","69");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("370","","18","nu_comissao","69");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("371","","2019-04-04 18:54:24","dt_cadastro","70");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("372","","2019-04-04 18:54:24","dt_atualizado","70");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("373","","5","co_historico_comissao","70");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("374","","3","nu_tipo_comissao","70");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("375","","7","nu_comissao","70");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("376","152","","co_historia","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("377","Histórico da Configuração da Comissão","Histórico da Configuração da Comissão","ds_titulo","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("378","<p>Hist&oacute;rico da Configura&ccedil;&atilde;o da Comiss&atilde;o</p>","<p>Hist&oacute;rico da Configura&ccedil;&atilde;o da Comiss&atilde;o</p>","ds_observacao","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("379","2019-03-27 16:39:58","","dt_cadastro","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("380","2019-03-27 16:39:58","2019-04-04 18:55:48","dt_atualizado","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("381","N","C","st_situacao","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("382","5","5","co_sessao","71");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("383","","8","nu_esforco","72");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("384","","0","nu_esforco_restante","72");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("385","","2019-04-04 18:55:48","dt_cadastro","72");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("386","","152","co_historia","72");
 
 
 
@@ -340,34 +182,8 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("60","TB_PERFIL_FUNCIONALIDADE","I","266","25");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("61","TB_PERFIL_FUNCIONALIDADE","D","","26");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("62","TB_PERFIL_FUNCIONALIDADE","I","267","26");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("63","TB_HISTORICO_COMISSAO","I","4","27");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("64","TB_PERCENTUAL_COMISSAO","I","10","27");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("65","TB_PERCENTUAL_COMISSAO","I","11","27");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("66","TB_PERCENTUAL_COMISSAO","I","12","27");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("67","TB_HISTORICO_COMISSAO","I","5","28");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("68","TB_PERCENTUAL_COMISSAO","I","13","28");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("69","TB_PERCENTUAL_COMISSAO","I","14","28");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("70","TB_PERCENTUAL_COMISSAO","I","15","28");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("71","TB_HISTORIA","U","152","29");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("72","TB_HISTORICO_HISTORIA","I","596","30");
 
 
 
@@ -1519,7 +1335,7 @@ CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -1619,6 +1435,10 @@ INSERT INTO TB_FUNCIONALIDADE VALUES("62","Cadastro Serviço","CadastroServico",
 INSERT INTO TB_FUNCIONALIDADE VALUES("63","Configuração Comissão","ComissaoConfiguracao","A","S","13");
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("64","Historico Comissao","HistoricoComissao","A","N","13");
+
+INSERT INTO TB_FUNCIONALIDADE VALUES("65","Comissao Servico","ComissaoServico","A","N","15");
+
+INSERT INTO TB_FUNCIONALIDADE VALUES("66","Comissao Profissional","ComissaoProfissional","A","N","12");
 
 
 
@@ -1760,7 +1580,7 @@ INSERT INTO TB_HISTORIA VALUES("41","Recebimentos","<p>Recebimentos</p>\n\n\n\n
 
 INSERT INTO TB_HISTORIA VALUES("42","Gerar cupom não fiscal","<p>Gerar cupom n&atilde;o fiscal no fechamento de conta</p>","2018-07-25 18:27:03","2018-07-25 18:27:03","N","18");
 
-INSERT INTO TB_HISTORIA VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2018-07-25 18:45:49","N","5");
+INSERT INTO TB_HISTORIA VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2019-04-18 11:00:56","C","5");
 
 INSERT INTO TB_HISTORIA VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","2018-07-25 18:42:35","2019-03-22 11:16:18","C","12");
 
@@ -1954,7 +1774,7 @@ INSERT INTO TB_HISTORIA VALUES("149","Pesquisa Avançada dos Assinantes","<p>Pes
 
 INSERT INTO TB_HISTORIA VALUES("150","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n<p>Por Profissional (Profissional / Com Assistente / Assitente)</p>\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:17:19","2019-04-04 18:01:44","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("151","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n<p>Por Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:18:54","2019-04-04 18:02:17","N","12");
+INSERT INTO TB_HISTORIA VALUES("151","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n<p>Por Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:18:54","2019-04-18 14:09:26","I","12");
 
 INSERT INTO TB_HISTORIA VALUES("152","Histórico da Configuração da Comissão","<p>Hist&oacute;rico da Configura&ccedil;&atilde;o da Comiss&atilde;o</p>","2019-03-27 16:39:58","2019-04-04 18:55:48","C","5");
 
@@ -1983,7 +1803,7 @@ CREATE TABLE `TB_HISTORICO_COMISSAO` (
   PRIMARY KEY (`co_historico_comissao`,`co_config_comissao`,`co_usuario`),
   KEY `fk_TB_HISTORICO_COMISSAO2_TB_CONFIG_COMISSAO1_idx` (`co_config_comissao`),
   KEY `fk_TB_HISTORICO_COMISSAO_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_COMISSAO VALUES("1","2019-04-04 17:51:29","2019-04-04","S","S","S","S","N","1","1","1");
@@ -1995,6 +1815,22 @@ INSERT INTO TB_HISTORICO_COMISSAO VALUES("3","2019-04-04 17:54:29","2008-04-15",
 INSERT INTO TB_HISTORICO_COMISSAO VALUES("4","2019-04-04 18:51:34","2008-04-02","N","S","S","S","S","2","1","8");
 
 INSERT INTO TB_HISTORICO_COMISSAO VALUES("5","2019-04-04 18:54:24","2008-04-02","N","S","S","S","S","2","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("6","2019-04-18 14:14:17","2008-04-02","N","S","S","S","S","1","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("7","2019-04-18 14:15:24","2008-04-02","N","S","S","S","S","3","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("8","2019-04-18 14:50:57","2008-04-02","N","S","S","S","S","2","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("9","2019-04-18 14:52:30","2008-04-02","N","S","S","S","S","3","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("10","2019-04-18 14:59:10","2008-04-02","N","S","S","S","S","2","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("11","2019-04-18 15:02:50","2008-04-02","N","S","S","S","S","3","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("12","2019-04-18 15:11:09","2008-04-02","N","S","S","S","S","2","1","8");
+
+INSERT INTO TB_HISTORICO_COMISSAO VALUES("13","2019-04-18 15:24:56","2008-04-02","N","S","S","S","S","3","1","8");
 
 
 
@@ -2010,7 +1846,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=597 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=599 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3199,6 +3035,10 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("595","20","20","2019-04-04 18:02:17","
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("596","8","0","2019-04-04 18:55:48","152");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("597","1","0","2019-04-18 11:00:56","43");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("598","20","10","2019-04-18 14:09:26","151");
+
 
 
 
@@ -3668,7 +3508,7 @@ CREATE TABLE `TB_PERCENTUAL_COMISSAO` (
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_SERVICO_PROFISSIONAL1_idx` (`co_servico_profissional`),
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_HISTORICO_COMISSAO21_idx` (`co_historico_comissao`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("1","44","1","2019-04-04 17:51:29","2019-04-04 17:51:29","0","0","0","1");
@@ -3700,6 +3540,96 @@ INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("13","30","1","2019-04-04 18:54:24","2
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("14","18","2","2019-04-04 18:54:24","2019-04-04 18:54:24","0","0","0","5");
 
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("15","7","3","2019-04-04 18:54:24","2019-04-04 18:54:24","0","0","0","5");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("16","33","1","2019-04-18 13:57:54","2019-04-18 13:57:54","40","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("17","22","2","2019-04-18 13:57:54","2019-04-18 13:57:54","40","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("18","11","3","2019-04-18 13:57:54","2019-04-18 13:57:54","40","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("19","48","1","2019-04-18 14:03:10","2019-04-18 14:03:10","31","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("20","24","2","2019-04-18 14:03:10","2019-04-18 14:03:10","31","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("21","12","3","2019-04-18 14:03:10","2019-04-18 14:03:10","31","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("22","50","1","2019-04-18 14:13:34","2019-04-18 14:13:34","19","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("23","30","2","2019-04-18 14:13:34","2019-04-18 14:13:34","19","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("24","20","3","2019-04-18 14:13:34","2019-04-18 14:13:34","19","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("25","30","1","2019-04-18 14:14:17","2019-04-18 14:14:17","0","0","0","6");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("26","18","2","2019-04-18 14:14:17","2019-04-18 14:14:17","0","0","0","6");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("27","7","3","2019-04-18 14:14:17","2019-04-18 14:14:17","0","0","0","6");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("28","50","1","2019-04-18 14:15:25","2019-04-18 14:15:25","0","0","0","7");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("29","30","2","2019-04-18 14:15:25","2019-04-18 14:15:25","0","0","0","7");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("30","20","3","2019-04-18 14:15:25","2019-04-18 14:15:25","0","0","0","7");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("31","50","1","2019-04-18 14:50:57","2019-04-18 14:50:57","0","0","0","8");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("32","30","2","2019-04-18 14:50:57","2019-04-18 14:50:57","0","0","0","8");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("33","20","3","2019-04-18 14:50:57","2019-04-18 14:50:57","0","0","0","8");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("34","50","1","2019-04-18 14:52:30","2019-04-18 14:52:30","0","0","0","9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("35","30","2","2019-04-18 14:52:30","2019-04-18 14:52:30","0","0","0","9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("36","20","3","2019-04-18 14:52:30","2019-04-18 14:52:30","0","0","0","9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("37","55","1","2019-04-18 14:59:10","2019-04-18 14:59:10","0","0","0","10");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("38","33","2","2019-04-18 14:59:10","2019-04-18 14:59:10","0","0","0","10");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("39","22","3","2019-04-18 14:59:10","2019-04-18 14:59:10","0","0","0","10");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("40","20","1","2019-04-18 15:01:39","2019-04-18 15:01:39","41","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("41","10","2","2019-04-18 15:01:39","2019-04-18 15:01:39","41","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("42","5","3","2019-04-18 15:01:39","2019-04-18 15:01:39","41","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("43","55","1","2019-04-18 15:02:50","2019-04-18 15:02:50","0","0","0","11");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("44","33","2","2019-04-18 15:02:50","2019-04-18 15:02:50","0","0","0","11");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("45","22","3","2019-04-18 15:02:50","2019-04-18 15:02:50","0","0","0","11");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("46","55","1","2019-04-18 15:11:09","2019-04-18 15:11:09","0","0","0","12");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("47","33","2","2019-04-18 15:11:09","2019-04-18 15:11:09","0","0","0","12");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("48","22","3","2019-04-18 15:11:09","2019-04-18 15:11:09","0","0","0","12");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("49","30","1","2019-04-18 15:24:56","2019-04-18 15:24:56","0","0","0","13");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("50","20","2","2019-04-18 15:24:56","2019-04-18 15:24:56","0","0","0","13");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("51","10","3","2019-04-18 15:24:56","2019-04-18 15:24:56","0","0","0","13");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("52","10","1","2019-04-18 15:30:26","2019-04-18 15:30:26","0","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("53","5","2","2019-04-18 15:30:26","2019-04-18 15:30:26","0","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("54","2","3","2019-04-18 15:30:26","2019-04-18 15:30:26","0","0","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("55","10","1","2019-04-18 15:35:14","2019-04-18 15:35:14","0","21","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("56","5","2","2019-04-18 15:35:14","2019-04-18 15:35:14","0","21","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("57","2","3","2019-04-18 15:35:14","2019-04-18 15:35:14","0","21","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("58","33","1","2019-04-18 15:35:53","2019-04-18 15:35:53","0","16","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("59","22","2","2019-04-18 15:35:53","2019-04-18 15:35:53","0","16","0","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("60","11","3","2019-04-18 15:35:53","2019-04-18 15:35:53","0","16","0","0");
 
 
 
@@ -3754,7 +3684,7 @@ CREATE TABLE `TB_PERFIL_FUNCIONALIDADE` (
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_TB_PERFIL_FUNCIONALIDADE_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=268 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=270 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("1","1","1","0");
@@ -3834,6 +3764,10 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("264","62","2","0");
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("265","63","2","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("267","64","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("268","65","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("269","66","2","0");
 
 
 
@@ -4619,7 +4553,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -4656,17 +4590,7 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO TB_TRAFEGO VALUES("221","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO TB_TRAFEGO VALUES("222","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO TB_TRAFEGO VALUES("223","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO TB_TRAFEGO VALUES("224","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO TB_TRAFEGO VALUES("225","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
-
-INSERT INTO TB_TRAFEGO VALUES("226","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO TB_TRAFEGO VALUES("238","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 

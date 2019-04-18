@@ -411,7 +411,31 @@ class Configuracao extends AbstractController
             );
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ComissaoConfiguracao/');
         }
+    }
 
+    public function getTipoEComissoes($formaComissao)
+    {
+        /** @var ConfigComissaoService $configComissaoService */
+        $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
+
+        /** @var ConfigComissaoEntidade $configComissao */
+        $configComissao = $configComissaoService->PesquisaUmQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        $dados['tipoComissao'] =
+            ($configComissao->getCoUltimoHistoricoComissao()->getNuFormaComissao() == $formaComissao)
+                ? true : false;
+        if($dados['tipoComissao']){
+            $perc = $configComissao->getCoUltimoHistoricoComissao()->getCoPercentualComissao();
+            $comissao = [];
+            /** @var PercentualComissaoEntidade $percent */
+            foreach ($perc as $percent){
+                $comissao[$percent->getNuTipoComissao()] = $percent->getNuComissao();
+            }
+            $dados['comissao'] = $comissao;
+        }
+
+        return $dados;
     }
 }
    

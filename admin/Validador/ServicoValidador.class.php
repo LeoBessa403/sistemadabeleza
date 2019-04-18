@@ -36,22 +36,4 @@ class  ServicoValidador extends AbstractValidador
         }
         return $this->MontaRetorno($this->retorno);
     }
-
-    public function validarComissaoServico($dados)
-    {
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL],
-            AbstractValidador::VALIDACAO_NUMERO, 'Único Profissional'
-        );
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE],
-            AbstractValidador::VALIDACAO_NUMERO, 'Com Assistente'
-        );
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados[NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE],
-            AbstractValidador::VALIDACAO_NUMERO, 'Assistente '
-        );
-        return $this->MontaRetorno($this->retorno);
-    }
-
 }

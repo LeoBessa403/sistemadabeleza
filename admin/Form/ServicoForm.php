@@ -187,6 +187,15 @@ class ServicoForm
 
         endif;
 
+        if (!empty($res[CO_PROFISSIONAL])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_PROFISSIONAL)
+                ->setValues($res[CO_PROFISSIONAL])
+                ->CriaInpunt();
+
+        endif;
+
         return $formulario->finalizaForm();
     }
 }

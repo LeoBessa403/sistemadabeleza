@@ -27,25 +27,11 @@ class Servico extends AbstractController
         $this->coCategoriaServico = UrlAmigavel::PegaParametro(CO_CATEGORIA_SERVICO);
         $this->result = $this->getCategorias();
 
-        /** @var ConfigComissaoService $configComissaoService */
-        $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
-
-        /** @var ConfigComissaoEntidade $configComissao */
-        $configComissao = $configComissaoService->PesquisaUmQuando([
-            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
-        ]);
-        $this->tipoComissao =
-            ($configComissao->getCoUltimoHistoricoComissao()->getNuFormaComissao() == FormaComissaoEnum::SERVICO)
-            ? true : false;
-        if($this->tipoComissao){
-            $perc = $configComissao->getCoUltimoHistoricoComissao()->getCoPercentualComissao();
-            $comissao = [];
-            /** @var PercentualComissaoEntidade $percent */
-            foreach ($perc as $percent){
-                $comissao[$percent->getNuTipoComissao()] = $percent->getNuComissao();
-            }
-            $this->comissao = $comissao;
-        }
+        /** @var Configuracao $configControl */
+        $configControl = new Configuracao();
+        $dados = $configControl->getTipoEComissoes(FormaComissaoEnum::SERVICO);
+        $this->tipoComissao = $dados['tipoComissao'];
+        $this->comissao = $dados['comissao'];
     }
 
     public function getCategorias()
@@ -151,7 +137,7 @@ class Servico extends AbstractController
         $id = "configComissao";
 
         if (!empty($_POST[$id])):
-            $retorno = $percentualComissaoService->salvaComissaoServico($_POST);
+            $retorno = $percentualComissaoService->salvaComissao($_POST);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
             }
@@ -163,17 +149,6 @@ class Servico extends AbstractController
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
 
-        $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
-        if ($coServico) {
-            /** @var ServicoEntidade $servico */
-            $this->servico = $servicoService->PesquisaUmRegistro($coServico);
-        }else{
-            Notificacoes::geraMensagem(
-                'Selecione um Serviço para Modificar a comissão do mesmo',
-                TiposMensagemEnum::ALERTA
-            );
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
-        }
         if ($configComissao) {
             /** @var HistoricoComissaoEntidade $ultHistConfigCom */
             $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
@@ -184,8 +159,27 @@ class Servico extends AbstractController
                 = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
             $res[NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                 = $percAtul[TipoComissaoEnum::ASSISTENTE];
-            $res[CO_SERVICO] = $coServico;
         }
+        $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
+        if ($coServico) {
+            $res[CO_SERVICO] = $coServico;
+            /** @var ServicoEntidade $servico */
+            $this->servico = $servicoService->PesquisaUmRegistro($coServico);
+            if($this->servico->getCoPercentualComissao()){
+                /** @var PercentualComissaoEntidade $percent */
+                foreach ( $this->servico->getCoPercentualComissao() as $percent) {
+                    $res[NU_TIPO_COMISSAO . $percent->getNuTipoComissao()]
+                        = $percent->getNuComissao();
+                }
+            }
+        }else{
+            Notificacoes::geraMensagem(
+                'Selecione um Serviço para Modificar a comissão do mesmo',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
+        }
+
         $this->form = ServicoForm::ComissaoServico($res);
     }
 

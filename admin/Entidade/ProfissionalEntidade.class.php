@@ -479,4 +479,4 @@ class ProfissionalEntidade extends AbstractEntidade
     {
         return $this->co_servico_profissional = $co_servico_profissional;
     }
-}
+ }
