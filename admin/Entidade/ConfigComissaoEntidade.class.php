@@ -108,7 +108,7 @@ class ConfigComissaoEntidade extends AbstractEntidade
     }
 
     /**
-     * @return HistoricoComissaoService $co_historico_comissao
+     * @return HistoricoComissaoEntidade $co_historico_comissao
      */
     public function getCoUltimoHistoricoComissao()
     {

@@ -141,4 +141,52 @@ class ServicoForm
 
         return $formulario->finalizaForm('Servico/ListarServico');
     }
+
+    public static function ComissaoServico($res = false)
+    {
+        $id = "configComissao";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Cadastrar", 6);
+        $formulario->setValor($res);
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL)
+            ->setClasses("porc-int ob")
+            ->setLabel("Único Profissional")
+            ->setIcon("%", 'dir')
+            ->setInfo('Comissão quando for Único Profissional.')
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE)
+            ->setClasses("porc-int ob")
+            ->setIcon("%", 'dir')
+            ->setLabel("Com Assistente")
+            ->setInfo('Comissão quando for Com Assistente.')
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE)
+            ->setClasses("porc-int ob")
+            ->setIcon("%", 'dir')
+            ->setLabel("Assistente")
+            ->setInfo('Comissão quando for O Assistente.')
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+
+        if (!empty($res[CO_SERVICO])):
+            $formulario
+                ->setType("hidden")
+                ->setId(CO_SERVICO)
+                ->setValues($res[CO_SERVICO])
+                ->CriaInpunt();
+
+        endif;
+
+        return $formulario->finalizaForm();
+    }
 }

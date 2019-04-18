@@ -20,6 +20,8 @@ class ServicoEntidade extends AbstractEntidade
 	private $ds_descricao;
 	private $co_categoria_servico;
 	private $co_preco_servico;
+    private $co_percentual_comissao;
+    private $co_servico_profissional;
     private $co_imagem;
 
 
@@ -219,6 +221,39 @@ class ServicoEntidade extends AbstractEntidade
     public function setCoImagem($co_imagem)
     {
         return $this->co_imagem = $co_imagem;
+    }
+
+    /**
+     * @return PercentualComissaoEntidade $co_percentual_comissao
+     */
+    public function getCoPercentualComissao()
+    {
+        return $this->co_percentual_comissao;
+    }
+
+    /**
+     * @param mixed $co_percentual_comissao
+     */
+    public function setCoPercentualComissao($co_percentual_comissao)
+    {
+        $this->co_percentual_comissao = $co_percentual_comissao;
+    }
+
+    /**
+     * @return ServicoProfissionalEntidade $co_servico_profissional
+     */
+    public function getCoServicoProfissional()
+    {
+        return $this->co_servico_profissional;
+    }
+
+    /**
+     * @param $co_servico_profissional
+     * @return mixed
+     */
+    public function setCoServicoProfissional($co_servico_profissional)
+    {
+        return $this->co_servico_profissional = $co_servico_profissional;
     }
 
     /**

@@ -32,13 +32,26 @@
                     </div>
                     <div class="panel-body">
                         <?php
+                        if ($tipoComissao) { ?>
+                            <div class="alert alert-block alert-warning fade in col-md-3">
+                                <h4 class="alert-heading"><i class="fa fa-calendar"></i> Legenda</h4>
+                                <b>UP: Comissão quando for Único Profissional.</b><br>
+                                <b>CA: Comissão quando for Com Assistente.</b><br>
+                                <b>FA: Comissão quando for O Assistente.</b><br>
+                            </div>
+                            <?php
+                        }
                         Modal::load();
                         Modal::confirmacao("confirma_Servico");
                         $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$', 'Assistente', 'Observação', 'Ações');
+                        if ($tipoComissao) {
+                            $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
+                                'Comissão', 'Assistente', 'Observação', 'Ações');
+                        }
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado().'/';
+                        $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado() . '/';
                         /** @var CategoriaServicoEntidade $res */
                         foreach ($result as $res):
                             if (!$coCategoriaServico || ($coCategoriaServico && $coCategoriaServico == $res->getCoCategoriaServico())) {
@@ -49,13 +62,37 @@
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i>
                                  </a>';
+                                    $botao = 1;
+                                    if ($tipoComissao) {
+                                        $botao = 2;
+                                        $acao .= ' <a href="' . PASTAADMIN . 'Servico/ComissaoServico/' .
+                                            Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" 
+                                                class="btn btn-success tooltips" data-original-title="Comissão do Serviço" 
+                                                data-placement="top"> <i class="fa fa-money"></i> </a>';
+                                        $comiss = '';
+                                        if ($servico->getCoPercentualComissao()) {
+                                            debug($servico->getCoPercentualComissao());
+                                            $comissao = [];
+                                            /** @var PercentualComissaoEntidade $percent */
+                                            foreach ($servico->getCoPercentualComissao() as $percent){
+                                                $comissao[$percent->getNuTipoComissao()] = $percent->getNuComissao();
+                                            }
+                                            $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                            $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                            $comiss .= 'FA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                        } else {
+                                            $comiss = 'UP: <b>' . $comissao[TipoComissaoEnum::UNICO_PROFISSIONAL] . '%</b><br>';
+                                            $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
+                                            $comiss .= 'FA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
+                                        }
+                                    }
                                     $tamanhoImg = 85;
-                                    if ($servico->getCoImagem()){
+                                    if ($servico->getCoImagem()) {
                                         $caminho = '';
                                         if (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho())) {
-                                            $caminho =  $servico->getCoImagem()->getDsCaminho();
-                                        }elseif (file_exists(PASTA_UPLOADS . $noPasta . $servico->getCoImagem()->getDsCaminho())) {
-                                            $caminho =  $noPasta . $servico->getCoImagem()->getDsCaminho();
+                                            $caminho = $servico->getCoImagem()->getDsCaminho();
+                                        } elseif (file_exists(PASTA_UPLOADS . $noPasta . $servico->getCoImagem()->getDsCaminho())) {
+                                            $caminho = $noPasta . $servico->getCoImagem()->getDsCaminho();
                                         }
                                         $imagem = Valida::GetMiniatura(
                                             $caminho,
@@ -79,9 +116,12 @@
                                     $grid->setColunas($res->getNoCategoriaServico());
                                     $grid->setColunas(Valida::Resumi($servico->getDsDescricao(), 300));
                                     $grid->setColunas($servico->getCoUltimoPrecoServico()->getNuValor());
+                                    if ($tipoComissao) {
+                                        $grid->setColunas($comiss);
+                                    }
                                     $grid->setColunas(Valida::SituacaoSimNao($servico->getStAssistente()));
                                     $grid->setColunas($servico->getCoUltimoPrecoServico()->getDsObservacao());
-                                    $grid->setColunas($acao, 2);
+                                    $grid->setColunas($acao, $botao);
                                     $grid->criaLinha($servico->getCoServico());
                                 endforeach;
                             }
