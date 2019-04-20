@@ -422,6 +422,8 @@ class Configuracao extends AbstractController
         $configComissao = $configComissaoService->PesquisaUmQuando([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
+
+        $dados['comissao'] = '';
         switch ($configComissao->getCoUltimoHistoricoComissao()->getNuFormaComissao()) {
             case FormaComissaoEnum::SERVICO_PROFISSIONAL:
                 $dados['tipoComissao'] = FormaComissaoEnum::$descricao[FormaComissaoEnum::SERVICO_PROFISSIONAL];

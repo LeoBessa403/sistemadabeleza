@@ -42,3 +42,21 @@ INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_com
 
 INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-18 16:23:24", "2019-04-18 16:23:24", "17", "3", "10");
 
+INSERT INTO TB_HISTORICO_COMISSAO (co_config_comissao, st_taxa_antecipacao, st_taxa_administrativa, st_taxa_cartao_credito, st_taxa_cartao_debito, st_recebimento_pre_venda, nu_forma_comissao, dt_valido, dt_cadastro, co_usuario) VALUES ("1", "N", "S", "S", "S", "S", "4", "2008-04-02", "2019-04-20 11:44:20", "1");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-20 11:44:21", "2019-04-20 11:44:21", "14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-20 11:44:21", "2019-04-20 11:44:21", "14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-20 11:44:21", "2019-04-20 11:44:21", "14", "3", "10");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("67", "2");
+
+DELETE FROM TB_PERFIL_FUNCIONALIDADE where co_funcionalidade in (67);
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("67", "2");
+
+INSERT INTO TB_TAXA_CARTAO (dt_cadastro, co_pagamento_bandeira_cartao, nu_taxa_cartao) VALUES ("2019-04-20 12:25:28", "11", "1.76");
+
+INSERT INTO TB_TAXA_CARTAO (dt_cadastro, co_pagamento_bandeira_cartao, nu_taxa_cartao) VALUES ("2019-04-20 12:25:28", "12", "4.75");
+

@@ -1,16 +1,3 @@
-<style>
-    table {
-        margin-bottom: 30px;
-    }
-
-    td, th {
-        padding: 8px;
-    }
-
-    .icheckbox_square-green {
-        margin: 0 !important;
-    }
-</style>
 <div class="main-content">
     <div class="container">
         <div class="row">

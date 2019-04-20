@@ -183,6 +183,70 @@ class Servico extends AbstractController
         $this->form = ServicoForm::ComissaoServico($res);
     }
 
+    public function ComissaoServicoProfissional()
+    {
+        /** @var ServicoProfissionalService $servicoProfissionalService */
+        $servicoProfissionalService = $this->getService(SERVICO_PROFISSIONAL_SERVICE);
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+        /** @var ConfigComissaoService $configComissaoService */
+        $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
+        /** @var PercentualComissaoService $percentualComissaoService */
+        $percentualComissaoService = $this->getService(PERCENTUAL_COMISSAO_SERVICE);
+        $id = "configComissao";
+
+        if (!empty($_POST[$id])):
+            $retorno = $percentualComissaoService->salvaComissao($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
+            }
+        endif;
+
+        $res = [];
+        /** @var ConfigComissaoEntidade $configComissao */
+        $configComissao = $configComissaoService->PesquisaUmQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+
+        $profissionais = $profissionalService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+            ST_STATUS => StatusUsuarioEnum::ATIVO
+        ]);
+        if ($configComissao) {
+            /** @var HistoricoComissaoEntidade $ultHistConfigCom */
+            $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
+            $percAtul = $ultHistConfigCom->getPercentuaisComissao();
+            $res[NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
+            $res[NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
+            $res[NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                = $percAtul[TipoComissaoEnum::ASSISTENTE];
+        }
+        $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
+        if ($coServico) {
+//            $res[CO_SERVICO] = $coServico;
+//            $this->servico = $servicoService->PesquisaUmRegistro($coServico);
+//            /** @var ServicoEntidade $servico */
+//            $servico = $this->servico;
+//            if($servico->getCoPercentualComissao()){
+//                /** @var PercentualComissaoEntidade $percent */
+//                foreach ( $this->servico->getCoPercentualComissao() as $percent) {
+//                    $res[NU_TIPO_COMISSAO . $percent->getNuTipoComissao()]
+//                        = $percent->getNuComissao();
+//                }
+//            }
+        }else{
+            Notificacoes::geraMensagem(
+                'Selecione um Serviço para Modificar a comissão dos Profissionais',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
+        }
+
+        $this->form = ServicoForm::ComissaoServico($res);
+    }
+
     public static function DesativarServico($coServico)
     {
         /** @var ServicoService $servicoService */
