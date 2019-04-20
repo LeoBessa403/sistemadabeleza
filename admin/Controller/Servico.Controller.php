@@ -208,10 +208,11 @@ class Servico extends AbstractController
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
 
-        $profissionais = $profissionalService->PesquisaTodos([
+        $todosProfissionais = $profissionalService->PesquisaTodos([
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
             ST_STATUS => StatusUsuarioEnum::ATIVO
         ]);
+        $percAtul = [];
         if ($configComissao) {
             /** @var HistoricoComissaoEntidade $ultHistConfigCom */
             $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
@@ -225,7 +226,26 @@ class Servico extends AbstractController
         }
         $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
         if ($coServico) {
-//            $res[CO_SERVICO] = $coServico;
+            $res[CO_SERVICO] = $coServico;
+            /** @var ProfissionalEntidade $profissional */
+            foreach ($todosProfissionais as $profissional){
+                $servProf = $servicoProfissionalService->PesquisaTodos([
+                    CO_SERVICO => $coServico,
+                    CO_PROFISSIONAL => $profissional->getCoProfissional()
+                ]);
+                if($servProf){
+                    debug($servProf);
+                }else{
+                    $profissionais[][CO_PROFISSIONAL] = $profissional->getCoProfissional();
+                    $profissionais[][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+                    $profissionais[][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                        = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
+                    $profissionais[][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                        = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
+                    $profissionais[][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                        = $percAtul[TipoComissaoEnum::ASSISTENTE];
+                }
+            }
 //            $this->servico = $servicoService->PesquisaUmRegistro($coServico);
 //            /** @var ServicoEntidade $servico */
 //            $servico = $this->servico;
