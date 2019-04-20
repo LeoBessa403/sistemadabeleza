@@ -9,6 +9,7 @@ class Servico extends AbstractController
     public $form;
     public $jornada;
     public $coCategoriaServico;
+    public $profissionais;
 
     public function ListarCategoriaServico()
     {
@@ -185,6 +186,8 @@ class Servico extends AbstractController
 
     public function ComissaoServicoProfissional()
     {
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
         /** @var ServicoProfissionalService $servicoProfissionalService */
         $servicoProfissionalService = $this->getService(SERVICO_PROFISSIONAL_SERVICE);
         /** @var ProfissionalService $profissionalService */
@@ -236,26 +239,20 @@ class Servico extends AbstractController
                 if($servProf){
                     debug($servProf);
                 }else{
-                    $profissionais[][CO_PROFISSIONAL] = $profissional->getCoProfissional();
-                    $profissionais[][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
-                    $profissionais[][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                    $profissionais[$profissional->getCoProfissional()][CO_PROFISSIONAL] = $profissional->getCoProfissional();
+                    $profissionais[$profissional->getCoProfissional()][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                         = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
-                    $profissionais[][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
                         = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
-                    $profissionais[][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                         = $percAtul[TipoComissaoEnum::ASSISTENTE];
                 }
             }
-//            $this->servico = $servicoService->PesquisaUmRegistro($coServico);
-//            /** @var ServicoEntidade $servico */
-//            $servico = $this->servico;
-//            if($servico->getCoPercentualComissao()){
-//                /** @var PercentualComissaoEntidade $percent */
-//                foreach ( $this->servico->getCoPercentualComissao() as $percent) {
-//                    $res[NU_TIPO_COMISSAO . $percent->getNuTipoComissao()]
-//                        = $percent->getNuComissao();
-//                }
-//            }
+            $this->profissionais = $profissionais;
+            /** @var ServicoEntidade $servico */
+            $servico = $servicoService->PesquisaUmRegistro($coServico);
+            $this->servico = $servico->getNoServico();
         }else{
             Notificacoes::geraMensagem(
                 'Selecione um Serviço para Modificar a comissão dos Profissionais',
