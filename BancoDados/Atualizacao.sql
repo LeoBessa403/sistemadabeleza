@@ -146,3 +146,21 @@ INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atu
 
 INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 14:49:19", "2019-04-22 14:49:19", "3", "78");
 
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("9", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "1", "11");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("9", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "2", "11");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("9", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "3", "11");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("10", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "1", "55");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("10", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "2", "55");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("10", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "3", "55");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "1", "99");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "2", "99");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 15:08:18", "2019-04-22 15:08:18", "3", "99");
+

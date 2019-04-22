@@ -136,8 +136,8 @@ class ServicoProfissionalEntidade extends AbstractEntidade
         foreach ($perc as $percComis) {
             if($percComis->getNuTipoComissao() == $tipoComissao){
                 return $percComis->getNuComissao();
+                break;
             }
-            break;
         }
         return null;
     }
