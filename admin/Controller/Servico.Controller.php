@@ -4,7 +4,8 @@ class Servico extends AbstractController
 {
     public $result;
     public $tipoComissao;
-    public $servico;
+    public $noServico;
+    public $coServico;
     public $comissao;
     public $form;
     public $jornada;
@@ -103,15 +104,15 @@ class Servico extends AbstractController
             $res[NU_DURACAO] = $servico->getNuDuracao();
             $res[DS_DESCRICAO] = $servico->getDsDescricao();
             $res[CO_SERVICO] = $servico->getCoServico();
-            $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado().'/';
+            $noPasta = "Servico/Assinante-" . AssinanteService::getCoAssinanteLogado() . '/';
 
             // Carrega a Imagem do Serviço
             $foto = null;
-            if (!empty($servico->getCoImagem())){
+            if (!empty($servico->getCoImagem())) {
                 if (file_exists(PASTA_UPLOADS . $servico->getCoImagem()->getDsCaminho())) {
-                    $foto =  $servico->getCoImagem()->getDsCaminho();
-                }elseif (file_exists(PASTA_UPLOADS . $noPasta . $servico->getCoImagem()->getDsCaminho())) {
-                    $foto =  $noPasta . $servico->getCoImagem()->getDsCaminho();
+                    $foto = $servico->getCoImagem()->getDsCaminho();
+                } elseif (file_exists(PASTA_UPLOADS . $noPasta . $servico->getCoImagem()->getDsCaminho())) {
+                    $foto = $noPasta . $servico->getCoImagem()->getDsCaminho();
                 }
                 $res[CO_IMAGEM] = $servico->getCoImagem()->getCoImagem();
             }
@@ -166,14 +167,14 @@ class Servico extends AbstractController
             $res[CO_SERVICO] = $coServico;
             /** @var ServicoEntidade $servico */
             $this->servico = $servicoService->PesquisaUmRegistro($coServico);
-            if($this->servico->getCoPercentualComissao()){
+            if ($this->servico->getCoPercentualComissao()) {
                 /** @var PercentualComissaoEntidade $percent */
-                foreach ( $this->servico->getCoPercentualComissao() as $percent) {
+                foreach ($this->servico->getCoPercentualComissao() as $percent) {
                     $res[NU_TIPO_COMISSAO . $percent->getNuTipoComissao()]
                         = $percent->getNuComissao();
                 }
             }
-        }else{
+        } else {
             Notificacoes::geraMensagem(
                 'Selecione um Serviço para Modificar a comissão do mesmo',
                 TiposMensagemEnum::ALERTA
@@ -194,14 +195,15 @@ class Servico extends AbstractController
         $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
         /** @var ConfigComissaoService $configComissaoService */
         $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
-        /** @var PercentualComissaoService $percentualComissaoService */
-        $percentualComissaoService = $this->getService(PERCENTUAL_COMISSAO_SERVICE);
-        $id = "configComissao";
+        $id = "ComissaoServicoProfissional";
 
         if (!empty($_POST[$id])):
-            $retorno = $percentualComissaoService->salvaComissao($_POST);
+            $retorno = $servicoProfissionalService->salvaComissaoServicoProfissional($_POST);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
+            } else {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/' . UrlAmigavel::$action .
+                    Valida::GeraParametro(CO_SERVICO . "/" . $_POST[CO_SERVICO]));
             }
         endif;
 
@@ -229,18 +231,23 @@ class Servico extends AbstractController
         }
         $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
         if ($coServico) {
-            $res[CO_SERVICO] = $coServico;
             /** @var ProfissionalEntidade $profissional */
-            foreach ($todosProfissionais as $profissional){
-                $servProf = $servicoProfissionalService->PesquisaTodos([
+            foreach ($todosProfissionais as $profissional) {
+                /** @var ServicoProfissionalEntidade $servProf */
+                $servProf = $servicoProfissionalService->PesquisaUmQuando([
                     CO_SERVICO => $coServico,
                     CO_PROFISSIONAL => $profissional->getCoProfissional()
                 ]);
-                if($servProf){
-                    debug($servProf);
-                }else{
-                    $profissionais[$profissional->getCoProfissional()][CO_PROFISSIONAL] = $profissional->getCoProfissional();
-                    $profissionais[$profissional->getCoProfissional()][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+                $profissionais[$profissional->getCoProfissional()][CO_PROFISSIONAL] = $profissional->getCoProfissional();
+                $profissionais[$profissional->getCoProfissional()][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+                if ($servProf) {
+                    /** @var PercentualComissaoEntidade $percentualComissao */
+                    foreach ($servProf->getCoPercentualComissao() as $percentualComissao) {
+                        $profissionais[$profissional->getCoProfissional()]
+                        [NU_TIPO_COMISSAO . $percentualComissao->getNuTipoComissao()]
+                            = $percentualComissao->getNuComissao();
+                    }
+                } else {
                     $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                         = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
                     $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
@@ -252,16 +259,15 @@ class Servico extends AbstractController
             $this->profissionais = $profissionais;
             /** @var ServicoEntidade $servico */
             $servico = $servicoService->PesquisaUmRegistro($coServico);
-            $this->servico = $servico->getNoServico();
-        }else{
+            $this->noServico = $servico->getNoServico();
+            $this->coServico = $servico->getCoServico();
+        } else {
             Notificacoes::geraMensagem(
                 'Selecione um Serviço para Modificar a comissão dos Profissionais',
                 TiposMensagemEnum::ALERTA
             );
             Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
         }
-
-        $this->form = ServicoForm::ComissaoServico($res);
     }
 
     public static function DesativarServico($coServico)

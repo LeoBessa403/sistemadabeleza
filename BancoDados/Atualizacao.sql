@@ -60,3 +60,53 @@ INSERT INTO TB_TAXA_CARTAO (dt_cadastro, co_pagamento_bandeira_cartao, nu_taxa_c
 
 INSERT INTO TB_TAXA_CARTAO (dt_cadastro, co_pagamento_bandeira_cartao, nu_taxa_cartao) VALUES ("2019-04-20 12:25:28", "12", "4.75");
 
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("67", "2");
+
+INSERT INTO TB_HISTORICO_COMISSAO (co_config_comissao, st_taxa_antecipacao, st_taxa_administrativa, st_taxa_cartao_credito, st_taxa_cartao_debito, st_recebimento_pre_venda, nu_forma_comissao, dt_valido, dt_cadastro, co_usuario) VALUES ("1", "N", "S", "S", "S", "S", "4", "2008-04-02", "2019-04-22 11:29:40", "8");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-22 11:29:40", "2019-04-22 11:29:40", "18", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-22 11:29:40", "2019-04-22 11:29:40", "18", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-04-22 11:29:40", "2019-04-22 11:29:40", "18", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "15", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "9", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "19", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "15", "S");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (co_servico, co_profissional, st_status) VALUES ("34", "9", "S");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("9", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "1", "50");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("9", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "2", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("9", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "3", "15");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("10", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "1", "40");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("10", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "2", "15");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("10", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "3", "5");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("11", "2019-04-22 12:49:10", "2019-04-22 12:49:10", "3", "10");
+

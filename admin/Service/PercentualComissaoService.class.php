@@ -27,10 +27,13 @@ class  PercentualComissaoService extends AbstractService
         /** @var ConfigComissaoValidador $validador */
         $validador = $configComissaoValidador->validarComissao($dados);
         if ($validador[SUCESSO]) {
-            if (!empty($_POST[CO_SERVICO])){
+            if (!empty($dados[CO_SERVICO_PROFISSIONAL])){
+                $percCom[CO_SERVICO_PROFISSIONAL] = $dados[CO_SERVICO_PROFISSIONAL];
+            }
+            if (!empty($dados[CO_SERVICO])){
                 $percCom[CO_SERVICO] = $dados[CO_SERVICO];
             }
-            if (!empty($_POST[CO_PROFISSIONAL])){
+            if (!empty($dados[CO_PROFISSIONAL])){
                 $percCom[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
             }
             $percCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();

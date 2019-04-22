@@ -33,7 +33,7 @@
                         <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
                               role="form" class="formulario" method="post" enctype="multipart/form-data"
                               id="ComissaoServicoProfissional" name="ComissaoServicoProfissional">
-                            <h2>Comissões do Serviço: <?= $servico; ?></h2>
+                            <h2>Comissões do Serviço: <?= $noServico; ?></h2>
                             <?php
                             Modal::load();
                             $arrColunas = array('Profissional',
@@ -51,16 +51,20 @@
                                           placeholder="0" id="' . NU_TIPO_COMISSAO . $chave . '-' .
                                         $profissional[CO_PROFISSIONAL] . '" value="' .
                                         $profissional[NU_TIPO_COMISSAO . $chave] . '" 
-                                            name="' . NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE . '[' .
-                                        $profissional[CO_PROFISSIONAL] . ']"/>
+                                            name="' . NU_TIPO_COMISSAO . '[' . $profissional[CO_PROFISSIONAL] . '][' .
+                                        $chave . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">%</span></div>';
-                                    $grid->setColunas($campo,3);
+                                    $grid->setColunas($campo, 3);
                                 }
                                 $grid->criaLinha($profissional[CO_PROFISSIONAL]);
                             endforeach;
                             $grid->finalizaGrid();
                             ?>
                             <div class="form-group">
+                                <input type="hidden" value="<?= true; ?>"
+                                       name="ComissaoServicoProfissional" id="ComissaoServicoProfissional">
+                                <input type="hidden" value="<?= $coServico; ?>"
+                                       name="<?= CO_SERVICO; ?>" id="<?= CO_SERVICO; ?>">
                                 <div class="col-sm-2 col-sm-offset-10">
                                     <button type="submit" class="btn btn-success btn-block">
                                         Salvar <i class="fa fa-arrow-circle-right"></i>

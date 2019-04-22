@@ -382,7 +382,7 @@ class Configuracao extends AbstractController
                 ? 'checked' : '';
             $res[ST_RECEBIMENTO_PRE_VENDA] = ($ultHistConfigCom->getStRecebimentoPreVenda() == 'S')
                 ? 'checked' : '';
-            $res[DT_VALIDO] = Valida::DataShow($ultHistConfigCom->getDtValido());
+            $res[DT_VALIDO] = date('d/m/Y');
             $res[NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                 = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
             $res[NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
