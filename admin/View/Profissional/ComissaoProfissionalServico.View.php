@@ -11,12 +11,12 @@
                         </a>
                     </li>
                     <li class="active">
-                        Serviço / Profissional
+                        Profissional / Serviço
                     </li>
                 </ol>
                 <div class="page-header">
                     <h1>Comissão
-                        <small> Serviço / Profissional</small>
+                        <small> Profissional / Serviço </small>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -32,39 +32,39 @@
                     <div class="panel-body">
                         <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
                               role="form" method="post" enctype="multipart/form-data"
-                              id="ComissaoServicoProfissionalForm" name="ComissaoServicoProfissionalForm">
-                            <h2>Comissões do Serviço: <?= $noServico; ?></h2>
+                              id="ComissaoProfissionalServicoForm" name="ComissaoProfissionalServicoForm">
+                            <h2>Comissões do Profissional: <?= $noProfissional; ?></h2>
                             <?php
                             Modal::load();
-                            $arrColunas = array('Profissional',
+                            $arrColunas = array('Serviço',
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::UNICO_PROFISSIONAL],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::COM_ASSISTENTE],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::ASSISTENTE]);
                             $grid = new Grid();
                             $grid->setColunasIndeces($arrColunas);
                             $grid->criaGrid();
-                            foreach ($profissionais as $profissional) :
-                                $grid->setColunas($profissional[NO_PESSOA]);
+                            foreach ($servicos as $servico) :
+                                $grid->setColunas($servico[NO_SERVICO]);
                                 foreach (TipoComissaoEnum::$descricao as $chave => $descricao) {
                                     $campo = '<div class="col-md-12 input-group">
                                     <input type="text" class="form-control porc-int"
                                           placeholder="0" id="' . NU_TIPO_COMISSAO . $chave . '-' .
-                                        $profissional[CO_PROFISSIONAL] . '" value="' .
-                                        $profissional[NU_TIPO_COMISSAO . $chave] . '"
-                                            name="' . NU_TIPO_COMISSAO . '[' . $profissional[CO_PROFISSIONAL] . '][' .
+                                        $servico[CO_SERVICO] . '" value="' .
+                                        $servico[NU_TIPO_COMISSAO . $chave] . '"
+                                            name="' . NU_TIPO_COMISSAO . '[' . $servico[CO_SERVICO] . '][' .
                                         $chave . ']"/>
                                           <span class="input-group-addon" style="height: 34px;">%</span></div>';
                                     $grid->setColunas($campo, 3);
                                 }
-                                $grid->criaLinha($profissional[CO_PROFISSIONAL]);
+                                $grid->criaLinha($servico[CO_SERVICO]);
                             endforeach;
                             $grid->finalizaGrid();
                             ?>
                             <div class="form-group">
                                 <input type="hidden" value="<?= true; ?>"
-                                       name="ComissaoServicoProfissional" id="ComissaoServicoProfissional"/>
-                                <input type="hidden" value="<?= $coServico; ?>"
-                                       name="<?= CO_SERVICO; ?>" id="<?= CO_SERVICO; ?>"/>
+                                       name="ComissaoProfissionalServico" id="ComissaoProfissionalServico"/>
+                                <input type="hidden" value="<?= $coProfissional; ?>"
+                                       name="<?= CO_PROFISSIONAL; ?>" id="<?= CO_PROFISSIONAL; ?>"/>
                                 <div class="col-sm-2 col-sm-offset-10">
                                     <button type="submit" class="btn btn-success btn-block">
                                         Salvar <i class="fa fa-arrow-circle-right"></i>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="pull-right">
-                    <?php Valida::geraBtnVoltar('Servico/ListarServico/'); ?>
+                    <?php Valida::geraBtnVoltar('Profissional/ListarProfissional/'); ?>
                 </div>
                 <br><br><br>
             </div>

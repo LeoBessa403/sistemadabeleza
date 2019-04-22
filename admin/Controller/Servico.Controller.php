@@ -230,29 +230,31 @@ class Servico extends AbstractController
                 = $percAtul[TipoComissaoEnum::ASSISTENTE];
         }
         $coServico = UrlAmigavel::PegaParametro(CO_SERVICO);
+        $profissionais = [];
         if ($coServico) {
             /** @var ProfissionalEntidade $profissional */
             foreach ($todosProfissionais as $profissional) {
+                $coProfissional = $profissional->getCoProfissional();
                 /** @var ServicoProfissionalEntidade $servProf */
                 $servProf = $servicoProfissionalService->PesquisaUmQuando([
                     CO_SERVICO => $coServico,
-                    CO_PROFISSIONAL => $profissional->getCoProfissional()
+                    CO_PROFISSIONAL => $coProfissional
                 ]);
-                $profissionais[$profissional->getCoProfissional()][CO_PROFISSIONAL] = $profissional->getCoProfissional();
-                $profissionais[$profissional->getCoProfissional()][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+                $profissionais[$coProfissional][CO_PROFISSIONAL] = $coProfissional;
+                $profissionais[$coProfissional][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
                 if ($servProf) {
-                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                    $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                         = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::UNICO_PROFISSIONAL);
-                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                    $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
                         = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::COM_ASSISTENTE);
-                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                    $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                         = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::ASSISTENTE);
                 } else {
-                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                    $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                         = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
-                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                    $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
                         = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
-                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                    $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                         = $percAtul[TipoComissaoEnum::ASSISTENTE];
                 }
             }
@@ -260,7 +262,7 @@ class Servico extends AbstractController
             /** @var ServicoEntidade $servico */
             $servico = $servicoService->PesquisaUmRegistro($coServico);
             $this->noServico = $servico->getNoServico();
-            $this->coServico = $servico->getCoServico();
+            $this->coServico = $coServico;
         } else {
             Notificacoes::geraMensagem(
                 'Selecione um Serviço para Modificar a comissão dos Profissionais',
