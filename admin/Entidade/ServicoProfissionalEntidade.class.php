@@ -126,11 +126,20 @@ class ServicoProfissionalEntidade extends AbstractEntidade
     }
 
     /**
+     * @param mixed $tipoComissao
      * @return PercentualComissaoEntidade $co_percentual_comissao
      */
-    public function getCoUltimoPercentualComissao()
+    public function getNuUltimoComissaoPorTipo($tipoComissao)
     {
-        return $this->ultimo($this->getCoPercentualComissao());
+        $perc = array_reverse($this->getCoPercentualComissao());
+        /** @var PercentualComissaoEntidade $percComis */
+        foreach ($perc as $percComis) {
+            if($percComis->getNuTipoComissao() == $tipoComissao){
+                return $percComis->getNuComissao();
+            }
+            break;
+        }
+        return null;
     }
 
 }

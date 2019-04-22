@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-sm-2 col-sm-offset-11">
                     <!-- end: DYNAMIC TABLE PANEL -->
-                    <?php Valida::geraBtnVoltar('Servico/ComissaoServicoProfissional/'); ?>
+                    <?php Valida::geraBtnVoltar('Servico/ListarServico/'); ?>
                 </div>
                 <br><br><br>
             </div>

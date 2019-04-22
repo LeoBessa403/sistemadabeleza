@@ -241,12 +241,12 @@ class Servico extends AbstractController
                 $profissionais[$profissional->getCoProfissional()][CO_PROFISSIONAL] = $profissional->getCoProfissional();
                 $profissionais[$profissional->getCoProfissional()][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
                 if ($servProf) {
-                    /** @var PercentualComissaoEntidade $percentualComissao */
-                    foreach ($servProf->getCoPercentualComissao() as $percentualComissao) {
-                        $profissionais[$profissional->getCoProfissional()]
-                        [NU_TIPO_COMISSAO . $percentualComissao->getNuTipoComissao()]
-                            = $percentualComissao->getNuComissao();
-                    }
+                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
+                        = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::UNICO_PROFISSIONAL);
+                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::COM_ASSISTENTE]
+                        = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::COM_ASSISTENTE);
+                    $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
+                        = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::ASSISTENTE);
                 } else {
                     $profissionais[$profissional->getCoProfissional()][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                         = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
