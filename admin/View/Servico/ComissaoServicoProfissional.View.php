@@ -42,7 +42,7 @@
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::ASSISTENTE]);
                             $grid = new Grid();
                             $grid->setColunasIndeces($arrColunas);
-                            $grid->criaGrid();
+                            $grid->criaGrid('ComissaoServicoProfissionalTable',false);
                             foreach ($profissionais as $profissional) :
                                 $grid->setColunas($profissional[NO_PESSOA]);
                                 foreach (TipoComissaoEnum::$descricao as $chave => $descricao) {

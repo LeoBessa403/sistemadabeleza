@@ -31,7 +31,7 @@
                     </div>
                     <div class="panel-body">
                         <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
-                              role="form" method="post" enctype="multipart/form-data"
+                               class="formulario" method="post" enctype="multipart/form-data"
                               id="ComissaoProfissionalServicoForm" name="ComissaoProfissionalServicoForm">
                             <h2>Comissões do Profissional: <?= $noProfissional; ?></h2>
                             <?php
@@ -42,7 +42,7 @@
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::ASSISTENTE]);
                             $grid = new Grid();
                             $grid->setColunasIndeces($arrColunas);
-                            $grid->criaGrid();
+                            $grid->criaGrid('ComissaoProfissionalServicoTable',false);
                             foreach ($servicos as $servico) :
                                 $grid->setColunas($servico[NO_SERVICO]);
                                 foreach (TipoComissaoEnum::$descricao as $chave => $descricao) {

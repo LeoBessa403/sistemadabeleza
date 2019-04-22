@@ -9,7 +9,7 @@ class Profissional extends AbstractController
     public $profissional;
     public $comissao;
     public $noProfissional;
-    public $coProfissinal;
+    public $coProfissional;
     public $servicos;
 
 
@@ -244,10 +244,10 @@ class Profissional extends AbstractController
         $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
         /** @var ConfigComissaoService $configComissaoService */
         $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
-        $id = "ComissaoServicoProfissional";
+        $id = "ComissaoProfissionalServico";
 
         if (!empty($_POST[$id])):
-            debug('aqui');
+            debug(count($_POST[NU_TIPO_COMISSAO]));
             $retorno = $servicoProfissionalService->salvaComissaoServicoProfissional($_POST);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
@@ -315,7 +315,7 @@ class Profissional extends AbstractController
             /** @var ProfissionalEntidade $profissional */
             $profissional = $profissionalService->PesquisaUmRegistro($coProfissional);
             $this->noProfissional = $profissional->getCoPessoa()->getNoPessoa();
-            $this->coProfissinal = $coProfissional;
+            $this->coProfissional = $coProfissional;
         } else {
             Notificacoes::geraMensagem(
                 'Selecione um Profissional para Modificar a comissão dos Serviços',
