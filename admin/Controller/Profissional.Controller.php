@@ -247,8 +247,7 @@ class Profissional extends AbstractController
         $id = "ComissaoProfissionalServico";
 
         if (!empty($_POST[$id])):
-            debug(count($_POST[NU_TIPO_COMISSAO]));
-            $retorno = $servicoProfissionalService->salvaComissaoServicoProfissional($_POST);
+            $retorno = $servicoProfissionalService->salvaComissaoProfissionalServico($_POST);
             if ($retorno[SUCESSO]) {
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
             } else {

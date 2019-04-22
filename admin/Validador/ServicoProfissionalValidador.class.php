@@ -19,4 +19,12 @@ class  ServicoProfissionalValidador extends AbstractValidador
         );
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarComissaoProfissionalServico($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[CO_PROFISSIONAL], AbstractValidador::VALIDACAO_NUMERO, 'Código do Profissional'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
 }
