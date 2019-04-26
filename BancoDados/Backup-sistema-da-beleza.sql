@@ -1,4 +1,4 @@
--- Atualizado em: 22/04/2019 17:05:50
+-- Atualizado em: 26/04/2019 11:16:57
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=230 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("226","qkua00ui4fkak030aueusb0282","2019-04-22 17:00:57","2019-04-22 17:35:50","A","1","245");
+INSERT INTO TB_ACESSO VALUES("229","s4ae8b6j25moo8e8je9p7kp244","2019-04-26 10:56:12","2019-04-26 11:46:56","A","1","248");
 
 
 
@@ -49,16 +49,6 @@ INSERT INTO TB_ANOTACAO VALUES("2","2018-08-03 19:15:28","<p>Verificar quando fo
 INSERT INTO TB_ANOTACAO VALUES("3","2018-08-03 19:50:23","<p>Verificar como sera inserido o plano quando consta filiais e como sera cobrado o n&uacute;mero de profissionais com as filiais</p>","Plano com filial","4");
 
 INSERT INTO TB_ANOTACAO VALUES("4","2018-08-13 18:01:53","<p>Criar Usu&aacute;rio no cadastro na gest&atilde;o do assinante envio de email de confirma&ccedil;&atilde;o com senha gerada e ativa&ccedil;&atilde;o do cadastro</p>","Criar Usuário","2");
-
-INSERT INTO TB_ANOTACAO VALUES("5","2019-01-30 14:16:09","<p>Quem ira fazer a entrada de dados do cliente e quando ser&aacute; feito</p>","Entrada de dados do cliente","174");
-
-INSERT INTO TB_ANOTACAO VALUES("6","2019-01-30 14:17:03","<p>Havera um periodo de teste para o uso do sistema ? se sim de quanto dias</p>","Período de teste","174");
-
-INSERT INTO TB_ANOTACAO VALUES("7","2019-01-30 14:17:57","<p>Quem irar dar a entrada das informa&ccedil;&otilde;es e como sera feito (Arquivo de envio a receita)?</p>","Validação das informações","174");
-
-INSERT INTO TB_ANOTACAO VALUES("8","2019-01-30 14:19:16","<p>com que frequ&ecirc;ncia tem altera&ccedil;&atilde;o nas formalas de valida&ccedil;&atilde;o da receita?</p>","Alteração nas Fórmulas","174");
-
-INSERT INTO TB_ANOTACAO VALUES("9","2019-01-30 14:20:26","<p>Ser&aacute; necess&aacute;rio a utiliza&ccedil;&atilde;o de um site ou somente uso com clientes que ser&atilde;o captados?</p>","Uso de um site","174");
 
 INSERT INTO TB_ANOTACAO VALUES("10","2019-03-11 16:57:48","<p>Criar Perfil de Profissional autom&aacute;tico onde ao cadastrar um profissional ele ja vem com o perfil de profissional e ja suas funcionalidades b&aacute;sicas cadastradas</p>","Criar Perfil de Profissional","84");
 
@@ -148,7 +138,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 
 
@@ -165,7 +155,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=2253 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8;
 
 
 
@@ -182,7 +172,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=453 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
 
 
@@ -1501,7 +1491,7 @@ CREATE TABLE `TB_HISTORIA` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","1");
@@ -1786,6 +1776,64 @@ INSERT INTO TB_HISTORIA VALUES("153","Histórico de comissões por serviço","<p
 
 INSERT INTO TB_HISTORIA VALUES("154","Histórico de comissões por profissional","<p>Hist&oacute;rico de comiss&otilde;es por profissional</p>","2019-03-27 17:10:43","2019-03-27 17:10:43","N","12");
 
+INSERT INTO TB_HISTORIA VALUES("155","Teste sessão assinante","<p>Teste sess&atilde;o assinante</p>","2019-04-26 10:58:36","2019-04-26 10:58:36","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("156","Teste sessão Complemento do assinante","<p>Teste sess&atilde;o Complemento do assinante</p>","2019-04-26 10:59:44","2019-04-26 10:59:44","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("157","Teste sessão Feriados e Dias Especiais","<p>Teste sess&atilde;o Feriados e Dias Especiais</p>","2019-04-26 11:00:28","2019-04-26 11:00:28","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("158","Teste sessão Configuração Padrão","<p>Teste sess&atilde;o Configura&ccedil;&atilde;o Padr&atilde;o</p>","2019-04-26 11:01:03","2019-04-26 11:01:03","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("159","Teste sessão Motivo Desconto","<p>Teste sess&atilde;o Motivo Desconto</p>","2019-04-26 11:01:36","2019-04-26 11:01:36","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("160","Teste sessão Profissional","<p>Teste sess&atilde;o Profissional</p>","2019-04-26 11:02:21","2019-04-26 11:02:21","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("161","Teste sessão Profissional","<p>Teste sess&atilde;o Profissional</p>","2019-04-26 11:02:34","2019-04-26 11:02:34","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("162","Teste sessão Cliente","<p>Teste sess&atilde;o Cliente</p>","2019-04-26 11:03:38","2019-04-26 11:03:38","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("163","Teste sessão Serviço","<p>Teste sess&atilde;o Servi&ccedil;o</p>","2019-04-26 11:04:15","2019-04-26 11:04:15","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("164","Teste sessão Serviço","<p>Teste sess&atilde;o Servi&ccedil;o</p>","2019-04-26 11:04:27","2019-04-26 11:04:27","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("165","Teste sessão Pacote","<p>Teste sess&atilde;o Pacote</p>","2019-04-26 11:04:56","2019-04-26 11:04:56","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("166","Teste sessão Promoção","<p>Teste sess&atilde;o Promo&ccedil;&atilde;o</p>","2019-04-26 11:05:27","2019-04-26 11:05:27","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("167","Teste sessão Cortesia","<p>Teste sess&atilde;o Cortesia</p>","2019-04-26 11:05:52","2019-04-26 11:05:52","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("168","Teste sessão Vale presente","<p>Teste sess&atilde;o Vale presente</p>","2019-04-26 11:06:18","2019-04-26 11:06:18","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("169","Teste sessão Agendamento","<p>Teste sess&atilde;o Agendamento</p>","2019-04-26 11:06:47","2019-04-26 11:06:47","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("170","Teste sessão Agendamento","<p>Teste sess&atilde;o Agendamento</p>","2019-04-26 11:07:00","2019-04-26 11:07:00","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("171","Teste sessão Caixa","<p>Teste sess&atilde;o Caixa</p>","2019-04-26 11:07:35","2019-04-26 11:07:35","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("172","Teste sessão Iniciar o sistema","<p>Teste sess&atilde;o Iniciar o sistema</p>","2019-04-26 11:08:07","2019-04-26 11:08:07","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("173","Teste sessão Lembretes por e-mail","<p>Teste sess&atilde;o Lembretes por e-mail</p>","2019-04-26 11:08:33","2019-04-26 11:11:20","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("174","Teste sessão Lembretes por SMS","<p>Teste sess&atilde;o Lembretes por SMS</p>","2019-04-26 11:08:56","2019-04-26 11:11:30","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("175","Teste sessão Perfil","<p>Teste sess&atilde;o Perfil</p>","2019-04-26 11:12:04","2019-04-26 11:12:04","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("176","Teste sessão Financeiro","","2019-04-26 11:12:31","2019-04-26 11:12:31","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("177","Teste sessão Financeiro","<p>Teste sess&atilde;o Financeiro</p>","2019-04-26 11:12:35","2019-04-26 11:12:35","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("178","Teste sessão Suporte","<p>Teste sess&atilde;o Suporte</p>","2019-04-26 11:13:03","2019-04-26 11:14:17","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("179","Teste sessão Relatório","<p>Teste sess&atilde;o Relat&oacute;rio</p>","2019-04-26 11:13:53","2019-04-26 11:13:53","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("180","Teste sessão Relatório","<p>Teste sess&atilde;o Relat&oacute;rio</p>","2019-04-26 11:14:07","2019-04-26 11:14:07","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("181","Teste sessão Relatório","<p>Teste sess&atilde;o Relat&oacute;rio</p>","2019-04-26 11:14:28","2019-04-26 11:14:28","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("182","Teste sessão Relatório","<p>Teste sess&atilde;o Relat&oacute;rio</p>","2019-04-26 11:14:39","2019-04-26 11:14:39","N","34");
+
+INSERT INTO TB_HISTORIA VALUES("183","Teste sessão Usuário","<p>Teste sess&atilde;o Usu&aacute;rio</p>","2019-04-26 11:15:13","2019-04-26 11:15:13","N","34");
+
 
 
 
@@ -1860,7 +1908,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=603 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=635 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3061,6 +3109,70 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("601","20","0","2019-04-22 15:27:21","1
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("602","20","0","2019-04-22 17:01:46","150");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("603","40","40","2019-04-26 10:58:36","155");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("604","20","20","2019-04-26 10:59:44","156");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("605","5","5","2019-04-26 11:00:28","157");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("606","30","30","2019-04-26 11:01:03","158");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("607","3","3","2019-04-26 11:01:36","159");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("608","30","30","2019-04-26 11:02:21","160");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("609","20","20","2019-04-26 11:02:34","161");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("610","40","40","2019-04-26 11:03:38","162");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("611","30","30","2019-04-26 11:04:15","163");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("612","20","20","2019-04-26 11:04:27","164");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("613","3","3","2019-04-26 11:04:56","165");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("614","3","3","2019-04-26 11:05:27","166");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("615","3","3","2019-04-26 11:05:52","167");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("616","3","3","2019-04-26 11:06:18","168");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("617","30","30","2019-04-26 11:06:47","169");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("618","20","20","2019-04-26 11:07:00","170");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("619","20","20","2019-04-26 11:07:35","171");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("620","5","5","2019-04-26 11:08:07","172");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("621","8","8","2019-04-26 11:08:33","173");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("622","3","3","2019-04-26 11:08:56","174");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("623","5","5","2019-04-26 11:11:20","173");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("624","5","5","2019-04-26 11:11:30","174");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("625","8","8","2019-04-26 11:12:04","175");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("626","20","20","2019-04-26 11:12:31","176");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("627","20","20","2019-04-26 11:12:35","177");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("628","8","8","2019-04-26 11:13:03","178");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("629","40","40","2019-04-26 11:13:53","179");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("630","40","40","2019-04-26 11:14:07","180");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("631","13","13","2019-04-26 11:14:17","178");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("632","40","40","2019-04-26 11:14:28","181");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("633","40","40","2019-04-26 11:14:39","182");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("634","13","13","2019-04-26 11:15:13","183");
+
 
 
 
@@ -3332,7 +3444,7 @@ CREATE TABLE `TB_MODULO` (
   `co_projeto` int(11) NOT NULL,
   PRIMARY KEY (`co_modulo`,`co_projeto`),
   KEY `fk_TB_MODULO_TB_PROJETO1_idx` (`co_projeto`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_MODULO VALUES("1","Assinante","2018-07-25 11:07:40","1");
@@ -3344,6 +3456,8 @@ INSERT INTO TB_MODULO VALUES("3","Criar Histórias","2018-07-26 11:45:42","1");
 INSERT INTO TB_MODULO VALUES("4","Site","2018-07-26 17:35:18","1");
 
 INSERT INTO TB_MODULO VALUES("5","Lançamento do SisBela","2018-07-26 17:42:45","1");
+
+INSERT INTO TB_MODULO VALUES("6","Teste","2019-04-26 10:56:52","1");
 
 
 
@@ -5001,7 +5115,7 @@ CREATE TABLE `TB_SESSAO` (
   `co_modulo` int(11) NOT NULL,
   PRIMARY KEY (`co_sessao`,`co_modulo`),
   KEY `fk_TB_SESSAO_TB_MODULO1_idx` (`co_modulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_SESSAO VALUES("1","Assinante","2018-07-25 11:07:40","1");
@@ -5063,6 +5177,8 @@ INSERT INTO TB_SESSAO VALUES("31","Suporte","2018-07-26 22:26:08","2");
 INSERT INTO TB_SESSAO VALUES("32","Relatório","2018-07-26 22:31:46","2");
 
 INSERT INTO TB_SESSAO VALUES("33","Usuário","2019-03-11 17:06:17","2");
+
+INSERT INTO TB_SESSAO VALUES("34","Teste das Sessões","2019-04-26 10:57:34","6");
 
 
 
@@ -5175,7 +5291,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=246 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -5212,7 +5328,7 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO TB_TRAFEGO VALUES("245","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO TB_TRAFEGO VALUES("248","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 
 
