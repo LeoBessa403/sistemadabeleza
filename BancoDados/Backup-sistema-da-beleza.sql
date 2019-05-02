@@ -1,4 +1,4 @@
--- Atualizado em: 26/04/2019 11:16:57
+-- Atualizado em: 02/05/2019 11:42:07
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -23,7 +23,7 @@ CREATE TABLE `TB_ACESSO` (
 ) ENGINE=InnoDB AUTO_INCREMENT=230 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("229","s4ae8b6j25moo8e8je9p7kp244","2019-04-26 10:56:12","2019-04-26 11:46:56","A","1","248");
+INSERT INTO TB_ACESSO VALUES("229","s4ae8b6j25moo8e8je9p7kp244","2019-04-26 10:56:12","2019-04-26 11:49:03","A","1","248");
 
 
 
@@ -138,7 +138,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -155,7 +155,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=330 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
@@ -172,7 +172,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
