@@ -547,34 +547,44 @@ class ProfissionalForm
             ->setOptions($options)
             ->CriaInpunt();
 
-        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
         $formulario
             ->setLabel("Assistente")
             ->setId(ST_ASSISTENTE)
-            ->setTamanhoInput(4)
+            ->setTamanhoInput(6)
             ->setInfo("Trabalha como assistente")
-            ->setType("checkbox")
-            ->setOptions($label_options2)
+            ->setType("select")
+            ->setOptions($label_options)
             ->CriaInpunt();
 
-        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
         $formulario
             ->setLabel("Possui agenda")
             ->setId(ST_AGENDA)
-            ->setTamanhoInput(4)
-            ->setType("checkbox")
+            ->setTamanhoInput(6)
+            ->setType("select")
             ->setInfo("Tem agenda no sistema de atendimento")
-            ->setOptions($label_options2)
+            ->setOptions($label_options)
             ->CriaInpunt();
 
-        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
         $formulario
             ->setLabel("Mostra agenda on line")
             ->setId(ST_AGENDA_ONLINE)
-            ->setType("checkbox")
-            ->setTamanhoInput(4)
+            ->setType("select")
+            ->setTamanhoInput(6)
             ->setInfo("Pode mostrar a agenda on line")
-            ->setOptions($label_options2)
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $dias = DiasEnum::$montaCombo;
+        $formulario
+            ->setId(NU_DIA_SEMANA)
+            ->setLabel("Atende no dia")
+            ->setTamanhoInput(6)
+            ->setClasses("multipla")
+            ->setType("select")
+            ->setOptions($dias)
             ->CriaInpunt();
 
 

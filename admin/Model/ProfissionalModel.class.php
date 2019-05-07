@@ -29,9 +29,8 @@ class  ProfissionalModel extends AbstractModel
         $campos = "DISTINCT prof.*";
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);
-//        $where = $where . " ORDER BY prof.".ST_STATUS." ASC, insc.".InscricaoEntidade::CHAVE." DESC";
         $pesquisa->Pesquisar($tabela, $where, null, $campos);
-//        debug($pesquisa->getSql());
+        debug($pesquisa->getSql());
         $profissionais = [];
         /** @var ProfissionalEntidade $profissional */
         foreach ($pesquisa->getResult() as $profissional){

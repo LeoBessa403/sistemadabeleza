@@ -26,15 +26,20 @@ class Profissional extends AbstractController
         $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
         if (!empty($_POST)) {
-//            $Condicoes = array(
-//                "pes." . NO_PESSOA => trim($_POST[NO_PESSOA]),
-//                "pes." . NU_CPF => Valida::RetiraMascara($_POST[NU_CPF]),
-//                "in#pag." . TP_SITUACAO => (!empty($_POST[TP_SITUACAO]))
-//                    ? implode("', '", $_POST[TP_SITUACAO]) : null,
-//                "insc." . DS_MEMBRO_ATIVO => $_POST[DS_MEMBRO_ATIVO][0],
-//                "insc." . CO_EVENTO => InscricaoEnum::EVENTO_ATUAL,
-//                "insc." . ST_EQUIPE_TRABALHO => $_POST[ST_EQUIPE_TRABALHO][0],
-//            );
+            $Condicoes = array(
+                "pes." . NO_PESSOA => trim($_POST[NO_PESSOA]),
+                "conban." . CO_BANCO => $_POST[CO_BANCO][0],
+                "in#procar." . CO_CARGO => (!empty($_POST[CO_CARGO]))
+                    ? implode(", ", $_POST[CO_CARGO]) : null,
+                "in#jortra." . NU_DIA_SEMANA => (!empty($_POST[NU_DIA_SEMANA]))
+                    ? implode(", ", $_POST[NU_DIA_SEMANA]) : null,
+                "pes." . ST_SEXO => $_POST[ST_SEXO][0],
+                "like#end." . NO_CIDADE => $_POST[NO_CIDADE],
+                "end." . SG_UF => $_POST[SG_UF][0],
+                "prof." . ST_ASSISTENTE => $_POST[ST_ASSISTENTE][0],
+                "prof." . ST_AGENDA => $_POST[ST_AGENDA][0],
+                "prof." . ST_AGENDA_ONLINE => $_POST[ST_AGENDA_ONLINE][0],
+            );
             $this->result = $profissionalService->PesquisaAvancada($Condicoes);
             $session->setSession(PESQUISA_AVANCADA, $Condicoes);
         } else {

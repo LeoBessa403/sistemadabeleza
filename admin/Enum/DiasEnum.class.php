@@ -24,4 +24,16 @@ class DiasEnum extends AbstractEnum
         DiasEnum::DOMINGO => 'Domingo',
         DiasEnum::FERIADO => 'Feriado',
     ];
+
+    public static $montaCombo = [
+        "" => Mensagens::MSG_SEM_ITEM_SELECIONADO,
+        DiasEnum::SEGUNDA => 'Segunda',
+        DiasEnum::TERCA => 'Terça',
+        DiasEnum::QUARTA => 'Quarta',
+        DiasEnum::QUINTA => 'Quinta',
+        DiasEnum::SEXTA => 'Sexta',
+        DiasEnum::SABADO => 'Sábado',
+        DiasEnum::DOMINGO => 'Domingo',
+        DiasEnum::FERIADO => 'Feriado',
+    ];
 }
