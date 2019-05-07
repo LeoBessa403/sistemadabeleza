@@ -32,6 +32,13 @@
                     </div>
                     <div class="panel-body">
                         <?php
+                        $grid = new Grid();
+                        echo $grid->PesquisaAvancada('Pesquisar Profissionais');
+                        ?>
+                        <h2>
+                            <small>Profissionais Cadastrados</small>
+                        </h2>
+                        <?php
                         if ($tipoComissao == FormaComissaoEnum::PROFISSIONAL) { ?>
                             <div class="alert alert-block alert-warning fade in col-md-3">
                                 <h4 class="alert-heading"><i class="fa fa-calendar"></i> Legenda</h4>

@@ -488,4 +488,96 @@ class ProfissionalForm
 
         return $formulario->finalizaForm('Profissional/AusenciaProfissional');
     }
+
+    public static function Pesquisar()
+    {
+        $id = "pesquisaProfissional";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action, "Pesquisa", 12);
+
+        $formulario
+            ->setId(NO_PESSOA)
+            ->setIcon("clip-user-6")
+            ->setTamanhoInput(6)
+            ->setLabel("Nome do Profissional")
+            ->setInfo("Pode ser Parte do nome")
+            ->CriaInpunt();
+
+        $bancos = BancoService::montaComboBancos();
+        $formulario
+            ->setId(CO_BANCO)
+            ->setLabel("Banco")
+            ->setType("select")
+            ->setTamanhoInput(6)
+            ->setOptions($bancos)
+            ->CriaInpunt();
+
+        $cargos = CargoService::montaComboCargos();
+        $formulario
+            ->setId(CO_CARGO)
+            ->setLabel("Cargo")
+            ->setTamanhoInput(6)
+            ->setClasses("multipla")
+            ->setInfo("Cargos exercidos pelo profissional")
+            ->setType("select")
+            ->setOptions($cargos)
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
+        $formulario
+            ->setLabel("Sexo")
+            ->setId(ST_SEXO)
+            ->setTamanhoInput(6)
+            ->setType("select")
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_CIDADE)
+            ->setTamanhoInput(6)
+            ->setLabel("Cidade")
+            ->CriaInpunt();
+
+        $options = EnderecoService::montaComboEstadosDescricao();
+        $formulario
+            ->setId(SG_UF)
+            ->setType("select")
+            ->setLabel("Estado")
+            ->setTamanhoInput(6)
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Assistente")
+            ->setId(ST_ASSISTENTE)
+            ->setTamanhoInput(4)
+            ->setInfo("Trabalha como assistente")
+            ->setType("checkbox")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Possui agenda")
+            ->setId(ST_AGENDA)
+            ->setTamanhoInput(4)
+            ->setType("checkbox")
+            ->setInfo("Tem agenda no sistema de atendimento")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Mostra agenda on line")
+            ->setId(ST_AGENDA_ONLINE)
+            ->setType("checkbox")
+            ->setTamanhoInput(4)
+            ->setInfo("Pode mostrar a agenda on line")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+
+        return $formulario->finalizaFormPesquisaAvancada();
+    }
 }

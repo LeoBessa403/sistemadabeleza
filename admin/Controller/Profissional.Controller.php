@@ -17,14 +17,41 @@ class Profissional extends AbstractController
     {
         /** @var ProfissionalService $profissionalService */
         $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
-        $this->result = $profissionalService->PesquisaTodos([
-            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
-        ]);
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $session->FinalizaSession(PESQUISA_AVANCADA);
+        }
+        $Condicoes = [];
+        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+
+        if (!empty($_POST)) {
+//            $Condicoes = array(
+//                "pes." . NO_PESSOA => trim($_POST[NO_PESSOA]),
+//                "pes." . NU_CPF => Valida::RetiraMascara($_POST[NU_CPF]),
+//                "in#pag." . TP_SITUACAO => (!empty($_POST[TP_SITUACAO]))
+//                    ? implode("', '", $_POST[TP_SITUACAO]) : null,
+//                "insc." . DS_MEMBRO_ATIVO => $_POST[DS_MEMBRO_ATIVO][0],
+//                "insc." . CO_EVENTO => InscricaoEnum::EVENTO_ATUAL,
+//                "insc." . ST_EQUIPE_TRABALHO => $_POST[ST_EQUIPE_TRABALHO][0],
+//            );
+            $this->result = $profissionalService->PesquisaAvancada($Condicoes);
+            $session->setSession(PESQUISA_AVANCADA, $Condicoes);
+        } else {
+            $this->result = $profissionalService->PesquisaAvancada($Condicoes);
+        }
+
+
         /** @var Configuracao $configControl */
         $configControl = new Configuracao();
         $dados = $configControl->getTipoEComissoes(FormaComissaoEnum::PROFISSIONAL);
         $this->tipoComissao = $dados['tipoComissao'];
         $this->comissao = $dados['comissao'];
+    }
+
+    public function ListarProfissionalPesquisaAvancada()
+    {
+        echo ProfissionalForm::Pesquisar();
     }
 
     public function CadastroProfissional()

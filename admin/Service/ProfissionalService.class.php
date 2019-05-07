@@ -156,6 +156,11 @@ class  ProfissionalService extends AbstractService
         return $retorno;
     }
 
+    public function PesquisaAvancada($Condicoes)
+    {
+        return $this->ObjetoModel->PesquisaAvancada($Condicoes);
+    }
+
     public static function PesquisaProfissionaisCombo()
     {
         /** @var ProfissionalService $profissionalService */
