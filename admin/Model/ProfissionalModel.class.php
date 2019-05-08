@@ -30,7 +30,6 @@ class  ProfissionalModel extends AbstractModel
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);
         $pesquisa->Pesquisar($tabela, $where, null, $campos);
-        debug($pesquisa->getSql());
         $profissionais = [];
         /** @var ProfissionalEntidade $profissional */
         foreach ($pesquisa->getResult() as $profissional){

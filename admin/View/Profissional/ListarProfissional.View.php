@@ -52,9 +52,9 @@
                         Modal::confirmacao("confirma_Profissional");
                         Modal::DesativarProfissional("DesativarProfissional");
                         Modal::AtivarProfissional("AtivarProfissional");
-                        $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo', 'Assistente', 'Ações');
+                        $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo', 'Assistente', 'Ações');
                         if ($tipoComissao == FormaComissaoEnum::PROFISSIONAL) {
-                            $arrColunas = array('Foto', 'Profissional', 'Telefone', 'Nascimento', 'Cargo',
+                            $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo',
                                 'Comissão', 'Assistente', 'Ações');
                         }
                         $grid = new Grid();
@@ -144,10 +144,20 @@
                                 alt="' . $noPessoa . '" title="' . $noPessoa . '" 
                                 class="circle-img" />';
                             }
+                            $atendimento = '';
+                            if ($res->getCoJornadaTrabalho()) {
+                                /** @var JornadaTrabalhoEntidade $item */
+                                foreach ($res->getCoJornadaTrabalho() as $item) {
+                                    $atendimento .= DiasEnum::getDescricaoValor(
+                                            $item->getNuDiaSemana()
+                                        ) . ', ';
+                                }
+                            }
                             $grid->setColunas($imagem, 1);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
+                            $grid->setColunas($atendimento);
                             $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 2);
-                            $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
+                            $grid->setColunas(Valida::getAniversario($res->getCoPessoa()->getDtNascimento()), 2);
                             $grid->setColunas(implode(', ', $cargos));
                             if ($tipoComissao == FormaComissaoEnum::PROFISSIONAL) {
                                 $grid->setColunas($comiss);
