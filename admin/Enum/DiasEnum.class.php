@@ -36,4 +36,20 @@ class DiasEnum extends AbstractEnum
         DiasEnum::DOMINGO => 'Domingo',
         DiasEnum::FERIADO => 'Feriado',
     ];
+
+    public static $montaComboMes = [
+        "" => Mensagens::MSG_SEM_ITEM_SELECIONADO,
+        1 => 'Janeiro',
+        2 => 'Fevereiro',
+        3 => 'Março',
+        4 => 'Abril',
+        5 => 'Maio',
+        6 => 'Junho',
+        7 => 'Julho',
+        8 => 'Agosto',
+        9 => 'Setembro',
+        10 => 'Outubro',
+        11=> 'Novembro',
+        12 => 'Dezembro'
+    ];
 }

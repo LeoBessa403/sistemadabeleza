@@ -587,6 +587,16 @@ class ProfissionalForm
             ->setOptions($dias)
             ->CriaInpunt();
 
+        $meses = DiasEnum::$montaComboMes;
+        $formulario
+            ->setId('mes_aniversariante')
+            ->setLabel("Aniversariante do Mês")
+            ->setTamanhoInput(6)
+            ->setClasses("multipla")
+            ->setType("select")
+            ->setOptions($meses)
+            ->CriaInpunt();
+
 
         return $formulario->finalizaFormPesquisaAvancada();
     }

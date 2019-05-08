@@ -39,6 +39,8 @@ class Profissional extends AbstractController
                 "prof." . ST_ASSISTENTE => $_POST[ST_ASSISTENTE][0],
                 "prof." . ST_AGENDA => $_POST[ST_AGENDA][0],
                 "prof." . ST_AGENDA_ONLINE => $_POST[ST_AGENDA_ONLINE][0],
+                "in#month(pes." . DT_NASCIMENTO . ")" => (!empty($_POST['mes_aniversariante']))
+                    ? implode("', '", $_POST['mes_aniversariante']) : null,
             );
             $this->result = $profissionalService->PesquisaAvancada($Condicoes);
             $session->setSession(PESQUISA_AVANCADA, $Condicoes);
