@@ -32,9 +32,16 @@
                     </div>
                     <div class="panel-body">
                         <?php
+                        $grid = new Grid();
+                        echo $grid->PesquisaAvancada('Pesquisar Clientes');
+                        ?>
+                        <h2>
+                            <small>Clientes Cadastrados</small>
+                        </h2>
+                        <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Cliente");
-                        $arrColunas = array('Foto', 'Cliente', 'Telefone', 'Nascimento', 'Ações');
+                        $arrColunas = array('Foto', 'Cliente', 'Aniversário', 'Telefone', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
@@ -68,8 +75,8 @@
                             }
                             $grid->setColunas($imagem, 1);
                             $grid->setColunas($res->getCoPessoa()->getNoPessoa());
+                            $grid->setColunas(Valida::getAniversario($res->getCoPessoa()->getDtNascimento()), 3);
                             $grid->setColunas(Valida::MascaraTel($res->getCoPessoa()->getCoContato()->getNuTel1()), 3);
-                            $grid->setColunas(Valida::DataShow($res->getCoPessoa()->getDtNascimento()), 2);
                             $grid->setColunas($acao, 2);
                             $grid->criaLinha($res->getCoCliente());
                         endforeach;

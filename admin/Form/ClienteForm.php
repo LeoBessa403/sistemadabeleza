@@ -10,7 +10,8 @@ class ClienteForm
     {
         $id = "cadastroCliente";
 
-        $formulario = new FormAssistente($id, UrlAmigavel::$action, null, null, "Cadastro de Clientes");
+        $formulario = new FormAssistente($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            null, null, "Cadastro de Clientes");
         $formulario->setValor($res);
 
         // Aba 1
@@ -189,7 +190,7 @@ class ClienteForm
             ->setClasses($res[ST_LEMBRETE_HORARIO_AGENDAMENTO])
             ->setId(ST_LEMBRETE_HORARIO_AGENDAMENTO)
             ->setType("checkbox")
-            ->setInfo("Receberar uma SMS e E-mail pra lembrar do Agendamento")
+            ->setInfo("Receberar um SMS e E-mail pra lembrar do Agendamento")
             ->setOptions($label_options2)
             ->CriaInpunt();
 
@@ -246,5 +247,102 @@ class ClienteForm
         endif;
 
         return $formulario->finalizaForm();
+    }
+
+    public static function Pesquisar()
+    {
+        $id = "pesquisaCliente";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action, "Pesquisa", 12);
+
+        $formulario
+            ->setId(NO_PESSOA)
+            ->setIcon("clip-user-6")
+            ->setTamanhoInput(6)
+            ->setLabel("Nome do Cliente")
+            ->setInfo("Pode ser Parte do nome")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_APELIDO)
+            ->setIcon("clip-user-6")
+            ->setTamanhoInput(6)
+            ->setLabel("Apelido")
+            ->setInfo("Pode ser Parte do nome")
+            ->CriaInpunt();
+
+        $meses = DiasEnum::$montaComboMes;
+        $formulario
+            ->setId('mes_aniversariante')
+            ->setLabel("Aniversariante do Mês")
+            ->setTamanhoInput(6)
+            ->setClasses("multipla")
+            ->setType("select")
+            ->setOptions($meses)
+            ->CriaInpunt();
+
+
+        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
+        $formulario
+            ->setLabel("Sexo")
+            ->setId(ST_SEXO)
+            ->setTamanhoInput(6)
+            ->setType("select")
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_CIDADE)
+            ->setTamanhoInput(6)
+            ->setLabel("Cidade")
+            ->CriaInpunt();
+
+        $options = EnderecoService::montaComboEstadosDescricao();
+        $formulario
+            ->setId(SG_UF)
+            ->setType("select")
+            ->setLabel("Estado")
+            ->setTamanhoInput(6)
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $formulario
+            ->setLabel("Recebe E-mail Agendamento")
+            ->setId(ST_RECEBER_EMAIL_AGENDAMENTO)
+            ->setTamanhoInput(6)
+            ->setType("select")
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $formulario
+            ->setLabel("Lembrete Horário de Agendamento")
+            ->setId(ST_LEMBRETE_HORARIO_AGENDAMENTO)
+            ->setTamanhoInput(6)
+            ->setType("select")
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $formulario
+            ->setLabel("Recebe E-mail Marketing")
+            ->setId(ST_EMAIL_MARKETING)
+            ->setType("select")
+            ->setTamanhoInput(6)
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $formulario
+            ->setLabel("Recebe SMS Marketing")
+            ->setId(ST_SMS_MARKETING)
+            ->setType("select")
+            ->setTamanhoInput(6)
+            ->setOptions($label_options)
+            ->CriaInpunt();
+
+
+        return $formulario->finalizaFormPesquisaAvancada();
     }
 }

@@ -112,4 +112,9 @@ class  ClienteService extends AbstractService
         return $retorno;
     }
 
+    public function PesquisaAvancada($Condicoes)
+    {
+        return $this->ObjetoModel->PesquisaAvancada($Condicoes);
+    }
+
 }
