@@ -10,3 +10,7 @@ INSERT INTO TB_PESSOA (nu_cpf, no_pessoa, nu_rg, dt_cadastro, dt_nascimento, st_
 
 INSERT INTO TB_CLIENTE (dt_cadastro, st_status, no_apelido, ds_observacao, st_receber_email_agendamento, st_lembrete_horario_agendamento, st_sms_marketing, st_email_marketing, nu_como_conheceu, co_pessoa, co_assinante) VALUES ("2019-05-09 17:45:14", "A", "", "", "S", "S", "S", "S", "1", "80", "11");
 
+UPDATE TB_HISTORIA SET ds_titulo = "Pesquisa Avançada dos Clientes", ds_observacao = "<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing, Status de agendamento</p>", co_sessao = "11", st_situacao = "I", dt_atualizado = "2019-05-09 17:52:34" where co_historia = 148;
+
+INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("20", "20"_restante, "2019-05-09 17:52:34", "148");
+

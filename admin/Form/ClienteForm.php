@@ -270,6 +270,14 @@ class ClienteForm
             ->setLabel("Apelido")
             ->setInfo("Pode ser Parte do nome")
             ->CriaInpunt();
+//
+//        $formulario
+//            ->setId(NU_VALOR)
+//            ->setTamanhoInput(6)
+//            ->setIntervalo('150-260')
+//            ->setType("slider")
+//            ->setLabel("Valor R$")
+//            ->CriaInpunt();
 
         $meses = DiasEnum::$montaComboMes;
         $formulario
@@ -280,7 +288,6 @@ class ClienteForm
             ->setType("select")
             ->setOptions($meses)
             ->CriaInpunt();
-
 
         $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
         $formulario
