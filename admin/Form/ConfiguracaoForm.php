@@ -19,7 +19,7 @@ class ConfiguracaoForm
             ->setLabel("Agendar pelo Site")
             ->setClasses($res[ST_MARCA_SERVICO])
             ->setId(ST_MARCA_SERVICO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Aceita que o cliente agende serviços pelo site?')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
@@ -27,7 +27,7 @@ class ConfiguracaoForm
 
         $options = [0 => "0", 1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 10 => 10, 200 => 'Sem Limite'];
         $formulario
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setId(NU_AUSENCIA)
             ->setClasses("ob")
             ->setOptions($options)
@@ -38,7 +38,7 @@ class ConfiguracaoForm
 
         if (!empty($res[CO_CONFIG_CLIENTE])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONFIG_CLIENTE)
                 ->setValues($res[CO_CONFIG_CLIENTE])
                 ->CriaInpunt();
@@ -60,7 +60,7 @@ class ConfiguracaoForm
             ->setLabel("Receber E-mail de Agendamento")
             ->setClasses($res[ST_RECEBER_EMAIL_AGENDAMENTO])
             ->setId(ST_RECEBER_EMAIL_AGENDAMENTO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Receber E-mail de Agendamento feito pelo site?')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
@@ -70,7 +70,7 @@ class ConfiguracaoForm
             ->setLabel("Enviar E-mail de Confirmação")
             ->setClasses($res[ST_ENVIAR_EMAIL_CONFIRMACAO])
             ->setId(ST_ENVIAR_EMAIL_CONFIRMACAO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Enviar E-mail de Confirmação de agendamento confirmado?')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
@@ -87,7 +87,7 @@ class ConfiguracaoForm
 
         $options = [1 => "Sem Restrições", 2 => "1 Dia", 3 => "3 Dias", 4 => "7 Dias", 5 => "15 dias", 6 => "1 mês"];
         $formulario
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setId(NU_INTERVALO)
             ->setClasses("ob")
             ->setOptions($options)
@@ -105,14 +105,14 @@ class ConfiguracaoForm
             ->setLabel("Status Agendamento")
             ->setClasses("ob")
             ->setInfo("Status do Agendamento realizado pelo site")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(12)
             ->setOptions($status)
             ->CriaInpunt();
 
         if (!empty($res[CO_CONFIG_AGENDAMENTO])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONFIG_AGENDAMENTO)
                 ->setValues($res[CO_CONFIG_AGENDAMENTO])
                 ->CriaInpunt();
@@ -134,7 +134,7 @@ class ConfiguracaoForm
             ->setLabel("Receber E-mail de Faturamento?")
             ->setClasses($res[ST_RECEBE_EMAIL_FATURAMENTO])
             ->setId(ST_RECEBE_EMAIL_FATURAMENTO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Receber E-mail de Faturamento diário')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
@@ -145,7 +145,7 @@ class ConfiguracaoForm
             ->setLabel("Edição dos Serviços?")
             ->setClasses($res[ST_EDICAO_SERVICOS])
             ->setId(ST_EDICAO_SERVICOS)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Aceita Edição dos Serviços prestados')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
@@ -156,7 +156,7 @@ class ConfiguracaoForm
             ->setLabel("Edição dos Atendimentos?")
             ->setClasses($res[ST_EDICAO_ATENDIMENTO])
             ->setId(ST_EDICAO_ATENDIMENTO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Aceita Edição dos atendimentos futuros.')
             ->setTamanhoInput(12)
             ->setOptions($label_options2)
@@ -172,7 +172,7 @@ class ConfiguracaoForm
 
         if (!empty($res[CO_CONFIG_PROFISSIONAL])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONFIG_PROFISSIONAL)
                 ->setValues($res[CO_CONFIG_PROFISSIONAL])
                 ->CriaInpunt();
@@ -194,7 +194,7 @@ class ConfiguracaoForm
             ->setLabel("Considerar Taxas de antecipação?")
             ->setClasses($res[ST_TAXA_ANTECIPACAO])
             ->setId(ST_TAXA_ANTECIPACAO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Desconta as Taxas de antecipação')
             ->setTamanhoInput(6)
             ->setOptions($label_options2)
@@ -204,7 +204,7 @@ class ConfiguracaoForm
             ->setLabel("Considerar Taxas dos cartões?")
             ->setClasses($res[ST_TAXA_ADMINISTRATIVA])
             ->setId(ST_TAXA_ADMINISTRATIVA)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Considerar ou não as Taxas das administradoras das operados dos cartões')
             ->setTamanhoInput(6)
             ->setOptions($label_options2)
@@ -214,7 +214,7 @@ class ConfiguracaoForm
             ->setLabel("Considerar Taxas cartão de crédito?")
             ->setClasses($res[ST_TAXA_CARTAO_CREDITO])
             ->setId(ST_TAXA_CARTAO_CREDITO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Considerar ou não as Taxas de  cartão de crédito')
             ->setTamanhoInput(6)
             ->setOptions($label_options2)
@@ -224,7 +224,7 @@ class ConfiguracaoForm
             ->setLabel("Considerar Taxas cartão de débito?")
             ->setClasses($res[ST_TAXA_CARTAO_DEBITO])
             ->setId(ST_TAXA_CARTAO_DEBITO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Considerar ou não as Taxas de  cartão de débito')
             ->setTamanhoInput(6)
             ->setOptions($label_options2)
@@ -234,7 +234,7 @@ class ConfiguracaoForm
             ->setLabel("Recebe comissão antes?")
             ->setClasses($res[ST_RECEBIMENTO_PRE_VENDA])
             ->setId(ST_RECEBIMENTO_PRE_VENDA)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo('Recebi comissão antes de executar o serviço')
             ->setTamanhoInput(6)
             ->setOptions($label_options2)
@@ -269,7 +269,7 @@ class ConfiguracaoForm
 
         $options = FormaComissaoEnum::$descricao;
         $formulario
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Forma de comissão")
             ->setId(NU_FORMA_COMISSAO)
             ->setClasses("ob")
@@ -287,14 +287,14 @@ class ConfiguracaoForm
 
         if (!empty($res[CO_CONFIG_COMISSAO])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONFIG_COMISSAO)
                 ->setValues($res[CO_CONFIG_COMISSAO])
                 ->CriaInpunt();
 
             // Campo para Validar a mudança para avisar o Usuário que esta modificando todas as comissões ja salvas
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(NU_FORMA_COMISSAO.'-valida')
                 ->setValues($res[NU_FORMA_COMISSAO])
                 ->CriaInpunt();

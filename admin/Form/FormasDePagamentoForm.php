@@ -20,13 +20,13 @@ class FormasDePagamentoForm
             ->setLabel("Formas De Pagamento")
             ->setClasses("multipla ob")
             ->setInfo("Selecione todas as formas de pagamentos aceitas.")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($todasFormas)
             ->CriaInpunt();
 
         if (!empty($res[CO_FACILIDADE_BENEFICIO])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_FACILIDADE_BENEFICIO)
                 ->setValues($res[CO_FACILIDADE_BENEFICIO])
                 ->CriaInpunt();

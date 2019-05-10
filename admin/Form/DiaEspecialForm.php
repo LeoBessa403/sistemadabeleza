@@ -42,7 +42,7 @@ class DiaEspecialForm
             ->CriaInpunt();
 
         $formulario
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setId(DS_MOTIVO)
             ->setLabel("Motivo")
             ->setClasses("ob")
@@ -52,7 +52,7 @@ class DiaEspecialForm
 
         if (!empty($res[CO_DIA_ESPECIAL])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_DIA_ESPECIAL)
                 ->setValues($res[CO_DIA_ESPECIAL])
                 ->CriaInpunt();

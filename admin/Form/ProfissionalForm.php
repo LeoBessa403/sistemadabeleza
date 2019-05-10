@@ -56,7 +56,7 @@ class ProfissionalForm
             ->setLabel("Cargo")
             ->setClasses("multipla ob")
             ->setInfo("Cargos exercidos pelo profissional")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($cargos)
             ->CriaInpunt();
 
@@ -65,18 +65,18 @@ class ProfissionalForm
             ->setLabel("Sexo")
             ->setId(ST_SEXO)
             ->setClasses("ob")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
         $formulario
             ->setId(DS_CAMINHO)
-            ->setType("singlefile")
+            ->setType(TiposCampoEnum::SINGLEFILE)
             ->setLabel("Foto do Perfil")
             ->CriaInpunt();
 
         $formulario
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setId(DS_SOBRE)
             ->setLabel("Sobre")
             ->CriaInpunt();
@@ -118,7 +118,7 @@ class ProfissionalForm
         $options = EnderecoService::montaComboEstadosDescricao();
         $formulario
             ->setId(SG_UF)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Estado")
             ->setOptions($options)
             ->CriaInpunt();
@@ -182,7 +182,7 @@ class ProfissionalForm
             ->setClasses($res[ST_ASSISTENTE])
             ->setId(ST_ASSISTENTE)
             ->setInfo("Trabalha como assistente")
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setOptions($label_options2)
             ->CriaInpunt();
 
@@ -191,7 +191,7 @@ class ProfissionalForm
             ->setLabel("Possui agenda")
             ->setClasses($res[ST_AGENDA])
             ->setId(ST_AGENDA)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo("Tem agenda no sistema de atendimento")
             ->setOptions($label_options2)
             ->CriaInpunt();
@@ -201,7 +201,7 @@ class ProfissionalForm
             ->setLabel("Mostra agenda on line")
             ->setClasses($res[ST_AGENDA_ONLINE])
             ->setId(ST_AGENDA_ONLINE)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo("Pode mostrar a agenda on line")
             ->setOptions($label_options2)
             ->CriaInpunt();
@@ -210,7 +210,7 @@ class ProfissionalForm
         $formulario
             ->setId(TP_CONTRATACAO)
             ->setLabel("Tipo de Contratação")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($contratacoes)
             ->CriaInpunt();
 
@@ -225,13 +225,13 @@ class ProfissionalForm
             ->setLabel("Ordem da agenda")
             ->setId(NU_ORDEM_AGENDA)
             ->setInfo("Número da ordem de paresentação na agenda")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($comboProfissionais)
             ->CriaInpunt();
 
         $formulario
             ->setId(DS_COR_AGENDA)
-            ->setType("color")
+            ->setType(TiposCampoEnum::COLOR)
             ->setLabel("Cor da agenda")
             ->setInfo("que da agenda do profissional")
             ->CriaInpunt();
@@ -248,7 +248,7 @@ class ProfissionalForm
         $formulario
             ->setId(CO_BANCO)
             ->setLabel("Banco")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($bancos)
             ->CriaInpunt();
 
@@ -272,7 +272,7 @@ class ProfissionalForm
         $formulario
             ->setId(TP_CONTA)
             ->setLabel("Tipo de Conta")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions(array_reverse($contas))
             ->CriaInpunt();
 
@@ -374,32 +374,32 @@ class ProfissionalForm
 
         if (!empty($res[CO_PROFISSIONAL])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_PROFISSIONAL)
                 ->setValues($res[CO_PROFISSIONAL])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_ENDERECO)
                 ->setValues($res[CO_ENDERECO])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONTATO)
                 ->setValues($res[CO_CONTATO])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_PESSOA)
                 ->setValues($res[CO_PESSOA])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONTA_BANCARIA)
                 ->setValues($res[CO_CONTA_BANCARIA])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_IMAGEM)
                 ->setValues($res[CO_IMAGEM])
                 ->CriaInpunt();
@@ -423,7 +423,7 @@ class ProfissionalForm
             ->setId(CO_PROFISSIONAL)
             ->setLabel("Profissional")
             ->setClasses("ob")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($profissionais)
             ->CriaInpunt();
 
@@ -464,7 +464,7 @@ class ProfissionalForm
         $options = TipoAusenciaEnum::$descricao;
         $formulario
             ->setId(TP_AUSENCIA)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Tipo de Ausência")
             ->setClasses("ob")
             ->setOptions($options)
@@ -472,14 +472,14 @@ class ProfissionalForm
 
         $formulario
             ->setId(DS_OBSERVACAO)
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setLabel("Obserevação")
             ->CriaInpunt();
 
 
         if (!empty($res[CO_AUSENCIA])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_AUSENCIA)
                 ->setValues($res[CO_AUSENCIA])
                 ->CriaInpunt();
@@ -507,7 +507,7 @@ class ProfissionalForm
         $formulario
             ->setId(CO_BANCO)
             ->setLabel("Banco")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(6)
             ->setOptions($bancos)
             ->CriaInpunt();
@@ -519,7 +519,7 @@ class ProfissionalForm
             ->setTamanhoInput(6)
             ->setClasses("multipla")
             ->setInfo("Cargos exercidos pelo profissional")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($cargos)
             ->CriaInpunt();
 
@@ -528,7 +528,7 @@ class ProfissionalForm
             ->setLabel("Sexo")
             ->setId(ST_SEXO)
             ->setTamanhoInput(6)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -541,7 +541,7 @@ class ProfissionalForm
         $options = EnderecoService::montaComboEstadosDescricao();
         $formulario
             ->setId(SG_UF)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Estado")
             ->setTamanhoInput(6)
             ->setOptions($options)
@@ -553,7 +553,7 @@ class ProfissionalForm
             ->setId(ST_ASSISTENTE)
             ->setTamanhoInput(6)
             ->setInfo("Trabalha como assistente")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -562,7 +562,7 @@ class ProfissionalForm
             ->setLabel("Possui agenda")
             ->setId(ST_AGENDA)
             ->setTamanhoInput(6)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setInfo("Tem agenda no sistema de atendimento")
             ->setOptions($label_options)
             ->CriaInpunt();
@@ -571,7 +571,7 @@ class ProfissionalForm
         $formulario
             ->setLabel("Mostra agenda on line")
             ->setId(ST_AGENDA_ONLINE)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(6)
             ->setInfo("Pode mostrar a agenda on line")
             ->setOptions($label_options)
@@ -583,7 +583,7 @@ class ProfissionalForm
             ->setLabel("Atende no dia")
             ->setTamanhoInput(6)
             ->setClasses("multipla")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($dias)
             ->CriaInpunt();
 
@@ -593,7 +593,7 @@ class ProfissionalForm
             ->setLabel("Aniversariante do Mês")
             ->setTamanhoInput(6)
             ->setClasses("multipla")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($meses)
             ->CriaInpunt();
 

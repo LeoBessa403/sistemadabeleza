@@ -18,7 +18,7 @@ class MembroWebForm
             $formulario
                 ->setLabel("Números de Parcelas")
                 ->setId(NU_PARCELAS)
-                ->setType("select")
+                ->setType(TiposCampoEnum::SELECT)
                 ->setTamanhoInput(12)
                 ->setOptions($label_options)
                 ->CriaInpunt();
@@ -27,7 +27,7 @@ class MembroWebForm
             $formulario
                 ->setLabel("Servo?")
                 ->setId(ST_EQUIPE_TRABALHO)
-                ->setType("checkbox")
+                ->setType(TiposCampoEnum::CHECKBOX)
                 ->setClasses($res[ST_EQUIPE_TRABALHO])
                 ->setTamanhoInput(6)
                 ->setOptions($label_options)
@@ -40,7 +40,7 @@ class MembroWebForm
         $formulario
             ->setLabel("Membro do Grupo GEJ?")
             ->setId(DS_MEMBRO_ATIVO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setClasses($res[DS_MEMBRO_ATIVO])
             ->setTamanhoInput(12)
             ->setOptions($label_options)
@@ -73,7 +73,7 @@ class MembroWebForm
             ->setLabel("Sexo")
             ->setId(ST_SEXO)
             ->setClasses("ob")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(6)
             ->setOptions($label_options)
             ->CriaInpunt();
@@ -141,7 +141,7 @@ class MembroWebForm
         $formulario
             ->setTamanhoInput(8)
             ->setId(SG_UF)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Estado")
             ->setOptions($options)
             ->CriaInpunt();
@@ -152,7 +152,7 @@ class MembroWebForm
             ->setTamanhoInput(5)
             ->setId(DS_RETIRO)
             ->setClasses($res[DS_RETIRO])
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -162,7 +162,7 @@ class MembroWebForm
             ->setId("ds_pastoral_ativo")
             ->setClasses($res["ds_pastoral_ativo"])
             ->setTamanhoInput(7)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -176,7 +176,7 @@ class MembroWebForm
 
         $formulario
             ->setId(NU_CAMISA)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(12)
             ->setClasses("ob")
             ->setOptions($opticoes_camisa)
@@ -210,7 +210,7 @@ class MembroWebForm
         $ob = 'ob';
         if ($CoInscricao) {
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_INSCRICAO)
                 ->setValues($CoInscricao)
                 ->CriaInpunt();
@@ -218,7 +218,7 @@ class MembroWebForm
         }
         $formulario
             ->setId(DS_CAMINHO)
-            ->setType("singlefile")
+            ->setType(TiposCampoEnum::SINGLEFILE)
             ->setInfo("Para a identificação")
             ->setClasses($ob)
             ->setTamanhoInput(12)
@@ -228,7 +228,7 @@ class MembroWebForm
         $formulario
             ->setId(DS_DESCRICAO)
             ->setLabel("Fale um pouco sobre você")
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setTamanhoInput(12)
             ->setClasses("ob")
             ->CriaInpunt();
@@ -236,7 +236,7 @@ class MembroWebForm
         $formulario
             ->setId(DS_MEDICACAO)
             ->setLabel("Uso de Medicação?")
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setTamanhoInput(12)
             ->setInfo("Descreva se faz uso de alguma medicação e como utiliza.")
             ->CriaInpunt();
@@ -244,7 +244,7 @@ class MembroWebForm
         $formulario
             ->setId(DS_ALIMENTACAO)
             ->setLabel("Restrição Alimentar?")
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setTamanhoInput(12)
             ->setInfo("Descreva se tiver alguma restrição alimentar.")
             ->CriaInpunt();

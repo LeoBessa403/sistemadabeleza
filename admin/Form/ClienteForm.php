@@ -56,18 +56,18 @@ class ClienteForm
             ->setLabel("Sexo")
             ->setId(ST_SEXO)
             ->setClasses("ob")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
         $formulario
             ->setId(DS_CAMINHO)
-            ->setType("singlefile")
+            ->setType(TiposCampoEnum::SINGLEFILE)
             ->setLabel("Foto do Perfil")
             ->CriaInpunt();
 
         $formulario
-            ->setType("textarea")
+            ->setType(TiposCampoEnum::TEXTAREA)
             ->setId(DS_OBSERVACAO)
             ->setLabel("Sobre")
             ->CriaInpunt();
@@ -109,7 +109,7 @@ class ClienteForm
         $options = EnderecoService::montaComboEstadosDescricao();
         $formulario
             ->setId(SG_UF)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Estado")
             ->setOptions($options)
             ->CriaInpunt();
@@ -171,7 +171,7 @@ class ClienteForm
         $formulario
             ->setId(NU_COMO_CONHECEU)
             ->setLabel("Como nos Conheceu")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($conhecer)
             ->CriaInpunt();
 
@@ -180,7 +180,7 @@ class ClienteForm
             ->setLabel("Recebe E-mail Agendamento")
             ->setClasses($res[ST_RECEBER_EMAIL_AGENDAMENTO])
             ->setId(ST_RECEBER_EMAIL_AGENDAMENTO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setOptions($label_options2)
             ->CriaInpunt();
 
@@ -189,7 +189,7 @@ class ClienteForm
             ->setLabel("Lembrete Horário de Agendamento")
             ->setClasses($res[ST_LEMBRETE_HORARIO_AGENDAMENTO])
             ->setId(ST_LEMBRETE_HORARIO_AGENDAMENTO)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setInfo("Receberar um SMS e E-mail pra lembrar do Agendamento")
             ->setOptions($label_options2)
             ->CriaInpunt();
@@ -199,7 +199,7 @@ class ClienteForm
             ->setLabel("Recebe E-mail Marketing")
             ->setClasses($res[ST_EMAIL_MARKETING])
             ->setId(ST_EMAIL_MARKETING)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setOptions($label_options2)
             ->CriaInpunt();
 
@@ -209,7 +209,7 @@ class ClienteForm
             ->setLabel("Recebe SMS Marketing")
             ->setClasses($res[ST_SMS_MARKETING])
             ->setId(ST_SMS_MARKETING)
-            ->setType("checkbox")
+            ->setType(TiposCampoEnum::CHECKBOX)
             ->setOptions($label_options2)
             ->CriaInpunt();
 
@@ -219,28 +219,28 @@ class ClienteForm
 
         if (!empty($res[CO_CLIENTE])):
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CLIENTE)
                 ->setValues($res[CO_CLIENTE])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_ENDERECO)
                 ->setValues($res[CO_ENDERECO])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_CONTATO)
                 ->setValues($res[CO_CONTATO])
                 ->CriaInpunt();
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_PESSOA)
                 ->setValues($res[CO_PESSOA])
                 ->CriaInpunt();
 
             $formulario
-                ->setType("hidden")
+                ->setType(TiposCampoEnum::HIDDEN)
                 ->setId(CO_IMAGEM)
                 ->setValues($res[CO_IMAGEM])
                 ->CriaInpunt();
@@ -270,14 +270,6 @@ class ClienteForm
             ->setLabel("Apelido")
             ->setInfo("Pode ser Parte do nome")
             ->CriaInpunt();
-//
-//        $formulario
-//            ->setId(NU_VALOR)
-//            ->setTamanhoInput(6)
-//            ->setIntervalo('150-260')
-//            ->setType("slider")
-//            ->setLabel("Valor R$")
-//            ->CriaInpunt();
 
         $meses = DiasEnum::$montaComboMes;
         $formulario
@@ -285,7 +277,7 @@ class ClienteForm
             ->setLabel("Aniversariante do Mês")
             ->setTamanhoInput(6)
             ->setClasses("multipla")
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($meses)
             ->CriaInpunt();
 
@@ -294,7 +286,7 @@ class ClienteForm
             ->setLabel("Sexo")
             ->setId(ST_SEXO)
             ->setTamanhoInput(6)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -307,7 +299,7 @@ class ClienteForm
         $options = EnderecoService::montaComboEstadosDescricao();
         $formulario
             ->setId(SG_UF)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Estado")
             ->setTamanhoInput(6)
             ->setOptions($options)
@@ -318,7 +310,7 @@ class ClienteForm
             ->setLabel("Recebe E-mail Agendamento")
             ->setId(ST_RECEBER_EMAIL_AGENDAMENTO)
             ->setTamanhoInput(6)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -327,7 +319,7 @@ class ClienteForm
             ->setLabel("Lembrete Horário de Agendamento")
             ->setId(ST_LEMBRETE_HORARIO_AGENDAMENTO)
             ->setTamanhoInput(6)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
             ->CriaInpunt();
 
@@ -335,7 +327,7 @@ class ClienteForm
         $formulario
             ->setLabel("Recebe E-mail Marketing")
             ->setId(ST_EMAIL_MARKETING)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(6)
             ->setOptions($label_options)
             ->CriaInpunt();
@@ -344,7 +336,7 @@ class ClienteForm
         $formulario
             ->setLabel("Recebe SMS Marketing")
             ->setId(ST_SMS_MARKETING)
-            ->setType("select")
+            ->setType(TiposCampoEnum::SELECT)
             ->setTamanhoInput(6)
             ->setOptions($label_options)
             ->CriaInpunt();
