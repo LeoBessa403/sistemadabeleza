@@ -26,14 +26,43 @@ class Servico extends AbstractController
 
     public function ListarServico()
     {
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $session->FinalizaSession(PESQUISA_AVANCADA);
+        }
+        $Condicoes = [];
+        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $this->coCategoriaServico = UrlAmigavel::PegaParametro(CO_CATEGORIA_SERVICO);
-        $this->result = $this->getCategorias();
+        if ($this->coCategoriaServico)
+            $Condicoes["ser." .CO_CATEGORIA_SERVICO] = $this->coCategoriaServico;
+
+        if (!empty($_POST)) {
+            $Condicoes = array(
+                "ser." .CO_CATEGORIA_SERVICO => $_POST[CO_CATEGORIA_SERVICO][0],
+                "ser." .ST_STATUS => $_POST[ST_STATUS][0],
+                "ser." .ST_ASSISTENTE => $_POST[ST_ASSISTENTE][0],
+                "like#ser." . DS_DESCRICAO => trim($_POST[DS_DESCRICAO]),
+                "like#ser." . NO_SERVICO => trim($_POST[NO_SERVICO])
+            );
+            $this->result = $servicoService->PesquisaAvancada($Condicoes);
+            $session->setSession(PESQUISA_AVANCADA, $Condicoes);
+        } else {
+            $this->result = $servicoService->PesquisaAvancada($Condicoes);
+        }
 
         /** @var Configuracao $configControl */
         $configControl = new Configuracao();
         $dados = $configControl->getTipoEComissoes(FormaComissaoEnum::SERVICO);
         $this->tipoComissao = $dados['tipoComissao'];
         $this->comissao = $dados['comissao'];
+    }
+
+    public function ListarServicoPesquisaAvancada()
+    {
+        echo ServicoForm::Pesquisar();
     }
 
     public function getCategorias()

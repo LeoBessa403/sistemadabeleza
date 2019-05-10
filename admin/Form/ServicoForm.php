@@ -202,72 +202,44 @@ class ServicoForm
 
     public static function Pesquisar()
     {
-        $id = "pesquisaCliente";
+        $id = "pesquisaServico";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action, "Pesquisa", 12);
 
         $formulario
-            ->setId(NO_PESSOA)
-            ->setIcon("clip-user-6")
+            ->setId(NO_SERVICO)
             ->setTamanhoInput(6)
-            ->setLabel("Nome do Cliente")
+            ->setLabel("Nome do Serviço")
             ->setInfo("Pode ser Parte do nome")
             ->CriaInpunt();
 
         $formulario
-            ->setId(NO_APELIDO)
-            ->setIcon("clip-user-6")
+            ->setId(DS_DESCRICAO)
             ->setTamanhoInput(6)
-            ->setLabel("Apelido")
-            ->setInfo("Pode ser Parte do nome")
+            ->setLabel("Contém na Descrição")
+            ->CriaInpunt();
+
+        $options = CategoriaServicoService::categoriasServicoCombo();
+        $formulario
+            ->setId(CO_CATEGORIA_SERVICO)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Categoria do Serviço")
+            ->setTamanhoInput(6)
+            ->setOptions($options)
             ->CriaInpunt();
 
         $formulario
             ->setId(NU_VALOR)
             ->setTamanhoInput(6)
-            ->setIntervalo('150-260')
+            ->setIntervalo('5-500')
             ->setType(TiposCampoEnum::SLIDER)
             ->setLabel("Valor R$")
             ->CriaInpunt();
 
-        $meses = DiasEnum::$montaComboMes;
+        $label_options = array("" => "Selecione um", "A" => "Ativo", "I" => "Inativo");
         $formulario
-            ->setId('mes_aniversariante')
-            ->setLabel("Aniversariante do Mês")
-            ->setTamanhoInput(6)
-            ->setClasses("multipla")
-            ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($meses)
-            ->CriaInpunt();
-
-        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
-        $formulario
-            ->setLabel("Sexo")
-            ->setId(ST_SEXO)
-            ->setTamanhoInput(6)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($label_options)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NO_CIDADE)
-            ->setTamanhoInput(6)
-            ->setLabel("Cidade")
-            ->CriaInpunt();
-
-        $options = EnderecoService::montaComboEstadosDescricao();
-        $formulario
-            ->setId(SG_UF)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Estado")
-            ->setTamanhoInput(6)
-            ->setOptions($options)
-            ->CriaInpunt();
-
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
-        $formulario
-            ->setLabel("Recebe E-mail Agendamento")
-            ->setId(ST_RECEBER_EMAIL_AGENDAMENTO)
+            ->setLabel("Status do Serviço")
+            ->setId(ST_STATUS)
             ->setTamanhoInput(6)
             ->setType(TiposCampoEnum::SELECT)
             ->setOptions($label_options)
@@ -275,28 +247,10 @@ class ServicoForm
 
         $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
         $formulario
-            ->setLabel("Lembrete Horário de Agendamento")
-            ->setId(ST_LEMBRETE_HORARIO_AGENDAMENTO)
+            ->setLabel("Assistente")
+            ->setId(ST_ASSISTENTE)
             ->setTamanhoInput(6)
             ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($label_options)
-            ->CriaInpunt();
-
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
-        $formulario
-            ->setLabel("Recebe E-mail Marketing")
-            ->setId(ST_EMAIL_MARKETING)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setTamanhoInput(6)
-            ->setOptions($label_options)
-            ->CriaInpunt();
-
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
-        $formulario
-            ->setLabel("Recebe SMS Marketing")
-            ->setId(ST_SMS_MARKETING)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setTamanhoInput(6)
             ->setOptions($label_options)
             ->CriaInpunt();
 

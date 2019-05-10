@@ -1,4 +1,4 @@
--- Atualizado em: 08/05/2019 11:21:32
+-- Atualizado em: 10/05/2019 18:23:39
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("244","3otpa8tma9v54us55dtopeff42","2019-05-08 11:08:41","2019-05-08 11:51:32","A","1","263");
+INSERT INTO TB_ACESSO VALUES("257","kpeea5922lcahtvi98rtob89s6","2019-05-10 18:22:41","2019-05-10 18:53:39","A","1","276");
 
 
 
@@ -138,7 +138,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 
 
@@ -155,7 +155,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
 
 
 
@@ -172,7 +172,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 
 
@@ -878,10 +878,12 @@ CREATE TABLE `TB_CLIENTE` (
   PRIMARY KEY (`co_cliente`,`co_assinante`,`co_pessoa`),
   KEY `fk_TB_CLIENTE_TB_ASSINANTE1_idx` (`co_assinante`),
   KEY `fk_TB_CLIENTE_TB_PESSOA1_idx` (`co_pessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CLIENTE VALUES("1","2019-02-12 11:44:02","","meu apelido cli 2","sobre novo cliente","S","S","N","N","2","11","79");
+
+INSERT INTO TB_CLIENTE VALUES("2","2019-05-09 17:45:14","A","","","S","S","S","S","1","11","80");
 
 
 
@@ -1007,7 +1009,7 @@ CREATE TABLE `TB_CONTATO` (
   `ds_twitter` varchar(90) DEFAULT NULL,
   `ds_instagram` varchar(90) DEFAULT NULL,
   PRIMARY KEY (`co_contato`)
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CONTATO VALUES("1","61993274991","6130826060","0","","leonardomcbessa@gmail.com","","","","");
@@ -1039,6 +1041,8 @@ INSERT INTO TB_CONTATO VALUES("81","61993003405","","","","leonardomcbessa@gmail
 INSERT INTO TB_CONTATO VALUES("82","6546546131","43536436436","","","leonardomcbessa@gmail.com","","","","");
 
 INSERT INTO TB_CONTATO VALUES("91","11111111111","22222222222","","","greg11@gd.com","","link face","link twitter","link insta");
+
+INSERT INTO TB_CONTATO VALUES("92","65465465116","","","","fweffrgr@grge.com","","","","");
 
 
 
@@ -1159,7 +1163,7 @@ CREATE TABLE `TB_ENDERECO` (
   `no_cidade` varchar(80) DEFAULT NULL,
   `sg_uf` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`co_endereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ENDERECO VALUES("1","qr 403 conjunto 10 casa 28","","Samambaia Norte","72319111","Brasília","DF");
@@ -1193,6 +1197,8 @@ INSERT INTO TB_ENDERECO VALUES("95","QR 403 Conjunto 10","Casa 28","Samambaia No
 INSERT INTO TB_ENDERECO VALUES("96","QR 403 Conjunto 10","","Samambaia Norte (Samambaia)","72319111","Brasília","DF");
 
 INSERT INTO TB_ENDERECO VALUES("105","QR 403 Conjunto 10","Casa 28 33","Samambaia Norte (Samambaia)","72319111","Brasília","DF");
+
+INSERT INTO TB_ENDERECO VALUES("106","","","","","","");
 
 
 
@@ -1754,7 +1760,7 @@ INSERT INTO TB_HISTORIA VALUES("142","Manter Usuário Comum","<p>Manter Usu&aacu
 
 INSERT INTO TB_HISTORIA VALUES("143","Manter Planos do Assinante","<p>Manter Planos do Assinante, alterar seu plano aumentando o plano</p>","2019-03-13 15:53:08","2019-03-13 15:53:08","N","1");
 
-INSERT INTO TB_HISTORIA VALUES("144","Pesquisa Avançada dos Serviços","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o, Assistente, promo&ccedil;&atilde;o, pacote</p>","2019-03-20 14:19:52","2019-04-18 15:55:17","N","12");
+INSERT INTO TB_HISTORIA VALUES("144","Pesquisa Avançada dos Serviços","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o, Assistente, promo&ccedil;&atilde;o, pacote</p>","2019-03-20 14:19:52","2019-05-10 18:23:20","I","12");
 
 INSERT INTO TB_HISTORIA VALUES("145","Histórico Promoções do Serviço","<p>Apresentar Hist&oacute;rico das promo&ccedil;&atilde;oes do servi&ccedil;o</p>","2019-03-20 14:22:28","2019-03-20 14:27:15","N","12");
 
@@ -1762,7 +1768,7 @@ INSERT INTO TB_HISTORIA VALUES("146","Histórico Pacotes do Serviço","<p>aprese
 
 INSERT INTO TB_HISTORIA VALUES("147","Pesquisa Avançada dos Profissionais","<p>Pesquisa Avan&ccedil;ada dos Profissionais por nome, cargo, m&ecirc;s anivers&aacute;rio, dia de atendimento (jornada de tabalho), sexo, cidade e uf, assistente , possui agenda,&nbsp; agenda on line, banco, Status Agendamento.</p>","2019-03-20 14:26:33","2019-05-08 11:09:45","I","9");
 
-INSERT INTO TB_HISTORIA VALUES("148","Pesquisa Avançada dos Clientes","<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing, Status de agendamento</p>","2019-03-20 14:34:27","2019-03-27 14:37:30","N","11");
+INSERT INTO TB_HISTORIA VALUES("148","Pesquisa Avançada dos Clientes","<p>Pesquisa Avan&ccedil;ada dos Clientes nome, apelido, anivers&aacute;rio do m&ecirc;s semana, sexo, cidade e UF,&nbsp; Recebe E-mail Agendamento, Lembrete Hor&aacute;rio de Agendamento, Recebe E-mail Marketing, Recebe SMS Marketing, Status de agendamento</p>","2019-03-20 14:34:27","2019-05-09 17:52:34","I","11");
 
 INSERT INTO TB_HISTORIA VALUES("149","Pesquisa Avançada dos Assinantes","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento, data de expira&ccedil;&atilde;o (Per&iacute;odo), n&uacute;mero de filiais, valor assinatura atual, n&uacute;mero de profissionais,</p>","2019-03-20 14:37:45","2019-03-20 14:40:07","N","1");
 
@@ -1908,7 +1914,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=639 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=641 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3180,6 +3186,10 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("636","20","3","2019-05-08 10:15:59","1
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("637","20","3","2019-05-08 10:27:07","147");
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("638","20","3","2019-05-08 11:09:45","147");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("639","20","3","2019-05-09 17:52:34","148");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("640","20","8","2019-05-10 18:23:20","144");
 
 
 
@@ -4460,7 +4470,7 @@ CREATE TABLE `TB_PESSOA` (
   KEY `fk_TB_PESSOA_TB_ENDERECO1_idx` (`co_endereco`),
   KEY `fk_TB_PESSOA_TB_CONTATO1_idx` (`co_contato`),
   KEY `fk_TB_PESSOA_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PESSOA VALUES("1","72681438187","Usuário Padrão","","2016-10-31 00:00:00","1984-07-06","M","1","1","1");
@@ -4494,6 +4504,8 @@ INSERT INTO TB_PESSOA VALUES("76","22322191191","Jose Arnaldo","2346","2019-01-1
 INSERT INTO TB_PESSOA VALUES("77","12345678909","Seu Biga ","1111111111111","2019-01-14 17:05:48","2018-09-10","M","96","82","0");
 
 INSERT INTO TB_PESSOA VALUES("79","22322191191","Novo Cliente p","777777777","2019-02-12 11:44:02","2000-02-09","F","105","91","43");
+
+INSERT INTO TB_PESSOA VALUES("80","","LEO BESSA usuário externo","","2019-05-09 17:45:14","2001-05-10","M","106","92","0");
 
 
 
@@ -5009,13 +5021,13 @@ INSERT INTO TB_SERVICO VALUES("31","2019-03-20 16:54:46","A","","Drenagem Linfá
 
 INSERT INTO TB_SERVICO VALUES("32","2019-03-20 16:54:46","I","","Day Spa","120","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de \n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz \n        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras \n        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que \n        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado","12","76");
 
-INSERT INTO TB_SERVICO VALUES("33","2019-03-20 16:54:46","I","S","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
+INSERT INTO TB_SERVICO VALUES("33","2019-03-20 16:54:46","A","S","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
 
 INSERT INTO TB_SERVICO VALUES("34","2019-03-20 16:54:46","A","","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","14","92");
 
-INSERT INTO TB_SERVICO VALUES("35","2019-03-20 16:54:46","A","","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","14","79");
+INSERT INTO TB_SERVICO VALUES("35","2019-03-20 16:54:46","I","","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","14","79");
 
-INSERT INTO TB_SERVICO VALUES("40","2019-03-21 17:30:34","A","","Novidade para o cabelo","30","Novo Teste de Podologia","13","85");
+INSERT INTO TB_SERVICO VALUES("40","2019-03-21 17:30:34","I","","Novidade para o cabelo","30","Novo Teste de Podologia","13","85");
 
 INSERT INTO TB_SERVICO VALUES("41","2019-03-21 18:11:49","A","","Novidade para o cabelo 22","30","sh sfd h trh rtjrtj","13","93");
 
@@ -5299,7 +5311,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -5336,7 +5348,7 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO TB_TRAFEGO VALUES("263","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
+INSERT INTO TB_TRAFEGO VALUES("276","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 

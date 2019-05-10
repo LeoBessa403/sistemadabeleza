@@ -12,5 +12,25 @@ class  ServicoModel extends AbstractModel
         parent::__construct(ServicoEntidade::ENTIDADE);
     }
 
+    public function PesquisaAvancada($Condicoes)
+    {
+        $tabela = CategoriaServicoEntidade::TABELA." cat" .
+            " inner join ".ServicoEntidade::TABELA." ser" .
+            " on cat.".CategoriaServicoEntidade::CHAVE." = ser.".CategoriaServicoEntidade::CHAVE .
+            " inner join ".PrecoServicoEntidade::TABELA." pre" .
+            " on ser.".ServicoEntidade::CHAVE." = pre.".ServicoEntidade::CHAVE;
+
+        $campos = "ser.*";
+        $pesquisa = new Pesquisa();
+        $where = $pesquisa->getClausula($Condicoes);
+        $pesquisa->Pesquisar($tabela, $where, null, $campos);
+        $categorias = [];
+        foreach ($pesquisa->getResult() as $categoria){
+            $cat[0] = $categoria;
+            $categorias[] = $this->getUmObjeto(ServicoEntidade::ENTIDADE, $cat);
+        }
+        return $categorias;
+    }
+
 
 }
