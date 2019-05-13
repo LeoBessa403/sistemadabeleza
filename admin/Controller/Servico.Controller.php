@@ -37,15 +37,19 @@ class Servico extends AbstractController
         $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $this->coCategoriaServico = UrlAmigavel::PegaParametro(CO_CATEGORIA_SERVICO);
         if ($this->coCategoriaServico)
-            $Condicoes["ser." .CO_CATEGORIA_SERVICO] = $this->coCategoriaServico;
+            $Condicoes["ser." . CO_CATEGORIA_SERVICO] = $this->coCategoriaServico;
 
         if (!empty($_POST)) {
             $Condicoes = array(
-                "ser." .CO_CATEGORIA_SERVICO => $_POST[CO_CATEGORIA_SERVICO][0],
-                "ser." .ST_STATUS => $_POST[ST_STATUS][0],
-                "ser." .ST_ASSISTENTE => $_POST[ST_ASSISTENTE][0],
+                "ser." . CO_CATEGORIA_SERVICO => $_POST[CO_CATEGORIA_SERVICO][0],
+                "ser." . ST_STATUS => $_POST[ST_STATUS][0],
+                "ser." . ST_ASSISTENTE => $_POST[ST_ASSISTENTE][0],
                 "like#ser." . DS_DESCRICAO => trim($_POST[DS_DESCRICAO]),
-                "like#ser." . NO_SERVICO => trim($_POST[NO_SERVICO])
+                "like#ser." . NO_SERVICO => trim($_POST[NO_SERVICO]),
+                ">#pre." . NU_VALOR => $_POST[NU_VALOR . '1'],
+                "<#pre." . NU_VALOR => $_POST[NU_VALOR . '2'],
+                "pre." . CO_PRECO_SERVICO =>
+                    "(SELECT max(co_preco_servico) from TB_PRECO_SERVICO where co_servico = ser.co_servico)",
             );
             $this->result = $servicoService->PesquisaAvancada($Condicoes);
             $session->setSession(PESQUISA_AVANCADA, $Condicoes);
