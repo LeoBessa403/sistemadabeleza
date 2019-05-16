@@ -39,6 +39,9 @@ class Servico extends AbstractController
         if ($this->coCategoriaServico)
             $Condicoes["ser." . CO_CATEGORIA_SERVICO] = $this->coCategoriaServico;
 
+        $resultPreco = $servicoService->PesquisaAvancadaPreco($Condicoes);
+        $session->setSession('resultPreco', $resultPreco);
+
         if (!empty($_POST)) {
             $Condicoes = array(
                 "ser." . CO_CATEGORIA_SERVICO => $_POST[CO_CATEGORIA_SERVICO][0],
@@ -66,7 +69,11 @@ class Servico extends AbstractController
 
     public function ListarServicoPesquisaAvancada()
     {
-        echo ServicoForm::Pesquisar();
+        /** @var Session $session */
+        $session = new Session();
+        $resultPreco = $session::getSession('resultPreco');
+        $resultPreco = $resultPreco['min_valor'] . '-' . $resultPreco['max_valor'];
+        echo ServicoForm::Pesquisar($resultPreco);
     }
 
     public function getCategorias()

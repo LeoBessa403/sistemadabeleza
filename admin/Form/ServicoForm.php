@@ -200,7 +200,7 @@ class ServicoForm
     }
 
 
-    public static function Pesquisar()
+    public static function Pesquisar($resultPreco)
     {
         $id = "pesquisaServico";
 
@@ -231,7 +231,7 @@ class ServicoForm
         $formulario
             ->setId(NU_VALOR)
             ->setTamanhoInput(6)
-            ->setIntervalo('5-500')
+            ->setIntervalo($resultPreco)
             ->setType(TiposCampoEnum::SLIDER)
             ->setLabel("Valor R$")
             ->CriaInpunt();

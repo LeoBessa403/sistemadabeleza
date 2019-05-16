@@ -1,4 +1,4 @@
-UPDATE TB_SERVICO SET st_status = "I", no_servico = "Corte Tesoura", nu_duracao = "30", ds_descricao = "Corte: O corte na tesoura irá deixar você com o visual renovado.", co_categoria_servico = "5", st_assistente = "N" where co_servico = 4;
+UPDATE TB_SERVICO SET st_status = "A", no_servico = "Coloração / Tonalização", nu_duracao = "120", ds_descricao = "Tonalização: matiza e deixa os tons dos fios mais naturais.", co_categoria_servico = "5", st_assistente = "N" where co_servico = 3;
 
-INSERT INTO TB_PRECO_SERVICO (co_servico, ds_observacao, nu_valor, dt_cadastro, co_usuario) VALUES ("4", "Atualizado", "26.00", "2019-05-13 14:07:01", "8");
+INSERT INTO TB_PRECO_SERVICO (co_servico, ds_observacao, nu_valor, dt_cadastro, co_usuario) VALUES ("3", "Atualizado", "289.90", "2019-05-16 11:17:14", "8");
 

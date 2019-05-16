@@ -51,10 +51,10 @@
                         Modal::load();
                         Modal::confirmacao("confirma_Servico");
                         $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
-                            'Assistente', 'Observação', 'Ações');
+                            'Assistente', 'Status', 'Ações');
                         if ($tipoComissao == FormaComissaoEnum::SERVICO) {
                             $arrColunas = array('Atende', 'Foto', 'Serviço', 'Categoria', 'Descrição', 'Valor R$',
-                                'Comissão', 'Assistente', 'Observação', 'Ações');
+                                'Comissão', 'Assistente', 'Status', 'Ações');
                         }
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
@@ -102,7 +102,6 @@
                                             $comiss .= 'CA: <b>' . $comissao[TipoComissaoEnum::COM_ASSISTENTE] . '%</b><br>';
                                             $comiss .= 'OA: <b>' . $comissao[TipoComissaoEnum::ASSISTENTE] . '%</b>';
                                         }
-
                                     }
                                 }
                                 $tamanhoImg = 85;

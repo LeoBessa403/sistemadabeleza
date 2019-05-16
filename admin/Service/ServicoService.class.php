@@ -128,4 +128,9 @@ class  ServicoService extends AbstractService
         return $this->ObjetoModel->PesquisaAvancada($Condicoes);
     }
 
+    public function PesquisaAvancadaPreco($Condicoes)
+    {
+        return $this->ObjetoModel->PesquisaAvancadaPreco($Condicoes);
+    }
+
 }
