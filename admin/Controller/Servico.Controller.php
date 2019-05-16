@@ -71,7 +71,7 @@ class Servico extends AbstractController
         /** @var Session $session */
         $session = new Session();
         $resultPreco = $session::getSession('resultPreco');
-        $resultPreco = ((float)$resultPreco['min_valor'] - 1) . '-' . $resultPreco['max_valor'];
+        $resultPreco = ((float)$resultPreco['min_valor'] - 1) . '-' . ((int)$resultPreco['max_valor'] + 1);
         echo ServicoForm::Pesquisar($resultPreco);
     }
 
