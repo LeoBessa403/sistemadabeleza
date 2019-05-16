@@ -50,8 +50,8 @@ class Servico extends AbstractController
             $Condicoes["ser." . ST_ASSISTENTE] = $_POST[ST_ASSISTENTE][0];
             $Condicoes["like#ser." . DS_DESCRICAO] = trim($_POST[DS_DESCRICAO]);
             $Condicoes["like#ser." . NO_SERVICO] = trim($_POST[NO_SERVICO]);
-            $Condicoes[">#pre." . NU_VALOR] = $_POST[NU_VALOR . '1'];
-            $Condicoes["<#pre." . NU_VALOR] = $_POST[NU_VALOR . '2'];
+            $Condicoes[">=#pre." . NU_VALOR] = $_POST[NU_VALOR . '1'];
+            $Condicoes["<=#pre." . NU_VALOR] = $_POST[NU_VALOR . '2'];
 
             $this->result = $servicoService->PesquisaAvancada($Condicoes);
             $session->setSession(PESQUISA_AVANCADA, $Condicoes);
@@ -71,7 +71,7 @@ class Servico extends AbstractController
         /** @var Session $session */
         $session = new Session();
         $resultPreco = $session::getSession('resultPreco');
-        $resultPreco = $resultPreco['min_valor'] . '-' . $resultPreco['max_valor'];
+        $resultPreco = ((float)$resultPreco['min_valor'] - 1) . '-' . $resultPreco['max_valor'];
         echo ServicoForm::Pesquisar($resultPreco);
     }
 
