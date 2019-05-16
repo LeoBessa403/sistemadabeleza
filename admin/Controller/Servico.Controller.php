@@ -35,6 +35,8 @@ class Servico extends AbstractController
         }
         $Condicoes = [];
         $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        $Condicoes["pre." . CO_PRECO_SERVICO] =
+            "(SELECT max(co_preco_servico) from TB_PRECO_SERVICO where co_servico = ser.co_servico)";
         $this->coCategoriaServico = UrlAmigavel::PegaParametro(CO_CATEGORIA_SERVICO);
         if ($this->coCategoriaServico)
             $Condicoes["ser." . CO_CATEGORIA_SERVICO] = $this->coCategoriaServico;
@@ -43,17 +45,14 @@ class Servico extends AbstractController
         $session->setSession('resultPreco', $resultPreco);
 
         if (!empty($_POST)) {
-            $Condicoes = array(
-                "ser." . CO_CATEGORIA_SERVICO => $_POST[CO_CATEGORIA_SERVICO][0],
-                "ser." . ST_STATUS => $_POST[ST_STATUS][0],
-                "ser." . ST_ASSISTENTE => $_POST[ST_ASSISTENTE][0],
-                "like#ser." . DS_DESCRICAO => trim($_POST[DS_DESCRICAO]),
-                "like#ser." . NO_SERVICO => trim($_POST[NO_SERVICO]),
-                ">#pre." . NU_VALOR => $_POST[NU_VALOR . '1'],
-                "<#pre." . NU_VALOR => $_POST[NU_VALOR . '2'],
-                "pre." . CO_PRECO_SERVICO =>
-                    "(SELECT max(co_preco_servico) from TB_PRECO_SERVICO where co_servico = ser.co_servico)",
-            );
+            $Condicoes["ser." . CO_CATEGORIA_SERVICO] = $_POST[CO_CATEGORIA_SERVICO][0];
+            $Condicoes["ser." . ST_STATUS] = $_POST[ST_STATUS][0];
+            $Condicoes["ser." . ST_ASSISTENTE] = $_POST[ST_ASSISTENTE][0];
+            $Condicoes["like#ser." . DS_DESCRICAO] = trim($_POST[DS_DESCRICAO]);
+            $Condicoes["like#ser." . NO_SERVICO] = trim($_POST[NO_SERVICO]);
+            $Condicoes[">#pre." . NU_VALOR] = $_POST[NU_VALOR . '1'];
+            $Condicoes["<#pre." . NU_VALOR] = $_POST[NU_VALOR . '2'];
+
             $this->result = $servicoService->PesquisaAvancada($Condicoes);
             $session->setSession(PESQUISA_AVANCADA, $Condicoes);
         } else {
