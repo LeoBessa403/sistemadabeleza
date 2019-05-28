@@ -1,4 +1,4 @@
--- Atualizado em: 16/05/2019 11:02:00
+-- Atualizado em: 21/05/2019 15:56:53
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,7 +20,7 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=268 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ACESSO VALUES("257","kpeea5922lcahtvi98rtob89s6","2019-05-10 18:22:41","2019-05-10 18:53:50","F","1","276");
@@ -34,6 +34,16 @@ INSERT INTO TB_ACESSO VALUES("260","kpeea5922lcahtvi98rtob89s6","2019-05-13 14:2
 INSERT INTO TB_ACESSO VALUES("261","kpeea5922lcahtvi98rtob89s6","2019-05-13 14:21:18","2019-05-13 14:24:06","F","1","280");
 
 INSERT INTO TB_ACESSO VALUES("262","kpeea5922lcahtvi98rtob89s6","2019-05-13 16:59:09","2019-05-13 17:29:40","F","1","281");
+
+INSERT INTO TB_ACESSO VALUES("263","t9iagnac89c0gm8vkmadojqph4","2019-05-16 11:08:29","2019-05-16 12:12:16","F","8","282");
+
+INSERT INTO TB_ACESSO VALUES("264","t9iagnac89c0gm8vkmadojqph4","2019-05-16 13:34:55","2019-05-16 14:22:32","F","8","283");
+
+INSERT INTO TB_ACESSO VALUES("265","t9iagnac89c0gm8vkmadojqph4","2019-05-16 14:22:41","2019-05-16 14:52:59","F","1","284");
+
+INSERT INTO TB_ACESSO VALUES("266","t9iagnac89c0gm8vkmadojqph4","2019-05-16 14:54:01","2019-05-16 15:26:49","F","1","285");
+
+INSERT INTO TB_ACESSO VALUES("267","t9iagnac89c0gm8vkmadojqph4","2019-05-16 17:09:56","2019-05-16 17:40:48","F","8","286");
 
 
 
@@ -154,7 +164,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AUDITORIA VALUES("17","2019-05-13 14:07:00","Gestor, Colaborador","8");
@@ -173,6 +183,12 @@ INSERT INTO TB_AUDITORIA VALUES("23","2019-05-13 14:23:35","Master","1");
 
 INSERT INTO TB_AUDITORIA VALUES("24","2019-05-13 14:24:02","Master","1");
 
+INSERT INTO TB_AUDITORIA VALUES("25","2019-05-16 11:17:14","Gestor, Colaborador","8");
+
+INSERT INTO TB_AUDITORIA VALUES("26","2019-05-16 11:36:51","Gestor, Colaborador","8");
+
+INSERT INTO TB_AUDITORIA VALUES("27","2019-05-16 11:42:02","Gestor, Colaborador","8");
+
 
 
 
@@ -187,7 +203,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AUDITORIA_ITENS VALUES("129","4","","co_servico","20");
@@ -286,6 +302,90 @@ INSERT INTO TB_AUDITORIA_ITENS VALUES("175","","<p>Incluir na pesquisa status do
 
 INSERT INTO TB_AUDITORIA_ITENS VALUES("176","","2019-05-13 14:24:02","dt_cadastro","28");
 
+INSERT INTO TB_AUDITORIA_ITENS VALUES("177","3","","co_servico","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("178","2019-03-20 16:54:46","","dt_cadastro","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("179","A","A","st_status","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("180","","N","st_assistente","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("181","Coloração / Tonalização","Coloração / Tonalização","no_servico","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("182","120","120","nu_duracao","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("183","Tonalização: matiza e deixa os tons dos fios mais naturais.","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("184","5","5","co_categoria_servico","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("185","47","","co_imagem","29");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("186","","3","co_servico","30");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("187","","Atualizado","ds_observacao","30");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("188","","289.90","nu_valor","30");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("189","","2019-05-16 11:17:14","dt_cadastro","30");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("190","","8","co_usuario","30");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("191","3","","co_servico","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("192","2019-03-20 16:54:46","","dt_cadastro","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("193","A","A","st_status","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("194","N","N","st_assistente","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("195","Coloração / Tonalização","Coloração / Tonalização","no_servico","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("196","120","120","nu_duracao","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("197","Tonalização: matiza e deixa os tons dos fios mais naturais.","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("198","5","5","co_categoria_servico","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("199","47","","co_imagem","31");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("200","","3","co_servico","32");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("201","","Atualizado","ds_observacao","32");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("202","","150.00","nu_valor","32");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("203","","2019-05-16 11:36:51","dt_cadastro","32");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("204","","8","co_usuario","32");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("205","3","","co_servico","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("206","2019-03-20 16:54:46","","dt_cadastro","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("207","A","A","st_status","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("208","N","N","st_assistente","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("209","Coloração / Tonalização","Coloração / Tonalização","no_servico","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("210","120","120","nu_duracao","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("211","Tonalização: matiza e deixa os tons dos fios mais naturais.","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("212","5","5","co_categoria_servico","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("213","47","","co_imagem","33");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("214","","3","co_servico","34");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("215","","Atualizado","ds_observacao","34");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("216","","172.30","nu_valor","34");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("217","","2019-05-16 11:42:02","dt_cadastro","34");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("218","","8","co_usuario","34");
+
 
 
 
@@ -300,7 +400,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AUDITORIA_TABELA VALUES("20","TB_SERVICO","U","4","17");
@@ -320,6 +420,18 @@ INSERT INTO TB_AUDITORIA_TABELA VALUES("26","TB_ANOTACAO","I","11","22");
 INSERT INTO TB_AUDITORIA_TABELA VALUES("27","TB_ANOTACAO","I","12","23");
 
 INSERT INTO TB_AUDITORIA_TABELA VALUES("28","TB_ANOTACAO","I","13","24");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("29","TB_SERVICO","U","3","25");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("30","TB_PRECO_SERVICO","I","58","25");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("31","TB_SERVICO","U","3","26");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("32","TB_PRECO_SERVICO","I","59","26");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("33","TB_SERVICO","U","3","27");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("34","TB_PRECO_SERVICO","I","60","27");
 
 
 
@@ -4863,7 +4975,7 @@ CREATE TABLE `TB_PRECO_SERVICO` (
   PRIMARY KEY (`co_preco_servico`,`co_servico`,`co_usuario`),
   KEY `fk_TB_PRECO_SERVICO_TB_SERVICO1_idx` (`co_servico`),
   KEY `fk_TB_PRECO_SERVICO_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PRECO_SERVICO VALUES("1","39.90","2019-03-20 16:54:46","Serviço Inicial","3","8");
@@ -4975,6 +5087,12 @@ INSERT INTO TB_PRECO_SERVICO VALUES("55","55.44","2019-03-21 18:11:49","Cadastra
 INSERT INTO TB_PRECO_SERVICO VALUES("56","39.90","2019-03-27 14:52:41","Atualizado","33","8");
 
 INSERT INTO TB_PRECO_SERVICO VALUES("57","26.00","2019-05-13 14:07:01","Atualizado","4","8");
+
+INSERT INTO TB_PRECO_SERVICO VALUES("58","289.90","2019-05-16 11:17:14","Atualizado","3","8");
+
+INSERT INTO TB_PRECO_SERVICO VALUES("59","150.00","2019-05-16 11:36:51","Atualizado","3","8");
+
+INSERT INTO TB_PRECO_SERVICO VALUES("60","172.30","2019-05-16 11:42:02","Atualizado","3","8");
 
 
 
@@ -5113,7 +5231,7 @@ CREATE TABLE `TB_SERVICO` (
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_SERVICO VALUES("3","2019-03-20 16:54:46","A","","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
+INSERT INTO TB_SERVICO VALUES("3","2019-03-20 16:54:46","A","N","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
 
 INSERT INTO TB_SERVICO VALUES("4","2019-03-20 16:54:46","I","N","Corte Tesoura","30","Corte: O corte na tesoura irá deixar você com o visual renovado.","5","48");
 
@@ -5463,7 +5581,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -5511,6 +5629,16 @@ INSERT INTO TB_TRAFEGO VALUES("279","::1","Desconhecido","Desconhecida","Desconh
 INSERT INTO TB_TRAFEGO VALUES("280","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 INSERT INTO TB_TRAFEGO VALUES("281","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("282","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("283","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("284","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("285","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("286","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 
