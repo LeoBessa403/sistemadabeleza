@@ -38,12 +38,18 @@ class  ServicoProfissionalService extends AbstractService
                     CO_SERVICO => $dados[CO_SERVICO],
                     CO_PROFISSIONAL => $coProfissional
                 ]);
+                if (isset($dados['atende-profissional'])) {
+                    $servProf[ST_STATUS] = (isset($dados['atende-profissional'][$coProfissional]))
+                        ? SimNaoEnum::SIM : SimNaoEnum::NAO;
+                } else {
+                    $servProf[ST_STATUS] = SimNaoEnum::NAO;
+                }
                 if ($servicoProf) {
                     $percCom[CO_SERVICO_PROFISSIONAL] = $servicoProf->getCoServicoProfissional();
+                    $this->Salva($servProf, $servicoProf->getCoServicoProfissional());
                 } else {
                     $servProf[CO_SERVICO] = $dados[CO_SERVICO];
                     $servProf[CO_PROFISSIONAL] = $coProfissional;
-                    $servProf[ST_STATUS] = SimNaoEnum::SIM;
 
                     $percCom[CO_SERVICO_PROFISSIONAL] = $this->Salva($servProf);
                 }
@@ -55,7 +61,7 @@ class  ServicoProfissionalService extends AbstractService
                     $retorno[SUCESSO] = false;
                     break;
                 } else {
-                    foreach ($comissoes as $chave => $valor){
+                    foreach ($comissoes as $chave => $valor) {
                         $percCom[NU_TIPO_COMISSAO . $chave] = $valor;
                     }
                     $retorno[SUCESSO] = $percentualComissaoService->salvaComissao($percCom);
@@ -114,7 +120,7 @@ class  ServicoProfissionalService extends AbstractService
                     $retorno[SUCESSO] = false;
                     break;
                 } else {
-                    foreach ($comissoes as $chave => $valor){
+                    foreach ($comissoes as $chave => $valor) {
                         $percCom[NU_TIPO_COMISSAO . $chave] = $valor;
                     }
                     $retorno[SUCESSO] = $percentualComissaoService->salvaComissao($percCom);

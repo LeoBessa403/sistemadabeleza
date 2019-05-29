@@ -273,6 +273,17 @@ class Servico extends AbstractController
         if ($coServico) {
             /** @var ProfissionalEntidade $profissional */
             foreach ($todosProfissionais as $profissional) {
+                /** @var ServicoEntidade $servico */
+                $servico = $servicoService->PesquisaUmRegistro($coServico);
+                $this->noServico = $servico->getNoServico();
+                $this->coServico = $coServico;
+                if($servico->getStStatus() == StatusAcessoEnum::INATIVO){
+                    Notificacoes::geraMensagem(
+                        'Serviço Inativo, Favor ative primeiro para comfigurar as comissões dos profissionais.',
+                        TiposMensagemEnum::ALERTA
+                    );
+                    Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');
+                }
                 $coProfissional = $profissional->getCoProfissional();
                 /** @var ServicoProfissionalEntidade $servProf */
                 $servProf = $servicoProfissionalService->PesquisaUmQuando([
@@ -288,6 +299,7 @@ class Servico extends AbstractController
                         = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::COM_ASSISTENTE);
                     $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                         = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::ASSISTENTE);
+                    $profissionais[$coProfissional][ST_STATUS] = $servProf->getStStatus();
                 } else {
                     $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                         = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
@@ -295,13 +307,10 @@ class Servico extends AbstractController
                         = $percAtul[TipoComissaoEnum::COM_ASSISTENTE];
                     $profissionais[$coProfissional][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                         = $percAtul[TipoComissaoEnum::ASSISTENTE];
+                    $profissionais[$coProfissional][ST_STATUS] = SimNaoEnum::SIM;
                 }
             }
             $this->profissionais = $profissionais;
-            /** @var ServicoEntidade $servico */
-            $servico = $servicoService->PesquisaUmRegistro($coServico);
-            $this->noServico = $servico->getNoServico();
-            $this->coServico = $coServico;
         } else {
             Notificacoes::geraMensagem(
                 'Selecione um Serviço para Modificar a comissão dos Profissionais',
