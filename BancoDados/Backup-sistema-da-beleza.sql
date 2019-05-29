@@ -1,4 +1,4 @@
--- Atualizado em: 29/05/2019 09:44:39
+-- Atualizado em: 29/05/2019 12:21:42
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,32 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=269 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=272 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("257","kpeea5922lcahtvi98rtob89s6","2019-05-10 18:22:41","2019-05-10 18:53:50","F","1","276");
-
-INSERT INTO TB_ACESSO VALUES("258","kpeea5922lcahtvi98rtob89s6","2019-05-13 13:57:50","2019-05-13 14:17:50","F","8","277");
-
-INSERT INTO TB_ACESSO VALUES("259","kpeea5922lcahtvi98rtob89s6","2019-05-13 14:17:54","2019-05-13 14:20:43","F","1","278");
-
-INSERT INTO TB_ACESSO VALUES("260","kpeea5922lcahtvi98rtob89s6","2019-05-13 14:20:47","2019-05-13 14:21:15","F","8","279");
-
-INSERT INTO TB_ACESSO VALUES("261","kpeea5922lcahtvi98rtob89s6","2019-05-13 14:21:18","2019-05-13 14:24:06","F","1","280");
-
-INSERT INTO TB_ACESSO VALUES("262","kpeea5922lcahtvi98rtob89s6","2019-05-13 16:59:09","2019-05-13 17:29:40","F","1","281");
-
-INSERT INTO TB_ACESSO VALUES("263","t9iagnac89c0gm8vkmadojqph4","2019-05-16 11:08:29","2019-05-16 12:12:16","F","8","282");
-
-INSERT INTO TB_ACESSO VALUES("264","t9iagnac89c0gm8vkmadojqph4","2019-05-16 13:34:55","2019-05-16 14:22:32","F","8","283");
-
-INSERT INTO TB_ACESSO VALUES("265","t9iagnac89c0gm8vkmadojqph4","2019-05-16 14:22:41","2019-05-16 14:52:59","F","1","284");
-
-INSERT INTO TB_ACESSO VALUES("266","t9iagnac89c0gm8vkmadojqph4","2019-05-16 14:54:01","2019-05-16 15:26:49","F","1","285");
-
-INSERT INTO TB_ACESSO VALUES("267","t9iagnac89c0gm8vkmadojqph4","2019-05-16 17:09:56","2019-05-16 17:40:48","F","8","286");
-
-INSERT INTO TB_ACESSO VALUES("268","jdf8dfhic5cobevrie5hkndkm2","2019-05-21 15:57:16","2019-05-21 16:28:27","A","8","287");
+INSERT INTO TB_ACESSO VALUES("271","pno1bh6p11ls5pdh7dv1k2k805","2019-05-29 12:18:29","2019-05-29 12:51:42","A","1","290");
 
 
 
@@ -166,30 +144,8 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA VALUES("17","2019-05-13 14:07:00","Gestor, Colaborador","8");
-
-INSERT INTO TB_AUDITORIA VALUES("18","2019-05-13 14:20:00","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("19","2019-05-13 14:20:01","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("20","2019-05-13 14:20:38","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("21","2019-05-13 14:20:39","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("22","2019-05-13 14:22:44","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("23","2019-05-13 14:23:35","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("24","2019-05-13 14:24:02","Master","1");
-
-INSERT INTO TB_AUDITORIA VALUES("25","2019-05-16 11:17:14","Gestor, Colaborador","8");
-
-INSERT INTO TB_AUDITORIA VALUES("26","2019-05-16 11:36:51","Gestor, Colaborador","8");
-
-INSERT INTO TB_AUDITORIA VALUES("27","2019-05-16 11:42:02","Gestor, Colaborador","8");
 
 
 
@@ -205,188 +161,8 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=658 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("129","4","","co_servico","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("130","2019-03-20 16:54:46","","dt_cadastro","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("131","I","I","st_status","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("132","","N","st_assistente","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("133","Corte Tesoura","Corte Tesoura","no_servico","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("134","30","30","nu_duracao","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("135","Corte: O corte na tesoura irá deixar você com o visual renovado.","Corte: O corte na tesoura irá deixar você com o visual renovado.","ds_descricao","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("136","5","5","co_categoria_servico","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("137","48","","co_imagem","20");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("138","","4","co_servico","21");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("139","","Atualizado","ds_observacao","21");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("140","","26.00","nu_valor","21");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("141","","2019-05-13 14:07:01","dt_cadastro","21");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("142","","8","co_usuario","21");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("143","144","","co_historia","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("144","Pesquisa Avançada dos Serviços","Pesquisa Avançada dos Serviços","ds_titulo","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("145","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, dura&ccedil;&atilde;o, Assistente, promo&ccedil;&atilde;o, pacote</p>","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, Assistente, promo&ccedil;&atilde;o, pacote</p>","ds_observacao","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("146","2019-03-20 14:19:52","","dt_cadastro","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("147","2019-05-10 18:23:20","2019-05-13 14:20:00","dt_atualizado","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("148","I","I","st_situacao","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("149","12","12","co_sessao","22");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("150","","13","nu_esforco","23");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("151","","3","nu_esforco_restante","23");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("152","","2019-05-13 14:20:00","dt_cadastro","23");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("153","","144","co_historia","23");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("154","144","","co_historia","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("155","Pesquisa Avançada dos Serviços","Pesquisa Avançada dos Serviços","ds_titulo","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("156","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, Assistente, promo&ccedil;&atilde;o, pacote</p>","<p>Pesquisa Avan&ccedil;ada dos servi&ccedil;os por categoria, descri&ccedil;&atilde;o, valor, profissional, status, Assistente, promo&ccedil;&atilde;o, pacote</p>","ds_observacao","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("157","2019-03-20 14:19:52","","dt_cadastro","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("158","2019-05-13 14:20:00","2019-05-13 14:20:38","dt_atualizado","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("159","I","I","st_situacao","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("160","12","12","co_sessao","24");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("161","","20","nu_esforco","25");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("162","","5","nu_esforco_restante","25");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("163","","2019-05-13 14:20:38","dt_cadastro","25");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("164","","144","co_historia","25");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("165","","falta pra terminar","ds_titulo","26");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("166","","144","co_historia","26");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("167","","<p>&nbsp;Incluir na pesquisa profissional, promo&ccedil;&atilde;o, pacote</p>","ds_observacao","26");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("168","","2019-05-13 14:22:44","dt_cadastro","26");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("169","","falta pra terminar","ds_titulo","27");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("170","","147","co_historia","27");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("171","","<p>Incluir na pesquisa status do agendamento</p>","ds_observacao","27");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("172","","2019-05-13 14:23:34","dt_cadastro","27");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("173","","falta pra terminar","ds_titulo","28");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("174","","148","co_historia","28");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("175","","<p>Incluir na pesquisa status do agendamento</p>","ds_observacao","28");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("176","","2019-05-13 14:24:02","dt_cadastro","28");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("177","3","","co_servico","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("178","2019-03-20 16:54:46","","dt_cadastro","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("179","A","A","st_status","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("180","","N","st_assistente","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("181","Coloração / Tonalização","Coloração / Tonalização","no_servico","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("182","120","120","nu_duracao","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("183","Tonalização: matiza e deixa os tons dos fios mais naturais.","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("184","5","5","co_categoria_servico","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("185","47","","co_imagem","29");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("186","","3","co_servico","30");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("187","","Atualizado","ds_observacao","30");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("188","","289.90","nu_valor","30");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("189","","2019-05-16 11:17:14","dt_cadastro","30");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("190","","8","co_usuario","30");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("191","3","","co_servico","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("192","2019-03-20 16:54:46","","dt_cadastro","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("193","A","A","st_status","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("194","N","N","st_assistente","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("195","Coloração / Tonalização","Coloração / Tonalização","no_servico","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("196","120","120","nu_duracao","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("197","Tonalização: matiza e deixa os tons dos fios mais naturais.","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("198","5","5","co_categoria_servico","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("199","47","","co_imagem","31");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("200","","3","co_servico","32");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("201","","Atualizado","ds_observacao","32");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("202","","150.00","nu_valor","32");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("203","","2019-05-16 11:36:51","dt_cadastro","32");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("204","","8","co_usuario","32");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("205","3","","co_servico","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("206","2019-03-20 16:54:46","","dt_cadastro","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("207","A","A","st_status","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("208","N","N","st_assistente","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("209","Coloração / Tonalização","Coloração / Tonalização","no_servico","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("210","120","120","nu_duracao","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("211","Tonalização: matiza e deixa os tons dos fios mais naturais.","Tonalização: matiza e deixa os tons dos fios mais naturais.","ds_descricao","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("212","5","5","co_categoria_servico","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("213","47","","co_imagem","33");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("214","","3","co_servico","34");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("215","","Atualizado","ds_observacao","34");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("216","","172.30","nu_valor","34");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("217","","2019-05-16 11:42:02","dt_cadastro","34");
-
-INSERT INTO TB_AUDITORIA_ITENS VALUES("218","","8","co_usuario","34");
 
 
 
@@ -402,38 +178,8 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("20","TB_SERVICO","U","4","17");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("21","TB_PRECO_SERVICO","I","57","17");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("22","TB_HISTORIA","U","144","18");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("23","TB_HISTORICO_HISTORIA","I","641","19");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("24","TB_HISTORIA","U","144","20");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("25","TB_HISTORICO_HISTORIA","I","642","21");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("26","TB_ANOTACAO","I","11","22");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("27","TB_ANOTACAO","I","12","23");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("28","TB_ANOTACAO","I","13","24");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("29","TB_SERVICO","U","3","25");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("30","TB_PRECO_SERVICO","I","58","25");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("31","TB_SERVICO","U","3","26");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("32","TB_PRECO_SERVICO","I","59","26");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("33","TB_SERVICO","U","3","27");
-
-INSERT INTO TB_AUDITORIA_TABELA VALUES("34","TB_PRECO_SERVICO","I","60","27");
 
 
 
@@ -1757,7 +1503,7 @@ CREATE TABLE `TB_HISTORIA` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=185 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","1");
@@ -1800,7 +1546,7 @@ INSERT INTO TB_HISTORIA VALUES("20","Manter Categorias do Serviço","<p>Manter C
 
 INSERT INTO TB_HISTORIA VALUES("22","Edição rápida de serviços","<p>Edi&ccedil;&atilde;o r&aacute;pida de servi&ccedil;os todos eles (Comiss&atilde;o, categoria, pre&ccedil;o)</p>","2018-07-25 16:23:07","2018-07-25 16:23:07","N","12");
 
-INSERT INTO TB_HISTORIA VALUES("23","Profissionais que atende o serviço","<p>Profissionais que atende o servi&ccedil;o, comiss&atilde;o padr&atilde;o pra todos</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tab tern&aacute;ria Profissional e Servi&ccedil;o (Comiss&atilde;o individual)</p>","2018-07-25 16:26:14","2018-07-25 16:26:14","N","12");
+INSERT INTO TB_HISTORIA VALUES("23","Profissionais que atende o serviço","<p>Profissionais que atende o servi&ccedil;o, comiss&atilde;o padr&atilde;o pra todos</p>\n\n<p>Modelagem: Tab tern&aacute;ria Profissional e Servi&ccedil;o (Comiss&atilde;o individual)</p>","2018-07-25 16:26:14","2019-05-29 12:19:26","C","12");
 
 INSERT INTO TB_HISTORIA VALUES("24","Manter Pacote","<p>Manter Pacote</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pacote (FK Assinante), Pacote Servi&ccedil;os (FK Pacote e servi&ccedil;o)</p>","2018-07-25 16:30:25","2018-07-25 16:30:25","N","13");
 
@@ -2100,6 +1846,8 @@ INSERT INTO TB_HISTORIA VALUES("182","Teste sessão Relatório","<p>Teste sess&a
 
 INSERT INTO TB_HISTORIA VALUES("183","Teste sessão Usuário","<p>Teste sess&atilde;o Usu&aacute;rio</p>","2019-04-26 11:15:13","2019-04-26 11:15:13","N","34");
 
+INSERT INTO TB_HISTORIA VALUES("184","serviços atendos pelo Profissional","<p>servi&ccedil;os atendos pelo Profissional e sua respectivas comiss&otilde;es</p>","2019-05-29 12:20:16","2019-05-29 12:20:16","C","9");
+
 
 
 
@@ -2174,7 +1922,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=643 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=645 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3455,6 +3203,10 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("641","13","3","2019-05-13 14:20:00","1
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("642","20","5","2019-05-13 14:20:38","144");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("643","5","0","2019-05-29 12:19:26","23");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("644","5","0","2019-05-29 12:20:16","184");
+
 
 
 
@@ -3926,7 +3678,7 @@ CREATE TABLE `TB_PERCENTUAL_COMISSAO` (
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_SERVICO_PROFISSIONAL1_idx` (`co_servico_profissional`),
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_HISTORICO_COMISSAO21_idx` (`co_historico_comissao`)
-) ENGINE=InnoDB AUTO_INCREMENT=322 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=382 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("1","44","1","2019-04-04 17:51:29","2019-04-04 17:51:29","0","0","0","1");
@@ -4570,6 +4322,126 @@ INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("319","17","1","2019-04-22 16:45:21","
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("320","17","2","2019-04-22 16:45:21","2019-04-22 16:45:21","0","0","45","0");
 
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("321","18","3","2019-04-22 16:45:21","2019-04-22 16:45:21","0","0","45","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("322","30","1","2019-05-29 10:46:38","2019-05-29 10:46:38","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("323","20","2","2019-05-29 10:46:38","2019-05-29 10:46:38","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("324","10","3","2019-05-29 10:46:38","2019-05-29 10:46:38","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("325","30","1","2019-05-29 10:46:38","2019-05-29 10:46:38","0","0","46","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("326","20","2","2019-05-29 10:46:38","2019-05-29 10:46:38","0","0","46","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("327","10","3","2019-05-29 10:46:38","2019-05-29 10:46:38","0","0","46","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("328","0","1","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","47","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("329","0","2","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","47","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("330","0","3","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","47","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("331","0","1","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("332","0","2","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("333","0","3","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("334","30","1","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","46","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("335","20","2","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","46","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("336","10","3","2019-05-29 10:59:04","2019-05-29 10:59:04","0","0","46","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("337","10","1","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","48","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("338","0","2","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","48","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("339","0","3","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","48","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("340","0","1","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","43","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("341","0","2","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","43","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("342","0","3","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","43","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("343","30","1","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","49","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("344","20","2","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","49","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("345","10","3","2019-05-29 11:42:45","2019-05-29 11:42:45","0","0","49","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("346","0","1","2019-05-29 11:43:36","2019-05-29 11:43:36","0","0","43","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("347","0","2","2019-05-29 11:43:36","2019-05-29 11:43:36","0","0","43","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("348","0","3","2019-05-29 11:43:36","2019-05-29 11:43:36","0","0","43","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("349","30","1","2019-05-29 11:43:36","2019-05-29 11:43:36","0","0","50","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("350","20","2","2019-05-29 11:43:36","2019-05-29 11:43:36","0","0","50","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("351","10","3","2019-05-29 11:43:36","2019-05-29 11:43:36","0","0","50","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("352","30","1","2019-05-29 11:43:37","2019-05-29 11:43:37","0","0","49","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("353","20","2","2019-05-29 11:43:37","2019-05-29 11:43:37","0","0","49","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("354","10","3","2019-05-29 11:43:37","2019-05-29 11:43:37","0","0","49","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("355","0","1","2019-05-29 11:44:14","2019-05-29 11:44:14","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("356","0","2","2019-05-29 11:44:14","2019-05-29 11:44:14","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("357","0","3","2019-05-29 11:44:14","2019-05-29 11:44:14","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("358","30","1","2019-05-29 11:44:15","2019-05-29 11:44:15","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("359","20","2","2019-05-29 11:44:15","2019-05-29 11:44:15","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("360","10","3","2019-05-29 11:44:15","2019-05-29 11:44:15","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("361","30","1","2019-05-29 11:44:15","2019-05-29 11:44:15","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("362","20","2","2019-05-29 11:44:15","2019-05-29 11:44:15","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("363","10","3","2019-05-29 11:44:15","2019-05-29 11:44:15","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("364","0","1","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("365","7","2","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("366","0","3","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("367","30","1","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("368","20","2","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("369","10","3","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("370","30","1","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("371","20","2","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("372","10","3","2019-05-29 11:46:07","2019-05-29 11:46:07","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("373","0","1","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("374","0","2","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("375","0","3","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("376","30","1","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("377","20","2","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("378","10","3","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("379","30","1","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("380","20","2","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("381","10","3","2019-05-29 12:17:31","2019-05-29 12:17:31","0","0","52","0");
 
 
 
@@ -5239,7 +5111,7 @@ INSERT INTO TB_SERVICO VALUES("4","2019-03-20 16:54:46","I","N","Corte Tesoura",
 
 INSERT INTO TB_SERVICO VALUES("5","2019-03-20 16:54:46","I","","Corte Máquina","30","Corte: O corte na máquina irá deixar você com o visual renovado.","5","49");
 
-INSERT INTO TB_SERVICO VALUES("6","2019-03-20 16:54:46","A","","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","5","50");
+INSERT INTO TB_SERVICO VALUES("6","2019-03-20 16:54:46","I","","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","5","50");
 
 INSERT INTO TB_SERVICO VALUES("7","2019-03-20 16:54:46","A","","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
 
@@ -5247,7 +5119,7 @@ INSERT INTO TB_SERVICO VALUES("8","2019-03-20 16:54:46","A","","Corte e Higieniz
 
 INSERT INTO TB_SERVICO VALUES("9","2019-03-20 16:54:46","I","","Escova Modeladora","30","Escova: você vai ter uma ajudinha para realinhar os cabelos com um \n        caimento perfeito.","5","53");
 
-INSERT INTO TB_SERVICO VALUES("10","2019-03-20 16:54:46","A","","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
+INSERT INTO TB_SERVICO VALUES("10","2019-03-20 16:54:46","I","","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição \n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
 
 INSERT INTO TB_SERVICO VALUES("11","2019-03-20 16:54:46","A","","Escova Progressiva","60","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a \n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo \n        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar. \n        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.","5","55");
 
@@ -5295,7 +5167,7 @@ INSERT INTO TB_SERVICO VALUES("32","2019-03-20 16:54:46","I","","Day Spa","120",
 
 INSERT INTO TB_SERVICO VALUES("33","2019-03-20 16:54:46","A","S","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza, \n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
 
-INSERT INTO TB_SERVICO VALUES("34","2019-03-20 16:54:46","A","","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","14","92");
+INSERT INTO TB_SERVICO VALUES("34","2019-03-20 16:54:46","I","","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite, \n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes \n        e energética.","14","92");
 
 INSERT INTO TB_SERVICO VALUES("35","2019-03-20 16:54:46","I","","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a \n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite \n        e flacidez.","14","79");
 
@@ -5317,7 +5189,7 @@ CREATE TABLE `TB_SERVICO_PROFISSIONAL` (
   PRIMARY KEY (`co_servico_profissional`,`co_profissional`,`co_servico`),
   KEY `fk_TB_SERVICO_has_TB_PROFISSIONAL_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_SERVICO_has_TB_PROFISSIONAL_TB_SERVICO1_idx` (`co_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("9","S","19","34");
@@ -5372,7 +5244,7 @@ INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("33","S","15","16");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("34","S","15","17");
 
-INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("35","S","15","3");
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("35","N","19","3");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("36","S","15","4");
 
@@ -5388,11 +5260,25 @@ INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("41","S","15","9");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("42","S","15","10");
 
-INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("43","S","15","11");
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("43","S","19","11");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("44","S","15","12");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("45","S","15","13");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("46","S","19","3");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("47","N","19","3");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("48","S","19","11");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("49","S","15","11");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("50","S","15","11");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("51","S","15","3");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("52","S","9","3");
 
 
 
@@ -5583,7 +5469,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=288 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -5620,29 +5506,7 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO TB_TRAFEGO VALUES("276","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("277","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("278","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("279","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("280","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("281","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("282","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("283","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("284","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("285","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("286","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
-
-INSERT INTO TB_TRAFEGO VALUES("287","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+INSERT INTO TB_TRAFEGO VALUES("290","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 

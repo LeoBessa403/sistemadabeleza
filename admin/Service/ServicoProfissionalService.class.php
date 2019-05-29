@@ -103,12 +103,18 @@ class  ServicoProfissionalService extends AbstractService
                     CO_SERVICO => $coServico,
                     CO_PROFISSIONAL => $dados[CO_PROFISSIONAL]
                 ]);
+                if (isset($dados['atende-profissional'])) {
+                    $servProf[ST_STATUS] = (isset($dados['atende-profissional'][$coServico]))
+                        ? SimNaoEnum::SIM : SimNaoEnum::NAO;
+                } else {
+                    $servProf[ST_STATUS] = SimNaoEnum::NAO;
+                }
                 if ($servicoProf) {
                     $percCom[CO_SERVICO_PROFISSIONAL] = $servicoProf->getCoServicoProfissional();
+                    $this->Salva($servProf, $servicoProf->getCoServicoProfissional());
                 } else {
                     $servProf[CO_SERVICO] = $coServico;
                     $servProf[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
-                    $servProf[ST_STATUS] = SimNaoEnum::SIM;
 
                     $percCom[CO_SERVICO_PROFISSIONAL] = $this->Salva($servProf);
                 }

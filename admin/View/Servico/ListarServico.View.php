@@ -71,10 +71,10 @@
                                 $botao = 1;
                                 if ($tipoComissao) {
                                     $botao = 2;
+                                    $comiss = '';
 
                                     if ($tipoComissao ==
                                         FormaComissaoEnum::$descricao[FormaComissaoEnum::SERVICO_PROFISSIONAL]) {
-                                        $comiss = '';
 
                                         $acao .= ' <a href="' . PASTAADMIN . 'Servico/ComissaoServicoProfissional/' .
                                             Valida::GeraParametro(CO_SERVICO . "/" . $servico->getCoServico()) . '" 
@@ -87,7 +87,6 @@
                                                 class="btn btn-success tooltips" data-original-title="Comissão do Serviço" 
                                                 data-placement="top"> <i class="fa fa-money"></i></a>';
 
-                                        $comiss = '';
                                         if ($servico->getCoPercentualComissao()) {
                                             $comissao2 = [];
                                             /** @var PercentualComissaoEntidade $percent */

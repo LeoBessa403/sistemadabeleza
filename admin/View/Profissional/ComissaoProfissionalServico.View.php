@@ -36,7 +36,7 @@
                             <h2>Comissões do Profissional: <?= $noProfissional; ?></h2>
                             <?php
                             Modal::load();
-                            $arrColunas = array('Serviço',
+                            $arrColunas = array('Atende','Serviço',
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::UNICO_PROFISSIONAL],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::COM_ASSISTENTE],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::ASSISTENTE]);
@@ -44,10 +44,25 @@
                             $grid->setColunasIndeces($arrColunas);
                             $grid->criaGrid('ComissaoProfissionalServicoTable',false);
                             foreach ($servicos as $servico) :
+                                $check = '';
+                                if ($servico[ST_STATUS] == SimNaoEnum::SIM) {
+                                    $check = 'checked="checked"';
+                                }
+                                $atende = '<div id="change-color-switch" class="make-switch"
+                                                 data-on-label="<i class=\'fa fa-check fa-white\'></i>"
+                                                 data-off-label="<i class=\'fa fa-times fa-white\'></i>"
+                                                 data-on="success"
+                                                 data-off="danger">
+                                                <input type="checkbox" id="atende-servico-' . $servico[CO_SERVICO] . '"
+                                                       name="atende-servico[' . $servico[CO_SERVICO] . ']" 
+                                                       ' . $check . ' class="atende-servico" title=""/>
+                                            </div>';
+
+                                $grid->setColunas($atende, 1);
                                 $grid->setColunas($servico[NO_SERVICO]);
                                 foreach (TipoComissaoEnum::$descricao as $chave => $descricao) {
                                     $campo = '<div class="col-md-12 input-group">
-                                    <input type="text" class="form-control porc-int"
+                                    <input type="text" class="form-control porc-int atende-servico-' . $servico[CO_SERVICO] . '"
                                           placeholder="0" id="' . NU_TIPO_COMISSAO . $chave . '-' .
                                         $servico[CO_SERVICO] . '" value="' .
                                         $servico[NU_TIPO_COMISSAO . $chave] . '"
@@ -66,9 +81,12 @@
                                 <input type="hidden" value="<?= $coProfissional; ?>"
                                        name="<?= CO_PROFISSIONAL; ?>" id="<?= CO_PROFISSIONAL; ?>"/>
                                 <div class="col-sm-2 col-sm-offset-10">
-                                    <button type="submit" class="btn btn-success btn-block">
+                                    <button type="submit" class="btn btn-success pull-right"
+                                            style="margin-right: -10px; margin-left: 10px;">
                                         Salvar <i class="fa fa-arrow-circle-right"></i>
                                     </button>
+                                    <?php Valida::geraBtn('Cancelar', 'ListarProfissional',
+                                        'btn-danger pull-right', 'btn_cancelar','fa fa-trash-o'); ?>
                                 </div>
                             </div>
                         </form>
