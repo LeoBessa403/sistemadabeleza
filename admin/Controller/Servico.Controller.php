@@ -279,7 +279,7 @@ class Servico extends AbstractController
                 $this->coServico = $coServico;
                 if($servico->getStStatus() == StatusAcessoEnum::INATIVO){
                     Notificacoes::geraMensagem(
-                        'Serviço Inativo, Favor ative primeiro para comfigurar as comissões dos profissionais.',
+                        'Serviço Inativo, Favor ative primeiro para configurar as comissões dos profissionais.',
                         TiposMensagemEnum::ALERTA
                     );
                     Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarServico/');

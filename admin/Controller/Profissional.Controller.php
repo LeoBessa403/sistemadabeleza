@@ -321,7 +321,7 @@ class Profissional extends AbstractController
             $this->coProfissional = $coProfissional;
             if($profissional->getStStatus() == StatusAcessoEnum::INATIVO){
                 Notificacoes::geraMensagem(
-                    'Profissional Inativo, Favor ative primeiro para comfigurar as comissões dos serviços.',
+                    'Profissional Inativo, Favor ative primeiro para configurar as comissões dos serviços.',
                     TiposMensagemEnum::ALERTA
                 );
                 Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
