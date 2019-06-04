@@ -606,16 +606,16 @@
                 var fim = inicio_pag * pagina;
                 var proxima_pagina = pagina + 1;
 
-                for (i=1;i<=total_grid;i++){
-                    if((i >= inicio) && (i <= fim)){
-                        $('#grid-'+i+', #list-'+i).show();
+                for (i = 1; i <= total_grid; i++) {
+                    if ((i >= inicio) && (i <= fim)) {
+                        $('#grid-' + i + ', #list-' + i).show();
                     }
                 }
                 $("#pagina").val(proxima_pagina);
-                if(fim < total_grid){
+                if (fim < total_grid) {
                     $(".total-max").text(fim);
                     $(".carrega-mais").show();
-                }else{
+                } else {
                     $(".total-max").text(total_grid);
                 }
             }, tempo_efeito);

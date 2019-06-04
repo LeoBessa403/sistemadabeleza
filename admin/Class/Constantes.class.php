@@ -113,7 +113,6 @@ define('CO_PRECO_PACOTE', 'co_preco_pacote');
 define('CO_SERVICO_PACOTE', 'co_servico_pacote');
 
 
-
 // SERVICES
 define('TIPO_PAGAMENTO_SERVICE', 'TipoPagamentoService');
 define('FACILIDADE_PAGAMENTO_SERVICE', 'FacilidadePagamentoService');

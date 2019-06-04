@@ -29,18 +29,18 @@ $(function () {
                 var id = $(this).attr("id").replace('atende-servico-', '');
                 var valida = false;
                 $('.atende-servico-' + id).each(function () {
-                    if($(this).val() != '0'){
+                    if ($(this).val() != '0') {
                         valida = true;
                     }
                 });
-                if (!valida){
+                if (!valida) {
                     var noServico = $('#registro-' + id + ' td:eq(1)').text();
                     Funcoes.Informativo('O serviço ' + noServico + ' está com o Atendimento Ativo e TODAS as comissões configuradas 0.');
                     val = false;
                 }
             }
         });
-        if (!val){
+        if (!val) {
             return false;
         }
     });

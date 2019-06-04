@@ -60,4 +60,5 @@ class UsuarioEntidadeExtends extends AbstractEntidade
     {
         $this->co_preco_pacote = $co_preco_pacote;
     }
+
 }

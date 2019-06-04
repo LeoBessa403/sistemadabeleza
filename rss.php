@@ -17,7 +17,7 @@ if ($produtos):
     foreach ($produtos as $produto):
         echo '<item>' . "\r\n";
         echo '<title>' . $produto->getNoProduto() . '</title>' . "\r\n";
-        echo '<link>' . HOME  . SITE . '/Produtos/DetalharProduto/' . $produto->getNoProdutoUrlAmigavel() . '</link>' . "\r\n";
+        echo '<link>' . HOME . SITE . '/Produtos/DetalharProduto/' . $produto->getNoProdutoUrlAmigavel() . '</link>' . "\r\n";
         echo '<pubDate>' . date('D, d M Y H:i:s O', strtotime($produto->getDtCadastro())) . '</pubDate>' . "\r\n";
         echo '<description>' . $produto->getNoProduto() . ' - Fabricante: ' . $produto->getCoFabricante()->getNoFabricante() .
             '</description>' . "\r\n";
@@ -29,7 +29,7 @@ if ($produtos):
         echo '<image_link>' . HOME . '/uploads/ProdutosCapa/' .
             $produto->getCoImagem()->getDsCaminho() . '</image_link>' . "\r\n";
         echo '<condition>new</condition>' . "\r\n";
-        echo '<price>' .  Valida::FormataMoeda(
+        echo '<price>' . Valida::FormataMoeda(
                 $produto->getUltimoCoProdutoDetalhe()->getNuPrecoVenda()
             ) . '</price>' . "\r\n";
         if ($produto->getUltimoCoProdutoDetalhe()->getNuEstoque() > 0) :
@@ -38,7 +38,7 @@ if ($produtos):
             echo '<availability>Sem Estoque</availability>' . "\r\n";
         endif;
         echo '<brand>' . $produto->getCoFabricante()->getNoFabricante() . '</brand>' . "\r\n";
-        echo '<google_product_category>'. $produto->getCoCategoria()->getNoCategoria() . '</google_product_category>' . "\r\n";
+        echo '<google_product_category>' . $produto->getCoCategoria()->getNoCategoria() . '</google_product_category>' . "\r\n";
         echo '</item>' . "\r\n";
     endforeach;
 endif;

@@ -36,7 +36,7 @@
                             <h2>Comissões do Serviço: <?= $noServico; ?></h2>
                             <?php
                             Modal::load();
-                            $arrColunas = array('Atende','Profissional',
+                            $arrColunas = array('Atende', 'Profissional',
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::UNICO_PROFISSIONAL],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::COM_ASSISTENTE],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::ASSISTENTE]);
@@ -83,11 +83,11 @@
                                        name="<?= CO_SERVICO; ?>" id="<?= CO_SERVICO; ?>"/>
                                 <div class="col-sm-2 col-sm-offset-10">
                                     <button type="submit" class="btn btn-success pull-right"
-                                    style="margin-right: -10px; margin-left: 10px;">
+                                            style="margin-right: -10px; margin-left: 10px;">
                                         Salvar <i class="fa fa-arrow-circle-right"></i>
                                     </button>
                                     <?php Valida::geraBtn('Cancelar', 'ListarServico',
-                                        'btn-danger pull-right', 'btn_cancelar','fa fa-trash-o'); ?>
+                                        'btn-danger pull-right', 'btn_cancelar', 'fa fa-trash-o'); ?>
                                 </div>
                             </div>
                         </form>

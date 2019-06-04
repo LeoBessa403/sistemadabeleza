@@ -17,7 +17,7 @@
                 <div class="page-header">
                     <h1>Categoria Serviço
                         <small>Listar Categoria Serviço</small>
-                        <?php Valida::geraBtnNovo('Criar Categoria','CadastroCategoriaServico'); ?>
+                        <?php Valida::geraBtnNovo('Criar Categoria', 'CadastroCategoriaServico'); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->

@@ -43,7 +43,7 @@ class  MotivoDescontoAssinanteService extends AbstractService
         ];
         $dadosStatus = [];
         $dadosReflete = [];
-        $dadosMotDesAss= [];
+        $dadosMotDesAss = [];
         $PDO->beginTransaction();
         // Atualiza todos para NÃO nos campos de Status e reflete desconto
         foreach ($dados[CO_MOTIVO_DESCONTO_ASSINANTE] as $coMotivoDesAss) {
@@ -52,7 +52,7 @@ class  MotivoDescontoAssinanteService extends AbstractService
             $this->Salva($dadosMotDesAss, $coMotivoDesAss);
         }
         // Atualiza a Situação dos Status de descontos para SIM
-        if(!empty($dados[ST_STATUS_DESCONTO])){
+        if (!empty($dados[ST_STATUS_DESCONTO])) {
             foreach ($dados[ST_STATUS_DESCONTO] as $coMotivo => $status) {
                 $coMotDesAss = $dados[CO_MOTIVO_DESCONTO_ASSINANTE][$coMotivo];
                 $dadosStatus[ST_STATUS_DESCONTO] = SimNaoEnum::SIM;
@@ -60,7 +60,7 @@ class  MotivoDescontoAssinanteService extends AbstractService
             }
         }
         // Atualiza os Situação de reflete desconto na comissão para SIM
-        if(!empty($dados[ST_REFLETE_DESCONTO_COMISSAO])){
+        if (!empty($dados[ST_REFLETE_DESCONTO_COMISSAO])) {
             foreach ($dados[ST_REFLETE_DESCONTO_COMISSAO] as $coMotivo => $status) {
                 $coMotDesAss = $dados[CO_MOTIVO_DESCONTO_ASSINANTE][$coMotivo];
                 $dadosReflete[ST_REFLETE_DESCONTO_COMISSAO] = SimNaoEnum::SIM;

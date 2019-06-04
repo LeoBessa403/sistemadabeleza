@@ -23,7 +23,7 @@ class  MotivoDescontoService extends AbstractService
         $motivos = [];
         $motivosDesconto = $motivoDescontoService->PesquisaTodos();
         /** @var MotivoDescontoEntidade $motivoDesconto */
-        foreach ($motivosDesconto as $motivoDesconto){
+        foreach ($motivosDesconto as $motivoDesconto) {
             $motivos[$motivoDesconto->getCoMotivoDesconto()] = $motivoDesconto->getDsMotivoDesconto();
         }
         return $motivos;

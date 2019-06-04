@@ -277,7 +277,7 @@ class Servico extends AbstractController
                 $servico = $servicoService->PesquisaUmRegistro($coServico);
                 $this->noServico = $servico->getNoServico();
                 $this->coServico = $coServico;
-                if($servico->getStStatus() == StatusAcessoEnum::INATIVO){
+                if ($servico->getStStatus() == StatusAcessoEnum::INATIVO) {
                     Notificacoes::geraMensagem(
                         'Serviço Inativo, Favor ative primeiro para configurar as comissões dos profissionais.',
                         TiposMensagemEnum::ALERTA

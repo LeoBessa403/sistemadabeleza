@@ -52,8 +52,8 @@
                                     <i class="fa fa-trash-o"></i>
                                 </a>';
                             $grid->setColunas($res->getCoProfissional()->getCoPessoa()->getNoPessoa());
-                            $grid->setColunas(Valida::DataShow($res->getDtInicio(),'d/m/Y H:i') .
-                                ' a ' . Valida::DataShow($res->getDtFim(),'d/m/Y H:i') );
+                            $grid->setColunas(Valida::DataShow($res->getDtInicio(), 'd/m/Y H:i') .
+                                ' a ' . Valida::DataShow($res->getDtFim(), 'd/m/Y H:i'));
                             $grid->setColunas(TipoAusenciaEnum::getDescricaoValor($res->getTpAusencia()));
                             $grid->setColunas($res->getDsObservacao());
                             $grid->setColunas($res->getCoUsuario()->getCoPessoa()->getNoPessoa());

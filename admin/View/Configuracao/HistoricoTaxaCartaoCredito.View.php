@@ -42,7 +42,7 @@
                         <?php
                         $nome = "Cartão Crédito " . $pagBandCartao->getCoBandeiraCartao()->getNoBandeiraCartao();
                         $historicos = $pagBandCartao->getCoTaxaCartao();
-                        require_once PARTIAL_LIBRARY. 'Admin/historico.php';
+                        require_once PARTIAL_LIBRARY . 'Admin/historico.php';
                         ?>
                     </div>
                 </div>

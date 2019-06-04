@@ -16,7 +16,7 @@
                 </ol>
                 <div class="page-header">
                     <h1>Comissão
-                        <small> Profissional / Serviço </small>
+                        <small> Profissional / Serviço</small>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -31,18 +31,18 @@
                     </div>
                     <div class="panel-body">
                         <form action="<?= HOME . ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action; ?>"
-                               class="formulario" method="post" enctype="multipart/form-data"
+                              class="formulario" method="post" enctype="multipart/form-data"
                               id="ComissaoProfissionalServicoForm" name="ComissaoProfissionalServicoForm">
                             <h2>Comissões do Profissional: <?= $noProfissional; ?></h2>
                             <?php
                             Modal::load();
-                            $arrColunas = array('Atende','Serviço',
+                            $arrColunas = array('Atende', 'Serviço',
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::UNICO_PROFISSIONAL],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::COM_ASSISTENTE],
                                 TipoComissaoEnum::$descricao[TipoComissaoEnum::ASSISTENTE]);
                             $grid = new Grid();
                             $grid->setColunasIndeces($arrColunas);
-                            $grid->criaGrid('ComissaoProfissionalServicoTable',false);
+                            $grid->criaGrid('ComissaoProfissionalServicoTable', false);
                             foreach ($servicos as $servico) :
                                 $check = '';
                                 if ($servico[ST_STATUS] == SimNaoEnum::SIM) {
@@ -86,7 +86,7 @@
                                         Salvar <i class="fa fa-arrow-circle-right"></i>
                                     </button>
                                     <?php Valida::geraBtn('Cancelar', 'ListarProfissional',
-                                        'btn-danger pull-right', 'btn_cancelar','fa fa-trash-o'); ?>
+                                        'btn-danger pull-right', 'btn_cancelar', 'fa fa-trash-o'); ?>
                                 </div>
                             </div>
                         </form>

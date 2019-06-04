@@ -42,7 +42,7 @@
                         <?php
                         $nome = "Histórico Configuração de Comissão do Assinante";
                         $historicos = $configComissao->getCoHistoricoComissao();
-                        require_once PARTIAL_LIBRARY. 'Admin/historico.php';
+                        require_once PARTIAL_LIBRARY . 'Admin/historico.php';
                         ?>
                     </div>
                 </div>

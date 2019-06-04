@@ -15,7 +15,7 @@ class  ConfigAgendamentoService extends AbstractService
         parent::__construct(ConfigAgendamentoEntidade::ENTIDADE);
         $this->ObjetoModel = New ConfigAgendamentoModel();
     }
-    
+
     public function salvaConfigAgendamento($dados)
     {
         $session = new Session();

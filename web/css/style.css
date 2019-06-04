@@ -5031,7 +5031,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
     box-shadow: 0px 0px 2px black;
     border-radius: 5px;
     -moz-border-radius: 5px;
-    -webkit-border-radius:5px;
+    -webkit-border-radius: 5px;
 }
 
 .sidebar .simple-banner {
@@ -5614,14 +5614,14 @@ select.top-drop-menu {
     color: #E7DCD0 !important;
 }
 
-.mensagem-success, .mensagem-erro{
+.mensagem-success, .mensagem-erro {
     margin-bottom: -10px;
     width: 90%;
     padding-left: 3px;
     display: none;
 }
 
-.mensagem-success2, .mensagem-erro2{
+.mensagem-success2, .mensagem-erro2 {
     margin-bottom: 0px;
     width: 95%;
     padding: 5px 3px !important;
@@ -5632,7 +5632,7 @@ select.top-drop-menu {
     font-weight: 600;
 }
 
-.mensagem-email{
+.mensagem-email {
     font-weight: bold;
     color: darkgreen !important;
     margin: 20px 0;
@@ -6636,7 +6636,6 @@ select.form-control option {
     }
 }
 
-
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 500px) {
 
@@ -6760,7 +6759,6 @@ select.form-control option {
     }
 }
 
-
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 992px) {
 
@@ -6791,7 +6789,6 @@ select.form-control option {
         font-size: 1.6em !important;
     }
 }
-
 
 @media (min-width: 1200px) {
     .owl-buttons {

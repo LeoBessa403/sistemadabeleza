@@ -26,7 +26,7 @@ class  ServicoValidador extends AbstractValidador
         $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
             $dados[CO_CATEGORIA_SERVICO], 'Categoria do Serviço'
         );
-       $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
             $dados[DS_DESCRICAO], 5, 'Descrição'
         );
         if (empty($dados[CO_IMAGEM])) {

@@ -88,7 +88,7 @@ class  ServicoService extends AbstractService
                 $imagemService->salvaImagem($files, $noImagem, $noPasta, $result[CO_IMAGEM]);
             } else {
                 $coImagem = $imagemService->salvaImagem($files, $noImagem, $noPasta);
-                if($coImagem){
+                if ($coImagem) {
                     $servico[CO_IMAGEM] = $coImagem;
                 }
             }

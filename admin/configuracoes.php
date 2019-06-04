@@ -24,12 +24,12 @@ function servidor_inicial()
         );
     }
 
-    define('HOME' , $config['HOME']);
-    define('HOST' , $config['HOST']);
-    define('USER' , $config['USER']);
-    define('PASS' , $config['PASS']);
-    define('DBSA' , $config['DBSA']);
+    define('HOME', $config['HOME']);
+    define('HOST', $config['HOST']);
+    define('USER', $config['USER']);
+    define('PASS', $config['PASS']);
+    define('DBSA', $config['DBSA']);
     define('DEBUG', $config['DEBUG']);
-    define('PROD' , $config['PROD']);
+    define('PROD', $config['PROD']);
 
 }

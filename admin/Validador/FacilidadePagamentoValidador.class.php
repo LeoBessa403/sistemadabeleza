@@ -18,7 +18,7 @@ class FacilidadePagamentoValidador extends AbstractValidador
             $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
                 $dados[CO_TIPO_PAGAMENTO], 'Formas De Pagamento'
             );
-        }else{
+        } else {
             $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
                 null, 'Formas De Pagamento'
             );

@@ -319,7 +319,7 @@ class Profissional extends AbstractController
             $profissional = $profissionalService->PesquisaUmRegistro($coProfissional);
             $this->noProfissional = $profissional->getCoPessoa()->getNoPessoa();
             $this->coProfissional = $coProfissional;
-            if($profissional->getStStatus() == StatusAcessoEnum::INATIVO){
+            if ($profissional->getStStatus() == StatusAcessoEnum::INATIVO) {
                 Notificacoes::geraMensagem(
                     'Profissional Inativo, Favor ative primeiro para configurar as comissões dos serviços.',
                     TiposMensagemEnum::ALERTA
@@ -330,7 +330,7 @@ class Profissional extends AbstractController
             foreach ($todosCatServicos as $catServico) {
                 /** @var ServicoEntidade $servico */
                 foreach ($catServico->getCoServico() as $servico) {
-                    if($servico->getStStatus() == StatusAcessoEnum::ATIVO){
+                    if ($servico->getStStatus() == StatusAcessoEnum::ATIVO) {
                         $coServico = $servico->getCoServico();
                         /** @var ServicoProfissionalEntidade $servProf */
                         $servProf = $servicoProfissionalService->PesquisaUmQuando([

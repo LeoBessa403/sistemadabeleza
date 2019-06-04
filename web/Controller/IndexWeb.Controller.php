@@ -1,5 +1,5 @@
 <?php
-          
+
 class IndexWeb extends AbstractController
 {
     public $result;
@@ -38,5 +38,6 @@ class IndexWeb extends AbstractController
 //        $this->comparados = $produto->getProdutosComparados();
     }
 }
+
 ?>
    

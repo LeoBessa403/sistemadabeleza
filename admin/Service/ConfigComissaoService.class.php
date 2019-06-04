@@ -62,10 +62,10 @@ class  ConfigComissaoService extends AbstractService
             $percCom[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $percCom[DT_ATUALIZADO] = Valida::DataHoraAtualBanco();
 
-            foreach (TipoComissaoEnum::$descricao as $tipoComissao => $descrição){
+            foreach (TipoComissaoEnum::$descricao as $tipoComissao => $descrição) {
                 $percCom[CO_HISTORICO_COMISSAO] = $coHistCom;
                 $percCom[NU_TIPO_COMISSAO] = $tipoComissao;
-                $percCom[NU_COMISSAO] = $dados[NU_TIPO_COMISSAO.$tipoComissao];
+                $percCom[NU_COMISSAO] = $dados[NU_TIPO_COMISSAO . $tipoComissao];
                 $retorno[SUCESSO] = $percentualComissaoService->Salva($percCom);
             }
 
