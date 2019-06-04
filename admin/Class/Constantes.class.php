@@ -107,6 +107,10 @@ define('ST_TAXA_CARTAO_CREDITO', 'st_taxa_cartao_credito');
 define('ST_TAXA_CARTAO_DEBITO', 'st_taxa_cartao_debito');
 define('ST_RECEBIMENTO_PRE_VENDA', 'st_recebimento_pre_venda');
 define('NU_FORMA_COMISSAO', 'nu_forma_comissao');
+define('CO_PACOTE_SERV', 'co_pacote_serv');
+define('NO_PACOTE_SERV', 'no_pacote_serv');
+define('CO_PRECO_PACOTE', 'co_preco_pacote');
+define('CO_SERVICO_PACOTE', 'co_servico_pacote');
 
 
 
@@ -143,3 +147,14 @@ define('CONFIG_COMISSAO_SERVICE', 'ConfigComissaoService');
 define('PERCENTUAL_COMISSAO_SERVICE', 'PercentualComissaoService');
 define('SERVICO_PROFISSIONAL_SERVICE', 'ServicoProfissionalService');
 define('HISTORICO_COMISSAO_SERVICE', 'HistoricoComissaoService');
+define('PACOTE_SERV_SERVICE', 'PacoteServService');
+define('PRECO_PACOTE_SERVICE', 'PrecoPacoteService');
+define('SERVICO_PACOTE_SERVICE', 'ServicoPacoteService');
+
+
+
+
+
+
+
+

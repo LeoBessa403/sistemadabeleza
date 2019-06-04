@@ -102,6 +102,11 @@ class Relacionamentos
                     ('Entidade') => 'ConfigComissaoEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_PACOTE_SERV) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'PacoteServEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -150,6 +155,11 @@ class Relacionamentos
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'AusenciaEntidade',
                     ('Tipo') => '1',
+                ),
+                (CO_PRECO_PACOTE) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'PrecoPacoteEntidade',
+                    ('Tipo') => '2',
                 ),
             ),
             (FuncionalidadeEntidade::TABELA) => Array(
@@ -796,6 +806,11 @@ class Relacionamentos
                     ('Entidade') => 'ServicoProfissionalEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_SERVICO_PACOTE) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoPacoteEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ConfigComissaoEntidade::TABELA) => Array(
                 (CO_HISTORICO_COMISSAO) => Array(
@@ -863,6 +878,47 @@ class Relacionamentos
                     ('Campo') => CO_SERVICO_PROFISSIONAL,
                     ('Entidade') => 'PercentualComissaoEntidade',
                     ('Tipo') => '2',
+                ),
+            ),
+            (PacoteServEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PRECO_PACOTE) => Array(
+                    ('Campo') => CO_PACOTE_SERV,
+                    ('Entidade') => 'PrecoPacoteEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_SERVICO_PACOTE) => Array(
+                    ('Campo') => CO_PACOTE_SERV,
+                    ('Entidade') => 'ServicoPacoteEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (PrecoPacoteEntidade::TABELA) => Array(
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PACOTE_SERV) => Array(
+                    ('Campo') => CO_PACOTE_SERV,
+                    ('Entidade') => 'PacoteServEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ServicoPacoteEntidade::TABELA) => Array(
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PACOTE_SERV) => Array(
+                    ('Campo') => CO_PACOTE_SERV,
+                    ('Entidade') => 'PacoteServEntidade',
+                    ('Tipo') => '1',
                 ),
             ),
         );
