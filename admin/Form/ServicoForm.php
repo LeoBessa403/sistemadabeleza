@@ -281,16 +281,8 @@ class ServicoForm
         $formulario
             ->setId(NO_PACOTE_SERV)
             ->setTamanhoInput(9)
+            ->setClasses("ob")
             ->setLabel("Nome do pacote")
-            ->CriaInpunt();
-
-        $options = CategoriaServicoService::categoriasServicoCombo();
-        $formulario
-            ->setId(CO_CATEGORIA_SERVICO)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Categoria do Serviço")
-            ->setTamanhoInput(9)
-            ->setOptions($options)
             ->CriaInpunt();
 
         $formulario
@@ -298,6 +290,16 @@ class ServicoForm
             ->setClasses("moeda ob")
             ->setLabel("Preço R$")
             ->setTamanhoInput(3)
+            ->CriaInpunt();
+
+        $options = ServicoService::servicosCombo();
+        $formulario
+            ->setId(CO_SERVICO)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Serviços do Pacote")
+            ->setTamanhoInput(9)
+            ->setClasses("multipla ob")
+            ->setOptions($options)
             ->CriaInpunt();
 
         $formulario

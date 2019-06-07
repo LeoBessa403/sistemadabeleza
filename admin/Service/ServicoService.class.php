@@ -133,4 +133,26 @@ class  ServicoService extends AbstractService
         return $this->ObjetoModel->PesquisaAvancadaPreco($Condicoes);
     }
 
+
+    public static function servicosCombo()
+    {
+        /** @var CategoriaServicoService $categoriaServicoService */
+        $categoriaServicoService = new CategoriaServicoService();
+        $comboServicos = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        $categorias = $categoriaServicoService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        /** @var CategoriaServicoEntidade $categoria */
+        foreach ($categorias as $categoria) {
+            /** @var ServicoEntidade $servico */
+            foreach ($categoria->getCoServico() as $servico) {
+                $comboServicos[$servico->getCoServico()]
+                    = $servico->getNoServico();
+            }
+        }
+        return $comboServicos;
+    }
+
 }

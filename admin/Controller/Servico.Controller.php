@@ -366,8 +366,11 @@ class Servico extends AbstractController
             $res[NU_HORA_FECHAMENTO] = $diaEspecial->getNuHoraFechamento();
             $res[DS_MOTIVO] = $diaEspecial->getDsMotivo();
             $res[CO_DIA_ESPECIAL] = $diaEspecial->getCoDiaEspecial();
+        }else{
+            // Inicia elementos do Form
+            $res[ST_STATUS] = 'checked';
         }
-        $this->form = ServicoForm::CadastroPacoteServico();
+        $this->form = ServicoForm::CadastroPacoteServico($res);
     }
 
 }
