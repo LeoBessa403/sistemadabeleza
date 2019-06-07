@@ -17,14 +17,7 @@
                 <div class="page-header">
                     <h1>Serviço
                         <small>Pacote Serviço</small>
-                        <a data-toggle="modal" role="button" class="btn btn-danger tooltips acao"
-                           id="CoProfissional"
-                           href="#CadastroPacoteServico" data-original-title="Desativar Profissional"
-                           data-placement="top">
-                            <i class="fa fa-lock"></i> Cadastrar Pacote
-                        </a>
-                        <?php Modal::Cadastro("CadastroPacoteServico"); ?>
-<!--                        --><?php //Valida::geraBtnNovo('Cadastrar Pacote', 'CadastroPacote'); ?>
+                        <?php Modal::Cadastro("CadastroPacoteServico",'Cadastro de Pacote'); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->

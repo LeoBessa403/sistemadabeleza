@@ -257,4 +257,67 @@ class ServicoForm
 
         return $formulario->finalizaFormPesquisaAvancada();
     }
+
+
+    public static function CadastroPacoteServico($res = false)
+    {
+        $id = "CadastroPacoteServico";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Cadastrar");
+        $formulario->setValor($res);
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Status do Pacote")
+            ->setClasses($res[ST_STATUS])
+            ->setId(ST_STATUS)
+            ->setTamanhoInput(3)
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setInfo("Ativo ou Inativo?")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NO_PACOTE_SERV)
+            ->setTamanhoInput(9)
+            ->setLabel("Nome do pacote")
+            ->CriaInpunt();
+
+        $options = CategoriaServicoService::categoriasServicoCombo();
+        $formulario
+            ->setId(CO_CATEGORIA_SERVICO)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Categoria do Serviço")
+            ->setTamanhoInput(9)
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_VALOR)
+            ->setClasses("moeda ob")
+            ->setLabel("Preço R$")
+            ->setTamanhoInput(3)
+            ->CriaInpunt();
+
+        $formulario
+            ->setType(TiposCampoEnum::TEXTAREA)
+            ->setId(DS_DESCRICAO)
+            ->setClasses("ob")
+            ->setTamanhoInput(12)
+            ->setLabel("Descrição")
+            ->CriaInpunt();
+
+
+        if (!empty($res[CO_PACOTE_SERV])):
+            $formulario
+                ->setType(TiposCampoEnum::HIDDEN)
+                ->setId(CO_PACOTE_SERV)
+                ->setValues($res[CO_PACOTE_SERV])
+                ->CriaInpunt();
+
+        endif;
+
+        return $formulario->finalizaForm();
+    }
 }
