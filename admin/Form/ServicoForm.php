@@ -39,7 +39,7 @@ class ServicoForm
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm('Servico/ListarCategoriaServico');
+        return $formulario->finalizaForm();
     }
 
     public static function Cadastrar($res = false)
@@ -139,7 +139,7 @@ class ServicoForm
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm('Servico/ListarServico');
+        return $formulario->finalizaForm();
     }
 
     public static function ComissaoServico($res = false)

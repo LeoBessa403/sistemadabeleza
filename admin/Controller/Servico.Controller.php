@@ -23,7 +23,6 @@ class Servico extends AbstractController
         }
     }
 
-
     public function ListarServico()
     {
         /** @var ServicoService $servicoService */
@@ -332,6 +331,43 @@ class Servico extends AbstractController
         /** @var ServicoService $servicoService */
         $servicoService = static::getService(SERVICO_SERVICE);
         return $servicoService->ativarServico($coServico);
+    }
+
+    public function PacoteServico()
+    {
+        /** @var PacoteServService $pacoteServService */
+        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+        $this->result = $pacoteServService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+    }
+
+
+    public function CadastroPacoteServico()
+    {
+        /** @var DiaEspecialService $diaEspecialService */
+        $diaEspecialService = $this->getService(DIA_ESPECIAL_SERVICE);
+        $id = "CadastroDiaEspecial";
+
+        if (!empty($_POST[$id])):
+            $retorno = $diaEspecialService->salvaDiaEspecial($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/DiaEspecialConfiguracao/');
+            }
+        endif;
+
+        $coDiaEspecial = UrlAmigavel::PegaParametro(CO_DIA_ESPECIAL);
+        $res = [];
+        if ($coDiaEspecial) {
+            /** @var DiaEspecialEntidade $diaEspecial */
+            $diaEspecial = $diaEspecialService->PesquisaUmRegistro($coDiaEspecial);
+            $res[DT_DIA] = Valida::DataShow($diaEspecial->getDtDia());
+            $res[NU_HORA_ABERTURA] = $diaEspecial->getNuHoraAbertura();
+            $res[NU_HORA_FECHAMENTO] = $diaEspecial->getNuHoraFechamento();
+            $res[DS_MOTIVO] = $diaEspecial->getDsMotivo();
+            $res[CO_DIA_ESPECIAL] = $diaEspecial->getCoDiaEspecial();
+        }
+        $this->form = DiaEspecialForm::Cadastrar($res);
     }
 
 }

@@ -11,7 +11,7 @@ class DiaEspecialForm
         $id = "CadastroDiaEspecial";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
-            "Cadastrar", 6);
+            "Cadastrar");
         $formulario->setValor($res);
 
         $formulario
@@ -58,7 +58,7 @@ class DiaEspecialForm
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm('Configuracao/DiaEspecialConfiguracao');
+        return $formulario->finalizaForm();
     }
 
 

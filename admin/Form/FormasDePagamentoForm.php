@@ -32,7 +32,7 @@ class FormasDePagamentoForm
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm('Configuracao/FormasDePagamentoConfiguracao');
+        return $formulario->finalizaForm();
     }
 
 

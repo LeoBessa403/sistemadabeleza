@@ -23,6 +23,7 @@ class ServicoEntidade extends AbstractEntidade
     private $co_percentual_comissao;
     private $co_servico_profissional;
     private $co_imagem;
+    private $co_servico_pacote;
 
 
     /**
@@ -262,6 +263,23 @@ class ServicoEntidade extends AbstractEntidade
     public function getCoUltimoPrecoServico()
     {
         return $this->ultimo($this->getCoPrecoServico());
+    }
+
+    /**
+     * @return ServicoPacoteEntidade $co_servico_pacote
+     */
+    public function getCoServicoPacote()
+    {
+        return $this->co_servico_pacote;
+    }
+
+    /**
+     * @param $co_servico_pacote
+     * @return mixed
+     */
+    public function setCoServicoPacote($co_servico_pacote)
+    {
+        return $this->co_servico_pacote = $co_servico_pacote;
     }
 
 }
