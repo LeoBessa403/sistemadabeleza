@@ -486,7 +486,7 @@ class ProfissionalForm
         endif;
 
 
-        return $formulario->finalizaForm();
+        return $formulario->finalizaForm('Profissional/AusenciaProfissional');
     }
 
     public static function Pesquisar()

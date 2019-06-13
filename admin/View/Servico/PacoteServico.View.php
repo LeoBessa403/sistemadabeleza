@@ -17,7 +17,9 @@
                 <div class="page-header">
                     <h1>Serviço
                         <small>Pacote Serviço</small>
-                        <?php Modal::Cadastro("CadastroPacoteServico",'Cadastro de Pacote'); ?>
+                        <?php Valida::geraBtnNovo('Cadastro de Pacote', 'CadastroPacoteServico'); ?>
+                        <!--    CRIAR BOTÃO E MODAL PRO FORMUÇÁRIO AJAX    -->
+                        <?php //Modal::Cadastro("CadastroPacoteServico",'Cadastro de Pacote'); ?>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
