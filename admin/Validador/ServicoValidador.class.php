@@ -36,4 +36,21 @@ class  ServicoValidador extends AbstractValidador
         }
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarPacoteServico($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
+            $dados[NO_PACOTE_SERV], 5, 'Nome do pacote'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[NU_VALOR], AbstractValidador::VALIDACAO_MOEDA, 'Preço'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
+            $dados[CO_SERVICO], 'Serviços do Pacote'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
+            $dados[DS_DESCRICAO], 5, 'Descrição'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
 }
