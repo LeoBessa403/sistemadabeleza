@@ -303,13 +303,6 @@ class ServicoForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(DS_CAMINHO)
-            ->setType(TiposCampoEnum::SINGLEFILE)
-            ->setTamanhoInput(12)
-            ->setLabel("Foto do Serviço")
-            ->CriaInpunt();
-
-        $formulario
             ->setType(TiposCampoEnum::TEXTAREA)
             ->setId(DS_DESCRICAO)
             ->setClasses("ob")
@@ -327,6 +320,6 @@ class ServicoForm
 
         endif;
 
-        return $formulario->finalizaForm();
+        return $formulario->finalizaForm('Servico/PacoteServico');
     }
 }

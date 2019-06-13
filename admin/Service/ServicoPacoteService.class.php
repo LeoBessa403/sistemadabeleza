@@ -17,4 +17,18 @@ class  ServicoPacoteService extends AbstractService
     }
 
 
+    public function salvaServicoPacote($dados, $coPacoteServ)
+    {
+        $this->DeletaQuando([
+            CO_PACOTE_SERV => $coPacoteServ
+        ]);
+        $retorno = false;
+        $pacoteServ[CO_PACOTE_SERV] = $coPacoteServ;
+        foreach ($dados[CO_SERVICO] as $servico) {
+            $pacoteServ[CO_SERVICO] = $servico;
+            $retorno = $this->Salva($pacoteServ);
+        }
+        return $retorno;
+    }
+
 }

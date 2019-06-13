@@ -144,4 +144,12 @@ class PacoteServEntidade extends AbstractEntidade
         return $this->co_servico_pacote = $co_servico_pacote;
     }
 
+    /**
+     * @return PrecoPacoteEntidade $co_preco_pacote
+     */
+    public function getCoUltimoPrecoPacote()
+    {
+        return $this->ultimo($this->getCoPrecoPacote());
+    }
+
 }

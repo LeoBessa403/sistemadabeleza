@@ -11,6 +11,7 @@ class Servico extends AbstractController
     public $jornada;
     public $coCategoriaServico;
     public $profissionais;
+    public $pacoteServ;
 
     public function ListarCategoriaServico()
     {
@@ -345,32 +346,61 @@ class Servico extends AbstractController
 
     public function CadastroPacoteServico()
     {
-        /** @var DiaEspecialService $diaEspecialService */
-        $diaEspecialService = $this->getService(DIA_ESPECIAL_SERVICE);
-        $id = "CadastroDiaEspecial";
+        /** @var PacoteServService $pacoteServService */
+        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+        $id = "CadastroPacoteServico";
 
         if (!empty($_POST[$id])):
-            $retorno = $diaEspecialService->salvaDiaEspecial($_POST);
+            $retorno = $pacoteServService->salvaPacoteServico($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/DiaEspecialConfiguracao/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PacoteServico/');
             }
         endif;
 
-        $coDiaEspecial = UrlAmigavel::PegaParametro(CO_DIA_ESPECIAL);
+        $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
         $res = [];
-        if ($coDiaEspecial) {
-            /** @var DiaEspecialEntidade $diaEspecial */
-            $diaEspecial = $diaEspecialService->PesquisaUmRegistro($coDiaEspecial);
-            $res[DT_DIA] = Valida::DataShow($diaEspecial->getDtDia());
-            $res[NU_HORA_ABERTURA] = $diaEspecial->getNuHoraAbertura();
-            $res[NU_HORA_FECHAMENTO] = $diaEspecial->getNuHoraFechamento();
-            $res[DS_MOTIVO] = $diaEspecial->getDsMotivo();
-            $res[CO_DIA_ESPECIAL] = $diaEspecial->getCoDiaEspecial();
+        if ($coPacoteServ) {
+            /** @var PacoteServEntidade $pacoteServ */
+            $pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
+            $res[ST_STATUS] = ($pacoteServ->getCoUltimoPrecoPacote()->getStStatus() == StatusAcessoEnum::ATIVO)
+                ? 'checked' : '';
+            $res[NO_PACOTE_SERV] = $pacoteServ->getNoPacoteServ();
+            $res[NU_VALOR] = Valida::FormataMoeda($pacoteServ->getCoUltimoPrecoPacote()->getNuValor());
+            // Carrega os Serviços
+            $servicos = [];
+            if (!empty($pacoteServ->getCoServicoPacote())) {
+                /** @var ServicoPacoteEntidade $servPacote */
+                foreach ($pacoteServ->getCoServicoPacote() as $servPacote) {
+                    $servicos[] = $servPacote->getCoServico()->getCoServico();
+                }
+            }
+            $res[CO_SERVICO] = $servicos;
+            $res[DS_DESCRICAO] = $pacoteServ->getCoUltimoPrecoPacote()->getDsDescricao();
+            $res[CO_PACOTE_SERV] = $coPacoteServ;
         }else{
             // Inicia elementos do Form
             $res[ST_STATUS] = 'checked';
         }
         $this->form = ServicoForm::CadastroPacoteServico($res);
+    }
+
+    public function HistoricoPacoteServico()
+    {
+        /** @var PacoteServService $pacoteServService */
+        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+
+        $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
+        if ($coPacoteServ) {
+            /** @var PlanoEntidade $plano */
+            $this->pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
+        } else {
+            Notificacoes::geraMensagem(
+                'Não Existe Histórico desse Pacote de Serviço',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PacoteServico/');
+        }
+
     }
 
 }
