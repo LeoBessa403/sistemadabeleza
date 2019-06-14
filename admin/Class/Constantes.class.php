@@ -111,6 +111,9 @@ define('CO_PACOTE_SERV', 'co_pacote_serv');
 define('NO_PACOTE_SERV', 'no_pacote_serv');
 define('CO_PRECO_PACOTE', 'co_preco_pacote');
 define('CO_SERVICO_PACOTE', 'co_servico_pacote');
+define('CO_PRECO_PROMOCAO', 'co_preco_promocao');
+define('CO_PROMOCAO', 'co_promocao');
+define('NO_TITULO', 'no_titulo');
 
 
 // SERVICES
@@ -149,11 +152,5 @@ define('HISTORICO_COMISSAO_SERVICE', 'HistoricoComissaoService');
 define('PACOTE_SERV_SERVICE', 'PacoteServService');
 define('PRECO_PACOTE_SERVICE', 'PrecoPacoteService');
 define('SERVICO_PACOTE_SERVICE', 'ServicoPacoteService');
-
-
-
-
-
-
-
-
+define('PRECO_PROMOCAO_SERVICE', 'PrecoPromocaoService');
+define('PROMOCAO_SERVICE', 'PromocaoService');

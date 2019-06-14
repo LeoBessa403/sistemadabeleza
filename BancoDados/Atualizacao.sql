@@ -32,3 +32,5 @@ UPDATE TB_HISTORIA SET ds_titulo = "Manter promoção", ds_observacao = "<p>Mant
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("13", "13"_restante, "2019-06-14 13:23:09", "25");
 
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("72", "2");
+

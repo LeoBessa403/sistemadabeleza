@@ -107,6 +107,11 @@ class Relacionamentos
                     ('Entidade') => 'PacoteServEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_PROMOCAO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'PromocaoEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -159,6 +164,11 @@ class Relacionamentos
                 (CO_PRECO_PACOTE) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'PrecoPacoteEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_PRECO_PROMOCAO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'PrecoPromocaoEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -811,6 +821,11 @@ class Relacionamentos
                     ('Entidade') => 'ServicoPacoteEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_PRECO_PROMOCAO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'PrecoPromocaoEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ConfigComissaoEntidade::TABELA) => Array(
                 (CO_HISTORICO_COMISSAO) => Array(
@@ -918,6 +933,35 @@ class Relacionamentos
                 (CO_PACOTE_SERV) => Array(
                     ('Campo') => CO_PACOTE_SERV,
                     ('Entidade') => 'PacoteServEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (PromocaoEntidade::TABELA) => Array(
+                (CO_PRECO_PROMOCAO) => Array(
+                    ('Campo') => CO_PROMOCAO,
+                    ('Entidade') => 'PrecoPromocaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (PrecoPromocaoEntidade::TABELA) => Array(
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PROMOCAO) => Array(
+                    ('Campo') => CO_PROMOCAO,
+                    ('Entidade') => 'PromocaoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
                     ('Tipo') => '1',
                 ),
             ),

@@ -19,6 +19,7 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     private $co_categoria_servico;
     private $co_config_comissao;
     private $co_pacote_serv;
+    private $co_promocao;
 
     /**
      * @return FacilidadeBeneficioEntidade $co_facilidade_beneficio
@@ -204,6 +205,7 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     {
         return $this->co_config_comissao = $co_config_comissao;
     }
+
     /**
      * @return PacoteServEntidade $co_pacote_serv
      */
@@ -219,5 +221,22 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     public function setCoPacoteServ($co_pacote_serv)
     {
         return $this->co_pacote_serv = $co_pacote_serv;
+    }
+
+    /**
+     * @return PromocaoEntidade $co_promocao
+     */
+    public function getCoPromocao()
+    {
+        return $this->co_promocao;
+    }
+
+    /**
+     * @param $co_promocao
+     * @return mixed
+     */
+    public function setCoPromocao($co_promocao)
+    {
+        return $this->co_promocao = $co_promocao;
     }
 }

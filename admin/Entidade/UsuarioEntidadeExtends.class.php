@@ -11,6 +11,7 @@ class UsuarioEntidadeExtends extends AbstractEntidade
     private $co_profissional;
     private $co_ausencia;
     private $co_preco_pacote;
+    private $co_preco_promocao;
 
     /**
      * @return ProfissionalEntidade $co_profissional
@@ -59,6 +60,22 @@ class UsuarioEntidadeExtends extends AbstractEntidade
     public function setCoPrecoPacote($co_preco_pacote)
     {
         $this->co_preco_pacote = $co_preco_pacote;
+    }
+
+    /**
+     * @return PrecoPromocaoEntidade $co_preco_promocao
+     */
+    public function getCoPrecoPromocao()
+    {
+        return $this->co_preco_promocao;
+    }
+
+    /**
+     * @param mixed $co_preco_promocao
+     */
+    public function setCoPrecoPromocao($co_preco_promocao)
+    {
+        $this->co_preco_promocao = $co_preco_promocao;
     }
 
 }
