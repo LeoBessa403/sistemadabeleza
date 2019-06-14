@@ -343,7 +343,6 @@ class Servico extends AbstractController
         ]);
     }
 
-
     public function CadastroPacoteServico()
     {
         /** @var PacoteServService $pacoteServService */
@@ -385,6 +384,74 @@ class Servico extends AbstractController
     }
 
     public function HistoricoPacoteServico()
+    {
+        /** @var PacoteServService $pacoteServService */
+        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+
+        $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
+        if ($coPacoteServ) {
+            /** @var PlanoEntidade $plano */
+            $this->pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
+        } else {
+            Notificacoes::geraMensagem(
+                'Não Existe Histórico desse Pacote de Serviço',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PacoteServico/');
+        }
+
+    }
+
+    public function PromocaoServico()
+    {
+        /** @var PromocaoService $promocaoService */
+        $promocaoService = $this->getService(PROMOCAO_SERVICE);
+        $this->result = $promocaoService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+    }
+
+    public function CadastroPromocaoServico()
+    {
+        /** @var PacoteServService $pacoteServService */
+        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+        $id = "CadastroPromocaoServico";
+
+        if (!empty($_POST[$id])):
+            $retorno = $pacoteServService->salvaPacoteServico($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PacoteServico/');
+            }
+        endif;
+
+        $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
+        $res = [];
+        if ($coPacoteServ) {
+            /** @var PacoteServEntidade $pacoteServ */
+            $pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
+            $res[ST_STATUS] = ($pacoteServ->getCoUltimoPrecoPacote()->getStStatus() == StatusAcessoEnum::ATIVO)
+                ? 'checked' : '';
+            $res[NO_PACOTE_SERV] = $pacoteServ->getNoPacoteServ();
+            $res[NU_VALOR] = Valida::FormataMoeda($pacoteServ->getCoUltimoPrecoPacote()->getNuValor());
+            // Carrega os Serviços
+            $servicos = [];
+            if (!empty($pacoteServ->getCoServicoPacote())) {
+                /** @var ServicoPacoteEntidade $servPacote */
+                foreach ($pacoteServ->getCoServicoPacote() as $servPacote) {
+                    $servicos[] = $servPacote->getCoServico()->getCoServico();
+                }
+            }
+            $res[CO_SERVICO] = $servicos;
+            $res[DS_DESCRICAO] = $pacoteServ->getCoUltimoPrecoPacote()->getDsDescricao();
+            $res[CO_PACOTE_SERV] = $coPacoteServ;
+        }else{
+            // Inicia elementos do Form
+            $res[ST_STATUS] = 'checked';
+        }
+        $this->form = ServicoForm::CadastroPromocaoServico($res);
+    }
+
+    public function HistoricoPromocaoServico()
     {
         /** @var PacoteServService $pacoteServService */
         $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);

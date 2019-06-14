@@ -24,6 +24,7 @@ class ServicoEntidade extends AbstractEntidade
     private $co_servico_profissional;
     private $co_imagem;
     private $co_servico_pacote;
+    private $co_preco_promocao;
 
 
     /**
@@ -280,6 +281,23 @@ class ServicoEntidade extends AbstractEntidade
     public function setCoServicoPacote($co_servico_pacote)
     {
         return $this->co_servico_pacote = $co_servico_pacote;
+    }
+
+    /**
+     * @return PrecoPromocaoEntidade $co_preco_promocao
+     */
+    public function getCoPrecoPromocao()
+    {
+        return $this->co_preco_promocao;
+    }
+
+    /**
+     * @param $co_preco_promocao
+     * @return mixed
+     */
+    public function setCoPrecoPromocao($co_preco_promocao)
+    {
+        return $this->co_preco_promocao = $co_preco_promocao;
     }
 
 }
