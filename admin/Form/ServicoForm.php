@@ -385,6 +385,7 @@ class ServicoForm
             ->setId('desconto')
             ->setClasses("porc-decimal")
             ->setLabel("Desconto")
+            ->setIcon("%", 'dir')
             ->setTamanhoInput(4)
             ->CriaInpunt();
 
