@@ -46,7 +46,7 @@ $(function () {
                     limpaCamposValores();
                 }
                 var desconto = 100 - ((preco_promocional / preco_cadastrado) * 100);
-                $('#desconto').val(parseFloat(desconto.toFixed(2)));
+                $('#desconto').val(desconto.toFixed(2));
             }else{
                 limpaCamposValores();
             }
