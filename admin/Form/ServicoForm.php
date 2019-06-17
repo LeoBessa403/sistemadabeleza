@@ -377,7 +377,7 @@ class ServicoForm
         $formulario
             ->setId(NU_VALOR)
             ->setClasses("moeda ob")
-            ->setLabel("Preço R$")
+            ->setLabel("Preço Promocional R$")
             ->setTamanhoInput(4)
             ->CriaInpunt();
 

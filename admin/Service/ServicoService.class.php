@@ -155,4 +155,17 @@ class  ServicoService extends AbstractService
         return $comboServicos;
     }
 
+    /**
+     * @param $coServico
+     * @return integer
+     */
+    public function getPrecoServico($coServico)
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = new ServicoService();
+        /** @var ServicoEntidade $servico */
+        $servico = $servicoService->PesquisaUmRegistro($coServico);
+        return $servico->getCoUltimoPrecoServico()->getNuValor();
+    }
+
 }

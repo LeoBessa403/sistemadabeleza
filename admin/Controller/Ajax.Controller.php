@@ -4,24 +4,29 @@
  */
 include "../../library/Config.inc.php";
 
-if (isset($_GET['valida'])) {
+if (isset($_REQUEST['acao'])) {
 
-    switch ($_GET['valida']) {
+    switch ($_REQUEST['acao']) {
 
 ////////////////////////////////////////////////////////////////////////
 /////////////////// PARTICULARIDADES DO SISTEMA ////////////////////////
 //////////////////////////////////////////////////////////////////////// 
         case 'getReferenciaPagamentoAssinante':
-            $coPlano = $_GET[CO_PLANO];
+            $coPlano = $_REQUEST[CO_PLANO];
             echo Assinante::getReferenciaPagamentoAssinante($coPlano);
             break;
         case 'DesativarServico':
-            $coServico = $_GET[CO_SERVICO];
+            $coServico = $_REQUEST[CO_SERVICO];
             echo Servico::DesativarServico($coServico);
             break;
         case 'AtivarServico':
-            $coServico = $_GET[CO_SERVICO];
+            $coServico = $_REQUEST[CO_SERVICO];
             echo Servico::AtivarServico($coServico);
+            break;
+        case 'CarregaValorServico':
+            $coServico = $_REQUEST[CO_SERVICO];
+            $data[NU_VALOR] = Servico::GetPrecoServico($coServico);
+            echo json_encode($data);
             break;
 
     }

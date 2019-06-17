@@ -470,4 +470,11 @@ class Servico extends AbstractController
 
     }
 
+    public static function GetPrecoServico($coServico)
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = static::getService(SERVICO_SERVICE);
+        return $servicoService->getPrecoServico($coServico);
+    }
+
 }
