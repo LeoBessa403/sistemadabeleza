@@ -413,37 +413,37 @@ class Servico extends AbstractController
 
     public function CadastroPromocaoServico()
     {
-        /** @var PacoteServService $pacoteServService */
-        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+        /** @var PromocaoService $promocaoService */
+        $promocaoService = $this->getService(PROMOCAO_SERVICE);
         $id = "CadastroPromocaoServico";
 
         if (!empty($_POST[$id])):
-            $retorno = $pacoteServService->salvaPacoteServico($_POST);
+            $retorno = $promocaoService->salvaPromocao($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PacoteServico/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PromocaoServico/');
             }
         endif;
 
-        $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
+        $coPromocao = UrlAmigavel::PegaParametro(CO_PROMOCAO);
         $res = [];
-        if ($coPacoteServ) {
-            /** @var PacoteServEntidade $pacoteServ */
-            $pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
-            $res[ST_STATUS] = ($pacoteServ->getCoUltimoPrecoPacote()->getStStatus() == StatusAcessoEnum::ATIVO)
-                ? 'checked' : '';
-            $res[NO_PACOTE_SERV] = $pacoteServ->getNoPacoteServ();
-            $res[NU_VALOR] = Valida::FormataMoeda($pacoteServ->getCoUltimoPrecoPacote()->getNuValor());
-            // Carrega os Serviços
-            $servicos = [];
-            if (!empty($pacoteServ->getCoServicoPacote())) {
-                /** @var ServicoPacoteEntidade $servPacote */
-                foreach ($pacoteServ->getCoServicoPacote() as $servPacote) {
-                    $servicos[] = $servPacote->getCoServico()->getCoServico();
-                }
-            }
-            $res[CO_SERVICO] = $servicos;
-            $res[DS_DESCRICAO] = $pacoteServ->getCoUltimoPrecoPacote()->getDsDescricao();
-            $res[CO_PACOTE_SERV] = $coPacoteServ;
+        if ($coPromocao) {
+//            /** @var PromocaoEntidade $promocao */
+//            $promocao = $promocaoService->PesquisaUmRegistro($coPromocao);
+//            $res[ST_STATUS] = ($promocao->getCoUltimoPrecoPacote()->getStStatus() == StatusAcessoEnum::ATIVO)
+//                ? 'checked' : '';
+//            $res[NO_PACOTE_SERV] = $promocao->getNoPacoteServ();
+//            $res[NU_VALOR] = Valida::FormataMoeda($promocao->getCoUltimoPrecoPacote()->getNuValor());
+//            // Carrega os Serviços
+//            $servicos = [];
+//            if (!empty($promocao->getCoServicoPacote())) {
+//                /** @var ServicoPacoteEntidade $servPacote */
+//                foreach ($promocao->getCoServicoPacote() as $servPacote) {
+//                    $servicos[] = $servPacote->getCoServico()->getCoServico();
+//                }
+//            }
+//            $res[CO_SERVICO] = $servicos;
+//            $res[DS_DESCRICAO] = $promocao->getCoUltimoPrecoPacote()->getDsDescricao();
+//            $res[CO_PACOTE_SERV] = $promocao;
         }else{
             // Inicia elementos do Form
             $res[ST_STATUS] = 'checked';
