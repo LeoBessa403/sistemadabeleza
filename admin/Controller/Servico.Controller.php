@@ -376,7 +376,7 @@ class Servico extends AbstractController
             $res[CO_SERVICO] = $servicos;
             $res[DS_DESCRICAO] = $pacoteServ->getCoUltimoPrecoPacote()->getDsDescricao();
             $res[CO_PACOTE_SERV] = $coPacoteServ;
-        }else{
+        } else {
             // Inicia elementos do Form
             $res[ST_STATUS] = 'checked';
         }
@@ -415,6 +415,8 @@ class Servico extends AbstractController
     {
         /** @var PromocaoService $promocaoService */
         $promocaoService = $this->getService(PROMOCAO_SERVICE);
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
         $id = "CadastroPromocaoServico";
 
         if (!empty($_POST[$id])):
@@ -427,24 +429,38 @@ class Servico extends AbstractController
         $coPromocao = UrlAmigavel::PegaParametro(CO_PROMOCAO);
         $res = [];
         if ($coPromocao) {
-//            /** @var PromocaoEntidade $promocao */
-//            $promocao = $promocaoService->PesquisaUmRegistro($coPromocao);
-//            $res[ST_STATUS] = ($promocao->getCoUltimoPrecoPacote()->getStStatus() == StatusAcessoEnum::ATIVO)
-//                ? 'checked' : '';
-//            $res[NO_PACOTE_SERV] = $promocao->getNoPacoteServ();
-//            $res[NU_VALOR] = Valida::FormataMoeda($promocao->getCoUltimoPrecoPacote()->getNuValor());
-//            // Carrega os Serviços
-//            $servicos = [];
-//            if (!empty($promocao->getCoServicoPacote())) {
-//                /** @var ServicoPacoteEntidade $servPacote */
-//                foreach ($promocao->getCoServicoPacote() as $servPacote) {
-//                    $servicos[] = $servPacote->getCoServico()->getCoServico();
-//                }
-//            }
-//            $res[CO_SERVICO] = $servicos;
-//            $res[DS_DESCRICAO] = $promocao->getCoUltimoPrecoPacote()->getDsDescricao();
-//            $res[CO_PACOTE_SERV] = $promocao;
-        }else{
+            /** @var PromocaoEntidade $promocao */
+            $promocao = $promocaoService->PesquisaUmRegistro($coPromocao);
+            /** @var PrecoPromocaoEntidade $precoPromocao */
+            $precoPromocao = $promocao->getCoUltimoPrecoPromocao();
+            /** @var ServicoEntidade $servico */
+            $servico = $servicoService->PesquisaUmRegistro($precoPromocao->getCoServico()->getCoServico());
+
+            $res[ST_STATUS] = ($precoPromocao->getStStatus() == StatusAcessoEnum::ATIVO)
+                ? 'checked' : '';
+            $res[NO_TITULO] = $promocao->getNoTitulo();
+            $res[DS_DESCRICAO] = $promocao->getDsDescricao();
+            $res[CO_PROMOCAO] = $coPromocao;
+            $res[CO_SERVICO] = $precoPromocao->getCoServico()->getCoServico();
+            $res['valor_servico'] = $servico->getCoUltimoPrecoServico()->getNuValor();
+            $res[NU_VALOR] = Valida::FormataMoeda($precoPromocao->getNuValor());
+            $res['desconto'] = Valida::FormataPorcentagemDecimal(
+                100 - (($precoPromocao->getNuValor() / $servico->getCoUltimoPrecoServico()->getNuValor()) * 100)
+            );
+
+            $res[DT_INICIO] = Valida::DataShow($precoPromocao->getDtInicio());
+            $res[DT_FIM] = Valida::DataShow($precoPromocao->getDtFim());
+            $res[NU_HORA_ABERTURA] = $precoPromocao->getNuHoraAbertura();
+            $res[NU_HORA_FECHAMENTO] = $precoPromocao->getNuHoraFechamento();
+
+            // Carrega os Dias de atendimento
+            $diasAtendimento = [];
+            $dias = explode(', ', $precoPromocao->getNuDiaSemana());
+            foreach ($dias as $dia) {
+                $diasAtendimento[] = $dia;
+            }
+            $res[NU_DIA_SEMANA] = $diasAtendimento;
+        } else {
             // Inicia elementos do Form
             $res[ST_STATUS] = 'checked';
         }

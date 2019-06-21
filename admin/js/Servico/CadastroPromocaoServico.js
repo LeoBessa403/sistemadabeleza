@@ -68,7 +68,9 @@ $(function () {
                 var nu_valor = preco_cadastrado - (((preco_cadastrado / 100) * desconto_promocional) / 100);
                nu_valor = parseInt(nu_valor);
                nu_valor = (nu_valor / 100);
-                $('#nu_valor').val("R$ " + nu_valor.toFixed(2));
+               nu_valor = "R$ " + nu_valor.toFixed(2);
+               nu_valor = nu_valor.replace('.', ',');
+                $('#nu_valor').val(nu_valor);
             }else{
                 limpaCamposValores();
             }

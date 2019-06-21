@@ -64,7 +64,6 @@ class  PromocaoService extends AbstractService
                         ? $precoPromocao[NU_DIA_SEMANA] . ', ' . $dias
                         : $dias;
             }
-
             $retorno[SUCESSO] = $precoPromocaoService->Salva($precoPromocao);
 
             if ($retorno[SUCESSO]) {

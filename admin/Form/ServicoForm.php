@@ -429,7 +429,7 @@ class ServicoForm
             ->setTamanhoInput(12)
             ->setClasses("inline")
             ->setType(TiposCampoEnum::CHECKBOX)
-            ->setLabel("Dias: ")
+            ->setLabel("Dias de atendimento:")
             ->setLabelCheckRadio($options)
             ->CriaInpunt();
 
