@@ -12,6 +12,7 @@ class Servico extends AbstractController
     public $coCategoriaServico;
     public $profissionais;
     public $pacoteServ;
+    public $promocao;
 
     public function ListarCategoriaServico()
     {
@@ -390,7 +391,6 @@ class Servico extends AbstractController
 
         $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
         if ($coPacoteServ) {
-            /** @var PlanoEntidade $plano */
             $this->pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
         } else {
             Notificacoes::geraMensagem(
@@ -469,19 +469,18 @@ class Servico extends AbstractController
 
     public function HistoricoPromocaoServico()
     {
-        /** @var PacoteServService $pacoteServService */
-        $pacoteServService = $this->getService(PACOTE_SERV_SERVICE);
+        /** @var PromocaoService $promocaoService */
+        $promocaoService = $this->getService(PROMOCAO_SERVICE);
 
-        $coPacoteServ = UrlAmigavel::PegaParametro(CO_PACOTE_SERV);
-        if ($coPacoteServ) {
-            /** @var PlanoEntidade $plano */
-            $this->pacoteServ = $pacoteServService->PesquisaUmRegistro($coPacoteServ);
+        $coPromocao = UrlAmigavel::PegaParametro(CO_PROMOCAO);
+        if ($coPromocao) {
+            $this->promocao = $promocaoService->PesquisaUmRegistro($coPromocao);
         } else {
             Notificacoes::geraMensagem(
-                'Não Existe Histórico desse Pacote de Serviço',
+                'Não Existe Histórico dessa Promoção de Serviço',
                 TiposMensagemEnum::ALERTA
             );
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PacoteServico/');
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PromocaoServico/');
         }
 
     }

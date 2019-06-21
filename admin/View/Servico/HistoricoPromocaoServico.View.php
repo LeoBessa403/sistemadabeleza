@@ -40,8 +40,8 @@
                     </div>
                     <div class="panel-body">
                         <?php
-                        $nome = "Histórico Promoção de Serviços";
-                        $historicos = $pacoteServ->getCoPrecoPacote();
+                        $nome = "Promoção " . $promocao->getNoTitulo();
+                        $historicos = $promocao->getCoPrecoPromocao();
                         require_once PARTIAL_LIBRARY . 'Admin/historico.php';
                         ?>
                     </div>

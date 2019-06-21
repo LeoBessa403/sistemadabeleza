@@ -40,7 +40,7 @@
                     </div>
                     <div class="panel-body">
                         <?php
-                        $nome = "Histórico Pacote de Serviços";
+                        $nome = "Pacote " . $pacoteServ->getNoPacoteServ();
                         $historicos = $pacoteServ->getCoPrecoPacote();
                         require_once PARTIAL_LIBRARY . 'Admin/historico.php';
                         ?>
