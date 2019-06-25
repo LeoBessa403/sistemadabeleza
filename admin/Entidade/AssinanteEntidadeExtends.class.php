@@ -20,6 +20,7 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     private $co_config_comissao;
     private $co_pacote_serv;
     private $co_promocao;
+    private $co_cortesia;
 
     /**
      * @return FacilidadeBeneficioEntidade $co_facilidade_beneficio
@@ -238,5 +239,22 @@ class AssinanteEntidadeExtends extends AbstractEntidade
     public function setCoPromocao($co_promocao)
     {
         return $this->co_promocao = $co_promocao;
+    }
+
+    /**
+     * @return CortesiaEntidade $co_cortesia
+     */
+    public function getCoCortesia()
+    {
+        return $this->co_cortesia;
+    }
+
+    /**
+     * @param $co_cortesia
+     * @return mixed
+     */
+    public function setCoCortesia($co_cortesia)
+    {
+        return $this->co_cortesia = $co_cortesia;
     }
 }

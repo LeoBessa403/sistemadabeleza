@@ -112,6 +112,11 @@ class Relacionamentos
                     ('Entidade') => 'PromocaoEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_CORTESIA) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'CortesiaEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -169,6 +174,11 @@ class Relacionamentos
                 (CO_PRECO_PROMOCAO) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'PrecoPromocaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_CORTESIA) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'CortesiaEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -758,6 +768,11 @@ class Relacionamentos
                     ('Entidade') => 'PessoaEntidade',
                     ('Tipo') => '1',
                 ),
+                (CO_CORTESIA) => Array(
+                    ('Campo') => CO_CLIENTE,
+                    ('Entidade') => 'CortesiaEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ConfigProfissionalEntidade::TABELA) => Array(
                 (CO_ASSINANTE) => Array(
@@ -824,6 +839,11 @@ class Relacionamentos
                 (CO_PRECO_PROMOCAO) => Array(
                     ('Campo') => CO_SERVICO,
                     ('Entidade') => 'PrecoPromocaoEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_CORTESIA) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'CortesiaEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -962,6 +982,28 @@ class Relacionamentos
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (CortesiaEntidade::TABELA) => Array(
+                (CO_CLIENTE) => Array(
+                    ('Campo') => CO_CLIENTE,
+                    ('Entidade') => 'ClienteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
                     ('Tipo') => '1',
                 ),
             ),

@@ -23,6 +23,7 @@ class ClienteEntidade extends AbstractEntidade
     private $nu_como_conheceu;
     private $co_assinante;
     private $co_pessoa;
+    private $co_cortesia;
 
 
     /**
@@ -258,6 +259,22 @@ class ClienteEntidade extends AbstractEntidade
     public function setCoPessoa($co_pessoa)
     {
         return $this->co_pessoa = $co_pessoa;
+    }
+
+    /**
+     * @return CortesiaEntidade $co_cortesia
+     */
+    public function getCoCortesia()
+    {
+        return $this->co_cortesia;
+    }
+
+    /**
+     * @param mixed $co_cortesia
+     */
+    public function setCoCortesia($co_cortesia)
+    {
+        $this->co_cortesia = $co_cortesia;
     }
 
 }

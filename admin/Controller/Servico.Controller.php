@@ -492,4 +492,69 @@ class Servico extends AbstractController
         return $servicoService->getPrecoServico($coServico);
     }
 
+    public function CortesiaServico()
+    {
+        /** @var CortesiaService $cortesiaService */
+        $cortesiaService = $this->getService(CORTESIA_SERVICE);
+        $this->result = $cortesiaService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+    }
+
+    public function CadastroCortesiaServico()
+    {
+        /** @var CortesiaService $cortesiaService */
+        $cortesiaService = $this->getService(CORTESIA_SERVICE);
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
+        $id = "CadastroCortesiaServico";
+
+        if (!empty($_POST[$id])):
+            $retorno = $cortesiaService->salvaPromocao($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PromocaoServico/');
+            }
+        endif;
+
+        $coCortesia = UrlAmigavel::PegaParametro(CO_CORTESIA);
+        $res = [];
+        if ($coCortesia) {
+            /** @var PromocaoEntidade $promocao */
+            $promocao = $cortesiaService->PesquisaUmRegistro($coCortesia);
+            /** @var PrecoPromocaoEntidade $precoPromocao */
+            $precoPromocao = $promocao->getCoUltimoPrecoPromocao();
+            /** @var ServicoEntidade $servico */
+            $servico = $servicoService->PesquisaUmRegistro($precoPromocao->getCoServico()->getCoServico());
+
+            $res[ST_STATUS] = ($precoPromocao->getStStatus() == StatusAcessoEnum::ATIVO)
+                ? 'checked' : '';
+            $res[NO_TITULO] = $promocao->getNoTitulo();
+            $res[DS_DESCRICAO] = $promocao->getDsDescricao();
+            $res[CO_CORTESIA] = $coCortesia;
+            $res[CO_SERVICO] = $precoPromocao->getCoServico()->getCoServico();
+            $res['valor_servico'] = $servico->getCoUltimoPrecoServico()->getNuValor();
+            $res[NU_VALOR] = Valida::FormataMoeda($precoPromocao->getNuValor());
+            $res['desconto'] = Valida::FormataPorcentagemDecimal(
+                100 - (($precoPromocao->getNuValor() / $servico->getCoUltimoPrecoServico()->getNuValor()) * 100)
+            );
+
+            $res[DT_INICIO] = Valida::DataShow($precoPromocao->getDtInicio());
+            $res[DT_FIM] = Valida::DataShow($precoPromocao->getDtFim());
+            $res[NU_HORA_ABERTURA] = $precoPromocao->getNuHoraAbertura();
+            $res[NU_HORA_FECHAMENTO] = $precoPromocao->getNuHoraFechamento();
+
+            // Carrega os Dias de atendimento
+            $diasAtendimento = [];
+            $dias = explode(', ', $precoPromocao->getNuDiaSemana());
+            foreach ($dias as $dia) {
+                $diasAtendimento[] = $dia;
+            }
+            $res[NU_DIA_SEMANA] = $diasAtendimento;
+        } else {
+            // Inicia elementos do Form
+            $res[ST_STATUS] = 'checked';
+        }
+        $this->form = ServicoForm::CadastroPromocaoServico($res);
+    }
+
 }

@@ -29,7 +29,7 @@ class  ProfissionalCargoService extends AbstractService
         $retorno = false;
         $profissionalCargo[CO_PROFISSIONAL] = $coProfissional;
         $profissionalCargo[ST_STATUS] = StatusUsuarioEnum::ATIVO;
-        $profissionalCargo[DT_CADASTRO] = Valida::DataAtualBanco();
+        $profissionalCargo[DT_CADASTRO] = Valida::DataHoraAtualBanco();
         foreach ($dados[CO_CARGO] as $cargo) {
             $profissionalCargo[CO_CARGO] = $cargo;
             $retorno = $this->Salva($profissionalCargo);

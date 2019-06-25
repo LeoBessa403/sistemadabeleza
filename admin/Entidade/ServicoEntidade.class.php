@@ -25,6 +25,7 @@ class ServicoEntidade extends AbstractEntidade
     private $co_imagem;
     private $co_servico_pacote;
     private $co_preco_promocao;
+    private $co_cortesia;
 
 
     /**
@@ -300,4 +301,19 @@ class ServicoEntidade extends AbstractEntidade
         return $this->co_preco_promocao = $co_preco_promocao;
     }
 
+    /**
+     * @return CortesiaEntidade $co_cortesia
+     */
+    public function getCoCortesia()
+    {
+        return $this->co_cortesia;
+    }
+
+    /**
+     * @param mixed $co_cortesia
+     */
+    public function setCoCortesia($co_cortesia)
+    {
+        $this->co_cortesia = $co_cortesia;
+    }
 }
