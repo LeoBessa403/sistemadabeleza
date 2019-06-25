@@ -40,44 +40,43 @@
                         <?php
                         Modal::load();
                         Modal::confirmacao("confirma_Cortesia");
-                        $arrColunas = array('Cliente', 'Serviço', 'Código', 'Valor R$', 'Status', 'Período', 'horário', 'Dias de atendimento', 'Ações');
+                        $arrColunas = array('Cliente', 'Serviço', 'Código', 'Status', 'Período', 'horário', 'Dias de atendimento', 'Ações');
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
                         $grid->criaGrid();
-                        /** @var PromocaoEntidade $promocao */
-                        foreach ($result as $promocao):
-                            $acao = '<a href="' . PASTAADMIN . 'Servico/CadastroPromocaoServico/' .
-                                Valida::GeraParametro(CO_PROMOCAO . "/" . $promocao->getCoPromocao()) . '" class="btn btn-primary tooltips"
+                        /** @var CortesiaEntidade $cortesia */
+                        foreach ($result as $cortesia):
+                            $acao = '<a href="' . PASTAADMIN . 'Servico/CadastroCortesiaServico/' .
+                                Valida::GeraParametro(CO_CORTESIA . "/" . $cortesia->getCoCortesia()) . '" class="btn btn-primary tooltips"
                                     data-original-title="Editar Registro" data-placement="top">
                                      <i class="fa fa-clipboard"></i></a>';
 
-                            $acao .= ' <a href="' . PASTAADMIN . 'Servico/HistoricoPromocaoServico/' .
-                                Valida::GeraParametro(CO_PROMOCAO . "/" . $promocao->getCoPromocao()) . '"
-                                        class="btn btn-med-grey tooltips"
-                                            data-original-title="Histórico de Promoção de serviços" data-placement="top">
-                                             <i class="clip-folder-open"></i>
-                                         </a>';
                             $atendi = '';
-                            $dias = explode(', ', $promocao->getCoUltimoPrecoPromocao()->getNuDiaSemana());
+                            $dias = explode(', ', $cortesia->getNuDiaSemana());
                             foreach ($dias as $dia) {
                                 $atendi .= DiasEnum::getDescricaoValor($dia) . ', ';
                             }
-                            $grid->setColunas($promocao->getNoTitulo());
-                            $grid->setColunas($promocao->getNoTitulo());
+                            $cliente = 'Não Atribuido';
+                            if ($cortesia->getCoCliente()) {
+                                $cliente = Valida::Resumi(
+                                    $cortesia->getCoCliente()->getCoPessoa()->getNoPessoa(), 30
+                                );
+                            }
+                            $grid->setColunas($cliente);
                             $grid->setColunas(Valida::Resumi(
-                                $promocao->getCoUltimoPrecoPromocao()->getCoServico()->getNoServico(), 30
+                                $cortesia->getCoServico()->getNoServico(), 30
                             ));
-                            $grid->setColunas(Valida::FormataMoeda($promocao->getCoUltimoPrecoPromocao()->getNuValor()), 1);
+                            $grid->setColunas($cortesia->getDsCodigo(), 2);
                             $grid->setColunas(
-                                Valida::SituacaoAtivoInativo($promocao->getCoUltimoPrecoPromocao()->getStStatus())
+                                StatusCortesiaEnum::getDescricaoValor($cortesia->getStStatus())
                                 , 1);
-                            $grid->setColunas(Valida::DataShow($promocao->getCoUltimoPrecoPromocao()->getDtInicio())
-                                . ' a ' . Valida::DataShow($promocao->getCoUltimoPrecoPromocao()->getDtFim()), 4);
-                            $grid->setColunas($promocao->getCoUltimoPrecoPromocao()->getNuHoraAbertura() . ' a ' .
-                                $promocao->getCoUltimoPrecoPromocao()->getNuHoraFechamento(), 3);
+                            $grid->setColunas(Valida::DataShow($cortesia->getDtInicio())
+                                . ' a ' . Valida::DataShow($cortesia->getDtFim()), 4);
+                            $grid->setColunas($cortesia->getNuHoraAbertura() . ' a ' .
+                                $cortesia->getNuHoraFechamento(), 3);
                             $grid->setColunas($atendi);
-                            $grid->setColunas($acao, 2);
-                            $grid->criaLinha($promocao->getCoPromocao());
+                            $grid->setColunas($acao, 1);
+                            $grid->criaLinha($cortesia->getCoCortesia());
                         endforeach;
                         $grid->finalizaGrid();
                         ?>

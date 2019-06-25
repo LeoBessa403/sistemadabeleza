@@ -82,4 +82,27 @@ class  ServicoValidador extends AbstractValidador
         );
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarCortesia($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoSelectObrigatorio(
+            $dados[CO_SERVICO], 'Cortesia'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
+            $dados[DS_MOTIVO], 5, 'Motivo'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[NU_HORA_ABERTURA], AbstractValidador::VALIDACAO_HORAS, 'Hórario de Início'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[NU_HORA_FECHAMENTO], AbstractValidador::VALIDACAO_HORAS, 'Hórario de Término'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DT_INICIO], AbstractValidador::VALIDACAO_DATA, 'Data de Inicio'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DT_FIM], AbstractValidador::VALIDACAO_DATA, 'Data de Termino'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
 }

@@ -24,6 +24,7 @@ class CortesiaEntidade extends AbstractEntidade
 	private $co_cliente;
 	private $co_usuario;
 	private $co_servico;
+    private $co_assinante;
 
 
 	/**
@@ -45,6 +46,7 @@ class CortesiaEntidade extends AbstractEntidade
 			CO_CLIENTE,
 			CO_USUARIO,
 			CO_SERVICO,
+            CO_ASSINANTE,
 		];
     }
 
@@ -276,6 +278,23 @@ class CortesiaEntidade extends AbstractEntidade
 	public function setCoServico($co_servico)
     {
         return $this->co_servico = $co_servico;
+    }
+
+    /**
+     * @return AssinanteEntidade $co_assinante
+     */
+    public function getCoAssinante()
+    {
+        return $this->co_assinante;
+    }
+
+    /**
+     * @param $co_assinante
+     * @return mixed
+     */
+    public function setCoAssinante($co_assinante)
+    {
+        return $this->co_assinante = $co_assinante;
     }
 
 }

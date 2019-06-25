@@ -505,47 +505,34 @@ class Servico extends AbstractController
     {
         /** @var CortesiaService $cortesiaService */
         $cortesiaService = $this->getService(CORTESIA_SERVICE);
-        /** @var ServicoService $servicoService */
-        $servicoService = $this->getService(SERVICO_SERVICE);
         $id = "CadastroCortesiaServico";
 
         if (!empty($_POST[$id])):
-            $retorno = $cortesiaService->salvaPromocao($_POST);
+            $retorno = $cortesiaService->salvaCortesia($_POST);
             if ($retorno[SUCESSO]) {
-                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/PromocaoServico/');
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/CortesiaServico/');
             }
         endif;
 
         $coCortesia = UrlAmigavel::PegaParametro(CO_CORTESIA);
         $res = [];
         if ($coCortesia) {
-            /** @var PromocaoEntidade $promocao */
-            $promocao = $cortesiaService->PesquisaUmRegistro($coCortesia);
-            /** @var PrecoPromocaoEntidade $precoPromocao */
-            $precoPromocao = $promocao->getCoUltimoPrecoPromocao();
-            /** @var ServicoEntidade $servico */
-            $servico = $servicoService->PesquisaUmRegistro($precoPromocao->getCoServico()->getCoServico());
+            /** @var CortesiaEntidade $cortesia */
+            $cortesia = $cortesiaService->PesquisaUmRegistro($coCortesia);
 
-            $res[ST_STATUS] = ($precoPromocao->getStStatus() == StatusAcessoEnum::ATIVO)
+            $res[ST_STATUS] = ($cortesia->getStStatus() == StatusCortesiaEnum::ATIVA)
                 ? 'checked' : '';
-            $res[NO_TITULO] = $promocao->getNoTitulo();
-            $res[DS_DESCRICAO] = $promocao->getDsDescricao();
+            $res[DS_MOTIVO] = $cortesia->getDsMotivo();
             $res[CO_CORTESIA] = $coCortesia;
-            $res[CO_SERVICO] = $precoPromocao->getCoServico()->getCoServico();
-            $res['valor_servico'] = $servico->getCoUltimoPrecoServico()->getNuValor();
-            $res[NU_VALOR] = Valida::FormataMoeda($precoPromocao->getNuValor());
-            $res['desconto'] = Valida::FormataPorcentagemDecimal(
-                100 - (($precoPromocao->getNuValor() / $servico->getCoUltimoPrecoServico()->getNuValor()) * 100)
-            );
-
-            $res[DT_INICIO] = Valida::DataShow($precoPromocao->getDtInicio());
-            $res[DT_FIM] = Valida::DataShow($precoPromocao->getDtFim());
-            $res[NU_HORA_ABERTURA] = $precoPromocao->getNuHoraAbertura();
-            $res[NU_HORA_FECHAMENTO] = $precoPromocao->getNuHoraFechamento();
+            $res[CO_SERVICO] = $cortesia->getCoServico()->getCoServico();
+            $res[DT_INICIO] = Valida::DataShow($cortesia->getDtInicio());
+            $res[DT_FIM] = Valida::DataShow($cortesia->getDtFim());
+            $res[NU_HORA_ABERTURA] = $cortesia->getNuHoraAbertura();
+            $res[NU_HORA_FECHAMENTO] = $cortesia->getNuHoraFechamento();
 
             // Carrega os Dias de atendimento
             $diasAtendimento = [];
-            $dias = explode(', ', $precoPromocao->getNuDiaSemana());
+            $dias = explode(', ', $cortesia->getNuDiaSemana());
             foreach ($dias as $dia) {
                 $diasAtendimento[] = $dia;
             }

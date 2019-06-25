@@ -456,7 +456,7 @@ class ServicoForm
 
         $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
         $formulario
-            ->setLabel("Status da Promoção")
+            ->setLabel("Status da Cortesia")
             ->setClasses($res[ST_STATUS])
             ->setId(ST_STATUS)
             ->setTamanhoInput(3)
@@ -465,20 +465,12 @@ class ServicoForm
             ->setOptions($label_options2)
             ->CriaInpunt();
 
-        $formulario
-            ->setType(TiposCampoEnum::TEXTAREA)
-            ->setId(DS_MOTIVO)
-            ->setClasses("ob")
-            ->setTamanhoInput(12)
-            ->setLabel("Motivo")
-            ->CriaInpunt();
-
         $options = ServicoService::servicosCombo();
         $formulario
             ->setId(CO_SERVICO)
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Cortesia")
-            ->setTamanhoInput(12)
+            ->setTamanhoInput(9)
             ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
@@ -528,15 +520,23 @@ class ServicoForm
             ->setInfo("Dias que pode ser utilizada")
             ->CriaInpunt();
 
+        $formulario
+            ->setType(TiposCampoEnum::TEXTAREA)
+            ->setId(DS_MOTIVO)
+            ->setClasses("ob")
+            ->setTamanhoInput(12)
+            ->setLabel("Motivo")
+            ->CriaInpunt();
 
-        if (!empty($res[CO_PROMOCAO])):
+
+        if (!empty($res[CO_CORTESIA])):
             $formulario
                 ->setType(TiposCampoEnum::HIDDEN)
-                ->setId(CO_PROMOCAO)
-                ->setValues($res[CO_PROMOCAO])
+                ->setId(CO_CORTESIA)
+                ->setValues($res[CO_CORTESIA])
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm('Servico/PromocaoServico');
+        return $formulario->finalizaForm('Servico/CortesiaServico');
     }
 }
