@@ -14,6 +14,7 @@ class CortesiaEntidade extends AbstractEntidade
 	private $co_cortesia;
 	private $dt_cadastro;
 	private $st_status;
+    private $ds_motivo;
 	private $ds_codigo;
 	private $dt_inicio;
 	private $dt_fim;
@@ -34,6 +35,7 @@ class CortesiaEntidade extends AbstractEntidade
 			CO_CORTESIA,
 			DT_CADASTRO,
 			ST_STATUS,
+            DS_MOTIVO,
 			DS_CODIGO,
 			DT_INICIO,
 			DT_FIM,
@@ -105,6 +107,22 @@ class CortesiaEntidade extends AbstractEntidade
 	public function setStStatus($st_status)
     {
         return $this->st_status = $st_status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsMotivo()
+    {
+        return $this->ds_motivo;
+    }
+
+    /**
+     * @param mixed $ds_motivo
+     */
+    public function setDsMotivo($ds_motivo)
+    {
+        $this->ds_motivo = $ds_motivo;
     }
 
 	/**

@@ -554,7 +554,7 @@ class Servico extends AbstractController
             // Inicia elementos do Form
             $res[ST_STATUS] = 'checked';
         }
-        $this->form = ServicoForm::CadastroPromocaoServico($res);
+        $this->form = ServicoForm::CadastroCortesiaServico($res);
     }
 
 }

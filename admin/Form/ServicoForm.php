@@ -444,4 +444,99 @@ class ServicoForm
 
         return $formulario->finalizaForm('Servico/PromocaoServico');
     }
+
+
+    public static function CadastroCortesiaServico($res = false)
+    {
+        $id = "CadastroCortesiaServico";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Cadastrar");
+        $formulario->setValor($res);
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Status da Promoção")
+            ->setClasses($res[ST_STATUS])
+            ->setId(ST_STATUS)
+            ->setTamanhoInput(3)
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setInfo("Ativa ou Inativa?")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setType(TiposCampoEnum::TEXTAREA)
+            ->setId(DS_MOTIVO)
+            ->setClasses("ob")
+            ->setTamanhoInput(12)
+            ->setLabel("Motivo")
+            ->CriaInpunt();
+
+        $options = ServicoService::servicosCombo();
+        $formulario
+            ->setId(CO_SERVICO)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Cortesia")
+            ->setTamanhoInput(12)
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_INICIO)
+            ->setTamanhoInput(3)
+            ->setClasses("data ob")
+            ->setIcon("clip-calendar-3")
+            ->setLabel("Data de Inicio")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_FIM)
+            ->setTamanhoInput(3)
+            ->setClasses("data ob")
+            ->setIcon("clip-calendar-3")
+            ->setLabel("Data de Termino")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_HORA_ABERTURA)
+            ->setTamanhoInput(3)
+            ->setClasses("horas ob")
+            ->setPlace("Formato 24Hrs")
+            ->setIcon("clip-clock-2", "dir")
+            ->setLabel("Hórario de Início")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_HORA_FECHAMENTO)
+            ->setTamanhoInput(3)
+            ->setClasses("horas ob")
+            ->setPlace("Formato 24Hrs")
+            ->setIcon("clip-clock-2", "dir")
+            ->setLabel("Hórario de Término")
+            ->CriaInpunt();
+
+        $options = DiasEnum::$descricao;
+        $formulario
+            ->setId(NU_DIA_SEMANA)
+            ->setTamanhoInput(12)
+            ->setClasses("inline")
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setLabel("Dias de atendimento:")
+            ->setLabelCheckRadio($options)
+            ->setInfo("Dias que pode ser utilizada")
+            ->CriaInpunt();
+
+
+        if (!empty($res[CO_PROMOCAO])):
+            $formulario
+                ->setType(TiposCampoEnum::HIDDEN)
+                ->setId(CO_PROMOCAO)
+                ->setValues($res[CO_PROMOCAO])
+                ->CriaInpunt();
+        endif;
+
+        return $formulario->finalizaForm('Servico/PromocaoServico');
+    }
 }
