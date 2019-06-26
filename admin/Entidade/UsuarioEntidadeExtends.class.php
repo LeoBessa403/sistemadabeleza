@@ -13,6 +13,7 @@ class UsuarioEntidadeExtends extends AbstractEntidade
     private $co_preco_pacote;
     private $co_preco_promocao;
     private $co_cortesia;
+    private $co_vale_presente;
 
     /**
      * @return ProfissionalEntidade $co_profissional
@@ -95,4 +96,20 @@ class UsuarioEntidadeExtends extends AbstractEntidade
         $this->co_cortesia = $co_cortesia;
     }
 
+    /**
+     * @return ValePresenteEntidade $co_vale_presente
+     */
+    public function getCoValePresente()
+    {
+        return $this->co_vale_presente;
+    }
+
+    /**
+     * @param $co_vale_presente
+     * @return mixed
+     */
+    public function setCoValePresente($co_vale_presente)
+    {
+        return $this->co_vale_presente = $co_vale_presente;
+    }
 }

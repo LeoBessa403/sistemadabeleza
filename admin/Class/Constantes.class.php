@@ -116,6 +116,7 @@ define('CO_PROMOCAO', 'co_promocao');
 define('NO_TITULO', 'no_titulo');
 define('CO_CORTESIA', 'co_cortesia');
 define('DS_CODIGO', 'ds_codigo');
+define('CO_VALE_PRESENTE', 'co_vale_presente');
 
 
 
@@ -159,3 +160,4 @@ define('SERVICO_PACOTE_SERVICE', 'ServicoPacoteService');
 define('PRECO_PROMOCAO_SERVICE', 'PrecoPromocaoService');
 define('PROMOCAO_SERVICE', 'PromocaoService');
 define('CORTESIA_SERVICE', 'CortesiaService');
+define('VALE_PRESENTE_SERVICE', 'ValePresenteService');

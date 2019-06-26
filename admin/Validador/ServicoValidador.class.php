@@ -105,4 +105,18 @@ class  ServicoValidador extends AbstractValidador
         );
         return $this->MontaRetorno($this->retorno);
     }
+
+    public function validarValePresente($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioDescricao(
+            $dados[DS_MOTIVO], 5, 'Motivo'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[DT_VALIDO], AbstractValidador::VALIDACAO_DATA, 'Validade'
+        );
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[NU_VALOR], AbstractValidador::VALIDACAO_MOEDA, 'Valor R$'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
 }

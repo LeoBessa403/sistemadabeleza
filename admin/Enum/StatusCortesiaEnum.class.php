@@ -26,4 +26,16 @@ class StatusCortesiaEnum extends AbstractEnum
         StatusCortesiaEnum::FALTOU => 'Faltou',
         StatusCortesiaEnum::FINALIZADA => 'Finalizada',
     ];
+
+    public static $cores = [
+        StatusCortesiaEnum::ATIVA => 'success',
+        StatusCortesiaEnum::INATIVA => 'warning',
+        StatusCortesiaEnum::VENCIDA => 'danger',
+        StatusCortesiaEnum::AGENDADA => 'info',
+        StatusCortesiaEnum::AGUARDANDO => 'purple',
+        StatusCortesiaEnum::EM_ATENDIMENTO => 'teal',
+        StatusCortesiaEnum::CANCELADA => 'orange',
+        StatusCortesiaEnum::FALTOU => 'black',
+        StatusCortesiaEnum::FINALIZADA => 'green',
+    ];
 }

@@ -117,6 +117,11 @@ class Relacionamentos
                     ('Entidade') => 'CortesiaEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_VALE_PRESENTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'ValePresenteEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -179,6 +184,11 @@ class Relacionamentos
                 (CO_CORTESIA) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'CortesiaEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_VALE_PRESENTE) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'ValePresenteEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -1004,6 +1014,18 @@ class Relacionamentos
                 (CO_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (ValePresenteEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
                     ('Tipo') => '1',
                 ),
             ),

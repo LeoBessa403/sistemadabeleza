@@ -62,14 +62,15 @@
                                     $cortesia->getCoCliente()->getCoPessoa()->getNoPessoa(), 30
                                 );
                             }
+
+                            $status = '<span class="label label-' . StatusCortesiaEnum::$cores[$cortesia->getStStatus()] . '">' .
+                                StatusCortesiaEnum::getDescricaoValor($cortesia->getStStatus()) . '</span>';
                             $grid->setColunas($cliente);
                             $grid->setColunas(Valida::Resumi(
                                 $cortesia->getCoServico()->getNoServico(), 30
                             ));
                             $grid->setColunas($cortesia->getDsCodigo(), 2);
-                            $grid->setColunas(
-                                StatusCortesiaEnum::getDescricaoValor($cortesia->getStStatus())
-                                , 1);
+                            $grid->setColunas($status, 1);
                             $grid->setColunas(Valida::DataShow($cortesia->getDtInicio())
                                 . ' a ' . Valida::DataShow($cortesia->getDtFim()), 4);
                             $grid->setColunas($cortesia->getNuHoraAbertura() . ' a ' .

@@ -544,4 +544,45 @@ class Servico extends AbstractController
         $this->form = ServicoForm::CadastroCortesiaServico($res);
     }
 
+    public function ValePresenteServico()
+    {
+        /** @var ValePresenteService $valePresenteService */
+        $valePresenteService = $this->getService(VALE_PRESENTE_SERVICE);
+        $this->result = $valePresenteService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+    }
+
+    public function CadastroValePresenteServico()
+    {
+        /** @var ValePresenteService $valePresenteService */
+        $valePresenteService = $this->getService(VALE_PRESENTE_SERVICE);
+        $id = "CadastroValePresenteServico";
+
+        if (!empty($_POST[$id])):
+            $retorno = $valePresenteService->salvaValePresente($_POST);
+            if ($retorno[SUCESSO]) {
+                Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ValePresenteServico/');
+            }
+        endif;
+
+        $coValePre = UrlAmigavel::PegaParametro(CO_VALE_PRESENTE);
+        $res = [];
+        if ($coValePre) {
+            /** @var ValePresenteEntidade $valePresente */
+            $valePresente = $valePresenteService->PesquisaUmRegistro($coValePre);
+
+            $res[ST_STATUS] = ($valePresente->getStStatus() == StatusValePresenteEnum::ATIVO)
+                ? 'checked' : '';
+            $res[DS_MOTIVO] = $valePresente->getDsMotivo();
+            $res[NU_VALOR] = Valida::FormataMoeda($valePresente->getNuValor());
+            $res[CO_VALE_PRESENTE] = $coValePre;
+            $res[DT_VALIDO] = Valida::DataShow($valePresente->getDtValido());
+        } else {
+            // Inicia elementos do Form
+            $res[ST_STATUS] = 'checked';
+        }
+        $this->form = ServicoForm::CadastroValePresenteServico($res);
+    }
+
 }

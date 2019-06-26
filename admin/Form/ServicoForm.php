@@ -539,4 +539,59 @@ class ServicoForm
 
         return $formulario->finalizaForm('Servico/CortesiaServico');
     }
+
+    public static function CadastroValePresenteServico($res = false)
+    {
+        $id = "CadastroValePresenteServico";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
+            "Cadastrar");
+        $formulario->setValor($res);
+
+        $label_options2 = array("<i class='fa fa-check fa-white'></i>", "<i class='fa fa-times fa-white'></i>", "verde", "vermelho");
+        $formulario
+            ->setLabel("Status da Cortesia")
+            ->setClasses($res[ST_STATUS])
+            ->setId(ST_STATUS)
+            ->setTamanhoInput(4)
+            ->setType(TiposCampoEnum::CHECKBOX)
+            ->setInfo("Ativo ou Inativo?")
+            ->setOptions($label_options2)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(DT_VALIDO)
+            ->setTamanhoInput(4)
+            ->setClasses("data ob")
+            ->setIcon("clip-calendar-3")
+            ->setLabel("Validade")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_VALOR)
+            ->setClasses("moeda ob")
+            ->setLabel("Valor R$")
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+
+        $formulario
+            ->setType(TiposCampoEnum::TEXTAREA)
+            ->setId(DS_MOTIVO)
+            ->setClasses("ob")
+            ->setTamanhoInput(12)
+            ->setLabel("Motivo")
+            ->CriaInpunt();
+
+
+        if (!empty($res[CO_VALE_PRESENTE])):
+            $formulario
+                ->setType(TiposCampoEnum::HIDDEN)
+                ->setId(CO_VALE_PRESENTE)
+                ->setValues($res[CO_VALE_PRESENTE])
+                ->CriaInpunt();
+        endif;
+
+        return $formulario->finalizaForm('Servico/ValePresenteServico');
+    }
 }
