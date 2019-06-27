@@ -56,7 +56,7 @@
                                 ' a ' . Valida::DataShow($res->getDtFim(), 'd/m/Y H:i'));
                             $grid->setColunas(TipoAusenciaEnum::getDescricaoValor($res->getTpAusencia()));
                             $grid->setColunas($res->getDsObservacao());
-                            $grid->setColunas($res->getCoUsuario()->getCoPessoa()->getNoPessoa());
+                            $grid->setColunas(UsuarioService::getNoPessoaCoUsuario($res->getCoUsuario()->getCoUsuario()));
                             $grid->setColunas($acao, 2);
                             $grid->criaLinha($res->getCoAusencia());
                         endforeach;
