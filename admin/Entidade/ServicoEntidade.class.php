@@ -26,6 +26,7 @@ class ServicoEntidade extends AbstractEntidade
     private $co_servico_pacote;
     private $co_preco_promocao;
     private $co_cortesia;
+    private $co_status_agenda_servico;
 
 
     /**
@@ -315,5 +316,22 @@ class ServicoEntidade extends AbstractEntidade
     public function setCoCortesia($co_cortesia)
     {
         $this->co_cortesia = $co_cortesia;
+    }
+
+    /**
+     * @return StatusAgendaServicoEntidade $co_status_agenda_servico
+     */
+    public function getCoStatusAgendaServico()
+    {
+        return $this->co_status_agenda_servico;
+    }
+
+    /**
+     * @param $co_status_agenda_servico
+     * @return mixed
+     */
+    public function setCoStatusAgendaServico($co_status_agenda_servico)
+    {
+        return $this->co_status_agenda_servico = $co_status_agenda_servico;
     }
 }

@@ -35,6 +35,7 @@ class ProfissionalEntidade extends AbstractEntidade
     private $co_ausencia;
     private $co_percentual_comissao;
     private $co_servico_profissional;
+    private $co_status_agenda_profissional;
 
 
     /**
@@ -478,5 +479,23 @@ class ProfissionalEntidade extends AbstractEntidade
     public function setCoServicoProfissional($co_servico_profissional)
     {
         return $this->co_servico_profissional = $co_servico_profissional;
+    }
+
+
+    /**
+     * @return StatusAgendaProfissionalEntidade $co_status_agenda_profissional
+     */
+    public function getCoStatusAgendaProfissional()
+    {
+        return $this->co_status_agenda_profissional;
+    }
+
+    /**
+     * @param $co_status_agenda_profissional
+     * @return mixed
+     */
+    public function setCoStatusAgendaProfissional($co_status_agenda_profissional)
+    {
+        return $this->co_status_agenda_profissional = $co_status_agenda_profissional;
     }
 }

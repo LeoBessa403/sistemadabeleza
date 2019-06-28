@@ -37,91 +37,96 @@ class Relacionamentos
                     ('Entidade') => 'AssinanteFilialEntidade',
                     ('Tipo') => '2',
                 ),
-                (CO_FACILIDADE_BENEFICIO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'FacilidadeBeneficioEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_FUNCIONAMENTO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'FuncionamentoEntidade',
-                    ('Tipo') => '2',
-                ),
                 (CO_IMAGEM_ASSINANTE) => Array(
                     ('Campo') => CO_ASSINANTE,
                     ('Entidade') => 'ImagemAssinanteEntidade',
                     ('Tipo') => '2',
                 ),
-                (CO_DIA_ESPECIAL) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'DiaEspecialEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CONFIG_CLIENTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ConfigClienteEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_CONFIG_AGENDAMENTO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ConfigAgendamentoEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_MOTIVO_DESCONTO_ASSINANTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'MotivoDescontoAssinanteEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_PROFISSIONAL) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ProfissionalEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CLIENTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ClienteEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CONFIG_PROFISSIONAL) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ConfigProfissionalEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_CATEGORIA_SERVICO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'CategoriaServicoEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_PERFIL_ASSINANTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'PerfilAssinanteEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CONFIG_COMISSAO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ConfigComissaoEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_PACOTE_SERV) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'PacoteServEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_PROMOCAO) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'PromocaoEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CORTESIA) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'CortesiaEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_VALE_PRESENTE) => Array(
-                    ('Campo') => CO_ASSINANTE,
-                    ('Entidade') => 'ValePresenteEntidade',
-                    ('Tipo') => '2',
-                ),
+//                (CO_FACILIDADE_BENEFICIO) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'FacilidadeBeneficioEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_FUNCIONAMENTO) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'FuncionamentoEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_DIA_ESPECIAL) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'DiaEspecialEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_CONFIG_CLIENTE) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ConfigClienteEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_CONFIG_AGENDAMENTO) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ConfigAgendamentoEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_MOTIVO_DESCONTO_ASSINANTE) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'MotivoDescontoAssinanteEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_PROFISSIONAL) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ProfissionalEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_CLIENTE) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ClienteEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_CONFIG_PROFISSIONAL) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ConfigProfissionalEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_CATEGORIA_SERVICO) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'CategoriaServicoEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_PERFIL_ASSINANTE) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'PerfilAssinanteEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_CONFIG_COMISSAO) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ConfigComissaoEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_PACOTE_SERV) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'PacoteServEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_PROMOCAO) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'PromocaoEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_CORTESIA) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'CortesiaEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_VALE_PRESENTE) => Array(
+//                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'ValePresenteEntidade',
+//                    ('Tipo') => '2',
+//                ),
+////                (CO_AGENDA) => Array(
+////                    ('Campo') => CO_ASSINANTE,
+//                    ('Entidade') => 'AgendaEntidade',
+//                    ('Tipo') => '2',
+//                ),
             ),
             (AcessoEntidade::TABELA) => Array(
                 (CO_USUARIO) => Array(
@@ -161,36 +166,41 @@ class Relacionamentos
                     ('Entidade') => 'UsuarioPerfilEntidade',
                     ('Tipo') => '2',
                 ),
-                (CO_PROFISSIONAL) => Array(
-                    ('Campo') => CO_USUARIO,
-                    ('Entidade') => 'ProfissionalEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_AUSENCIA) => Array(
-                    ('Campo') => CO_USUARIO,
-                    ('Entidade') => 'AusenciaEntidade',
-                    ('Tipo') => '1',
-                ),
-                (CO_PRECO_PACOTE) => Array(
-                    ('Campo') => CO_USUARIO,
-                    ('Entidade') => 'PrecoPacoteEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_PRECO_PROMOCAO) => Array(
-                    ('Campo') => CO_USUARIO,
-                    ('Entidade') => 'PrecoPromocaoEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_CORTESIA) => Array(
-                    ('Campo') => CO_USUARIO,
-                    ('Entidade') => 'CortesiaEntidade',
-                    ('Tipo') => '2',
-                ),
-                (CO_VALE_PRESENTE) => Array(
-                    ('Campo') => CO_USUARIO,
-                    ('Entidade') => 'ValePresenteEntidade',
-                    ('Tipo') => '2',
-                ),
+//                (CO_PROFISSIONAL) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'ProfissionalEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_AUSENCIA) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'AusenciaEntidade',
+//                    ('Tipo') => '1',
+//                ),
+//                (CO_PRECO_PACOTE) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'PrecoPacoteEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_PRECO_PROMOCAO) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'PrecoPromocaoEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_CORTESIA) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'CortesiaEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_VALE_PRESENTE) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'ValePresenteEntidade',
+//                    ('Tipo') => '2',
+//                ),
+//                (CO_STATUS_AGENDA) => Array(
+//                    ('Campo') => CO_USUARIO,
+//                    ('Entidade') => 'StatusAgendaEntidade',
+//                    ('Tipo') => '2',
+//                ),
             ),
             (FuncionalidadeEntidade::TABELA) => Array(
                 (CO_PERFIL_FUNCIONALIDADE) => Array(
@@ -734,6 +744,11 @@ class Relacionamentos
                     ('Entidade') => 'ServicoProfissionalEntidade',
                     ('Tipo') => '2',
                 ),
+                (CO_STATUS_AGENDA_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'StatusAgendaProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
             ),
             (ContaBancariaEntidade::TABELA) => Array(
                 (CO_PROFISSIONAL) => Array(
@@ -781,6 +796,11 @@ class Relacionamentos
                 (CO_CORTESIA) => Array(
                     ('Campo') => CO_CLIENTE,
                     ('Entidade') => 'CortesiaEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_STATUS_AGENDA) => Array(
+                    ('Campo') => CO_CLIENTE,
+                    ('Entidade') => 'StatusAgendaEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -854,6 +874,11 @@ class Relacionamentos
                 (CO_CORTESIA) => Array(
                     ('Campo') => CO_SERVICO,
                     ('Entidade') => 'CortesiaEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_STATUS_AGENDA_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'StatusAgendaServicoEntidade',
                     ('Tipo') => '2',
                 ),
             ),
@@ -1026,6 +1051,79 @@ class Relacionamentos
                 (CO_USUARIO) => Array(
                     ('Campo') => CO_USUARIO,
                     ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (AgendaEntidade::TABELA) => Array(
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_STATUS_AGENDA) => Array(
+                    ('Campo') => CO_AGENDA,
+                    ('Entidade') => 'StatusAgendaEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (StatusAgendaEntidade::TABELA) => Array(
+                (CO_CLIENTE) => Array(
+                    ('Campo') => CO_CLIENTE,
+                    ('Entidade') => 'ClienteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_AGENDA) => Array(
+                    ('Campo') => CO_AGENDA,
+                    ('Entidade') => 'AgendaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_STATUS_AGENDA_PROFISSIONAL) => Array(
+                    ('Campo') => CO_STATUS_AGENDA,
+                    ('Entidade') => 'StatusAgendaProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_STATUS_AGENDA_SERVICO) => Array(
+                    ('Campo') => CO_STATUS_AGENDA,
+                    ('Entidade') => 'StatusAgendaServicoEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (StatusAgendaProfissionalEntidade::TABELA) => Array(
+                (CO_STATUS_AGENDA) => Array(
+                    ('Campo') => CO_STATUS_AGENDA,
+                    ('Entidade') => 'StatusAgendaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PROFISSIONAL) => Array(
+                    ('Campo') => CO_PROFISSIONAL,
+                    ('Entidade') => 'ProfissionalEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_STATUS_AGENDA_SERVICO) => Array(
+                    ('Campo') => CO_STATUS_AGENDA_SERVICO,
+                    ('Entidade') => 'StatusAgendaServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (StatusAgendaServicoEntidade::TABELA) => Array(
+                (CO_STATUS_AGENDA_PROFISSIONAL) => Array(
+                    ('Campo') => CO_STATUS_AGENDA_SERVICO,
+                    ('Entidade') => 'StatusAgendaProfissionalEntidade',
+                    ('Tipo') => '2',
+                ),
+                (CO_SERVICO) => Array(
+                    ('Campo') => CO_SERVICO,
+                    ('Entidade') => 'ServicoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_STATUS_AGENDA) => Array(
+                    ('Campo') => CO_STATUS_AGENDA,
+                    ('Entidade') => 'StatusAgendaEntidade',
                     ('Tipo') => '1',
                 ),
             ),

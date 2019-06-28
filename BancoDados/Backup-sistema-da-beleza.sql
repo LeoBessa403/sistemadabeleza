@@ -1,4 +1,4 @@
--- Atualizado em: 26/06/2019 18:04:42
+-- Atualizado em: 28/06/2019 19:51:17
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,26 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=328 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=343 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("327","vb5j8tdn27o6m7vo0jgn8d2ic4","2019-06-26 18:03:50","2019-06-26 18:34:42","A","1","346");
+INSERT INTO TB_ACESSO VALUES("330","","","2019-06-27 12:00:48","","0","0");
+
+INSERT INTO TB_ACESSO VALUES("342","vb5j8tdn27o6m7vo0jgn8d2ic4","2019-06-28 19:50:32","2019-06-28 20:21:17","A","1","358");
+
+
+
+
+DROP TABLE IF EXISTS TB_AGENDA;
+
+
+CREATE TABLE `TB_AGENDA` (
+  `co_agenda` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `co_assinante` int(11) NOT NULL,
+  PRIMARY KEY (`co_agenda`,`co_assinante`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 
@@ -144,7 +160,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 
 
@@ -161,7 +177,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=392 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=473 DEFAULT CHARSET=utf8;
 
 
 
@@ -178,7 +194,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
 
 
 
@@ -889,7 +905,7 @@ CREATE TABLE `TB_CLIENTE` (
 
 INSERT INTO TB_CLIENTE VALUES("1","2019-02-12 11:44:02","","meu apelido cli 2","sobre novo cliente","S","S","N","N","2","11","79");
 
-INSERT INTO TB_CLIENTE VALUES("2","2019-05-09 17:45:14","A","","","S","S","S","S","1","11","80");
+INSERT INTO TB_CLIENTE VALUES("2","2019-05-09 17:45:14","","","","S","S","S","S","1","11","80");
 
 
 
@@ -1061,7 +1077,7 @@ CREATE TABLE `TB_CONTROLLER` (
   `no_controller` varchar(60) DEFAULT NULL,
   `ds_class_icon` varchar(30) DEFAULT NULL COMMENT 'Classe do Ícone',
   PRIMARY KEY (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CONTROLLER VALUES("1","Gestão","clip-data");
@@ -1089,6 +1105,8 @@ INSERT INTO TB_CONTROLLER VALUES("13","Configuração","clip-settings");
 INSERT INTO TB_CONTROLLER VALUES("14","Cliente","clip-user-plus");
 
 INSERT INTO TB_CONTROLLER VALUES("15","Serviço","fa fa-scissors");
+
+INSERT INTO TB_CONTROLLER VALUES("16","Agenda","fa fa-calendar");
 
 
 
@@ -1142,7 +1160,7 @@ CREATE TABLE `TB_DIA_ESPECIAL` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_DIA_ESPECIAL VALUES("2","2019-01-31","4","09:00","14:00","Dia especial","11");
+INSERT INTO TB_DIA_ESPECIAL VALUES("2","2019-01-31","4","09:00","14:00","Dia especial 72","0");
 
 
 
@@ -1370,7 +1388,7 @@ CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -1499,6 +1517,8 @@ INSERT INTO TB_FUNCIONALIDADE VALUES("77","Vale Presente","ValePresenteServico",
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("78","Cadastro Vale Presente","CadastroValePresenteServico","A","N","15");
 
+INSERT INTO TB_FUNCIONALIDADE VALUES("79","Calendário","Agendamento","A","S","16");
+
 
 
 
@@ -1611,7 +1631,7 @@ INSERT INTO TB_HISTORIA VALUES("27","Manter Vale presente","<p>Manter Vale prese
 
 INSERT INTO TB_HISTORIA VALUES("28","Cadastrar Agendamento","<p>Cadastrar Agendamento (Op&ccedil;&atilde;o da recorr&ecirc;ncia)</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: (FK cliente, Servi&ccedil;o, Profissional)</p>","2018-07-25 17:32:10","2018-07-25 17:56:16","N","17");
 
-INSERT INTO TB_HISTORIA VALUES("29","Agenda","<p>Mostrar a agenda (Filtros por profissional)</p>","2018-07-25 17:44:09","2018-07-25 17:44:09","N","17");
+INSERT INTO TB_HISTORIA VALUES("29","Agenda","<p>Mostrar a agenda (Filtros por profissional)</p>","2018-07-25 17:44:09","2019-06-28 18:33:59","N","17");
 
 INSERT INTO TB_HISTORIA VALUES("30","Agenda CSS (Responsivo)","<p>Agenda CSS (Responsivo)</p>","2018-07-25 17:44:46","2018-07-25 17:44:46","N","17");
 
@@ -1983,7 +2003,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=663 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=664 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3302,6 +3322,8 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("661","3","3","2019-06-26 14:31:24","18
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("662","8","0","2019-06-26 18:01:00","27");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("663","20","20","2019-06-28 18:33:59","29");
+
 
 
 
@@ -4617,7 +4639,7 @@ CREATE TABLE `TB_PERFIL_FUNCIONALIDADE` (
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_TB_PERFIL_FUNCIONALIDADE_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=283 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("1","1","1","0");
@@ -4725,6 +4747,8 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("280","76","2","0");
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("281","77","2","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("282","78","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("285","79","2","0");
 
 
 
@@ -5633,6 +5657,60 @@ INSERT INTO TB_SESSAO VALUES("38","Vale Presente","2019-06-26 14:30:47","8");
 
 
 
+DROP TABLE IF EXISTS TB_STATUS_AGENDA;
+
+
+CREATE TABLE `TB_STATUS_AGENDA` (
+  `co_status_agenda` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `st_status` int(2) DEFAULT NULL COMMENT '1 - Agendado / 2 - Confirmado / 3 - Aguardando / 4 - Em Atendimento / 5 - Cancelado / 6 - Faltou / 7 - Finalizado \n',
+  `dt_agenda` date DEFAULT NULL,
+  `nu_hora_inicio_agenda` varchar(5) DEFAULT NULL,
+  `nu_hora_fim_agenda` varchar(5) DEFAULT NULL,
+  `nu_valor` decimal(8,2) DEFAULT NULL COMMENT 'Valor total do agendamento',
+  `nu_duracao` int(3) DEFAULT NULL COMMENT 'Em minutos',
+  `ds_observacao` text,
+  `co_cliente` int(11) NOT NULL,
+  `co_agenda` int(11) NOT NULL,
+  `co_usuario` int(10) NOT NULL,
+  PRIMARY KEY (`co_status_agenda`,`co_cliente`,`co_agenda`,`co_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+DROP TABLE IF EXISTS TB_STATUS_AGENDA_PROFISSIONAL;
+
+
+CREATE TABLE `TB_STATUS_AGENDA_PROFISSIONAL` (
+  `co_status_agenda_profissional` int(11) NOT NULL AUTO_INCREMENT,
+  `co_status_agenda` int(11) NOT NULL,
+  `co_profissional` int(11) NOT NULL,
+  `co_status_agenda_servico` int(11) NOT NULL COMMENT 'Servico atendido pelo profiossional nesse agendamento\n',
+  `tp_profissional` int(1) DEFAULT NULL COMMENT '1 - Profissional / 2 - Assistente',
+  PRIMARY KEY (`co_status_agenda_profissional`,`co_status_agenda`,`co_profissional`,`co_status_agenda_servico`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+DROP TABLE IF EXISTS TB_STATUS_AGENDA_SERVICO;
+
+
+CREATE TABLE `TB_STATUS_AGENDA_SERVICO` (
+  `co_status_agenda_servico` int(11) NOT NULL AUTO_INCREMENT,
+  `co_servico` int(11) NOT NULL,
+  `co_status_agenda` int(11) NOT NULL,
+  `st_status` int(1) DEFAULT NULL COMMENT 'Status Atendimento / 1 - Não Iniciado / 2 - Iniciado / 3 - Concluído',
+  PRIMARY KEY (`co_status_agenda_servico`,`co_servico`,`co_status_agenda`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
 DROP TABLE IF EXISTS TB_TAXA_CARTAO;
 
 
@@ -5741,7 +5819,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=347 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=359 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -5778,7 +5856,7 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO TB_TRAFEGO VALUES("346","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+INSERT INTO TB_TRAFEGO VALUES("358","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 
@@ -5876,12 +5954,14 @@ CREATE TABLE `TB_VALE_PRESENTE` (
   PRIMARY KEY (`co_vale_presente`,`co_assinante`,`co_usuario`),
   KEY `fk_TB_VALE_PRESENTE_TB_ASSINANTE1_idx` (`co_assinante`),
   KEY `fk_TB_VALE_PRESENTE_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_VALE_PRESENTE VALUES("1","2019-06-26 17:44:41","2","Presente de aniversário 2","2019-06-30","15.00","VLP.1911.RFX7.KNS0","11","8");
 
 INSERT INTO TB_VALE_PRESENTE VALUES("2","2019-06-26 17:59:33","1","wg wrh wyjtyj","2019-06-23","150.00","VLP.1911.XPQ2.EOQ0","11","8");
+
+INSERT INTO TB_VALE_PRESENTE VALUES("3","2019-06-27 18:03:06","1","so pra testar mesmo","2019-06-30","18.50","VLP.1911.MAB7.NDS9","11","8");
 
 
 

@@ -117,6 +117,14 @@ define('NO_TITULO', 'no_titulo');
 define('CO_CORTESIA', 'co_cortesia');
 define('DS_CODIGO', 'ds_codigo');
 define('CO_VALE_PRESENTE', 'co_vale_presente');
+define('CO_AGENDA', 'co_agenda');
+define('CO_STATUS_AGENDA', 'co_status_agenda');
+define('DT_AGENDA', 'dt_agenda');
+define('NU_HORA_INICIO_AGENDA', 'nu_hora_inicio_agenda');
+define('NU_HORA_FIM_AGENDA', 'nu_hora_fim_agenda');
+define('CO_STATUS_AGENDA_PROFISSIONAL', 'co_status_agenda_profissional');
+define('CO_STATUS_AGENDA_SERVICO', 'co_status_agenda_servico');
+define('TP_PROFISSIONAL', 'tp_profissional');
 
 
 
@@ -161,3 +169,7 @@ define('PRECO_PROMOCAO_SERVICE', 'PrecoPromocaoService');
 define('PROMOCAO_SERVICE', 'PromocaoService');
 define('CORTESIA_SERVICE', 'CortesiaService');
 define('VALE_PRESENTE_SERVICE', 'ValePresenteService');
+define('AGENDA_SERVICE', 'AgendaService');
+define('STATUS_AGENDA_SERVICE', 'StatusAgendaService');
+define('STATUS_AGENDA_PROFISSIONAL_SERVICE', 'StatusAgendaProfissionalService');
+define('STATUS_AGENDA_SERVICO_SERVICE', 'StatusAgendaServicoService');

@@ -233,6 +233,7 @@ class ProfissionalForm
             ->setId(DS_COR_AGENDA)
             ->setType(TiposCampoEnum::COLOR)
             ->setLabel("Cor da agenda")
+            ->setClasses("ob")
             ->setInfo("que da agenda do profissional")
             ->CriaInpunt();
 
