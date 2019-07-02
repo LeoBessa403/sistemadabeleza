@@ -148,8 +148,10 @@ class  ServicoService extends AbstractService
         foreach ($categorias as $categoria) {
             /** @var ServicoEntidade $servico */
             foreach ($categoria->getCoServico() as $servico) {
-                $comboServicos[$servico->getCoServico()]
-                    = $servico->getNoServico();
+                if($servico->getStStatus() == StatusAcessoEnum::ATIVO){
+                    $comboServicos[$servico->getCoServico()]
+                        = $servico->getNoServico();
+                }
             }
         }
         return $comboServicos;

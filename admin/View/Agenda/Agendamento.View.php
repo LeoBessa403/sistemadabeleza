@@ -33,6 +33,16 @@
                             <h4 class="modal-title">Cadastro Agendamento</h4>
                         </div>
                         <div class="modal-body" style="padding: 0;">
+                            <div class="alert alert-block alert-warning fade in col-md-12"
+                                 style="margin-bottom: 0;">
+                                <h4 class="alert-heading"><i class="fa fa-calendar"></i> Status Agendamento</h4>
+                                <?php
+                                foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
+                                    echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                                }
+                                ?>
+                            </div>
                             <?= $form; ?>
                         </div>
                     </div>
@@ -43,11 +53,11 @@
                         Agendamentos
                     </div>
                     <div class="panel-body">
-                        <div class="alert alert-block alert-warning fade in col-md-6" style="min-width: 20px;">
+                        <div class="alert alert-block alert-warning fade in col-md-6" >
                             <h4 class="alert-heading"><i class="fa fa-calendar"></i> Status Agendamento</h4>
                             <?php
                             foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
-                                echo '<span  style="width: 20px;" class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+                                echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
                                 echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
                             }
                             ?>

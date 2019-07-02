@@ -30,8 +30,8 @@ var Calendar = function () {
             select: function (start) {
                 var dia = start.getDate();
                 var mes = (start.getMonth() + 1);
-                var hora_inicio = '20-00';
-                var dt_inicio;
+                var hora_inicio;
+                var dt_agenda;
                 var hora = start.getHours();
                 var minuto = start.getMinutes();
 
@@ -49,18 +49,13 @@ var Calendar = function () {
                     minuto = '0' + minuto;
                 }
                 if (hora > 0) {
-                    hora_inicio = hora + '-' + minuto;
+                    hora_inicio = hora + ':' + minuto;
                 }
-                dt_inicio = dia + '-' + mes + '-' + start.getFullYear();
+                dt_agenda = dia + '/' + mes + '/' + start.getFullYear();
 
-
+                $("#nu_hora_inicio_agenda").val(hora_inicio);
+                $("#dt_agenda").val(dt_agenda);
                 $("#j_cadastro").click();
-
-
-                // $.get(urlValida, {valida: 'cadastro_agenda', dt_inicio: dt_inicio, hr_inicio: hora_inicio},
-                //     function (retorno) {
-                //         window.location.href = home + retorno;
-                //     });
 
             },
             eventClick: function (calEvent) {

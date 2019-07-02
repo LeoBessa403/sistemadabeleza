@@ -14,13 +14,22 @@ class AgendaForm
             "Cadastrar", 12);
         $formulario->setValor($res);
 
+        $options = StatusAgendamentoEnum::$descricao;
+        $formulario
+            ->setId(ST_STATUS)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Status Agendamento")
+            ->setTamanhoInput(3)
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->CriaInpunt();
 
         $options = ClienteService::clientesCombo();
         $formulario
             ->setId(CO_CLIENTE)
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Cliente")
-            ->setTamanhoInput(12)
+            ->setTamanhoInput(9)
             ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
@@ -30,13 +39,23 @@ class AgendaForm
             ->setId(CO_SERVICO)
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Serviços")
-            ->setTamanhoInput(9)
+            ->setTamanhoInput(12)
+            ->setClasses("ob multipla")
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $options = PacoteServService::pacotesCombo();
+        $formulario
+            ->setId(CO_PACOTE_SERV)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Pacotes")
+            ->setTamanhoInput(12)
             ->setClasses("ob multipla")
             ->setOptions($options)
             ->CriaInpunt();
 
         $formulario
-            ->setId(DT_INICIO)
+            ->setId(DT_AGENDA)
             ->setTamanhoInput(3)
             ->setClasses("data ob")
             ->setIcon("clip-calendar-3")
@@ -44,15 +63,15 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(DT_FIM)
+            ->setId(NU_DURACAO)
             ->setTamanhoInput(3)
-            ->setClasses("data ob")
-            ->setIcon("clip-calendar-3")
-            ->setLabel("Data de Termino")
+            ->setClasses("numero ob")
+            ->setInfo("Duração dos Serviços em minutos")
+            ->setLabel("Duração")
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_HORA_ABERTURA)
+            ->setId(NU_HORA_INICIO_AGENDA)
             ->setTamanhoInput(3)
             ->setClasses("horas ob")
             ->setPlace("Formato 24Hrs")
@@ -61,7 +80,7 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_HORA_FECHAMENTO)
+            ->setId(NU_HORA_FIM_AGENDA)
             ->setTamanhoInput(3)
             ->setClasses("horas ob")
             ->setPlace("Formato 24Hrs")
@@ -69,23 +88,12 @@ class AgendaForm
             ->setLabel("Hórario de Término")
             ->CriaInpunt();
 
-        $options = DiasEnum::$descricao;
-        $formulario
-            ->setId(NU_DIA_SEMANA)
-            ->setTamanhoInput(12)
-            ->setClasses("inline")
-            ->setType(TiposCampoEnum::CHECKBOX)
-            ->setLabel("Dias de atendimento:")
-            ->setLabelCheckRadio($options)
-            ->setInfo("Dias que pode ser utilizada")
-            ->CriaInpunt();
-
         $formulario
             ->setType(TiposCampoEnum::TEXTAREA)
-            ->setId(DS_MOTIVO)
+            ->setId(DS_OBSERVACAO)
             ->setClasses("ob")
             ->setTamanhoInput(12)
-            ->setLabel("Motivo")
+            ->setLabel("Observação")
             ->CriaInpunt();
 
 
@@ -97,7 +105,7 @@ class AgendaForm
                 ->CriaInpunt();
         endif;
 
-        return $formulario->finalizaForm(false,false);
+        return $formulario->finalizaForm(false, false);
     }
 
     public static function Pesquisar()

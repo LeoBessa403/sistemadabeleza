@@ -82,4 +82,22 @@ class  PacoteServService extends AbstractService
         }
         return $retorno;
     }
+
+    public static function pacotesCombo()
+    {
+        /** @var PacoteServService $pacoteServService */
+        $pacoteServService = new PacoteServService();
+        $comboPacotes = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        $pacotes = $pacoteServService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
+        ]);
+        /** @var PacoteServEntidade $pacote */
+        foreach ($pacotes as $pacote) {
+            $comboPacotes[$pacote->getCoPacoteServ()]
+                = $pacote->getNoPacoteServ();
+        }
+        return $comboPacotes;
+    }
 }
