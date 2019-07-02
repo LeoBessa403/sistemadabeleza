@@ -24,6 +24,7 @@ class ClienteEntidade extends AbstractEntidade
     private $co_assinante;
     private $co_pessoa;
     private $co_cortesia;
+    private $co_status_agenda;
 
 
     /**
@@ -277,4 +278,20 @@ class ClienteEntidade extends AbstractEntidade
         $this->co_cortesia = $co_cortesia;
     }
 
+    /**
+     * @return StatusAgendaEntidade $co_status_agenda
+     */
+    public function getCoStatusAgenda()
+    {
+        return $this->co_status_agenda;
+    }
+
+    /**
+     * @param $co_status_agenda
+     * @return mixed
+     */
+    public function setCoStatusAgenda($co_status_agenda)
+    {
+        return $this->co_status_agenda = $co_status_agenda;
+    }
 }

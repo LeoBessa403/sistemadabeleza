@@ -64,7 +64,7 @@ class  ClienteService extends AbstractService
                 $coCliente = $dados[CO_CLIENTE];
                 $enderecoService->Salva($endereco, $dados[CO_ENDERECO]);
                 $contatoService->Salva($contato, $dados[CO_CONTATO]);
-                // Verifica a existência de uma imagem de perfil
+                // Verifica a existÃªncia de uma imagem de perfil
                 if (!empty($dados[CO_IMAGEM])) {
                     $imagemService->salvaImagem($arquivos, $dados[NO_PESSOA], 'clientes/', $dados[CO_IMAGEM]);
                 } else {
@@ -115,6 +115,26 @@ class  ClienteService extends AbstractService
     public function PesquisaAvancada($Condicoes)
     {
         return $this->ObjetoModel->PesquisaAvancada($Condicoes);
+    }
+
+
+    public static function clientesCombo()
+    {
+        /** @var ClienteService $clienteService */
+        $clienteService = new ClienteService();
+        $comboClientes = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        $clientes = $clienteService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+            ST_STATUS => StatusAcessoEnum::ATIVO
+        ]);
+        /** @var ClienteEntidade $cliente */
+        foreach ($clientes as $cliente) {
+            $comboClientes[$cliente->getCoCliente()]
+                = $cliente->getCoPessoa()->getNoPessoa();
+        }
+        return $comboClientes;
     }
 
 }

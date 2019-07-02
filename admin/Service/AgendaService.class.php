@@ -16,5 +16,9 @@ class  AgendaService extends AbstractService
         $this->ObjetoModel = New AgendaModel();
     }
 
+    public function PesquisaAgendamentos($Condicoes)
+    {
+        return $this->ObjetoModel->PesquisaAgendamentos($Condicoes);
+    }
 
 }

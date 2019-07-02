@@ -28,6 +28,13 @@ if (isset($_REQUEST['acao'])) {
             $data[NU_VALOR] = Servico::GetPrecoServico($coServico);
             echo json_encode($data);
             break;
+        case 'CarregaAgendamentos':
+            $controller = $_REQUEST['controller'];
+            $acao = $_REQUEST['acao'];
+            $objeto = new $controller();
+            $data = $objeto->$acao();
+            echo json_encode($data);
+            break;
 
     }
 } // FIM SWITCH
