@@ -42,16 +42,16 @@ class Relacionamentos
                     ('Entidade') => 'ImagemAssinanteEntidade',
                     ('Tipo') => '2',
                 ),
-//                (CO_FACILIDADE_BENEFICIO) => Array(
-//                    ('Campo') => CO_ASSINANTE,
-//                    ('Entidade') => 'FacilidadeBeneficioEntidade',
-//                    ('Tipo') => '1',
-//                ),
-//                (CO_FUNCIONAMENTO) => Array(
-//                    ('Campo') => CO_ASSINANTE,
-//                    ('Entidade') => 'FuncionamentoEntidade',
-//                    ('Tipo') => '2',
-//                ),
+                (CO_FACILIDADE_BENEFICIO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'FacilidadeBeneficioEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_FUNCIONAMENTO) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'FuncionamentoEntidade',
+                    ('Tipo') => '2',
+                ),
 //                (CO_DIA_ESPECIAL) => Array(
 //                    ('Campo') => CO_ASSINANTE,
 //                    ('Entidade') => 'DiaEspecialEntidade',

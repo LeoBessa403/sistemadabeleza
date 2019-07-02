@@ -25,11 +25,11 @@ class StatusAgendamentoEnum extends AbstractEnum
 
     public static $cores = [
         StatusAgendamentoEnum::AGENDADO => 'success',
-        StatusAgendamentoEnum::CONFIRMADO => 'teal',
+        StatusAgendamentoEnum::CONFIRMADO => 'purple',
         StatusAgendamentoEnum::AGUARDANDO => 'info',
-        StatusAgendamentoEnum::EM_ATENDIMENTO => 'teal',
+        StatusAgendamentoEnum::EM_ATENDIMENTO => 'warning',
         StatusAgendamentoEnum::CANCELADO => 'danger',
-        StatusAgendamentoEnum::FALTOU => 'black',
+        StatusAgendamentoEnum::FALTOU => 'beige',
         StatusAgendamentoEnum::FINALIZADO => 'green',
     ];
 }

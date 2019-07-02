@@ -22,6 +22,10 @@ var Calendar = function () {
             editable: true,
             selectable: true,
             timeFormat: 'H:mm',
+            firstHour: 8, // CALENDAR COMEÇO DAS HORAS
+            slotMinutes: 10, // CALENDAR SLOT MINUTOS
+            minTime: 6, // HORA DE INICIO DO ATENDIMENTO
+            maxTime: 22, // HORA DE TERMINO DO ATENDIMENTO
             selectHelper: true,
             select: function (start) {
                 var dia = start.getDate();
@@ -96,3 +100,4 @@ var Calendar = function () {
     };
 }();
 Calendar.init();
+Calendar.renderEvents();
