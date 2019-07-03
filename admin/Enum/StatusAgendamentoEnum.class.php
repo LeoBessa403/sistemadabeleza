@@ -12,6 +12,7 @@ class StatusAgendamentoEnum extends AbstractEnum
     const CANCELADO = 5;
     const FALTOU = 6;
     const FINALIZADO = 7;
+    const DELETADO = 8;
 
     public static $descricao = [
         StatusAgendamentoEnum::AGENDADO => 'Agendado',
@@ -21,6 +22,7 @@ class StatusAgendamentoEnum extends AbstractEnum
         StatusAgendamentoEnum::CANCELADO => 'Cancelado',
         StatusAgendamentoEnum::FALTOU => 'Faltou',
         StatusAgendamentoEnum::FINALIZADO => 'Finalizado',
+        StatusAgendamentoEnum::DELETADO => 'Deletado',
     ];
 
     public static $cores = [
@@ -31,5 +33,6 @@ class StatusAgendamentoEnum extends AbstractEnum
         StatusAgendamentoEnum::CANCELADO => 'danger',
         StatusAgendamentoEnum::FALTOU => 'beige',
         StatusAgendamentoEnum::FINALIZADO => 'green',
+        StatusAgendamentoEnum::DELETADO => 'black',
     ];
 }

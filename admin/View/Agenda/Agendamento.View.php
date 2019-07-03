@@ -38,8 +38,10 @@
                                 <h4 class="alert-heading"><i class="fa fa-calendar"></i> Status Agendamento</h4>
                                 <?php
                                 foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
-                                    echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
-                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                                    if ($chave != StatusAgendamentoEnum::DELETADO) {
+                                        echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+                                        echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                                    }
                                 }
                                 ?>
                             </div>
@@ -53,12 +55,14 @@
                         Agendamentos
                     </div>
                     <div class="panel-body">
-                        <div class="alert alert-block alert-warning fade in col-md-6" >
+                        <div class="alert alert-block alert-warning fade in col-md-6">
                             <h4 class="alert-heading"><i class="fa fa-calendar"></i> Status Agendamento</h4>
                             <?php
                             foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
-                                echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
-                                echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                                if ($chave != StatusAgendamentoEnum::DELETADO) {
+                                    echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                                }
                             }
                             ?>
                         </div>

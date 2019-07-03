@@ -15,6 +15,7 @@ class AgendaForm
         $formulario->setValor($res);
 
         $options = StatusAgendamentoEnum::$descricao;
+        unset($options[StatusAgendamentoEnum::DELETADO]);
         $formulario
             ->setId(ST_STATUS)
             ->setType(TiposCampoEnum::SELECT)
