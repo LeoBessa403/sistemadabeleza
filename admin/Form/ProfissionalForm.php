@@ -6,7 +6,7 @@
  */
 class ProfissionalForm
 {
-    public static function Cadastrar($res = false, $comboProfissionais)
+    public static function Cadastrar($res = false)
     {
         $id = "cadastroProfissional";
 
@@ -219,14 +219,6 @@ class ProfissionalForm
             ->setClasses("data")
             ->setLabel("Data da Admissão")
             ->setInfo("Data de contratação")
-            ->CriaInpunt();
-
-        $formulario
-            ->setLabel("Ordem da agenda")
-            ->setId(NU_ORDEM_AGENDA)
-            ->setInfo("Número da ordem de paresentação na agenda")
-            ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($comboProfissionais)
             ->CriaInpunt();
 
         $formulario

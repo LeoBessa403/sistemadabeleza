@@ -72,9 +72,6 @@ class Profissional extends AbstractController
                 Redireciona(UrlAmigavel::$modulo . '/Profissional/ListarProfissional/');
             }
         endif;
-
-        /** @var AssinanteService $assinanteService */
-        $assinanteService = $this->getService(ASSINANTE_SERVICE);
         /** @var EnderecoService $enderecoService */
         $enderecoService = $this->getService(ENDERECO_SERVICE);
         /** @var ContatoService $contatoService */
@@ -137,7 +134,6 @@ class Profissional extends AbstractController
                 ? 'checked' : '';
             $res[TP_CONTRATACAO] = $profissional->getTpContratacao();
             $res[DT_ADMISSAO] = ($profissional->getDtAdmissao()) ? Valida::DataShow($profissional->getDtAdmissao()) : null;
-            $res[NU_ORDEM_AGENDA] = $profissional->getNuOrdemAgenda();
             $res[DS_COR_AGENDA] = $profissional->getDsCorAgenda();
 
 
@@ -167,10 +163,7 @@ class Profissional extends AbstractController
             $res[ST_AGENDA_ONLINE] = '';
         }
 
-
-        $comboProfissionais = $assinanteService->getComboNuProfissionais();
-
-        $this->form = ProfissionalForm::Cadastrar($res, $comboProfissionais);
+        $this->form = ProfissionalForm::Cadastrar($res);
     }
 
     public function AusenciaProfissional()

@@ -62,7 +62,6 @@ define('DS_SOBRE', 'ds_sobre');
 define('NO_APELIDO', 'no_apelido');
 define('ST_AGENDA', 'st_agenda');
 define('ST_AGENDA_ONLINE', 'st_agenda_online');
-define('NU_ORDEM_AGENDA', 'nu_ordem_agenda');
 define('TP_CONTRATACAO', 'tp_contratacao');
 define('DT_ADMISSAO', 'dt_admissao');
 define('DT_DEMISSAO', 'dt_demissao');

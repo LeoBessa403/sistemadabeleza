@@ -55,7 +55,10 @@
                         Agendamentos
                     </div>
                     <div class="panel-body">
-                        <div class="alert alert-block alert-warning fade in col-md-6">
+                        <div class="col-md-3">
+                        </div>
+                        <div class="alert alert-block alert-warning fade in col-md-6"
+                             style="margin-bottom: -35px;">
                             <h4 class="alert-heading"><i class="fa fa-calendar"></i> Status Agendamento</h4>
                             <?php
                             foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
@@ -66,7 +69,7 @@
                             }
                             ?>
                         </div>
-                        <div class="col-sm-12">
+                        <div class="col-md-push-12">
                             <div id='calendar'></div>
                             <input id="acao" name="acao"
                                    value="<?= UrlAmigavel::$controller . '/CarregaAgendamentos'; ?>" type="hidden">

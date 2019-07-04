@@ -41,19 +41,29 @@ class AgendaForm
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Serviços")
             ->setTamanhoInput(12)
-            ->setClasses("ob multipla")
+            ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
 
-        $options = PacoteServService::pacotesCombo();
-        $formulario
-            ->setId(CO_PACOTE_SERV)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Pacotes")
-            ->setTamanhoInput(12)
-            ->setClasses("ob multipla")
-            ->setOptions($options)
-            ->CriaInpunt();
+//        $options = PacoteServService::pacotesCombo();
+//        $formulario
+//            ->setId(CO_PACOTE_SERV)
+//            ->setType(TiposCampoEnum::SELECT)
+//            ->setLabel("Pacotes")
+//            ->setTamanhoInput(12)
+//            ->setClasses("ob multipla")
+//            ->setOptions($options)
+//            ->CriaInpunt();
+
+//        $options = PacoteServService::pacotesCombo();
+//        $formulario
+//            ->setId(CO_PACOTE_SERV)
+//            ->setType(TiposCampoEnum::SELECT)
+//            ->setLabel("Pacotes")
+//            ->setTamanhoInput(12)
+//            ->setClasses("ob multipla")
+//            ->setOptions($options)
+//            ->CriaInpunt();
 
         $formulario
             ->setId(DT_AGENDA)

@@ -91,6 +91,11 @@ var Calendar = function () {
         init: function () {
             runCalendar();
             $('.fc-button-agendaDay').click();
+
+
+            $('#co_servico').change(function () {
+                Funcoes.Informativo($(this).val());
+            });
         }
     };
 }();
