@@ -52,10 +52,10 @@
                         Modal::confirmacao("confirma_Profissional");
                         Modal::DesativarProfissional("DesativarProfissional");
                         Modal::AtivarProfissional("AtivarProfissional");
-                        $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo', 'Assistente', 'Ações');
+                        $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo', 'Status', 'Assistente', 'Ações');
                         if ($tipoComissao == FormaComissaoEnum::PROFISSIONAL) {
                             $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo',
-                                'Comissão', 'Assistente', 'Ações');
+                                'Comissão', 'Status', 'Assistente', 'Ações');
                         }
                         $grid = new Grid();
                         $grid->setColunasIndeces($arrColunas);
@@ -163,6 +163,7 @@
                                 $grid->setColunas($comiss);
                             }
                             $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
+                            $grid->setColunas(Valida::StatusLabel($res->getStStatus()), 2);
                             $grid->setColunas($acao, $botao);
                             $grid->criaLinha($res->getCoProfissional());
                         endforeach;
