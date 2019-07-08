@@ -177,6 +177,25 @@ class  ProfissionalService extends AbstractService
         return $comboProfissionais;
     }
 
+    public static function profissionaisAtivosCombo()
+    {
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = new ProfissionalService();
+        $comboProfissionais = [
+            '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
+        ];
+        $profissionais = $profissionalService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+            ST_STATUS => StatusAcessoEnum::ATIVO
+        ]);
+        /** @var ProfissionalEntidade $profissional */
+        foreach ($profissionais as $profissional) {
+            $comboProfissionais[$profissional->getCoProfissional()]
+                = Valida::Resumi(strtoupper($profissional->getCoPessoa()->getNoPessoa()), 25);
+        }
+        return $comboProfissionais;
+    }
+
     /**
      * @param $coProfissional
      * @return array

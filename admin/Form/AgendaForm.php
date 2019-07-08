@@ -45,25 +45,25 @@ class AgendaForm
             ->setOptions($options)
             ->CriaInpunt();
 
-//        $options = PacoteServService::pacotesCombo();
-//        $formulario
-//            ->setId(CO_PACOTE_SERV)
-//            ->setType(TiposCampoEnum::SELECT)
-//            ->setLabel("Pacotes")
-//            ->setTamanhoInput(12)
-//            ->setClasses("ob multipla")
-//            ->setOptions($options)
-//            ->CriaInpunt();
+        $options = ProfissionalService::profissionaisAtivosCombo();
+        $formulario
+            ->setId(CO_PROFISSIONAL)
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Profissional")
+            ->setTamanhoInput(6)
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->CriaInpunt();
 
-//        $options = PacoteServService::pacotesCombo();
-//        $formulario
-//            ->setId(CO_PACOTE_SERV)
-//            ->setType(TiposCampoEnum::SELECT)
-//            ->setLabel("Pacotes")
-//            ->setTamanhoInput(12)
-//            ->setClasses("ob multipla")
-//            ->setOptions($options)
-//            ->CriaInpunt();
+        $options = ProfissionalService::PesquisaProfissionaisCombo();
+        $formulario
+            ->setId('CO_ASSISTENTE')
+            ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Assistente")
+            ->setTamanhoInput(6)
+            ->setClasses("ob")
+            ->setOptions($options)
+            ->CriaInpunt();
 
         $formulario
             ->setId(DT_AGENDA)
@@ -77,8 +77,8 @@ class AgendaForm
             ->setId(NU_DURACAO)
             ->setTamanhoInput(3)
             ->setClasses("numero ob")
-            ->setInfo("Duração dos Serviços em minutos")
-            ->setLabel("Duração")
+            ->setInfo("Duração do Serviço")
+            ->setLabel("Duração (Minutos)")
             ->CriaInpunt();
 
         $formulario
