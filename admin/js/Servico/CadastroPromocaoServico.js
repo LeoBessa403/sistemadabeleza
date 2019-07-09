@@ -1,34 +1,13 @@
 $(function () {
 
-    //VARIÁVEIS GLOBAIS
-    var dados = constantes();
-    var home = dados['HOME'];
-    var urlValida = home + 'admin/Controller/Ajax.Controller.php';
-
     $('#co_servico').change(function () {
         CarregaValorServico($(this).val());
     });
 
     function CarregaValorServico(coServico) {
-        $.ajax({
-            url: urlValida,
-            data: {acao: 'CarregaValorServico', co_servico: coServico},
-            type: "POST",
-            dataType: "json",
-            beforeSend: function () {
-                $("#load").click();
-            },
-            success: function (data) {
-                $("#valor_servico").val(data.nu_valor);
-                limpaCamposValores();
-            },
-            error: function (request, status, erro) {
-                Funcoes.Erro("Problema ocorrido: " + status + "\nDescição: " + erro);
-            },
-            complete: function () {
-                $("#carregando .cancelar").click();
-            }
-        });
+        var dados = Funcoes.Ajax('Servico/GetPrecoServico', coServico);
+        $("#valor_servico").val(dados.nu_valor);
+        limpaCamposValores();
     }
 
     $('#nu_valor').blur(function () {

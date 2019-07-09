@@ -585,4 +585,12 @@ class Servico extends AbstractController
         $this->form = ServicoForm::CadastroValePresenteServico($res);
     }
 
+    public static function GetServicoAjax($coServico)
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = static::getService(SERVICO_SERVICE);
+        return $servicoService->getServicoAjax($coServico);
+    }
+
+
 }

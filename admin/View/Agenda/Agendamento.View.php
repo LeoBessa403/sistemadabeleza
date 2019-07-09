@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-md-push-12">
                             <div id='calendar'></div>
-                            <input id="acao" name="acao"
+                            <input id="metodo" name="metodo"
                                    value="<?= UrlAmigavel::$controller . '/CarregaAgendamentos'; ?>" type="hidden">
                         </div>
                     </div>

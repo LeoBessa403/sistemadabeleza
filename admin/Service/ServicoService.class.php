@@ -167,7 +167,22 @@ class  ServicoService extends AbstractService
         $servicoService = new ServicoService();
         /** @var ServicoEntidade $servico */
         $servico = $servicoService->PesquisaUmRegistro($coServico);
-        return $servico->getCoUltimoPrecoServico()->getNuValor();
+        $dados[NU_VALOR] = $servico->getCoUltimoPrecoServico()->getNuValor();
+        return $dados;
+    }
+
+    /**
+     * @param $coServico
+     * @return integer
+     */
+    public function getServicoAjax($coServico)
+    {
+        /** @var ServicoService $servicoService */
+        $servicoService = new ServicoService();
+        /** @var ServicoEntidade $servico */
+        $servico = $servicoService->PesquisaUmRegistro($coServico);
+        $dados[NU_DURACAO] = $servico->getNuDuracao();
+        return $dados;
     }
 
 }

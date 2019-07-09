@@ -5,8 +5,8 @@ var Calendar = function () {
         var dados = constantes();
 
         var home = dados['HOME'];
-        var url = $("#acao").val().split('/');
-        var urlValida = home + 'admin/Controller/Ajax.Controller.php?acao=' + url[1] + '&controller=' + url[0];
+        var metodo = $("#metodo").val();
+        var urlValida = home + 'admin/Controller/Ajax.Controller.php?acao=Ajax&controller=' + metodo;
 
         var calendar = $('#calendar').fullCalendar({
             buttonText: {
@@ -94,10 +94,21 @@ var Calendar = function () {
 
 
             $('#co_servico').change(function () {
-                Funcoes.Informativo($(this).val());
+                var dados = Funcoes.Ajax('Servico/GetServicoAjax', $(this).val());
+                $("#nu_duracao").val(dados.nu_duracao);
+                var nu_hora_inicio_agenda = $("#nu_hora_inicio_agenda").val().split(':').map(Number);
+                nu_hora_inicio_agenda = (parseInt(nu_hora_inicio_agenda[0]*60+nu_hora_inicio_agenda[1])) + parseInt(dados.nu_duracao);
+                var horas = Math.floor((nu_hora_inicio_agenda)/60);
+                var minutos = nu_hora_inicio_agenda%60;
+                if (horas < 10) {
+                    horas = '0' + horas;
+                }
+                if (minutos < 10) {
+                    minutos = '0' + minutos;
+                }
+                $("#nu_hora_fim_agenda").val(horas + ':' + minutos);
             });
         }
     };
 }();
 Calendar.init();
-Calendar.renderEvents();
