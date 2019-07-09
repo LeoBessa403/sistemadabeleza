@@ -6,7 +6,7 @@ var Calendar = function () {
 
         var home = dados['HOME'];
         var metodo = $("#metodo").val();
-        var urlValida = home + 'admin/Controller/Ajax.Controller.php?acao=Ajax&controller=' + metodo;
+        var urlValida = home + 'library/Controller/Ajax.Controller.php?acao=Ajax&controller=' + metodo;
 
         var calendar = $('#calendar').fullCalendar({
             buttonText: {
@@ -50,6 +50,9 @@ var Calendar = function () {
                 }
                 if (hora > 0) {
                     hora_inicio = hora + ':' + minuto;
+                }
+                if(!hora_inicio){
+                    hora_inicio = '08:00';
                 }
                 dt_agenda = dia + '/' + mes + '/' + start.getFullYear();
 
@@ -107,6 +110,15 @@ var Calendar = function () {
                     minutos = '0' + minutos;
                 }
                 $("#nu_hora_fim_agenda").val(horas + ':' + minutos);
+                $("#nu_valor").val(dados.nu_valor);
+
+            });
+
+            $("#CadastroAgendamento").submit(function () {
+                var data = $(this).serializeArray();
+                var metodo = $(this).attr('action').split('/');
+                var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
+                return false;
             });
         }
     };

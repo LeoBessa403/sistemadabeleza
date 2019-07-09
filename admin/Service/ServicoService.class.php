@@ -182,6 +182,7 @@ class  ServicoService extends AbstractService
         /** @var ServicoEntidade $servico */
         $servico = $servicoService->PesquisaUmRegistro($coServico);
         $dados[NU_DURACAO] = $servico->getNuDuracao();
+        $dados[NU_VALOR] = $servico->getCoUltimoPrecoServico()->getNuValor();
         return $dados;
     }
 

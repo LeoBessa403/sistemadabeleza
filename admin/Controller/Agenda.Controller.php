@@ -28,8 +28,13 @@ class Agenda extends AbstractController
         }
         return $eventos;
     }
-    public function Agendamento()
+    public function Agendamento($dados = null)
     {
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
+        if ($dados):
+            return $agendaService->salvaAgendamentoAjax($dados);
+        endif;
         // Inicia elementos do Form
         $res[ST_STATUS] = 'checked';
         $this->form = AgendaForm::CadastroAgendamento($res);

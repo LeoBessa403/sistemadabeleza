@@ -8,9 +8,9 @@ class AgendaForm
 {
     public static function CadastroAgendamento($res = false)
     {
-        $id = "CadastroCortesiaServico";
+        $id = "CadastroAgendamento";
 
-        $formulario = new Form($id, '#',
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Cadastrar", 12);
         $formulario->setValor($res);
 
@@ -45,28 +45,45 @@ class AgendaForm
             ->setOptions($options)
             ->CriaInpunt();
 
+        $formulario
+            ->setId(NU_VALOR)
+            ->setClasses("moeda ob")
+            ->setLabel("Preço R$")
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+//        $options = StatusAtendimentoEnum::$descricao;
+//        $formulario
+//            ->setId(ST_STATUS)
+//            ->setType(TiposCampoEnum::SELECT)
+//            ->setLabel("Status Atendimento")
+//            ->setTamanhoInput(4)
+//            ->setClasses("ob")
+//            ->setOptions($options)
+//            ->CriaInpunt();
+
         $options = ProfissionalService::profissionaisAtivosCombo();
         $formulario
             ->setId(CO_PROFISSIONAL)
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Profissional")
-            ->setTamanhoInput(6)
+            ->setTamanhoInput(4)
             ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
 
         $options = ProfissionalService::PesquisaProfissionaisCombo();
         $formulario
-            ->setId('CO_ASSISTENTE')
+            ->setId('co_assistente')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Assistente")
-            ->setTamanhoInput(6)
+            ->setTamanhoInput(4)
             ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
 
         $formulario
-            ->setId(DT_AGENDA)
+            ->setId('dt_agenda')
             ->setTamanhoInput(3)
             ->setClasses("data ob")
             ->setIcon("clip-calendar-3")
@@ -82,7 +99,7 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_HORA_INICIO_AGENDA)
+            ->setId('nu_hora_inicio_agenda')
             ->setTamanhoInput(3)
             ->setClasses("horas ob")
             ->setPlace("Formato 24Hrs")
@@ -91,7 +108,7 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_HORA_FIM_AGENDA)
+            ->setId('nu_hora_fim_agenda')
             ->setTamanhoInput(3)
             ->setClasses("horas ob")
             ->setPlace("Formato 24Hrs")
@@ -102,17 +119,16 @@ class AgendaForm
         $formulario
             ->setType(TiposCampoEnum::TEXTAREA)
             ->setId(DS_OBSERVACAO)
-            ->setClasses("ob")
             ->setTamanhoInput(12)
             ->setLabel("Observação")
             ->CriaInpunt();
 
 
-        if (!empty($res[CO_CORTESIA])):
+        if (!empty($res[CO_AGENDA])):
             $formulario
                 ->setType(TiposCampoEnum::HIDDEN)
-                ->setId(CO_CORTESIA)
-                ->setValues($res[CO_CORTESIA])
+                ->setId(CO_AGENDA)
+                ->setValues($res[CO_AGENDA])
                 ->CriaInpunt();
         endif;
 
