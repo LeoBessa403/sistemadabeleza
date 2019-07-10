@@ -32,7 +32,7 @@ class  AgendaModel extends AbstractModel
                       INNER JOIN tb_servico ser
                         ON ser.co_servico = stser.co_servico";
 
-        $campos = "age.co_agenda, dt_agenda, nu_hora_inicio_agenda, nu_hora_fim_agenda, pes.no_pessoa as cliente, 
+        $campos = "age.co_agenda, dt_inicio_agenda, dt_fim_agenda, pes.no_pessoa as cliente, 
         pes2.no_pessoa as profissional, no_servico, stag.st_status";
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);

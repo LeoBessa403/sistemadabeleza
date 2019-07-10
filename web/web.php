@@ -135,17 +135,7 @@ $visitaService->gestaoVisita();
     <script src="<?php echo PASTASITE; ?>js/buttons.js"></script>
     <script src="<?php echo PASTASITE; ?>js/scripts.js"></script>
     <script src="<?= PASTAADMIN; ?>plugins/select2/select2.min.js"></script>
-    <?= '<script type="text/javascript">
-                        function constantes(){    
-                                var dados = {
-                                    "HOME" : "' . HOME . '",
-                                    "INATIVO" : "' . INATIVO . '",
-                                    "PASTAUPLOADS" : "' . PASTAUPLOADS . '" ,                                       
-                                    "AMBIENTE" : "WEB"                                      
-                                    };
-                                return dados;
-                        }
-                </script>'; ?>
+    <?php include_once PARTIAL_LIBRARY . 'constantes_javascript.php'; ?>
     <?php carregaJs($url); ?>
     <script>
         jQuery(document).ready(function () {

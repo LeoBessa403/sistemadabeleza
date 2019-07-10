@@ -2,9 +2,8 @@ var Calendar = function () {
     //function to initiate Full CAlendar
     var runCalendar = function () {
         //VARIÁVEL GLOBAL
-        var dados = constantes();
-
-        var home = dados['HOME'];
+        var home = $("#home").attr('data-val');
+        Funcoes.Alerta("home: " + home);
         var metodo = $("#metodo").val();
         var urlValida = home + 'library/Controller/Ajax.Controller.php?acao=Ajax&controller=' + metodo;
 

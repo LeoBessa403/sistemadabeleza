@@ -19,8 +19,8 @@ class Agenda extends AbstractController
             $eve = array(
                 'id' => (int)$agenda[CO_AGENDA],
                 'title' => "Profissional: ". $agenda['profissional'] . "\nCliente: ". $agenda['cliente']. "\nServiço: ".$agenda[NO_SERVICO],
-                'start' => Valida::DataShow($agenda[DT_AGENDA] . ' ' . $agenda[NU_HORA_INICIO_AGENDA] ,'Y-m-d H:i'),
-                'end' => Valida::DataShow($agenda[DT_AGENDA] . ' ' . $agenda[NU_HORA_FIM_AGENDA] ,'Y-m-d H:i'),
+                'start' => Valida::DataShow( $agenda[DT_INICIO_AGENDA] ,'Y-m-d H:i'),
+                'end' => Valida::DataShow($agenda[DT_FIM_AGENDA] ,'Y-m-d H:i'),
                 'className' => 'label-'. StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
                 'allDay' => false
             );
