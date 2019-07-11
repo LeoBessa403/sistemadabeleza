@@ -15,12 +15,13 @@ var Calendar = function () {
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,agendaWeek,agendaDay'
+                right: 'agendaWeek,agendaDay'
             },
             events: urlValida,
             editable: true,
             selectable: true,
             timeFormat: 'H:mm',
+            eventLimit: true,
             firstHour: 8, // CALENDAR COMEÇO DAS HORAS
             slotMinutes: 10, // CALENDAR SLOT MINUTOS
             minTime: 6, // HORA DE INICIO DO ATENDIMENTO
@@ -67,24 +68,7 @@ var Calendar = function () {
                     //         window.location.href = home + retorno;
                     //     });
                 } else {
-
                     var time = calEvent.start;
-                    var dia = time.getDate();
-                    var mes = (time.getMonth() + 1);
-                    var hora_inicio = '20-00';
-                    var dt_inicio;
-                    if (dia < 10) {
-                        dia = '0' + dia;
-                    }
-                    if (mes < 10) {
-                        mes = '0' + mes;
-                    }
-                    dt_inicio = dia + '-' + mes + '-' + time.getFullYear();
-
-                    // $.get(urlValida, {valida: 'cadastro_agenda', dt_inicio: dt_inicio, hr_inicio: hora_inicio},
-                    //     function (retorno) {
-                    //         window.location.href = home + retorno;
-                    //     });
                 }
             }
         });
@@ -96,7 +80,9 @@ var Calendar = function () {
 
 
             $('#co_servico').change(function () {
-                var dados = Funcoes.Ajax('Servico/GetServicoAjax', $(this).val());
+                var coServico = $(this).val();
+                limpaCombosProfAssi();
+                var dados = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
                 $("#nu_duracao").val(dados.nu_duracao);
                 var nu_hora_inicio_agenda = $("#nu_hora_inicio_agenda").val().split(':').map(Number);
                 nu_hora_inicio_agenda = (parseInt(nu_hora_inicio_agenda[0] * 60 + nu_hora_inicio_agenda[1])) + parseInt(dados.nu_duracao);
@@ -110,24 +96,67 @@ var Calendar = function () {
                 }
                 $("#nu_hora_fim_agenda").val(horas + ':' + minutos);
                 $("#nu_valor").val(dados.nu_valor);
+                $("#nu_valor2").val(dados.nu_valor);
+
+                carregaCombos(coServico);
 
             });
+
+
 
             $("#CadastroAgendamento").submit(function () {
                 var data = $(this).serializeArray();
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
-                $('.close ').click();
-                Calendar.render();
-                if (dados.sucesso && dados.msg == "cadastrado") {
-                    Funcoes.Sucesso('ok');
-                } else if (dados.sucesso && dados.msg == "atualizado") {
-                    Funcoes.Informativo('ok');
-                } else {
-                    Funcoes.Alerta("Erro: " + dados.msg);
+                if (dados) {
+                    $('.close ').click();
+                    if (dados.sucesso && dados.msg == "cadastrado") {
+                        Funcoes.Sucesso('ok');
+                    } else if (dados.sucesso && dados.msg == "atualizado") {
+                        Funcoes.Informativo('ok');
+                    } else {
+                        Funcoes.Alerta("Erro: " + dados.msg);
+                    }
+                    Calendar.render();
                 }
                 return false;
             });
+
+            function carregaCombos(coServico) {
+                var comboProf = $("#co_profissional");
+                var comboAss = $("#co_assistente");
+
+                var data = {
+                    id: null,
+                    text: 'Selecione um Profissional'
+                };
+
+                var newOptionProf = new Option(data.text, data.id, false, false);
+                var newOptionAss = new Option(data.text, data.id, false, false);
+                comboProf.append(newOptionProf).trigger('change');
+                comboAss.append(newOptionAss).trigger('change');
+
+                var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
+                // var optionsAss = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
+
+                $.each( optionsProf , function( key, value ) {
+                    comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
+                });
+
+                comboProf.select2();
+                comboAss.select2();
+            }
+            
+            function limpaCombosProfAssi() {
+                var comboProf = $("#co_profissional");
+                var comboAss = $("#co_assistente");
+
+                comboProf.select2("destroy");
+                comboAss.select2("destroy");
+                comboProf.empty();
+                comboAss.empty();
+            }
+
         }
     };
 }();

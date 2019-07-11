@@ -247,4 +247,28 @@ class  ProfissionalService extends AbstractService
         return $retorno;
     }
 
+    /**
+     * @param $coServico
+     * @return array
+     */
+    public function GetProfissionaisServicoAjax($coServico)
+    {
+        /** @var ServicoProfissionalService $servicoProfissionalService */
+        $servicoProfissionalService = new ServicoProfissionalService();
+        $comboProfissionaisServico = [];
+
+        $profissionaisServico = $servicoProfissionalService->PesquisaTodos([
+            CO_SERVICO => $coServico,
+            ST_STATUS => SimNaoEnum::SIM
+        ]);
+        $i = 0;
+        /** @var ServicoProfissionalEntidade $profissionalServico */
+        foreach ($profissionaisServico as $profissionalServico) {
+            $comboProfissionaisServico[$i][CO_PROFISSIONAL] = $profissionalServico->getCoProfissional()->getCoProfissional();
+            $comboProfissionaisServico[$i][NO_PESSOA] = $profissionalServico->getCoProfissional()->getCoPessoa()->getNoPessoa();
+            $i++;
+        }
+        return $comboProfissionaisServico;
+    }
+
 }

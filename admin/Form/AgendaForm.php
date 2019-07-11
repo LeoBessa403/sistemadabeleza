@@ -15,6 +15,12 @@ class AgendaForm
         $formulario->setValor($res);
 
         $options = StatusAgendamentoEnum::$descricao;
+        $opcoes = [];
+        foreach ($options as $chave => $valor){
+            $opcoes[$chave] = "<span class='label-" . StatusAgendamentoEnum::$cores[
+                StatusAgendamentoEnum::getValorDescricao($valor)
+                ] . "'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> " . $valor;
+        }
         unset($options[StatusAgendamentoEnum::DELETADO]);
         $formulario
             ->setId(ST_STATUS)
@@ -46,11 +52,19 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_VALOR)
-            ->setClasses("moeda ob")
+            ->setId(NU_VALOR."2")
+            ->setClasses("disabilita")
             ->setLabel("Preço R$")
             ->setTamanhoInput(4)
             ->CriaInpunt();
+
+        $formulario
+            ->setType(TiposCampoEnum::HIDDEN)
+            ->setId(NU_VALOR)
+            ->setValues('0')
+            ->CriaInpunt();
+
+
 
 //        $options = StatusAtendimentoEnum::$descricao;
 //        $formulario
@@ -62,7 +76,7 @@ class AgendaForm
 //            ->setOptions($options)
 //            ->CriaInpunt();
 
-        $options = ProfissionalService::profissionaisAtivosCombo();
+        $options = ['' => 'Selecione um Serviço.'];
         $formulario
             ->setId(CO_PROFISSIONAL)
             ->setType(TiposCampoEnum::SELECT)
@@ -72,7 +86,7 @@ class AgendaForm
             ->setOptions($options)
             ->CriaInpunt();
 
-        $options = ProfissionalService::PesquisaProfissionaisCombo();
+        $options = ['' => 'Selecione um Serviço.'];
         $formulario
             ->setId('co_assistente')
             ->setType(TiposCampoEnum::SELECT)

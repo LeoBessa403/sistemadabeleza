@@ -1,11 +1,11 @@
-<?php
+<?php 
 
 /**
  * Config.Padrao [ HELPER ]
  * Constantes padrão gerados do sistema
  *
  * @copyright (c) 2019, Leo Bessa
- */
+ */ 
 define('MODULO_ASSINANTE', '1');
 define('LOGAR_EMAIL', '1');
 define('TABELA_AUDITORIA', '1');
@@ -22,7 +22,7 @@ define('CAMPO_PASS', 'ds_code');
 define('CAMPO_ID', 'co_usuario');
 define('CAMPO_PERFIL', 'ds_perfil');
 define('SESSION_USER', 'user_sistema_beleza');
-define('INATIVO', '30');
+define('INATIVO', '2');
 define('BACKUP', '5');
 define('TAMANHO', '800');
 define('WHATSAPP', '5561993704240');
@@ -34,3 +34,4 @@ define('HOST_EMAIL', '');
 define('PORTA_EMAIL', '');
 define('ID_ANALITCS', '');
 define('TEM_SITE', '');
+

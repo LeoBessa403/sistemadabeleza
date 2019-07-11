@@ -387,4 +387,11 @@ class Profissional extends AbstractController
         }
     }
 
+    public static function GetProfissionaisServicoAjax($coServico)
+    {
+        /** @var ProfissionalService $profissionalService */
+        $profissionalService = static::getService(PROFISSIONAL_SERVICE);
+        return $profissionalService->GetProfissionaisServicoAjax($coServico);
+    }
+
 }
