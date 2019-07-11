@@ -118,6 +118,8 @@ var Calendar = function () {
                         Funcoes.Alerta("Erro: " + dados.msg);
                     }
                     Calendar.render();
+                }else{
+                    Funcoes.Erro("Erro: " + dados.msg);
                 }
                 return false;
             });
