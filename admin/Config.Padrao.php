@@ -22,7 +22,7 @@ define('CAMPO_PASS', 'ds_code');
 define('CAMPO_ID', 'co_usuario');
 define('CAMPO_PERFIL', 'ds_perfil');
 define('SESSION_USER', 'user_sistema_beleza');
-define('INATIVO', '2');
+define('INATIVO', '30');
 define('BACKUP', '5');
 define('TAMANHO', '800');
 define('WHATSAPP', '5561993704240');

@@ -143,8 +143,12 @@ var Calendar = function () {
                     comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
                 });
 
-                comboProf.select2();
-                comboAss.select2();
+                comboProf.select2({
+                    allowClear: false
+                });
+                comboAss.select2({
+                    allowClear: false
+                });
             }
             
             function limpaCombosProfAssi() {
