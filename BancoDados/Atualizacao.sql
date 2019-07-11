@@ -102,3 +102,13 @@ UPDATE TB_HISTORIA SET ds_titulo = "Valida Profissonal e assistente por serviço
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("8", "8"_restante, "2019-07-11 17:15:45", "197");
 
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2019-07-11 19:17:26", "11");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_cliente) VALUES ("8", "2019-07-11 19:17:27", "1", "2019-07-11 09:40:00", "2019-07-11 09:50:00", "39.99", "10", "grgr", "8", "2");
+
+INSERT INTO TB_STATUS_AGENDA_SERVICO (co_status_agenda, co_servico, st_status) VALUES ("8", "30", "1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL (co_status_agenda_servico, co_status_agenda, co_profissional, tp_profissional) VALUES ("8", "8", "9", "1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL (co_status_agenda_servico, co_status_agenda, co_profissional, tp_profissional) VALUES ("8", "8", "19", "2");
+
