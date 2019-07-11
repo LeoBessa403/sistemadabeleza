@@ -21,19 +21,25 @@ class  AgendaModel extends AbstractModel
                         ON stag.co_status_agenda = stser.co_status_agenda
                       INNER JOIN tb_status_agenda_profissional stpro
                         ON stser.co_status_agenda_servico = stpro.co_status_agenda_servico
+                      INNER JOIN tb_status_agenda_profissional stpro2
+                        ON stser.co_status_agenda_servico = stpro2.co_status_agenda_servico
                       INNER JOIN tb_cliente cli
                         ON stag.co_cliente = cli.co_cliente
                       INNER JOIN tb_pessoa pes
                         ON pes.co_pessoa = cli.co_pessoa
                       INNER JOIN tb_profissional pro
-                        ON stpro.co_profissional = pro.co_profissional
+                        ON stpro2.co_profissional = pro.co_profissional
+                      INNER JOIN tb_profissional pro2
+                        ON stpro.co_profissional = pro2.co_profissional
                       INNER JOIN tb_pessoa pes2
                         ON pes2.co_pessoa = pro.co_pessoa
+                      INNER JOIN tb_pessoa pes3
+                        ON pes3.co_pessoa = pro2.co_pessoa
                       INNER JOIN tb_servico ser
                         ON ser.co_servico = stser.co_servico";
 
         $campos = "age.co_agenda, dt_inicio_agenda, dt_fim_agenda, pes.no_pessoa as cliente, 
-        pes2.no_pessoa as profissional, no_servico, stag.st_status";
+        pes2.no_pessoa as profissional, pes3.no_pessoa AS assistente, no_servico, stag.st_status";
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);
         $pesquisa->Pesquisar($tabela, $where, null, $campos);

@@ -50,7 +50,7 @@ var Calendar = function () {
                 if (hora > 0) {
                     hora_inicio = hora + ':' + minuto;
                 }
-                if(!hora_inicio){
+                if (!hora_inicio) {
                     hora_inicio = '08:00';
                 }
                 dt_agenda = dia + '/' + mes + '/' + start.getFullYear();
@@ -99,9 +99,9 @@ var Calendar = function () {
                 var dados = Funcoes.Ajax('Servico/GetServicoAjax', $(this).val());
                 $("#nu_duracao").val(dados.nu_duracao);
                 var nu_hora_inicio_agenda = $("#nu_hora_inicio_agenda").val().split(':').map(Number);
-                nu_hora_inicio_agenda = (parseInt(nu_hora_inicio_agenda[0]*60+nu_hora_inicio_agenda[1])) + parseInt(dados.nu_duracao);
-                var horas = Math.floor((nu_hora_inicio_agenda)/60);
-                var minutos = nu_hora_inicio_agenda%60;
+                nu_hora_inicio_agenda = (parseInt(nu_hora_inicio_agenda[0] * 60 + nu_hora_inicio_agenda[1])) + parseInt(dados.nu_duracao);
+                var horas = Math.floor((nu_hora_inicio_agenda) / 60);
+                var minutos = nu_hora_inicio_agenda % 60;
                 if (horas < 10) {
                     horas = '0' + horas;
                 }
@@ -117,6 +117,14 @@ var Calendar = function () {
                 var data = $(this).serializeArray();
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
+                $('.close ').click();
+                if (dados.sucesso && dados.msg == "cadastrado") {
+                    Funcoes.Sucesso('ok');
+                } else if (dados.sucesso && dados.msg == "atualizado") {
+                    Funcoes.Informativo('ok');
+                } else {
+                    Funcoes.Alerta("Erro: " + dados.msg);
+                }
                 return false;
             });
         }
