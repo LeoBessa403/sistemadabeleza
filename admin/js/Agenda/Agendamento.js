@@ -110,9 +110,9 @@ var Calendar = function () {
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
                 if (dados) {
                     $('.close ').click();
-                    if (dados.sucesso && dados.msg == "cadastrado") {
+                    if (dados.sucesso && dados.msg === "cadastrado") {
                         Funcoes.Sucesso('ok');
-                    } else if (dados.sucesso && dados.msg == "atualizado") {
+                    } else if (dados.sucesso && dados.msg === "atualizado") {
                         Funcoes.Informativo('ok');
                     } else {
                         Funcoes.Alerta("Erro: " + dados.msg);
