@@ -11,8 +11,6 @@ class Agenda extends AbstractController
         /** @var AgendaService $agendaService */
         $agendaService = $this->getService(AGENDA_SERVICE);
         $Condicoes['age.'.CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-        $Condicoes['stpro.'.TP_PROFISSIONAL] = 1;
-        $Condicoes['stpro2.'.TP_PROFISSIONAL] = 2;
 
         $agendas =  $agendaService->PesquisaAgendamentos($Condicoes);
 
@@ -131,6 +129,19 @@ class Agenda extends AbstractController
 
 
         $this->form = ClienteForm::Cadastrar($res);
+    }
+
+    public static function GetAgendaAjax($coAgenda)
+    {
+        /** @var AgendaService $agendaService */
+        $agendaService = static::getService(AGENDA_SERVICE);
+        $Condicoes['age.'.CO_AGENDA] = $coAgenda;
+        $dados = $agendaService->getAgendaAjax($Condicoes);
+        $dados[NU_VALOR] = Valida::FormataMoeda($dados[NU_VALOR]);
+        $dados['dia'] = Valida::DataShow($dados[DT_INICIO_AGENDA], "d/m/Y");
+        $dados['inicio'] = Valida::DataShow($dados[DT_INICIO_AGENDA], "H:i");
+        $dados['fim'] = Valida::DataShow($dados[DT_FIM_AGENDA], "H:i");
+        return $dados;
     }
 
 }

@@ -62,14 +62,17 @@ var Calendar = function () {
 
             },
             eventClick: function (calEvent) {
-                if (calEvent.id) {
-                    // $.get(urlValida, {valida: 'pesquisa_agenda', co_agenda: calEvent.id},
-                    //     function (retorno) {
-                    //         window.location.href = home + retorno;
-                    //     });
-                } else {
-                    var time = calEvent.start;
-                }
+                var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', calEvent.id);
+                $('.st_status b').text(dados.st_status);
+                $('.cliente b').text(dados.cliente);
+                $('.assistente b').text(dados.assistente);
+                $('.nu_duracao b').text(dados.nu_duracao);
+                $('.profissional b').text(dados.profissional);
+                $('.servico b').text(dados.no_servico);
+                $('.nu_valor b').text(dados.nu_valor);
+                $('.dia b').text(dados.dia);
+                $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
+                $("#j_listar").click();
             }
         });
     };
@@ -97,28 +100,33 @@ var Calendar = function () {
                 $("#nu_hora_fim_agenda").val(horas + ':' + minutos);
                 $("#nu_valor").val(dados.nu_valor);
                 $("#nu_valor2").val(dados.nu_valor);
-
+                Funcoes.TiraValidacao('nu_duracao');
+                Funcoes.TiraValidacao('nu_hora_fim_agenda');
                 carregaCombos(coServico);
 
             });
-
-
 
             $("#CadastroAgendamento").submit(function () {
                 var data = $(this).serializeArray();
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
                 if (dados) {
-                    $('.close ').click();
                     if (dados.sucesso && dados.msg === "cadastrado") {
-                        Funcoes.Sucesso('ok');
+                        Funcoes.CadastradoSucesso()
                     } else if (dados.sucesso && dados.msg === "atualizado") {
-                        Funcoes.Informativo('ok');
+                        Funcoes.AtualizadoSucesso();
+                    } else if (dados.sucesso && dados.msg === "deletado") {
+                        Funcoes.DeletadoSucesso();
                     } else {
-                        Funcoes.Alerta("Erro: " + dados.msg);
+                        Funcoes.Alerta(dados.msg);
                     }
-                    Calendar.render();
-                }else{
+                    if (dados.sucesso) {
+                        $(".close").click();
+                        setTimeout(function () {
+                            location.reload();
+                        }, 3000);
+                    }
+                } else {
                     Funcoes.Erro("Erro: " + dados.msg);
                 }
                 return false;
@@ -142,21 +150,15 @@ var Calendar = function () {
                 var optionsAss = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
                 // var optionsAss = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
 
-                $.each( optionsProf , function( key, value ) {
+                $.each(optionsProf, function (key, value) {
                     comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
                 });
-                $.each( optionsAss , function( key, value ) {
+                $.each(optionsAss, function (key, value) {
                     comboAss.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
                 });
-
-                comboProf.select2({
-                    allowClear: false
-                });
-                comboAss.select2({
-                    allowClear: false
-                });
+                iniciaCombosProfAssi();
             }
-            
+
             function limpaCombosProfAssi() {
                 var comboProf = $("#co_profissional");
                 var comboAss = $("#co_assistente");
@@ -165,6 +167,31 @@ var Calendar = function () {
                 comboAss.select2("destroy");
                 comboProf.empty();
                 comboAss.empty();
+            }
+
+            function limpaCombosClienteServico() {
+                var co_cliente = $("#co_cliente");
+                var co_servico = $("#co_servico");
+
+                co_cliente.select2("destroy");
+                co_servico.select2("destroy");
+                co_cliente.empty();
+                co_servico.empty();
+                co_cliente.select2({
+                    allowClear: false
+                });
+                co_servico.select2({
+                    allowClear: false
+                });
+            }
+
+            function iniciaCombosProfAssi() {
+                $("#co_profissional").select2({
+                    allowClear: false
+                });
+                $("#co_assistente").select2({
+                    allowClear: false
+                });
             }
 
         }

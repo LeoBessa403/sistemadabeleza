@@ -16,10 +16,8 @@ class AgendaForm
 
         $options = StatusAgendamentoEnum::$descricao;
         $opcoes = [];
-        foreach ($options as $chave => $valor){
-            $opcoes[$chave] = "<span class='label-" . StatusAgendamentoEnum::$cores[
-                StatusAgendamentoEnum::getValorDescricao($valor)
-                ] . "'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> " . $valor;
+        foreach ($options as $chave => $valor) {
+            $opcoes[$chave] = "<span class='label-" . StatusAgendamentoEnum::$cores[StatusAgendamentoEnum::getValorDescricao($valor)] . "'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> " . $valor;
         }
         unset($options[StatusAgendamentoEnum::DELETADO]);
         $formulario
@@ -45,14 +43,14 @@ class AgendaForm
         $formulario
             ->setId(CO_SERVICO)
             ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Serviços")
+            ->setLabel("Serviço")
             ->setTamanhoInput(12)
             ->setClasses("ob")
             ->setOptions($options)
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_VALOR."2")
+            ->setId(NU_VALOR . "2")
             ->setClasses("disabilita")
             ->setLabel("Preço R$")
             ->setTamanhoInput(4)
@@ -61,9 +59,8 @@ class AgendaForm
         $formulario
             ->setType(TiposCampoEnum::HIDDEN)
             ->setId(NU_VALOR)
-            ->setValues('0')
+            ->setValues(null)
             ->CriaInpunt();
-
 
 
 //        $options = StatusAtendimentoEnum::$descricao;
@@ -138,13 +135,11 @@ class AgendaForm
             ->CriaInpunt();
 
 
-        if (!empty($res[CO_AGENDA])):
-            $formulario
-                ->setType(TiposCampoEnum::HIDDEN)
-                ->setId(CO_AGENDA)
-                ->setValues($res[CO_AGENDA])
-                ->CriaInpunt();
-        endif;
+        $formulario
+            ->setType(TiposCampoEnum::HIDDEN)
+            ->setId(CO_AGENDA)
+            ->setValues(null)
+            ->CriaInpunt();
 
         return $formulario->finalizaForm(false, false);
     }

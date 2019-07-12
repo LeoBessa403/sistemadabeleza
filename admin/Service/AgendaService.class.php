@@ -108,15 +108,17 @@ class  AgendaService extends AbstractService
             $retorno[SUCESSO] = true;
             $PDO->commit();
         } else {
-            Notificacoes::geraMensagem(
-                $validador[MSG],
-                TiposMensagemEnum::ALERTA
-            );
+            $retorno[MSG] = $validador[MSG];
             $retorno[SUCESSO] = false;
             $PDO->rollBack();
         }
 
         return $retorno;
+    }
+
+    public function getAgendaAjax($Condicoes)
+    {
+        return $this->ObjetoModel->getAgendaAjax($Condicoes);
     }
 
 }
