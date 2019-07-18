@@ -63,7 +63,7 @@ var Calendar = function () {
             },
             eventClick: function (calEvent) {
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', calEvent.id);
-                $('.st_status b').text(dados.st_status);
+                $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
                 $('.cliente b').text(dados.cliente);
                 $('.assistente b').text(dados.assistente);
                 $('.nu_duracao b').text(dados.nu_duracao);
@@ -71,6 +71,7 @@ var Calendar = function () {
                 $('.servico b').text(dados.no_servico);
                 $('.nu_valor b').text(dados.nu_valor);
                 $('.dia b').text(dados.dia);
+                $('#co_agenda').val(calEvent.id);
                 $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
                 $("#j_listar").click();
             }
@@ -106,6 +107,11 @@ var Calendar = function () {
 
             });
 
+            $(".btn-cancela").click(function () {
+                Funcoes.TiraValidacao('ds_motivo');
+                $("#j_cancelar").click();
+            });
+
             $("#CadastroAgendamento").submit(function () {
                 var data = $(this).serializeArray();
                 var metodo = $(this).attr('action').split('/');
@@ -115,7 +121,30 @@ var Calendar = function () {
                         Funcoes.CadastradoSucesso()
                     } else if (dados.sucesso && dados.msg === "atualizado") {
                         Funcoes.AtualizadoSucesso();
-                    } else if (dados.sucesso && dados.msg === "deletado") {
+                    } else {
+                        Funcoes.Alerta(dados.msg);
+                    }
+                    if (dados.sucesso) {
+                        $(".close").click();
+                        setTimeout(function () {
+                            location.reload();
+                        }, 3000);
+                    }
+                } else {
+                    Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
+
+            $("#CancelaAgendamento").submit(function () {
+                var data = {
+                    ds_motivo: $('#ds_motivo').val(),
+                    co_agenda: $('#co_agenda').val()
+                };
+                var metodo = $(this).attr('action').split('/');
+                var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
+                if (dados) {
+                    if (dados.sucesso && dados.msg === "deletado") {
                         Funcoes.DeletadoSucesso();
                     } else {
                         Funcoes.Alerta(dados.msg);
@@ -196,5 +225,6 @@ var Calendar = function () {
 
         }
     };
-}();
+};
+();
 Calendar.init();

@@ -13,6 +13,7 @@ class AgendaEntidade extends AbstractEntidade
 
 	private $co_agenda;
 	private $dt_cadastro;
+	private $ds_motivo;
 	private $co_assinante;
 	private $co_status_agenda;
 
@@ -25,6 +26,7 @@ class AgendaEntidade extends AbstractEntidade
     	return [
 			CO_AGENDA,
 			DT_CADASTRO,
+            DS_MOTIVO,
 			CO_ASSINANTE,
 		];
     }
@@ -54,6 +56,22 @@ class AgendaEntidade extends AbstractEntidade
 	public function setCoAgenda($co_agenda)
     {
         return $this->co_agenda = $co_agenda;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDsMotivo()
+    {
+        return $this->ds_motivo;
+    }
+
+    /**
+     * @param mixed $ds_motivo
+     */
+    public function setDsMotivo($ds_motivo)
+    {
+        $this->ds_motivo = $ds_motivo;
     }
 
 	/**

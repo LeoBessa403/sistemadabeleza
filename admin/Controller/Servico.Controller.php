@@ -324,14 +324,14 @@ class Servico extends AbstractController
     public static function DesativarServico($coServico)
     {
         /** @var ServicoService $servicoService */
-        $servicoService = static::getService(SERVICO_SERVICE);
+        $servicoService = static::getServiceStatic(SERVICO_SERVICE);
         return $servicoService->desativarServico($coServico);
     }
 
     public static function AtivarServico($coServico)
     {
         /** @var ServicoService $servicoService */
-        $servicoService = static::getService(SERVICO_SERVICE);
+        $servicoService = static::getServiceStatic(SERVICO_SERVICE);
         return $servicoService->ativarServico($coServico);
     }
 
@@ -488,7 +488,7 @@ class Servico extends AbstractController
     public static function GetPrecoServico($coServico)
     {
         /** @var ServicoService $servicoService */
-        $servicoService = static::getService(SERVICO_SERVICE);
+        $servicoService = static::getServiceStatic(SERVICO_SERVICE);
         return $servicoService->getPrecoServico($coServico);
     }
 
@@ -588,7 +588,7 @@ class Servico extends AbstractController
     public static function GetServicoAjax($coServico)
     {
         /** @var ServicoService $servicoService */
-        $servicoService = static::getService(SERVICO_SERVICE);
+        $servicoService = static::getServiceStatic(SERVICO_SERVICE);
         return $servicoService->getServicoAjax($coServico);
     }
 

@@ -7,15 +7,15 @@
         </button>
         <h4 class="modal-title">Visualisar Agendamento</h4>
     </div>
-    <div class="modal-body" style="padding: 20px;">
+    <div class="modal-body">
         <?php
-        //        foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
-        //            if ($chave != StatusAgendamentoEnum::DELETADO) {
-        //                echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
-        //                echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
-        //            }
-        //        }
-        //        ?>
+        foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
+            echo '<div style="display: none;" id="Status-Agendamento-' . $chave . '">';
+            echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+            echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc;
+            echo '</div>';
+        }
+        ?>
         <div class="row col-sm-12" id="listar-agendamento">
             <div id="form-group-st_status" class="form-group col-sm-12">
                 <label for="st_status" class="col-sm-3 align-right">
@@ -90,6 +90,13 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="modal-footer pull-left" style="width: 100%;">
+        <input id="co_agenda" name="co_agenda" value="" type="hidden">
+        <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar</button>
+        <button data-dismiss="modal" class="btn btn-warning btn-editar">Editar</button>
+        <button data-dismiss="modal" class="btn btn-bricky btn-cancela">Cancelar</button>
+        <button data-dismiss="modal" class="btn btn-success btn-historico">Histórico</button>
     </div>
 </div>
 <a data-toggle="modal" role="button" href="#listarAgendamento" id="j_listar"></a>

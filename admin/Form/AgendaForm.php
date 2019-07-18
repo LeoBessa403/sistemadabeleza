@@ -144,6 +144,24 @@ class AgendaForm
         return $formulario->finalizaForm(false, false);
     }
 
+    public static function CancelaAgendamento()
+    {
+        $id = "CancelaAgendamento";
+
+        $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . $id,
+            "Cancelar", 12);
+
+        $formulario
+            ->setType(TiposCampoEnum::TEXTAREA)
+            ->setId(DS_MOTIVO)
+            ->setClasses('ob')
+            ->setTamanhoInput(12)
+            ->setLabel("Motivo do Cancelamento:")
+            ->CriaInpunt();
+
+        return $formulario->finalizaForm(false, false);
+    }
+
     public static function Pesquisar()
     {
         $id = "pesquisaCliente";
