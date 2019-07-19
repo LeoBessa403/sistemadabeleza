@@ -20,8 +20,12 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
         <?= $historico->getNuDuracao(); ?> Minutos</b></br>
     Observação: <b>
         <?= Valida::Resumi($historico->getDsObservacao(), 50); ?></b></br>
-
-
+    Cadastrado em: <b><?=
+        Valida::DataShow(
+            $historico->getDtCadastro(), 'd/m/Y H:i'
+        )
+        ?></b></br>
+    Cadastrado por: <b><?= Valida::Resumi($usuario->getCoPessoa()->getNoPessoa(), 30); ?></b></br>
     <table class="table-striped table-bordered table-hover table-full-width table-nodatable" id="nova"
            style="width: 100%" cellspacing="0" cellpadding="0">
         <thead>
@@ -62,19 +66,4 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
         </tr>
         </tbody>
     </table>
-    <!--    Profissional: <b>-->
-    <!--        --><?php
-    //        /** @var StatusAgendaServicoEntidade $statusServico */
-    //        foreach ($historico->getCoStatusAgendaServico() as $statusServico) {
-    //            /** @var ServicoEntidade $servico */
-    //            $servico = $servicoService->PesquisaUmRegistro($statusServico->getCoServico());
-    //            echo $servico->getNoServico() . ', ';
-    //        } ?>
-    <!--    </b></br>-->
-    Cadastrado em: <b><?=
-        Valida::DataShow(
-            $historico->getDtCadastro(), 'd/m/Y H:i'
-        )
-        ?></b></br>
-    Cadastrado por: <b><?= Valida::Resumi($usuario->getCoPessoa()->getNoPessoa(), 30); ?></b></br>
 </div>
