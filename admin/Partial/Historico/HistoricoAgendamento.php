@@ -40,17 +40,23 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
                 $servico = $servicoService->PesquisaUmRegistro($statusServico->getCoServico()); ?>
                 <td><?= $servico->getNoServico(); ?></td>
                 <?php
-                    debug($statusServico);
-                /** @var StatusAgendaProfissionalEntidade $statusProf */
-                foreach ($statusServico->getCoStatusAgendaProfissional() as $statusProf) {
-                    if ($statusProf->getTpProfissional() == 1) {
-                        ?>
-                        <td><?= $statusProf->getCoProfissional()->getCoProfissional(); ?></td>
-                    <?php }
-                    if ($statusProf->getTpProfissional() == 2) {
-                        ?>
-                        <td><?= $statusProf->getCoProfissional()->getCoProfissional(); ?></td>
-                    <?php }
+                /** @var StatusAgendaServicoEntidade $statusServico2 */
+                foreach ($servico->getCoStatusAgendaServico() as $statusServico2) {
+                    if ($statusServico2->getCoStatusAgendaServico() == $statusServico->getCoStatusAgendaServico()) {
+                        $statusProf = $statusServico2->getCoStatusAgendaProfissional();
+                        /** @var StatusAgendaProfissionalEntidade $stProf */
+                        foreach ($statusProf as $stProf) {
+                            if ($stProf->getTpProfissional() == 1) {
+                                ?>
+                                <td><?= $stProf->getCoProfissional(); ?></td>
+                            <?php }
+                            if ($stProf->getTpProfissional() == 2) {
+                                ?>
+                                <td><?= $stProf->getCoProfissional(); ?></td>
+                            <?php }
+                        }
+
+                    }
                 }
             } ?>
         </tr>
