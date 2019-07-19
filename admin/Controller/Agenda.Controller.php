@@ -17,16 +17,18 @@ class Agenda extends AbstractController
 
         $eventos = [];
         foreach ($agendas as $agenda) {
-            $eve = array(
-                'id' => (int)$agenda[CO_AGENDA],
-                'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $agenda['assistente'] .
-                    "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO],
-                'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
-                'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
-                'className' => 'label-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
-                'allDay' => false
-            );
-            $eventos[] = $eve;
+            if($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO){
+                $eve = array(
+                    'id' => (int)$agenda[CO_AGENDA],
+                    'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $agenda['assistente'] .
+                        "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO],
+                    'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
+                    'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
+                    'className' => 'label-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
+                    'allDay' => false
+                );
+                $eventos[] = $eve;
+            }
         }
         return $eventos;
     }
@@ -41,7 +43,7 @@ class Agenda extends AbstractController
         // Inicia elementos do Form
         $res[ST_STATUS] = 'checked';
         $this->form = AgendaForm::CadastroAgendamento($res);
-        $this->formCancela = AgendaForm::CancelaAgendamento();
+        $this->formCancela = AgendaForm::DeletarAgendamento();
     }
 
     public static function GetAgendaAjax($coAgenda)
@@ -49,7 +51,8 @@ class Agenda extends AbstractController
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
         $Condicoes['age.' . CO_AGENDA] = $coAgenda;
-        $dados = $agendaService->getAgendaAjax($Condicoes);
+        $dados = $agendaService->PesquisaAgendamentos($Condicoes, 'stag.nu_valor, stag.nu_duracao, stag.ds_observacao');
+        $dados = $dados[0];
         $dados[NU_VALOR] = Valida::FormataMoeda($dados[NU_VALOR]);
         $dados['dia'] = Valida::DataShow($dados[DT_INICIO_AGENDA], "d/m/Y");
         $dados['inicio'] = Valida::DataShow($dados[DT_INICIO_AGENDA], "H:i");
@@ -57,13 +60,11 @@ class Agenda extends AbstractController
         return $dados;
     }
 
-    public static function CancelaAgendamento($dados)
+    public static function DeletarAgendamento($dados)
     {
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
-        $dados = $agendaService->CancelaAgendamento($dados);
-
-        return $dados;
+        return $agendaService->DeletarAgendamento($dados);
     }
 
 }

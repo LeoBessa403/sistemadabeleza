@@ -3,11 +3,10 @@ var Calendar = function () {
     var runCalendar = function () {
         //VARIÁVEL GLOBAL
         var home = $("#home").attr('data-val');
-        Funcoes.Alerta("home: " + home);
         var metodo = $("#metodo").val();
         var urlValida = home + 'library/Controller/Ajax.Controller.php?acao=Ajax&controller=' + metodo;
 
-        var calendar = $('#calendar').fullCalendar({
+        $('#calendar').fullCalendar({
             buttonText: {
                 prev: '<i class="fa fa-chevron-left"></i>',
                 next: '<i class="fa fa-chevron-right"></i>'
@@ -58,6 +57,23 @@ var Calendar = function () {
 
                 $("#nu_hora_inicio_agenda").val(hora_inicio);
                 $("#dt_agenda").val(dt_agenda);
+                $("#nu_duracao").val(null);
+                $("#nu_hora_fim_agenda").val(null);
+                $("#nu_valor2").val(null);
+                $("#ds_observacao").val(null);
+                $("#st_status").val(1);
+
+                Calendar.LimpaCombosClienteServico();
+                Calendar.LimpaCombosProfAssi();
+                Calendar.IniciaCombosProfAssi();
+                Funcoes.TiraValidacao('co_cliente');
+                Funcoes.TiraValidacao('co_servico');
+                Funcoes.TiraValidacao('nu_duracao');
+                Funcoes.TiraValidacao('nu_hora_fim_agenda');
+                Funcoes.TiraValidacao('co_profissional');
+                Funcoes.TiraValidacao('co_assistente');
+                Funcoes.TiraValidacao('st_status');
+
                 $("#j_cadastro").click();
 
             },
@@ -85,7 +101,7 @@ var Calendar = function () {
 
             $('#co_servico').change(function () {
                 var coServico = $(this).val();
-                limpaCombosProfAssi();
+                Calendar.LimpaCombosProfAssi();
                 var dados = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
                 $("#nu_duracao").val(dados.nu_duracao);
                 var nu_hora_inicio_agenda = $("#nu_hora_inicio_agenda").val().split(':').map(Number);
@@ -103,13 +119,13 @@ var Calendar = function () {
                 $("#nu_valor2").val(dados.nu_valor);
                 Funcoes.TiraValidacao('nu_duracao');
                 Funcoes.TiraValidacao('nu_hora_fim_agenda');
-                carregaCombos(coServico);
+                Calendar.CarregaCombos(coServico);
 
             });
 
-            $(".btn-cancela").click(function () {
+            $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
-                $("#j_cancelar").click();
+                $("#j_deletar").click();
             });
 
             $("#CadastroAgendamento").submit(function () {
@@ -125,10 +141,7 @@ var Calendar = function () {
                         Funcoes.Alerta(dados.msg);
                     }
                     if (dados.sucesso) {
-                        $(".close").click();
-                        setTimeout(function () {
-                            location.reload();
-                        }, 3000);
+                        Calendar.Renderiza();
                     }
                 } else {
                     Funcoes.Erro("Erro: " + dados.msg);
@@ -136,7 +149,7 @@ var Calendar = function () {
                 return false;
             });
 
-            $("#CancelaAgendamento").submit(function () {
+            $("#DeletarAgendamento").submit(function () {
                 var data = {
                     ds_motivo: $('#ds_motivo').val(),
                     co_agenda: $('#co_agenda').val()
@@ -150,81 +163,66 @@ var Calendar = function () {
                         Funcoes.Alerta(dados.msg);
                     }
                     if (dados.sucesso) {
-                        $(".close").click();
-                        setTimeout(function () {
-                            location.reload();
-                        }, 3000);
+                        Calendar.Renderiza();
                     }
                 } else {
                     Funcoes.Erro("Erro: " + dados.msg);
                 }
                 return false;
             });
+        },
+        IniciaCombosProfAssi: function () {
+            $("#co_profissional").select2({
+                allowClear: false
+            });
+            $("#co_assistente").select2({
+                allowClear: false
+            });
+        },
+        LimpaCombosClienteServico: function () {
+            $('#co_servico, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
+        },
+        LimpaCombosProfAssi: function () {
+            var comboProf = $("#co_profissional");
+            var comboAss = $("#co_assistente");
 
-            function carregaCombos(coServico) {
-                var comboProf = $("#co_profissional");
-                var comboAss = $("#co_assistente");
+            comboProf.select2("destroy");
+            comboAss.select2("destroy");
+            comboProf.empty();
+            comboAss.empty();
+        },
+        CarregaCombos: function (coServico) {
+            var comboProf = $("#co_profissional");
+            var comboAss = $("#co_assistente");
 
-                var data = {
-                    id: null,
-                    text: 'Selecione um Profissional'
-                };
+            var data = {
+                id: null,
+                text: 'Selecione um Profissional'
+            };
 
-                var newOptionProf = new Option(data.text, data.id, false, false);
-                var newOptionAss = new Option(data.text, data.id, false, false);
-                comboProf.append(newOptionProf).trigger('change');
-                comboAss.append(newOptionAss).trigger('change');
+            var newOptionProf = new Option(data.text, data.id, false, false);
+            var newOptionAss = new Option(data.text, data.id, false, false);
+            comboProf.append(newOptionProf).trigger('change');
+            comboAss.append(newOptionAss).trigger('change');
 
-                var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
-                var optionsAss = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
-                // var optionsAss = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
+            var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
+            var optionsAss = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
+            // var optionsAss = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
 
-                $.each(optionsProf, function (key, value) {
-                    comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
-                });
-                $.each(optionsAss, function (key, value) {
-                    comboAss.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
-                });
-                iniciaCombosProfAssi();
-            }
-
-            function limpaCombosProfAssi() {
-                var comboProf = $("#co_profissional");
-                var comboAss = $("#co_assistente");
-
-                comboProf.select2("destroy");
-                comboAss.select2("destroy");
-                comboProf.empty();
-                comboAss.empty();
-            }
-
-            function limpaCombosClienteServico() {
-                var co_cliente = $("#co_cliente");
-                var co_servico = $("#co_servico");
-
-                co_cliente.select2("destroy");
-                co_servico.select2("destroy");
-                co_cliente.empty();
-                co_servico.empty();
-                co_cliente.select2({
-                    allowClear: false
-                });
-                co_servico.select2({
-                    allowClear: false
-                });
-            }
-
-            function iniciaCombosProfAssi() {
-                $("#co_profissional").select2({
-                    allowClear: false
-                });
-                $("#co_assistente").select2({
-                    allowClear: false
-                });
-            }
-
+            $.each(optionsProf, function (key, value) {
+                comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
+            });
+            $.each(optionsAss, function (key, value) {
+                comboAss.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
+            });
+            Calendar.IniciaCombosProfAssi();
+        },
+        Renderiza: function () {
+            $(".close").click();
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
         }
     };
-};
-();
+}();
 Calendar.init();

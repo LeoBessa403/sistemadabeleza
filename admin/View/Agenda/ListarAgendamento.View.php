@@ -95,7 +95,7 @@
         <input id="co_agenda" name="co_agenda" value="" type="hidden">
         <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar</button>
         <button data-dismiss="modal" class="btn btn-warning btn-editar">Editar</button>
-        <button data-dismiss="modal" class="btn btn-bricky btn-cancela">Cancelar</button>
+        <button data-dismiss="modal" class="btn btn-bricky btn-deletar">Deletar</button>
         <button data-dismiss="modal" class="btn btn-success btn-historico">Histórico</button>
     </div>
 </div>

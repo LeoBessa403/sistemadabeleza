@@ -16,9 +16,9 @@ class  AgendaService extends AbstractService
         $this->ObjetoModel = New AgendaModel();
     }
 
-    public function PesquisaAgendamentos($Condicoes)
+    public function PesquisaAgendamentos($Condicoes, $maisCampos = null)
     {
-        return $this->ObjetoModel->PesquisaAgendamentos($Condicoes);
+        return $this->ObjetoModel->PesquisaAgendamentos($Condicoes, $maisCampos);
     }
 
     /**
@@ -91,15 +91,19 @@ class  AgendaService extends AbstractService
 
             if (!empty($dados[CO_PROFISSIONAL])) {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
-                $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
-                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+            }else{
+                $statusAgendaProfissional[CO_PROFISSIONAL] = null;
             }
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
             if (!empty($dados['co_assistente'])) {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
-                $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+            }else{
+                $statusAgendaProfissional[CO_PROFISSIONAL] = null;
             }
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
             $retorno = $validador;
         }
@@ -121,10 +125,10 @@ class  AgendaService extends AbstractService
      * @param $dados
      * @return array|AssinanteValidador
      */
-    public function CancelaAgendamento($dados)
+    public function DeletarAgendamento($dados)
     {
-        $dados = Valida::montaArrayAjax($dados);
-        return $dados;
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
         /** @var StatusAgendaService $statusAgendaService */
         $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
         /** @var StatusAgendaServicoService $statusAgendaServicoService */
@@ -142,33 +146,32 @@ class  AgendaService extends AbstractService
 
         $agendaValidador = new AgendaValidador();
         /** @var AgendaValidador $validador */
-        $validador = $agendaValidador->validarAgendamento($dados);
+        $validador = $agendaValidador->validarDeletarAgendamento($dados);
         if ($validador[SUCESSO]) {
+            $retorno[MSG] = DELETADO;
+            $agenda[DS_MOTIVO] = trim($dados[DS_MOTIVO]);
+            $this->Salva($agenda, $dados[CO_AGENDA]);
 
-            if (!empty($dados[CO_AGENDA])) {
-                $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
-                $retorno[MSG] = ATUALIZADO;
-            } else {
-                $agenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-                $agenda[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-                $statusAgenda[CO_AGENDA] = $this->Salva($agenda);
-                $retorno[MSG] = CADASTRADO;
-            }
+            $agenda = $agendaService->PesquisaAgendamentos([
+                'age.' . CO_AGENDA => $dados[CO_AGENDA]
+            ], 'cli.co_cliente, pro.co_profissional, pro2.co_profissional as co_assistente,
+                stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
 
+            $agenda = $agenda[0];
+
+            $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
             $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-            $statusAgenda[ST_STATUS] = $dados[ST_STATUS];
-            $statusAgenda[DT_INICIO_AGENDA] = Valida::DataDB($dados['dt_agenda'] . ' ' .
-                $dados['nu_hora_inicio_agenda'] . ':00');
-            $statusAgenda[DT_FIM_AGENDA] = Valida::DataDB($dados['dt_agenda'] . ' ' .
-                $dados['nu_hora_fim_agenda'] . ':00');
-            $statusAgenda[NU_VALOR] = $dados[NU_VALOR];
-            $statusAgenda[NU_DURACAO] = $dados[NU_DURACAO];
-            $statusAgenda[DS_OBSERVACAO] = $dados[DS_OBSERVACAO];
+            $statusAgenda[ST_STATUS] = StatusAgendamentoEnum::DELETADO;
+            $statusAgenda[DT_INICIO_AGENDA] = $agenda[DT_INICIO_AGENDA];
+            $statusAgenda[DT_FIM_AGENDA] = $agenda[DT_FIM_AGENDA];
+            $statusAgenda[NU_VALOR] = $agenda[NU_VALOR];
+            $statusAgenda[NU_DURACAO] = $agenda[NU_DURACAO];
+            $statusAgenda[DS_OBSERVACAO] = $agenda[DS_OBSERVACAO];
             $statusAgenda[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
-            $statusAgenda[CO_CLIENTE] = $dados[CO_CLIENTE];
+            $statusAgenda[CO_CLIENTE] = $agenda[CO_CLIENTE];
             $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
 
-            $statusAgendaServico[CO_SERVICO] = $dados[CO_SERVICO];
+            $statusAgendaServico[CO_SERVICO] = $agenda[CO_SERVICO];
 
             switch ($statusAgenda[ST_STATUS]) {
                 case StatusAgendamentoEnum::EM_ATENDIMENTO:
@@ -185,17 +188,14 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
             $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
 
-            if (!empty($dados[CO_PROFISSIONAL])) {
-                $statusAgendaProfissional[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
-                $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
-                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-            }
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-            if (!empty($dados['co_assistente'])) {
-                $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
-                $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-            }
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+
         } else {
             $retorno = $validador;
         }
@@ -210,11 +210,6 @@ class  AgendaService extends AbstractService
         }
 
         return $retorno;
-    }
-
-    public function getAgendaAjax($Condicoes)
-    {
-        return $this->ObjetoModel->getAgendaAjax($Condicoes);
     }
 
 }

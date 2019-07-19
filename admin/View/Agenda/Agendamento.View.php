@@ -25,7 +25,7 @@
                 <div class="panel panel-default">
                     <?php include_once 'CadastroAgendamento.View.php' ?>
                     <?php include_once 'ListarAgendamento.View.php' ?>
-                    <?php include_once 'CancelaAgendamento.View.php' ?>
+                    <?php include_once 'DeletarAgendamento.View.php' ?>
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
                         Agendamentos
