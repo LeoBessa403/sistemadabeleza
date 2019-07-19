@@ -61,18 +61,13 @@ var Calendar = function () {
                 $("#nu_hora_fim_agenda").val(null);
                 $("#nu_valor2").val(null);
                 $("#ds_observacao").val(null);
+                $('#co_agenda').val(null);
                 $("#st_status").val(1);
 
                 Calendar.LimpaCombosClienteServico();
                 Calendar.LimpaCombosProfAssi();
                 Calendar.IniciaCombosProfAssi();
-                Funcoes.TiraValidacao('co_cliente');
-                Funcoes.TiraValidacao('co_servico');
-                Funcoes.TiraValidacao('nu_duracao');
-                Funcoes.TiraValidacao('nu_hora_fim_agenda');
-                Funcoes.TiraValidacao('co_profissional');
-                Funcoes.TiraValidacao('co_assistente');
-                Funcoes.TiraValidacao('st_status');
+                Calendar.LimpaValidacao();
 
                 $("#j_cadastro").click();
 
@@ -87,7 +82,7 @@ var Calendar = function () {
                 $('.servico b').text(dados.no_servico);
                 $('.nu_valor b').text(dados.nu_valor);
                 $('.dia b').text(dados.dia);
-                $('#co_agenda').val(calEvent.id);
+                $('#co_agenda_listagem').val(calEvent.id);
                 $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
                 $("#j_listar").click();
             }
@@ -120,12 +115,33 @@ var Calendar = function () {
                 Funcoes.TiraValidacao('nu_duracao');
                 Funcoes.TiraValidacao('nu_hora_fim_agenda');
                 Calendar.CarregaCombos(coServico);
-
             });
 
             $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
                 $("#j_deletar").click();
+            });
+
+            $(".btn-editar").click(function () {
+                var coAgenda = $('#co_agenda_listagem').val();
+                var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
+
+                $('#st_status').select2("destroy").val(dados.st_status).select2({allowClear: false});
+                $('#co_cliente').select2("destroy").val(dados.co_cliente).select2({allowClear: false});
+                $("#nu_valor").val(dados.nu_valor);
+                $("#nu_valor2").val(dados.nu_valor);
+                $("#dt_agenda").val(dados.dia);
+                $("#nu_duracao").val(dados.nu_duracao);
+                $("#nu_hora_inicio_agenda").val(dados.inicio);
+                $("#nu_hora_fim_agenda").val(dados.fim);
+                $("#ds_observacao").val(dados.ds_observacao);
+                Calendar.LimpaValidacao();
+                $("#j_cadastro").click();
+
+                $('#co_servico').select2("destroy").val(dados.co_servico).select2({allowClear: false}).trigger('change');
+                $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: false});
+                $('#co_assistente').select2("destroy").val(dados.co_assistente).select2({allowClear: false});
+                $("#co_agenda").val(coAgenda);
             });
 
             $("#CadastroAgendamento").submit(function () {
@@ -152,7 +168,7 @@ var Calendar = function () {
             $("#DeletarAgendamento").submit(function () {
                 var data = {
                     ds_motivo: $('#ds_motivo').val(),
-                    co_agenda: $('#co_agenda').val()
+                    co_agenda: $('#co_agenda_listagem').val()
                 };
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
@@ -222,6 +238,15 @@ var Calendar = function () {
             setTimeout(function () {
                 location.reload();
             }, 3000);
+        },
+        LimpaValidacao: function () {
+            Funcoes.TiraValidacao('co_cliente');
+            Funcoes.TiraValidacao('co_servico');
+            Funcoes.TiraValidacao('nu_duracao');
+            Funcoes.TiraValidacao('nu_hora_fim_agenda');
+            Funcoes.TiraValidacao('co_profissional');
+            Funcoes.TiraValidacao('co_assistente');
+            Funcoes.TiraValidacao('st_status');
         }
     };
 }();

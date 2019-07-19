@@ -92,7 +92,7 @@
         </div>
     </div>
     <div class="modal-footer pull-left" style="width: 100%;">
-        <input id="co_agenda" name="co_agenda" value="" type="hidden">
+        <input id="co_agenda_listagem" name="co_agenda_listagem" value="" type="hidden">
         <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar</button>
         <button data-dismiss="modal" class="btn btn-warning btn-editar">Editar</button>
         <button data-dismiss="modal" class="btn btn-bricky btn-deletar">Deletar</button>
