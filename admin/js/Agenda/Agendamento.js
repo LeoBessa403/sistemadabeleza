@@ -26,6 +26,7 @@ var Calendar = function () {
             minTime: 6, // HORA DE INICIO DO ATENDIMENTO
             maxTime: 22, // HORA DE TERMINO DO ATENDIMENTO
             selectHelper: true,
+            // ABRE MODAL DE CADASTRO DO AGENDAMENTO
             select: function (start) {
                 var dia = start.getDate();
                 var mes = (start.getMonth() + 1);
@@ -72,6 +73,7 @@ var Calendar = function () {
                 $("#j_cadastro").click();
 
             },
+            // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
             eventClick: function (calEvent) {
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', calEvent.id);
                 $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
@@ -93,7 +95,7 @@ var Calendar = function () {
             runCalendar();
             $('.fc-button-agendaDay').click();
 
-
+            // SELECIONA OS PROFISSIONAIS E ASSISTENTES DO SERVIÇO SELECIONADO
             $('#co_servico').change(function () {
                 var coServico = $(this).val();
                 Calendar.LimpaCombosProfAssi();
@@ -117,11 +119,13 @@ var Calendar = function () {
                 Calendar.CarregaCombos(coServico);
             });
 
+            // ABRE MODAL DE DELEÇÃO DO AGENDAMENTO
             $(".btn-deletar").click(function () {
                 Funcoes.TiraValidacao('ds_motivo');
                 $("#j_deletar").click();
             });
 
+            // ABRE MODAL DE EDIÇÃO DO AGENDAMENTO
             $(".btn-editar").click(function () {
                 var coAgenda = $('#co_agenda_listagem').val();
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
@@ -144,6 +148,7 @@ var Calendar = function () {
                 $("#co_agenda").val(coAgenda);
             });
 
+            // CADASTRO DO AGENDAMENTO
             $("#CadastroAgendamento").submit(function () {
                 var data = $(this).serializeArray();
                 var metodo = $(this).attr('action').split('/');
@@ -165,6 +170,7 @@ var Calendar = function () {
                 return false;
             });
 
+            // DELETA O AGENDAMENTO (muda st_status para deletado)
             $("#DeletarAgendamento").submit(function () {
                 var data = {
                     ds_motivo: $('#ds_motivo').val(),
@@ -223,7 +229,6 @@ var Calendar = function () {
 
             var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
             var optionsAss = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
-            // var optionsAss = Funcoes.Ajax('Servico/GetServicoAjax', coServico);
 
             $.each(optionsProf, function (key, value) {
                 comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
