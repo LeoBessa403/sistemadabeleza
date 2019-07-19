@@ -5,7 +5,7 @@ class Agenda extends AbstractController
     public $result;
     public $form;
     public $formCancela;
-    public $jornada;
+    public $agenda;
 
     public function CarregaAgendamentos()
     {
@@ -17,7 +17,7 @@ class Agenda extends AbstractController
 
         $eventos = [];
         foreach ($agendas as $agenda) {
-            if($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO){
+            if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
                 $eve = array(
                     'id' => (int)$agenda[CO_AGENDA],
                     'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $agenda['assistente'] .
@@ -40,10 +40,9 @@ class Agenda extends AbstractController
         if ($dados):
             return $agendaService->salvaAgendamentoAjax($dados);
         endif;
-        // Inicia elementos do Form
-        $res[ST_STATUS] = 'checked';
-        $this->form = AgendaForm::CadastroAgendamento($res);
+        $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();
+        return null;
     }
 
     public static function GetAgendaAjax($coAgenda)
@@ -66,6 +65,28 @@ class Agenda extends AbstractController
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
         return $agendaService->DeletarAgendamento($dados);
+    }
+
+    public function GetUrlHistoricoAgendamento($coAgenda)
+    {
+        return ADMIN . '/Agenda/HistoricoAgendamento/' . Valida::GeraParametro(CO_AGENDA . "/" . $coAgenda);
+    }
+
+    public function HistoricoAgendamento()
+    {
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
+
+        $coAgenda = UrlAmigavel::PegaParametro(CO_AGENDA);
+        if ($coAgenda) {
+            $this->agenda = $agendaService->PesquisaUmRegistro($coAgenda);
+        } else {
+            Notificacoes::geraMensagem(
+                'Nenhum agendamento Encontrado.',
+                TiposMensagemEnum::ALERTA
+            );
+            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/Agendamento');
+        }
     }
 
 }

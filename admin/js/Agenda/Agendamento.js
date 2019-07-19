@@ -63,7 +63,7 @@ var Calendar = function () {
                 $("#nu_valor2").val(null);
                 $("#ds_observacao").val(null);
                 $('#co_agenda').val(null);
-                $("#st_status").val(1);
+                $('#st_status').select2("destroy").val(1).select2({allowClear: false});
 
                 Calendar.LimpaCombosClienteServico();
                 Calendar.LimpaCombosProfAssi();
@@ -166,6 +166,19 @@ var Calendar = function () {
                     }
                 } else {
                     Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
+
+            // DIRECIONA PARA O HISTÓRICO DO AGENDAMENTO
+            $(".btn-historico").click(function () {
+                var home = $("#home").attr('data-val');
+                var coAgenda = $('#co_agenda_listagem').val();
+                var dados = Funcoes.Ajax('Agenda/GetUrlHistoricoAgendamento', coAgenda);
+                if (dados) {
+                    window.location.href = home + dados;
+                } else {
+                    Funcoes.Erro("Erro: ");
                 }
                 return false;
             });

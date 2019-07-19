@@ -32,3 +32,5 @@ UPDATE TB_HISTORIA SET ds_titulo = "Edição Agendamento", ds_observacao = "<p>E
 
 INSERT INTO TB_HISTORICO_HISTORIA (nu_esforco, nu_esforco_restante, dt_cadastro, co_historia) VALUES ("13", "13"_restante, "2019-07-19 18:01:29", "29");
 
+INSERT INTO TB_PERFIL_FUNCIONALIDADE (co_funcionalidade, co_perfil) VALUES ("81", "2");
+

@@ -6,13 +6,12 @@
  */
 class AgendaForm
 {
-    public static function CadastroAgendamento($res = false)
+    public static function CadastroAgendamento()
     {
         $id = "CadastroAgendamento";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action,
             "Cadastrar", 12);
-        $formulario->setValor($res);
 
         $options = StatusAgendamentoEnum::$descricao;
         $opcoes = [];
