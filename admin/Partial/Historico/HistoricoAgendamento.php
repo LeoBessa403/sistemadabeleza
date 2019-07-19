@@ -5,6 +5,8 @@ $historico = $historico;
 $usuarioService = new UsuarioService();
 /** @var ServicoService $servicoService */
 $servicoService = new ServicoService();
+/** @var ProfissionalService $profissionalService */
+$profissionalService = new ProfissionalService();
 /** @var UsuarioEntidade $usuario */
 $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCoUsuario());
 //debug($historico);
@@ -50,13 +52,15 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
                         $statusProf = $statusServico2->getCoStatusAgendaProfissional();
                         /** @var StatusAgendaProfissionalEntidade $stProf */
                         foreach ($statusProf as $stProf) {
+                            /** @var ProfissionalEntidade $profissional */
+                            $profissional = $profissionalService->PesquisaUmRegistro($stProf->getCoProfissional());
                             if ($stProf->getTpProfissional() == 1) {
                                 ?>
-                                <td><?= $stProf->getCoProfissional(); ?></td>
+                                <td><?=  Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
                             <?php }
                             if ($stProf->getTpProfissional() == 2) {
                                 ?>
-                                <td><?= $stProf->getCoProfissional(); ?></td>
+                                <td><?=  Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
                             <?php }
                         }
 
