@@ -50,8 +50,12 @@
                         }
                         Modal::load();
                         Modal::confirmacao("confirma_Profissional");
-                        Modal::DesativarProfissional("DesativarProfissional");
-                        Modal::AtivarProfissional("AtivarProfissional");
+                        Modal::ModalConfirmaDesativacao("DesativarProfissional",
+                            'Deseja realmente desativar esse Profissional?',
+                            0,'Profissional/DesativarProfissional', true );
+                        Modal::ModalConfirmaAtivacao("AtivarProfissional",
+                            'Deseja realmente ativar esse Profissional?',
+                            0,'Profissional/AtivarProfissional' );
                         $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo', 'Status', 'Assistente', 'Ações');
                         if ($tipoComissao == FormaComissaoEnum::PROFISSIONAL) {
                             $arrColunas = array('Foto', 'Profissional', 'Atendimento', 'Telefone', 'Aniversário', 'Cargo',

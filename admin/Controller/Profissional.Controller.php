@@ -362,29 +362,19 @@ class Profissional extends AbstractController
         }
     }
 
-    public function DesativarProfissional()
+
+    public static function DesativarProfissional($dados)
     {
         /** @var ProfissionalService $profissionalService */
-        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
-        $motivo = explode('/', $_GET['url']);
-        $ds_motivo = $motivo[4];
-        $coProfissional = UrlAmigavel::PegaParametro(CO_PROFISSIONAL);
-        $retorno = $profissionalService->desativarProfissional($coProfissional, $ds_motivo);
-        if ($retorno[SUCESSO]) {
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
-        }
+        $profissionalService = static::getServiceStatic(PROFISSIONAL_SERVICE);
+        return $profissionalService->desativarProfissional($dados['codigo'], $dados[DS_MOTIVO] );
     }
 
-    public function AtivarProfissional()
+    public function AtivarProfissional($dados)
     {
         /** @var ProfissionalService $profissionalService */
-        $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
-
-        $coProfissional = UrlAmigavel::PegaParametro(CO_PROFISSIONAL);
-        $retorno = $profissionalService->ativarProfissional($coProfissional);
-        if ($retorno[SUCESSO]) {
-            Redireciona(UrlAmigavel::$modulo . '/' . UrlAmigavel::$controller . '/ListarProfissional/');
-        }
+        $profissionalService = static::getServiceStatic(PROFISSIONAL_SERVICE);
+        return $profissionalService->ativarProfissional($dados['codigo']);
     }
 
     public static function GetProfissionaisServicoAjax($coServico)

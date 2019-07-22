@@ -1,3 +1,8 @@
+<style>
+    tr:hover{
+        color: black;
+    }
+</style>
 <?php
 /** @var StatusAgendaEntidade $historico */
 $historico = $historico;
@@ -9,7 +14,6 @@ $servicoService = new ServicoService();
 $profissionalService = new ProfissionalService();
 /** @var UsuarioEntidade $usuario */
 $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCoUsuario());
-//debug($historico);
 ?>
 <div class="content">
     Status Agendamento: <b><?= '<span class="label-' . StatusAgendamentoEnum::$cores[$historico->getStStatus()] . '">';
@@ -35,6 +39,7 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
             <th>Serviço</th>
             <th>Profissional</th>
             <th>Assistente</th>
+            <th>Atendimento</th>
         </tr>
         </thead>
         <tbody>
@@ -56,15 +61,15 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
                             $profissional = $profissionalService->PesquisaUmRegistro($stProf->getCoProfissional());
                             if ($stProf->getTpProfissional() == 1) {
                                 ?>
-                                <td><?=  Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
+                                <td><?= Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
                             <?php }
                             if ($stProf->getTpProfissional() == 2) {
                                 ?>
-                                <td><?=  Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
+                                <td><?= Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
                             <?php }
-                        }
-
-                    }
+                        } ?>
+                        <td><?= StatusAtendimentoEnum::$descricao[$statusServico2->getStStatus()]; ?></td>
+                    <?php }
                 }
             } ?>
         </tr>

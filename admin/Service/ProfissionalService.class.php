@@ -222,11 +222,6 @@ class  ProfissionalService extends AbstractService
      */
     private function mudarStatusProfissional($coProfissional, $stStatus, $motivo)
     {
-        $session = new Session();
-        $retorno = [
-            SUCESSO => false,
-            MSG => null
-        ];
         $dados = [
             ST_STATUS => $stStatus,
             DS_MOTIVO => $motivo,
@@ -235,13 +230,14 @@ class  ProfissionalService extends AbstractService
         $coProfissionalEd = $this->Salva($dados, $coProfissional);
 
         if ($coProfissionalEd) {
-            $session->setSession(MENSAGEM, Mensagens::OK_ATUALIZADO);
+            if($motivo){
+                $retorno[MSG] = DELETADO;
+            }else{
+                $retorno[MSG] = ATUALIZADO;
+            }
             $retorno[SUCESSO] = true;
         } else {
-            Notificacoes::geraMensagem(
-                'Não foi possível alterar o Produto',
-                TiposMensagemEnum::ALERTA
-            );
+            $retorno[MSG] = 'Não foi possível alterar o Produto';
             $retorno[SUCESSO] = false;
         }
         return $retorno;
