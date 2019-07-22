@@ -1,4 +1,4 @@
--- Atualizado em: 19/07/2019 19:55:01
+-- Atualizado em: 22/07/2019 16:26:05
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,10 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=413 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=425 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("412","8s4gievg0i7nqgq3e71bettmi7","2019-07-19 19:54:05","2019-07-19 20:25:00","A","1","428");
+INSERT INTO TB_ACESSO VALUES("424","oiiqod356oesq9ipc850b4u5q3","2019-07-22 16:25:22","2019-07-22 16:56:04","A","1","440");
 
 
 
@@ -38,7 +38,7 @@ CREATE TABLE `TB_AGENDA` (
   `co_assinante` int(11) NOT NULL,
   PRIMARY KEY (`co_agenda`,`co_assinante`),
   KEY `fk_TB_AGENDAMENTO_TB_ASSINANTE1_idx` (`co_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AGENDA VALUES("1","g54 54","2019-07-19 15:16:24","11");
@@ -50,6 +50,10 @@ INSERT INTO TB_AGENDA VALUES("3","","2019-07-19 16:01:34","11");
 INSERT INTO TB_AGENDA VALUES("4","","2019-07-19 16:20:10","11");
 
 INSERT INTO TB_AGENDA VALUES("5","","2019-07-19 17:54:41","11");
+
+INSERT INTO TB_AGENDA VALUES("6","","2019-07-22 11:23:39","11");
+
+INSERT INTO TB_AGENDA VALUES("7","","2019-07-22 11:28:52","11");
 
 
 
@@ -170,7 +174,7 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 
 
@@ -187,7 +191,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=638 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=721 DEFAULT CHARSET=utf8;
 
 
 
@@ -204,7 +208,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
 
 
 
@@ -227,8 +231,6 @@ CREATE TABLE `TB_AUSENCIA` (
   KEY `fk_TB_AUSENCIA_TB_USUARIO1_idx` (`co_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-
-INSERT INTO TB_AUSENCIA VALUES("1","2019-02-07 10:00:00","2019-02-07 12:00:00","2","Consulta nova","2019-02-11 16:00:01","20","8");
 
 
 
@@ -910,12 +912,14 @@ CREATE TABLE `TB_CLIENTE` (
   PRIMARY KEY (`co_cliente`,`co_assinante`,`co_pessoa`),
   KEY `fk_TB_CLIENTE_TB_ASSINANTE1_idx` (`co_assinante`),
   KEY `fk_TB_CLIENTE_TB_PESSOA1_idx` (`co_pessoa`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CLIENTE VALUES("1","2019-02-12 11:44:02","A","meu apelido cli 2","sobre novo cliente","S","S","N","N","2","11","79");
 
 INSERT INTO TB_CLIENTE VALUES("2","2019-05-09 17:45:14","A","","","S","S","S","S","1","11","80");
+
+INSERT INTO TB_CLIENTE VALUES("3","2019-07-22 11:22:47","A","","","S","S","S","S","1","11","81");
 
 
 
@@ -1041,7 +1045,7 @@ CREATE TABLE `TB_CONTATO` (
   `ds_twitter` varchar(90) DEFAULT NULL,
   `ds_instagram` varchar(90) DEFAULT NULL,
   PRIMARY KEY (`co_contato`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_CONTATO VALUES("1","61993274991","6130826060","0","","leonardomcbessa@gmail.com","","","","");
@@ -1075,6 +1079,8 @@ INSERT INTO TB_CONTATO VALUES("82","6546546131","43536436436","","","leonardomcb
 INSERT INTO TB_CONTATO VALUES("91","11111111111","22222222222","","","greg11@gd.com","","link face","link twitter","link insta");
 
 INSERT INTO TB_CONTATO VALUES("92","65465465116","","","","fweffrgr@grge.com","","","","");
+
+INSERT INTO TB_CONTATO VALUES("93","6199322555","","","","greggh@gd.com","","","","");
 
 
 
@@ -1150,6 +1156,25 @@ CREATE TABLE `TB_CORTESIA` (
 INSERT INTO TB_CORTESIA VALUES("1","2019-06-25 17:28:38","2","nova descrição","CTS.1911.BBO6.SSG8","2019-06-01","2019-06-30","09:00","22:00","1, 2, 3","0","8","32","11");
 
 INSERT INTO TB_CORTESIA VALUES("2","2019-06-25 17:45:54","1","gh gfhj ghjfiu","CTS.1911.VFX4.JGK9","2019-06-05","2019-06-17","06:00","14:00","5, 6","0","8","25","11");
+
+
+
+
+DROP TABLE IF EXISTS TB_CRONS;
+
+
+CREATE TABLE `TB_CRONS` (
+  `co_cron` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_cadastro` datetime DEFAULT NULL,
+  `no_cron` varchar(70) DEFAULT NULL,
+  `ds_sql` text,
+  PRIMARY KEY (`co_cron`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+
+INSERT INTO TB_CRONS VALUES("3","2019-07-22 15:40:30","Desativa Promoção","INSERT INTO tb_preco_promocao (\n  dt_cadastro,\n  st_status,\n  nu_valor,\n  dt_inicio,\n  dt_fim,\n  nu_hora_abertura,\n  nu_hora_fechamento,\n  nu_dia_semana,\n  co_servico,\n  co_usuario,\n  co_promocao) SELECT\n    SYSDATE()\n    ,\'I\'\n    ,ppro.nu_valor\n    ,ppro.dt_inicio\n    ,ppro.dt_fim\n    ,ppro.nu_hora_abertura\n    ,ppro.nu_hora_fechamento\n    ,ppro.nu_dia_semana\n    ,ppro.co_servico\n    ,1\n    ,ppro.co_promocao\n  FROM tb_promocao pro\n    INNER JOIN tb_preco_promocao ppro\n      ON ppro.co_promocao = pro.co_promocao\n  WHERE dt_fim < SYSDATE()\n        AND st_status = \'A\'\n        AND ppro.co_preco_promocao = (\n    SELECT max(ppro2.co_preco_promocao)\n    FROM tb_preco_promocao ppro2\n    WHERE ppro2.co_promocao = pro.co_promocao\n  );");
+
+INSERT INTO TB_CRONS VALUES("4","2019-07-22 16:24:57","Vencimento dos Vale presentes","UPDATE tb_vale_presente SET st_status = 3\n  WHERE dt_valido < SYSDATE()\n        AND st_status in (1,2)");
 
 
 
@@ -1230,7 +1255,7 @@ CREATE TABLE `TB_ENDERECO` (
   `no_cidade` varchar(80) DEFAULT NULL,
   `sg_uf` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`co_endereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ENDERECO VALUES("1","qr 403 conjunto 10 casa 28","","Samambaia Norte","72319111","Brasília","DF");
@@ -1266,6 +1291,8 @@ INSERT INTO TB_ENDERECO VALUES("96","QR 403 Conjunto 10","","Samambaia Norte (Sa
 INSERT INTO TB_ENDERECO VALUES("105","QR 403 Conjunto 10","Casa 28 33","Samambaia Norte (Samambaia)","72319111","Brasília","DF");
 
 INSERT INTO TB_ENDERECO VALUES("106","","","","","","");
+
+INSERT INTO TB_ENDERECO VALUES("107","","","","","","");
 
 
 
@@ -1398,7 +1425,7 @@ CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -1531,6 +1558,8 @@ INSERT INTO TB_FUNCIONALIDADE VALUES("79","Calendário","Agendamento","A","S","1
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("81","Historico agendamento","HistoricoAgendamento","A","N","16");
 
+INSERT INTO TB_FUNCIONALIDADE VALUES("82","Crons","CronsGestao","A","S","1");
+
 
 
 
@@ -1598,7 +1627,7 @@ CREATE TABLE `TB_HISTORIA` (
   `co_sessao` int(11) NOT NULL,
   PRIMARY KEY (`co_historia`,`co_sessao`),
   KEY `fk_TB_HISTORIA_TB_SESSAO1_idx` (`co_sessao`)
-) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORIA VALUES("1","Manter Planos do sistema","<p>Manter planos do sistema da beleza, onde ter&aacute; que manter os desconto com per&iacute;odo para o plano</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Plano e historico plano modulos</p>","2018-07-24 15:28:56","2018-07-31 15:05:13","C","1");
@@ -1959,6 +1988,14 @@ INSERT INTO TB_HISTORIA VALUES("197","Valida Profissonal e assistente por servi�
 
 INSERT INTO TB_HISTORIA VALUES("198","Visualizar Agendamento","<p>Visualizar Agendamento</p>","2019-07-12 17:22:41","2019-07-12 17:22:41","C","17");
 
+INSERT INTO TB_HISTORIA VALUES("199","Criar Cron de desativar promoção","<p>Criar Cron de desativar promo&ccedil;&atilde;o</p>","2019-07-22 11:37:11","2019-07-22 16:14:49","C","39");
+
+INSERT INTO TB_HISTORIA VALUES("200","Criar Cron de desativar cortesia","<p>Criar Cron de desativar cortesia</p>","2019-07-22 11:37:28","2019-07-22 11:37:28","N","39");
+
+INSERT INTO TB_HISTORIA VALUES("201","Criar Cron de desativar vale presente","<p>Criar Cron de desativar vale presente</p>","2019-07-22 11:37:44","2019-07-22 16:25:47","C","39");
+
+INSERT INTO TB_HISTORIA VALUES("202","Criar Cron de desativar agendamento","<p>Criar Cron de desativar agendamento</p>","2019-07-22 11:38:08","2019-07-22 11:38:08","N","39");
+
 
 
 
@@ -2033,7 +2070,7 @@ CREATE TABLE `TB_HISTORICO_HISTORIA` (
   `co_historia` int(11) NOT NULL,
   PRIMARY KEY (`co_historico_historia`,`co_historia`),
   KEY `fk_TB_HISTORICO_HISTORIA_TB_HISTORIA1_idx` (`co_historia`)
-) ENGINE=InnoDB AUTO_INCREMENT=693 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=699 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("1","3","3","2018-07-24 15:28:56","1");
@@ -3388,6 +3425,18 @@ INSERT INTO TB_HISTORICO_HISTORIA VALUES("691","13","5","2019-07-19 19:40:31","1
 
 INSERT INTO TB_HISTORICO_HISTORIA VALUES("692","13","0","2019-07-19 19:54:29","193");
 
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("693","5","5","2019-07-22 11:37:11","199");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("694","5","5","2019-07-22 11:37:28","200");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("695","5","5","2019-07-22 11:37:44","201");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("696","5","5","2019-07-22 11:38:08","202");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("697","5","0","2019-07-22 16:14:49","199");
+
+INSERT INTO TB_HISTORICO_HISTORIA VALUES("698","5","0","2019-07-22 16:25:47","201");
+
 
 
 
@@ -3885,7 +3934,7 @@ CREATE TABLE `TB_PERCENTUAL_COMISSAO` (
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_SERVICO_PROFISSIONAL1_idx` (`co_servico_profissional`),
   KEY `fk_TB_PERCENTUAL_COMISSAO_TB_HISTORICO_COMISSAO21_idx` (`co_historico_comissao`)
-) ENGINE=InnoDB AUTO_INCREMENT=409 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=430 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("1","44","1","2019-04-04 17:51:29","2019-04-04 17:51:29","0","0","0","1");
@@ -4704,6 +4753,48 @@ INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("407","20","2","2019-07-11 17:11:40","
 
 INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("408","10","3","2019-07-11 17:11:40","2019-07-11 17:11:40","0","0","57","0");
 
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("409","30","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","58","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("410","20","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","58","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("411","10","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","58","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("412","0","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","59","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("413","0","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","59","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("414","0","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","59","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("415","0","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("416","0","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("417","0","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","35","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("418","30","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","60","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("419","20","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","60","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("420","10","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","60","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("421","30","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","61","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("422","20","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","61","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("423","10","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","61","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("424","30","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("425","20","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("426","10","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","51","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("427","30","1","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("428","20","2","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","52","0");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO VALUES("429","10","3","2019-07-22 11:25:40","2019-07-22 11:25:40","0","0","52","0");
+
 
 
 
@@ -4891,7 +4982,7 @@ CREATE TABLE `TB_PESSOA` (
   KEY `fk_TB_PESSOA_TB_ENDERECO1_idx` (`co_endereco`),
   KEY `fk_TB_PESSOA_TB_CONTATO1_idx` (`co_contato`),
   KEY `fk_TB_PESSOA_TB_IMAGEM1_idx` (`co_imagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PESSOA VALUES("1","72681438187","Usuário Padrão","","2016-10-31 00:00:00","1984-07-06","M","1","1","1");
@@ -4927,6 +5018,8 @@ INSERT INTO TB_PESSOA VALUES("77","12345678909","Seu Biga ","1111111111111","201
 INSERT INTO TB_PESSOA VALUES("79","22322191191","Novo Cliente p","777777777","2019-02-12 11:44:02","2000-02-09","F","105","91","43");
 
 INSERT INTO TB_PESSOA VALUES("80","","LEO BESSA usuário externo","","2019-05-09 17:45:14","2001-05-10","M","106","92","0");
+
+INSERT INTO TB_PESSOA VALUES("81","12345678909","Jose Arnaldo","","2019-07-22 11:22:47","2002-07-04","M","107","93","0");
 
 
 
@@ -5177,7 +5270,7 @@ CREATE TABLE `TB_PRECO_PROMOCAO` (
   KEY `fk_TB_PRECO_PROMOCAO_TB_SERVICO1_idx` (`co_servico`),
   KEY `fk_TB_PRECO_PROMOCAO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_PRECO_PROMOCAO_TB_PROMOCAO1_idx` (`co_promocao`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_PRECO_PROMOCAO VALUES("1","2019-06-21 09:16:15","A","17.55","2019-06-05","2019-06-25","09:00","22:00","3, 4, 5","33","8","1");
@@ -5185,6 +5278,8 @@ INSERT INTO TB_PRECO_PROMOCAO VALUES("1","2019-06-21 09:16:15","A","17.55","2019
 INSERT INTO TB_PRECO_PROMOCAO VALUES("2","2019-06-21 10:37:08","I","9.06","2019-06-01","2019-06-30","02:02","10:10","1, 2, 3, 4, 5, 6, 7, 8","34","8","1");
 
 INSERT INTO TB_PRECO_PROMOCAO VALUES("3","2019-06-21 11:03:03","A","14.95","2019-06-01","2019-06-30","06:00","22:00","1, 2, 3, 4, 5","27","8","2");
+
+INSERT INTO TB_PRECO_PROMOCAO VALUES("4","2019-07-22 16:06:56","I","14.95","2019-06-01","2019-06-30","06:00","22:00","1, 2, 3, 4, 5","27","1","2");
 
 
 
@@ -5361,15 +5456,15 @@ INSERT INTO TB_PROFISSIONAL VALUES("9","2018-12-19 18:25:40","#00FF00","S","SOBR
 
 INSERT INTO TB_PROFISSIONAL VALUES("15","2018-12-18 17:15:15","","N","","","","N","N","A","1","0000-00-00","0000-00-00","0","67","43","11","34");
 
-INSERT INTO TB_PROFISSIONAL VALUES("16","2018-12-18 17:37:41","#A54A7B","N","Eu sou a kaka","Kaka","","S","S","I","3","2018-12-04","","33","68","44","11","35");
+INSERT INTO TB_PROFISSIONAL VALUES("16","2018-12-18 17:37:41","#A54A7B","N","Eu sou a kaka","Kaka","","S","S","A","3","2018-12-04","","33","68","44","11","35");
 
-INSERT INTO TB_PROFISSIONAL VALUES("18","2018-12-19 10:59:48","","N","","","","N","N","I","1","1969-12-31","","35","73","46","11","39");
+INSERT INTO TB_PROFISSIONAL VALUES("18","2018-12-19 10:59:48","","N","","","","N","N","A","1","1969-12-31","","35","73","46","11","39");
 
 INSERT INTO TB_PROFISSIONAL VALUES("19","2018-12-20 10:56:22","#F7C6CE","N","SObre 22","meu apelido 22","","S","S","A","3","2018-12-19","0000-00-00","36","74","47","11","40");
 
-INSERT INTO TB_PROFISSIONAL VALUES("20","2019-01-14 17:25:21","#397B21","S","Representante comercial da Bartofil","Bigode","","S","S","I","2","2018-12-17","0000-00-00","37","76","49","11","42");
+INSERT INTO TB_PROFISSIONAL VALUES("20","2019-01-14 17:25:21","#397B21","S","Representante comercial da Bartofil","Bigode","","S","S","A","2","2018-12-17","0000-00-00","37","76","49","11","42");
 
-INSERT INTO TB_PROFISSIONAL VALUES("21","2019-01-14 17:05:48","#A54A7B","S","","meu apelido","","S","S","I","1","1983-12-06","","38","77","50","11","43");
+INSERT INTO TB_PROFISSIONAL VALUES("21","2019-01-14 17:05:48","#A54A7B","S","","meu apelido","","S","S","A","1","1983-12-06","","38","77","50","11","43");
 
 
 
@@ -5478,7 +5573,7 @@ CREATE TABLE `TB_SERVICO` (
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_SERVICO VALUES("3","2019-03-20 16:54:46","I","N","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
+INSERT INTO TB_SERVICO VALUES("3","2019-03-20 16:54:46","A","N","Coloração / Tonalização","120","Tonalização: matiza e deixa os tons dos fios mais naturais.","5","47");
 
 INSERT INTO TB_SERVICO VALUES("4","2019-03-20 16:54:46","A","N","Corte Tesoura","30","Corte: O corte na tesoura irá deixar você com o visual renovado.","5","48");
 
@@ -5486,7 +5581,7 @@ INSERT INTO TB_SERVICO VALUES("5","2019-03-20 16:54:46","A","","Corte Máquina",
 
 INSERT INTO TB_SERVICO VALUES("6","2019-03-20 16:54:46","I","","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do \n        cabelo sempre saudável.","5","50");
 
-INSERT INTO TB_SERVICO VALUES("7","2019-03-20 16:54:46","I","","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
+INSERT INTO TB_SERVICO VALUES("7","2019-03-20 16:54:46","A","","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
 
 INSERT INTO TB_SERVICO VALUES("8","2019-03-20 16:54:46","A","","Corte e Higienização dos Fios","30","Corte: mude o visual ou apare as pontinhas para manter a \n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","5","52");
 
@@ -5602,7 +5697,7 @@ CREATE TABLE `TB_SERVICO_PROFISSIONAL` (
   PRIMARY KEY (`co_servico_profissional`,`co_profissional`,`co_servico`),
   KEY `fk_TB_SERVICO_has_TB_PROFISSIONAL_TB_PROFISSIONAL1_idx` (`co_profissional`),
   KEY `fk_TB_SERVICO_has_TB_PROFISSIONAL_TB_SERVICO1_idx` (`co_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("9","S","19","34");
@@ -5657,7 +5752,7 @@ INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("33","S","15","16");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("34","S","15","17");
 
-INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("35","N","19","3");
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("35","N","20","3");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("36","S","15","4");
 
@@ -5689,9 +5784,9 @@ INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("49","S","15","11");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("50","S","15","11");
 
-INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("51","S","15","3");
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("51","S","16","3");
 
-INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("52","S","9","3");
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("52","S","16","3");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("53","S","9","11");
 
@@ -5702,6 +5797,14 @@ INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("55","S","9","30");
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("56","S","19","5");
 
 INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("57","S","9","5");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("58","S","21","3");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("59","N","20","3");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("60","S","18","3");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL VALUES("61","S","16","3");
 
 
 
@@ -5716,7 +5819,7 @@ CREATE TABLE `TB_SESSAO` (
   `co_modulo` int(11) NOT NULL,
   PRIMARY KEY (`co_sessao`,`co_modulo`),
   KEY `fk_TB_SESSAO_TB_MODULO1_idx` (`co_modulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_SESSAO VALUES("1","Assinante","2018-07-25 11:07:40","1");
@@ -5785,6 +5888,8 @@ INSERT INTO TB_SESSAO VALUES("37","Pacote","2019-06-14 10:48:40","8");
 
 INSERT INTO TB_SESSAO VALUES("38","Vale Presente","2019-06-26 14:30:47","8");
 
+INSERT INTO TB_SESSAO VALUES("39","Cron Jobs","2019-07-22 11:36:40","2");
+
 
 
 
@@ -5807,7 +5912,7 @@ CREATE TABLE `TB_STATUS_AGENDA` (
   KEY `fk_TB_STATUS_AGENDAMENTO_TB_CLIENTE1_idx` (`co_cliente`),
   KEY `fk_TB_STATUS_AGENDAMENTO_TB_AGENDAMENTO1_idx` (`co_agenda`),
   KEY `fk_TB_STATUS_AGENDAMENTO_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_STATUS_AGENDA VALUES("1","2019-07-19 15:16:24","1","2019-07-19 08:50:00","2019-07-19 09:00:00","39.99","10","yuk yukyu","2","1","8");
@@ -5826,6 +5931,12 @@ INSERT INTO TB_STATUS_AGENDA VALUES("7","2019-07-19 17:54:42","1","2019-07-19 13
 
 INSERT INTO TB_STATUS_AGENDA VALUES("8","2019-07-19 18:00:18","4","2019-07-19 07:00:00","2019-07-19 07:30:00","29.90","30","novidades de edição","2","4","8");
 
+INSERT INTO TB_STATUS_AGENDA VALUES("9","2019-07-22 10:08:10","7","2019-07-19 07:00:00","2019-07-19 07:30:00","29.90","30","Finalizado","2","4","8");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("10","2019-07-22 11:23:39","2","2019-07-22 09:40:00","2019-07-22 11:40:00","172.30","120","fwe weqfb","3","6","8");
+
+INSERT INTO TB_STATUS_AGENDA VALUES("11","2019-07-22 11:28:53","1","2019-07-22 08:50:00","2019-07-22 10:50:00","172.30","120",",kyuk yu","3","7","8");
+
 
 
 
@@ -5842,7 +5953,7 @@ CREATE TABLE `TB_STATUS_AGENDA_PROFISSIONAL` (
   KEY `fk_TB_STATUS_AGENDAMENTO_has_TB_PROFISSIONAL_TB_PROFISSIONA_idx` (`co_profissional`),
   KEY `fk_TB_STATUS_AGENDAMENTO_has_TB_PROFISSIONAL_TB_STATUS_AGEN_idx` (`co_status_agenda`),
   KEY `fk_TB_STATUS_AGENDA_PROFISSIONAL_TB_STATUS_AGENDA_SERVICO1_idx` (`co_status_agenda_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("1","1","9","1","1");
@@ -5877,6 +5988,18 @@ INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("15","8","15","8","1");
 
 INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("16","8","15","8","2");
 
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("17","9","15","9","1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("18","9","15","9","2");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("19","10","9","10","1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("20","10","19","10","2");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("21","11","18","11","1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL VALUES("22","11","16","11","2");
+
 
 
 
@@ -5891,7 +6014,7 @@ CREATE TABLE `TB_STATUS_AGENDA_SERVICO` (
   PRIMARY KEY (`co_status_agenda_servico`,`co_servico`,`co_status_agenda`),
   KEY `fk_TB_STATUS_AGENDAMENTO_has_TB_SERVICO_TB_SERVICO1_idx` (`co_servico`),
   KEY `fk_TB_STATUS_AGENDAMENTO_has_TB_SERVICO_TB_STATUS_AGENDAMEN_idx` (`co_status_agenda`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("1","30","1","1");
@@ -5909,6 +6032,12 @@ INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("6","30","6","1");
 INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("7","25","7","1");
 
 INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("8","31","8","2");
+
+INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("9","31","9","3");
+
+INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("10","3","10","1");
+
+INSERT INTO TB_STATUS_AGENDA_SERVICO VALUES("11","3","11","1");
 
 
 
@@ -6021,7 +6150,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=429 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=441 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -6058,7 +6187,7 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
-INSERT INTO TB_TRAFEGO VALUES("428","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+INSERT INTO TB_TRAFEGO VALUES("440","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 
@@ -6159,11 +6288,11 @@ CREATE TABLE `TB_VALE_PRESENTE` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_VALE_PRESENTE VALUES("1","2019-06-26 17:44:41","2","Presente de aniversário 2","2019-06-30","15.00","VLP.1911.RFX7.KNS0","11","8");
+INSERT INTO TB_VALE_PRESENTE VALUES("1","2019-06-26 17:44:41","3","Presente de aniversário 2","2019-06-30","15.00","VLP.1911.RFX7.KNS0","11","8");
 
-INSERT INTO TB_VALE_PRESENTE VALUES("2","2019-06-26 17:59:33","1","wg wrh wyjtyj","2019-06-23","150.00","VLP.1911.XPQ2.EOQ0","11","8");
+INSERT INTO TB_VALE_PRESENTE VALUES("2","2019-06-26 17:59:33","3","wg wrh wyjtyj","2019-06-23","150.00","VLP.1911.XPQ2.EOQ0","11","8");
 
-INSERT INTO TB_VALE_PRESENTE VALUES("3","2019-06-27 18:03:06","1","so pra testar mesmo","2019-06-30","18.50","VLP.1911.MAB7.NDS9","11","8");
+INSERT INTO TB_VALE_PRESENTE VALUES("3","2019-06-27 18:03:06","3","so pra testar mesmo","2019-06-30","18.50","VLP.1911.MAB7.NDS9","11","8");
 
 
 

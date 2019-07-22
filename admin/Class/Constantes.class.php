@@ -125,8 +125,6 @@ define('CO_STATUS_AGENDA_SERVICO', 'co_status_agenda_servico');
 define('TP_PROFISSIONAL', 'tp_profissional');
 
 
-
-
 // SERVICES
 define('TIPO_PAGAMENTO_SERVICE', 'TipoPagamentoService');
 define('FACILIDADE_PAGAMENTO_SERVICE', 'FacilidadePagamentoService');

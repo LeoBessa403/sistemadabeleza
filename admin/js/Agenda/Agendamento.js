@@ -79,7 +79,7 @@ var Calendar = function () {
                 $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
                 $('.cliente b').text(dados.cliente);
                 $('.assistente b').text(dados.assistente);
-                $('.nu_duracao b').text(dados.nu_duracao);
+                $('.nu_duracao b').text(dados.nu_duracao + ' Minutos');
                 $('.profissional b').text(dados.profissional);
                 $('.servico b').text(dados.no_servico);
                 $('.nu_valor b').text(dados.nu_valor);
