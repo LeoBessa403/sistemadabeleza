@@ -91,7 +91,7 @@ class  AgendaService extends AbstractService
 
             if (!empty($dados[CO_PROFISSIONAL])) {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
-            }else{
+            } else {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = null;
             }
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
@@ -99,7 +99,7 @@ class  AgendaService extends AbstractService
 
             if (!empty($dados['co_assistente'])) {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
-            }else{
+            } else {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = null;
             }
             $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
@@ -210,6 +210,65 @@ class  AgendaService extends AbstractService
         }
 
         return $retorno;
+    }
+
+    public function cronStatusAgenda($dados)
+    {
+        /** @var StatusAgendaService $statusAgendaService */
+        $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
+        /** @var StatusAgendaServicoService $statusAgendaServicoService */
+        $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
+        /** @var StatusAgendaProfissionalService $statusAgendaProfissionalService */
+        $statusAgendaProfissionalService = $this->getService(STATUS_AGENDA_PROFISSIONAL_SERVICE);
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+
+        $PDO->beginTransaction();
+
+        $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
+        $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+        $statusAgenda[ST_STATUS] = StatusAgendamentoEnum::FALTOU;
+        $statusAgenda[DT_INICIO_AGENDA] = $dados[DT_INICIO_AGENDA];
+        $statusAgenda[DT_FIM_AGENDA] = $dados[DT_FIM_AGENDA];
+        $statusAgenda[NU_VALOR] = $dados[NU_VALOR];
+        $statusAgenda[NU_DURACAO] = $dados[NU_DURACAO];
+        $statusAgenda[DS_OBSERVACAO] = "Atualizado pelo Sistema";
+        $statusAgenda[CO_USUARIO] = CO_USUARIO_PADRAO;
+        $statusAgenda[CO_CLIENTE] = $dados[CO_CLIENTE];
+
+
+        $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
+        $statusAgendaServico[CO_SERVICO] = $dados[CO_SERVICO];
+        $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::NAO_INICIADO;
+
+        $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
+        $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
+
+        if (!empty($dados[CO_PROFISSIONAL])) {
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados[CO_PROFISSIONAL];
+        } else {
+            $statusAgendaProfissional[CO_PROFISSIONAL] = null;
+        }
+        $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
+        $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+
+        if (!empty($dados['co_assistente'])) {
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
+        } else {
+            $statusAgendaProfissional[CO_PROFISSIONAL] = null;
+        }
+        $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+        $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+
+        if ($retorno[SUCESSO]) {
+            $PDO->commit();
+        } else {
+            $PDO->rollBack();
+        }
     }
 
 }
