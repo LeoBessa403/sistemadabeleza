@@ -249,20 +249,45 @@ class  ProfissionalService extends AbstractService
      */
     public function GetProfissionaisServicoAjax($coServico)
     {
-        /** @var ServicoProfissionalService $servicoProfissionalService */
-        $servicoProfissionalService = new ServicoProfissionalService();
-        $comboProfissionaisServico = [];
-
-        $profissionaisServico = $servicoProfissionalService->PesquisaTodos([
-            CO_SERVICO => $coServico,
-            ST_STATUS => SimNaoEnum::SIM
+        /** @var ConfigComissaoService $configComissaoService */
+        $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
+        /** @var ConfigComissaoEntidade $configComissao */
+        $configComissao = $configComissaoService->PesquisaUmQuando([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         $i = 0;
-        /** @var ServicoProfissionalEntidade $profissionalServico */
-        foreach ($profissionaisServico as $profissionalServico) {
-            $comboProfissionaisServico[$i][CO_PROFISSIONAL] = $profissionalServico->getCoProfissional()->getCoProfissional();
-            $comboProfissionaisServico[$i][NO_PESSOA] = $profissionalServico->getCoProfissional()->getCoPessoa()->getNoPessoa();
-            $i++;
+        /** @var HistoricoComissaoEntidade $ultHistConfigCom */
+        $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
+        if($ultHistConfigCom->getNuFormaComissao() < 4){
+            /** @var ProfissionalService $profissionalService */
+            $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
+            $todosProfissionais = $profissionalService->PesquisaTodos([
+                CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+                ST_STATUS => StatusUsuarioEnum::ATIVO
+            ]);
+
+            /** @var ProfissionalEntidade $profissional */
+            foreach ($todosProfissionais as $profissional) {
+                $comboProfissionaisServico[$i][CO_PROFISSIONAL] = $profissional->getCoProfissional();
+                $comboProfissionaisServico[$i][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
+                $i++;
+            }
+
+        }else{
+            /** @var ServicoProfissionalService $servicoProfissionalService */
+            $servicoProfissionalService = new ServicoProfissionalService();
+            $comboProfissionaisServico = [];
+
+            $profissionaisServico = $servicoProfissionalService->PesquisaTodos([
+                CO_SERVICO => $coServico,
+                ST_STATUS => SimNaoEnum::SIM
+            ]);
+            /** @var ServicoProfissionalEntidade $profissionalServico */
+            foreach ($profissionaisServico as $profissionalServico) {
+                $comboProfissionaisServico[$i][CO_PROFISSIONAL] = $profissionalServico->getCoProfissional()->getCoProfissional();
+                $comboProfissionaisServico[$i][NO_PESSOA] = $profissionalServico->getCoProfissional()->getCoPessoa()->getNoPessoa();
+                $i++;
+            }
         }
         return $comboProfissionaisServico;
     }

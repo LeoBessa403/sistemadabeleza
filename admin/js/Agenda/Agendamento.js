@@ -258,13 +258,8 @@ var Calendar = function () {
             var comboProf = $("#co_profissional");
             var comboAss = $("#co_assistente");
 
-            var data = {
-                id: null,
-                text: 'Selecione um Profissional'
-            };
-
-            var newOptionProf = new Option(data.text, data.id, false, false);
-            var newOptionAss = new Option(data.text, data.id, false, false);
+            var newOptionProf = new Option('Selecione um Profissional', null, false, false);
+            var newOptionAss = new Option('Selecione um Assistente', null, false, false);
             comboProf.append(newOptionProf).trigger('change');
             comboAss.append(newOptionAss).trigger('change');
 
