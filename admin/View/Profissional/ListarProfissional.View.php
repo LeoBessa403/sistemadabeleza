@@ -166,8 +166,8 @@
                             if ($tipoComissao == FormaComissaoEnum::PROFISSIONAL) {
                                 $grid->setColunas($comiss);
                             }
-                            $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
                             $grid->setColunas(Valida::StatusLabel($res->getStStatus()), 2);
+                            $grid->setColunas(Valida::SituacaoSimNao($res->getStAssistente()), 2);
                             $grid->setColunas($acao, $botao);
                             $grid->criaLinha($res->getCoProfissional());
                         endforeach;

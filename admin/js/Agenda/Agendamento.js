@@ -264,7 +264,7 @@ var Calendar = function () {
             comboAss.append(newOptionAss).trigger('change');
 
             var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
-            var optionsAss = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
+            var optionsAss = Funcoes.Ajax('Profissional/GetAssistentesServicoAjax', coServico);
 
             $.each(optionsProf, function (key, value) {
                 comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
