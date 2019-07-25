@@ -40,5 +40,13 @@ class  AgendaValidador extends AbstractValidador
         return $this->MontaRetorno($this->retorno);
     }
 
+    public function validarFinalizarAgendamento($dados)
+    {
+        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+            $dados[CO_AGENDA], AbstractValidador::VALIDACAO_NUMERO, 'Código da Agenda'
+        );
+        return $this->MontaRetorno($this->retorno);
+    }
+
 
 }

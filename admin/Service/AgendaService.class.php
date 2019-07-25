@@ -212,6 +212,84 @@ class  AgendaService extends AbstractService
         return $retorno;
     }
 
+    /**
+     * @param $dados
+     * @return array|AssinanteValidador
+     */
+    public function FinalizarAgendamento($dados)
+    {
+        /** @var AgendaService $agendaService */
+        $agendaService = $this->getService(AGENDA_SERVICE);
+        /** @var StatusAgendaService $statusAgendaService */
+        $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
+        /** @var StatusAgendaServicoService $statusAgendaServicoService */
+        $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
+        /** @var StatusAgendaProfissionalService $statusAgendaProfissionalService */
+        $statusAgendaProfissionalService = $this->getService(STATUS_AGENDA_PROFISSIONAL_SERVICE);
+        /** @var PDO $PDO */
+        $PDO = $this->getPDO();
+        $retorno = [
+            SUCESSO => false,
+            MSG => null
+        ];
+
+        $PDO->beginTransaction();
+
+        $agendaValidador = new AgendaValidador();
+        /** @var AgendaValidador $validador */
+        $validador = $agendaValidador->validarFinalizarAgendamento($dados);
+        if ($validador[SUCESSO]) {
+            $retorno[MSG] = ATUALIZADO;
+
+            $agenda = $agendaService->PesquisaAgendamentos([
+                'age.' . CO_AGENDA => $dados[CO_AGENDA]
+            ], 'cli.co_cliente, pro.co_profissional, pro2.co_profissional as co_assistente,
+                stag.nu_valor, stag.nu_duracao, stag.ds_observacao, ser.co_servico');
+
+            $agenda = $agenda[0];
+
+            $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
+            $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
+            $statusAgenda[ST_STATUS] = StatusAgendamentoEnum::FINALIZADO;
+            $statusAgenda[DT_INICIO_AGENDA] = $agenda[DT_INICIO_AGENDA];
+            $statusAgenda[DT_FIM_AGENDA] = $agenda[DT_FIM_AGENDA];
+            $statusAgenda[NU_VALOR] = $agenda[NU_VALOR];
+            $statusAgenda[NU_DURACAO] = $agenda[NU_DURACAO];
+            $statusAgenda[DS_OBSERVACAO] = $agenda[DS_OBSERVACAO];
+            $statusAgenda[CO_USUARIO] = UsuarioService::getCoUsuarioLogado();
+            $statusAgenda[CO_CLIENTE] = $agenda[CO_CLIENTE];
+            $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
+
+            $statusAgendaServico[CO_SERVICO] = $agenda[CO_SERVICO];
+            $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::CONCLUIDO;
+
+            $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
+            $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
+
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+
+        } else {
+            $retorno = $validador;
+        }
+
+        if ($retorno[SUCESSO]) {
+            $retorno[SUCESSO] = true;
+            $PDO->commit();
+        } else {
+            $retorno[MSG] = $validador[MSG];
+            $retorno[SUCESSO] = false;
+            $PDO->rollBack();
+        }
+
+        return $retorno;
+    }
+
     public function cronStatusAgenda($dados)
     {
         /** @var StatusAgendaService $statusAgendaService */

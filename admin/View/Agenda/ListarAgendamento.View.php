@@ -94,9 +94,10 @@
     <div class="modal-footer pull-left" style="width: 100%;">
         <input id="co_agenda_listagem" name="co_agenda_listagem" value="" type="hidden">
         <button data-dismiss="modal" class="btn btn-primary cancelar">Fechar</button>
-        <button data-dismiss="modal" class="btn btn-warning btn-editar">Editar</button>
-        <button data-dismiss="modal" class="btn btn-bricky btn-deletar">Deletar</button>
-        <button data-dismiss="modal" class="btn btn-success btn-historico">Histórico</button>
+        <button data-dismiss="modal"  class="btn acao btn-warning btn-editar">Editar</button>
+        <button data-dismiss="modal" class="btn acao btn-bricky btn-deletar">Deletar</button>
+        <button data-dismiss="modal" class="btn btn-light-grey btn-historico">Histórico</button>
+        <button data-dismiss="modal" class="btn acao btn-success btn-finalizar">Finalizar</button>
         <img src="<?= PASTA_LIBRARY; ?>images/loading.gif" class="img-load pull-right"
              style="margin: 15px 0 0 10px; display: block;"/>
     </div>

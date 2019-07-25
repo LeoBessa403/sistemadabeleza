@@ -86,6 +86,13 @@ var Calendar = function () {
                 $('.dia b').text(dados.dia);
                 $('#co_agenda_listagem').val(calEvent.id);
                 $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
+                $('.acao').hide();
+                if(dados.st_status < 5){
+                    $('.btn-finalizar').show();
+                    $('.btn-editar').show();
+                    $('.btn-deletar').show();
+                }
+
                 $("#j_listar").click();
             }
         });
@@ -191,6 +198,27 @@ var Calendar = function () {
                 };
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
+                if (dados) {
+                    if (dados.sucesso && dados.msg === "atualizado") {
+                        Funcoes.AtualizadoSucesso();
+                    } else {
+                        Funcoes.Alerta(dados.msg);
+                    }
+                    if (dados.sucesso) {
+                        Calendar.Renderiza();
+                    }
+                } else {
+                    Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
+
+            // FINALIZA O AGENDAMENTO (muda st_status para finalizado)
+            $(".btn-finalizar").click(function () {
+                var data = {
+                    co_agenda: $('#co_agenda_listagem').val()
+                };
+                var dados = Funcoes.Ajax('Agenda/FinalizarAgendaAjax', data);
                 if (dados) {
                     if (dados.sucesso && dados.msg === "deletado") {
                         Funcoes.DeletadoSucesso();
