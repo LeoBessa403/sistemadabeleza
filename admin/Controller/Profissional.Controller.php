@@ -328,7 +328,8 @@ class Profissional extends AbstractController
                         /** @var ServicoProfissionalEntidade $servProf */
                         $servProf = $servicoProfissionalService->PesquisaUmQuando([
                             CO_SERVICO => $coServico,
-                            CO_PROFISSIONAL => $coProfissional
+                            CO_PROFISSIONAL => $coProfissional,
+                            ST_STATUS => SimNaoEnum::SIM
                         ]);
                         $servicos[$coServico][CO_SERVICO] = $coServico;
                         $servicos[$coServico][NO_SERVICO] = $servico->getNoServico();
@@ -340,6 +341,7 @@ class Profissional extends AbstractController
                             $servicos[$coServico][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                                 = $servProf->getNuUltimoComissaoPorTipo(TipoComissaoEnum::ASSISTENTE);
                             $servicos[$coServico][ST_STATUS] = $servProf->getStStatus();
+                            $servicos[$coServico]['atende'] = SimNaoEnum::SIM;
                         } else {
                             $servicos[$coServico][NU_TIPO_COMISSAO . TipoComissaoEnum::UNICO_PROFISSIONAL]
                                 = $percAtul[TipoComissaoEnum::UNICO_PROFISSIONAL];
@@ -348,6 +350,7 @@ class Profissional extends AbstractController
                             $servicos[$coServico][NU_TIPO_COMISSAO . TipoComissaoEnum::ASSISTENTE]
                                 = $percAtul[TipoComissaoEnum::ASSISTENTE];
                             $servicos[$coServico][ST_STATUS] = SimNaoEnum::SIM;
+                            $servicos[$coServico]['atende'] = SimNaoEnum::NAO;
                         }
                     }
                 }

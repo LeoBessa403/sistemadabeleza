@@ -45,7 +45,7 @@
                             $grid->criaGrid('ComissaoServicoProfissionalTable', false);
                             foreach ($profissionais as $profissional) :
                                 $check = '';
-                                if ($profissional[ST_STATUS] == SimNaoEnum::SIM) {
+                                if ($profissional['atende'] == SimNaoEnum::SIM) {
                                     $check = 'checked="checked"';
                                 }
                                 $atende = '<div id="change-color-switch" class="make-switch"
