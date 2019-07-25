@@ -284,3 +284,1137 @@ INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atu
 
 INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 14:47:17", "2019-07-25 14:47:17", "3", "10");
 
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "41", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "30", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "31", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "22", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "23", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "24", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "25", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "21", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "19", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "20", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "18", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "14", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "15", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "16", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("87", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("87", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("87", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "16", co_profissional = "16" where co_servico_profissional = 71;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "45");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "35");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "25");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "4", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "5", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("89", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("89", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("89", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "7", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("90", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("90", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("90", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "8", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("91", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("91", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("91", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "11", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("92", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("92", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("92", "2019-07-25 14:54:34", "2019-07-25 14:54:34", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "41", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "30", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "31", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "22", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "23", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "24", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "25", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "21", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "19", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "20", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 14:55:13", "2019-07-25 14:55:13", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "18", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "14", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "15", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "16", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("106", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("106", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("106", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "16", co_profissional = "9" where co_servico_profissional = 73;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "4", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "5", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("108", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("108", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("108", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "7", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("109", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("109", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("109", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "8", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("110", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("110", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("110", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "11", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("111", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("111", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("111", "2019-07-25 14:55:14", "2019-07-25 14:55:14", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 74;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 75;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 76;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 77;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 78;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 79;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 80;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 81;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 82;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 83;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 84;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 85;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 86;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 71;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "3", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("112", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("112", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("112", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "3", co_profissional = "16" where co_servico_profissional = 88;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "3", co_profissional = "16" where co_servico_profissional = 89;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("89", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("89", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("89", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "3", co_profissional = "16" where co_servico_profissional = 90;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("90", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("90", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("90", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "3", co_profissional = "16" where co_servico_profissional = 91;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("91", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("91", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("91", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N", co_servico = "3", co_profissional = "16" where co_servico_profissional = 92;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("92", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("92", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("92", "2019-07-25 14:56:58", "2019-07-25 14:56:58", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 74;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 75;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 76;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 77;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 78;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 79;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 80;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 81;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 82;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 83;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 84;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 85;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 86;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 71;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "N" where co_servico_profissional = 88;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "4", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("113", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("113", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("113", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "5", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("114", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("114", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("114", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "7", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("115", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("115", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("115", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "8", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("116", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("116", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("116", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("N", "11", "16");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("117", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("117", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("117", "2019-07-25 15:04:38", "2019-07-25 15:04:38", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 74;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("74", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 75;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("75", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 76;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("76", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 77;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("77", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 78;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("78", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 79;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("79", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 80;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("80", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 81;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("81", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 82;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("82", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 83;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("83", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 84;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("84", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 85;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("85", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 86;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("86", "2019-07-25 15:04:59", "2019-07-25 15:04:59", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 71;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("71", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 88;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("88", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 113;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("113", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("113", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("113", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 114;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("114", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("114", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("114", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 115;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("115", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("115", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("115", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 116;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("116", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("116", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("116", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 117;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("117", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("117", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("117", "2019-07-25 15:05:00", "2019-07-25 15:05:00", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 93;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 94;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 95;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 96;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 97;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 98;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 99;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 100;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 101;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 102;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 103;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 104;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 105;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 73;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("S", "3", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("118", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("118", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("118", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S", co_servico = "3", co_profissional = "9" where co_servico_profissional = 107;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S", co_servico = "3", co_profissional = "9" where co_servico_profissional = 108;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("108", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("108", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("108", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S", co_servico = "3", co_profissional = "9" where co_servico_profissional = 109;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("109", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("109", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("109", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S", co_servico = "3", co_profissional = "9" where co_servico_profissional = 110;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("110", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("110", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("110", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S", co_servico = "3", co_profissional = "9" where co_servico_profissional = 111;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("111", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("111", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("111", "2019-07-25 15:05:23", "2019-07-25 15:05:23", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 93;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("93", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 94;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("94", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 95;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("95", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 96;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("96", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 97;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("97", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 98;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("98", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 99;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("99", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 100;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("100", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 101;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("101", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 102;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("102", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 103;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("103", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 104;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("104", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 105;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("105", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 73;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("73", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+UPDATE TB_SERVICO_PROFISSIONAL SET st_status = "S" where co_servico_profissional = 107;
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("107", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("S", "4", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("119", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("119", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("119", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("S", "5", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("120", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("120", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("120", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("S", "7", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("121", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("121", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("121", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("S", "8", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("122", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("122", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("122", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+INSERT INTO TB_SERVICO_PROFISSIONAL (st_status, co_servico, co_profissional) VALUES ("S", "11", "9");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("123", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("123", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico_profissional, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("123", "2019-07-25 15:06:08", "2019-07-25 15:06:08", "3", "10");
+
+INSERT INTO TB_HISTORICO_COMISSAO (co_config_comissao, st_taxa_antecipacao, st_taxa_administrativa, st_taxa_cartao_credito, st_taxa_cartao_debito, st_recebimento_pre_venda, nu_forma_comissao, dt_valido, dt_cadastro, co_usuario) VALUES ("1", "N", "S", "S", "S", "S", "2", "2019-07-25", "2019-07-25 15:06:35", "8");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-07-25 15:06:35", "2019-07-25 15:06:35", "20", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-07-25 15:06:35", "2019-07-25 15:06:35", "20", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (dt_cadastro, dt_atualizado, co_historico_comissao, nu_tipo_comissao, nu_comissao) VALUES ("2019-07-25 15:06:35", "2019-07-25 15:06:35", "20", "3", "10");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("3", "2019-07-25 15:08:46", "2019-07-25 15:08:46", "1", "30");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("3", "2019-07-25 15:08:46", "2019-07-25 15:08:46", "2", "20");
+
+INSERT INTO TB_PERCENTUAL_COMISSAO (co_servico, dt_cadastro, dt_atualizado, nu_tipo_comissao, nu_comissao) VALUES ("3", "2019-07-25 15:08:46", "2019-07-25 15:08:46", "3", "10");
+
