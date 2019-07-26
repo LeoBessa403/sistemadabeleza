@@ -321,7 +321,7 @@ class  AgendaService extends AbstractService
 
         $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
         $statusAgendaServico[CO_SERVICO] = $dados[CO_SERVICO];
-        $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::NAO_INICIADO;
+        $statusAgendaServico[ST_STATUS] = $dados[ST_STATUS];
 
         $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
         $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];

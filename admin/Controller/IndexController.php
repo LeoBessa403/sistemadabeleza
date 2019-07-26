@@ -49,7 +49,7 @@ class IndexController extends AbstractController
                         ON stage.co_agenda = age.co_agenda
                     WHERE
                       dt_fim_agenda < SYSDATE()
-                      AND st_status IN (1, 2)
+                      AND st_status IN (1, 2, 3, 4)
                       AND stage.co_status_agenda =
                           (SELECT max(stage2.co_status_agenda)
                            FROM tb_status_agenda stage2
@@ -76,6 +76,16 @@ class IndexController extends AbstractController
                 $dados[NU_VALOR] = $statusAgenda->getNuValor();
                 $dados[NU_DURACAO] = $statusAgenda->getNuDuracao();
                 $dados[CO_CLIENTE] = $statusAgenda->getCoCliente()->getCoCliente();
+                switch ($statusAgenda->getStStatus()) {
+                    case StatusAgendamentoEnum::AGENDADO:
+                    case StatusAgendamentoEnum::CONFIRMADO:
+                        $dados[ST_STATUS] = StatusAgendamentoEnum::FALTOU;
+                        break;
+                    case StatusAgendamentoEnum::AGUARDANDO:
+                    case StatusAgendamentoEnum::EM_ATENDIMENTO:
+                        $dados[ST_STATUS] = StatusAgendamentoEnum::CANCELADO;
+                        break;
+                }
                 /** @var StatusAgendaServicoEntidade $statusAgendaServico */
                 foreach ($statusAgenda->getCoStatusAgendaServico() as $statusAgendaServico) {
                     $dados[CO_SERVICO] = $statusAgendaServico->getCoServico()->getCoServico();
