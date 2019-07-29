@@ -185,7 +185,7 @@ var Calendar = function () {
                 if (dados) {
                     window.location.href = home + dados;
                 } else {
-                    Funcoes.Erro("Erro: ");
+                    Funcoes.Erro("Erro: " + dados.msg);
                 }
                 return false;
             });

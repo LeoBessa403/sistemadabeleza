@@ -334,4 +334,12 @@ class ServicoEntidade extends AbstractEntidade
     {
         return $this->co_status_agenda_servico = $co_status_agenda_servico;
     }
+
+    /**
+     * @return StatusAgendaServicoEntidade $co_status_agenda_servico
+     */
+    public function getCoUltimoStatusAgendaServico()
+    {
+        return $this->ultimo($this->getCoStatusAgendaServico());
+    }
 }

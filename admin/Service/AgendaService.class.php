@@ -309,7 +309,7 @@ class  AgendaService extends AbstractService
 
         $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
         $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
-        $statusAgenda[ST_STATUS] = StatusAgendamentoEnum::FALTOU;
+        $statusAgenda[ST_STATUS] = $dados[ST_STATUS];
         $statusAgenda[DT_INICIO_AGENDA] = $dados[DT_INICIO_AGENDA];
         $statusAgenda[DT_FIM_AGENDA] = $dados[DT_FIM_AGENDA];
         $statusAgenda[NU_VALOR] = $dados[NU_VALOR];
@@ -321,7 +321,7 @@ class  AgendaService extends AbstractService
 
         $statusAgendaServico[CO_STATUS_AGENDA] = $statusAgendaService->Salva($statusAgenda);
         $statusAgendaServico[CO_SERVICO] = $dados[CO_SERVICO];
-        $statusAgendaServico[ST_STATUS] = $dados[ST_STATUS];
+        $statusAgendaServico[ST_STATUS] = StatusAtendimentoEnum::NAO_INICIADO;
 
         $statusAgendaProfissional[CO_STATUS_AGENDA_SERVICO] = $statusAgendaServicoService->Salva($statusAgendaServico);
         $statusAgendaProfissional[CO_STATUS_AGENDA] = $statusAgendaServico[CO_STATUS_AGENDA];
