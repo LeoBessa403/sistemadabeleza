@@ -3,3 +3,5 @@ UPDATE TB_SERVICO SET st_status = "A", no_servico = "Podologia com limpeza dos p
 
 INSERT INTO TB_PRECO_SERVICO (co_servico, ds_observacao, nu_valor, dt_cadastro, co_usuario) VALUES ("33", "Atualizado", "39.90", "2019-07-30 10:23:03", "8");
 
+UPDATE TB_SERVICO SET st_status = "I" where co_servico = 3;
+
