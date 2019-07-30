@@ -192,7 +192,6 @@ var Calendar = function () {
                 var metodo = $(this).attr('action').split('/');
                 var dados = Funcoes.Ajax(metodo[5] + '/' + metodo[6], data);
                 if (dados) {
-                    console.log(dados);
                     if (dados.sucesso && dados.msg === "cadastrado") {
                         Funcoes.CadastradoSucesso()
                     } else if (dados.sucesso && dados.msg === "atualizado") {

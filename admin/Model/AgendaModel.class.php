@@ -41,11 +41,11 @@ class  AgendaModel extends AbstractModel
                         ON pes.co_pessoa = cli.co_pessoa
                       INNER JOIN tb_profissional pro
                         ON stpro.co_profissional = pro.co_profissional
-                      INNER JOIN tb_profissional pro2
+                      LEFT JOIN tb_profissional pro2
                         ON stpro2.co_profissional = pro2.co_profissional
-                      INNER JOIN tb_pessoa pes2
+                      LEFT JOIN tb_pessoa pes2
                         ON pes2.co_pessoa = pro.co_pessoa
-                      INNER JOIN tb_pessoa pes3
+                      LEFT JOIN tb_pessoa pes3
                         ON pes3.co_pessoa = pro2.co_pessoa
                       INNER JOIN tb_servico ser
                         ON ser.co_servico = stser.co_servico";
@@ -59,6 +59,7 @@ class  AgendaModel extends AbstractModel
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);
         $pesquisa->Pesquisar($tabela, $where, null, $campos);
+//        debug($pesquisa->getSql());
         return $pesquisa->getResult();
     }
 

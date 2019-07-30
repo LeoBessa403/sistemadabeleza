@@ -109,11 +109,9 @@ class  AgendaService extends AbstractService
 
             if (!empty($dados['co_assistente'])) {
                 $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
-            } else {
-                $statusAgendaProfissional[CO_PROFISSIONAL] = null;
+                $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
             }
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
             $retorno = $validador;
         }
@@ -202,10 +200,11 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-
+            if (!empty($agenda['co_assistente'])) {
+                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+                $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+            }
         } else {
             $retorno = $validador;
         }
@@ -280,10 +279,11 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-            $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
-            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-
+            if (!empty($agenda['co_assistente'])) {
+                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+                $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+                $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
+            }
         } else {
             $retorno = $validador;
         }
@@ -346,12 +346,9 @@ class  AgendaService extends AbstractService
 
         if (!empty($dados['co_assistente'])) {
             $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
-        } else {
-            $statusAgendaProfissional[CO_PROFISSIONAL] = null;
+            $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
+            $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         }
-        $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
-        $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-
         if ($retorno[SUCESSO]) {
             $PDO->commit();
         } else {
