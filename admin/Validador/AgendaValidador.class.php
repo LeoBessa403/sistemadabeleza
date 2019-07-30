@@ -12,7 +12,7 @@ class  AgendaValidador extends AbstractValidador
         DADOS => []
     ];
 
-    public function validarAgendamento($dados)
+    public function validarAgendamento($dados, $validaAssistente)
     {
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
             $dados[CO_CLIENTE], AbstractValidador::VALIDACAO_NUMERO, 'Cliente'
@@ -23,9 +23,11 @@ class  AgendaValidador extends AbstractValidador
         $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
             $dados[CO_PROFISSIONAL], AbstractValidador::VALIDACAO_NUMERO, 'Profissional'
         );
-        $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
-            $dados['co_assistente'], AbstractValidador::VALIDACAO_NUMERO, 'Assistente'
-        );
+        if ($validaAssistente) {
+            $this->retorno[DADOS][] = $this->ValidaCampoObrigatorioValido(
+                $dados['co_assistente'], AbstractValidador::VALIDACAO_NUMERO, 'Assistente'
+            );
+        }
         return $this->MontaRetorno($this->retorno);
     }
 

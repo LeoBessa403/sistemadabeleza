@@ -299,6 +299,16 @@ class  ProfissionalService extends AbstractService
      */
     public function GetAssistentesServicoAjax($coServico)
     {
+        $comboProfissionaisServico = [];
+        /** @var ServicoService $servicoService */
+        $servicoService = new ServicoService();
+        /** @var ServicoEntidade $servico */
+        $servico = $servicoService->PesquisaUmRegistro($coServico);
+
+        if($servico->getStAssistente() != SimNaoEnum::SIM){
+            return $comboProfissionaisServico;
+        }
+
         /** @var ConfigComissaoService $configComissaoService */
         $configComissaoService = $this->getService(CONFIG_COMISSAO_SERVICE);
         /** @var ConfigComissaoEntidade $configComissao */
@@ -306,7 +316,6 @@ class  ProfissionalService extends AbstractService
             CO_ASSINANTE => AssinanteService::getCoAssinanteLogado()
         ]);
         $i = 0;
-        $comboProfissionaisServico = [];
         /** @var HistoricoComissaoEntidade $ultHistConfigCom */
         $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
         if($ultHistConfigCom->getNuFormaComissao() < 4){

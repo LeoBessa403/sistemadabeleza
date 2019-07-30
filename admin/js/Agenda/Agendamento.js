@@ -87,7 +87,7 @@ var Calendar = function () {
                 $('#co_agenda_listagem').val(calEvent.id);
                 $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
                 $('.acao').hide();
-                if(dados.st_status < 5){
+                if (dados.st_status < 5) {
                     $('.btn-finalizar').show();
                     $('.btn-editar').show();
                     $('.btn-deletar').show();
@@ -241,6 +241,8 @@ var Calendar = function () {
             $("#co_assistente").select2({
                 allowClear: false
             });
+            Funcoes.TiraValidacao('co_assistente');
+            Funcoes.TiraValidacao('co_profissional');
         },
         LimpaCombosClienteServico: function () {
             $('#co_servico, #co_cliente').select2("destroy").val(null).select2({allowClear: false});
@@ -266,12 +268,27 @@ var Calendar = function () {
             var optionsProf = Funcoes.Ajax('Profissional/GetProfissionaisServicoAjax', coServico);
             var optionsAss = Funcoes.Ajax('Profissional/GetAssistentesServicoAjax', coServico);
 
+            console.log(optionsAss.length);
+
             $.each(optionsProf, function (key, value) {
                 comboProf.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
             });
-            $.each(optionsAss, function (key, value) {
-                comboAss.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
-            });
+
+            if (optionsAss.length) {
+                if (!$('co_assistente').hasClass('ob')) {
+                    $('co_assistente').addClass('ob');
+                }
+                $.each(optionsAss, function (key, value) {
+                    comboAss.append(new Option(value.no_pessoa, value.co_profissional, false, false)).trigger('change');
+                });
+                $('.co_assistente_parent span.symbol').show();
+            } else {
+                if ($('co_assistente').hasClass('ob')) {
+                    $('co_assistente').removeClass('ob');
+                }
+                $('.co_assistente_parent span.symbol').hide();
+            }
+
             Calendar.IniciaCombosProfAssi();
         },
         Renderiza: function () {

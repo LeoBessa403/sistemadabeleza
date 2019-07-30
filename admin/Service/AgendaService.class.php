@@ -44,9 +44,19 @@ class  AgendaService extends AbstractService
 
         $PDO->beginTransaction();
 
+
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
+        /** @var ServicoEntidade $servico */
+        $servico = $servicoService->PesquisaUmRegistro($dados[CO_SERVICO]);
+        $validaAssistente = false;
+        if($servico->getStAssistente() == SimNaoEnum::SIM){
+            $validaAssistente = true;
+        }
+
         $agendaValidador = new AgendaValidador();
         /** @var AgendaValidador $validador */
-        $validador = $agendaValidador->validarAgendamento($dados);
+        $validador = $agendaValidador->validarAgendamento($dados, $validaAssistente);
         if ($validador[SUCESSO]) {
 
             if (!empty($dados[CO_AGENDA])) {
