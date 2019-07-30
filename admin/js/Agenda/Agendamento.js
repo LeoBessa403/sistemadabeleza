@@ -35,9 +35,10 @@ var Calendar = function () {
                 },
                 allDaySlot: false,
                 slotEventOverlap: true,
+                eventLimitText: 'Mais',
                 navLinks: true, // can click day/week names to navigate views
                 editable: true,
-                eventLimit: true, // allow "more" link when too many events
+                eventLimit: 2, // allow "more" link when too many events
                 selectable: true,
                 slotDuration: '00:10:00',
                 minTime: "06:00:00", // HORA DE INICIO DO ATENDIMENTO
