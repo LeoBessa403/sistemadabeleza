@@ -1,5 +1,5 @@
 <style>
-    tr:hover{
+    tr:hover {
         color: black;
     }
 </style>
@@ -12,15 +12,21 @@ $usuarioService = new UsuarioService();
 $servicoService = new ServicoService();
 /** @var ProfissionalService $profissionalService */
 $profissionalService = new ProfissionalService();
+/** @var ClienteService $clienteService */
+$clienteService = new ClienteService();
 /** @var UsuarioEntidade $usuario */
 $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCoUsuario());
+/** @var ClienteEntidade $cliente */
+$cliente = $clienteService->PesquisaUmRegistro($historico->getCoCliente()->getCoCliente());
 ?>
 <div class="content">
+    Cliente: <b>
+        <?= Valida::Resumi($cliente->getCoPessoa()->getNoPessoa(), 30); ?></b></br>
     Status Agendamento: <b><?= '<span class="label-' . StatusAgendamentoEnum::$cores[$historico->getStStatus()] . '">';
         echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> " . StatusAgendamentoEnum::$descricao[$historico->getStStatus()]; ?></b></br>
     Data: <b><?= Valida::DataShow($historico->getDtInicioAgenda(), 'd/m/Y'); ?></b></br>
-    Período: <b>de <?= Valida::DataShow($historico->getDtInicioAgenda(), 'm:i'); ?> a
-        <?= Valida::DataShow($historico->getDtFimAgenda(), 'm:i'); ?></b></br>
+    Período: <b>de <?= Valida::DataShow($historico->getDtInicioAgenda(), 'h:i'); ?> a
+        <?= Valida::DataShow($historico->getDtFimAgenda(), 'h:i'); ?></b></br>
     Valor: <b><?= Valida::FormataMoeda($historico->getNuValor(), 'R$'); ?></b></br>
     Duração: <b>
         <?= $historico->getNuDuracao(); ?> Minutos</b></br>
@@ -64,9 +70,13 @@ $usuario = $usuarioService->PesquisaUmRegistro($historico->getCoUsuario()->getCo
                                 <td><?= Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
                             <?php }
                             if ($stProf->getTpProfissional() == 2) {
-                                ?>
-                                <td><?= Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
-                            <?php }
+                                if ($profissional) {
+                                    ?>
+                                    <td><?= Valida::Resumi($profissional->getCoPessoa()->getNoPessoa(), 25); ?></td>
+                                <?php } else {
+                                    echo '<td>Sem Assistente</td>';
+                                }
+                            }
                         } ?>
                         <td><?= StatusAtendimentoEnum::$descricao[$statusServico2->getStStatus()]; ?></td>
                     <?php }
