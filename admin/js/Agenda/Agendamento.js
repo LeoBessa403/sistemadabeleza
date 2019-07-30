@@ -105,9 +105,10 @@ var Calendar = function () {
                 eventClick: function (calEvent) {
                     calEvent.jsEvent.preventDefault();
                     var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', calEvent.event.id);
+                    var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
                     $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
                     $('.cliente b').text(dados.cliente);
-                    $('.assistente b').text(dados.assistente);
+                    $('.assistente b').text(assistente);
                     $('.nu_duracao b').text(dados.nu_duracao + ' Minutos');
                     $('.profissional b').text(dados.profissional);
                     $('.servico b').text(dados.no_servico);

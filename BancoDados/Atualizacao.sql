@@ -63,3 +63,13 @@ INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL (co_status_agenda_servico, co_status_a
 
 INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL (co_status_agenda_servico, co_status_agenda, co_profissional, tp_profissional) VALUES ("92", "136", "null", "2");
 
+INSERT INTO TB_AGENDA (dt_cadastro, co_assinante) VALUES ("2019-07-30 15:09:23", "11");
+
+INSERT INTO TB_STATUS_AGENDA (co_agenda, dt_cadastro, st_status, dt_inicio_agenda, dt_fim_agenda, nu_valor, nu_duracao, ds_observacao, co_usuario, co_cliente) VALUES ("17", "2019-07-30 15:09:24", "5", "2019-07-30 08:00:00", "2019-07-30 08:10:00", "39.99", "10", "h wr6uj65u65", "8", "3");
+
+INSERT INTO TB_STATUS_AGENDA_SERVICO (co_status_agenda, co_servico, st_status) VALUES ("137", "30", "1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL (co_status_agenda_servico, co_status_agenda, co_profissional, tp_profissional) VALUES ("93", "137", "21", "1");
+
+INSERT INTO TB_STATUS_AGENDA_PROFISSIONAL (co_status_agenda_servico, co_status_agenda, co_profissional, tp_profissional) VALUES ("93", "137", "null", "2");
+

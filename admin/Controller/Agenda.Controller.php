@@ -18,10 +18,10 @@ class Agenda extends AbstractController
         $eventos = [];
         foreach ($agendas as $agenda) {
             if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
+                $assistente = ($agenda['assistente']) ? $agenda['assistente'] : 'Sem Assistente';
                 $eve = array(
                     'id' => (int)$agenda[CO_AGENDA],
-                    'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $agenda['assistente'] .
-                        "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO],
+                    'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $assistente . "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO],
                     'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
                     'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
                     'className' => 'label-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
