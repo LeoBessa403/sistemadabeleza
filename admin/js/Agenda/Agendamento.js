@@ -126,25 +126,67 @@ var Calendar = function () {
                     $("#j_listar").click();
                 },
                 eventDrop: function (info) {
-                    $("#modal_confirma_ativacao .modal-body b").text("Confirma a mudança do agendamento para "
-                        + info.event.start.toLocaleString());
+                    var hoje = new Date();
+                    hoje.setHours(0);
+                    hoje.setMinutes(0);
+                    hoje.setSeconds(0);
+                    if (info.event.start < hoje) {
+                        Funcoes.Alerta('Não pode Mudar Agendamento para uma data inferior a de hoje.');
+                        info.revert();
+                    } else if (info.oldEvent.start < hoje) {
+                        Funcoes.Alerta('Não pode Mudar Agendamento passados.');
+                        info.revert();
+                    } else {
+                        $("#modal_confirma_ativacao .modal-body b").text("Confirma a mudança do agendamento para "
+                            + info.event.start.toLocaleString());
 
-                    $("#model_confirmacao_ativacao").click();
+                        $("#model_confirmacao_ativacao").click();
+                    }
 
                     $('#btn-success-modal_confirma_ativacao').click(function () {
 
-                        var dia = info.event.start.getDate();
-                        var mes = (info.event.start.getMonth() + 1);
-                        var ano = info.event.start.getFullYear();
-                        if (dia < 10) {
-                            dia = '0' + dia;
+                        var diaIni = info.event.start.getDate();
+                        var mesIni = (info.event.start.getMonth() + 1);
+                        var anoIni = info.event.start.getFullYear();
+                        var horaIni = info.event.start.getHours();
+                        var minutoIni = info.event.start.getMinutes();
+                        if (diaIni < 10) {
+                            diaIni = '0' + diaIni;
                         }
-                        if (mes < 10) {
-                            mes = '0' + mes;
+                        if (mesIni < 10) {
+                            mesIni = '0' + mesIni;
                         }
-                        var dt_agendamento = dia + '/' + mes + '/' + ano;
+                        if (horaIni < 10) {
+                            horaIni = '0' + horaIni;
+                        }
+                        if (minutoIni < 10) {
+                            minutoIni = '0' + minutoIni;
+                        }
+                        var diaFim = info.event.end.getDate();
+                        var mesFim = (info.event.end.getMonth() + 1);
+                        var anoFim = info.event.end.getFullYear();
+                        var horaFim = info.event.end.getHours();
+                        var minutoFim = info.event.end.getMinutes();
+                        if (diaFim < 10) {
+                            diaFim = '0' + diaFim;
+                        }
+                        if (mesIni < 10) {
+                            mesFim = '0' + mesFim;
+                        }
+                        if (horaFim < 10) {
+                            horaFim = '0' + horaFim;
+                        }
+                        if (minutoFim < 10) {
+                            minutoFim = '0' + minutoFim;
+                        }
+                        var dt_inicio_agenda = anoIni + '-' + mesIni + '-' + diaIni + ' '
+                            + horaIni + ':' + minutoIni + ':00';
+                        var dt_fim_agenda = anoFim + '-' + mesFim + '-' + diaFim + ' '
+                            + horaFim + ':' + minutoFim + ':00';
+
                         var data = {
-                            dt_agendamento: dt_agendamento,
+                            dt_inicio_agenda: dt_inicio_agenda,
+                            dt_fim_agenda: dt_fim_agenda,
                             co_agenda: info.event.id
                         };
                         var dados = Funcoes.Ajax('Agenda/DropAgendamentoAjax', data);
@@ -165,6 +207,9 @@ var Calendar = function () {
                     $('.cancelar').click(function () {
                         info.revert();
                     });
+                },
+                eventResize: function (info) {
+                    info.revert();
                 }
             });
 

@@ -44,7 +44,6 @@ class  AgendaService extends AbstractService
 
         $PDO->beginTransaction();
 
-
         /** @var ServicoService $servicoService */
         $servicoService = $this->getService(SERVICO_SERVICE);
         /** @var ServicoEntidade $servico */
@@ -333,10 +332,8 @@ class  AgendaService extends AbstractService
             $statusAgenda[CO_AGENDA] = $dados[CO_AGENDA];
             $statusAgenda[DT_CADASTRO] = Valida::DataHoraAtualBanco();
             $statusAgenda[ST_STATUS] = $agenda[ST_STATUS];
-            $statusAgenda[DT_INICIO_AGENDA] = Valida::DataDB($dados['dt_agendamento'] . ' ' .
-                Valida::DataShow($agenda[DT_INICIO_AGENDA], 'H:i:s'));
-            $statusAgenda[DT_FIM_AGENDA] = Valida::DataDB($dados['dt_agendamento'] . ' ' .
-                Valida::DataShow($agenda[DT_FIM_AGENDA], 'H:i:s'));
+            $statusAgenda[DT_INICIO_AGENDA] = $dados[DT_INICIO_AGENDA];
+            $statusAgenda[DT_FIM_AGENDA] = $dados[DT_FIM_AGENDA];
             $statusAgenda[NU_VALOR] = $agenda[NU_VALOR];
             $statusAgenda[NU_DURACAO] = $agenda[NU_DURACAO];
             $statusAgenda[DS_OBSERVACAO] = $agenda[DS_OBSERVACAO];
