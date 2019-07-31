@@ -96,4 +96,11 @@ class Agenda extends AbstractController
         return $agendaService->FinalizarAgendamento($coAgenda);
     }
 
+    public static function DropAgendamentoAjax($dados)
+    {
+        /** @var AgendaService $agendaService */
+        $agendaService = static::getServiceStatic(AGENDA_SERVICE);
+        return $agendaService->DropAgendamentoAjax($dados);
+    }
+
 }

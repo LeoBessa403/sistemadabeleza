@@ -13,7 +13,7 @@ var Calendar = function () {
                 customButtons: {
                     legendaButton: {
                         text: 'Legenda',
-                        click: function() {
+                        click: function () {
                             $("#j_legenda").click();
                         }
                     }
@@ -27,11 +27,11 @@ var Calendar = function () {
                     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
                 buttonText: {
-                    today:    'Hoje',
-                    month:    'Mês',
-                    week:     'Semana',
-                    day:      'Dia',
-                    list:     'Lista'
+                    today: 'Hoje',
+                    month: 'Mês',
+                    week: 'Semana',
+                    day: 'Dia',
+                    list: 'Lista'
                 },
                 allDaySlot: false,
                 slotEventOverlap: true,
@@ -55,13 +55,13 @@ var Calendar = function () {
                         cachebuster: new Date().valueOf()
                     };
                 },
-                select: function (calEvent) {
-                    var dia = calEvent.start.getDate();
-                    var mes = (calEvent.start.getMonth() + 1);
+                select: function (info) {
+                    var dia = info.start.getDate();
+                    var mes = (info.start.getMonth() + 1);
                     var hora_inicio;
                     var dt_agenda;
-                    var hora = calEvent.start.getHours();
-                    var minuto = calEvent.start.getMinutes();
+                    var hora = info.start.getHours();
+                    var minuto = info.start.getMinutes();
 
                     if (dia < 10) {
                         dia = '0' + dia;
@@ -82,7 +82,7 @@ var Calendar = function () {
                     if (!hora_inicio) {
                         hora_inicio = '08:00';
                     }
-                    dt_agenda = dia + '/' + mes + '/' + calEvent.start.getFullYear();
+                    dt_agenda = dia + '/' + mes + '/' + info.start.getFullYear();
 
                     $("#nu_hora_inicio_agenda").val(hora_inicio);
                     $("#dt_agenda").val(dt_agenda);
@@ -102,9 +102,9 @@ var Calendar = function () {
 
                 },
                 // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
-                eventClick: function (calEvent) {
-                    calEvent.jsEvent.preventDefault();
-                    var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', calEvent.event.id);
+                eventClick: function (info) {
+                    info.jsEvent.preventDefault();
+                    var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', info.event.id);
                     var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
                     $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
                     $('.cliente b').text(dados.cliente);
@@ -114,7 +114,7 @@ var Calendar = function () {
                     $('.servico b').text(dados.no_servico);
                     $('.nu_valor b').text(dados.nu_valor);
                     $('.dia b').text(dados.dia);
-                    $('#co_agenda_listagem').val(calEvent.event.id);
+                    $('#co_agenda_listagem').val(info.event.id);
                     $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
                     $('.acao').hide();
                     if (dados.st_status < 5) {
@@ -124,6 +124,47 @@ var Calendar = function () {
                     }
 
                     $("#j_listar").click();
+                },
+                eventDrop: function (info) {
+                    $("#modal_confirma_ativacao .modal-body b").text("Confirma a mudança do agendamento para "
+                        + info.event.start.toLocaleString());
+
+                    $("#model_confirmacao_ativacao").click();
+
+                    $('#btn-success-modal_confirma_ativacao').click(function () {
+
+                        var dia = info.event.start.getDate();
+                        var mes = (info.event.start.getMonth() + 1);
+                        var ano = info.event.start.getFullYear();
+                        if (dia < 10) {
+                            dia = '0' + dia;
+                        }
+                        if (mes < 10) {
+                            mes = '0' + mes;
+                        }
+                        var dt_agendamento = dia + '/' + mes + '/' + ano;
+                        var data = {
+                            dt_agendamento: dt_agendamento,
+                            co_agenda: info.event.id
+                        };
+                        var dados = Funcoes.Ajax('Agenda/DropAgendamentoAjax', data);
+                        if (dados) {
+                            if (dados.sucesso && dados.msg === "atualizado") {
+                                Funcoes.AtualizadoSucesso();
+                            } else {
+                                Funcoes.Alerta(dados.msg);
+                            }
+                            if (dados.sucesso) {
+                                Calendar.Renderiza();
+                            }
+                        } else {
+                            Funcoes.Erro("Erro: " + dados.msg);
+                        }
+                    });
+
+                    $('.cancelar').click(function () {
+                        info.revert();
+                    });
                 }
             });
 
