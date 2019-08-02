@@ -41,7 +41,7 @@ var Calendar = function () {
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'legendaButton pesquisaButton calendarButton,gridButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                    right: 'legendaButton,pesquisaButton calendarButton,gridButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
                 buttonText: {
                     today: 'Hoje',
@@ -238,8 +238,10 @@ var Calendar = function () {
             runCalendar();
             $('#grid, #pesquisandoAgendamento').hide();
 
-            $('body').on('load' , function () {
-                $('.fa-calendar').addClass('active');
+            $(window).load(function () {
+                $('.fc-calendarButton-button').addClass('active');
+                $('.fc-pesquisaButton-button').removeClass('btn-primary').addClass('btn-light-grey');
+                $('.fc-legendaButton-button').removeClass('btn-primary').addClass('btn-warning');
             });
 
             // SELECIONA OS PROFISSIONAIS E ASSISTENTES DO SERVIÇO SELECIONADO

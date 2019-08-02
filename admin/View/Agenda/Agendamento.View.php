@@ -36,14 +36,16 @@
                             <div id='calendar'></div>
                             <input id="metodo" name="metodo"
                                    value="<?= UrlAmigavel::$controller . '/CarregaAgendamentos'; ?>" type="hidden">
-                            <div id="grid">
+                            <div id="grid" style="margin-top: 0;">
                                 <div class="pull-right">
                                     <?php Valida::geraBtn('', '',
                                         'btn-success', 'novaAgenda', 'fa fa-plus'); ?>
-                                    <?php Valida::geraBtn('', '',
-                                        'btn-warning', 'j_legendas', 'fa fa-align-left'); ?>
-                                    <?php Valida::geraBtn('', '',
-                                        'btn-light-grey', 'j_pesquisa', 'fa fa-cog'); ?>
+                                    <div class="btn-group btn-group-sm">
+                                        <?php Valida::geraBtn('', '',
+                                            'btn-warning', 'j_legendas', 'fa fa-align-left'); ?>
+                                        <?php Valida::geraBtn('', '',
+                                            'btn-light-grey', 'j_pesquisa', 'fa fa-cog'); ?>
+                                    </div>
                                     <div class="btn-group btn-group-sm">
                                         <?php Valida::geraBtn('', '',
                                             'btn-primary', 'carregaCalendar', 'fa fa-calendar'); ?>
@@ -68,7 +70,8 @@
                                         <?= $form; ?>
                                     </div>
                                 </div>
-                                <a data-toggle="modal" role="button" href="#pesquisaAgendamento" id="j_pesquisar"></a>
+                                <a data-toggle="modal" role="button" href="#pesquisaAgendamento"
+                                   id="j_pesquisar"></a>
                                 <h2>
                                     <small>Agendamentos Cadastrados</small>
                                 </h2>
