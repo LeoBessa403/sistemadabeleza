@@ -35,14 +35,24 @@ class Agenda extends AbstractController
 
     public function Agendamento($dados = null)
     {
+        /** @var ServicoService $servicoService */
+        $servicoService = $this->getService(SERVICO_SERVICE);
         /** @var AgendaService $agendaService */
         $agendaService = $this->getService(AGENDA_SERVICE);
         if ($dados):
             return $agendaService->salvaAgendamentoAjax($dados);
         endif;
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-
         $this->result = $agendaService->PesquisaAgendamentos($Condicoes);
+
+        /** @var Session $session */
+        $session = new Session();
+        $Condicoes = [];
+        $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+        $Condicoes["pre." . CO_PRECO_SERVICO] =
+            "(SELECT max(co_preco_servico) from TB_PRECO_SERVICO where co_servico = ser.co_servico)";
+        $resultPreco = $servicoService->PesquisaAvancadaPreco($Condicoes);
+        $session->setSession('resultPreco', $resultPreco);
 
         $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();
@@ -107,4 +117,12 @@ class Agenda extends AbstractController
         return $agendaService->DropAgendamentoAjax($dados);
     }
 
+    public function AgendamentoPesquisaAvancada()
+    {
+        /** @var Session $session */
+        $session = new Session();
+        $resultPreco = $session::getSession('resultPreco');
+        $resultPreco = ((float)$resultPreco['min_valor'] - 1) . '-' . ((int)$resultPreco['max_valor'] + 1);
+        echo ServicoForm::Pesquisar($resultPreco);
+    }
 }

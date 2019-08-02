@@ -38,15 +38,21 @@
                                    value="<?= UrlAmigavel::$controller . '/CarregaAgendamentos'; ?>" type="hidden">
                             <div id="grid">
                                 <div class="pull-right">
-                                    <?php Valida::geraBtn('Calendário', '',
-                                        'btn-primary', 'carregaCalendar', ''); ?>
-                                    <?php Valida::geraBtn('Novo Agendamento', '',
+                                    <?php Valida::geraBtn('', '',
+                                        'btn-warning', 'j_legendas', 'fa fa-stack-exchange'); ?>
+                                    <?php Valida::geraBtn('', '',
+                                        'btn-primary', 'carregaCalendar', 'fa fa-calendar'); ?>
+                                    <?php Valida::geraBtn('', '',
                                         'btn-success', 'novaAgenda', 'fa fa-plus'); ?>
                                 </div>
                                 <?php
                                 $grid = new Grid();
-                                //                                echo $grid->PesquisaAvancada('Pesquisar Agendamentos');
                                 ?>
+                                <div id="pesquisandoAgendamento">
+                                    <?php
+                                    echo $grid->PesquisaAvancada('Pesquisar Agendamentos');
+                                    ?>
+                                </div>
                                 <h2>
                                     <small>Agendamentos Cadastrados</small>
                                 </h2>
@@ -64,12 +70,12 @@
 
                                     $label = '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$res['st_status']] . '">&nbsp;&nbsp;&nbsp;&nbsp;</span> ';
                                     $grid->setColunas(Valida::Resumi($res['cliente'], 30), 3);
-                                    $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'd/m/Y'),1);
+                                    $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'd/m/Y'), 1);
                                     $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'H:i')
-                                        . ' a ' . Valida::DataShow($res['dt_fim_agenda'], 'H:i'),1);
+                                        . ' a ' . Valida::DataShow($res['dt_fim_agenda'], 'H:i'), 1);
                                     $grid->setColunas(Valida::Resumi($res['profissional'], 30), 3);
                                     $grid->setColunas(Valida::Resumi($res['assistente'], 30), 3);
-                                    $grid->setColunas($res['no_servico'],3);
+                                    $grid->setColunas($res['no_servico'], 3);
                                     $grid->setColunas($label . StatusAgendamentoEnum::$descricao[$res['st_status']], 1);
                                     $grid->setColunas($acao, 1);
                                     $grid->criaLinha($res[CO_AGENDA]);

@@ -12,18 +12,20 @@ var Calendar = function () {
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 customButtons: {
                     legendaButton: {
-                        text: 'Legenda',
                         click: function () {
                             $("#j_legenda").click();
                         }
                     },
                     gridButton: {
-                        text: 'Grid',
                         click: function () {
                             $("#calendar").fadeOut('fast');
                             $("#grid").fadeIn('slow');
                         }
                     }
+                },
+                bootstrapFontAwesome: {
+                    legendaButton: 'fa-stack-exchange',
+                    gridButton: 'fa-list'
                 },
                 locale: 'pt-br',
                 themeSystem: 'bootstrap',
@@ -226,7 +228,7 @@ var Calendar = function () {
     return {
         init: function () {
             runCalendar();
-            $('#grid').hide();
+            $('#grid, #pesquisandoAgendamento').hide();
 
             // SELECIONA OS PROFISSIONAIS E ASSISTENTES DO SERVIÇO SELECIONADO
             $('#co_servico').change(function () {
@@ -389,6 +391,12 @@ var Calendar = function () {
             $('#carregaCalendar').click(function () {
                 $("#grid").fadeOut('fast');
                 $("#calendar").fadeIn('slow');
+                return false;
+            });
+
+            // Abre a modal de legendas
+            $('#j_legendas').click(function () {
+                $("#j_legenda").click();
                 return false;
             });
 
