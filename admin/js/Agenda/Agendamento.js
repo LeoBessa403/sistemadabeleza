@@ -21,19 +21,27 @@ var Calendar = function () {
                             $("#calendar").fadeOut('fast');
                             $("#grid").fadeIn('slow');
                         }
-                    }
+                    },
+                    pesquisaButton: {
+                        click: function () {
+                            $("#j_pesquisar").click();
+                        }
+                    },
+                    calendarButton: {}
                 },
                 bootstrapFontAwesome: {
-                    legendaButton: 'fa-stack-exchange',
-                    gridButton: 'fa-list'
+                    legendaButton: 'fa-align-left',
+                    gridButton: 'fa-list',
+                    pesquisaButton: 'fa-cog active',
+                    calendarButton: 'fa-calendar'
                 },
                 locale: 'pt-br',
                 themeSystem: 'bootstrap',
                 plugins: ['bootstrap', 'dayGrid', 'timeGrid', 'list', 'interaction'],
                 header: {
-                    left: 'prev,next today legendaButton',
+                    left: 'prev,next today',
                     center: 'title',
-                    right: 'gridButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                    right: 'legendaButton pesquisaButton calendarButton,gridButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
                 buttonText: {
                     today: 'Hoje',
@@ -230,6 +238,10 @@ var Calendar = function () {
             runCalendar();
             $('#grid, #pesquisandoAgendamento').hide();
 
+            $('body').on('load' , function () {
+                $('.fa-calendar').addClass('active');
+            });
+
             // SELECIONA OS PROFISSIONAIS E ASSISTENTES DO SERVIÇO SELECIONADO
             $('#co_servico').change(function () {
                 var coServico = $(this).val();
@@ -284,7 +296,7 @@ var Calendar = function () {
             });
 
             $('.btn-visualizar').click(function () {
-               var coAgenda = $(this).attr('data-co-agenda');
+                var coAgenda = $(this).attr('data-co-agenda');
 
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
                 var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
@@ -394,6 +406,12 @@ var Calendar = function () {
                 return false;
             });
 
+            // CARREGA CALENDÁRIO
+            $('#j_pesquisa').click(function () {
+                $("#j_pesquisar").click();
+                return false;
+            });
+
             // Abre a modal de legendas
             $('#j_legendas').click(function () {
                 $("#j_legenda").click();
@@ -412,7 +430,7 @@ var Calendar = function () {
                     mes = '0' + mes;
                 }
                 $("#nu_hora_inicio_agenda").val('08:00');
-                $("#dt_agenda").val(dia + '/' + mes + '/' +hoje.getFullYear());
+                $("#dt_agenda").val(dia + '/' + mes + '/' + hoje.getFullYear());
                 $("#nu_duracao").val(null);
                 $("#nu_hora_fim_agenda").val(null);
                 $("#nu_valor2").val(null);

@@ -39,20 +39,36 @@
                             <div id="grid">
                                 <div class="pull-right">
                                     <?php Valida::geraBtn('', '',
-                                        'btn-warning', 'j_legendas', 'fa fa-stack-exchange'); ?>
-                                    <?php Valida::geraBtn('', '',
-                                        'btn-primary', 'carregaCalendar', 'fa fa-calendar'); ?>
-                                    <?php Valida::geraBtn('', '',
                                         'btn-success', 'novaAgenda', 'fa fa-plus'); ?>
+                                    <?php Valida::geraBtn('', '',
+                                        'btn-warning', 'j_legendas', 'fa fa-align-left'); ?>
+                                    <?php Valida::geraBtn('', '',
+                                        'btn-light-grey', 'j_pesquisa', 'fa fa-cog'); ?>
+                                    <div class="btn-group btn-group-sm">
+                                        <?php Valida::geraBtn('', '',
+                                            'btn-primary', 'carregaCalendar', 'fa fa-calendar'); ?>
+                                        <?php Valida::geraBtn('', '',
+                                            'btn-primary active', '', 'fa fa-list'); ?>
+                                    </div>
                                 </div>
                                 <?php
                                 $grid = new Grid();
                                 ?>
-                                <div id="pesquisandoAgendamento">
-                                    <?php
-                                    echo $grid->PesquisaAvancada('Pesquisar Agendamentos');
-                                    ?>
+                                <!--  MODAL PESQUISA AVANÇADA -->
+                                <div class="modal fade in modal-overflow j_pesquisar" id="pesquisaAgendamento"
+                                     tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-header btn-light-grey">
+                                        <button type="button" class="close cancelar" data-dismiss="modal"
+                                                aria-hidden="true">
+                                            X
+                                        </button>
+                                        <h4 class="modal-title">Pesquisa Avançada</h4>
+                                    </div>
+                                    <div class="modal-body" style="padding: 0;">
+                                        <?= $form; ?>
+                                    </div>
                                 </div>
+                                <a data-toggle="modal" role="button" href="#pesquisaAgendamento" id="j_pesquisar"></a>
                                 <h2>
                                     <small>Agendamentos Cadastrados</small>
                                 </h2>
