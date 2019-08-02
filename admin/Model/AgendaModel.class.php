@@ -59,7 +59,6 @@ class  AgendaModel extends AbstractModel
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);
         $pesquisa->Pesquisar($tabela, $where, null, $campos);
-//        debug($pesquisa->getSql());
         return $pesquisa->getResult();
     }
 

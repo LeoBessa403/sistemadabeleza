@@ -40,6 +40,10 @@ class Agenda extends AbstractController
         if ($dados):
             return $agendaService->salvaAgendamentoAjax($dados);
         endif;
+        $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
+
+        $this->result = $agendaService->PesquisaAgendamentos($Condicoes);
+
         $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();
         return null;

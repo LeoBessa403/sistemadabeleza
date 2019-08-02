@@ -14,8 +14,8 @@
             <?php
             foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
                 if ($chave != StatusAgendamentoEnum::DELETADO) {
-                    echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
-                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
+                    echo '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+                    echo '&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc . ' / ';
                 }
             }
             ?>

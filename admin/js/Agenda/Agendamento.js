@@ -16,6 +16,13 @@ var Calendar = function () {
                         click: function () {
                             $("#j_legenda").click();
                         }
+                    },
+                    gridButton: {
+                        text: 'Grid',
+                        click: function () {
+                            $("#calendar").fadeOut('fast');
+                            $("#grid").fadeIn('slow');
+                        }
                     }
                 },
                 locale: 'pt-br',
@@ -24,7 +31,7 @@ var Calendar = function () {
                 header: {
                     left: 'prev,next today legendaButton',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                    right: 'gridButton dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                 },
                 buttonText: {
                     today: 'Hoje',
@@ -219,6 +226,7 @@ var Calendar = function () {
     return {
         init: function () {
             runCalendar();
+            $('#grid').hide();
 
             // SELECIONA OS PROFISSIONAIS E ASSISTENTES DO SERVIÇO SELECIONADO
             $('#co_servico').change(function () {
@@ -271,6 +279,31 @@ var Calendar = function () {
                 $('#co_profissional').select2("destroy").val(dados.co_profissional).select2({allowClear: false});
                 $('#co_assistente').select2("destroy").val(dados.co_assistente).select2({allowClear: false});
                 $("#co_agenda").val(coAgenda);
+            });
+
+            $('.btn-visualizar').click(function () {
+               var coAgenda = $(this).attr('data-co-agenda');
+
+                var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
+                var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
+                $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
+                $('.cliente b').text(dados.cliente);
+                $('.assistente b').text(assistente);
+                $('.nu_duracao b').text(dados.nu_duracao + ' Minutos');
+                $('.profissional b').text(dados.profissional);
+                $('.servico b').text(dados.no_servico);
+                $('.nu_valor b').text(dados.nu_valor);
+                $('.dia b').text(dados.dia);
+                $('#co_agenda_listagem').val(coAgenda);
+                $('.periodo b').text(' de ' + dados.inicio + ' a ' + dados.fim);
+                $('.acao').hide();
+                if (dados.st_status < 5) {
+                    $('.btn-finalizar').show();
+                    $('.btn-editar').show();
+                    $('.btn-deletar').show();
+                }
+
+                $("#j_listar").click();
             });
 
             // CADASTRO DO AGENDAMENTO
@@ -349,6 +382,43 @@ var Calendar = function () {
                 } else {
                     Funcoes.Erro("Erro: " + dados.msg);
                 }
+                return false;
+            });
+
+            // CARREGA CALENDÁRIO
+            $('#carregaCalendar').click(function () {
+                $("#grid").fadeOut('fast');
+                $("#calendar").fadeIn('slow');
+                return false;
+            });
+
+            // NOVO AGENDAMENTO GRID
+            $('#novaAgenda').click(function () {
+                var hoje = new Date();
+                var dia = hoje.getDay();
+                var mes = (hoje.getMonth() + 1);
+                if (dia < 10) {
+                    dia = '0' + dia;
+                }
+                if (mes < 10) {
+                    mes = '0' + mes;
+                }
+                $("#nu_hora_inicio_agenda").val('08:00');
+                $("#dt_agenda").val(dia + '/' + mes + '/' +hoje.getFullYear());
+                $("#nu_duracao").val(null);
+                $("#nu_hora_fim_agenda").val(null);
+                $("#nu_valor2").val(null);
+                $("#ds_observacao").val(null);
+                $('#co_agenda').val(null);
+                $('#st_status').select2("destroy").val(1).select2({allowClear: false});
+
+                Calendar.LimpaCombosClienteServico();
+                Calendar.LimpaCombosProfAssi();
+                Calendar.IniciaCombosProfAssi();
+                Calendar.LimpaValidacao();
+
+                $("#j_cadastro").click();
+
                 return false;
             });
         },
