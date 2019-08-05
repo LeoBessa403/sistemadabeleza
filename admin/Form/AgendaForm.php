@@ -14,10 +14,6 @@ class AgendaForm
             "Cadastrar", 12);
 
         $options = StatusAgendamentoEnum::$descricao;
-        $opcoes = [];
-        foreach ($options as $chave => $valor) {
-            $opcoes[$chave] = "<span class='label-" . StatusAgendamentoEnum::$cores[StatusAgendamentoEnum::getValorDescricao($valor)] . "'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> " . $valor;
-        }
         unset($options[StatusAgendamentoEnum::DELETADO]);
         $formulario
             ->setId(ST_STATUS)
@@ -60,17 +56,6 @@ class AgendaForm
             ->setId(NU_VALOR)
             ->setValues(null)
             ->CriaInpunt();
-
-
-//        $options = StatusAtendimentoEnum::$descricao;
-//        $formulario
-//            ->setId(ST_STATUS)
-//            ->setType(TiposCampoEnum::SELECT)
-//            ->setLabel("Status Atendimento")
-//            ->setTamanhoInput(4)
-//            ->setClasses("ob")
-//            ->setOptions($options)
-//            ->CriaInpunt();
 
         $options = ['' => 'Selecione um Serviço.'];
         $formulario
@@ -163,97 +148,81 @@ class AgendaForm
 
     public static function Pesquisar()
     {
-        $id = "pesquisaCliente";
+        $id = "pesquisaAgendamento";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action, "Pesquisa", 12);
 
+        $options[''] = 'Selecione um status';
+        foreach (StatusAgendamentoEnum::$descricao as $chave => $valor) {
+            $options[$chave] = $valor;
+        }
         $formulario
-            ->setId(NO_PESSOA)
-            ->setIcon("clip-user-6")
-            ->setTamanhoInput(6)
-            ->setLabel("Nome do Cliente")
-            ->setInfo("Pode ser Parte do nome")
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NO_APELIDO)
-            ->setIcon("clip-user-6")
-            ->setTamanhoInput(6)
-            ->setLabel("Apelido")
-            ->setInfo("Pode ser Parte do nome")
-            ->CriaInpunt();
-
-        $meses = DiasEnum::$montaComboMes;
-        $formulario
-            ->setId('mes_aniversariante')
-            ->setLabel("Aniversariante do Mês")
-            ->setTamanhoInput(6)
-            ->setClasses("multipla")
+            ->setId(ST_STATUS)
             ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($meses)
-            ->CriaInpunt();
-
-        $label_options = array("" => "Selecione um", "M" => "Masculino", "F" => "Feminino");
-        $formulario
-            ->setLabel("Sexo")
-            ->setId(ST_SEXO)
-            ->setTamanhoInput(6)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($label_options)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NO_CIDADE)
-            ->setTamanhoInput(6)
-            ->setLabel("Cidade")
-            ->CriaInpunt();
-
-        $options = EnderecoService::montaComboEstadosDescricao();
-        $formulario
-            ->setId(SG_UF)
-            ->setType(TiposCampoEnum::SELECT)
-            ->setLabel("Estado")
+            ->setLabel("Status Agendamento")
             ->setTamanhoInput(6)
             ->setOptions($options)
             ->CriaInpunt();
 
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $options = ClienteService::clientesCombo();
         $formulario
-            ->setLabel("Recebe E-mail Agendamento")
-            ->setId(ST_RECEBER_EMAIL_AGENDAMENTO)
-            ->setTamanhoInput(6)
+            ->setId(CO_CLIENTE)
             ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($label_options)
+            ->setLabel("Cliente")
+            ->setTamanhoInput(6)
+            ->setOptions($options)
             ->CriaInpunt();
 
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $options = ProfissionalService::ProfissionaisAtivosCombo();
         $formulario
-            ->setLabel("Lembrete Horário de Agendamento")
-            ->setId(ST_LEMBRETE_HORARIO_AGENDAMENTO)
-            ->setTamanhoInput(6)
+            ->setId(CO_PROFISSIONAL)
             ->setType(TiposCampoEnum::SELECT)
-            ->setOptions($label_options)
+            ->setLabel("Profissional")
+            ->setTamanhoInput(6)
+            ->setOptions($options)
             ->CriaInpunt();
 
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $optionsAss = ProfissionalService::AssistentesAtivosCombo();
         $formulario
-            ->setLabel("Recebe E-mail Marketing")
-            ->setId(ST_EMAIL_MARKETING)
+            ->setId('co_assistente')
             ->setType(TiposCampoEnum::SELECT)
+            ->setLabel("Assistente")
             ->setTamanhoInput(6)
-            ->setOptions($label_options)
+            ->setOptions($optionsAss)
             ->CriaInpunt();
 
-        $label_options = array("" => "Selecione um", "S" => "Sim", "N" => "Não");
+        $options = ServicoService::servicosCombo();
         $formulario
-            ->setLabel("Recebe SMS Marketing")
-            ->setId(ST_SMS_MARKETING)
+            ->setId(CO_SERVICO)
             ->setType(TiposCampoEnum::SELECT)
-            ->setTamanhoInput(6)
-            ->setOptions($label_options)
+            ->setLabel("Serviço")
+            ->setTamanhoInput(12)
+            ->setOptions($options)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_VALOR)
+            ->setLabel("Preço R$")
+            ->setTamanhoInput(4)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId('dt_agenda')
+            ->setTamanhoInput(4)
+            ->setClasses("data")
+            ->setIcon("clip-calendar-3")
+            ->setLabel("Data")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_DURACAO)
+            ->setTamanhoInput(4)
+            ->setClasses("numero")
+            ->setInfo("Duração do Serviço")
+            ->setLabel("Duração (Minutos)")
             ->CriaInpunt();
 
 
-        return $formulario->finalizaFormPesquisaAvancada();
+        return $formulario->finalizaForm();
     }
 }

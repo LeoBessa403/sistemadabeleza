@@ -161,23 +161,33 @@ class  ProfissionalService extends AbstractService
         return $this->ObjetoModel->PesquisaAvancada($Condicoes);
     }
 
-    public static function PesquisaProfissionaisCombo()
+    /**
+     * @return array
+     */
+    public static function AssistentesAtivosCombo()
     {
         /** @var ProfissionalService $profissionalService */
         $profissionalService = new ProfissionalService();
-        $comboProfissionais = [
+
+        $todosProfissionais = $profissionalService->PesquisaTodos([
+            CO_ASSINANTE => AssinanteService::getCoAssinanteLogado(),
+            ST_STATUS => StatusUsuarioEnum::ATIVO,
+            ST_ASSISTENTE => SimNaoEnum::SIM
+        ]);
+
+        $comboAssistentes = [
             '' => Mensagens::MSG_SEM_ITEM_SELECIONADO
         ];
-        $profissionais = $profissionalService->PesquisaTodos();
+
         /** @var ProfissionalEntidade $profissional */
-        foreach ($profissionais as $profissional) {
-            $comboProfissionais[$profissional->getCoProfissional()]
+        foreach ($todosProfissionais as $profissional) {
+            $comboAssistentes[$profissional->getCoProfissional()]
                 = Valida::Resumi(strtoupper($profissional->getCoPessoa()->getNoPessoa()), 25);
         }
-        return $comboProfissionais;
+        return $comboAssistentes;
     }
 
-    public static function profissionaisAtivosCombo()
+    public static function ProfissionaisAtivosCombo()
     {
         /** @var ProfissionalService $profissionalService */
         $profissionalService = new ProfissionalService();
@@ -230,9 +240,9 @@ class  ProfissionalService extends AbstractService
         $coProfissionalEd = $this->Salva($dados, $coProfissional);
 
         if ($coProfissionalEd) {
-            if($motivo){
+            if ($motivo) {
                 $retorno[MSG] = DELETADO;
-            }else{
+            } else {
                 $retorno[MSG] = ATUALIZADO;
             }
             $retorno[SUCESSO] = true;
@@ -259,7 +269,7 @@ class  ProfissionalService extends AbstractService
         $comboProfissionaisServico = [];
         /** @var HistoricoComissaoEntidade $ultHistConfigCom */
         $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
-        if($ultHistConfigCom->getNuFormaComissao() < 4){
+        if ($ultHistConfigCom->getNuFormaComissao() < 4) {
             /** @var ProfissionalService $profissionalService */
             $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
             $todosProfissionais = $profissionalService->PesquisaTodos([
@@ -274,7 +284,7 @@ class  ProfissionalService extends AbstractService
                 $i++;
             }
 
-        }else{
+        } else {
             /** @var ServicoProfissionalService $servicoProfissionalService */
             $servicoProfissionalService = new ServicoProfissionalService();
             $comboProfissionaisServico = [];
@@ -305,7 +315,7 @@ class  ProfissionalService extends AbstractService
         /** @var ServicoEntidade $servico */
         $servico = $servicoService->PesquisaUmRegistro($coServico);
 
-        if($servico->getStAssistente() != SimNaoEnum::SIM){
+        if ($servico->getStAssistente() != SimNaoEnum::SIM) {
             return $comboProfissionaisServico;
         }
 
@@ -318,7 +328,7 @@ class  ProfissionalService extends AbstractService
         $i = 0;
         /** @var HistoricoComissaoEntidade $ultHistConfigCom */
         $ultHistConfigCom = $configComissao->getCoUltimoHistoricoComissao();
-        if($ultHistConfigCom->getNuFormaComissao() < 4){
+        if ($ultHistConfigCom->getNuFormaComissao() < 4) {
             /** @var ProfissionalService $profissionalService */
             $profissionalService = $this->getService(PROFISSIONAL_SERVICE);
             $todosProfissionais = $profissionalService->PesquisaTodos([
@@ -333,7 +343,7 @@ class  ProfissionalService extends AbstractService
                 $comboProfissionaisServico[$i][NO_PESSOA] = $profissional->getCoPessoa()->getNoPessoa();
                 $i++;
             }
-        }else{
+        } else {
             /** @var ServicoProfissionalService $servicoProfissionalService */
             $servicoProfissionalService = new ServicoProfissionalService();
             $comboProfissionaisServico = [];
@@ -344,7 +354,7 @@ class  ProfissionalService extends AbstractService
             ]);
             /** @var ServicoProfissionalEntidade $profissionalServico */
             foreach ($profissionaisServico as $profissionalServico) {
-                if($profissionalServico->getCoProfissional()->getStAssistente() == SimNaoEnum::SIM){
+                if ($profissionalServico->getCoProfissional()->getStAssistente() == SimNaoEnum::SIM) {
                     $comboProfissionaisServico[$i][CO_PROFISSIONAL] = $profissionalServico->getCoProfissional()->getCoProfissional();
                     $comboProfissionaisServico[$i][NO_PESSOA] = $profissionalServico->getCoProfissional()->getCoPessoa()->getNoPessoa();
                     $i++;

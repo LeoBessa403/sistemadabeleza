@@ -242,6 +242,11 @@ var Calendar = function () {
                 $('.fc-calendarButton-button').addClass('active');
                 $('.fc-pesquisaButton-button').removeClass('btn-primary').addClass('btn-light-grey');
                 $('.fc-legendaButton-button').removeClass('btn-primary').addClass('btn-warning');
+
+                $('.btn').click(function () {
+                    $('.fc-calendarButton-button').addClass('active');
+                });
+
             });
 
             // SELECIONA OS PROFISSIONAIS E ASSISTENTES DO SERVIÇO SELECIONADO

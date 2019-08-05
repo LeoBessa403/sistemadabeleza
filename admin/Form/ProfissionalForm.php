@@ -411,7 +411,7 @@ class ProfissionalForm
             $formulario->setValor($res);
         endif;
 
-        $profissionais = ProfissionalService::PesquisaProfissionaisCombo();
+        $profissionais = ProfissionalService::ProfissionaisAtivosCombo();
         $formulario
             ->setId(CO_PROFISSIONAL)
             ->setLabel("Profissional")
