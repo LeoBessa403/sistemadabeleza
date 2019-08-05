@@ -157,7 +157,7 @@ class AgendaForm
             $options[$chave] = $valor;
         }
         $formulario
-            ->setId(ST_STATUS)
+            ->setId(ST_STATUS . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Status Agendamento")
             ->setTamanhoInput(6)
@@ -166,7 +166,7 @@ class AgendaForm
 
         $options = ClienteService::clientesCombo();
         $formulario
-            ->setId(CO_CLIENTE)
+            ->setId(CO_CLIENTE. '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Cliente")
             ->setTamanhoInput(6)
@@ -175,7 +175,7 @@ class AgendaForm
 
         $options = ProfissionalService::ProfissionaisAtivosCombo();
         $formulario
-            ->setId(CO_PROFISSIONAL)
+            ->setId(CO_PROFISSIONAL. '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Profissional")
             ->setTamanhoInput(6)
@@ -184,7 +184,7 @@ class AgendaForm
 
         $optionsAss = ProfissionalService::AssistentesAtivosCombo();
         $formulario
-            ->setId('co_assistente')
+            ->setId('co_assistente-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Assistente")
             ->setTamanhoInput(6)
@@ -193,7 +193,7 @@ class AgendaForm
 
         $options = ServicoService::servicosCombo();
         $formulario
-            ->setId(CO_SERVICO)
+            ->setId(CO_SERVICO. '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Serviço")
             ->setTamanhoInput(12)
@@ -201,28 +201,38 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_VALOR)
-            ->setLabel("Preço R$")
-            ->setTamanhoInput(4)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId('dt_agenda')
-            ->setTamanhoInput(4)
-            ->setClasses("data")
+            ->setId('dt1')
             ->setIcon("clip-calendar-3")
-            ->setLabel("Data")
+            ->setTamanhoInput(3)
+            ->setClasses("data dt1 ob")
+            ->setValor(date('d/m/Y'))
+            ->setLabel("Período Inicío")
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_DURACAO)
-            ->setTamanhoInput(4)
+            ->setId('dt2')
+            ->setIcon("clip-calendar-3")
+            ->setTamanhoInput(3)
+            ->setValor(date('d/m/Y'))
+            ->setClasses("data dt2 ob")
+            ->setLabel("Fim")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_VALOR. '-pesquisa')
+            ->setLabel("Preço R$")
+            ->setTamanhoInput(3)
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_DURACAO. '-pesquisa')
+            ->setTamanhoInput(3)
             ->setClasses("numero")
             ->setInfo("Duração do Serviço")
             ->setLabel("Duração (Minutos)")
             ->CriaInpunt();
 
 
-        return $formulario->finalizaForm();
+        return $formulario->finalizaForm('', false);
     }
 }
