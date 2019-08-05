@@ -9,7 +9,7 @@
         <h4 class="modal-title">Pesquisa Avançada</h4>
     </div>
     <div class="modal-body" style="padding: 0;">
-        <?= $form; ?>
+        <?= $formPesquisa; ?>
     </div>
 </div>
 <a data-toggle="modal" role="button" href="#pesquisaAgendamento" id="j_pesquisar"></a>

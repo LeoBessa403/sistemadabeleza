@@ -5,6 +5,7 @@ class Agenda extends AbstractController
     public $result;
     public $form;
     public $formCancela;
+    public $formPesquisa;
     public $agenda;
 
     public function CarregaAgendamentos()
@@ -56,6 +57,7 @@ class Agenda extends AbstractController
 
         $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();
+        $this->formPesquisa = AgendaForm::Pesquisar();
         return null;
     }
 

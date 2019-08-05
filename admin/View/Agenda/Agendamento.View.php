@@ -27,6 +27,7 @@
                     <?php include_once 'ListarAgendamento.View.php' ?>
                     <?php include_once 'DeletarAgendamento.View.php' ?>
                     <?php include_once 'LegendaAgendamento.View.php' ?>
+                    <?php include_once 'PesquisaAgendamento.View.php' ?>
                     <div class="panel-heading">
                         <i class="fa fa-external-link-square"></i>
                         Agendamentos
@@ -56,7 +57,6 @@
                                 <?php
                                 $grid = new Grid();
                                 ?>
-                                <?php include_once 'PesquisaAgendamento.View.php' ?>
                                 <h2>
                                     <small>Agendamentos Cadastrados</small>
                                 </h2>
