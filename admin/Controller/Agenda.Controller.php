@@ -119,12 +119,10 @@ class Agenda extends AbstractController
         return $agendaService->DropAgendamentoAjax($dados);
     }
 
-    public function AgendamentoPesquisaAvancada()
+    public function AgendamentoPesquisaAvancada($dados)
     {
-        /** @var Session $session */
-        $session = new Session();
-        $resultPreco = $session::getSession('resultPreco');
-        $resultPreco = ((float)$resultPreco['min_valor'] - 1) . '-' . ((int)$resultPreco['max_valor'] + 1);
-        echo ServicoForm::Pesquisar($resultPreco);
+        /** @var AgendaService $agendaService */
+        $agendaService = static::getServiceStatic(AGENDA_SERVICE);
+        return $agendaService->AgendamentoPesquisaAvancada($dados);
     }
 }

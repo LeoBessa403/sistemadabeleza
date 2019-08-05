@@ -1,5 +1,5 @@
 <!--  MODAL PESQUISA AVANÇADA -->
-<div class="modal fade in modal-overflow j_pesquisar" id="pesquisaAgendamento"
+<div class="modal fade in modal-overflow j_pesquisar" id="PesquisaAgendamento"
      tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header btn-light-grey">
         <button type="button" class="close cancelar" data-dismiss="modal"
@@ -12,4 +12,4 @@
         <?= $formPesquisa; ?>
     </div>
 </div>
-<a data-toggle="modal" role="button" href="#pesquisaAgendamento" id="j_pesquisar"></a>
+<a data-toggle="modal" role="button" href="#PesquisaAgendamento" id="j_pesquisar"></a>

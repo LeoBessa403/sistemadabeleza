@@ -349,6 +349,18 @@ var Calendar = function () {
                 return false;
             });
 
+            // PESQUISA AVANÇADA DO AGENDAMENTO
+            $("#PesquisaAgendamento").submit(function () {
+                var data = $(this).serializeArray();
+                var dados = Funcoes.Ajax('Agenda/AgendamentoPesquisaAvancada', data);
+                if (!dados.sucesso) {
+                    Funcoes.Alerta(dados.msg);
+                } else {
+                    Funcoes.Erro("Erro: " + dados.msg);
+                }
+                return false;
+            });
+
             // DIRECIONA PARA O HISTÓRICO DO AGENDAMENTO
             $(".btn-historico").click(function () {
                 var home = $("#home").attr('data-val');

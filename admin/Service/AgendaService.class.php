@@ -424,4 +424,10 @@ class  AgendaService extends AbstractService
         }
     }
 
+    public function AgendamentoPesquisaAvancada($dados)
+    {
+        $dados = Valida::montaArrayAjax($dados);
+        debug( $dados);
+    }
+
 }
