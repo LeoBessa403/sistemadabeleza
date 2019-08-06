@@ -302,9 +302,9 @@ var Calendar = function () {
                 $("#co_agenda").val(coAgenda);
             });
 
+            // ABRE MODAL DE DETALHAMENTO DO AGENDAMENTO
             $('.btn-visualizar').click(function () {
                 var coAgenda = $(this).attr('data-co-agenda');
-
                 var dados = Funcoes.Ajax('Agenda/GetAgendaAjax', coAgenda);
                 var assistente = (dados.assistente) ? dados.assistente : 'Sem Assistente';
                 $('.st_status b').html($('#Status-Agendamento-' + dados.st_status).html());
@@ -323,7 +323,6 @@ var Calendar = function () {
                     $('.btn-editar').show();
                     $('.btn-deletar').show();
                 }
-
                 $("#j_listar").click();
             });
 
@@ -425,7 +424,7 @@ var Calendar = function () {
                 return false;
             });
 
-            // CARREGA CALENDÁRIO
+            // ABRE MODAL PESQUISA AVANÇADA
             $('#j_pesquisa').click(function () {
                 $("#j_pesquisar").click();
                 return false;
