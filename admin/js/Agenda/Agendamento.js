@@ -359,8 +359,6 @@ var Calendar = function () {
                 console.log(data);
                 var dados = Funcoes.Ajax('Agenda/AgendamentoPesquisaAvancada', data);
                 if (!dados.sucesso) {
-                    Funcoes.Alerta(dados.msg);
-                } else {
                     Funcoes.Erro("Erro: " + dados.msg);
                 }
                 return false;
