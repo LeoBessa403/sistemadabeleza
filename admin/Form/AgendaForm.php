@@ -217,7 +217,7 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId('dt1')
+            ->setId('dt1-pesquisa')
             ->setIcon("clip-calendar-3")
             ->setTamanhoInput(6)
             ->setClasses("data dt1 ob")
@@ -226,7 +226,7 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId('dt2')
+            ->setId('dt2-pesquisa')
             ->setIcon("clip-calendar-3")
             ->setTamanhoInput(6)
             ->setValor(date('d/m/Y'))
