@@ -25,9 +25,9 @@ class Agenda extends AbstractController
                     'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $assistente . "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO],
                     'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
                     'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
-                    'className' => 'label-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
+                    'className' => 'event-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
                     'allDay' => false,
-                    'borderColor' => $agenda['ds_cor_agenda'],
+                    'backgroundColor' => $agenda['ds_cor_agenda'],
                 );
                 $eventos[] = $eve;
             }
