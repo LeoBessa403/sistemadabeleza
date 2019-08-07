@@ -106,7 +106,11 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-            $statusAgendaProfissional[CO_PROFISSIONAL] = (empty($dados['co_assistente'])) ? $dados['co_assistente'] : 0;
+            if (!empty($dados['co_assistente'])) {
+                $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
+            } else {
+                unset($statusAgendaProfissional[CO_PROFISSIONAL]);
+            }
             $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
@@ -197,7 +201,11 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-            $statusAgendaProfissional[CO_PROFISSIONAL] = (empty($agenda['co_assistente'])) ? $agenda['co_assistente'] : 0;
+            if (!empty($agenda['co_assistente'])) {
+                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+            } else {
+                unset($statusAgendaProfissional[CO_PROFISSIONAL]);
+            }
             $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
@@ -273,8 +281,11 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda[CO_PROFISSIONAL];
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
-
-            $statusAgendaProfissional[CO_PROFISSIONAL] = (empty($agenda['co_assistente'])) ? $agenda['co_assistente'] : 0;
+            if (!empty($agenda['co_assistente'])) {
+                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+            } else {
+                unset($statusAgendaProfissional[CO_PROFISSIONAL]);
+            }
             $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
@@ -351,7 +362,11 @@ class  AgendaService extends AbstractService
             $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-            $statusAgendaProfissional[CO_PROFISSIONAL] = (!empty($agenda['co_assistente'])) ? $agenda['co_assistente'] : 0;
+            if (!empty($agenda['co_assistente'])) {
+                $statusAgendaProfissional[CO_PROFISSIONAL] = $agenda['co_assistente'];
+            } else {
+                unset($statusAgendaProfissional[CO_PROFISSIONAL]);
+            }
             $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
             $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         } else {
@@ -414,7 +429,11 @@ class  AgendaService extends AbstractService
         $statusAgendaProfissional[TP_PROFISSIONAL] = 1;
         $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
 
-        $statusAgendaProfissional[CO_PROFISSIONAL] = (empty($dados['co_assistente'])) ? $dados['co_assistente'] : 0;
+        if (!empty($dados['co_assistente'])) {
+            $statusAgendaProfissional[CO_PROFISSIONAL] = $dados['co_assistente'];
+        } else {
+            unset($statusAgendaProfissional[CO_PROFISSIONAL]);
+        }
         $statusAgendaProfissional[TP_PROFISSIONAL] = 2;
         $retorno[SUCESSO] = $statusAgendaProfissionalService->Salva($statusAgendaProfissional);
         if ($retorno[SUCESSO]) {
@@ -427,7 +446,7 @@ class  AgendaService extends AbstractService
     public function AgendamentoPesquisaAvancada($dados)
     {
         $dados = Valida::montaArrayAjax($dados);
-        debug( $dados);
+        debug($dados);
     }
 
 }

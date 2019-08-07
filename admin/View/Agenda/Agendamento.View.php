@@ -72,13 +72,18 @@
                                      <i class="clip-eye"></i>
                                  </button>';
 
+                                    if (!empty($res['assistente'])) {
+                                        $assistente = Valida::Resumi($res['assistente'], 30);
+                                    } else {
+                                        $assistente = 'Sem Assistente';
+                                    }
                                     $label = '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$res['st_status']] . '">&nbsp;&nbsp;&nbsp;&nbsp;</span> ';
                                     $grid->setColunas(Valida::Resumi($res['cliente'], 30), 3);
                                     $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'd/m/Y'), 1);
                                     $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'H:i')
                                         . ' a ' . Valida::DataShow($res['dt_fim_agenda'], 'H:i'), 1);
                                     $grid->setColunas(Valida::Resumi($res['profissional'], 30), 3);
-                                    $grid->setColunas(Valida::Resumi($res['assistente'], 30), 3);
+                                    $grid->setColunas($assistente, 3);
                                     $grid->setColunas($res['no_servico'], 3);
                                     $grid->setColunas($label . StatusAgendamentoEnum::$descricao[$res['st_status']], 1);
                                     $grid->setColunas($acao, 1);

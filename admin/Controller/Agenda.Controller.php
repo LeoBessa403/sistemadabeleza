@@ -14,7 +14,7 @@ class Agenda extends AbstractController
         $agendaService = $this->getService(AGENDA_SERVICE);
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
 
-        $agendas = $agendaService->PesquisaAgendamentos($Condicoes);
+        $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'pro.ds_cor_agenda');
 
         $eventos = [];
         foreach ($agendas as $agenda) {
@@ -26,7 +26,8 @@ class Agenda extends AbstractController
                     'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
                     'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
                     'className' => 'label-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
-                    'allDay' => false
+                    'allDay' => false,
+                    'borderColor' => $agenda['ds_cor_agenda'],
                 );
                 $eventos[] = $eve;
             }

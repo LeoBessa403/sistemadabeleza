@@ -66,7 +66,12 @@ var Calendar = function () {
                     omitZeroMinute: false,
                     meridiem: 'short'
                 },
-                events: urlValida,
+                events: {
+                    url: urlValida,
+                    failure: function () {
+                        Funcoes.Erro('Não foi possível carregar os Agendamentos!');
+                    }
+                },
                 extraParams: function () {
                     return {
                         cachebuster: new Date().valueOf()
