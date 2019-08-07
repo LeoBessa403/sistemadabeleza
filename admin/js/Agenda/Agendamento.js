@@ -354,8 +354,9 @@ var Calendar = function () {
             });
 
             // PESQUISA AVANÇADA DO AGENDAMENTO
-            $("#PesquisaAgendamento").submit(function () {
+            $("#PesquisaAvancadaAgendamento").submit(function () {
                 var data = $(this).serializeArray();
+                console.log(data);
                 var dados = Funcoes.Ajax('Agenda/AgendamentoPesquisaAvancada', data);
                 if (!dados.sucesso) {
                     Funcoes.Alerta(dados.msg);

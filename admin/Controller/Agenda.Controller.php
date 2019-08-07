@@ -47,18 +47,16 @@ class Agenda extends AbstractController
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $this->result = $agendaService->PesquisaAgendamentos($Condicoes);
 
-        /** @var Session $session */
-        $session = new Session();
         $Condicoes = [];
         $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $Condicoes["pre." . CO_PRECO_SERVICO] =
             "(SELECT max(co_preco_servico) from TB_PRECO_SERVICO where co_servico = ser.co_servico)";
         $resultPreco = $servicoService->PesquisaAvancadaPreco($Condicoes);
-        $session->setSession('resultPreco', $resultPreco);
+        $resultPreco = ((float)$resultPreco['min_valor'] - 1) . '-' . ((int)$resultPreco['max_valor'] + 1);
 
         $this->form = AgendaForm::CadastroAgendamento();
         $this->formCancela = AgendaForm::DeletarAgendamento();
-        $this->formPesquisa = AgendaForm::Pesquisar();
+        $this->formPesquisa = AgendaForm::Pesquisar($resultPreco);
         return null;
     }
 

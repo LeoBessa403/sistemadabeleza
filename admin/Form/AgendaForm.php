@@ -146,9 +146,9 @@ class AgendaForm
         return $formulario->finalizaForm(false, false);
     }
 
-    public static function Pesquisar()
+    public static function Pesquisar($resultPreco)
     {
-        $id = "pesquisaAgendamento";
+        $id = "PesquisaAvancadaAgendamento";
 
         $formulario = new Form($id, ADMIN . "/" . UrlAmigavel::$controller . "/" . UrlAmigavel::$action, "Pesquisa", 12);
 
@@ -201,9 +201,25 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
+            ->setId(NU_VALOR . '-pesquisa')
+            ->setTamanhoInput(6)
+            ->setIntervalo($resultPreco)
+            ->setType(TiposCampoEnum::SLIDER)
+            ->setLabel("Valor R$")
+            ->CriaInpunt();
+
+        $formulario
+            ->setId(NU_DURACAO. '-pesquisa')
+            ->setTamanhoInput(6)
+            ->setClasses("numero")
+            ->setInfo("Duração do Serviço")
+            ->setLabel("Duração (Minutos)")
+            ->CriaInpunt();
+
+        $formulario
             ->setId('dt1')
             ->setIcon("clip-calendar-3")
-            ->setTamanhoInput(3)
+            ->setTamanhoInput(6)
             ->setClasses("data dt1 ob")
             ->setValor(date('d/m/Y'))
             ->setLabel("Período Inicío")
@@ -212,24 +228,10 @@ class AgendaForm
         $formulario
             ->setId('dt2')
             ->setIcon("clip-calendar-3")
-            ->setTamanhoInput(3)
+            ->setTamanhoInput(6)
             ->setValor(date('d/m/Y'))
             ->setClasses("data dt2 ob")
             ->setLabel("Fim")
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_VALOR. '-pesquisa')
-            ->setLabel("Preço R$")
-            ->setTamanhoInput(3)
-            ->CriaInpunt();
-
-        $formulario
-            ->setId(NU_DURACAO. '-pesquisa')
-            ->setTamanhoInput(3)
-            ->setClasses("numero")
-            ->setInfo("Duração do Serviço")
-            ->setLabel("Duração (Minutos)")
             ->CriaInpunt();
 
 
