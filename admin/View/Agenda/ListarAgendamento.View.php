@@ -11,8 +11,8 @@
         <?php
         foreach (StatusAgendamentoEnum::$descricao as $chave => $desc) {
             echo '<div style="display: none;" id="Status-Agendamento-' . $chave . '">';
-            echo '<span class="label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
-            echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc;
+            echo '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$chave] . '">';
+            echo '&nbsp;&nbsp;&nbsp;&nbsp;</span> ' . $desc;
             echo '</div>';
         }
         ?>

@@ -22,8 +22,9 @@ $cliente = $clienteService->PesquisaUmRegistro($historico->getCoCliente()->getCo
 <div class="content">
     Cliente: <b>
         <?= Valida::Resumi($cliente->getCoPessoa()->getNoPessoa(), 30); ?></b></br>
-    Status Agendamento: <b><?= '<span class="label-' . StatusAgendamentoEnum::$cores[$historico->getStStatus()] . '">';
-        echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> " . StatusAgendamentoEnum::$descricao[$historico->getStStatus()]; ?></b></br>
+    Status Agendamento: <b><?= '<span style="border: 0.5px solid rgba(255,255,255,0.5) !important;" 
+    class="circle-img label-' . StatusAgendamentoEnum::$cores[$historico->getStStatus()] . '">';
+        echo "&nbsp;&nbsp;&nbsp;&nbsp;</span> " . StatusAgendamentoEnum::$descricao[$historico->getStStatus()]; ?></b></br>
     Data: <b><?= Valida::DataShow($historico->getDtInicioAgenda(), 'd/m/Y'); ?></b></br>
     Período: <b>de <?= Valida::DataShow($historico->getDtInicioAgenda(), 'h:i'); ?> a
         <?= Valida::DataShow($historico->getDtFimAgenda(), 'h:i'); ?></b></br>
