@@ -166,7 +166,7 @@ class AgendaForm
 
         $options = ClienteService::clientesCombo();
         $formulario
-            ->setId(CO_CLIENTE. '-pesquisa')
+            ->setId(CO_CLIENTE . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Cliente")
             ->setTamanhoInput(6)
@@ -175,7 +175,7 @@ class AgendaForm
 
         $options = ProfissionalService::ProfissionaisAtivosCombo();
         $formulario
-            ->setId(CO_PROFISSIONAL. '-pesquisa')
+            ->setId(CO_PROFISSIONAL . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Profissional")
             ->setTamanhoInput(6)
@@ -193,7 +193,7 @@ class AgendaForm
 
         $options = ServicoService::servicosCombo();
         $formulario
-            ->setId(CO_SERVICO. '-pesquisa')
+            ->setId(CO_SERVICO . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Serviço")
             ->setTamanhoInput(12)
@@ -209,7 +209,7 @@ class AgendaForm
             ->CriaInpunt();
 
         $formulario
-            ->setId(NU_DURACAO. '-pesquisa')
+            ->setId(NU_DURACAO . '-pesquisa')
             ->setTamanhoInput(6)
             ->setClasses("numero")
             ->setInfo("Duração do Serviço")
