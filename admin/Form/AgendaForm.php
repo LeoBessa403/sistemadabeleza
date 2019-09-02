@@ -173,31 +173,28 @@ class AgendaForm
             ->setOptions($options)
             ->CriaInpunt();
 
-        $options = ProfissionalService::ProfissionaisAtivosCombo();
         $formulario
             ->setId(CO_PROFISSIONAL . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Profissional")
             ->setTamanhoInput(6)
-            ->setOptions($options)
+            ->setOptions(ProfissionalService::ProfissionaisAtivosCombo())
             ->CriaInpunt();
 
-        $optionsAss = ProfissionalService::AssistentesAtivosCombo();
         $formulario
             ->setId('co_assistente-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Assistente")
             ->setTamanhoInput(6)
-            ->setOptions($optionsAss)
+            ->setOptions(ProfissionalService::AssistentesAtivosCombo())
             ->CriaInpunt();
 
-        $options = ServicoService::servicosCombo();
         $formulario
             ->setId(CO_SERVICO . '-pesquisa')
             ->setType(TiposCampoEnum::SELECT)
             ->setLabel("Serviço")
             ->setTamanhoInput(12)
-            ->setOptions($options)
+            ->setOptions(ServicoService::servicosCombo())
             ->CriaInpunt();
 
         $formulario
