@@ -86,7 +86,8 @@ var Calendar = function () {
                     var dt_agenda;
                     var hora = Calendar.VerificaNumero(info.start.getHours());
                     var minuto = Calendar.VerificaNumero(info.start.getMinutes());
-                    hora_inicio = hora + ':' + minuto;
+                    if (hora > 0)
+                        hora_inicio = hora + ':' + minuto;
                     if (!hora_inicio) {
                         hora_inicio = '08:00';
                     }
