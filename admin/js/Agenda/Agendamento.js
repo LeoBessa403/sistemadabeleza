@@ -80,29 +80,13 @@ var Calendar = function () {
                     };
                 },
                 select: function (info) {
-                    var dia = info.start.getDate();
-                    var mes = (info.start.getMonth() + 1);
+                    var dia = Calendar.VerificaNumero(info.start.getDate());
+                    var mes = Calendar.VerificaNumero((info.start.getMonth() + 1));
                     var hora_inicio;
                     var dt_agenda;
-                    var hora = info.start.getHours();
-                    var minuto = info.start.getMinutes();
-
-                    if (dia < 10) {
-                        dia = '0' + dia;
-                    }
-                    if (mes < 10) {
-                        mes = '0' + mes;
-                    }
-
-                    if (hora < 10) {
-                        hora = '0' + hora;
-                    }
-                    if (minuto < 10) {
-                        minuto = '0' + minuto;
-                    }
-                    if (hora > 0) {
-                        hora_inicio = hora + ':' + minuto;
-                    }
+                    var hora = Calendar.VerificaNumero(info.start.getHours());
+                    var minuto = Calendar.VerificaNumero(info.start.getMinutes());
+                    hora_inicio = hora + ':' + minuto;
                     if (!hora_inicio) {
                         hora_inicio = '08:00';
                     }
@@ -169,40 +153,16 @@ var Calendar = function () {
 
                     $('#btn-success-modal_confirma_ativacao').click(function () {
 
-                        var diaIni = info.event.start.getDate();
-                        var mesIni = (info.event.start.getMonth() + 1);
-                        var anoIni = info.event.start.getFullYear();
-                        var horaIni = info.event.start.getHours();
-                        var minutoIni = info.event.start.getMinutes();
-                        if (diaIni < 10) {
-                            diaIni = '0' + diaIni;
-                        }
-                        if (mesIni < 10) {
-                            mesIni = '0' + mesIni;
-                        }
-                        if (horaIni < 10) {
-                            horaIni = '0' + horaIni;
-                        }
-                        if (minutoIni < 10) {
-                            minutoIni = '0' + minutoIni;
-                        }
-                        var diaFim = info.event.end.getDate();
-                        var mesFim = (info.event.end.getMonth() + 1);
-                        var anoFim = info.event.end.getFullYear();
-                        var horaFim = info.event.end.getHours();
-                        var minutoFim = info.event.end.getMinutes();
-                        if (diaFim < 10) {
-                            diaFim = '0' + diaFim;
-                        }
-                        if (mesIni < 10) {
-                            mesFim = '0' + mesFim;
-                        }
-                        if (horaFim < 10) {
-                            horaFim = '0' + horaFim;
-                        }
-                        if (minutoFim < 10) {
-                            minutoFim = '0' + minutoFim;
-                        }
+                        var diaIni = Calendar.VerificaNumero(info.event.start.getDate());
+                        var mesIni = Calendar.VerificaNumero((info.event.start.getMonth() + 1));
+                        var anoIni = Calendar.VerificaNumero(info.event.start.getFullYear());
+                        var horaIni = Calendar.VerificaNumero(info.event.start.getHours());
+                        var minutoIni = Calendar.VerificaNumero(info.event.start.getMinutes());
+                        var diaFim = Calendar.VerificaNumero(info.event.end.getDate());
+                        var mesFim = Calendar.VerificaNumero((info.event.end.getMonth() + 1));
+                        var anoFim = Calendar.VerificaNumero(info.event.end.getFullYear());
+                        var horaFim = Calendar.VerificaNumero(info.event.end.getHours());
+                        var minutoFim = Calendar.VerificaNumero(info.event.end.getMinutes());
                         var dt_inicio_agenda = anoIni + '-' + mesIni + '-' + diaIni + ' '
                             + horaIni + ':' + minutoIni + ':00';
                         var dt_fim_agenda = anoFim + '-' + mesFim + '-' + diaFim + ' '
@@ -264,14 +224,8 @@ var Calendar = function () {
                 $("#nu_duracao").val(dados.nu_duracao);
                 var nu_hora_inicio_agenda = $("#nu_hora_inicio_agenda").val().split(':').map(Number);
                 nu_hora_inicio_agenda = (parseInt(nu_hora_inicio_agenda[0] * 60 + nu_hora_inicio_agenda[1])) + parseInt(dados.nu_duracao);
-                var horas = Math.floor((nu_hora_inicio_agenda) / 60);
-                var minutos = nu_hora_inicio_agenda % 60;
-                if (horas < 10) {
-                    horas = '0' + horas;
-                }
-                if (minutos < 10) {
-                    minutos = '0' + minutos;
-                }
+                var horas = Calendar.VerificaNumero(Math.floor((nu_hora_inicio_agenda) / 60));
+                var minutos = Calendar.VerificaNumero(nu_hora_inicio_agenda % 60);
                 $("#nu_hora_fim_agenda").val(horas + ':' + minutos);
                 $("#nu_valor").val(dados.nu_valor);
                 $("#nu_valor2").val(dados.nu_valor);
@@ -447,14 +401,8 @@ var Calendar = function () {
             // NOVO AGENDAMENTO GRID
             $('#novaAgenda').click(function () {
                 var hoje = new Date();
-                var dia = hoje.getDay();
-                var mes = (hoje.getMonth() + 1);
-                if (dia < 10) {
-                    dia = '0' + dia;
-                }
-                if (mes < 10) {
-                    mes = '0' + mes;
-                }
+                var dia = Calendar.VerificaNumero(hoje.getDay());
+                var mes = Calendar.VerificaNumero((hoje.getMonth() + 1));
                 $("#nu_hora_inicio_agenda").val('08:00');
                 $("#dt_agenda").val(dia + '/' + mes + '/' + hoje.getFullYear());
                 $("#nu_duracao").val(null);
@@ -546,6 +494,12 @@ var Calendar = function () {
             Funcoes.TiraValidacao('co_profissional');
             Funcoes.TiraValidacao('co_assistente');
             Funcoes.TiraValidacao('st_status');
+        },
+        VerificaNumero: function (valor) {
+            if (valor < 10) {
+                valor = '0' + valor;
+            }
+            return valor;
         }
     };
 }();
