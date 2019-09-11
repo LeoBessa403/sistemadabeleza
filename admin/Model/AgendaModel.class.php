@@ -26,6 +26,8 @@ class  AgendaModel extends AbstractModel
           WHERE sa.co_agenda = age.co_agenda)';
         $Condicoes['stser.' . CO_STATUS_AGENDA_SERVICO] = '(SELECT max(sas.co_status_agenda_servico) FROM tb_status_agenda_servico sas
           WHERE sas.co_status_agenda = stag.co_status_agenda)';
+        $Condicoes["pre." . CO_PRECO_SERVICO] =
+            "(SELECT max(co_preco_servico) from tb_preco_servico where co_servico = ser.co_servico)";
         $tabela = "tb_agenda age
                       INNER JOIN tb_status_agenda stag
                         ON age.co_agenda = stag.co_agenda
@@ -48,7 +50,9 @@ class  AgendaModel extends AbstractModel
                       LEFT JOIN tb_pessoa pes3
                         ON pes3.co_pessoa = pro2.co_pessoa
                       INNER JOIN tb_servico ser
-                        ON ser.co_servico = stser.co_servico";
+                        ON ser.co_servico = stser.co_servico
+                      INNER JOIN tb_preco_servico pre
+                        ON ser.co_servico = pre.co_servico";
 
         $campos = "age.co_agenda, dt_inicio_agenda, dt_fim_agenda, pes.no_pessoa as cliente, 
                 pes2.no_pessoa as profissional, pes3.no_pessoa AS assistente, no_servico, stag.st_status";
@@ -58,7 +62,7 @@ class  AgendaModel extends AbstractModel
 
         $pesquisa = new Pesquisa();
         $where = $pesquisa->getClausula($Condicoes);
-        $pesquisa->Pesquisar($tabela, $where, null, $campos);
+        $pesquisa->Pesquisar($tabela, $where . ' order by dt_inicio_agenda asc', null, $campos);
         return $pesquisa->getResult();
     }
 

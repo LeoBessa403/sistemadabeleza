@@ -12,10 +12,19 @@ class Agenda extends AbstractController
     {
         /** @var AgendaService $agendaService */
         $agendaService = $this->getService(AGENDA_SERVICE);
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $Condicoes = $session::getSession(PESQUISA_AVANCADA);
+            $session->FinalizaSession(PESQUISA_AVANCADA);
+            $session->FinalizaSession('pesq_agendamento');
+        }
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-
+        if (!$session->CheckSession('pesq_agendamento')) {
+            $session->setSession('pesq_agendamento', $Condicoes);
+        }
+        $Condicoes = $session::getSession('pesq_agendamento');
         $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'pro.ds_cor_agenda');
-
         $eventos = [];
         foreach ($agendas as $agenda) {
             if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
@@ -44,6 +53,11 @@ class Agenda extends AbstractController
         if ($dados):
             return $agendaService->salvaAgendamentoAjax($dados);
         endif;
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $Condicoes = $session::getSession(PESQUISA_AVANCADA);
+        }
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $this->result = $agendaService->PesquisaAgendamentos($Condicoes);
 
@@ -120,8 +134,29 @@ class Agenda extends AbstractController
 
     public function AgendamentoPesquisaAvancada($dados)
     {
+        /** @var Session $session */
+        $session = new Session();
+        if ($session->CheckSession(PESQUISA_AVANCADA)) {
+            $session->FinalizaSession(PESQUISA_AVANCADA);
+        }
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
-        return $agendaService->AgendamentoPesquisaAvancada($dados);
+        $pesquisa =  $agendaService->AgendamentoPesquisaAvancada($dados);
+
+        $Condicoes = array(
+            "stag." . ST_STATUS => $pesquisa['st_status-pesquisa'],
+            "cli." . CO_CLIENTE => $pesquisa['co_cliente-pesquisa'],
+            "pro." . CO_PROFISSIONAL => $pesquisa['co_profissional-pesquisa'],
+            "pro." . CO_PROFISSIONAL => $pesquisa['co_assistente-pesquisa'],
+            "ser." . CO_SERVICO => $pesquisa['co_servico-pesquisa'],
+            ">=#pre." . NU_VALOR => $pesquisa['nu_valor-pesquisa1'],
+            "<=#pre." . NU_VALOR => $pesquisa['nu_valor-pesquisa2'],
+            "ser." . NU_DURACAO => $pesquisa['nu_duracao-pesquisa'],
+            ">=#stag." . DT_INICIO_AGENDA => Valida::DataDBDate($pesquisa['dt1-pesquisa']) . " 00:00:00",
+            "<=#stag." . DT_FIM_AGENDA => Valida::DataDBDate($pesquisa['dt2-pesquisa']) . " 23:59:59"
+        );
+        $session->setSession(PESQUISA_AVANCADA, $Condicoes);
+        $retorno[SUCESSO] = true;
+        return $retorno;
     }
 }

@@ -69,7 +69,9 @@ var Calendar = function () {
                 events: {
                     url: urlValida,
                     failure: function () {
-                        Funcoes.Erro('Não foi possível carregar os Agendamentos!');
+                        Funcoes.Alerta('Não foi possível carregar os Agendamentos no Calendário!');
+                        $("#grid").fadeIn('fast');
+                        $("#calendar").fadeOut('slow');
                     }
                 },
                 extraParams: function () {
@@ -356,9 +358,11 @@ var Calendar = function () {
             // PESQUISA AVANÇADA DO AGENDAMENTO
             $("#PesquisaAvancadaAgendamento").submit(function () {
                 var data = $(this).serializeArray();
-                console.log(data);
                 var dados = Funcoes.Ajax('Agenda/AgendamentoPesquisaAvancada', data);
-                if (!dados.sucesso) {
+                if (dados.sucesso) {
+                    Funcoes.Informativo('Pesquisando....');
+                    Calendar.Renderiza(1);
+                } else {
                     Funcoes.Erro("Erro: " + dados.msg);
                 }
                 return false;
@@ -527,11 +531,12 @@ var Calendar = function () {
 
             Calendar.IniciaCombosProfAssi();
         },
-        Renderiza: function () {
+        Renderiza: function (time) {
+            time = time || 3000;
             $(".close").click();
             setTimeout(function () {
                 location.reload();
-            }, 3000);
+            }, time);
         },
         LimpaValidacao: function () {
             Funcoes.TiraValidacao('co_cliente');
