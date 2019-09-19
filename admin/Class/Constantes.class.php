@@ -123,6 +123,23 @@ define('DT_FIM_AGENDA', 'dt_fim_agenda');
 define('CO_STATUS_AGENDA_PROFISSIONAL', 'co_status_agenda_profissional');
 define('CO_STATUS_AGENDA_SERVICO', 'co_status_agenda_servico');
 define('TP_PROFISSIONAL', 'tp_profissional');
+define('CO_CAIXA', 'co_caixa');
+define('NU_VALOR_TROCO', 'nu_valor_troco');
+define('NU_VALOR_SALDO', 'nu_valor_saldo');
+define('CO_COMISSAO', 'co_comissao');
+define('CO_SALDO', 'co_saldo');
+define('CO_PAGAMENTO', 'co_pagamento');
+define('NU_VALOR_PAGO', 'nu_valor_pago');
+define('NU_PARCELAS', 'nu_parcelas');
+define('CO_PARCELAMENTO', 'co_parcelamento');
+define('NU_PARCELA', 'nu_parcela');
+define('NU_VALOR_PARCELA', 'nu_valor_parcela');
+define('NU_VALOR_PARCELA_PAGA', 'nu_valor_parcela_paga');
+define('DT_VENCIMENTO', 'dt_vencimento');
+define('DT_VENCIMENTO_PAGO', 'dt_vencimento_pago');
+define('CO_TIPO_SALDO', 'co_tipo_saldo');
+define('TP_TIPO_SALDO', 'tp_tipo_saldo');
+define('DS_TIPO_SALDO', 'ds_tipo_saldo');
 
 
 // SERVICES
@@ -169,3 +186,9 @@ define('AGENDA_SERVICE', 'AgendaService');
 define('STATUS_AGENDA_SERVICE', 'StatusAgendaService');
 define('STATUS_AGENDA_PROFISSIONAL_SERVICE', 'StatusAgendaProfissionalService');
 define('STATUS_AGENDA_SERVICO_SERVICE', 'StatusAgendaServicoService');
+define('CAIXA_SERVICE', 'CaixaService');
+define('COMISSAO_SERVICE', 'ComissaoService');
+define('PAGAMENTO_SERVICE', 'PagamentoService');
+define('PARCELAMENTO_SERVICE', 'ParcelamentoService');
+define('SALDO_SERVICE', 'SaldoService');
+define('TIPO_SALDO_SERVICE', 'TipoSaldoService');
