@@ -1,4 +1,4 @@
--- Atualizado em: 08/10/2019 12:20:10
+-- Atualizado em: 22/10/2019 16:57:27
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,10 +20,12 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=510 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=511 DEFAULT CHARSET=utf8;
 
 
-INSERT INTO TB_ACESSO VALUES("509","hvtdp565emts5fvvrqnnsgsu96","2019-10-08 12:19:06","2019-10-08 12:50:10","A","1","525");
+INSERT INTO TB_ACESSO VALUES("509","hvtdp565emts5fvvrqnnsgsu96","2019-10-08 12:19:06","2019-10-08 12:59:05","F","1","525");
+
+INSERT INTO TB_ACESSO VALUES("510","hvtdp565emts5fvvrqnnsgsu96","2019-10-08 14:03:18","2019-10-08 14:34:10","F","8","526");
 
 
 
@@ -1301,9 +1303,9 @@ CREATE TABLE `TB_CRONS` (
 
 INSERT INTO TB_CRONS VALUES("3","2019-07-22 15:40:30","Desativa Promoção","INSERT INTO tb_preco_promocao (\n  dt_cadastro,\n  st_status,\n  nu_valor,\n  dt_inicio,\n  dt_fim,\n  nu_hora_abertura,\n  nu_hora_fechamento,\n  nu_dia_semana,\n  co_servico,\n  co_usuario,\n  co_promocao) SELECT\n    SYSDATE()\n    ,\'I\'\n    ,ppro.nu_valor\n    ,ppro.dt_inicio\n    ,ppro.dt_fim\n    ,ppro.nu_hora_abertura\n    ,ppro.nu_hora_fechamento\n    ,ppro.nu_dia_semana\n    ,ppro.co_servico\n    ,1\n    ,ppro.co_promocao\n  FROM tb_promocao pro\n    INNER JOIN tb_preco_promocao ppro\n      ON ppro.co_promocao = pro.co_promocao\n  WHERE dt_fim < SYSDATE()\n        AND st_status = \'A\'\n        AND ppro.co_preco_promocao = (\n    SELECT max(ppro2.co_preco_promocao)\n    FROM tb_preco_promocao ppro2\n    WHERE ppro2.co_promocao = pro.co_promocao\n  );");
 
-INSERT INTO TB_CRONS VALUES("4","2019-07-22 16:24:57","Vencimento dos Vale presentes","UPDATE tb_vale_presente SET st_status = 3\n\n\n\n  WHERE dt_valido < SYSDATE()\n\n\n\n        AND st_status in (1,2)");
+INSERT INTO TB_CRONS VALUES("4","2019-07-22 16:24:57","Vencimento dos Vale presentes","UPDATE tb_vale_presente SET st_status = 3\n\n\n\n\n  WHERE dt_valido < SYSDATE()\n\n\n\n\n        AND st_status in (1,2)");
 
-INSERT INTO TB_CRONS VALUES("5","2019-07-23 10:42:28","Desativa Cortesia","UPDATE tb_cortesia SET st_status = 3\n\n\n\n  WHERE dt_fim < SYSDATE()\n\n\n\n        AND st_status in (1,2,4);");
+INSERT INTO TB_CRONS VALUES("5","2019-07-23 10:42:28","Desativa Cortesia","UPDATE tb_cortesia SET st_status = 3\n\n\n\n\n  WHERE dt_fim < SYSDATE()\n\n\n\n\n        AND st_status in (1,2,4);");
 
 
 
@@ -1773,49 +1775,49 @@ INSERT INTO TB_HISTORIA VALUES("4","Gestão de pagamentos dos assinantes","<p>Da
 
 INSERT INTO TB_HISTORIA VALUES("6","Dados complementares básicos","<p>Manter dados: (Endere&ccedil;o, telefone, CNPJ, fantasia, raz&atilde;o e outros)</p>\n\n\n\n\n\n\n\n<p>Modelagem: Contato, endere&ccedil;o e empresa ou pessoa</p>","2018-07-25 12:11:05","2018-09-21 22:09:40","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("7","Manter Horário de funcionamento padrão","<p>Manter hor&aacute;rio de funcionamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Funcionamento (Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 12:19:44","2018-09-21 22:09:17","C","2");
+INSERT INTO TB_HISTORIA VALUES("7","Manter Horário de funcionamento padrão","<p>Manter hor&aacute;rio de funcionamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Funcionamento (Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 12:19:44","2018-09-21 22:09:17","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("8","Manter Fotos do Estabelecimento","<p>Manter Fotos do Estabelecimento para o Site</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Imagem (FK Assinante)</p>","2018-07-25 12:21:30","2018-09-21 22:08:49","C","2");
+INSERT INTO TB_HISTORIA VALUES("8","Manter Fotos do Estabelecimento","<p>Manter Fotos do Estabelecimento para o Site</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Imagem (FK Assinante)</p>","2018-07-25 12:21:30","2018-09-21 22:08:49","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("9","Manter Feriados","<p>Manter Feriados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tabela base Feriados nacionais, Feriados (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:27:26","2018-09-24 20:34:02","C","4");
+INSERT INTO TB_HISTORIA VALUES("9","Manter Feriados","<p>Manter Feriados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tabela base Feriados nacionais, Feriados (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:27:26","2018-09-24 20:34:02","C","4");
 
-INSERT INTO TB_HISTORIA VALUES("10","Manter Dias Especiais","<p>Manter Dias Especiais n&atilde;o recorrente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: dias especiais (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:28:51","2018-09-24 20:33:36","C","4");
+INSERT INTO TB_HISTORIA VALUES("10","Manter Dias Especiais","<p>Manter Dias Especiais n&atilde;o recorrente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: dias especiais (FK assinante, com hor&aacute;rio de funcionamento)</p>","2018-07-25 12:28:51","2018-09-24 20:33:36","C","4");
 
-INSERT INTO TB_HISTORIA VALUES("11","Formas de pagamento","<p>Forma de pagamento aceitas</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante),&nbsp; Tabela base Formas de pagamento, Tabela base bandeira cartao</p>","2018-07-25 14:38:19","2018-10-19 11:32:01","C","5");
+INSERT INTO TB_HISTORIA VALUES("11","Formas de pagamento","<p>Forma de pagamento aceitas</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante),&nbsp; Tabela base Formas de pagamento, Tabela base bandeira cartao</p>","2018-07-25 14:38:19","2018-10-19 11:32:01","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("12","Configuração do cliente","<p>Cliente Marcar Servi&ccedil;o S / N, quantidade de aus&ecirc;ncia para que o cliente n&atilde;o marque mais servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:43:02","2018-11-14 16:07:41","C","5");
+INSERT INTO TB_HISTORIA VALUES("12","Configuração do cliente","<p>Cliente Marcar Servi&ccedil;o S / N, quantidade de aus&ecirc;ncia para que o cliente n&atilde;o marque mais servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:43:02","2018-11-14 16:07:41","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("13","Configuração de agendamento","<p>Confirma&ccedil;&atilde;o do agendamento e Regras de agendamento, agendamento recorrente, Horas de antecedencia do agendamento, Agendamento online, intervalo de agendamento dos clientes</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:54:36","2018-11-19 17:37:56","C","5");
+INSERT INTO TB_HISTORIA VALUES("13","Configuração de agendamento","<p>Confirma&ccedil;&atilde;o do agendamento e Regras de agendamento, agendamento recorrente, Horas de antecedencia do agendamento, Agendamento online, intervalo de agendamento dos clientes</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Configura&ccedil;&atilde;o assinante (FK Assinante)</p>","2018-07-25 14:54:36","2018-11-19 17:37:56","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("14","Manter Motivo desconto","<p>Manter Motivo desconto</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Motivo desconto (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 15:13:38","2018-11-26 17:29:23","C","8");
+INSERT INTO TB_HISTORIA VALUES("14","Manter Motivo desconto","<p>Manter Motivo desconto</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Motivo desconto (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 15:13:38","2018-11-26 17:29:23","C","8");
 
 INSERT INTO TB_HISTORIA VALUES("15","Tabela base Motivo Desconto","<p>Modelagem: Tabela base Motivo Desconto</p>","2018-07-25 15:15:19","2018-11-23 17:55:10","C","8");
 
-INSERT INTO TB_HISTORIA VALUES("16","Manter profissional","<p>Manter profissional</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Profissional (FK Assinante, pessoa, usuario, endere&ccedil;o, dados banc&aacute;rios, configura&ccedil;&atilde;o, jornada de trabalho e contato)</p>","2018-07-25 15:56:07","2018-12-20 13:39:20","C","9");
+INSERT INTO TB_HISTORIA VALUES("16","Manter profissional","<p>Manter profissional</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Profissional (FK Assinante, pessoa, usuario, endere&ccedil;o, dados banc&aacute;rios, configura&ccedil;&atilde;o, jornada de trabalho e contato)</p>","2018-07-25 15:56:07","2018-12-20 13:39:20","C","9");
 
-INSERT INTO TB_HISTORIA VALUES("17","Manter ausência","<p>Manter aus&ecirc;ncia</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Aus&ecirc;ncia Profissional (FK Profissional)</p>","2018-07-25 15:59:43","2019-02-06 08:44:05","C","9");
+INSERT INTO TB_HISTORIA VALUES("17","Manter ausência","<p>Manter aus&ecirc;ncia</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Aus&ecirc;ncia Profissional (FK Profissional)</p>","2018-07-25 15:59:43","2019-02-06 08:44:05","C","9");
 
-INSERT INTO TB_HISTORIA VALUES("18","Manter Bloqueio por profissional","<p>Bloqueio de hor&aacute;rio para o profissional</p>\n\n\n\n\n\n\n\n<p>Modelagem: Bloqueio hor&aacute;rio (FK profissional, motivo)</p>","2018-07-25 16:12:20","2019-02-11 17:34:25","C","10");
+INSERT INTO TB_HISTORIA VALUES("18","Manter Bloqueio por profissional","<p>Bloqueio de hor&aacute;rio para o profissional</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Bloqueio hor&aacute;rio (FK profissional, motivo)</p>","2018-07-25 16:12:20","2019-02-11 17:34:25","C","10");
 
-INSERT INTO TB_HISTORIA VALUES("19","Manter Cliente","<p>Manter Cliente, Clientes recebem SMS com lembrete do hor&aacute;rio agendado, Integra&ccedil;&atilde;o com WhatsApp,</p>\n\n\n\n\n\n\n\n<p>Modelagem: Cliente (FK Assinante, pessoa, contato, endere&ccedil;o, foto)</p>","2018-07-25 16:16:48","2019-02-12 12:09:39","C","11");
+INSERT INTO TB_HISTORIA VALUES("19","Manter Cliente","<p>Manter Cliente, Clientes recebem SMS com lembrete do hor&aacute;rio agendado, Integra&ccedil;&atilde;o com WhatsApp,</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Cliente (FK Assinante, pessoa, contato, endere&ccedil;o, foto)</p>","2018-07-25 16:16:48","2019-02-12 12:09:39","C","11");
 
-INSERT INTO TB_HISTORIA VALUES("20","Manter Categorias do Serviço","<p>Manter Categorias do Servi&ccedil;o</p>\n\n\n\n\n\n\n\n<p>Modelagem: Cat. servico (FK Assinante) e inicializa&ccedil;&atilde;o das categorias de base</p>","2018-07-25 16:19:34","2019-02-20 17:07:32","C","12");
+INSERT INTO TB_HISTORIA VALUES("20","Manter Categorias do Serviço","<p>Manter Categorias do Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Cat. servico (FK Assinante) e inicializa&ccedil;&atilde;o das categorias de base</p>","2018-07-25 16:19:34","2019-02-20 17:07:32","C","12");
 
 INSERT INTO TB_HISTORIA VALUES("22","Edição rápida de serviços","<p>Edi&ccedil;&atilde;o r&aacute;pida de servi&ccedil;os todos eles (Comiss&atilde;o, categoria, pre&ccedil;o)</p>","2018-07-25 16:23:07","2018-07-25 16:23:07","N","12");
 
-INSERT INTO TB_HISTORIA VALUES("23","Profissionais que atende o serviço","<p>Profissionais que atende o servi&ccedil;o, comiss&atilde;o padr&atilde;o pra todos</p>\n\n\n\n\n\n\n\n<p>Modelagem: Tab tern&aacute;ria Profissional e Servi&ccedil;o (Comiss&atilde;o individual)</p>","2018-07-25 16:26:14","2019-05-29 12:19:26","C","12");
+INSERT INTO TB_HISTORIA VALUES("23","Profissionais que atende o serviço","<p>Profissionais que atende o servi&ccedil;o, comiss&atilde;o padr&atilde;o pra todos</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Tab tern&aacute;ria Profissional e Servi&ccedil;o (Comiss&atilde;o individual)</p>","2018-07-25 16:26:14","2019-05-29 12:19:26","C","12");
 
-INSERT INTO TB_HISTORIA VALUES("24","Manter Pacote","<p>Manter Pacote</p>\n\n\n\n\n\n\n\n<p>Modelagem: Pacote (FK Assinante), Pacote Servi&ccedil;os (FK Pacote e servi&ccedil;o)</p>","2018-07-25 16:30:25","2019-06-13 19:02:03","C","13");
+INSERT INTO TB_HISTORIA VALUES("24","Manter Pacote","<p>Manter Pacote</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pacote (FK Assinante), Pacote Servi&ccedil;os (FK Pacote e servi&ccedil;o)</p>","2018-07-25 16:30:25","2019-06-13 19:02:03","C","13");
 
-INSERT INTO TB_HISTORIA VALUES("25","Manter promoção","<p>Manter promo&ccedil;&atilde;o dias e hor&aacute;rios a ser ultilizado per&iacute;odo v&aacute;lido valor e servi&ccedil;o</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem: Promocao (FK Servi&ccedil;o)</p>","2018-07-25 17:12:39","2019-06-21 11:04:31","C","14");
+INSERT INTO TB_HISTORIA VALUES("25","Manter promoção","<p>Manter promo&ccedil;&atilde;o dias e hor&aacute;rios a ser ultilizado per&iacute;odo v&aacute;lido valor e servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Promocao (FK Servi&ccedil;o)</p>","2018-07-25 17:12:39","2019-06-21 11:04:31","C","14");
 
-INSERT INTO TB_HISTORIA VALUES("26","Manter cortesia","<p>Manter cortesia, validade da cortesia, per&iacute;odo de uso dia e hora, gerar c&oacute;digo de utiliza&ccedil;&atilde;o, status</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Modelagem (FK servico, cliente, Usu&aacute;rio emissor)</p>","2018-07-25 17:14:29","2019-06-25 17:47:10","C","15");
+INSERT INTO TB_HISTORIA VALUES("26","Manter cortesia","<p>Manter cortesia, validade da cortesia, per&iacute;odo de uso dia e hora, gerar c&oacute;digo de utiliza&ccedil;&atilde;o, status</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem (FK servico, cliente, Usu&aacute;rio emissor)</p>","2018-07-25 17:14:29","2019-06-25 17:47:10","C","15");
 
-INSERT INTO TB_HISTORIA VALUES("27","Manter Vale presente","<p>Manter Vale presente, gerar c&oacute;digo pra passar para o cliente que ira usar, validade e periodo de uso</p>\n\n\n\n\n\n\n\n<p>Modelagem: Vale presente</p>","2018-07-25 17:23:18","2019-06-26 18:01:00","C","16");
+INSERT INTO TB_HISTORIA VALUES("27","Manter Vale presente","<p>Manter Vale presente, gerar c&oacute;digo pra passar para o cliente que ira usar, validade e periodo de uso</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Vale presente</p>","2018-07-25 17:23:18","2019-06-26 18:01:00","C","16");
 
-INSERT INTO TB_HISTORIA VALUES("28","Cadastrar Agendamento 1 Serviço","<p>Cadastrar Agendamento (Op&ccedil;&atilde;o da recorr&ecirc;ncia)</p>\n\n\n\n\n\n\n\n<p>Varios servi&ccedil;os e pacotes</p>\n\n\n\n\n\n\n\n<p>Modelagem: (FK cliente, Servi&ccedil;o, Profissional, Assistente)</p>","2018-07-25 17:32:10","2019-07-11 12:21:34","C","17");
+INSERT INTO TB_HISTORIA VALUES("28","Cadastrar Agendamento 1 Serviço","<p>Cadastrar Agendamento (Op&ccedil;&atilde;o da recorr&ecirc;ncia)</p>\n\n\n\n\n\n\n\n\n\n<p>Varios servi&ccedil;os e pacotes</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: (FK cliente, Servi&ccedil;o, Profissional, Assistente)</p>","2018-07-25 17:32:10","2019-07-11 12:21:34","C","17");
 
-INSERT INTO TB_HISTORIA VALUES("29","Edição Agendamento","<p>Edi&ccedil;&atilde;o Agendamento</p>\n\n\n\n\n\n\n\n<p>Valida&ccedil;&atilde;o dos status do agendamento e status do servi&ccedil;o</p>","2018-07-25 17:44:09","2019-07-19 18:01:29","C","17");
+INSERT INTO TB_HISTORIA VALUES("29","Edição Agendamento","<p>Edi&ccedil;&atilde;o Agendamento</p>\n\n\n\n\n\n\n\n\n\n<p>Valida&ccedil;&atilde;o dos status do agendamento e status do servi&ccedil;o</p>","2018-07-25 17:44:09","2019-07-19 18:01:29","C","17");
 
 INSERT INTO TB_HISTORIA VALUES("30","Implantação Agenda","<p>Agenda CSS (Responsivo)</p>","2018-07-25 17:44:46","2019-07-02 11:18:09","C","17");
 
@@ -1823,55 +1825,55 @@ INSERT INTO TB_HISTORIA VALUES("31","Pesquisa Avançada dos Agendamentos","<p>Pe
 
 INSERT INTO TB_HISTORIA VALUES("32","Alterar Status do agendamento","<p>Alterar Status do agendamento</p>","2018-07-25 17:52:20","2019-07-19 16:04:14","C","17");
 
-INSERT INTO TB_HISTORIA VALUES("37","Fechamento de conta no agendamento","<p>Fechamento de conta no agendamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Transformar troco em cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pagamento (FK agendamento, FK Caixa)</p>","2018-07-25 18:12:12","2018-07-26 18:41:34","N","18");
+INSERT INTO TB_HISTORIA VALUES("37","Fechamento de conta no agendamento","<p>Fechamento de conta no agendamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Transformar troco em cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Pagamento (FK agendamento, FK Caixa)</p>","2018-07-25 18:12:12","2018-07-26 18:41:34","N","18");
 
-INSERT INTO TB_HISTORIA VALUES("39","Abertura de caixa","<p>Abertura de caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Caixa (FK Assinante)</p>","2018-07-25 18:16:22","2018-07-25 18:16:22","N","18");
+INSERT INTO TB_HISTORIA VALUES("39","Abertura de caixa","<p>Abertura de caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Caixa (FK Assinante)</p>","2018-07-25 18:16:22","2018-07-25 18:16:22","N","18");
 
-INSERT INTO TB_HISTORIA VALUES("40","Retirada / Sangria","<p>Retirada / Sangria (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Sangria caixa (FK Caixa)</p>","2018-07-25 18:24:58","2018-07-25 18:24:58","N","18");
+INSERT INTO TB_HISTORIA VALUES("40","Retirada / Sangria","<p>Retirada / Sangria (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Sangria caixa (FK Caixa)</p>","2018-07-25 18:24:58","2018-07-25 18:24:58","N","18");
 
-INSERT INTO TB_HISTORIA VALUES("41","Recebimentos","<p>Recebimentos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Recebimento caixa (FK Caixa)</p>","2018-07-25 18:25:44","2018-07-25 18:25:44","N","18");
+INSERT INTO TB_HISTORIA VALUES("41","Recebimentos","<p>Recebimentos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Recebimento caixa (FK Caixa)</p>","2018-07-25 18:25:44","2018-07-25 18:25:44","N","18");
 
 INSERT INTO TB_HISTORIA VALUES("42","Gerar cupom não fiscal","<p>Gerar cupom n&atilde;o fiscal no fechamento de conta</p>","2018-07-25 18:27:03","2018-07-25 18:27:03","N","18");
 
-INSERT INTO TB_HISTORIA VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2019-04-18 11:00:56","C","5");
+INSERT INTO TB_HISTORIA VALUES("43","Valor pago por serviço","<p>Determinar porcentagem ou valor para cada servi&ccedil;o.</p>\n\n\n\n\n\n\n\n\n\n<p>Depend&ecirc;ncia: <a href=\"http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==\">http://localhost/PreProjeto/admin/Historia/CadastroHistoria/MjA5YzYzNDY2NTYyNjBlN2E3OGVmZGI1MDcxNWM2NTkvTkRRPQ==</a></p>","2018-07-25 18:40:36","2019-04-18 11:00:56","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","2018-07-25 18:42:35","2019-03-22 11:16:18","C","12");
+INSERT INTO TB_HISTORIA VALUES("44","Manter Serviço","<p>Manter Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;o (FK categoria Servi. Assinante) e listagem dos servi&ccedil;os por categoria</p>","2018-07-25 18:42:35","2019-03-22 11:16:18","C","12");
 
-INSERT INTO TB_HISTORIA VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","2018-07-25 18:43:26","2019-03-20 14:14:45","C","12");
+INSERT INTO TB_HISTORIA VALUES("45","Tabela base serviços","<p>Tabela base servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Servi&ccedil;os Base, inicio servi&ccedil;os b&aacute;sicos e Tabela Pre&ccedil;o Servi&ccedil;o, inicializar categorias de servi&ccedil;os se preciso</p>","2018-07-25 18:43:26","2019-03-20 14:14:45","C","12");
 
-INSERT INTO TB_HISTORIA VALUES("46","Manter intervalos do profissional","<p>Manter almo&ccedil;os e&nbsp; intervalos do profissional (Cadastro Profissional)</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 18:55:44","2019-02-11 17:27:48","C","9");
+INSERT INTO TB_HISTORIA VALUES("46","Manter intervalos do profissional","<p>Manter almo&ccedil;os e&nbsp; intervalos do profissional (Cadastro Profissional)</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-25 18:55:44","2019-02-11 17:27:48","C","9");
 
-INSERT INTO TB_HISTORIA VALUES("47","Histórico de comissões","<p>Hist&oacute;rico de comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:11:25","2018-07-25 19:11:54","N","9");
+INSERT INTO TB_HISTORIA VALUES("47","Histórico de comissões","<p>Hist&oacute;rico de comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:11:25","2018-07-25 19:11:54","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("48","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>pendencia: manter agendamento</p>","2018-07-25 19:17:02","2018-07-25 19:17:02","N","9");
+INSERT INTO TB_HISTORIA VALUES("48","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>pendencia: manter agendamento</p>","2018-07-25 19:17:02","2018-07-25 19:17:02","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("49","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:17:37","2018-07-25 19:17:37","N","9");
+INSERT INTO TB_HISTORIA VALUES("49","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:17:37","2018-07-25 19:17:37","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("50","Histórico de vale/adiantamento","<p>Hist&oacute;rico de vale/adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter vale/adiantamento (Financeiro)</p>","2018-07-25 19:20:30","2018-07-25 19:20:30","N","9");
+INSERT INTO TB_HISTORIA VALUES("50","Histórico de vale/adiantamento","<p>Hist&oacute;rico de vale/adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter vale/adiantamento (Financeiro)</p>","2018-07-25 19:20:30","2018-07-25 19:20:30","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("51","Relatório de comissões","<p>Relat&oacute;rio de comiss&otilde;es (Filtros)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:21:41","2018-07-25 19:21:41","N","9");
+INSERT INTO TB_HISTORIA VALUES("51","Relatório de comissões","<p>Relat&oacute;rio de comiss&otilde;es (Filtros)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pendencia: Manter agendamento</p>","2018-07-25 19:21:41","2018-07-25 19:21:41","N","9");
 
 INSERT INTO TB_HISTORIA VALUES("52","Acesso da agenda","<p>Acesso da agenda (Visualiza&ccedil;&atilde;o)</p>","2018-07-25 19:22:51","2018-07-25 19:22:51","N","9");
 
-INSERT INTO TB_HISTORIA VALUES("53","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:05","2018-07-25 19:24:05","N","11");
+INSERT INTO TB_HISTORIA VALUES("53","Histórico de agendamentos","<p>Hist&oacute;rico de agendamentos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:05","2018-07-25 19:24:05","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("54","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:33","2018-07-25 19:24:33","N","11");
+INSERT INTO TB_HISTORIA VALUES("54","Histórico de serviços","<p>Hist&oacute;rico de servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:24:33","2018-07-25 19:24:33","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("55","Histórico de Pacotes","<p>Hist&oacute;rico de Pacotes</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:05","2018-07-25 19:25:05","N","11");
+INSERT INTO TB_HISTORIA VALUES("55","Histórico de Pacotes","<p>Hist&oacute;rico de Pacotes</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:05","2018-07-25 19:25:05","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("56","Histórico de Débitos","<p>Hist&oacute;rico de D&eacute;bitos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:36","2018-07-25 19:25:36","N","11");
+INSERT INTO TB_HISTORIA VALUES("56","Histórico de Débitos","<p>Hist&oacute;rico de D&eacute;bitos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:25:36","2018-07-25 19:25:36","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("57","Histórico de crédito","<p>Hist&oacute;rico de cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:05","2018-07-25 19:26:05","N","11");
+INSERT INTO TB_HISTORIA VALUES("57","Histórico de crédito","<p>Hist&oacute;rico de cr&eacute;dito</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:05","2018-07-25 19:26:05","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("58","Histórico de Vale presente","<p>Hist&oacute;rico de Vale presente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:52","2018-07-25 19:26:52","N","11");
+INSERT INTO TB_HISTORIA VALUES("58","Histórico de Vale presente","<p>Hist&oacute;rico de Vale presente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter agendamento</p>","2018-07-25 19:26:52","2018-07-25 19:26:52","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("59","Histórico de Sms","<p>Hist&oacute;rico de Sms</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter Sms</p>","2018-07-25 19:27:25","2018-07-25 19:27:25","N","11");
+INSERT INTO TB_HISTORIA VALUES("59","Histórico de Sms","<p>Hist&oacute;rico de Sms</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter Sms</p>","2018-07-25 19:27:25","2018-07-25 19:27:25","N","11");
 
-INSERT INTO TB_HISTORIA VALUES("60","Histórico de E-mail","<p>Hist&oacute;rico de E-mail</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter E-mail</p>","2018-07-25 19:27:58","2018-07-25 19:27:58","N","11");
+INSERT INTO TB_HISTORIA VALUES("60","Histórico de E-mail","<p>Hist&oacute;rico de E-mail</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Pend&ecirc;ncia: Manter E-mail</p>","2018-07-25 19:27:58","2018-07-25 19:27:58","N","11");
 
 INSERT INTO TB_HISTORIA VALUES("61","Criar Histórias Módulos Principal e assinante","<p>Criar Hist&oacute;rias M&oacute;dulos Principal e assinante</p>","2018-07-26 11:46:54","2018-07-27 17:57:45","I","19");
 
-INSERT INTO TB_HISTORIA VALUES("62","Página do Assinante","<p>P&aacute;gina do Assinante</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Promova seu sal&atilde;o no sistema da beleza com sua pr&oacute;pria p&aacute;gina customizada e com agendamento on-line</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Utilize sua p&aacute;gina exclusiva para divulgar fotos, servi&ccedil;os e informa&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Ofere&ccedil;a promo&ccedil;&otilde;es e pacotes exclusivos para seus clientes</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>As promo&ccedil;&otilde;es s&atilde;o exibidas e podem ser agendadas com exclusividade na sua p&aacute;gina no Site da empresa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Intera&ccedil;&atilde;o do cliente com o WhatsApp da Empresa</p>","2018-07-26 17:36:50","2018-07-26 18:45:07","N","20");
+INSERT INTO TB_HISTORIA VALUES("62","Página do Assinante","<p>P&aacute;gina do Assinante</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Promova seu sal&atilde;o no sistema da beleza com sua pr&oacute;pria p&aacute;gina customizada e com agendamento on-line</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Utilize sua p&aacute;gina exclusiva para divulgar fotos, servi&ccedil;os e informa&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Ofere&ccedil;a promo&ccedil;&otilde;es e pacotes exclusivos para seus clientes</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>As promo&ccedil;&otilde;es s&atilde;o exibidas e podem ser agendadas com exclusividade na sua p&aacute;gina no Site da empresa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Intera&ccedil;&atilde;o do cliente com o WhatsApp da Empresa</p>","2018-07-26 17:36:50","2018-07-26 18:45:07","N","20");
 
 INSERT INTO TB_HISTORIA VALUES("63","Página de captura de cliente","<p>P&aacute;gina de captura de cliente</p>","2018-07-26 17:38:30","2018-07-26 17:38:30","N","21");
 
@@ -1881,13 +1883,13 @@ INSERT INTO TB_HISTORIA VALUES("65","Site do Sistema da beleza","<p>Site do Sist
 
 INSERT INTO TB_HISTORIA VALUES("66","Vídeos para o Site do Sistema da beleza","<p>V&iacute;deos para o Site do Sistema da beleza</p>","2018-07-26 17:40:37","2018-07-26 17:40:37","N","21");
 
-INSERT INTO TB_HISTORIA VALUES("67","Material do Pré Lançamento","<p>Produ&ccedil;&atilde;o e Disponibiliza&ccedil;&atilde;o do material para lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Dura&ccedil;&atilde;o de 7 a 10 dias antes do Lan&ccedil;amento de 3 a 4 v&iacute;deos</p>","2018-07-26 17:45:02","2018-07-26 17:58:04","N","22");
+INSERT INTO TB_HISTORIA VALUES("67","Material do Pré Lançamento","<p>Produ&ccedil;&atilde;o e Disponibiliza&ccedil;&atilde;o do material para lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Dura&ccedil;&atilde;o de 7 a 10 dias antes do Lan&ccedil;amento de 3 a 4 v&iacute;deos</p>","2018-07-26 17:45:02","2018-07-26 17:58:04","N","22");
 
 INSERT INTO TB_HISTORIA VALUES("68","Criação da Lista de Lead","<p>Cria&ccedil;&atilde;o da Lista de Lead ja trabalhadas nas redes sociais e mais..</p>","2018-07-26 17:46:23","2018-07-26 17:46:23","N","24");
 
 INSERT INTO TB_HISTORIA VALUES("69","Página de captura de lead","<p>P&aacute;gina de captura de lead</p>","2018-07-26 17:47:24","2018-07-26 17:47:24","N","21");
 
-INSERT INTO TB_HISTORIA VALUES("70","Criar conteúdos e Entregas","<p>Criar conte&uacute;dos para entrega e ir formulando a lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Inicio da divulga&ccedil;&atilde;o para o lan&ccedil;amento.</p>","2018-07-26 17:55:15","2018-07-26 17:55:15","N","24");
+INSERT INTO TB_HISTORIA VALUES("70","Criar conteúdos e Entregas","<p>Criar conte&uacute;dos para entrega e ir formulando a lista de lead</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Inicio da divulga&ccedil;&atilde;o para o lan&ccedil;amento.</p>","2018-07-26 17:55:15","2018-07-26 17:55:15","N","24");
 
 INSERT INTO TB_HISTORIA VALUES("71","Direcionar para o lançamento","<p>&nbsp;Apos Lan&ccedil;amento Direcionar para o lan&ccedil;amento o tr&aacute;fego do PL</p>","2018-07-26 18:00:07","2018-07-26 18:00:07","N","22");
 
@@ -1897,93 +1899,93 @@ INSERT INTO TB_HISTORIA VALUES("73","Vídeos para lançamento de vendas","<p>pro
 
 INSERT INTO TB_HISTORIA VALUES("74","Criar Histórias Módulos Lançamento do Sistema Da Beleaza e Site","<p>Criar Hist&oacute;rias M&oacute;dulos Lan&ccedil;amento do Sistema Da Beleaza e Site</p>","2018-07-26 18:13:56","2019-03-08 15:27:09","I","25");
 
-INSERT INTO TB_HISTORIA VALUES("75","Iniciar o sistema com as configurações básicas","<p>Iniciar o sistema com as configura&ccedil;&otilde;es b&aacute;sicas para depois iniciar o painel</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Cadastro de proffisional, cliente, servi&ccedil;os e configura&ccedil;&otilde;es padr&otilde;es</p>","2018-07-26 18:40:29","2018-07-26 18:40:29","N","26");
+INSERT INTO TB_HISTORIA VALUES("75","Iniciar o sistema com as configurações básicas","<p>Iniciar o sistema com as configura&ccedil;&otilde;es b&aacute;sicas para depois iniciar o painel</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Cadastro de proffisional, cliente, servi&ccedil;os e configura&ccedil;&otilde;es padr&otilde;es</p>","2018-07-26 18:40:29","2018-07-26 18:40:29","N","26");
 
 INSERT INTO TB_HISTORIA VALUES("76","Regras de E-mail","<p>Regras de E-mail</p>","2018-07-26 18:49:20","2018-07-27 19:00:55","N","27");
 
 INSERT INTO TB_HISTORIA VALUES("79","Criar Templates de Envio","<p>Criar Templates de Envio de email</p>","2018-07-26 18:51:32","2018-07-27 19:01:27","N","27");
 
-INSERT INTO TB_HISTORIA VALUES("80","Regras de SMS","<p>Regras de envio de SMS</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Aprendizagem de envio de SMS</p>","2018-07-26 18:53:05","2018-07-27 19:02:44","N","28");
+INSERT INTO TB_HISTORIA VALUES("80","Regras de SMS","<p>Regras de envio de SMS</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Aprendizagem de envio de SMS</p>","2018-07-26 18:53:05","2018-07-27 19:02:44","N","28");
 
 INSERT INTO TB_HISTORIA VALUES("83","Criar Templates de Envio","<p>Criar Templates de Envio de SMS</p>","2018-07-26 18:55:02","2018-07-27 19:03:11","N","28");
 
-INSERT INTO TB_HISTORIA VALUES("84","Manter Perfil","<p>Editar as funcionalidades que podem ser acessadas pro perfis</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Tabela Perfil Base</p>","2018-07-26 22:16:38","2019-03-11 16:34:01","I","29");
+INSERT INTO TB_HISTORIA VALUES("84","Manter Perfil","<p>Editar as funcionalidades que podem ser acessadas pro perfis</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Tabela Perfil Base</p>","2018-07-26 22:16:38","2019-03-11 16:34:01","I","29");
 
-INSERT INTO TB_HISTORIA VALUES("85","Manter Entrada e saída (Normal e recorrente)","<p>Manter Entrada e sa&iacute;da (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Entrada saida (FK Assinante)</p>","2018-07-26 22:19:03","2018-07-26 22:19:03","N","30");
+INSERT INTO TB_HISTORIA VALUES("85","Manter Entrada e saída (Normal e recorrente)","<p>Manter Entrada e sa&iacute;da (Normal e recorrente)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: Entrada saida (FK Assinante)</p>","2018-07-26 22:19:03","2018-07-26 22:19:03","N","30");
 
-INSERT INTO TB_HISTORIA VALUES("86","Manter categorias de entrada e saída","<p>Manter categorias de entrada e sa&iacute;da</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: categorias entrada e sa&iacute;da (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela Base categorias entrada e sa&iacute;da</p>","2018-07-26 22:21:00","2018-07-26 22:21:00","N","30");
+INSERT INTO TB_HISTORIA VALUES("86","Manter categorias de entrada e saída","<p>Manter categorias de entrada e sa&iacute;da</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: categorias entrada e sa&iacute;da (FK Assinante)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela Base categorias entrada e sa&iacute;da</p>","2018-07-26 22:21:00","2018-07-26 22:21:00","N","30");
 
-INSERT INTO TB_HISTORIA VALUES("87","Manter Comissões","<p>Manter Comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: comissao (FK Agendamento)</p>","2018-07-26 22:23:39","2018-07-26 22:23:39","N","30");
+INSERT INTO TB_HISTORIA VALUES("87","Manter Comissões","<p>Manter Comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: comissao (FK Agendamento)</p>","2018-07-26 22:23:39","2018-07-26 22:23:39","N","30");
 
-INSERT INTO TB_HISTORIA VALUES("88","Manter vale e adiantamento","<p>Manter vale e adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: vale e adiantamento (FK Profissional)</p>","2018-07-26 22:25:10","2018-07-26 22:25:10","N","30");
+INSERT INTO TB_HISTORIA VALUES("88","Manter vale e adiantamento","<p>Manter vale e adiantamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: vale e adiantamento (FK Profissional)</p>","2018-07-26 22:25:10","2018-07-26 22:25:10","N","30");
 
-INSERT INTO TB_HISTORIA VALUES("89","Manter Suporte","<p>Manter Suporte, responder suporte, apresentar resposta</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: suporte (FK Assinante, Categoria Suporte)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela base Categoria Suporte</p>","2018-07-26 22:27:22","2018-07-26 22:28:33","N","31");
+INSERT INTO TB_HISTORIA VALUES("89","Manter Suporte","<p>Manter Suporte, responder suporte, apresentar resposta</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Modelagem: suporte (FK Assinante, Categoria Suporte)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Tabela base Categoria Suporte</p>","2018-07-26 22:27:22","2018-07-26 22:28:33","N","31");
 
 INSERT INTO TB_HISTORIA VALUES("90","Percentual de desconto por Perfil","<p>Percentual de desconto por Perfil no fechamento de conta</p>","2018-07-27 15:02:27","2018-07-27 15:02:27","N","29");
 
 INSERT INTO TB_HISTORIA VALUES("91","Gerar Gráficos em relatórios","<p>Gerar Gr&aacute;ficos em relat&oacute;rios</p>","2018-07-27 17:19:07","2018-07-27 17:19:07","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("92","Profissional mostra os serviços realizados","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra os servi&ccedil;os realizados no per&iacute;odo com um Profissional ou auxiliar</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:37:41","2018-07-27 17:45:36","N","32");
+INSERT INTO TB_HISTORIA VALUES("92","Profissional mostra os serviços realizados","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra os servi&ccedil;os realizados no per&iacute;odo com um Profissional ou auxiliar</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:37:41","2018-07-27 17:45:36","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("93","Profissional mostra todas as reservas","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as reservas de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:38:44","2018-07-27 17:46:02","N","32");
+INSERT INTO TB_HISTORIA VALUES("93","Profissional mostra todas as reservas","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as reservas de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:38:44","2018-07-27 17:46:02","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("94","Profissional mostra todos agendamentos atendidos","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos agendamentos atendidos de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:40:17","2018-07-27 17:46:32","N","32");
+INSERT INTO TB_HISTORIA VALUES("94","Profissional mostra todos agendamentos atendidos","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos agendamentos atendidos de um profissional no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:40:17","2018-07-27 17:46:32","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("95","Profissional o total de comissões","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rio Mostra o total de comiss&otilde;es para todos os profissionais do per&iacute;odo, Comiss&atilde;o por profissional (Principal ou auxiliar)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:41:16","2018-07-27 17:47:48","N","32");
+INSERT INTO TB_HISTORIA VALUES("95","Profissional o total de comissões","<p>Profissional Gerar Gr&aacute;ficos e Relat&oacute;rio Mostra o total de comiss&otilde;es para todos os profissionais do per&iacute;odo, Comiss&atilde;o por profissional (Principal ou auxiliar)</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:41:16","2018-07-27 17:47:48","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("96","Cliente por profissonal atendido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o profissional e o per&iacute;odo para ver os clientes atendidos por ele</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:43:01","2018-07-27 17:47:20","N","32");
+INSERT INTO TB_HISTORIA VALUES("96","Cliente por profissonal atendido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o profissional e o per&iacute;odo para ver os clientes atendidos por ele</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:43:01","2018-07-27 17:47:20","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("97","Cliente Informações básicas","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios com informa&ccedil;&otilde;es como aniversariantes do m&ecirc;s, lista de contatos, atrav&eacute;s de que meio</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:49:20","2018-07-27 17:49:20","N","32");
+INSERT INTO TB_HISTORIA VALUES("97","Cliente Informações básicas","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios com informa&ccedil;&otilde;es como aniversariantes do m&ecirc;s, lista de contatos, atrav&eacute;s de que meio</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:49:20","2018-07-27 17:49:20","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("98","Cliente todos agendamentos","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar todos agendamentos por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:50:16","2018-07-27 17:50:16","N","32");
+INSERT INTO TB_HISTORIA VALUES("98","Cliente todos agendamentos","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar todos agendamentos por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:50:16","2018-07-27 17:50:16","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("99","Cliente serviços consumido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar servi&ccedil;os consumido por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:05","2018-07-27 17:51:05","N","32");
+INSERT INTO TB_HISTORIA VALUES("99","Cliente serviços consumido","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostrar servi&ccedil;os consumido por cliente</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:05","2018-07-27 17:51:05","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("100","Clientes cadastrados no periodo","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes foram cadastrados no per&iacute;odo selecionado</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:49","2018-07-27 17:51:49","N","32");
+INSERT INTO TB_HISTORIA VALUES("100","Clientes cadastrados no periodo","<p>Cliente Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes foram cadastrados no per&iacute;odo selecionado</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 17:51:49","2018-07-27 17:51:49","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("101","Financeiro débitos e créditos dos clientes","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes possuem d&eacute;bitos e cr&eacute;ditos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:53:27","2018-07-27 17:53:27","N","32");
+INSERT INTO TB_HISTORIA VALUES("101","Financeiro débitos e créditos dos clientes","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quais clientes possuem d&eacute;bitos e cr&eacute;ditos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:53:27","2018-07-27 17:53:27","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("102","Financeiro entrada e saída","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Financeiro com entradas e sa&iacute;das por per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:54:38","2018-07-27 18:07:01","N","32");
+INSERT INTO TB_HISTORIA VALUES("102","Financeiro entrada e saída","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Financeiro com entradas e sa&iacute;das por per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:54:38","2018-07-27 18:07:01","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("103","Financeiro comissões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as comiss&otilde;es pagas em determinado per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:55:41","2018-07-27 17:55:41","N","32");
+INSERT INTO TB_HISTORIA VALUES("103","Financeiro comissões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as comiss&otilde;es pagas em determinado per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 17:55:41","2018-07-27 17:55:41","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("104","Financeiro faturamento por forma de pagamento","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione um per&iacute;odo de datas para gerar o relat&oacute;rio de faturamento por forma de pagamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:06:37","2018-07-27 18:06:37","N","32");
+INSERT INTO TB_HISTORIA VALUES("104","Financeiro faturamento por forma de pagamento","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione um per&iacute;odo de datas para gerar o relat&oacute;rio de faturamento por forma de pagamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:06:37","2018-07-27 18:06:37","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("105","Financeiro faturamento diário","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione um Per&iacute;odo para gerar o relat&oacute;rio de faturamento do sal&atilde;o por dia</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:07:54","2018-07-27 18:07:54","N","32");
+INSERT INTO TB_HISTORIA VALUES("105","Financeiro faturamento diário","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione um Per&iacute;odo para gerar o relat&oacute;rio de faturamento do sal&atilde;o por dia</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:07:54","2018-07-27 18:07:54","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("106","Financeiro taxas dos cartões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quanto voc&ecirc; ter&aacute; de pagar de taxas de cart&atilde;o de cr&eacute;dito e d&eacute;bito no per&iacute;odo considerando as taxas inseridas na aba configura&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:09:40","2018-07-27 18:09:40","N","32");
+INSERT INTO TB_HISTORIA VALUES("106","Financeiro taxas dos cartões pagas","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra quanto voc&ecirc; ter&aacute; de pagar de taxas de cart&atilde;o de cr&eacute;dito e d&eacute;bito no per&iacute;odo considerando as taxas inseridas na aba configura&ccedil;&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:09:40","2018-07-27 18:09:40","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("107","Financeiro taxas dos cartões pagas por bandeira","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra o total de faturamento por bandeira e total de taxa descontado no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:10:55","2018-07-27 18:10:55","N","32");
+INSERT INTO TB_HISTORIA VALUES("107","Financeiro taxas dos cartões pagas por bandeira","<p>Financeiro Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra o total de faturamento por bandeira e total de taxa descontado no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:10:55","2018-07-27 18:10:55","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("108","Caixa Fechados e abertos por periodo","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione o per&iacute;odo e visualize todos os caixas fechados e os seus respectivos hor&aacute;rios de abertura e fechamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:06","2018-07-27 18:12:06","N","32");
+INSERT INTO TB_HISTORIA VALUES("108","Caixa Fechados e abertos por periodo","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Selecione o per&iacute;odo e visualize todos os caixas fechados e os seus respectivos hor&aacute;rios de abertura e fechamento</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:06","2018-07-27 18:12:06","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("109","Caixa entrada de pagamento","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as entradas de pagamento no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:44","2018-07-27 18:12:44","N","32");
+INSERT INTO TB_HISTORIA VALUES("109","Caixa entrada de pagamento","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todas as entradas de pagamento no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:12:44","2018-07-27 18:12:44","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("110","Caixa sangrias","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra as sangrias de caixa no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:13:22","2018-07-27 18:13:22","N","32");
+INSERT INTO TB_HISTORIA VALUES("110","Caixa sangrias","<p>Caixa Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra as sangrias de caixa no per&iacute;odo por caixa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-07-27 18:13:22","2018-07-27 18:13:22","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("111","Vale Presente vendidos","<p>Vale Presente Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Mostra todos os vales presentes que foram vendidos (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:14:26","2018-07-27 18:19:26","N","32");
+INSERT INTO TB_HISTORIA VALUES("111","Vale Presente vendidos","<p>Vale Presente Gerar Gr&aacute;ficos e Relat&oacute;rios&nbsp;Mostra todos os vales presentes que foram vendidos (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:14:26","2018-07-27 18:19:26","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("112","Cortesia Dadas","<p>Cortesia Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as cortesias dadas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:15:07","2018-07-27 18:19:02","N","32");
+INSERT INTO TB_HISTORIA VALUES("112","Cortesia Dadas","<p>Cortesia Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as cortesias dadas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:15:07","2018-07-27 18:19:02","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("113","Promoções Vendidas","<p>Promo&ccedil;&otilde;es Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as promo&ccedil;&otilde;es vendidas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:20:43","2018-07-27 18:20:43","N","32");
+INSERT INTO TB_HISTORIA VALUES("113","Promoções Vendidas","<p>Promo&ccedil;&otilde;es Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos as promo&ccedil;&otilde;es vendidas (Geral) Filtros: usados, ativos e vencidos</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:20:43","2018-07-27 18:20:43","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("114","Serviço profissionais que realizou","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Profissionais por servi&ccedil;os realizados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:22:34","2018-07-27 18:24:36","N","32");
+INSERT INTO TB_HISTORIA VALUES("114","Serviço profissionais que realizou","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Profissionais por servi&ccedil;os realizados</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:22:34","2018-07-27 18:24:36","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("115","Serviço Clientes atendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o servi&ccedil;o e per&iacute;odo e veja os clientes atendidos por aquele servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:23:56","2018-07-27 18:23:56","N","32");
+INSERT INTO TB_HISTORIA VALUES("115","Serviço Clientes atendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Selecione o servi&ccedil;o e per&iacute;odo e veja os clientes atendidos por aquele servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:23:56","2018-07-27 18:23:56","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("116","Serviços utilizados por categoria","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Servi&ccedil;os mais utilizados por categorias</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:25:16","2018-07-27 18:25:16","N","32");
+INSERT INTO TB_HISTORIA VALUES("116","Serviços utilizados por categoria","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Servi&ccedil;os mais utilizados por categorias</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:25:16","2018-07-27 18:25:16","N","32");
 
 INSERT INTO TB_HISTORIA VALUES("117","Pacote Vendidos","<p>Servi&ccedil;os Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todosos pacotes vendidas (Geral) Filtros: usados, ativos e vencidos&nbsp; Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:49:49","2018-07-27 18:49:49","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("118","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os clientes que tem servi&ccedil;os ativos realizados e vencidos e seu servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:52:04","2018-07-27 18:56:13","N","32");
+INSERT INTO TB_HISTORIA VALUES("118","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os clientes que tem servi&ccedil;os ativos realizados e vencidos e seu servi&ccedil;os</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:52:04","2018-07-27 18:56:13","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("119","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os servi&ccedil;os do pacote &nbsp;ja realizados e ativos e vencidos no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:53:06","2018-07-27 18:54:22","N","32");
+INSERT INTO TB_HISTORIA VALUES("119","Pacote status por serviços","<p>Pacotes Gerar Gr&aacute;ficos e Relat&oacute;rios Mostra todos os servi&ccedil;os do pacote &nbsp;ja realizados e ativos e vencidos no per&iacute;odo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 18:53:06","2018-07-27 18:54:22","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("120","Sms Histórico de envio","<p>Sms Gerar Gr&aacute;ficos e Relat&oacute;rios Sms disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:08:38","2018-07-27 19:08:38","N","32");
+INSERT INTO TB_HISTORIA VALUES("120","Sms Histórico de envio","<p>Sms Gerar Gr&aacute;ficos e Relat&oacute;rios Sms disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:08:38","2018-07-27 19:08:38","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("121","E-mail Historico de envio","<p>E-mail Gerar Gr&aacute;ficos e Relat&oacute;rios E-mail disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:09:29","2018-07-27 19:09:29","N","32");
+INSERT INTO TB_HISTORIA VALUES("121","E-mail Historico de envio","<p>E-mail Gerar Gr&aacute;ficos e Relat&oacute;rios E-mail disparados para lembrete</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:09:29","2018-07-27 19:09:29","N","32");
 
-INSERT INTO TB_HISTORIA VALUES("122","Agendamento detalhes","<p>Agendamentos Gerar Gr&aacute;ficos e Relat&oacute;rios de gendamentos por status do agendamento cliente profissional e periodo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:12:19","2018-07-27 19:12:19","N","32");
+INSERT INTO TB_HISTORIA VALUES("122","Agendamento detalhes","<p>Agendamentos Gerar Gr&aacute;ficos e Relat&oacute;rios de gendamentos por status do agendamento cliente profissional e periodo</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;Impress&atilde;o dos gr&aacute;ficos e dados</p>","2018-07-27 19:12:19","2018-07-27 19:12:19","N","32");
 
 INSERT INTO TB_HISTORIA VALUES("123","Configuração inicial do projeto","<p>Configura&ccedil;&atilde;o inicial do projeto</p>","2018-07-30 10:32:17","2018-07-30 11:37:21","C","1");
 
@@ -1997,11 +1999,11 @@ INSERT INTO TB_HISTORIA VALUES("127","Gestão de notificações","<p>Gest&atilde
 
 INSERT INTO TB_HISTORIA VALUES("130","Manter Facilidades e beneficios","<p>Manter Facilidades e beneficios</p>","2018-08-30 10:57:06","2018-09-21 22:08:20","C","2");
 
-INSERT INTO TB_HISTORIA VALUES("131","Taxas dos cartões","<p>Taxas cobradas dos cart&otilde;es de d&eacute;bito e cr&eacute;dito e taxa de antecipa&ccedil;&atilde;o dos cart&otilde;es de cr&eacute;dito com periodo da taxa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante), Taxas cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:26:26","2018-10-26 20:28:56","C","5");
+INSERT INTO TB_HISTORIA VALUES("131","Taxas dos cartões","<p>Taxas cobradas dos cart&otilde;es de d&eacute;bito e cr&eacute;dito e taxa de antecipa&ccedil;&atilde;o dos cart&otilde;es de cr&eacute;dito com periodo da taxa</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>modelagem: Configuracao (FK assinante), Taxas cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:26:26","2018-10-26 20:28:56","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("132","Histórico da taxas","<p>hist&oacute;rico da taxas cobradas dos cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:27:18","2018-10-26 20:29:19","C","5");
+INSERT INTO TB_HISTORIA VALUES("132","Histórico da taxas","<p>hist&oacute;rico da taxas cobradas dos cart&otilde;es</p>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>","2018-09-25 14:27:18","2018-10-26 20:29:19","C","5");
 
-INSERT INTO TB_HISTORIA VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas, Comiss&atilde;o (&Uacute;nico Profissional, Com Assistente e Assistente) padr&atilde;o geral por servi&ccedil;o ou por profissional ou por Servi&ccedil;i / Profissional</p>","2018-09-25 14:31:36","2019-04-04 17:56:09","C","5");
+INSERT INTO TB_HISTORIA VALUES("133","Configuração das comissões","<p>Configura&ccedil;&atilde;o das comiss&otilde;es</p>\n\n\n\n\n\n\n\n\n\n<p>&nbsp;</p>\n\n\n\n\n\n\n\n\n\n<p>Considerar ou n&atilde;o as Taxas de antecipa&ccedil;&atilde;o, taxa administrativa, taxa cart&atilde;o de cr&eacute;dito, taxa cart&atilde;o de d&eacute;bito, Regras de pagamentos das pr&eacute; vendas, Comiss&atilde;o (&Uacute;nico Profissional, Com Assistente e Assistente) padr&atilde;o geral por servi&ccedil;o ou por profissional ou por Servi&ccedil;i / Profissional</p>","2018-09-25 14:31:36","2019-04-04 17:56:09","C","5");
 
 INSERT INTO TB_HISTORIA VALUES("134","Configuração de Profissional","<p>Receber Email de resumo de faturamento di&aacute;rio, agenda futura (Configurar periodo), edi&ccedil;&atilde;o dos servi&ccedil;os prestados, edi&ccedil;&atilde;o dos atendimento futuros.</p>","2018-11-27 13:45:17","2019-02-18 16:42:26","C","5");
 
@@ -2025,9 +2027,9 @@ INSERT INTO TB_HISTORIA VALUES("148","Pesquisa Avançada dos Clientes","<p>Pesqu
 
 INSERT INTO TB_HISTORIA VALUES("149","Pesquisa Avançada dos Assinantes","<p>Pesquisa Avan&ccedil;ada dos Assinantes por raz&atilde;o soxial, nome fantasia, Respons&aacute;vel, cidade e UF, email, Tipo de estabelecimento, Atendimento, Genero Especializado, funcionamento, data de expira&ccedil;&atilde;o (Per&iacute;odo), n&uacute;mero de filiais, valor assinatura atual, n&uacute;mero de profissionais,</p>","2019-03-20 14:37:45","2019-03-20 14:40:07","N","1");
 
-INSERT INTO TB_HISTORIA VALUES("150","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n\n\n\n\n\n\n<p>Por Profissional (Profissional / Com Assistente / Assitente)</p>\n\n\n\n\n\n\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:17:19","2019-04-22 17:01:46","C","9");
+INSERT INTO TB_HISTORIA VALUES("150","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n\n\n\n\n\n\n\n\n<p>Por Profissional (Profissional / Com Assistente / Assitente)</p>\n\n\n\n\n\n\n\n\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:17:19","2019-04-22 17:01:46","C","9");
 
-INSERT INTO TB_HISTORIA VALUES("151","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n\n\n\n\n\n\n<p>Por Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>\n\n\n\n\n\n\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:18:54","2019-04-22 15:27:21","C","12");
+INSERT INTO TB_HISTORIA VALUES("151","Manter Percentual de comissão","<p>Manter Percentual de comiss&atilde;o verificar na configura&ccedil;&atilde;o da comissao Tipo Percentual de comiss&atilde;o</p>\n\n\n\n\n\n\n\n\n\n<p>Por Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>\n\n\n\n\n\n\n\n\n\n<p>Por Profissional / Servi&ccedil;o (Profissional / Com Assistente / Assitente)</p>","2019-03-27 15:18:54","2019-04-22 15:27:21","C","12");
 
 INSERT INTO TB_HISTORIA VALUES("152","Histórico da Configuração da Comissão","<p>Hist&oacute;rico da Configura&ccedil;&atilde;o da Comiss&atilde;o</p>","2019-03-27 16:39:58","2019-04-04 18:55:48","C","5");
 
@@ -2105,13 +2107,13 @@ INSERT INTO TB_HISTORIA VALUES("189","Envio do Código Email","<p>Enviar o C&oac
 
 INSERT INTO TB_HISTORIA VALUES("190","Listagem dos agendamento (Calendário)","<p>Listagem dos agendamento e auto render</p>","2019-07-04 09:05:01","2019-07-11 12:21:48","C","17");
 
-INSERT INTO TB_HISTORIA VALUES("191","Cadastrar Agendamento Vários Serviços Serviço","<p>Cadastrar Agendamento V&aacute;rios Servi&ccedil;os Servi&ccedil;o</p>\n\n\n\n\n\n\n\n<p>com&nbsp; Agrupamento dos dados por servi&ccedil;o</p>","2019-07-04 09:05:43","2019-07-04 09:05:43","N","17");
+INSERT INTO TB_HISTORIA VALUES("191","Cadastrar Agendamento Vários Serviços Serviço","<p>Cadastrar Agendamento V&aacute;rios Servi&ccedil;os Servi&ccedil;o</p>\n\n\n\n\n\n\n\n\n\n<p>com&nbsp; Agrupamento dos dados por servi&ccedil;o</p>","2019-07-04 09:05:43","2019-07-04 09:05:43","N","17");
 
 INSERT INTO TB_HISTORIA VALUES("192","Cadastrar Agendamento Pacote com vários serviços","<p>Cadastrar Agendamento Pacote com v&aacute;rios servi&ccedil;os</p>","2019-07-04 09:06:18","2019-07-04 09:06:18","N","17");
 
 INSERT INTO TB_HISTORIA VALUES("193","Histórico do Agendamento","<p>Hist&oacute;rico do Agendamento (Modal)</p>","2019-07-04 11:04:12","2019-07-19 19:54:29","C","17");
 
-INSERT INTO TB_HISTORIA VALUES("194","Deletar Agendamento","<p>Deletar Agendamento (Modal) com Justificativa</p>\n\n\n\n\n\n\n\n<p>Visualisar na listagem da grid</p>","2019-07-04 11:05:08","2019-07-19 16:04:31","C","17");
+INSERT INTO TB_HISTORIA VALUES("194","Deletar Agendamento","<p>Deletar Agendamento (Modal) com Justificativa</p>\n\n\n\n\n\n\n\n\n\n<p>Visualisar na listagem da grid</p>","2019-07-04 11:05:08","2019-07-19 16:04:31","C","17");
 
 INSERT INTO TB_HISTORIA VALUES("195","Listagem dos agendamento (Grid)","<p>Listagem dos agendamento</p>","2019-07-04 11:06:07","2019-08-02 15:58:41","C","17");
 
@@ -6870,65 +6872,65 @@ INSERT INTO TB_SERVICO VALUES("4","2019-03-20 16:54:46","A","N","Corte Tesoura",
 
 INSERT INTO TB_SERVICO VALUES("5","2019-03-20 16:54:46","A","","Corte Máquina","30","Corte: O corte na máquina irá deixar você com o visual renovado.","5","49");
 
-INSERT INTO TB_SERVICO VALUES("6","2019-03-20 16:54:46","I","","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do\n\n\n\n        cabelo sempre saudável.","5","50");
+INSERT INTO TB_SERVICO VALUES("6","2019-03-20 16:54:46","I","","Corte Feminino","60","Corte: mude o visual ou apare as pontinhas para manter a aparência do\n\n\n\n\n        cabelo sempre saudável.","5","50");
 
 INSERT INTO TB_SERVICO VALUES("7","2019-03-20 16:54:46","A","","Hidratação Capilar","60","Hidratação profunda Capilar","5","51");
 
-INSERT INTO TB_SERVICO VALUES("8","2019-03-20 16:54:46","A","","Corte e Higienização dos Fios","30","Corte: mude o visual ou apare as pontinhas para manter a\n\n\n\n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","5","52");
+INSERT INTO TB_SERVICO VALUES("8","2019-03-20 16:54:46","A","","Corte e Higienização dos Fios","30","Corte: mude o visual ou apare as pontinhas para manter a\n\n\n\n\n        aparência do cabelo sempre saudável e Higienização dos Fios: deixe as madeixas ainda mais bonitas","5","52");
 
-INSERT INTO TB_SERVICO VALUES("9","2019-03-20 16:54:46","I","","Escova Modeladora","30","Escova: você vai ter uma ajudinha para realinhar os cabelos com um\n\n\n\n        caimento perfeito.","5","53");
+INSERT INTO TB_SERVICO VALUES("9","2019-03-20 16:54:46","I","","Escova Modeladora","30","Escova: você vai ter uma ajudinha para realinhar os cabelos com um\n\n\n\n\n        caimento perfeito.","5","53");
 
-INSERT INTO TB_SERVICO VALUES("10","2019-03-20 16:54:46","I","","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição\n\n\n\n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
+INSERT INTO TB_SERVICO VALUES("10","2019-03-20 16:54:46","I","","Selagem","60","Selagem: ajuda a dar mais resistência, maciez, elasticidade, brilho e nutrição\n\n\n\n\n        aos fios, além de ser uma ótima aliada na redução do volume.","5","54");
 
-INSERT INTO TB_SERVICO VALUES("11","2019-03-20 16:54:46","A","","Escova Progressiva","60","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a\n\n\n\n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo\n\n\n\n        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar.\n\n\n\n        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.","5","55");
+INSERT INTO TB_SERVICO VALUES("11","2019-03-20 16:54:46","A","","Escova Progressiva","60","Progressiva: é um realinhamento tradicional dos fios, que reestrutura a\n\n\n\n\n        fibra capilar com ativação térmica, hidratando e condicionando profundamente o cabelo. Possui um ativo\n\n\n\n\n        que adere à superfície do cabelo, selando as cutículas, repondo a massa e recuperando a estrutura capilar.\n\n\n\n\n        Os resultados são cabelos lisos, hidratados, sem frizz, macios e com super brilho.","5","55");
 
-INSERT INTO TB_SERVICO VALUES("12","2019-03-20 16:54:46","I","","Botox Capilar","60","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade.\n\n\n\n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","5","56");
+INSERT INTO TB_SERVICO VALUES("12","2019-03-20 16:54:46","I","","Botox Capilar","60","Botox: é um poderoso reconstrutor da fibra do cabelo, garantindo sua jovialidade.\n\n\n\n\n        Esta técnica deixa-os hidratados, sem volume e com aspecto saudável.","5","56");
 
-INSERT INTO TB_SERVICO VALUES("13","2019-03-20 16:54:46","I","","Luzes / Mechas","150","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo\n\n\n\n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","5","57");
+INSERT INTO TB_SERVICO VALUES("13","2019-03-20 16:54:46","I","","Luzes / Mechas","150","Luzes: clareiam sutilmente os fios da raiz até as pontas, deixando o cabelo\n\n\n\n\n        com mais reflexos e Mechas: descoloração feita em mechas que se misturam à cor original do cabelo.","5","57");
 
-INSERT INTO TB_SERVICO VALUES("14","2019-03-20 16:54:46","A","","Manicure","30","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas\n\n\n\n        pela cliente.","6","58");
+INSERT INTO TB_SERVICO VALUES("14","2019-03-20 16:54:46","A","","Manicure","30","Manicure: retirada de cutículas e pintura das unhas das mãos nas cores desejadas\n\n\n\n\n        pela cliente.","6","58");
 
-INSERT INTO TB_SERVICO VALUES("15","2019-03-20 16:54:46","A","","Pedicure","30","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas\n\n\n\n        pela cliente.","6","59");
+INSERT INTO TB_SERVICO VALUES("15","2019-03-20 16:54:46","A","","Pedicure","30","Pedicure: retirada de cutículas e pintura das unhas dos pés nas cores desejadas\n\n\n\n\n        pela cliente.","6","59");
 
-INSERT INTO TB_SERVICO VALUES("16","2019-03-20 16:54:46","A","","Manicure e Pedicure","60","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos\n\n\n\n        e dos pés nas cores desejadas pela cliente.","6","60");
+INSERT INTO TB_SERVICO VALUES("16","2019-03-20 16:54:46","A","","Manicure e Pedicure","60","Manicure e Pedicure: retirada de cutículas e pintura das unhas das mãos\n\n\n\n\n        e dos pés nas cores desejadas pela cliente.","6","60");
 
-INSERT INTO TB_SERVICO VALUES("17","2019-03-20 16:54:46","I","","Unhas Gel","90","Unhas em Gel: feitas com produto à base de película de poliéster,\n\n\n\n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e\n\n\n\n        são mais finas.","6","61");
+INSERT INTO TB_SERVICO VALUES("17","2019-03-20 16:54:46","I","","Unhas Gel","90","Unhas em Gel: feitas com produto à base de película de poliéster,\n\n\n\n\n        antitóxico e antialérgico, secado sob o calor de lâmpada de UV. As unhas têm aparência mais natural e\n\n\n\n\n        são mais finas.","6","61");
 
-INSERT INTO TB_SERVICO VALUES("18","2019-03-20 16:54:46","A","","Maquiagem Completa","120","Desfrute de uma make completa para arrasar em festas, comemorações e\n\n\n\n        casamentos com uma super maquiagem.","7","62");
+INSERT INTO TB_SERVICO VALUES("18","2019-03-20 16:54:46","A","","Maquiagem Completa","120","Desfrute de uma make completa para arrasar em festas, comemorações e\n\n\n\n\n        casamentos com uma super maquiagem.","7","62");
 
-INSERT INTO TB_SERVICO VALUES("19","2019-03-20 16:54:46","A","","Alongamento de Cílios Fio a Fio","90","Alongamento de Cílios: a técnica de alongamento de cílios trata-se\n\n\n\n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio,\n\n\n\n        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada\n\n\n\n        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o\n\n\n\n        procedimento estético em questão dura.","8","63");
+INSERT INTO TB_SERVICO VALUES("19","2019-03-20 16:54:46","A","","Alongamento de Cílios Fio a Fio","90","Alongamento de Cílios: a técnica de alongamento de cílios trata-se\n\n\n\n\n        de uma espécie de “mega-hair” para cílios, ou seja, aumenta o tamanho e o volume dos pelos, fio a fio,\n\n\n\n\n        fazendo com que os mesmos fiquem alongados, cheios e definidos, como se tivesse sido aplicada uma camada\n\n\n\n\n        generosa de máscara para cílios. Desta forma, você pode dispensar o uso do rímel durante o período em que o\n\n\n\n\n        procedimento estético em questão dura.","8","63");
 
-INSERT INTO TB_SERVICO VALUES("20","2019-03-20 16:54:46","A","","Design de Sobrancelhas","30","Design de Sobrancelhas: além de ser esteticamente essencial, garante\n\n\n\n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto.\n\n\n\n        Feito de acordo com o formato do seu rosto. Feito com pinça.","8","64");
+INSERT INTO TB_SERVICO VALUES("20","2019-03-20 16:54:46","A","","Design de Sobrancelhas","30","Design de Sobrancelhas: além de ser esteticamente essencial, garante\n\n\n\n\n        uma expressão mais bonita, evidencia traços naturais e deixa você com olhar muito mais seguro e disposto.\n\n\n\n\n        Feito de acordo com o formato do seu rosto. Feito com pinça.","8","64");
 
-INSERT INTO TB_SERVICO VALUES("21","2019-03-20 16:54:46","A","","Retoque na Barba","60","Barba: faça a barba totalmente ou apare com um design a seu gosto para\n\n\n\n        manter a aparência impecável.","9","65");
+INSERT INTO TB_SERVICO VALUES("21","2019-03-20 16:54:46","A","","Retoque na Barba","60","Barba: faça a barba totalmente ou apare com um design a seu gosto para\n\n\n\n\n        manter a aparência impecável.","9","65");
 
-INSERT INTO TB_SERVICO VALUES("22","2019-03-20 16:54:46","A","","Rejuvenescimento Facial","60","Rejuvenescimento Facial com Luz Pulsada é um procedimento\n\n\n\n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno\n\n\n\n        e a elastina proporcionando assim uma pele mais firme e jovem.","10","66");
+INSERT INTO TB_SERVICO VALUES("22","2019-03-20 16:54:46","A","","Rejuvenescimento Facial","60","Rejuvenescimento Facial com Luz Pulsada é um procedimento\n\n\n\n\n        de última geração que promove a melhora da textura, vivacidade e iluminação da pele, além de repor o colágeno\n\n\n\n\n        e a elastina proporcionando assim uma pele mais firme e jovem.","10","66");
 
-INSERT INTO TB_SERVICO VALUES("23","2019-03-20 16:54:46","A","","Microagulhamento com Peeling","60","Microagulhamento: promove textura mais macia, atenuando cicatrizes\n\n\n\n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling\n\n\n\n        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na\n\n\n\n        camada mais superficial da pele e a estimulação à produção de colágeno.","10","67");
+INSERT INTO TB_SERVICO VALUES("23","2019-03-20 16:54:46","A","","Microagulhamento com Peeling","60","Microagulhamento: promove textura mais macia, atenuando cicatrizes\n\n\n\n\n        de acne, poros abertos, rugas, linhas de expressão, cicatrizes, estrias, olheiras, manchas, flacidez. e Peeling\n\n\n\n\n        de diamante: entre os principais objetivos do procedimento estão a remoção das células mortas que ficam na\n\n\n\n\n        camada mais superficial da pele e a estimulação à produção de colágeno.","10","67");
 
-INSERT INTO TB_SERVICO VALUES("24","2019-03-20 16:54:46","A","","Máscara Acne Control","60","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a\n\n\n\n        textura e a firmeza da pele.","10","68");
+INSERT INTO TB_SERVICO VALUES("24","2019-03-20 16:54:46","A","","Máscara Acne Control","60","Máscara Acne Control: o tratamento visa diminuir a acne, manchas e melhorar a\n\n\n\n\n        textura e a firmeza da pele.","10","68");
 
-INSERT INTO TB_SERVICO VALUES("25","2019-03-20 16:54:46","A","","Limpeza de Pele","30","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração\n\n\n\n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","10","69");
+INSERT INTO TB_SERVICO VALUES("25","2019-03-20 16:54:46","A","","Limpeza de Pele","30","Limpeza de pele com extração: inclui higienização, vapor de ozônio e extração\n\n\n\n\n        de cravos, deixando seu rosto limpo e saudável para os demais procedimentos.","10","69");
 
-INSERT INTO TB_SERVICO VALUES("26","2019-03-20 16:54:46","I","","Depilação a Laser","30","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor,\n\n\n\n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","11","70");
+INSERT INTO TB_SERVICO VALUES("26","2019-03-20 16:54:46","I","","Depilação a Laser","30","Com Depilação a Laser com Soprano XL, um aparelho praticamente indolor,\n\n\n\n\n        que garante uma boa tolerância dos pacientes ao desconforto no momento da sessão.","11","70");
 
-INSERT INTO TB_SERVICO VALUES("27","2019-03-20 16:54:46","I","","Depilação a Cera","60","Realizada com cera quente, que garante uma maior durabilidade, já que os\n\n\n\n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida,\n\n\n\n        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.","11","71");
+INSERT INTO TB_SERVICO VALUES("27","2019-03-20 16:54:46","I","","Depilação a Cera","60","Realizada com cera quente, que garante uma maior durabilidade, já que os\n\n\n\n\n        pelos são eliminados pela raiz. O tratamento diminui a espessura do pelo e retarda seu crescimento. É rápida,\n\n\n\n\n        sem resíduos e sua pele não fica irritada, como acontece com a lâmina de barbear. Todo material é descartável.","11","71");
 
-INSERT INTO TB_SERVICO VALUES("28","2019-03-20 16:54:46","I","","Depilação a Luz","30","O método remove os pelos pela destruição do folículo piloso ou\n\n\n\n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até\n\n\n\n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.","11","72");
+INSERT INTO TB_SERVICO VALUES("28","2019-03-20 16:54:46","I","","Depilação a Luz","30","O método remove os pelos pela destruição do folículo piloso ou\n\n\n\n\n        de sua nutrição, tornando seu crescimento inviável. O laser utiliza a cor do pelo como guia para chegar até\n\n\n\n\n        sua raiz e destruí-lo. Com a emissão de um feixe de luz monocromática, queima e atrofia sua raiz.","11","72");
 
 INSERT INTO TB_SERVICO VALUES("29","2019-03-20 16:54:46","I","","Massagem Relaxante","30","Massagem Relaxante: é revigorante e reduz o estado de tensão muscular.","12","73");
 
-INSERT INTO TB_SERVICO VALUES("30","2019-03-20 16:54:46","A","","Massagem Modeladora","10","Massagem Modeladora: para quem precisa ativar o metabolismo local,\n\n\n\n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","12","90");
+INSERT INTO TB_SERVICO VALUES("30","2019-03-20 16:54:46","A","","Massagem Modeladora","10","Massagem Modeladora: para quem precisa ativar o metabolismo local,\n\n\n\n\n        aumentar a circulação sanguínea e estimular respostas neuromusculares, além da reduzir celulite.","12","90");
 
-INSERT INTO TB_SERVICO VALUES("31","2019-03-20 16:54:46","A","","Drenagem Linfática","30","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e\n\n\n\n        toxinas do organismo.","12","75");
+INSERT INTO TB_SERVICO VALUES("31","2019-03-20 16:54:46","A","","Drenagem Linfática","30","Drenagem Linfática: para quem precisa retirar o excesso de líquidos e\n\n\n\n\n        toxinas do organismo.","12","75");
 
-INSERT INTO TB_SERVICO VALUES("32","2019-03-20 16:54:46","I","","Day Spa","120","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de\n\n\n\n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz\n\n\n\n        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras\n\n\n\n        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que\n\n\n\n        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado","12","76");
+INSERT INTO TB_SERVICO VALUES("32","2019-03-20 16:54:46","I","","Day Spa","120","Massagem com pedras quentes é uma terapia complementar, que utiliza pedras de\n\n\n\n\n        vários tipos e tamanhos, principalmente as vulcânicas, que absorvem muito mais o calor. Esta terapia é capaz\n\n\n\n\n        de levar a um profundo relaxamento e bem estar, trazendo ao corpo diversas sensações com o toque das pedras\n\n\n\n\n        quentes. Esfoliação corporal e facial: pele mais uniforme, limpa e macia. Escalda-pés: método relaxante que\n\n\n\n\n        estimula a circulação sanguínea e alivia o estresse e o cansaço acumulado","12","76");
 
-INSERT INTO TB_SERVICO VALUES("33","2019-03-20 16:54:46","A","S","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza,\n\n\n\n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
+INSERT INTO TB_SERVICO VALUES("33","2019-03-20 16:54:46","A","S","Podologia com limpeza dos pés","60","Podologia com limpeza dos pés: corte, polimento, limpeza,\n\n\n\n\n        debastamento das calosidades, esfoliação dos pés e hidratação profunda.","13","77");
 
-INSERT INTO TB_SERVICO VALUES("34","2019-03-20 16:54:46","I","","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite,\n\n\n\n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes\n\n\n\n        e energética.","14","92");
+INSERT INTO TB_SERVICO VALUES("34","2019-03-20 16:54:46","I","","Bambuterapia","60","Bambuterapia: é uma ótima conduta terapêutica nos tratamentos de celulite,\n\n\n\n\n        flacidez e gordura localizada, pois apresenta propriedades modeladoras, drenantes, relaxantes, tonificantes\n\n\n\n\n        e energética.","14","92");
 
-INSERT INTO TB_SERVICO VALUES("35","2019-03-20 16:54:46","I","","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a\n\n\n\n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite\n\n\n\n        e flacidez.","14","79");
+INSERT INTO TB_SERVICO VALUES("35","2019-03-20 16:54:46","I","","Carboxiterapia","30","Feita por meio de injeção subcutânea de gás carbônico medicinal, estimula a\n\n\n\n\n        produção de colágeno local e ajuda a reduzir a gordura localizada, ao mesmo tempo que melhora a celulite\n\n\n\n\n        e flacidez.","14","79");
 
 INSERT INTO TB_SERVICO VALUES("40","2019-03-21 17:30:34","I","","Novidade para o cabelo","30","Novo Teste de Podologia","13","85");
 
@@ -7861,7 +7863,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=526 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=527 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -7899,6 +7901,8 @@ INSERT INTO TB_TRAFEGO VALUES("43","::1","Desconhecido","Desconhecida","Desconhe
 INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
 
 INSERT INTO TB_TRAFEGO VALUES("525","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("526","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 

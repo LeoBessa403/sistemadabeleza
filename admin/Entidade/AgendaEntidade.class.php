@@ -7,53 +7,55 @@
 
 class AgendaEntidade extends AbstractEntidade
 {
-	const TABELA = 'TB_AGENDA';
-	const ENTIDADE = 'AgendaEntidade';
-	const CHAVE = CO_AGENDA;
+    const TABELA = 'TB_AGENDA';
+    const ENTIDADE = 'AgendaEntidade';
+    const CHAVE = CO_AGENDA;
 
-	private $co_agenda;
-	private $dt_cadastro;
-	private $ds_motivo;
-	private $co_assinante;
-	private $co_status_agenda;
+    private $co_agenda;
+    private $dt_cadastro;
+    private $ds_motivo;
+    private $co_assinante;
+    private $co_status_agenda;
+    private $co_comissao;
 
 
-	/**
-    * @return array
-    */
-	public static function getCampos() 
+    /**
+     * @return array
+     */
+    public static function getCampos()
     {
-    	return [
-			CO_AGENDA,
-			DT_CADASTRO,
+        return [
+            CO_AGENDA,
+            DT_CADASTRO,
             DS_MOTIVO,
-			CO_ASSINANTE,
-		];
+            CO_ASSINANTE,
+            CO_COMISSAO
+        ];
     }
 
-	/**
-	* @return array $relacionamentos
-    */
-	public static function getRelacionamentos() 
+    /**
+     * @return array $relacionamentos
+     */
+    public static function getRelacionamentos()
     {
-    	$relacionamentos = Relacionamentos::getRelacionamentos();
-		return $relacionamentos[static::TABELA];
-	}
+        $relacionamentos = Relacionamentos::getRelacionamentos();
+        return $relacionamentos[static::TABELA];
+    }
 
 
-	/**
-	* @return int $co_agenda
-    */
-	public function getCoAgenda()
+    /**
+     * @return int $co_agenda
+     */
+    public function getCoAgenda()
     {
         return $this->co_agenda;
     }
 
-	/**
-	* @param $co_agenda
-    * @return mixed
-    */
-	public function setCoAgenda($co_agenda)
+    /**
+     * @param $co_agenda
+     * @return mixed
+     */
+    public function setCoAgenda($co_agenda)
     {
         return $this->co_agenda = $co_agenda;
     }
@@ -74,55 +76,73 @@ class AgendaEntidade extends AbstractEntidade
         $this->ds_motivo = $ds_motivo;
     }
 
-	/**
-	* @return mixed $dt_cadastro
-    */
-	public function getDtCadastro()
+    /**
+     * @return mixed $dt_cadastro
+     */
+    public function getDtCadastro()
     {
         return $this->dt_cadastro;
     }
 
-	/**
-	* @param $dt_cadastro
-    * @return mixed
-    */
-	public function setDtCadastro($dt_cadastro)
+    /**
+     * @param $dt_cadastro
+     * @return mixed
+     */
+    public function setDtCadastro($dt_cadastro)
     {
         return $this->dt_cadastro = $dt_cadastro;
     }
 
-	/**
-	* @return AssinanteEntidade $co_assinante
-    */
-	public function getCoAssinante()
+    /**
+     * @return AssinanteEntidade $co_assinante
+     */
+    public function getCoAssinante()
     {
         return $this->co_assinante;
     }
 
-	/**
-	* @param $co_assinante
-    * @return mixed
-    */
-	public function setCoAssinante($co_assinante)
+    /**
+     * @param $co_assinante
+     * @return mixed
+     */
+    public function setCoAssinante($co_assinante)
     {
         return $this->co_assinante = $co_assinante;
     }
 
-	/**
-	* @return StatusAgendaEntidade $co_status_agenda
+    /**
+     * @return StatusAgendaEntidade $co_status_agenda
      */
-	public function getCoStatusAgenda()
+    public function getCoStatusAgenda()
     {
         return $this->co_status_agenda;
     }
 
-	/**
+    /**
      * @param $co_status_agenda
      * @return mixed
      */
-	public function setCoStatusAgenda($co_status_agenda)
+    public function setCoStatusAgenda($co_status_agenda)
     {
         return $this->co_status_agenda = $co_status_agenda;
     }
+
+    /**
+     * @return ComissaoEntidade $co_comissao
+     */
+    public function getCoComissao()
+    {
+        return $this->co_comissao;
+    }
+
+    /**
+     * @param $co_comissao
+     * @return mixed
+     */
+    public function setCoComissao($co_comissao)
+    {
+        $this->co_comissao = $co_comissao;
+    }
+
 
 }
