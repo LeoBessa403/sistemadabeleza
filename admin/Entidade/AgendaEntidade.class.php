@@ -28,8 +28,7 @@ class AgendaEntidade extends AbstractEntidade
             CO_AGENDA,
             DT_CADASTRO,
             DS_MOTIVO,
-            CO_ASSINANTE,
-            CO_COMISSAO
+            CO_ASSINANTE
         ];
     }
 

@@ -1046,117 +1046,117 @@ class Relacionamentos
                     ('Entidade') => 'StatusAgendaEntidade',
                     ('Tipo') => '1',
                 ),
-                (CaixaEntidade::TABELA) => Array(
-                    (CO_USUARIO) => Array(
-                        ('Campo') => CO_USUARIO,
-                        ('Entidade') => 'UsuarioEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_ASSINANTE) => Array(
-                        ('Campo') => CO_ASSINANTE,
-                        ('Entidade') => 'AssinanteEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_SALDO) => Array(
-                        ('Campo') => CO_CAIXA,
-                        ('Entidade') => 'SaldoEntidade',
-                        ('Tipo') => '2',
-                    ),
+            ),
+            (CaixaEntidade::TABELA) => Array(
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
                 ),
-                (ComissaoEntidade::TABELA) => Array(
-                    (CO_AGENDA) => Array(
-                        ('Campo') => CO_AGENDA,
-                        ('Entidade') => 'AgendaEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_SALDO) => Array(
-                        ('Campo') => CO_SALDO,
-                        ('Entidade') => 'SaldoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_PAGAMENTO) => Array(
-                        ('Campo') => CO_PAGAMENTO,
-                        ('Entidade') => 'PagamentoEntidade',
-                        ('Tipo') => '1',
-                    ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
                 ),
-                (SaldoEntidade::TABELA) => Array(
-                    (CO_COMISSAO) => Array(
-                        ('Campo') => CO_SALDO,
-                        ('Entidade') => 'ComissaoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_CAIXA) => Array(
-                        ('Campo') => CO_CAIXA,
-                        ('Entidade') => 'CaixaEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_TIPO_SALDO) => Array(
-                        ('Campo') => CO_TIPO_SALDO,
-                        ('Entidade') => 'TipoSaldoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_TIPO_PAGAMENTO) => Array(
-                        ('Campo') => CO_TIPO_PAGAMENTO,
-                        ('Entidade') => 'TipoPagamentoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_CORTESIA) => Array(
-                        ('Campo') => CO_CORTESIA,
-                        ('Entidade') => 'CortesiaEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_VALE_PRESENTE) => Array(
-                        ('Campo') => CO_VALE_PRESENTE,
-                        ('Entidade') => 'ValePresenteEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_BANDEIRA_CARTAO) => Array(
-                        ('Campo') => CO_BANDEIRA_CARTAO,
-                        ('Entidade') => 'BandeiraCartaoEntidade',
-                        ('Tipo') => '1',
-                    ),
+                (CO_SALDO) => Array(
+                    ('Campo') => CO_CAIXA,
+                    ('Entidade') => 'SaldoEntidade',
+                    ('Tipo') => '2',
                 ),
-                (PagamentoEntidade::TABELA) => Array(
-                    (CO_COMISSAO) => Array(
-                        ('Campo') => CO_PAGAMENTO,
-                        ('Entidade') => 'ComissaoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_ASSINANTE) => Array(
-                        ('Campo') => CO_ASSINANTE,
-                        ('Entidade') => 'AssinanteEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_PARCELAMENTO) => Array(
-                        ('Campo') => CO_PAGAMENTO,
-                        ('Entidade') => 'ParcelamentoEntidade',
-                        ('Tipo') => '2',
-                    ),
+            ),
+            (ComissaoEntidade::TABELA) => Array(
+                (CO_AGENDA) => Array(
+                    ('Campo') => CO_AGENDA,
+                    ('Entidade') => 'AgendaEntidade',
+                    ('Tipo') => '1',
                 ),
-                (ParcelamentoEntidade::TABELA) => Array(
-                    (CO_PAGAMENTO) => Array(
-                        ('Campo') => CO_PAGAMENTO,
-                        ('Entidade') => 'PagamentoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_TIPO_PAGAMENTO) => Array(
-                        ('Campo') => CO_TIPO_PAGAMENTO,
-                        ('Entidade') => 'TipoPagamentoEntidade',
-                        ('Tipo') => '1',
-                    ),
-                    (CO_USUARIO) => Array(
-                        ('Campo') => CO_USUARIO,
-                        ('Entidade') => 'UsuarioEntidade',
-                        ('Tipo') => '1',
-                    ),
+                (CO_SALDO) => Array(
+                    ('Campo') => CO_SALDO,
+                    ('Entidade') => 'SaldoEntidade',
+                    ('Tipo') => '1',
                 ),
-                (TipoSaldoEntidade::TABELA) => Array(
-                    (CO_SALDO) => Array(
-                        ('Campo') => CO_TIPO_SALDO,
-                        ('Entidade') => 'SaldoEntidade',
-                        ('Tipo') => '2',
-                    ),
+                (CO_PAGAMENTO) => Array(
+                    ('Campo') => CO_PAGAMENTO,
+                    ('Entidade') => 'PagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (SaldoEntidade::TABELA) => Array(
+                (CO_COMISSAO) => Array(
+                    ('Campo') => CO_SALDO,
+                    ('Entidade') => 'ComissaoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_CAIXA) => Array(
+                    ('Campo') => CO_CAIXA,
+                    ('Entidade') => 'CaixaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_TIPO_SALDO) => Array(
+                    ('Campo') => CO_TIPO_SALDO,
+                    ('Entidade') => 'TipoSaldoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_TIPO_PAGAMENTO) => Array(
+                    ('Campo') => CO_TIPO_PAGAMENTO,
+                    ('Entidade') => 'TipoPagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_CORTESIA) => Array(
+                    ('Campo') => CO_CORTESIA,
+                    ('Entidade') => 'CortesiaEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_VALE_PRESENTE) => Array(
+                    ('Campo') => CO_VALE_PRESENTE,
+                    ('Entidade') => 'ValePresenteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_BANDEIRA_CARTAO) => Array(
+                    ('Campo') => CO_BANDEIRA_CARTAO,
+                    ('Entidade') => 'BandeiraCartaoEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (PagamentoEntidade::TABELA) => Array(
+                (CO_COMISSAO) => Array(
+                    ('Campo') => CO_PAGAMENTO,
+                    ('Entidade') => 'ComissaoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_ASSINANTE) => Array(
+                    ('Campo') => CO_ASSINANTE,
+                    ('Entidade') => 'AssinanteEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_PARCELAMENTO) => Array(
+                    ('Campo') => CO_PAGAMENTO,
+                    ('Entidade') => 'ParcelamentoEntidade',
+                    ('Tipo') => '2',
+                ),
+            ),
+            (ParcelamentoEntidade::TABELA) => Array(
+                (CO_PAGAMENTO) => Array(
+                    ('Campo') => CO_PAGAMENTO,
+                    ('Entidade') => 'PagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_TIPO_PAGAMENTO) => Array(
+                    ('Campo') => CO_TIPO_PAGAMENTO,
+                    ('Entidade') => 'TipoPagamentoEntidade',
+                    ('Tipo') => '1',
+                ),
+                (CO_USUARIO) => Array(
+                    ('Campo') => CO_USUARIO,
+                    ('Entidade') => 'UsuarioEntidade',
+                    ('Tipo') => '1',
+                ),
+            ),
+            (TipoSaldoEntidade::TABELA) => Array(
+                (CO_SALDO) => Array(
+                    ('Campo') => CO_TIPO_SALDO,
+                    ('Entidade') => 'SaldoEntidade',
+                    ('Tipo') => '2',
                 ),
             ),
         );
