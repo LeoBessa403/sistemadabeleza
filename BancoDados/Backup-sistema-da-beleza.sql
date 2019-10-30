@@ -1,4 +1,4 @@
--- Atualizado em: 22/10/2019 16:57:27
+-- Atualizado em: 29/10/2019 19:10:10
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,12 +20,24 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=511 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=517 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ACESSO VALUES("509","hvtdp565emts5fvvrqnnsgsu96","2019-10-08 12:19:06","2019-10-08 12:59:05","F","1","525");
 
 INSERT INTO TB_ACESSO VALUES("510","hvtdp565emts5fvvrqnnsgsu96","2019-10-08 14:03:18","2019-10-08 14:34:10","F","8","526");
+
+INSERT INTO TB_ACESSO VALUES("511","ptn0u1suvnsii0qqrki67o8em6","2019-10-22 16:57:38","2019-10-22 17:27:48","F","1","527");
+
+INSERT INTO TB_ACESSO VALUES("512","ptn0u1suvnsii0qqrki67o8em6","2019-10-25 11:35:47","2019-10-25 11:42:23","F","8","528");
+
+INSERT INTO TB_ACESSO VALUES("513","ptn0u1suvnsii0qqrki67o8em6","2019-10-25 11:42:27","2019-10-25 11:43:52","F","1","529");
+
+INSERT INTO TB_ACESSO VALUES("514","ptn0u1suvnsii0qqrki67o8em6","2019-10-25 11:43:56","2019-10-25 12:15:57","F","8","530");
+
+INSERT INTO TB_ACESSO VALUES("515","ptn0u1suvnsii0qqrki67o8em6","2019-10-25 13:40:00","2019-10-25 14:16:54","F","8","531");
+
+INSERT INTO TB_ACESSO VALUES("516","ptn0u1suvnsii0qqrki67o8em6","2019-10-25 14:17:16","2019-10-25 14:47:56","F","1","532");
 
 
 
@@ -218,8 +230,12 @@ CREATE TABLE `TB_AUDITORIA` (
   `co_usuario` int(10) NOT NULL,
   PRIMARY KEY (`co_auditoria`,`co_usuario`),
   KEY `fk_TB_AUDITORIA_TB_USUARIO1_idx` (`co_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
+
+INSERT INTO TB_AUDITORIA VALUES("1","2019-10-25 11:43:37","Master","1");
+
+INSERT INTO TB_AUDITORIA VALUES("2","2019-10-25 11:43:45","Master","1");
 
 
 
@@ -235,7 +251,7 @@ CREATE TABLE `TB_AUDITORIA_ITENS` (
   `co_auditoria_tabela` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_itens`,`co_auditoria_tabela`),
   KEY `fk_TB_AUDITORIA_ITENS_TB_AUDITORIA_TABELA1_idx` (`co_auditoria_tabela`)
-) ENGINE=InnoDB AUTO_INCREMENT=5793 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5801 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AUDITORIA_ITENS VALUES("5772","","12","co_agenda","1123");
@@ -280,6 +296,22 @@ INSERT INTO TB_AUDITORIA_ITENS VALUES("5791","","9","co_profissional","1126");
 
 INSERT INTO TB_AUDITORIA_ITENS VALUES("5792","","2","tp_profissional","1126");
 
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5793","","84","co_funcionalidade","1127");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5794","","2","co_perfil","1127");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5795","292","","co_perfil_funcionalidade","1128");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5796","84","","co_funcionalidade","1128");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5797","2","","co_perfil","1128");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5798","0","","co_perfil_assinante","1128");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5799","","84","co_funcionalidade","1129");
+
+INSERT INTO TB_AUDITORIA_ITENS VALUES("5800","","2","co_perfil","1129");
+
 
 
 
@@ -294,7 +326,7 @@ CREATE TABLE `TB_AUDITORIA_TABELA` (
   `co_auditoria` int(11) NOT NULL,
   PRIMARY KEY (`co_auditoria_tabela`,`co_auditoria`),
   KEY `fk_TB_AUDITORIA_TABELA_TB_AUDITORIA1_idx` (`co_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=1127 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1130 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_AUDITORIA_TABELA VALUES("1123","TB_STATUS_AGENDA","I","142","142");
@@ -304,6 +336,12 @@ INSERT INTO TB_AUDITORIA_TABELA VALUES("1124","TB_STATUS_AGENDA_SERVICO","I","98
 INSERT INTO TB_AUDITORIA_TABELA VALUES("1125","TB_STATUS_AGENDA_PROFISSIONAL","I","171","142");
 
 INSERT INTO TB_AUDITORIA_TABELA VALUES("1126","TB_STATUS_AGENDA_PROFISSIONAL","I","172","142");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("1127","TB_PERFIL_FUNCIONALIDADE","I","292","1");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("1128","TB_PERFIL_FUNCIONALIDADE","D","","2");
+
+INSERT INTO TB_AUDITORIA_TABELA VALUES("1129","TB_PERFIL_FUNCIONALIDADE","I","293","2");
 
 
 
@@ -1558,7 +1596,7 @@ CREATE TABLE `TB_FUNCIONALIDADE` (
   `co_controller` int(11) NOT NULL,
   PRIMARY KEY (`co_funcionalidade`,`co_controller`),
   KEY `fk_TB_FUNCIONALIDADE_TB_CONTROLLER1_idx` (`co_controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("1","Perfil Master","PerfilMaster","A","S","0");
@@ -1694,6 +1732,8 @@ INSERT INTO TB_FUNCIONALIDADE VALUES("81","Historico agendamento","HistoricoAgen
 INSERT INTO TB_FUNCIONALIDADE VALUES("82","Crons","CronsGestao","A","S","1");
 
 INSERT INTO TB_FUNCIONALIDADE VALUES("83","Listar Caixa","ListarCaixa","A","S","17");
+
+INSERT INTO TB_FUNCIONALIDADE VALUES("84","Abrir Caixa","AbrirCaixa","A","N","17");
 
 
 
@@ -6125,7 +6165,7 @@ CREATE TABLE `TB_PERFIL_FUNCIONALIDADE` (
   KEY `fk_tb_perfil_tb_funcionalidade_tb_funcionalidade1_idx` (`co_funcionalidade`),
   KEY `fk_tb_perfil_tb_funcionalidade_tb_perfil1_idx` (`co_perfil`),
   KEY `fk_TB_PERFIL_FUNCIONALIDADE_TB_PERFIL_ASSINANTE1_idx` (`co_perfil_assinante`)
-) ENGINE=InnoDB AUTO_INCREMENT=292 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=294 DEFAULT CHARSET=latin1;
 
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("1","1","1","0");
@@ -6239,6 +6279,8 @@ INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("287","79","2","0");
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("290","81","2","0");
 
 INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("291","83","2","0");
+
+INSERT INTO TB_PERFIL_FUNCIONALIDADE VALUES("293","84","2","0");
 
 
 
@@ -7863,7 +7905,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=527 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=533 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -7903,6 +7945,18 @@ INSERT INTO TB_TRAFEGO VALUES("46","::1","Desconhecido","Desconhecida","Desconhe
 INSERT INTO TB_TRAFEGO VALUES("525","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 INSERT INTO TB_TRAFEGO VALUES("526","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("527","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("528","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("529","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("530","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("531","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+
+INSERT INTO TB_TRAFEGO VALUES("532","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
 
 
 
