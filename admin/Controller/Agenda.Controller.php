@@ -57,6 +57,8 @@ class Agenda extends AbstractController
         $session = new Session();
         if ($session->CheckSession(PESQUISA_AVANCADA)) {
             $Condicoes = $session::getSession(PESQUISA_AVANCADA);
+        }else{
+            $session->FinalizaSession('pesq_agendamento');
         }
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
         $this->result = $agendaService->PesquisaAgendamentos($Condicoes);
