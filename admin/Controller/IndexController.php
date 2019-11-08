@@ -63,13 +63,12 @@ class IndexController extends AbstractController
         if (!empty($agendas)) {
             /** @var AgendaService $agendaService */
             $agendaService = $this->getService(AGENDA_SERVICE);
-            /** @var StatusAgendaService $statusAgendaService */
-            $statusAgendaService = $this->getService(STATUS_AGENDA_SERVICE);
-            $statusAgendas = $statusAgendaService->PesquisaTodos([
+            $TodasAgendaStatus = $agendaService->PesquisaTodos([
                 CO_AGENDA => implode(', ', $agendas)
             ]);
-            /** @var StatusAgendaEntidade $statusAgenda */
-            foreach ($statusAgendas as $statusAgenda) {
+            /** @var AgendaEntidade $Agenda */
+            foreach ($TodasAgendaStatus as $Agenda) {
+                $statusAgenda = $Agenda->getCoUltimoStatusAgenda();
                 $dados[CO_AGENDA] = $statusAgenda->getCoAgenda()->getCoAgenda();
                 $dados[DT_INICIO_AGENDA] = $statusAgenda->getDtInicioAgenda();
                 $dados[DT_FIM_AGENDA] = $statusAgenda->getDtFimAgenda();

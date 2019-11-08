@@ -127,6 +127,14 @@ class AgendaEntidade extends AbstractEntidade
     }
 
     /**
+     * @return StatusAgendaEntidade $co_status_agenda
+     */
+    public function getCoUltimoStatusAgenda()
+    {
+        return $this->ultimo($this->getCoStatusAgenda());
+    }
+
+    /**
      * @return ComissaoEntidade $co_comissao
      */
     public function getCoComissao()
