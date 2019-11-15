@@ -57,7 +57,7 @@ class Agenda extends AbstractController
         $session = new Session();
         if ($session->CheckSession(PESQUISA_AVANCADA)) {
             $Condicoes = $session::getSession(PESQUISA_AVANCADA);
-        }else{
+        } else {
             $session->FinalizaSession('pesq_agendamento');
         }
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
@@ -143,7 +143,7 @@ class Agenda extends AbstractController
         }
         /** @var AgendaService $agendaService */
         $agendaService = static::getServiceStatic(AGENDA_SERVICE);
-        $pesquisa =  $agendaService->AgendamentoPesquisaAvancada($dados);
+        $pesquisa = $agendaService->AgendamentoPesquisaAvancada($dados);
 
         $Condicoes = array(
             "stag." . ST_STATUS => $pesquisa['st_status-pesquisa'],
