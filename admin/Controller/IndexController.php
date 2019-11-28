@@ -87,14 +87,21 @@ class IndexController extends AbstractController
                 }
                 /** @var StatusAgendaServicoEntidade $statusAgendaServico */
                 foreach ($statusAgenda->getCoStatusAgendaServico() as $statusAgendaServico) {
+
+                    /** @var StatusAgendaServicoService $statusAgendaServicoService */
+                    $statusAgendaServicoService = $this->getService(STATUS_AGENDA_SERVICO_SERVICE);
+                    /** @var StatusAgendaServicoEntidade $statusAgendaServico */
+                    $statusAgendaServico = $statusAgendaServicoService->PesquisaUmRegistro($statusAgendaServico->getCoStatusAgendaServico());
                     $dados[CO_SERVICO] = $statusAgendaServico->getCoServico()->getCoServico();
 
                     /** @var StatusAgendaProfissionalEntidade $statusAgendaProfissional */
                     foreach ($statusAgendaServico->getCoStatusAgendaProfissional() as $statusAgendaProfissional) {
-                        if ($statusAgendaProfissional->getTpProfissional() == 1) {
-                            $dados[CO_PROFISSIONAL] = $statusAgendaProfissional->getCoProfissional();
-                        } else if ($statusAgendaProfissional->getTpProfissional() == 2) {
-                            $dados['co_assistente'] = $statusAgendaProfissional->getCoProfissional();
+                        if ($statusAgendaProfissional->getTpProfissional() == 1 &&
+                            !empty($statusAgendaProfissional->getCoProfissional())) {
+                            $dados[CO_PROFISSIONAL] = $statusAgendaProfissional->getCoProfissional()->getCoProfissional();
+                        } else if ($statusAgendaProfissional->getTpProfissional() == 2 &&
+                            !empty($statusAgendaProfissional->getCoProfissional())) {
+                            $dados['co_assistente'] = $statusAgendaProfissional->getCoProfissional()->getCoProfissional();
                         }
                     }
 

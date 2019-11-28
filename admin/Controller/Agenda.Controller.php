@@ -24,14 +24,16 @@ class Agenda extends AbstractController
             $session->setSession('pesq_agendamento', $Condicoes);
         }
         $Condicoes = $session::getSession('pesq_agendamento');
-        $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'pro.ds_cor_agenda');
+        $agendas = $agendaService->PesquisaAgendamentos($Condicoes, 'pro.ds_cor_agenda, stag.dt_cadastro');
         $eventos = [];
         foreach ($agendas as $agenda) {
             if ($agenda[ST_STATUS] != StatusAgendamentoEnum::DELETADO) {
                 $assistente = ($agenda['assistente']) ? $agenda['assistente'] : 'Sem Assistente';
                 $eve = array(
                     'id' => (int)$agenda[CO_AGENDA],
-                    'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $assistente . "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO],
+                    'title' => "Profissional: " . $agenda['profissional'] . "\nAssistente: " . $assistente .
+                        "\nCliente: " . $agenda['cliente'] . "\nServiço: " . $agenda[NO_SERVICO] .
+                        "\nAtualizado em: " . Valida::DataShow($agenda[DT_CADASTRO], 'd/m/Y H:i'),
                     'start' => Valida::DataShow($agenda[DT_INICIO_AGENDA], 'Y-m-d H:i'),
                     'end' => Valida::DataShow($agenda[DT_FIM_AGENDA], 'Y-m-d H:i'),
                     'className' => 'event-' . StatusAgendamentoEnum::$cores[$agenda[ST_STATUS]],
@@ -57,11 +59,11 @@ class Agenda extends AbstractController
         $session = new Session();
         if ($session->CheckSession(PESQUISA_AVANCADA)) {
             $Condicoes = $session::getSession(PESQUISA_AVANCADA);
-        } else {
+        } else if ($session->CheckSession('pesq_agendamento')) {
             $session->FinalizaSession('pesq_agendamento');
         }
         $Condicoes['age.' . CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();
-        $this->result = $agendaService->PesquisaAgendamentos($Condicoes);
+        $this->result = $agendaService->PesquisaAgendamentos($Condicoes, 'stag.dt_cadastro');
 
         $Condicoes = [];
         $Condicoes[CO_ASSINANTE] = AssinanteService::getCoAssinanteLogado();

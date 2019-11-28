@@ -61,7 +61,7 @@
                                     <small>Agendamentos Cadastrados</small>
                                 </h2>
                                 <?php
-                                $arrColunas = array('Cliente', 'Data', 'Período', 'Profissional', 'Assistente', 'Serviço', 'Status', 'Ações');
+                                $arrColunas = array('Cliente', 'Agendado', 'Atualizado em', 'Período', 'Profissional', 'Assistente', 'Serviço', 'Status', 'Ações');
                                 $grid = new Grid();
                                 $grid->setColunasIndeces($arrColunas);
                                 $grid->criaGrid();
@@ -80,6 +80,7 @@
                                     $label = '<span class="circle-img label-' . StatusAgendamentoEnum::$cores[$res['st_status']] . '">&nbsp;&nbsp;&nbsp;&nbsp;</span> ';
                                     $grid->setColunas(Valida::Resumi($res['cliente'], 30), 3);
                                     $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'd/m/Y'), 1);
+                                    $grid->setColunas(Valida::DataShow($res['dt_cadastro'], 'd/m/Y H:i'), 1);
                                     $grid->setColunas(Valida::DataShow($res['dt_inicio_agenda'], 'H:i')
                                         . ' a ' . Valida::DataShow($res['dt_fim_agenda'], 'H:i'), 1);
                                     $grid->setColunas(Valida::Resumi($res['profissional'], 30), 3);
