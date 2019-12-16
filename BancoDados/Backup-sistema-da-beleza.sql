@@ -1,4 +1,4 @@
--- Atualizado em: 09/12/2019 12:26:49
+-- Atualizado em: 16/12/2019 17:11:56
 -- AMBIENTE: http://localhost/sistemadabeleza/
 -- BANCO: sistem25_dabelez
 
@@ -20,7 +20,7 @@ CREATE TABLE `TB_ACESSO` (
   PRIMARY KEY (`co_acesso`,`co_usuario`,`co_trafego`),
   KEY `fk_TB_ACESSO_TB_USUARIO1_idx` (`co_usuario`),
   KEY `fk_TB_ACESSO_TB_TRAFEGO1_idx` (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=533 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=536 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_ACESSO VALUES("509","hvtdp565emts5fvvrqnnsgsu96","2019-10-08 12:19:06","2019-10-08 12:59:05","F","1","525");
@@ -70,6 +70,12 @@ INSERT INTO TB_ACESSO VALUES("530","fgkvv9ep3f2biq21fqjqlhkfe2","2019-11-08 15:2
 INSERT INTO TB_ACESSO VALUES("531","307v00u9sknkmbbvk35dc98rg3","2019-11-28 18:10:09","2019-11-28 18:11:41","F","8","547");
 
 INSERT INTO TB_ACESSO VALUES("532","307v00u9sknkmbbvk35dc98rg3","2019-11-28 18:11:47","2019-11-28 18:55:03","F","1","548");
+
+INSERT INTO TB_ACESSO VALUES("533","04iutb99femmu6k5hli6209ni0","2019-12-09 12:27:39","2019-12-09 13:00:02","F","1","549");
+
+INSERT INTO TB_ACESSO VALUES("534","n1gk6i4ic2oqlcvh70i0a85a76","2019-12-11 17:54:01","2019-12-11 18:08:31","F","1","550");
+
+INSERT INTO TB_ACESSO VALUES("535","n1gk6i4ic2oqlcvh70i0a85a76","2019-12-11 18:08:36","2019-12-11 18:40:30","A","8","551");
 
 
 
@@ -8537,7 +8543,7 @@ CREATE TABLE `TB_TRAFEGO` (
   `ds_dispositivo` varchar(45) DEFAULT NULL,
   `ds_agente` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`co_trafego`)
-) ENGINE=InnoDB AUTO_INCREMENT=549 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=552 DEFAULT CHARSET=utf8;
 
 
 INSERT INTO TB_TRAFEGO VALUES("28","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:64.0) Gecko/20100101 Firefox/64.0");
@@ -8621,6 +8627,12 @@ INSERT INTO TB_TRAFEGO VALUES("546","::1","Desconhecido","Desconhecida","Desconh
 INSERT INTO TB_TRAFEGO VALUES("547","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0");
 
 INSERT INTO TB_TRAFEGO VALUES("548","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0");
+
+INSERT INTO TB_TRAFEGO VALUES("549","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0");
+
+INSERT INTO TB_TRAFEGO VALUES("550","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0");
+
+INSERT INTO TB_TRAFEGO VALUES("551","::1","Desconhecido","Desconhecida","Desconhecida","Desconhecida","Desconhecida","Firefox","Windows 10","Desktop","Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0");
 
 
 

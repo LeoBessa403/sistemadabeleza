@@ -29,7 +29,6 @@ define('NU_ALMOCO_INICIO', 'nu_almoco_inicio');
 define('NU_ALMOCO_FINAL', 'nu_almoco_final');
 define('NU_INTERVALO_INICIO', 'nu_intervalo_inicio');
 define('NU_INTERVALO_FINAL', 'nu_intervalo_final');
-define('CO_IMAGEM_ASSINANTE', 'co_imagem_assinante');
 define('CO_DIA_ESPECIAL', 'co_dia_especial');
 define('DT_DIA', 'dt_dia');
 define('DS_MOTIVO', 'ds_motivo');
